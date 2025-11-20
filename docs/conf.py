@@ -64,6 +64,7 @@ html_context = {
 autodoc_typehints = "description"
 autoapi_dirs = ["../ipyvuetify"]
 autoapi_member_order = "groupwise"
+autoapi_own_page_level = "method"
 autoapi_keep_files = True
 autoapi_options = [
     "members",

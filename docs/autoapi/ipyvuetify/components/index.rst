@@ -7,6 +7,11 @@ ipyvuetify.components
 Classes
 -------
 
+.. toctree::
+   :hidden:
+
+   /autoapi/ipyvuetify/components/CodeGen
+
 .. autoapisummary::
 
    ipyvuetify.components.CodeGen
@@ -183,14 +188,6 @@ Functions
 
 Module Contents
 ---------------
-
-.. py:class:: CodeGen
-
-   Bases: :py:obj:`reacton.generate.CodeGen`
-
-
-   .. py:method:: has_callback(cls, name)
-
 
 .. py:function:: Alert(**kwargs)
 
