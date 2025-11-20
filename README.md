@@ -8,7 +8,7 @@
 [![Black badge](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![conventional commit](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-Jupyter widgets based on [vuetify UI components](https://vuetifyjs.com/) which implement Google's
+Jupyter widgets based on [vuetify UI components](https://v2.vuetifyjs.com/) which implement Google's
 [Material Design Spec](https://material.io/) with the [Vue.js framework](https://vuejs.org/).
 
 A small selection of widgets:
@@ -28,7 +28,8 @@ For a development installation (requires npm),
 
     $ git clone https://github.com/mariobuikhuizen/ipyvuetify.git
     $ cd ipyvuetify
-    $ pip install -e .
+    $ pip install -e ".[dev]"
+    $ pre-commit install
     $ jupyter nbextension install --py --symlink --sys-prefix ipyvuetify
     $ jupyter nbextension enable --py --sys-prefix ipyvuetify
 
@@ -42,7 +43,7 @@ https://ipyvuetify.readthedocs.io/
 
 For examples see the [example notebook](examples/Examples.ipynb).
 
-The [Vuetify documentation](https://vuetifyjs.com/components/buttons#buttons) can be used to find all available
+The [Vuetify documentation](https://v2.vuetifyjs.com/components/buttons#buttons) can be used to find all available
 components and attributes (in the left side bar or use the search field). Ipyvuetify tries to stay close to the Vue.js
 and Vuetify template syntax, but there are some differences:
 
@@ -123,3 +124,9 @@ Available icons:
 For a more web development centric way of development and a closer match to the Vue/Vuetify api, VuetifyTemplate can be used. See the [example](examples/Examples%20template.ipynb) or [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/mariobuikhuizen/ipyvuetify/master?filepath=examples%2FExamples%20template.ipynb).
 
 Make a sub class of VuetifyTemplate, define your own traitlets and set a template string. The traitlets will be accessible from the template as if they were in a vue-model. Methods can be called by defining a method with a prefix `vue_` e.g. `def vue_button_click(self, data)` and calling it from the template e.g. `@click="button_click(e)"`.
+
+## Sponsors
+
+Project ipyvuetify receives direct funding from the following sources:
+
+[![MSD](docs/images/msd-logo.svg)](https://msd.com)

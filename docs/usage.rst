@@ -30,7 +30,7 @@ Attributes can be changed at a later time by:
     'Banana')`, are not detected by ipywidgets.
 
 What widgets are available and how they look can be found in the
-`Vuetify documentation <https://vuetifyjs.com/components/selects/>`_. Browse the side bar on the left hand side and
+`Vuetify documentation <https://v2.vuetifyjs.com/components/selects/>`_. Browse the side bar on the left hand side and
 select a widget, then click <> on the right hand side on an example to see the source code for it. The HTML code may
 seem unfamiliar at first, but this documentation will guide you through it. For starters to translate the Vuetify widget
 names, which are starting with :code:`v-`, to ipyvuetify, remove the :code:`v-` prefix and CamelCase the remaining
@@ -256,7 +256,7 @@ All `HTML events <https://www.w3schools.com/tags/ref_eventattributes.asp>`_ can 
 omitted.
 
 Widgets can have custom events, to find out which, the `Vuetify API explorer
-<https://vuetifyjs.com/components/api-explorer/>`_ can be used. Search for a component and on the left-hand side of list
+<https://v2.vuetifyjs.com/components/api-explorer/>`_ can be used. Search for a component and on the left-hand side of list
 of attributes you will find a tab for the events.
 
 In Vuetify events are defined as attributes with an :code:`@` prefix. The equivalent Vuetify syntax of the example above
@@ -310,7 +310,7 @@ properties can be set by separating them with a semicolon :code:`;`.
     v.Select(label='Fruit', style_='width: 75px; opacity: 0.7')
 
 With the :code:`class_` attribute predefined Vuetify styles can be set. Predefined styles of note are
-`spacing <https://vuetifyjs.com/styles/spacing/>`__ and `colors <https://vuetifyjs.com/styles/colors/>`__. More can be
+`spacing <https://v2.vuetifyjs.com/styles/spacing/>`__ and `colors <https://v2.vuetifyjs.com/styles/colors/>`__. More can be
 found in the section 'Styles and animations' of the Vuetify documentation. Multiple classes can be applied by separating
 them with a space.
 
@@ -341,7 +341,7 @@ And colors:
 ClassList attribute
 ^^^^^^^^^^^^^^^^^^^
 
-The :code:`class` attribute of a Vuetify DOM elements give access to the built-in styles of the lib. See the `vuetify site <https://vuetifyjs.com/en/styles/colors/>`__ to know more about available styling class. As mentioned in the previous section this can be set using the :code:`class_` member of the widget. In addition, ipyvuetify provides a :code:`class_list` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods: 
+The :code:`class` attribute of a Vuetify DOM elements give access to the built-in styles of the lib. See the `vuetify site <https://v2.vuetifyjs.com/en/styles/colors/>`__ to know more about available styling class. As mentioned in the previous section this can be set using the :code:`class_` member of the widget. In addition, ipyvuetify provides a :code:`class_list` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods:
 
 -   :code:`add(*args)`: add class elements to the class\_ trait of the widget
     
@@ -375,8 +375,8 @@ The :code:`class` attribute of a Vuetify DOM elements give access to the built-i
         w.class_list.toggle("blue", "red")
         w
         
-Visiblity
-^^^^^^^^^
+Visibility
+^^^^^^^^^^
 
 ipyvuetify widgets visibility can be changed using the built-in methods :code:`hide()` and :code:`show()`.
 Using :code:`hide` will add the :code:`d-none` class to the widget and :code:`show` will remove it, hiding and showing the widget to the end user without removing it from the notebook. 
@@ -416,7 +416,7 @@ In ipywidgets you would layout a grid of widgets with HBox and VBox.
     ])
 
 This can be done in ipyvuetify with the help of some classes described in
-`flex helpers <https://vuetifyjs.com/styles/flex/>`_.
+`flex helpers <https://v2.vuetifyjs.com/styles/flex/>`_.
 
 .. jupyter-execute::
 
@@ -466,7 +466,7 @@ To customize the themes:
     v.theme.themes.dark.primary = '#a71c1c'
 
 
-Also, the `pre-defined material colors <https://vuetifyjs.com/en/styles/colors/#sass-color-pack>`_  are supported:
+Also, the `pre-defined material colors <https://v2.vuetifyjs.com/en/styles/colors/#sass-color-pack>`_  are supported:
 
 .. code-block:: python
 
@@ -484,6 +484,18 @@ Available theme properties:
 - success
 - warning
 - anchor
+
+If :code:`dark` is set to None (the default), we use the setting from Jupyter Lab, VS Code or Google Colab.
+In Jupyter notebook classic, or other unrecognized systems we always use the light theme.
+When running in `Solara server <https://github.com/widgetti/solara/>`_, dark mode is
+determined by how the `Solara server <https://solara.dev/docs/understanding/solara-server>`_ is configured.
+
+In all cases, the `dark_effective` attribute can be used to know if the dark theme is used.
+
+.. code-block:: python
+
+    if v.theme.dark_effective:
+        ...
 
 Summary
 -------

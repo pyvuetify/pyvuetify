@@ -4,10 +4,10 @@ var version = require("./package.json").version;
 // Custom webpack rules are generally the same for all webpack bundles, hence
 // stored in a separate local variable.
 var rules = [
-  { test: /\.css$/, use: ["style-loader", "css-loader"] },
+  { test: /\.css$/, use: ["style-loader", "css-loader", "postcss-loader"] },
   {
     test: /\.(woff|woff2|eot|ttf|otf)$/,
-    loader: "file-loader",
+    type: "asset/resource",
   },
 ];
 
@@ -24,7 +24,15 @@ module.exports = [
     entry: "./lib/extension.js",
     output: {
       filename: "extension.js",
-      path: path.resolve(__dirname, "..", "ipyvuetify", "nbextension"),
+      path: path.resolve(
+        __dirname,
+        "..",
+        "prefix",
+        "share",
+        "jupyter",
+        "nbextensions",
+        "jupyter-vuetify"
+      ),
       libraryTarget: "amd",
     },
     mode: "production",
@@ -39,7 +47,15 @@ module.exports = [
     entry: "./lib/notebook.js",
     output: {
       filename: "index.js",
-      path: path.resolve(__dirname, "..", "ipyvuetify", "nbextension"),
+      path: path.resolve(
+        __dirname,
+        "..",
+        "prefix",
+        "share",
+        "jupyter",
+        "nbextensions",
+        "jupyter-vuetify"
+      ),
       libraryTarget: "amd",
     },
     devtool: "source-map",
@@ -62,7 +78,15 @@ module.exports = [
     entry: "./lib/nodeps.js",
     output: {
       filename: "nodeps.js",
-      path: path.resolve(__dirname, "..", "ipyvuetify", "nbextension"),
+      path: path.resolve(
+        __dirname,
+        "..",
+        "prefix",
+        "share",
+        "jupyter",
+        "nbextensions",
+        "jupyter-vuetify"
+      ),
       libraryTarget: "amd",
     },
     devtool: "source-map",
@@ -147,7 +171,7 @@ module.exports = [
     },
     devtool: "source-map",
     module: {
-      rules: rules,
+      rules,
     },
     externals: ["@jupyter-widgets/base", "@jupyterlab/apputils", "jupyter-vue"],
     resolve: {
