@@ -15,7 +15,7 @@ release = "1.11.3"
 
 # -- General configuration ---------------------------------------------------
 
-extensions = ["jupyter_sphinx", "sphinx_rtd_theme", "sphinx_design", "autoapi.extension"]
+extensions = ["jupyter_sphinx", "sphinx_design", "autoapi.extension"]
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
@@ -64,6 +64,7 @@ html_context = {
 autodoc_typehints = "description"
 autoapi_dirs = ["../ipyvuetify"]
 autoapi_member_order = "groupwise"
+autoapi_keep_files = True
 autoapi_options = [
     "members",
     "undoc-members",
@@ -74,7 +75,7 @@ autoapi_options = [
 
 
 def skip_submodules(app, what, name, obj, skip, options):
-    """Ignore the modules and packages taht are private
+    """Ignore the modules and packages that are private
 
     Only necessary for those that are not using a leading underscore
     """
