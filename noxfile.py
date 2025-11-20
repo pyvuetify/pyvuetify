@@ -17,5 +17,17 @@ def lint(session):
 @nox.session(reuse_venv=True)
 def docs(session):
     """Build the documentation."""
+    build = session.posargs.pop() if session.posargs else "html"
     session.install(".[doc]")
-    session.run("sphinx-build", "-v", "-b", "html", "docs", "docs/_build/html")
+    dst = f"docs/_build/{build}"
+    session.run("sphinx-build", "-v", "-b", build, "docs", dst)
+
+
+@nox.session(reuse_venv=True, name="docs-live")
+def docs_live(session):
+    """Build the documentation."""
+    build = session.posargs.pop() if session.posargs else "html"
+    session.install(".[doc]")
+    session.install("sphinx-autobuild")
+    dst = "docs/_build/html"
+    session.run("sphinx-autobuild", "-v", "-b", build, "docs", dst)
