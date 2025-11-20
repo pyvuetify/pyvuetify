@@ -1,17 +1,10 @@
 ipyvuetify.CardTitle
 ====================
 
-.. py:class:: ipyvuetify.CardTitle(**kwargs)
+.. py:class:: ipyvuetify.CardTitle
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   The title element of a v-card component, typically displayed at the top.
 

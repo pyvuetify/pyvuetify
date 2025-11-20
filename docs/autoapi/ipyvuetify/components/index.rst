@@ -20,6 +20,172 @@ Classes
 Functions
 ---------
 
+.. toctree::
+   :hidden:
+
+   /autoapi/ipyvuetify/components/Alert
+   /autoapi/ipyvuetify/components/App
+   /autoapi/ipyvuetify/components/AppBar
+   /autoapi/ipyvuetify/components/AppBarNavIcon
+   /autoapi/ipyvuetify/components/Autocomplete
+   /autoapi/ipyvuetify/components/Avatar
+   /autoapi/ipyvuetify/components/Badge
+   /autoapi/ipyvuetify/components/Banner
+   /autoapi/ipyvuetify/components/BottomNavigation
+   /autoapi/ipyvuetify/components/BottomSheet
+   /autoapi/ipyvuetify/components/Breadcrumbs
+   /autoapi/ipyvuetify/components/BreadcrumbsDivider
+   /autoapi/ipyvuetify/components/BreadcrumbsItem
+   /autoapi/ipyvuetify/components/Btn
+   /autoapi/ipyvuetify/components/BtnToggle
+   /autoapi/ipyvuetify/components/Calendar
+   /autoapi/ipyvuetify/components/CalendarDaily
+   /autoapi/ipyvuetify/components/CalendarMonthly
+   /autoapi/ipyvuetify/components/CalendarWeekly
+   /autoapi/ipyvuetify/components/Card
+   /autoapi/ipyvuetify/components/CardActions
+   /autoapi/ipyvuetify/components/CardSubtitle
+   /autoapi/ipyvuetify/components/CardText
+   /autoapi/ipyvuetify/components/CardTitle
+   /autoapi/ipyvuetify/components/Carousel
+   /autoapi/ipyvuetify/components/CarouselItem
+   /autoapi/ipyvuetify/components/CarouselReverseTransition
+   /autoapi/ipyvuetify/components/CarouselTransition
+   /autoapi/ipyvuetify/components/Checkbox
+   /autoapi/ipyvuetify/components/Chip
+   /autoapi/ipyvuetify/components/ChipGroup
+   /autoapi/ipyvuetify/components/Col
+   /autoapi/ipyvuetify/components/ColorPicker
+   /autoapi/ipyvuetify/components/ColorPickerCanvas
+   /autoapi/ipyvuetify/components/ColorPickerSwatches
+   /autoapi/ipyvuetify/components/Combobox
+   /autoapi/ipyvuetify/components/Container
+   /autoapi/ipyvuetify/components/Content
+   /autoapi/ipyvuetify/components/Counter
+   /autoapi/ipyvuetify/components/Data
+   /autoapi/ipyvuetify/components/DataFooter
+   /autoapi/ipyvuetify/components/DataIterator
+   /autoapi/ipyvuetify/components/DataTable
+   /autoapi/ipyvuetify/components/DataTableHeader
+   /autoapi/ipyvuetify/components/DatePicker
+   /autoapi/ipyvuetify/components/DatePickerDateTable
+   /autoapi/ipyvuetify/components/DatePickerHeader
+   /autoapi/ipyvuetify/components/DatePickerMonthTable
+   /autoapi/ipyvuetify/components/DatePickerTitle
+   /autoapi/ipyvuetify/components/DatePickerYears
+   /autoapi/ipyvuetify/components/Dialog
+   /autoapi/ipyvuetify/components/DialogBottomTransition
+   /autoapi/ipyvuetify/components/DialogTransition
+   /autoapi/ipyvuetify/components/Divider
+   /autoapi/ipyvuetify/components/EditDialog
+   /autoapi/ipyvuetify/components/ExpandTransition
+   /autoapi/ipyvuetify/components/ExpandXTransition
+   /autoapi/ipyvuetify/components/ExpansionPanel
+   /autoapi/ipyvuetify/components/ExpansionPanelContent
+   /autoapi/ipyvuetify/components/ExpansionPanelHeader
+   /autoapi/ipyvuetify/components/ExpansionPanels
+   /autoapi/ipyvuetify/components/FabTransition
+   /autoapi/ipyvuetify/components/FadeTransition
+   /autoapi/ipyvuetify/components/FileInput
+   /autoapi/ipyvuetify/components/Flex
+   /autoapi/ipyvuetify/components/Footer
+   /autoapi/ipyvuetify/components/Form
+   /autoapi/ipyvuetify/components/Hover
+   /autoapi/ipyvuetify/components/Html
+   /autoapi/ipyvuetify/components/Icon
+   /autoapi/ipyvuetify/components/Img
+   /autoapi/ipyvuetify/components/Input
+   /autoapi/ipyvuetify/components/Item
+   /autoapi/ipyvuetify/components/ItemGroup
+   /autoapi/ipyvuetify/components/Label
+   /autoapi/ipyvuetify/components/Layout
+   /autoapi/ipyvuetify/components/Lazy
+   /autoapi/ipyvuetify/components/List
+   /autoapi/ipyvuetify/components/ListGroup
+   /autoapi/ipyvuetify/components/ListItem
+   /autoapi/ipyvuetify/components/ListItemAction
+   /autoapi/ipyvuetify/components/ListItemActionText
+   /autoapi/ipyvuetify/components/ListItemAvatar
+   /autoapi/ipyvuetify/components/ListItemContent
+   /autoapi/ipyvuetify/components/ListItemGroup
+   /autoapi/ipyvuetify/components/ListItemIcon
+   /autoapi/ipyvuetify/components/ListItemSubtitle
+   /autoapi/ipyvuetify/components/ListItemTitle
+   /autoapi/ipyvuetify/components/Menu
+   /autoapi/ipyvuetify/components/MenuTransition
+   /autoapi/ipyvuetify/components/Messages
+   /autoapi/ipyvuetify/components/NavigationDrawer
+   /autoapi/ipyvuetify/components/OverflowBtn
+   /autoapi/ipyvuetify/components/Overlay
+   /autoapi/ipyvuetify/components/Pagination
+   /autoapi/ipyvuetify/components/Parallax
+   /autoapi/ipyvuetify/components/Picker
+   /autoapi/ipyvuetify/components/ProgressCircular
+   /autoapi/ipyvuetify/components/ProgressLinear
+   /autoapi/ipyvuetify/components/Radio
+   /autoapi/ipyvuetify/components/RadioGroup
+   /autoapi/ipyvuetify/components/RangeSlider
+   /autoapi/ipyvuetify/components/Rating
+   /autoapi/ipyvuetify/components/Responsive
+   /autoapi/ipyvuetify/components/Row
+   /autoapi/ipyvuetify/components/ScaleTransition
+   /autoapi/ipyvuetify/components/ScrollXReverseTransition
+   /autoapi/ipyvuetify/components/ScrollXTransition
+   /autoapi/ipyvuetify/components/ScrollYReverseTransition
+   /autoapi/ipyvuetify/components/ScrollYTransition
+   /autoapi/ipyvuetify/components/Select
+   /autoapi/ipyvuetify/components/Sheet
+   /autoapi/ipyvuetify/components/SimpleCheckbox
+   /autoapi/ipyvuetify/components/SimpleTable
+   /autoapi/ipyvuetify/components/SkeletonLoader
+   /autoapi/ipyvuetify/components/SlideGroup
+   /autoapi/ipyvuetify/components/SlideItem
+   /autoapi/ipyvuetify/components/SlideXReverseTransition
+   /autoapi/ipyvuetify/components/SlideXTransition
+   /autoapi/ipyvuetify/components/SlideYReverseTransition
+   /autoapi/ipyvuetify/components/SlideYTransition
+   /autoapi/ipyvuetify/components/Slider
+   /autoapi/ipyvuetify/components/Snackbar
+   /autoapi/ipyvuetify/components/Spacer
+   /autoapi/ipyvuetify/components/Sparkline
+   /autoapi/ipyvuetify/components/SpeedDial
+   /autoapi/ipyvuetify/components/Stepper
+   /autoapi/ipyvuetify/components/StepperContent
+   /autoapi/ipyvuetify/components/StepperHeader
+   /autoapi/ipyvuetify/components/StepperItems
+   /autoapi/ipyvuetify/components/StepperStep
+   /autoapi/ipyvuetify/components/Subheader
+   /autoapi/ipyvuetify/components/Switch
+   /autoapi/ipyvuetify/components/SystemBar
+   /autoapi/ipyvuetify/components/Tab
+   /autoapi/ipyvuetify/components/TabItem
+   /autoapi/ipyvuetify/components/TabReverseTransition
+   /autoapi/ipyvuetify/components/TabTransition
+   /autoapi/ipyvuetify/components/TableOverflow
+   /autoapi/ipyvuetify/components/Tabs
+   /autoapi/ipyvuetify/components/TabsItems
+   /autoapi/ipyvuetify/components/TabsSlider
+   /autoapi/ipyvuetify/components/Text
+   /autoapi/ipyvuetify/components/TextField
+   /autoapi/ipyvuetify/components/Textarea
+   /autoapi/ipyvuetify/components/ThemeProvider
+   /autoapi/ipyvuetify/components/TimePicker
+   /autoapi/ipyvuetify/components/TimePickerClock
+   /autoapi/ipyvuetify/components/TimePickerTitle
+   /autoapi/ipyvuetify/components/Timeline
+   /autoapi/ipyvuetify/components/TimelineItem
+   /autoapi/ipyvuetify/components/Toolbar
+   /autoapi/ipyvuetify/components/ToolbarItems
+   /autoapi/ipyvuetify/components/ToolbarTitle
+   /autoapi/ipyvuetify/components/Tooltip
+   /autoapi/ipyvuetify/components/Treeview
+   /autoapi/ipyvuetify/components/TreeviewNode
+   /autoapi/ipyvuetify/components/VirtualTable
+   /autoapi/ipyvuetify/components/VuetifyTemplate
+   /autoapi/ipyvuetify/components/VuetifyWidget
+   /autoapi/ipyvuetify/components/Window
+   /autoapi/ipyvuetify/components/WindowItem
+
 .. autoapisummary::
 
    ipyvuetify.components.Alert
@@ -185,331 +351,4 @@ Functions
    ipyvuetify.components.Window
    ipyvuetify.components.WindowItem
 
-
-Module Contents
----------------
-
-.. py:function:: Alert(**kwargs)
-
-.. py:function:: App(**kwargs)
-
-.. py:function:: AppBar(**kwargs)
-
-.. py:function:: AppBarNavIcon(**kwargs)
-
-.. py:function:: Autocomplete(**kwargs)
-
-.. py:function:: Avatar(**kwargs)
-
-.. py:function:: Badge(**kwargs)
-
-.. py:function:: Banner(**kwargs)
-
-.. py:function:: BottomNavigation(**kwargs)
-
-.. py:function:: BottomSheet(**kwargs)
-
-.. py:function:: Breadcrumbs(**kwargs)
-
-.. py:function:: BreadcrumbsDivider(**kwargs)
-
-.. py:function:: BreadcrumbsItem(**kwargs)
-
-.. py:function:: Btn(**kwargs)
-
-.. py:function:: BtnToggle(**kwargs)
-
-.. py:function:: Calendar(**kwargs)
-
-.. py:function:: CalendarDaily(**kwargs)
-
-.. py:function:: CalendarMonthly(**kwargs)
-
-.. py:function:: CalendarWeekly(**kwargs)
-
-.. py:function:: Card(**kwargs)
-
-.. py:function:: CardActions(**kwargs)
-
-.. py:function:: CardSubtitle(**kwargs)
-
-.. py:function:: CardText(**kwargs)
-
-.. py:function:: CardTitle(**kwargs)
-
-.. py:function:: Carousel(**kwargs)
-
-.. py:function:: CarouselItem(**kwargs)
-
-.. py:function:: CarouselReverseTransition(**kwargs)
-
-.. py:function:: CarouselTransition(**kwargs)
-
-.. py:function:: Checkbox(**kwargs)
-
-.. py:function:: Chip(**kwargs)
-
-.. py:function:: ChipGroup(**kwargs)
-
-.. py:function:: Col(**kwargs)
-
-.. py:function:: ColorPicker(**kwargs)
-
-.. py:function:: ColorPickerCanvas(**kwargs)
-
-.. py:function:: ColorPickerSwatches(**kwargs)
-
-.. py:function:: Combobox(**kwargs)
-
-.. py:function:: Container(**kwargs)
-
-.. py:function:: Content(**kwargs)
-
-.. py:function:: Counter(**kwargs)
-
-.. py:function:: Data(**kwargs)
-
-.. py:function:: DataFooter(**kwargs)
-
-.. py:function:: DataIterator(**kwargs)
-
-.. py:function:: DataTable(**kwargs)
-
-.. py:function:: DataTableHeader(**kwargs)
-
-.. py:function:: DatePicker(**kwargs)
-
-.. py:function:: DatePickerDateTable(**kwargs)
-
-.. py:function:: DatePickerHeader(**kwargs)
-
-.. py:function:: DatePickerMonthTable(**kwargs)
-
-.. py:function:: DatePickerTitle(**kwargs)
-
-.. py:function:: DatePickerYears(**kwargs)
-
-.. py:function:: Dialog(**kwargs)
-
-.. py:function:: DialogBottomTransition(**kwargs)
-
-.. py:function:: DialogTransition(**kwargs)
-
-.. py:function:: Divider(**kwargs)
-
-.. py:function:: EditDialog(**kwargs)
-
-.. py:function:: ExpandTransition(**kwargs)
-
-.. py:function:: ExpandXTransition(**kwargs)
-
-.. py:function:: ExpansionPanel(**kwargs)
-
-.. py:function:: ExpansionPanelContent(**kwargs)
-
-.. py:function:: ExpansionPanelHeader(**kwargs)
-
-.. py:function:: ExpansionPanels(**kwargs)
-
-.. py:function:: FabTransition(**kwargs)
-
-.. py:function:: FadeTransition(**kwargs)
-
-.. py:function:: FileInput(**kwargs)
-
-.. py:function:: Flex(**kwargs)
-
-.. py:function:: Footer(**kwargs)
-
-.. py:function:: Form(**kwargs)
-
-.. py:function:: Hover(**kwargs)
-
-.. py:function:: Html(**kwargs)
-
-.. py:function:: Icon(**kwargs)
-
-.. py:function:: Img(**kwargs)
-
-.. py:function:: Input(**kwargs)
-
-.. py:function:: Item(**kwargs)
-
-.. py:function:: ItemGroup(**kwargs)
-
-.. py:function:: Label(**kwargs)
-
-.. py:function:: Layout(**kwargs)
-
-.. py:function:: Lazy(**kwargs)
-
-.. py:function:: List(**kwargs)
-
-.. py:function:: ListGroup(**kwargs)
-
-.. py:function:: ListItem(**kwargs)
-
-.. py:function:: ListItemAction(**kwargs)
-
-.. py:function:: ListItemActionText(**kwargs)
-
-.. py:function:: ListItemAvatar(**kwargs)
-
-.. py:function:: ListItemContent(**kwargs)
-
-.. py:function:: ListItemGroup(**kwargs)
-
-.. py:function:: ListItemIcon(**kwargs)
-
-.. py:function:: ListItemSubtitle(**kwargs)
-
-.. py:function:: ListItemTitle(**kwargs)
-
-.. py:function:: Menu(**kwargs)
-
-.. py:function:: MenuTransition(**kwargs)
-
-.. py:function:: Messages(**kwargs)
-
-.. py:function:: NavigationDrawer(**kwargs)
-
-.. py:function:: OverflowBtn(**kwargs)
-
-.. py:function:: Overlay(**kwargs)
-
-.. py:function:: Pagination(**kwargs)
-
-.. py:function:: Parallax(**kwargs)
-
-.. py:function:: Picker(**kwargs)
-
-.. py:function:: ProgressCircular(**kwargs)
-
-.. py:function:: ProgressLinear(**kwargs)
-
-.. py:function:: Radio(**kwargs)
-
-.. py:function:: RadioGroup(**kwargs)
-
-.. py:function:: RangeSlider(**kwargs)
-
-.. py:function:: Rating(**kwargs)
-
-.. py:function:: Responsive(**kwargs)
-
-.. py:function:: Row(**kwargs)
-
-.. py:function:: ScaleTransition(**kwargs)
-
-.. py:function:: ScrollXReverseTransition(**kwargs)
-
-.. py:function:: ScrollXTransition(**kwargs)
-
-.. py:function:: ScrollYReverseTransition(**kwargs)
-
-.. py:function:: ScrollYTransition(**kwargs)
-
-.. py:function:: Select(**kwargs)
-
-.. py:function:: Sheet(**kwargs)
-
-.. py:function:: SimpleCheckbox(**kwargs)
-
-.. py:function:: SimpleTable(**kwargs)
-
-.. py:function:: SkeletonLoader(**kwargs)
-
-.. py:function:: SlideGroup(**kwargs)
-
-.. py:function:: SlideItem(**kwargs)
-
-.. py:function:: SlideXReverseTransition(**kwargs)
-
-.. py:function:: SlideXTransition(**kwargs)
-
-.. py:function:: SlideYReverseTransition(**kwargs)
-
-.. py:function:: SlideYTransition(**kwargs)
-
-.. py:function:: Slider(**kwargs)
-
-.. py:function:: Snackbar(**kwargs)
-
-.. py:function:: Spacer(**kwargs)
-
-.. py:function:: Sparkline(**kwargs)
-
-.. py:function:: SpeedDial(**kwargs)
-
-.. py:function:: Stepper(**kwargs)
-
-.. py:function:: StepperContent(**kwargs)
-
-.. py:function:: StepperHeader(**kwargs)
-
-.. py:function:: StepperItems(**kwargs)
-
-.. py:function:: StepperStep(**kwargs)
-
-.. py:function:: Subheader(**kwargs)
-
-.. py:function:: Switch(**kwargs)
-
-.. py:function:: SystemBar(**kwargs)
-
-.. py:function:: Tab(**kwargs)
-
-.. py:function:: TabItem(**kwargs)
-
-.. py:function:: TabReverseTransition(**kwargs)
-
-.. py:function:: TabTransition(**kwargs)
-
-.. py:function:: TableOverflow(**kwargs)
-
-.. py:function:: Tabs(**kwargs)
-
-.. py:function:: TabsItems(**kwargs)
-
-.. py:function:: TabsSlider(**kwargs)
-
-.. py:function:: Text(**kwargs)
-
-.. py:function:: TextField(**kwargs)
-
-.. py:function:: Textarea(**kwargs)
-
-.. py:function:: ThemeProvider(**kwargs)
-
-.. py:function:: TimePicker(**kwargs)
-
-.. py:function:: TimePickerClock(**kwargs)
-
-.. py:function:: TimePickerTitle(**kwargs)
-
-.. py:function:: Timeline(**kwargs)
-
-.. py:function:: TimelineItem(**kwargs)
-
-.. py:function:: Toolbar(**kwargs)
-
-.. py:function:: ToolbarItems(**kwargs)
-
-.. py:function:: ToolbarTitle(**kwargs)
-
-.. py:function:: Tooltip(**kwargs)
-
-.. py:function:: Treeview(**kwargs)
-
-.. py:function:: TreeviewNode(**kwargs)
-
-.. py:function:: VirtualTable(**kwargs)
-
-.. py:function:: VuetifyTemplate(**kwargs)
-
-.. py:function:: VuetifyWidget(**kwargs)
-
-.. py:function:: Window(**kwargs)
-
-.. py:function:: WindowItem(**kwargs)
 

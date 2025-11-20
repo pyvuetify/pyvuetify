@@ -1,17 +1,10 @@
 ipyvuetify.ListItemTitle
 ========================
 
-.. py:class:: ipyvuetify.ListItemTitle(**kwargs)
+.. py:class:: ipyvuetify.ListItemTitle
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   The title element within a list item.
 

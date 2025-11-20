@@ -1,17 +1,10 @@
 ipyvuetify.TableOverflow
 ========================
 
-.. py:class:: ipyvuetify.TableOverflow(**kwargs)
+.. py:class:: ipyvuetify.TableOverflow
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   A component that handles overflow behavior in tables.
 

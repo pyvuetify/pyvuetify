@@ -1,17 +1,10 @@
 ipyvuetify.Spacer
 =================
 
-.. py:class:: ipyvuetify.Spacer(**kwargs)
+.. py:class:: ipyvuetify.Spacer
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   A flex spacer component that fills available space between other elements.
 

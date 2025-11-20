@@ -1,17 +1,10 @@
 ipyvuetify.ListItemAction
 =========================
 
-.. py:class:: ipyvuetify.ListItemAction(**kwargs)
+.. py:class:: ipyvuetify.ListItemAction
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   The action area of a list item, typically containing buttons or checkboxes.
 

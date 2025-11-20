@@ -1,10 +1,20 @@
 ipyvuetify.components.CodeGen
 =============================
 
+.. toctree::
+   :hidden:
+
+   /autoapi/ipyvuetify/components/CodeGen.has_callback
+
 .. py:class:: ipyvuetify.components.CodeGen
 
    Bases: :py:obj:`reacton.generate.CodeGen`
 
+Methods
+-------
 
-   .. py:method:: has_callback(cls, name)
+.. autoapisummary::
+
+   ipyvuetify.components.CodeGen.has_callback
+
 

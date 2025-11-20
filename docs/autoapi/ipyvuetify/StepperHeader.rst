@@ -1,17 +1,10 @@
 ipyvuetify.StepperHeader
 ========================
 
-.. py:class:: ipyvuetify.StepperHeader(**kwargs)
+.. py:class:: ipyvuetify.StepperHeader
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   The header area of a stepper containing all step indicators.
 

@@ -1,32 +1,40 @@
 ipyvuetify.TabTransition
 ========================
 
-.. py:class:: ipyvuetify.TabTransition(**kwargs)
+.. py:class:: ipyvuetify.TabTransition
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   A transition component that provides tab-style animation effects.
 
 
    .. py:attribute:: group
 
+      Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group)
+
+
 
    .. py:attribute:: hide_on_leave
+
+      Hides the leaving element (no exit animation)
+
 
 
    .. py:attribute:: leave_absolute
 
+      Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/))
+
+
 
    .. py:attribute:: mode
 
+      Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition).
+
+
 
    .. py:attribute:: origin
+
+      Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin).
+
 

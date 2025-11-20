@@ -1,17 +1,10 @@
 ipyvuetify.AppBarNavIcon
 ========================
 
-.. py:class:: ipyvuetify.AppBarNavIcon(**kwargs)
+.. py:class:: ipyvuetify.AppBarNavIcon
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   A stylized icon button component used in app-bars to toggle navigation drawers. It displays the standard hamburger menu icon.
 

@@ -26,6 +26,7 @@ from ipywidgets.widgets.widget import widget_serialization
 
 
 class {{ widget.name }}({{ widget.inherits | join(", ") }}):
+    """{{ widget.doc }}"""
 
 {% block widgetbody %}
     _model_name = Unicode('{{ widget.name }}Model').tag(sync=True)
@@ -33,6 +34,7 @@ class {{ widget.name }}({{ widget.inherits | join(", ") }}):
     {% if widget.properties %}
     {% for propName, prop in widget.properties %}
     {{ propName }} = {{ prop.traitDef }}
+    """{{ prop.doc }}"""
 
     {% endfor %}
     {% else %}

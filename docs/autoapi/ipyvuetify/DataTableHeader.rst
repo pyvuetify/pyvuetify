@@ -1,20 +1,16 @@
 ipyvuetify.DataTableHeader
 ==========================
 
-.. py:class:: ipyvuetify.DataTableHeader(**kwargs)
+.. py:class:: ipyvuetify.DataTableHeader
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   The header component for data tables containing column headers.
 
 
    .. py:attribute:: mobile
+
+      Renders mobile view of headers
+
 

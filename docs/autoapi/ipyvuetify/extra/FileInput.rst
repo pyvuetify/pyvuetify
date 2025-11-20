@@ -1,6 +1,15 @@
 ipyvuetify.extra.FileInput
 ==========================
 
+.. toctree::
+   :hidden:
+
+   /autoapi/ipyvuetify/extra/FileInput.clear
+   /autoapi/ipyvuetify/extra/FileInput.get_files
+   /autoapi/ipyvuetify/extra/FileInput.reset_stats
+   /autoapi/ipyvuetify/extra/FileInput.update_stats
+   /autoapi/ipyvuetify/extra/FileInput.vue_upload
+
 .. py:class:: ipyvuetify.extra.FileInput(**kwargs)
 
    Bases: :py:obj:`ipyvuetify.VuetifyTemplate`
@@ -14,21 +23,6 @@ ipyvuetify.extra.FileInput
       tooltip caption
    layout: InstanceDict(Layout)
       widget layout
-
-
-   .. py:method:: clear()
-
-
-   .. py:method:: get_files(timeout=30)
-
-
-   .. py:method:: reset_stats()
-
-
-   .. py:method:: update_stats(file_index, bytes_read)
-
-
-   .. py:method:: vue_upload(content, buffers)
 
 
    .. py:attribute:: accept
@@ -80,4 +74,16 @@ ipyvuetify.extra.FileInput
 
 
    .. py:attribute:: version
+
+Methods
+-------
+
+.. autoapisummary::
+
+   ipyvuetify.extra.FileInput.clear
+   ipyvuetify.extra.FileInput.get_files
+   ipyvuetify.extra.FileInput.reset_stats
+   ipyvuetify.extra.FileInput.update_stats
+   ipyvuetify.extra.FileInput.vue_upload
+
 

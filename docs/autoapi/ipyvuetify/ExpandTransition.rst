@@ -1,20 +1,16 @@
 ipyvuetify.ExpandTransition
 ===========================
 
-.. py:class:: ipyvuetify.ExpandTransition(**kwargs)
+.. py:class:: ipyvuetify.ExpandTransition
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   A transition component that provides expand/collapse animation effects.
 
 
    .. py:attribute:: mode
+
+      Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition).
+
 

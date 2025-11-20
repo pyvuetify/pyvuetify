@@ -1,17 +1,10 @@
 ipyvuetify.CardActions
 ======================
 
-.. py:class:: ipyvuetify.CardActions(**kwargs)
+.. py:class:: ipyvuetify.CardActions
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   The v-card-actions component is used to contain action buttons within a v-card. It's typically placed at the bottom of the card.
 

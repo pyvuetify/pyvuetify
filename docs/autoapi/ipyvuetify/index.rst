@@ -29,57 +29,18 @@ Classes
 .. toctree::
    :hidden:
 
-   /autoapi/ipyvuetify/Alert
    /autoapi/ipyvuetify/App
-   /autoapi/ipyvuetify/AppBar
    /autoapi/ipyvuetify/AppBarNavIcon
-   /autoapi/ipyvuetify/Autocomplete
-   /autoapi/ipyvuetify/Avatar
-   /autoapi/ipyvuetify/Badge
-   /autoapi/ipyvuetify/Banner
-   /autoapi/ipyvuetify/BottomNavigation
-   /autoapi/ipyvuetify/BottomSheet
    /autoapi/ipyvuetify/Breadcrumbs
    /autoapi/ipyvuetify/BreadcrumbsDivider
-   /autoapi/ipyvuetify/BreadcrumbsItem
-   /autoapi/ipyvuetify/Btn
-   /autoapi/ipyvuetify/BtnToggle
-   /autoapi/ipyvuetify/Calendar
-   /autoapi/ipyvuetify/CalendarDaily
-   /autoapi/ipyvuetify/CalendarMonthly
-   /autoapi/ipyvuetify/CalendarWeekly
-   /autoapi/ipyvuetify/Card
    /autoapi/ipyvuetify/CardActions
    /autoapi/ipyvuetify/CardSubtitle
    /autoapi/ipyvuetify/CardText
    /autoapi/ipyvuetify/CardTitle
-   /autoapi/ipyvuetify/Carousel
-   /autoapi/ipyvuetify/CarouselItem
    /autoapi/ipyvuetify/CarouselReverseTransition
    /autoapi/ipyvuetify/CarouselTransition
-   /autoapi/ipyvuetify/Checkbox
-   /autoapi/ipyvuetify/Chip
-   /autoapi/ipyvuetify/ChipGroup
-   /autoapi/ipyvuetify/Col
-   /autoapi/ipyvuetify/ColorPicker
-   /autoapi/ipyvuetify/ColorPickerCanvas
-   /autoapi/ipyvuetify/ColorPickerSwatches
-   /autoapi/ipyvuetify/Combobox
-   /autoapi/ipyvuetify/Container
-   /autoapi/ipyvuetify/Content
-   /autoapi/ipyvuetify/Counter
-   /autoapi/ipyvuetify/Data
    /autoapi/ipyvuetify/DataFooter
-   /autoapi/ipyvuetify/DataIterator
-   /autoapi/ipyvuetify/DataTable
    /autoapi/ipyvuetify/DataTableHeader
-   /autoapi/ipyvuetify/DatePicker
-   /autoapi/ipyvuetify/DatePickerDateTable
-   /autoapi/ipyvuetify/DatePickerHeader
-   /autoapi/ipyvuetify/DatePickerMonthTable
-   /autoapi/ipyvuetify/DatePickerTitle
-   /autoapi/ipyvuetify/DatePickerYears
-   /autoapi/ipyvuetify/Dialog
    /autoapi/ipyvuetify/DialogBottomTransition
    /autoapi/ipyvuetify/DialogTransition
    /autoapi/ipyvuetify/Divider
@@ -88,163 +49,67 @@ Classes
    /autoapi/ipyvuetify/ExpandXTransition
    /autoapi/ipyvuetify/ExpansionPanel
    /autoapi/ipyvuetify/ExpansionPanelContent
-   /autoapi/ipyvuetify/ExpansionPanelHeader
-   /autoapi/ipyvuetify/ExpansionPanels
    /autoapi/ipyvuetify/FabTransition
    /autoapi/ipyvuetify/FadeTransition
-   /autoapi/ipyvuetify/FileInput
-   /autoapi/ipyvuetify/Flex
-   /autoapi/ipyvuetify/Footer
    /autoapi/ipyvuetify/Form
-   /autoapi/ipyvuetify/Hover
    /autoapi/ipyvuetify/Html
-   /autoapi/ipyvuetify/Icon
-   /autoapi/ipyvuetify/Img
-   /autoapi/ipyvuetify/Input
    /autoapi/ipyvuetify/Item
-   /autoapi/ipyvuetify/ItemGroup
-   /autoapi/ipyvuetify/Label
-   /autoapi/ipyvuetify/Layout
-   /autoapi/ipyvuetify/Lazy
-   /autoapi/ipyvuetify/List
-   /autoapi/ipyvuetify/ListGroup
-   /autoapi/ipyvuetify/ListItem
    /autoapi/ipyvuetify/ListItemAction
    /autoapi/ipyvuetify/ListItemActionText
-   /autoapi/ipyvuetify/ListItemAvatar
    /autoapi/ipyvuetify/ListItemContent
-   /autoapi/ipyvuetify/ListItemGroup
    /autoapi/ipyvuetify/ListItemIcon
    /autoapi/ipyvuetify/ListItemSubtitle
    /autoapi/ipyvuetify/ListItemTitle
-   /autoapi/ipyvuetify/Menu
    /autoapi/ipyvuetify/MenuTransition
    /autoapi/ipyvuetify/Messages
-   /autoapi/ipyvuetify/NavigationDrawer
-   /autoapi/ipyvuetify/OverflowBtn
-   /autoapi/ipyvuetify/Overlay
-   /autoapi/ipyvuetify/Pagination
-   /autoapi/ipyvuetify/Parallax
-   /autoapi/ipyvuetify/Picker
-   /autoapi/ipyvuetify/ProgressCircular
-   /autoapi/ipyvuetify/ProgressLinear
-   /autoapi/ipyvuetify/Radio
-   /autoapi/ipyvuetify/RadioGroup
-   /autoapi/ipyvuetify/RangeSlider
-   /autoapi/ipyvuetify/Rating
-   /autoapi/ipyvuetify/Responsive
    /autoapi/ipyvuetify/Row
    /autoapi/ipyvuetify/ScaleTransition
    /autoapi/ipyvuetify/ScrollXReverseTransition
    /autoapi/ipyvuetify/ScrollXTransition
    /autoapi/ipyvuetify/ScrollYReverseTransition
    /autoapi/ipyvuetify/ScrollYTransition
-   /autoapi/ipyvuetify/Select
-   /autoapi/ipyvuetify/Sheet
    /autoapi/ipyvuetify/SimpleCheckbox
-   /autoapi/ipyvuetify/SimpleTable
-   /autoapi/ipyvuetify/SkeletonLoader
-   /autoapi/ipyvuetify/SlideGroup
    /autoapi/ipyvuetify/SlideItem
    /autoapi/ipyvuetify/SlideXReverseTransition
    /autoapi/ipyvuetify/SlideXTransition
    /autoapi/ipyvuetify/SlideYReverseTransition
    /autoapi/ipyvuetify/SlideYTransition
-   /autoapi/ipyvuetify/Slider
    /autoapi/ipyvuetify/Snackbar
    /autoapi/ipyvuetify/Spacer
-   /autoapi/ipyvuetify/Sparkline
    /autoapi/ipyvuetify/SpeedDial
    /autoapi/ipyvuetify/Stepper
-   /autoapi/ipyvuetify/StepperContent
    /autoapi/ipyvuetify/StepperHeader
    /autoapi/ipyvuetify/StepperItems
-   /autoapi/ipyvuetify/StepperStep
    /autoapi/ipyvuetify/Subheader
-   /autoapi/ipyvuetify/Switch
-   /autoapi/ipyvuetify/SystemBar
-   /autoapi/ipyvuetify/Tab
-   /autoapi/ipyvuetify/TabItem
    /autoapi/ipyvuetify/TabReverseTransition
    /autoapi/ipyvuetify/TabTransition
    /autoapi/ipyvuetify/TableOverflow
-   /autoapi/ipyvuetify/Tabs
-   /autoapi/ipyvuetify/TabsItems
    /autoapi/ipyvuetify/TabsSlider
-   /autoapi/ipyvuetify/Text
-   /autoapi/ipyvuetify/TextField
-   /autoapi/ipyvuetify/Textarea
    /autoapi/ipyvuetify/ThemeProvider
-   /autoapi/ipyvuetify/TimePicker
    /autoapi/ipyvuetify/TimePickerClock
    /autoapi/ipyvuetify/TimePickerTitle
    /autoapi/ipyvuetify/Timeline
    /autoapi/ipyvuetify/TimelineItem
-   /autoapi/ipyvuetify/Toolbar
    /autoapi/ipyvuetify/ToolbarItems
    /autoapi/ipyvuetify/ToolbarTitle
-   /autoapi/ipyvuetify/Tooltip
    /autoapi/ipyvuetify/Treeview
    /autoapi/ipyvuetify/TreeviewNode
-   /autoapi/ipyvuetify/VirtualTable
    /autoapi/ipyvuetify/VuetifyTemplate
-   /autoapi/ipyvuetify/VuetifyWidget
-   /autoapi/ipyvuetify/Window
-   /autoapi/ipyvuetify/WindowItem
 
 .. autoapisummary::
 
-   ipyvuetify.Alert
    ipyvuetify.App
-   ipyvuetify.AppBar
    ipyvuetify.AppBarNavIcon
-   ipyvuetify.Autocomplete
-   ipyvuetify.Avatar
-   ipyvuetify.Badge
-   ipyvuetify.Banner
-   ipyvuetify.BottomNavigation
-   ipyvuetify.BottomSheet
    ipyvuetify.Breadcrumbs
    ipyvuetify.BreadcrumbsDivider
-   ipyvuetify.BreadcrumbsItem
-   ipyvuetify.Btn
-   ipyvuetify.BtnToggle
-   ipyvuetify.Calendar
-   ipyvuetify.CalendarDaily
-   ipyvuetify.CalendarMonthly
-   ipyvuetify.CalendarWeekly
-   ipyvuetify.Card
    ipyvuetify.CardActions
    ipyvuetify.CardSubtitle
    ipyvuetify.CardText
    ipyvuetify.CardTitle
-   ipyvuetify.Carousel
-   ipyvuetify.CarouselItem
    ipyvuetify.CarouselReverseTransition
    ipyvuetify.CarouselTransition
-   ipyvuetify.Checkbox
-   ipyvuetify.Chip
-   ipyvuetify.ChipGroup
-   ipyvuetify.Col
-   ipyvuetify.ColorPicker
-   ipyvuetify.ColorPickerCanvas
-   ipyvuetify.ColorPickerSwatches
-   ipyvuetify.Combobox
-   ipyvuetify.Container
-   ipyvuetify.Content
-   ipyvuetify.Counter
-   ipyvuetify.Data
    ipyvuetify.DataFooter
-   ipyvuetify.DataIterator
-   ipyvuetify.DataTable
    ipyvuetify.DataTableHeader
-   ipyvuetify.DatePicker
-   ipyvuetify.DatePickerDateTable
-   ipyvuetify.DatePickerHeader
-   ipyvuetify.DatePickerMonthTable
-   ipyvuetify.DatePickerTitle
-   ipyvuetify.DatePickerYears
-   ipyvuetify.Dialog
    ipyvuetify.DialogBottomTransition
    ipyvuetify.DialogTransition
    ipyvuetify.Divider
@@ -253,109 +118,52 @@ Classes
    ipyvuetify.ExpandXTransition
    ipyvuetify.ExpansionPanel
    ipyvuetify.ExpansionPanelContent
-   ipyvuetify.ExpansionPanelHeader
-   ipyvuetify.ExpansionPanels
    ipyvuetify.FabTransition
    ipyvuetify.FadeTransition
-   ipyvuetify.FileInput
-   ipyvuetify.Flex
-   ipyvuetify.Footer
    ipyvuetify.Form
-   ipyvuetify.Hover
    ipyvuetify.Html
-   ipyvuetify.Icon
-   ipyvuetify.Img
-   ipyvuetify.Input
    ipyvuetify.Item
-   ipyvuetify.ItemGroup
-   ipyvuetify.Label
-   ipyvuetify.Layout
-   ipyvuetify.Lazy
-   ipyvuetify.List
-   ipyvuetify.ListGroup
-   ipyvuetify.ListItem
    ipyvuetify.ListItemAction
    ipyvuetify.ListItemActionText
-   ipyvuetify.ListItemAvatar
    ipyvuetify.ListItemContent
-   ipyvuetify.ListItemGroup
    ipyvuetify.ListItemIcon
    ipyvuetify.ListItemSubtitle
    ipyvuetify.ListItemTitle
-   ipyvuetify.Menu
    ipyvuetify.MenuTransition
    ipyvuetify.Messages
-   ipyvuetify.NavigationDrawer
-   ipyvuetify.OverflowBtn
-   ipyvuetify.Overlay
-   ipyvuetify.Pagination
-   ipyvuetify.Parallax
-   ipyvuetify.Picker
-   ipyvuetify.ProgressCircular
-   ipyvuetify.ProgressLinear
-   ipyvuetify.Radio
-   ipyvuetify.RadioGroup
-   ipyvuetify.RangeSlider
-   ipyvuetify.Rating
-   ipyvuetify.Responsive
    ipyvuetify.Row
    ipyvuetify.ScaleTransition
    ipyvuetify.ScrollXReverseTransition
    ipyvuetify.ScrollXTransition
    ipyvuetify.ScrollYReverseTransition
    ipyvuetify.ScrollYTransition
-   ipyvuetify.Select
-   ipyvuetify.Sheet
    ipyvuetify.SimpleCheckbox
-   ipyvuetify.SimpleTable
-   ipyvuetify.SkeletonLoader
-   ipyvuetify.SlideGroup
    ipyvuetify.SlideItem
    ipyvuetify.SlideXReverseTransition
    ipyvuetify.SlideXTransition
    ipyvuetify.SlideYReverseTransition
    ipyvuetify.SlideYTransition
-   ipyvuetify.Slider
    ipyvuetify.Snackbar
    ipyvuetify.Spacer
-   ipyvuetify.Sparkline
    ipyvuetify.SpeedDial
    ipyvuetify.Stepper
-   ipyvuetify.StepperContent
    ipyvuetify.StepperHeader
    ipyvuetify.StepperItems
-   ipyvuetify.StepperStep
    ipyvuetify.Subheader
-   ipyvuetify.Switch
-   ipyvuetify.SystemBar
-   ipyvuetify.Tab
-   ipyvuetify.TabItem
    ipyvuetify.TabReverseTransition
    ipyvuetify.TabTransition
    ipyvuetify.TableOverflow
-   ipyvuetify.Tabs
-   ipyvuetify.TabsItems
    ipyvuetify.TabsSlider
-   ipyvuetify.Text
-   ipyvuetify.TextField
-   ipyvuetify.Textarea
    ipyvuetify.ThemeProvider
-   ipyvuetify.TimePicker
    ipyvuetify.TimePickerClock
    ipyvuetify.TimePickerTitle
    ipyvuetify.Timeline
    ipyvuetify.TimelineItem
-   ipyvuetify.Toolbar
    ipyvuetify.ToolbarItems
    ipyvuetify.ToolbarTitle
-   ipyvuetify.Tooltip
    ipyvuetify.Treeview
    ipyvuetify.TreeviewNode
-   ipyvuetify.VirtualTable
    ipyvuetify.VuetifyTemplate
-   ipyvuetify.VuetifyWidget
-   ipyvuetify.Window
-   ipyvuetify.WindowItem
 
 
 Package Contents

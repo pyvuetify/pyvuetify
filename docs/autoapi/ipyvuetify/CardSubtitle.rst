@@ -1,17 +1,10 @@
 ipyvuetify.CardSubtitle
 =======================
 
-.. py:class:: ipyvuetify.CardSubtitle(**kwargs)
+.. py:class:: ipyvuetify.CardSubtitle
 
    Bases: :py:obj:`ipyvuetify.generated.VuetifyWidget.VuetifyWidget`
 
 
-   Widget that can be inserted into the DOM
-
-   Parameters
-   ----------
-   tooltip: str
-      tooltip caption
-   layout: InstanceDict(Layout)
-      widget layout
+   A subtitle element within a v-card, typically displayed below the card title.
 

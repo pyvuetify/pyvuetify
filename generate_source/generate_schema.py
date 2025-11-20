@@ -141,6 +141,7 @@ def make_properties(data):
 
     schema_type["allowNull"] = True
     schema_type["default"] = None
+    schema_type["doc"] = data.get("doc", "The doc could not be extracted from vuetify API")
 
     return [(schema_name, schema_type)]
 
@@ -158,10 +159,13 @@ def make_widget(data):
     if widget_name in ["Container", "Content", "Flex", "Layout"]:
         properties = chain(properties, spacing_props)
 
-    return (
-        widget_name,
-        {"inherits": ["VuetifyWidget"], "properties": dict(properties)},
-    )
+    widget_data = {
+        "inherits": ["VuetifyWidget"],
+        "doc": attributes.get("doc", "The doc could not be extracted from vuetify API"),
+        "properties": dict(properties),
+    }
+
+    return (widget_name, widget_data)
 
 
 def generate_schema(
