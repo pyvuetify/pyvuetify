@@ -65,3 +65,4 @@ Jupyter widgets based on Vuetify UI components
     :hidden:
 
     start/index
+    component/index

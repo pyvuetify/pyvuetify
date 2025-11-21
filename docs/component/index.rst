@@ -1,0 +1,8 @@
+Component
+=========
+
+.. toctree::
+    :hidden:
+    :glob:
+
+    *
