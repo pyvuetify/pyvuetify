@@ -50,12 +50,6 @@ html_theme_options = {
     "show_prev_next": True,
     "navbar_start": ["navbar-logo"],
     "article_footer_items": ["last-updated"],
-    "secondary_sidebar_items": [
-        "page-toc.html",
-        "searchbox.html",
-        "edit-this-page.html",
-        "sourcelink.html",
-    ],
     "icon_links": [
         {
             "name": "GitHub",
