@@ -21,6 +21,8 @@ release = "1.11.3"
 # -- General configuration ---------------------------------------------------
 
 extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
     "jupyter_sphinx",
     "sphinx_design",
     "autoapi.extension",
@@ -83,6 +85,7 @@ autoapi_options = [
     "show-module-summary",
     "imported-members",
 ]
+autoapi_python_class_content = "both"
 
 
 def skip_submodules(app, what, name, obj, skip, options):
