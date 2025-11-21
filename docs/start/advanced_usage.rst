@@ -117,12 +117,12 @@ the full width:
 
 Which displays on a laptop as:
 
-.. image:: images/responsive-laptop.png
+.. image:: ../images/responsive-laptop.png
     :width: 680
 
 On a phone as:
 
-.. image:: images/responsive-mobile.png
+.. image:: ../images/responsive-mobile.png
     :width: 263
 
 In the `display section <https://v2.vuetifyjs.com/en/styles/display/>`_ you will find CSS helper classes to do more

@@ -145,7 +145,7 @@ Now that your Vue templates are in a file, we can add a file watch to support ho
 
 A demonstration in a screen capture:
 
-.. image:: images/template-hot-reload.gif
+.. image:: ../images/template-hot-reload.gif
     :width: 1000
 
 
