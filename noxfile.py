@@ -30,4 +30,5 @@ def docs_live(session):
     session.install(".[doc]")
     session.install("sphinx-autobuild")
     dst = "docs/_build/html"
-    session.run("sphinx-autobuild", "-v", "-b", build, "docs", dst)
+    ignore = "docs/autoapi/.*"
+    session.run("sphinx-autobuild", "-v", "--re-ignore", ignore, "-b", build, "docs", dst)
