@@ -25,6 +25,7 @@ extensions = [
     "sphinx_design",
     "autoapi.extension",
     "sphinx_copybutton",
+    "sphinx_last_updated_by_git",
     "_extension.api_admonition",
     "_extension.aknowledgement",
 ]
@@ -35,6 +36,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "pydata_sphinx_theme"
 html_static_path = ["_static"]
+html_last_updated_fmt = None
 html_css_files = [
     "custom.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
@@ -47,6 +49,7 @@ html_theme_options = {
     "use_edit_page_button": True,
     "show_prev_next": True,
     "navbar_start": ["navbar-logo"],
+    "article_footer_items": ["last-updated"],
     "secondary_sidebar_items": [
         "page-toc.html",
         "searchbox.html",

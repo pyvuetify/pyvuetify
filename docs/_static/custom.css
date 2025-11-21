@@ -55,3 +55,25 @@ div.admonition.admonition-api > .admonition-title::after {
   font-weight: 700;
   font-style: normal;
 }
+
+/*******************************************************************************
+* custom article footer rendering
+*/
+footer.bd-footer-article {
+  background-color: transparent;
+  border-top: 1px solid var(--pst-color-border);
+  margin-top: 2em;
+}
+
+.bd-footer-article .footer-article-items {
+  flex-direction: row;
+}
+
+.bd-footer-article .footer-article-items .footer-article-item {
+  flex-grow: 1;
+}
+
+.bd-footer-article .last-updated {
+  color: var(--pst-color-text-muted);
+  text-align: right;
+}
