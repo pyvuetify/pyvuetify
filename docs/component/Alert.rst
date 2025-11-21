@@ -2,9 +2,14 @@ Alert
 =====
 
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/alerts/>`_. All examples have been converted to ipyvuetify syntax.
+    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/alerts/>`_.
+    All examples have been converted to ipyvuetify syntax.
 
-The :py:class:`Alert <ipyvuetify.Alert>` component is used to convey important information to the user through the use of contextual types, icons, and colors. These default types come in 4 variations: success, info, warning, and error. Default icons are assigned which help represent different actions each type portrays. Many parts of an alert such as ``border``, ``icon``, and ``color`` can also be customized to fit almost any situation.
+The :py:class:`Alert <ipyvuetify.Alert>` component is used to convey important information to the user
+through the use of contextual types, icons, and colors. These default types come in 4 variations:
+``success``, ``info``, ``warning``, and ``error``. Default icons are assigned which help represent
+different actions each type portrays. Many parts of an alert such as ``border``, ``icon``, and ``color``
+can also be customized to fit almost any situation.
 
 .. api::
 
@@ -29,7 +34,8 @@ Alerts in their simplest form are flat sheets of paper that display a message.
 Border
 ------
 
-The ``border`` prop adds a simple border to one of the 4 sides of the alert. This can be combined with props like ``color``, ``dark``, and ``type`` to provide unique accents to the alert.
+The ``border`` prop adds a simple border to one of the 4 sides of the alert. This can be combined with
+props like ``color``, ``dark``, and ``type`` to provide unique accents to the alert.
 
 .. tab-set::
 
@@ -140,7 +146,9 @@ The ``border`` prop adds a simple border to one of the 4 sides of the alert. Thi
 Colored Border
 --------------
 
-The ``colored-border`` prop removes the alert background in order to accent the ``border`` prop. If a ``type`` is set, it will use the type's default color. If no color or type is set, the color will default to the inverted color of the applied theme (black for light and white/gray for dark).
+The ``colored-border`` prop removes the alert background in order to accent the ``border`` prop.
+If a ``type`` is set, it will use the type's default color. If no color or type is set, the color
+will default to the inverted color of the applied theme (black for light and white/gray for dark).
 
 .. tab-set::
 
@@ -157,28 +165,46 @@ The ``colored-border`` prop removes the alert background in order to accent the 
                     colored_border=True,
                     color="deep-purple accent-4",
                     elevation=2,
-                    children=["Aliquam eu nunc. Fusce commodo aliquam arcu. In consectetuer turpis ut velit. Nulla facilisi. Morbi mollis tellus ac sapien."]
+                    children=[
+                        "Aliquam eu nunc. Fusce commodo aliquam arcu. In consectetuer turpis ut velit. "
+                        "Nulla facilisi.. Morbi mollis tellus ac sapien. Fusce vel dui. Praesent ut ligula "
+                        "non mi varius sagittis. Vivamus consectetuer hendrerit lacus. Suspendisse enim "
+                        "turpis, dictum sed, iaculis a, condimentum nec, nisi."
+                    ]
                 ),
                 v.Alert(
                     border="top",
                     colored_border=True,
                     type="info",
                     elevation=2,
-                    children=["Vestibulum ullamcorper mauris at ligula. Nam pretium turpis et arcu. Ut varius tincidunt libero."]
+                    children=[
+                        "Vestibulum ullamcorper mauris at ligula. Nam pretium turpis et arcu. Ut varius "
+                        "tincidunt libero. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere "
+                        "imperdiet, leo. Morbi nec metus."
+                    ]
                 ),
                 v.Alert(
                     border="bottom",
                     colored_border=True,
                     type="warning",
                     elevation=2,
-                    children=["Sed in libero ut nibh placerat accumsan. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi."]
+                    children=[
+                        "Sed in libero ut nibh placerat accumsan. Phasellus leo dolor, tempus non, auctor "
+                        "et, hendrerit quis, nisi. Phasellus leo dolor, tempus non, auctor et, hendrerit "
+                        "quis, nisi. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, "
+                        "quis gravida magna mi a libero. Donec elit libero, sodales nec, volutpat a, "
+                        "suscipit non, turpis."
+                    ]
                 ),
                 v.Alert(
                     border="right",
                     colored_border=True,
                     type="error",
                     elevation=2,
-                    children=["Fusce commodo aliquam arcu. Pellentesque posuere. Phasellus tempus."]
+                    children=[
+                        "Fusce commodo aliquam arcu. Pellentesque posuere. Phasellus tempus. Donec "
+                        "posuere vulputate arcu."
+                    ]
                 ),
             ])
 
@@ -194,28 +220,28 @@ The ``colored-border`` prop removes the alert background in order to accent the 
                     colored_border=True,
                     color="deep-purple accent-4",
                     elevation=2,
-                    children=["Aliquam eu nunc. Fusce commodo aliquam arcu. In consectetuer turpis ut velit. Nulla facilisi. Morbi mollis tellus ac sapien."]
+                    children=["Aliquam eu nunc..."]
                 ),
                 v.Alert(
                     border="top",
                     colored_border=True,
                     type="info",
                     elevation=2,
-                    children=["Vestibulum ullamcorper mauris at ligula. Nam pretium turpis et arcu. Ut varius tincidunt libero."]
+                    children=["Vestibulum ullamcorper mauris at ligula..."]
                 ),
                 v.Alert(
                     border="bottom",
                     colored_border=True,
                     type="warning",
                     elevation=2,
-                    children=["Sed in libero ut nibh placerat accumsan. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi."]
+                    children=["Sed in libero ut nibh placerat accumsan. Phasellus leo dolor..."]
                 ),
                 v.Alert(
                     border="right",
                     colored_border=True,
                     type="error",
                     elevation=2,
-                    children=["Fusce commodo aliquam arcu. Pellentesque posuere. Phasellus tempus."]
+                    children=["Fusce commodo aliquam arcu. Pellentesque posuere..."]
                 ),
             ])
 
@@ -263,7 +289,9 @@ The ``colored-border`` prop removes the alert background in order to accent the 
 Dense
 -----
 
-The ``dense`` prop decreases the height of the alert to create a simple and compact style. When combined with the ``border`` prop, the border thickness will be decreased to stay consistent with the style.
+The ``dense`` prop decreases the height of the alert to create a simple and compact style.
+When combined with the ``border`` prop, the border thickness will be decreased to stay consistent
+with the style.
 
 .. tab-set::
 
@@ -356,7 +384,11 @@ The ``dense`` prop decreases the height of the alert to create a simple and comp
 Dismissible
 -----------
 
-The ``dismissible`` prop adds a close button to the end of the alert component. Clicking this button will set its value to false and effectively hide the alert. You can restore the alert by binding ``v_model`` and setting it to true. The close icon automatically has an ``aria-label`` applied that can be changed by modifying the ``close_label`` prop or changing close value in your locale.
+The ``dismissible`` prop adds a close button to the end of the alert component. Clicking this
+button will set its value to false and effectively hide the alert. You can restore the alert by
+binding ``v_model`` and setting it to true. The close icon automatically has an ``aria-label``
+applied that can be changed by modifying the ``close_label`` prop or changing close value in your
+locale.
 
 .. tab-set::
 
@@ -374,7 +406,14 @@ The ``dismissible`` prop adds a close button to the end of the alert component. 
                 color="deep-purple accent-4",
                 dark=True,
                 dismissible=True,
-                children=["Aenean imperdiet. Quisque id odio. Cras dapibus. Pellentesque ut neque. Vivamus consectetuer hendrerit lacus. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero."]
+                children=[
+                    "Aenean imperdiet. Quisque id odio. Cras dapibus. Pellentesque ut neque. Cras "
+                    "dapibus. Vivamus consectetuer hendrerit lacus. Sed mollis, eros et ultrices "
+                    "tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Sed "
+                    "mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing "
+                    "dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, "
+                    "tincidunt non, euismod vitae, posuere imperdiet, leo."
+                ]
             )
 
             v.Container(children=[alert])
@@ -419,7 +458,9 @@ The ``dismissible`` prop adds a close button to the end of the alert component. 
 Icon
 ----
 
-The ``icon`` prop allows you to add an icon to the beginning of the alert component. If a ``type`` is provided, this will override the default type icon. Additionally, setting the ``icon`` prop to false will remove the icon altogether.
+The ``icon`` prop allows you to add an icon to the beginning of the alert component. If a ``type`` is
+provided, this will override the default type icon. Additionally, setting the ``icon`` prop to false
+will remove the icon altogether.
 
 .. tab-set::
 
@@ -436,14 +477,21 @@ The ``icon`` prop allows you to add an icon to the beginning of the alert compon
                     dark=True,
                     icon="mdi-firework",
                     dense=True,
-                    children=["Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi."]
+                    children=[
+                        "Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. "
+                        "Vivamus quis mi. Quisque ut nisi. Maecenas malesuada."
+                    ]
                 ),
                 v.Alert(
                     color="#C51162",
                     dark=True,
                     icon="mdi-material-design",
                     border="right",
-                    children=["Phasellus blandit leo ut odio. Morbi mattis ullamcorper velit."]
+                    children=[
+                        "Phasellus blandit leo ut odio. Morbi mattis ullamcorper velit. Donec orci "
+                        "lectus, aliquam ut, faucibus non, euismod id, nulla. In ut quam vitae odio "
+                        "lacinia tincidunt."
+                    ]
                 ),
                 v.Alert(
                     color="primary",
@@ -451,7 +499,12 @@ The ``icon`` prop allows you to add an icon to the beginning of the alert compon
                     icon="mdi-vuetify",
                     border="left",
                     prominent=True,
-                    children=["Praesent congue erat at massa. Nullam vel sem."]
+                    children=[
+                        "Praesent congue erat at massa. Nullam vel sem. Aliquam lorem ante, dapibus "
+                        "in, viverra quis, feugiat a, tellus. Proin viverra, ligula sit amet ultrices "
+                        "semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. "
+                        "Curabitur at lacus ac velit ornare lobortis."
+                    ]
                 ),
             ])
 
@@ -514,7 +567,8 @@ The ``icon`` prop allows you to add an icon to the beginning of the alert compon
 Outlined
 --------
 
-The ``outlined`` prop inverts the style of an alert, inheriting the currently applied color, applying it to the text and border, and making its background transparent.
+The ``outlined`` prop inverts the style of an alert, inheriting the currently applied color, applying
+it to the text and border, and making its background transparent.
 
 .. tab-set::
 
@@ -529,20 +583,38 @@ The ``outlined`` prop inverts the style of an alert, inheriting the currently ap
                 v.Alert(
                     outlined=True,
                     color="purple",
-                    children=[v.Html(tag="div", class_="text-h6", children=["Lorem Ipsum"]), "Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi."]
+                    children=[
+                        v.Html(tag="h5", class_="mt-1", children=["Lorem Ipsum"]),
+                        (
+                            "Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, "
+                            "condimentum viverra felis nunc et lorem. Duis vel nibh at velit scelerisque "
+                            "suscipit. Praesent blandit laoreet nibh. Aenean posuere, tortor sed cursus "
+                            "feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. "
+                            "Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, "
+                            "quis venenatis ante odio sit amet eros."
+                        )
+                    ]
                 ),
                 v.Alert(
                     outlined=True,
                     type="success",
                     text=True,
-                    children=["Praesent venenatis metus at tortor pulvinar varius."]
+                    children=[
+                        "Praesent venenatis metus at tortor pulvinar varius. Aenean commodo ligula eget "
+                        "dolor. Praesent ac massa at ligula laoreet iaculis. Vestibulum ullamcorper mauris "
+                        "at ligula."
+                    ]
                 ),
                 v.Alert(
                     outlined=True,
                     type="warning",
                     prominent=True,
                     border="left",
-                    children=["Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum."]
+                    children=[
+                        "Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. "
+                        "Suspendisse non nisl sit amet velit hendrerit rutrum. Nullam vel sem. "
+                        "Pellentesque dapibus hendrerit tortor."
+                    ]
                 ),
             ])
 
@@ -556,7 +628,10 @@ The ``outlined`` prop inverts the style of an alert, inheriting the currently ap
                 v.Alert(
                     outlined=True,
                     color="purple",
-                    children=[v.Html(tag="div", class_="text-h6", children=["Lorem Ipsum"]), "Maecenas ullamcorper..."]
+                    children=[
+                        v.Html(tag="h5", class_="mt-1", children=["Lorem Ipsum"]),
+                        "Maecenas ullamcorper..."
+                    ]
                 ),
                 v.Alert(
                     outlined=True,
@@ -580,7 +655,7 @@ The ``outlined`` prop inverts the style of an alert, inheriting the currently ap
             <template>
                 <div>
                     <v-alert outlined color="purple">
-                        <div class="text-h6">Lorem Ipsum</div>
+                        <h5 class="mt-1">Lorem Ipsum</h5>
                         <div>Maecenas ullamcorper...</div>
                     </v-alert>
                     <v-alert outlined type="success" text>
@@ -592,7 +667,9 @@ The ``outlined`` prop inverts the style of an alert, inheriting the currently ap
 Prominent
 ---------
 
-The ``prominent`` prop provides a more pronounced alert by increasing the height and applying a halo to the icon. When applying both ``prominent`` and ``dense`` together, the alert will take on the appearance of a normal alert but with the prominent icon effects.
+The ``prominent`` prop provides a more pronounced alert by increasing the height and applying a halo
+to the icon. When applying both ``prominent`` and ``dense`` together, the alert will take on the
+appearance of a normal alert but with the prominent icon effects.
 
 .. tab-set::
 
@@ -608,7 +685,10 @@ The ``prominent`` prop provides a more pronounced alert by increasing the height
                     prominent=True,
                     type="error",
                     children=[v.Row(align="center", children=[
-                        v.Col(class_="grow", children=["Nunc nonummy metus. Nunc interdum lacus sit amet orci."]),
+                        v.Col(class_="grow", children=[
+                            "Nunc nonummy metus. Nunc interdum lacus sit amet orci. Nullam dictum felis "
+                            "eu pede mollis pretium. Cras id dui."
+                        ]),
                         v.Col(class_="shrink", children=[v.Btn(children=["Take action"])])
                     ])]
                 ),
@@ -676,7 +756,9 @@ The ``prominent`` prop provides a more pronounced alert by increasing the height
 Text
 ----
 
-The ``text`` prop is a simple alert variant that applies a reduced opacity background of the provided color. Similar to other styled props, ``text`` can be combined with other props like ``dense``, ``prominent``, ``outlined``, and ``shaped`` to create a unique and customized component.
+The ``text`` prop is a simple alert variant that applies a reduced opacity background of the provided
+color. Similar to other styled props, ``text`` can be combined with other props like ``dense``,
+``prominent``, ``outlined``, and ``shaped`` to create a unique and customized component.
 
 .. tab-set::
 
@@ -690,10 +772,42 @@ The ``text`` prop is a simple alert variant that applies a reduced opacity backg
             v.Container(children=[
                 v.Alert(
                     text=True,
+                    color="info",
+                    children=[
+                        v.Html(tag="h5", class_="mt-1", children=["Lorem Ipsum"]),
+                        v.Html(tag="div", children=[
+                            "Maecenas nec odio et ante tincidunt tempus. Sed mollis, eros et ultrices "
+                            "tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. "
+                            "Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique "
+                            "sapien, a accumsan nisi mauris ac eros. Curabitur turpis."
+                        ]),
+                        v.Divider(class_="my-4 info", style_="opacity: 0.22"),
+                        v.Row(
+                            align="center",
+                            no_gutters=True,
+                            children=[
+                                v.Col(class_="grow", children=[
+                                    "Proin magna. Vivamus in erat ut urna cursus vestibulum. Etiam "
+                                    "imperdiet imperdiet orci."
+                                ]),
+                                v.Spacer(),
+                                v.Col(class_="shrink", children=[
+                                    v.Btn(color="info", outlined=True, children=["Okay"])
+                                ])
+                            ]
+                        )
+                    ]
+                ),
+                v.Alert(
+                    text=True,
                     outlined=True,
                     color="deep-orange",
                     icon="mdi-fire",
-                    children=["Nullam tincidunt adipiscing enim. In consectetuer turpis ut velit."]
+                    children=[
+                        "Nullam tincidunt adipiscing enim. In consectetuer turpis ut velit. "
+                        "Maecenas egestas arcu quis ligula mattis placerat. Praesent metus tellus, "
+                        "elementum eu, semper a, adipiscing nec, purus."
+                    ]
                 ),
                 v.Alert(
                     text=True,
@@ -701,16 +815,24 @@ The ``text`` prop is a simple alert variant that applies a reduced opacity backg
                     color="teal",
                     icon="mdi-clock-fast",
                     border="left",
-                    children=["Vestibulum ullamcorper mauris at ligula. Nulla porta dolor."]
+                    children=[
+                        "Vestibulum ullamcorper mauris at ligula. Nulla porta dolor. Vestibulum facilisis, "
+                        "purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna "
+                        "in dolor. Curabitur at lacus ac velit ornare lobortis."
+                    ]
                 ),
                 v.Alert(
                     text=True,
                     prominent=True,
                     type="error",
                     icon="mdi-cloud-alert",
-                    children=["Praesent blandit laoreet nibh. Praesent nonummy mi in odio."]
-                ),
+                    children=[
+                        "Praesent blandit laoreet nibh. Praesent nonummy mi in odio. Phasellus tempus. "
+                        "Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Duis leo."
+                    ]
+                )
             ])
+
 
     .. tab-item:: :fab:`python` Python
 
@@ -721,10 +843,30 @@ The ``text`` prop is a simple alert variant that applies a reduced opacity backg
             v.Container(children=[
                 v.Alert(
                     text=True,
+                    color="info",
+                    children=[
+                        v.Html(tag="h5", class_="mt-1", children=["Lorem Ipsum"]),
+                        v.Html(tag="div", children=["Maecenas nec odio et ante..."]),
+                        v.Divider(class_="my-4 info", style_="opacity: 0.22"),
+                        v.Row(
+                            align="center",
+                            no_gutters=True,
+                            children=[
+                                v.Col(class_="grow", children=["Proin magna..."]),
+                                v.Spacer(),
+                                v.Col(class_="shrink", children=[
+                                    v.Btn(color="info", outlined=True, children=["Okay"])
+                                ])
+                            ]
+                        )
+                    ]
+                ),
+                v.Alert(
+                    text=True,
                     outlined=True,
                     color="deep-orange",
                     icon="mdi-fire",
-                    children=["Nullam tincidunt adipiscing enim..."]
+                    children=["Nullam tincidunt adipiscing enim...."]
                 ),
                 v.Alert(
                     text=True,
@@ -732,86 +874,15 @@ The ``text`` prop is a simple alert variant that applies a reduced opacity backg
                     color="teal",
                     icon="mdi-clock-fast",
                     border="left",
-                    children=["Vestibulum ullamcorper mauris..."]
-                ),
-            ])
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-alert text outlined color="deep-orange" icon="mdi-fire">
-                        Nullam tincidunt adipiscing enim...
-                    </v-alert>
-                    <v-alert text dense color="teal" icon="mdi-clock-fast" border="left">
-                        Vestibulum ullamcorper mauris...
-                    </v-alert>
-                </div>
-            </template>
-
-Shaped
-------
-
-The ``shaped`` prop will add border-radius at the top-left and bottom-right of the alert. Similar to other styled props, ``shaped`` can be combined with other props like ``dense``, ``prominent``, ``outlined`` and ``text`` to create a unique and customized component.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute::
-            :hide-code:
-
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    shaped=True,
-                    dark=True,
-                    color="info",
-                    children=["I'm a shaped alert with a border-radius at top-left, bottom-right"]
+                    children=["Vestibulum ullamcorper mauris at ligula..."]
                 ),
                 v.Alert(
-                    shaped=True,
-                    outlined=True,
-                    type="success",
-                    children=["I'm a shaped alert with a outline option"]
-                ),
-                v.Alert(
-                    shaped=True,
-                    dense=True,
-                    dark=True,
-                    type="warning",
-                    children=["I'm a shaped alert with a dense option"]
-                ),
-                v.Alert(
-                    shaped=True,
+                    text=True,
                     prominent=True,
                     type="error",
-                    children=["I'm a shaped alert with a prominent option"]
-                ),
-            ])
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    shaped=True,
-                    dark=True,
-                    color="info",
-                    children=["I'm a shaped alert with a border-radius at top-left, bottom-right"]
-                ),
-                v.Alert(
-                    shaped=True,
-                    outlined=True,
-                    type="success",
-                    children=["I'm a shaped alert with a outline option"]
-                ),
+                    icon="mdi-cloud-alert",
+                    children=["Praesent blandit laoreet nibh..."]
+                )
             ])
 
     .. tab-item:: :fab:`vuejs` Vue template
@@ -820,11 +891,64 @@ The ``shaped`` prop will add border-radius at the top-left and bottom-right of t
 
             <template>
                 <div>
-                    <v-alert shaped dark color="info">
-                        I'm a shaped alert with a border-radius at top-left, bottom-right
+                    <v-alert
+                        text
+                        color="info"
+                    >
+                        <h5 class="mt-1">
+                            Lorem Ipsum
+                        </h5>
+                        <div>
+                            Maecenas nec odio et ante tincidunt tempus...
+                        </div>
+
+                        <v-divider
+                            class="my-4 info"
+                            style="opacity: 0.22"
+                        ></v-divider>
+
+                        <v-row
+                            align="center"
+                            no-gutters
+                        >
+                            <v-col class="grow">
+                                Proin magna...
+                            </v-col>
+                            <v-spacer></v-spacer>
+                            <v-col class="shrink">
+                                <v-btn
+                                    color="info"
+                                    outlined
+                                >
+                                    Okay
+                                </v-btn>
+                            </v-col>
+                        </v-row>
                     </v-alert>
-                    <v-alert shaped outlined type="success">
-                        I'm a shaped alert with a outline option
+                    <v-alert
+                        text
+                        outlined
+                        color="deep-orange"
+                        icon="mdi-fire"
+                    >
+                        Nullam tincidunt adipiscing enim...
+                    </v-alert>
+                    <v-alert
+                        text
+                        dense
+                        color="teal"
+                        icon="mdi-clock-fast"
+                        border="left"
+                    >
+                        Vestibulum ullamcorper mauris at ligula...
+                    </v-alert>
+                    <v-alert
+                        text
+                        prominent
+                        type="error"
+                        icon="mdi-cloud-alert"
+                    >
+                        Praesent blandit laoreet nibh...
                     </v-alert>
                 </div>
             </template>
@@ -832,7 +956,8 @@ The ``shaped`` prop will add border-radius at the top-left and bottom-right of t
 Transition
 ----------
 
-The ``transition`` prop allows you to apply a transition to the alert which is viewable when the component hides and shows.
+The ``transition`` prop allows you to apply a transition to the alert which is viewable when the
+component hides and shows.
 
 .. tab-set::
 
@@ -850,23 +975,19 @@ The ``transition`` prop allows you to apply a transition to the alert which is v
                 border="top",
                 icon="mdi-home",
                 transition="scale-transition",
-                children=["Phasellus tempus. Fusce ac felis sit amet ligula pharetra condimentum."]
+                children=[
+                    "Phasellus tempus. Fusce ac felis sit amet ligula pharetra condimentum. In dui magna, "
+                    "posuere eget, vestibulum et, tempor auctor, justo. Pellentesque posuere. Curabitur "
+                    "ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Phasellus nec "
+                    "sem in justo pellentesque facilisis. Phasellus magna. Cras risus ipsum, faucibus ut, "
+                    "ullamcorper id, varius ac, leo. In hac habitasse platea dictumst. Praesent turpis."
+                ]
             )
 
-            btn = v.Btn(
-                color="primary",
-                children=["Toggle"]
-            )
+            btn = v.Btn(color="primary", children=["Toggle"])
+            btn.on_event("click", lambda w, e, d: setattr(alert, 'value', not alert.value))
 
-            def toggle_alert(widget, event, data):
-                alert.value = not alert.value
-
-            btn.on_event("click", toggle_alert)
-
-            v.Container(children=[
-                v.Html(tag="div", class_="text-center mb-4", children=[btn]),
-                alert
-            ])
+            v.Container(children=[btn, alert])
 
     .. tab-item:: :fab:`python` Python
 
@@ -914,7 +1035,9 @@ The ``transition`` prop allows you to apply a transition to the alert which is v
 Type
 ----
 
-The ``type`` prop provides 4 default ``v-alert`` styles: success, info, warning, and error. Each of these styles provides a default icon and color. The default colors can be configured globally by customizing Vuetify's theme.
+The ``type`` prop provides 4 default :py:class:`Alert <ipyvuetify.Alert>` styles: success, info, warning, and error. Each of
+these styles provides a default icon and color. The default colors can be configured globally by
+customizing Vuetify's theme.
 
 .. tab-set::
 
@@ -961,7 +1084,8 @@ The ``type`` prop provides 4 default ``v-alert`` styles: success, info, warning,
 Twitter Example
 ---------------
 
-By combining ``color``, ``dismissible``, ``border``, ``elevation``, ``icon``, and ``colored_border`` props, you can create stylish custom alerts such as this Twitter notification.
+By combining ``color``, ``dismissible``, ``border``, ``elevation``, ``icon``, and ``colored_border``
+props, you can create stylish custom alerts such as this Twitter notification.
 
 .. tab-set::
 
@@ -1021,4 +1145,8 @@ By combining ``color``, ``dismissible``, ``border``, ``elevation``, ``icon``, an
 Accessibility
 -------------
 
-By default, :py:class:`Alert <ipyvuetify.Alert>` components are assigned the WAI-ARIA role of alert which denotes that the alert "is a live region with important and usually time-sensitive information." When using the ``dismissible`` prop, the close icon will receive a corresponding ``aria-label``. This value can be modified by changing either the ``close-label`` prop or globally through customizing the Internationalization's default value for the close property.
+By default, :py:class:`Alert <ipyvuetify.Alert>` components are assigned the WAI-ARIA role of alert
+which denotes that the alert "is a live region with important and usually time-sensitive information."
+When using the ``dismissible`` prop, the close icon will receive a corresponding ``aria-label``.
+This value can be modified by changing either the ``close-label`` prop or globally through customizing
+the Internationalization's default value for the close property.
