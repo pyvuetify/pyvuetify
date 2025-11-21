@@ -43,6 +43,7 @@ html_css_files = [
 # -- Theme configuration -----------------------------------------------------
 
 html_theme_options = {
+    "logo": {"text": "IPYVUETIFY"},
     "use_edit_page_button": True,
     "show_prev_next": True,
     "navbar_start": ["navbar-logo"],
@@ -64,9 +65,6 @@ html_theme_options = {
             "icon": "fa-brands fa-python",
         },
     ],
-    "logo": {
-        "text": "ipyvuetify",
-    },
 }
 html_context = {
     "github_user": "widgetti",

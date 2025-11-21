@@ -45,3 +45,13 @@ html[data-theme="dark"] {
 div.admonition.admonition-api > .admonition-title::after {
   content: "\f121"; /* the fa-code icon */
 }
+
+/*******************************************************************************
+* Customize the font used by the title to make it look like the original lib
+*/
+.title.logo__title {
+  font-family: "Exo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}

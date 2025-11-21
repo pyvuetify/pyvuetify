@@ -1,6 +1,7 @@
 Alert
 =====
 
+
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/alerts/>`_.
     All examples have been converted to ipyvuetify syntax.
