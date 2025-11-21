@@ -64,8 +64,4 @@ Jupyter widgets based on Vuetify UI components
 .. toctree::
     :hidden:
 
-    introduction
-    installation
-    usage
-    advanced_usage
-    template_usage
+    start/index

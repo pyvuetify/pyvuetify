@@ -103,26 +103,26 @@ This can be the same in ipyvuetify.
 
 for non-vuetify related attributes, the ones from the HTML tag, can be accessed through the :code:`attributes` trait.
 
-Vuetify: 
+Vuetify:
 
-.. code-block:: html 
+.. code-block:: html
 
     <v-btn class="ma-2" outlined href="file.pdf" download>
         Download PDF
     </v-btn>
-    
+
 ipyvuetify:
 
 .. jupyter-execute::
 
     v.Btn(
-        class_="ma-2", 
-        outlined=True, 
-        href="file.pdf", 
-        attributes={"download": True}, 
+        class_="ma-2",
+        outlined=True,
+        href="file.pdf",
+        attributes={"download": True},
         children=["Download PDF"]
     )
-    
+
 
 Reading the value
 -----------------
@@ -262,7 +262,7 @@ of attributes you will find a tab for the events.
 In Vuetify events are defined as attributes with an :code:`@` prefix. The equivalent Vuetify syntax of the example above
 is:
 
-.. code-block:: html
+.. code-block:: vue
 
     <v-container>
         <v-btn color="primary" @click="on_click">
@@ -292,7 +292,7 @@ ipyvuetify
 
     v.Container(children=[
         v.Html(
-            tag='h1', 
+            tag='h1',
             attributes={'title': 'a title'},
             children=['My heading']
         )
@@ -337,56 +337,56 @@ And colors:
     v.Container(children=[
         v.Btn(class_=f'mx-2 indigo lighten-{i+1}', children=[f'Button {i}']) for i in range(3)
     ])
-    
+
 ClassList attribute
 ^^^^^^^^^^^^^^^^^^^
 
 The :code:`class` attribute of a Vuetify DOM elements give access to the built-in styles of the lib. See the `vuetify site <https://v2.vuetifyjs.com/en/styles/colors/>`__ to know more about available styling class. As mentioned in the previous section this can be set using the :code:`class_` member of the widget. In addition, ipyvuetify provides a :code:`class_list` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods:
 
 -   :code:`add(*args)`: add class elements to the class\_ trait of the widget
-    
+
     .. jupyter-execute::
-    
+
         w = v.Btn(children=["click"])
         w.class_list.add("red", "white--text")
         w
 
 -   :code:`remove(*args)`: remove class elements from the class\_ trait of the widget
-    
+
     .. jupyter-execute::
-    
+
         w = v.Btn(children=["click"], class_="red white--text")
         w.class_list.remove("white--text")
         w
-        
+
 -   :code:`replace(src, dst)`: replace class elements in the class\_ trait of the widget
-    
+
     .. jupyter-execute::
-    
+
         w = v.Btn(children=["click"], class_="red white--text")
         w.class_list.replace("red", "orange")
         w
-        
+
 -   :code:`toggle(arg)`: toggle class elements from the class\_ trait of the widget
-    
+
     .. jupyter-execute::
-    
+
         w = v.Btn(children=["click"], class_="red white--text")
         w.class_list.toggle("blue", "red")
         w
-        
+
 Visibility
 ^^^^^^^^^^
 
 ipyvuetify widgets visibility can be changed using the built-in methods :code:`hide()` and :code:`show()`.
-Using :code:`hide` will add the :code:`d-none` class to the widget and :code:`show` will remove it, hiding and showing the widget to the end user without removing it from the notebook. 
+Using :code:`hide` will add the :code:`d-none` class to the widget and :code:`show` will remove it, hiding and showing the widget to the end user without removing it from the notebook.
 
 .. jupyter-execute::
 
     w = v.Icon(children=['mdi-eye-off'])
     w.hide()
     w
-    
+
 .. jupyter-execute::
 
     w = v.Icon(children=['mdi-eye'], class_="d-none")

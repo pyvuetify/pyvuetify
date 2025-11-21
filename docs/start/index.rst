@@ -1,5 +1,14 @@
-Introduction
-============
+Getting Started
+===============
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    installation
+    usage
+    advanced_usage
+    template_usage
 
 Ipyvuetify is a widget library for making modern looking GUI's in Jupyter notebooks (classic and lab) and dashboards
 (`Voilà <https://voila.readthedocs.io/en/stable/using.html>`_). It's based on the `Google material design philosophy
