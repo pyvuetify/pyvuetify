@@ -25,12 +25,12 @@ the Vue template syntax. Lets start with a basic example:
             </template>
             '''
     fruits = FruitSelector()
-    fruits
+    v.Container(children=[fruits])
 
 The general pattern is to:
-    * Inherit from ``VuetifyTemplate``
-    * Define traits which will be available as ``data`` in your Vue template.
-    * Return a Vue template string as default value for the ``template`` trait.
+-   Inherit from ``VuetifyTemplate``
+-   Define traits which will be available as ``data`` in your Vue template.
+-   Return a Vue template string as default value for the ``template`` trait.
 
 Advanced template
 -----------------
@@ -73,14 +73,15 @@ available using the normal wrapped Vuetify widgets:
 
             '''
     fruits = FruitSelector(fruits=['Banana', 'Pear', 'Apple'])
-    fruits
+    v.Container(children=[fruits])
 
 In this example we make use of the `list rendering feature of Vue
 <https://vuejs.org/v2/guide/list.html/>`_ so that we only have to synchronize a
 list of strings, and not create a widget for every fruit we want to display.
 
 .. note::
-    By giving the ``<style>`` tag an id attribute, we can remove the old css when the notebook cell gets executed multiple times, this is useful when developing in the Jupyter notebook.
+    By giving the ``<style>`` tag an id attribute, we can remove the old css when the notebook cell
+    gets executed multiple times, this is useful when developing in the Jupyter notebook.
 
 Template in vue files
 ---------------------
@@ -90,46 +91,45 @@ cumbersome, since you lose syntax highlighting and other advanced editor
 features. Instead, we can put out Vue template into a ``.vue`` file, and point
 our VuetifyTemplate to it.
 
+.. tab-set::
+
+    .. tab-item:: :fab:`python` Python code
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+            import traitlets
+            import random
 
 
-Vuetify template ``fruit-selector.vue``:
-
-.. literalinclude:: fruit-selector.vue
-    :language: vue
+            other_fruits = ['Pineapple', 'Kiwi', 'Cherry']
 
 
-Python:
+            class FruitSelector(v.VuetifyTemplate):
+                template_file = 'fruit-selector.vue'
 
-.. code-block:: python
+                fruits = traitlets.List(traitlets.Unicode(), default_value=['Apple', 'Pear']).tag(sync=True)
+                selected = traitlets.Unicode(default_value=None, allow_none=True).tag(sync=True)
+                can_add_from_python = traitlets.Bool(default_value=True).tag(sync=True)
 
-    import ipyvuetify as v
-    import traitlets
-    import random
+                def vue_add_fruit_python(self, data=None):
+                    if other_fruits:
+                        fruit = other_fruits.pop()
+                        self.fruits = self.fruits + [fruit]
+                    if not other_fruits:
+                        self.can_add_from_python = False
 
+    .. tab-item:: :fab:`vuejs` Vuetify template called
 
-    other_fruits = ['Pineapple', 'Kiwi', 'Cherry']
-
-
-    class FruitSelector(v.VuetifyTemplate):
-        template_file = 'fruit-selector.vue'
-
-        fruits = traitlets.List(traitlets.Unicode(), default_value=['Apple', 'Pear']).tag(sync=True)
-        selected = traitlets.Unicode(default_value=None, allow_none=True).tag(sync=True)
-        can_add_from_python = traitlets.Bool(default_value=True).tag(sync=True)
-
-        def vue_add_fruit_python(self, data=None):
-            if other_fruits:
-                fruit = other_fruits.pop()
-                self.fruits = self.fruits + [fruit]
-            if not other_fruits:
-                self.can_add_from_python = False
+        .. literalinclude:: fruit-selector.vue
+            :language: vue
 
 
 In this example we demonstrate a few new features:
 
-    * ``vue_add_fruit_python`` can be used as an event handler from the Vue template (exposed without the ``vue_`` prefix)
-    * Vue `Methods <https://vuejs.org/v2/api/#methods>`_.
-    * `Computed properties and watches <https://vuejs.org/v2/guide/computed.html>`_.
+-   ``vue_add_fruit_python`` can be used as an event handler from the Vue template (exposed without the ``vue_`` prefix)
+-   Vue `Methods <https://vuejs.org/v2/api/#methods>`_.
+-   `Computed properties and watches <https://vuejs.org/v2/guide/computed.html>`_.
 
 Hot reloading
 -------------
@@ -150,12 +150,14 @@ A demonstration in a screen capture:
 
 
 .. note::
-    For this feature we require the watchdog packages. Install it using ``pip install "watchdog>=2.0"`` or ``conda install -c conda-forge "watchdog>=2.0"``
+    For this feature we require the watchdog packages. Install it using ``pip install "watchdog>=2.0"``
+    or ``conda install -c conda-forge "watchdog>=2.0"``
 
 Embed ipywidgets
 ----------------
 
-Any ipywidget can be embedded by setting them in a trait and adding widget_serialization, accessing them in the template with the ``jupyter-widget`` tag:
+Any ipywidget can be embedded by setting them in a trait and adding widget_serialization, accessing
+them in the template with the ``jupyter-widget`` tag:
 
 .. code-block:: python
 

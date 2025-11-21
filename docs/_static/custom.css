@@ -77,3 +77,12 @@ footer.bd-footer-article {
   color: var(--pst-color-text-muted);
   text-align: right;
 }
+
+/*******************************************************************************
+* add dollar sign in console code-block
+*/
+div.highlight-console pre span.go::before {
+  content: "$";
+  margin-right: 10px;
+  margin-left: 5px;
+}

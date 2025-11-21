@@ -35,8 +35,4 @@ allows us to rely on the extensive documentation and examples of it. Generating 
 the underlying library allowed us to expose a lot of widgets to Jupyter in a relatively short amount of time.
 
 In :doc:`usage` all concepts and how they differ from ipywidgets will be explained and supported by examples.
-
-To explore which widgets are available and how to use them we defer to the
-`Vuetify documentation <https://v2.vuetifyjs.com/nl-NL/components/buttons/>`_. You can browse examples on the left-hand
-side and see the source code by clicking on '< >' on the top right-hand side of the example. By reading :doc:`usage` you
-will be able to translate the examples to ipyvuetify.
+By reading :doc:`usage` you will be able to translate any vuetify structure into ipyvuetify.

@@ -1,9 +1,9 @@
 Usage
 =====
 
-This page shows how to use ipyvuetify and explains how it is different from other widget libraries you may know such as
-ipywidgets. It also explains how to use the Vuetify documentation. Most examples display real widgets which have
-animations and behavior.
+This page shows how to use ipyvuetify and explains how it is different from other widget libraries you
+may know such as ipywidgets. It also explains how to use the Vuetify documentation. Most examples
+display real widgets which have animations and behavior.
 
 Create an ipyvuetify widget
 ---------------------------
@@ -17,30 +17,48 @@ Below you see how to create an ipyvuetify widget.
     my_select = v.Select(
         label='Fruits',
         items=['Apple', 'Pear', 'Cherry'])
-    my_select
+    v.Container(children=[my_select])
 
-Attributes can be changed at a later time by:
+Attributes are traits and thus can be changed at any time in the code e.g. to add an item:
 
-.. code-block:: python
+.. jupyter-execute::
+
+    import ipyvuetify as v
+
+    my_select = v.Select(
+        label='Fruits',
+        items=['Apple', 'Pear', 'Cherry'])
 
     my_select.items = [*my_select.items, 'Banana']
 
+    v.Container(children=[my_select])
+
 .. note::
-    A new List is created to change the items. In-place mutations of List and Dict, e.g. :code:`my_select.append(
-    'Banana')`, are not detected by ipywidgets.
+    A new List is created to change the items. In-place mutations of List and Dict, e.g.
+    ``my_select.append('Banana')``, are not detected by ipywidgets.
 
 What widgets are available and how they look can be found in the
 `Vuetify documentation <https://v2.vuetifyjs.com/components/selects/>`_. Browse the side bar on the left hand side and
 select a widget, then click <> on the right hand side on an example to see the source code for it. The HTML code may
 seem unfamiliar at first, but this documentation will guide you through it. For starters to translate the Vuetify widget
-names, which are starting with :code:`v-`, to ipyvuetify, remove the :code:`v-` prefix and CamelCase the remaining
-name. E.g :code:`v-select` becomes :code:`Select` and :code:`v-list-item` becomes :code:`ListItem`.
+names, which are starting with ``v-``, to ipyvuetify, remove the ``v-`` prefix and CamelCase the remaining
+name. E.g ``v-select`` becomes ``Select`` and ``v-list-item`` becomes ``ListItem``.
 
-Equivalent Vuetify syntax of the example above:
+These 2 syntax are perfectly equivalent:
 
-.. code-block:: html
+.. tab-set::
 
-    <v-select label="Fruits" :items="['Apple', 'Pear', 'Cherry']" />
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            v.Select(label='Fruits', items=['Apple', 'Pear', 'Cherry'])
+
+    .. tab-item:: :fab:`vuejs` vuetify
+
+        .. code-block:: vue
+
+            <v-select label="Fruits" :items="['Apple', 'Pear', 'Cherry']" />
 
 Setting Attributes
 ------------------
@@ -48,188 +66,280 @@ Setting Attributes
 When translating from Vuetify HTML to Python, some attributes have to be treated different.
 
 Python uses snake_case to separate words in attributes, while Vuetify uses kebab-case. For example the attribute
-:code:`append-icon` becomes :code:`append_icon`:
+``append-icon`` becomes ``append_icon``:
 
-Vuetify:
+.. tab-set::
 
-.. code-block:: html
+    .. tab-item:: :fab:`python` Python
 
-    <v-select append-icon="mdi-gamepad-down" label="Fruits" />
+        .. code-block:: python
 
-ipyvuetify:
+            v.Select(append_icon='mdi-gamepad-down', label='Fruits')
 
-.. jupyter-execute::
+    .. tab-item:: :fab:`vuejs` vuetify
 
-    v.Select(append_icon='mdi-gamepad-down', label='Fruits')
+        .. code-block:: vue
+
+            <v-select append-icon="mdi-gamepad-down" label="Fruits" />
+
+    .. tab-item:: :fas:`eye` Redendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Select(append_icon='mdi-gamepad-down', label='Fruits')
 
 
 In HTML attributes don't have to have values, just defining the attribute is enough to use it as a boolean. In Python we
-have to set the value to True. For example :code:`clearable` becomes :code:`clearable=True`:
+have to set the value to ``True``. For example ``clearable`` becomes ``clearable=True``:
 
-Vuetify:
+.. tab-set::
 
-.. code-block:: html
+    .. tab-item:: :fab:`python` Python
 
-    <v-select clearable label="Fruits" :items="['Apple', 'Pear', 'Cherry']" value="Apple" />
+        .. code-block:: python
 
-ipyvuetify:
+            v.Select(clearable=True, label='Fruits', items=['Apple', 'Pear', 'Cherry'], value='Apple')
 
-.. jupyter-execute::
+    .. tab-item:: :fab:`vuejs` vuetify
 
-    v.Select(clearable=True, label='Fruits', items=['Apple', 'Pear', 'Cherry'], value='Apple')
+        .. code-block:: vue
 
-Some attribute have naming conflicts with Python or ipywidgets. These are :code:`for`, :code:`open`, :code:`class` and
-:code:`style` and must be suffixed with an underscore. For example :code:`style` becomes :code:`style_`
+            <v-select clearable label="Fruits" :items="['Apple', 'Pear', 'Cherry']" value="Apple" />
 
-Vuetify:
+    .. tab-item:: :fas:`eye` Redendered
 
-.. code-block:: html
+        .. jupyter-execute::
+            :hide-code:
 
-    <v-select style="width: 75px" label="Fruits" />
+            import ipyvuetify as v
 
-ipyvuetify:
+            v.Select(clearable=True, label='Fruits', items=['Apple', 'Pear', 'Cherry'], value='Apple')
 
-.. jupyter-execute::
+Some attribute have naming conflicts with Python or ipywidgets. These are ``for``, ``open``, ``class`` and
+``style`` and must be suffixed with an underscore (`_`). For example ``style`` becomes ``style_``.
 
-    v.Select(style_='width: 75px', label='Fruits')
+.. tab-set::
 
-In the Vuetify HTML examples you'll see attributes prefixed with a colon :code:`:`. This means the attribute is bound to
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            v.Select(style_='width: 75px', label='Fruits')
+
+    .. tab-item:: :fab:`vuejs` vuetify
+
+        .. code-block:: vue
+
+            <v-select style="width: 75px" label="Fruits" />
+
+    .. tab-item:: :fas:`eye` Redendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Select(style_='width: 75px', label='Fruits')
+
+In the Vuetify HTML examples you'll see attributes prefixed with a colon ``:``. This means the attribute is bound to
 a variable or it is evaluated as an expression. If it is bound to a variable you'll see that variable being used in
-other parts of the example. In ipyvuetify we use :code:`jslink()` to link these attributes. In the next section you'll
+other parts of the example. In ipyvuetify we use ``jslink()`` to link these attributes. In the next section you'll
 see an example of this. To look at how that variable is initialized you select the 'script' tab on a Vuetify example.
 
-If it's an expression it's mostly used to set a List or a Dict, as is done with :code:`items` in the examples above.
+If it's an expression it's mostly used to set a ``List`` or a ``Dict``, as is done with ``items`` in the examples above.
 This can be the same in ipyvuetify.
 
-for non-vuetify related attributes, the ones from the HTML tag, can be accessed through the :code:`attributes` trait.
+for non-vuetify related attributes, the ones from the HTML tag, can be accessed through the ``attributes`` trait.
 
-Vuetify:
+.. tab-set::
 
-.. code-block:: html
+    .. tab-item:: :fab:`python` Python
 
-    <v-btn class="ma-2" outlined href="file.pdf" download>
-        Download PDF
-    </v-btn>
+        .. code-block:: python
 
-ipyvuetify:
+            v.Btn(
+                class_="ma-2",
+                outlined=True,
+                href="file.pdf",
+                attributes={"download": True},
+                children=["Download PDF"]
+            )
 
-.. jupyter-execute::
+    .. tab-item:: :fab:`vuejs` vuetify
 
-    v.Btn(
-        class_="ma-2",
-        outlined=True,
-        href="file.pdf",
-        attributes={"download": True},
-        children=["Download PDF"]
-    )
+        .. code-block:: vue
+
+            <v-btn class="ma-2" outlined href="file.pdf" download>
+                Download PDF
+            </v-btn>
+
+    .. tab-item:: :fas:`eye` Redendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Btn(
+                class_="ma-2",
+                outlined=True,
+                href="file.pdf",
+                attributes={"download": True},
+                children=["Download PDF"]
+            )
 
 
 Reading the value
 -----------------
 
-Now we want to be able to read out the selected value. In ipywidgets this would be done by reading the :code:`value`
-attribute. In Vue this is done with the :code:`v-model` directive, which is translated to Python as :code:`v_model` (
-note the '_' instead of '-'). The :code:`v_model` attribute has to be explicitly set when creating the widget.
+Now we want to be able to read out the selected value. In ipywidgets this would be done by reading
+the ``value`` attribute. In Vue this is done with the ``v-model`` directive, which is translated
+to Python as ``v_model`` (note the '_' instead of '-'). The ``v_model`` attribute has to be
+explicitly set when creating the widget.
 
-Vuetify:
+.. tab-set::
 
-.. code-block:: html
+    .. tab-item:: :fab:`python` Python
 
-    <v-container>
-        <v-select
-            v-model="colorVariable"
-            label="Colors"
-            items="['red', 'green', 'blue']" />
-        <v-chip :color="colorVariable"><v-chip>
-    </v-container>
+        .. code-block:: python
 
-ipyvuetify:
+            from ipywidgets import jslink
 
-.. jupyter-execute::
+            color_select = v.Select(
+                v_model='green',
+                label='Colors',
+                items=['red', 'green', 'blue'])
+            color_display = v.Chip()
 
-    from ipywidgets import jslink
+            # the client side link between the two widgets
+            jslink((color_select, 'v_model'), (color_display, 'color'))
 
-    color_select = v.Select(
-        v_model='green',
-        label='Colors',
-        items=['red', 'green', 'blue'])
+            v.Container(children=[color_select, color_display])
 
-    color_display = v.Chip()
+    .. tab-item:: :fab:`vuejs` vuetify
 
-    jslink((color_select, 'v_model'), (color_display, 'color'))
+        .. code-block:: vue
 
-    v.Container(children=[
-        color_select,
-        color_display
-    ])
+            <v-container>
+                <v-select
+                    v-model="colorVariable"
+                    label="Colors"
+                    :items="['red', 'green', 'blue']" />
+            </v-container>
+
+    .. tab-item:: :fas:`eye` Redendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+            from ipywidgets import jslink
+
+            color_select = v.Select(
+                v_model='green',
+                label='Colors',
+                items=['red', 'green', 'blue'])
+            color_display = v.Chip()
+
+            # the client side link between the two widgets
+            jslink((color_select, 'v_model'), (color_display, 'color'))
+
+            v.Container(children=[color_select, color_display])
 
 .. note::
-    ipyvuetify widgets have a :code:`value` attribute, but that's only used for setting the value, it will not change on
-    interactions with the widget.
+    ipyvuetify widgets have a ``value`` attribute, but that's only used for setting the value,
+    it will not change on interactions with the widget.
 
 The children attribute
 ----------------------
 
-Because ipyvuetify is based on HTML, which represents a GUI as a tree of elements, all widgets have an attribute
-:code:`children` which is a list of widgets or strings. This way the same tree can be represented in Python. Sometimes
-something you would expect to be specified as an attribute, must be specified as an item in :code:`children`, e.g. in
-ipywidgets the text of a button is set with the attribute :code:`description` while in ipyvuetify the text is set with
-setting an item in the :code:`children` list:
+Because ipyvuetify is based on HTML, which represents a GUI as a tree of elements, all widgets have an
+attribute ``children`` which is a list of widgets or strings. This way the same tree can be represented
+in Python. Sometimes something you would expect to be specified as an attribute, must be specified as
+an item in ``children``, e.g. in ipywidgets the text of a button is set with the attribute
+``description`` while in ipyvuetify the text is set with setting an item in the ``children`` list:
 
-Vuetify:
+.. tab-set::
 
-.. code-block:: html
+    .. tab-item:: :fab:`python` Python
 
-    <v-container>
-        <v-btn color="primary">Click me</v-btn>
-    </v-container>
+        .. code-block:: python
 
-ipyvuetify
+            v.Btn(color='primary', children=['Click me'])
 
-.. jupyter-execute::
+    .. tab-item:: :fab:`vuejs` vuetify
 
-    v.Container(children=[
-        v.Btn(color='primary', children=['Click me'])
-    ])
+        .. code-block:: vue
+
+            <v-btn color="primary">Click me</v-btn>
+
+    .. tab-item:: :fas:`eye` Redendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Btn(color="primary", children=['Click me'])
 
 This has the benefit of composability, e.g. the button can, in addition to text, also contain an icon:
 
-Vuetify:
+.. tab-set::
 
-.. code-block:: html
+    .. tab-item:: :fab:`python` Python
 
-    <v-container>
-        <v-btn color="primary">
-            <v-icon left>
-                mdi-email-edit-outline
-            </v-icon>
-            Click me
-        </v-btn>
-    </v-container>
+        .. code-block:: python
 
-ipyvuetify:
+            v.Btn(color='primary', children=[
+                v.Icon(left=True, children=[
+                    'mdi-email-edit-outline'
+                ]),
+                'Click me'
+            ])
 
-.. jupyter-execute::
+    .. tab-item:: :fab:`vuejs` vuetify
 
-    v.Container(children=[
-        v.Btn(color='primary', children=[
-            v.Icon(left=True, children=[
-                'mdi-email-edit-outline'
-            ]),
-            'Click me'
-        ])
-    ])
+        .. code-block:: vue
+
+            <v-btn color="primary">
+                <v-icon left>
+                    mdi-email-edit-outline
+                </v-icon>
+                Click me
+            </v-btn>
+
+    .. tab-item:: :fas:`eye` Redendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Btn(color='primary', children=[
+                v.Icon(left=True, children=[
+                    'mdi-email-edit-outline'
+                ]),
+                'Click me'
+            ])
 
 Events
 ------
 
-Events are specified with :code:`.on_event(event_name, callback_fn)` instead of setting an attribute like in ipywidgets.
+Events are specified with ``.on_event(event_name, callback_fn)`` instead of setting an attribute
+like in ipywidgets.
 
-.. jupyter-execute::
-    :hide-output:
+.. code-block:: python
 
-    btn = v.Btn(color='primary', children=['Click me'])
+    import ipyvuetify as v
+
+    # define a global counter (bad practice but ok for this simple example)
     count = 0
+
+    # define a button to interact with the said counter
+    btn = v.Btn(color='primary', children=['Click me'])
 
     def on_click(widget, event, data):
         global count
@@ -238,213 +348,466 @@ Events are specified with :code:`.on_event(event_name, callback_fn)` instead of 
 
     btn.on_event('click', on_click)
 
-    v.Container(children=[
-        btn
-    ])
+    v.Container(children=[btn])
 
     # The output of this example is intentionally left out, because
     # it will not work without an active kernel.
 
 The three arguments in the callback function are:
 
-* widget: the widget the event originates from. This is useful when using the same callback for multiple widgets.
-* event: the event name. This is useful when using the same callback for multiple events.
-* data: data for the event. For e.g. :code:`click` of :code:`Btn` this contains which modifier keys are pressed and some
-  information on the position of the mouse.
+-   ``widget``: the widget the event originates from. This is useful when using the same callback for
+    multiple widgets.
+-   ``event``: the event name. This is useful when using the same callback for multiple events.
+-   ``data``: data for the event. For e.g. ``click`` of ``Btn`` this contains which modifier keys are
+    pressed and some information on the position of the mouse.
 
-All `HTML events <https://www.w3schools.com/tags/ref_eventattributes.asp>`_ can be used. The ``on`` prefix must be
-omitted.
+All `HTML events <https://www.w3schools.com/tags/ref_eventattributes.asp>`_ can be used. The ``on``
+prefix must be omitted.
 
-Widgets can have custom events, to find out which, the `Vuetify API explorer
-<https://v2.vuetifyjs.com/components/api-explorer/>`_ can be used. Search for a component and on the left-hand side of list
-of attributes you will find a tab for the events.
+Widgets can have custom events, to find out which, the `Vuetify API explorer <https://v2.vuetifyjs.com/components/api-explorer/>`_
+can be used. Search for a component and on the left-hand side of list of attributes you will find a
+tab for the events.
 
-In Vuetify events are defined as attributes with an :code:`@` prefix. The equivalent Vuetify syntax of the example above
-is:
+In Vuetify events are defined as attributes with an ``@`` prefix. The 2 construction here are
+perfectly equivalent:
 
-.. code-block:: vue
+.. tab-set::
 
-    <v-container>
-        <v-btn color="primary" @click="on_click">
-            Click me {{ count }}
-        </v-btn>
-    </v-container>
+    .. tab-item:: :fab:`python` Python
 
-The on_click method would be in the 'script' tab of an example and is not shown here.
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            count = 0
+
+            btn = v.Btn(color='primary', children=['Click me'])
+
+            def on_click(widget, event, data):
+                global count
+                btn.children=[f'Click me {count}']
+                count += 1
+
+            btn.on_event('click', on_click)
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <v-container>
+                <v-btn color="primary" @click="on_click">
+                    Click me {{ count }}
+                </v-btn>
+            </v-container>
+
+.. note::
+    The ``on_click`` method would be in the 'script' tab of an app example and is not shown here.
 
 Regular HTML tags
 -----------------
 
 Sometimes some regular HTML tags are needed. For this the Html widget can be used.
-The attributes of the HTML tag can be accessed through the :code:`attributes` trait.
+The attributes of the HTML tag can be accessed through the ``attributes`` trait.
 
-Vuetify:
+.. tab-set::
 
-.. code-block:: html
+    .. tab-item:: :fab:`python` Python
 
-    <v-container>
-        <h1 title="a title">My heading</h1>
-    </v-container>
+        .. code-block:: python
 
-ipyvuetify
+            v.Container(children=[
+                v.Html(
+                    tag='h1',
+                    attributes={'title': 'a title'},
+                    children=['My heading']
+                )
+            ])
 
-.. jupyter-execute::
+    .. tab-item:: :fab:`vuejs` Vue template
 
-    v.Container(children=[
-        v.Html(
-            tag='h1',
-            attributes={'title': 'a title'},
-            children=['My heading']
-        )
-    ])
+        .. code-block:: vue
+
+            <v-container>
+                <h1 title="a title">My heading</h1>
+            </v-container>
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Container(children=[
+                v.Html(
+                    tag='h1',
+                    attributes={'title': 'a title'},
+                    children=['My heading']
+                )
+            ])
 
 Styling
 -------
 
-To visually customize widgets, the underlying CSS facilities of Vuetify are exposed. With the :code:`style_` attribute
-`CSS properties <https://www.tutorialrepublic.com/css-reference/css3-properties.php>`_ can be set. Multiple CSS
-properties can be set by separating them with a semicolon :code:`;`.
+To visually customize widgets, the underlying CSS facilities of Vuetify are exposed. With the ``style_``
+attribute `CSS properties <https://www.tutorialrepublic.com/css-reference/css3-properties.php>`_ can
+be set. Multiple CSS properties can be set by separating them with a semicolon ``;``.
 
-.. jupyter-execute::
+.. tab-set::
 
-    v.Select(label='Fruit', style_='width: 75px; opacity: 0.7')
+    .. tab-item:: :fab:`python` Python
 
-With the :code:`class_` attribute predefined Vuetify styles can be set. Predefined styles of note are
+        .. code-block:: python
+
+            v.Select(label='Fruit', style_='width: 75px; opacity: 0.7')
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Select(label='Fruit', style_='width: 75px; opacity: 0.7')
+
+With the ``class_`` attribute predefined Vuetify styles can be set. Predefined styles of note are
 `spacing <https://v2.vuetifyjs.com/styles/spacing/>`__ and `colors <https://v2.vuetifyjs.com/styles/colors/>`__. More can be
 found in the section 'Styles and animations' of the Vuetify documentation. Multiple classes can be applied by separating
 them with a space.
 
 Buttons without spacing:
 
-.. jupyter-execute::
+.. tab-set::
 
-    v.Container(children=[
-        v.Btn(children=[f'Button {i}']) for i in range(3)
-    ])
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Container(children=[
+                v.Btn(children=[f'Button {i}']) for i in range(3)
+            ])
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            v.Container(children=[
+                v.Btn(children=[f'Button {i}']) for i in range(3)
+            ])
+
+
 
 With 2 units of margin in the x direction:
 
-.. jupyter-execute::
+.. tab-set::
 
-    v.Container(children=[
-        v.Btn(class_='mx-2', children=[f'Button {i}']) for i in range(3)
-    ])
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Container(children=[
+                v.Btn(class_='mx-2', children=[f'Button {i}']) for i in range(3)
+            ])
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            v.Container(children=[
+                v.Btn(class_='mx-2', children=[f'Button {i}']) for i in range(3)
+            ])
 
 And colors:
 
-.. jupyter-execute::
+.. tab-set::
 
-    v.Container(children=[
-        v.Btn(class_=f'mx-2 indigo lighten-{i+1}', children=[f'Button {i}']) for i in range(3)
-    ])
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Container(children=[
+                v.Btn(class_=f'mx-2 indigo lighten-{i+1}', children=[f'Button {i}']) for i in range(3)
+            ])
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            v.Container(children=[
+                v.Btn(class_=f'mx-2 indigo lighten-{i+1}', children=[f'Button {i}']) for i in range(3)
+            ])
 
 ClassList attribute
 ^^^^^^^^^^^^^^^^^^^
 
-The :code:`class` attribute of a Vuetify DOM elements give access to the built-in styles of the lib. See the `vuetify site <https://v2.vuetifyjs.com/en/styles/colors/>`__ to know more about available styling class. As mentioned in the previous section this can be set using the :code:`class_` member of the widget. In addition, ipyvuetify provides a :code:`class_list` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods:
+The ``class`` attribute of a Vuetify DOM elements give access to the built-in styles of the lib. See the `vuetify site <https://v2.vuetifyjs.com/en/styles/colors/>`__ to know more about available styling class. As mentioned in the previous section this can be set using the ``class_`` member of the widget. In addition, ipyvuetify provides a ``class_list`` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods:
 
--   :code:`add(*args)`: add class elements to the class\_ trait of the widget
+-   ``add(*args)``: add class elements to the class\_ trait of the widget
 
-    .. jupyter-execute::
+    .. tab-set::
 
-        w = v.Btn(children=["click"])
-        w.class_list.add("red", "white--text")
-        w
+        .. tab-item:: :fab:`python` Python
 
--   :code:`remove(*args)`: remove class elements from the class\_ trait of the widget
+            .. code-block:: python
 
-    .. jupyter-execute::
+                w = v.Btn(children=["click"])
+                w.class_list.add("red", "white--text")
 
-        w = v.Btn(children=["click"], class_="red white--text")
-        w.class_list.remove("white--text")
-        w
+        .. tab-item:: :fas:`eye` Rendered
 
--   :code:`replace(src, dst)`: replace class elements in the class\_ trait of the widget
+            .. jupyter-execute::
+                :hide-code:
 
-    .. jupyter-execute::
+                import ipyvuetify as v
 
-        w = v.Btn(children=["click"], class_="red white--text")
-        w.class_list.replace("red", "orange")
-        w
+                w = v.Btn(children=["click"])
+                w.class_list.add("red", "white--text")
+                w
 
--   :code:`toggle(arg)`: toggle class elements from the class\_ trait of the widget
+-   ``remove(*args)``: remove class elements from the class\_ trait of the widget
 
-    .. jupyter-execute::
+    .. tab-set::
 
-        w = v.Btn(children=["click"], class_="red white--text")
-        w.class_list.toggle("blue", "red")
-        w
+        .. tab-item:: :fab:`python` Python
+
+            .. code-block:: python
+
+                w = v.Btn(children=["click"], class_="red white--text")
+                w.class_list.remove("white--text")
+
+        .. tab-item:: :fas:`eye` Rendered
+
+            .. jupyter-execute::
+                :hide-code:
+
+                import ipyvuetify as v
+
+                w = v.Btn(children=["click"], class_="red white--text")
+                w.class_list.remove("white--text")
+                w
+
+-   ``replace(src, dst)``: replace class elements in the class\_ trait of the widget
+
+    .. tab-set::
+
+        .. tab-item:: :fab:`python` Python
+
+            .. code-block:: python
+
+                w = v.Btn(children=["click"], class_="red white--text")
+                w.class_list.replace("red", "orange")
+
+        .. tab-item:: :fas:`eye` Rendered
+
+            .. jupyter-execute::
+                :hide-code:
+
+                import ipyvuetify as v
+
+                w = v.Btn(children=["click"], class_="red white--text")
+                w.class_list.replace("red", "orange")
+                w
+
+-   ``toggle(arg)``: toggle class elements from the class\_ trait of the widget
+
+    .. tab-set::
+
+        .. tab-item:: :fab:`python` Python
+
+            .. code-block:: python
+
+                w = v.Btn(children=["click"], class_="red white--text")
+                w.class_list.toggle("blue", "red")
+
+        .. tab-item:: :fas:`eye` Rendered
+
+            .. jupyter-execute::
+                :hide-code:
+
+                import ipyvuetify as v
+
+                w = v.Btn(children=["click"], class_="red white--text")
+                w.class_list.toggle("blue", "red")
+                w
 
 Visibility
 ^^^^^^^^^^
 
-ipyvuetify widgets visibility can be changed using the built-in methods :code:`hide()` and :code:`show()`.
-Using :code:`hide` will add the :code:`d-none` class to the widget and :code:`show` will remove it, hiding and showing the widget to the end user without removing it from the notebook.
+ipyvuetify widgets visibility can be changed using the built-in methods ``hide()`` and ``show()``.
+Using ``hide`` will add the ``d-none`` class to the widget and ``show`` will remove it, hiding and showing the widget to the end user without removing it from the notebook.
 
-.. jupyter-execute::
 
-    w = v.Icon(children=['mdi-eye-off'])
-    w.hide()
-    w
+.. tab-set::
 
-.. jupyter-execute::
+    .. tab-item:: :fab:`python` Python
 
-    w = v.Icon(children=['mdi-eye'], class_="d-none")
-    w.show()
-    w
+        .. code-block:: python
+
+            w = v.Icon(children=['mdi-eye-off'])
+            w.hide()
+
+    .. tab-item:: :fas:`eye` Not rendered after call to ``hide()``
+
+            .. jupyter-execute::
+                :hide-code:
+
+                import ipyvuetify as v
+
+                w = v.Icon(children=['mdi-eye-off'])
+                w.hide()
+                w
+
+.. tab-set::
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            w = v.Icon(children=['mdi-eye'], class_="d-none")
+            w.show()
+
+    .. tab-item:: :fas:`eye` Rendered after call to ``show()``
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            w = v.Icon(children=['mdi-eye'], class_="d-none")
+            w.show()
+            w
 
 Layout (HBox/VBox alternative)
 ------------------------------
 
 In ipywidgets you would layout a grid of widgets with HBox and VBox.
 
-.. TODO: fix CSS conflict which is removing the spacing in the example below
+.. tab-set::
 
-.. jupyter-execute::
+    .. tab-item:: :fas:`eye` Rendered
 
-    import ipywidgets as widgets
+        .. jupyter-execute::
+            :hide-code:
 
-    widgets.HBox([
-        widgets.VBox([
-            widgets.Button(description="top left"),
-            widgets.Button(description="bottom left"),
-        ]),
-        widgets.VBox([
-            widgets.Button(description="top right"),
-            widgets.Button(description="bottom right"),
-        ]),
-    ])
+            import ipywidgets as widgets
+
+            widgets.HBox([
+                widgets.VBox([
+                    widgets.Button(description="top left"),
+                    widgets.Button(description="bottom left"),
+                ]),
+                widgets.VBox([
+                    widgets.Button(description="top right"),
+                    widgets.Button(description="bottom right"),
+                ]),
+            ])
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipywidgets as widgets
+
+            widgets.HBox([
+                widgets.VBox([
+                    widgets.Button(description="top left"),
+                    widgets.Button(description="bottom left"),
+                ]),
+                widgets.VBox([
+                    widgets.Button(description="top right"),
+                    widgets.Button(description="bottom right"),
+                ]),
+            ])
 
 This can be done in ipyvuetify with the help of some classes described in
 `flex helpers <https://v2.vuetifyjs.com/styles/flex/>`_.
 
-.. jupyter-execute::
+.. tab-set::
 
-    v.Html(tag='div', class_='d-flex flex-row', children=[
-        v.Html(tag='div', class_='d-flex flex-column', children=[
-            v.Btn(class_='ma-2', children=['top left']),
-            v.Btn(class_='ma-2', children=['bottom left'])
-        ]),
-        v.Html(tag='div', class_='d-flex flex-column', children=[
-            v.Btn(class_='ma-2', children=['top right']),
-            v.Btn(class_='ma-2', children=['bottom right'])
-        ]),
-    ])
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Html(tag='div', class_='d-flex flex-row', children=[
+                v.Html(tag='div', class_='d-flex flex-column', children=[
+                    v.Btn(class_='ma-2', children=['top left']),
+                    v.Btn(class_='ma-2', children=['bottom left'])
+                ]),
+                v.Html(tag='div', class_='d-flex flex-column', children=[
+                    v.Btn(class_='ma-2', children=['top right']),
+                    v.Btn(class_='ma-2', children=['bottom right'])
+                ]),
+            ])
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            v.Html(tag='div', class_='d-flex flex-row', children=[
+                v.Html(tag='div', class_='d-flex flex-column', children=[
+                    v.Btn(class_='ma-2', children=['top left']),
+                    v.Btn(class_='ma-2', children=['bottom left'])
+                ]),
+                v.Html(tag='div', class_='d-flex flex-column', children=[
+                    v.Btn(class_='ma-2', children=['top right']),
+                    v.Btn(class_='ma-2', children=['bottom right'])
+                ]),
+            ])
 
 Icons
 -----
 
 Icons can be displayed with the Icon widget:
 
-.. jupyter-execute::
+.. tab-set::
 
-    v.Icon(children=['mdi-thumb-up'])
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            v.Icon(children=['mdi-thumb-up'])
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Icon(children=['mdi-thumb-up'])
 
 In some widgets icons are specified by setting an attribute:
 
-.. jupyter-execute::
+.. tab-set::
 
-    v.Select(prepend_icon='mdi-thumb-up')
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            v.Select(prepend_icon='mdi-thumb-up')
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Select(prepend_icon='mdi-thumb-up')
 
 See `@mdi/font/4.9.95/ <https://pictogrammers.github.io/@mdi/font/4.9.95/>`_ for a list of available icons.
 
@@ -485,7 +848,7 @@ Available theme properties:
 - warning
 - anchor
 
-If :code:`dark` is set to None (the default), we use the setting from Jupyter Lab, VS Code or Google Colab.
+If ``dark`` is set to None (the default), we use the setting from Jupyter Lab, VS Code or Google Colab.
 In Jupyter notebook classic, or other unrecognized systems we always use the light theme.
 When running in `Solara server <https://github.com/widgetti/solara/>`_, dark mode is
 determined by how the `Solara server <https://solara.dev/docs/understanding/solara-server>`_ is configured.
