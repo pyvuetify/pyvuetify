@@ -37,7 +37,7 @@ content-type = "text/markdown"
 
 [project.optional-dependencies]
 dev = ["nox", "pre-commit", "mypy"]
-doc = ["sphinx", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme", "sphinx-autoapi", "sphinx-design", "astroid>3"]
+doc = ["sphinx", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme", "sphinx-autoapi", "sphinx-design", "astroid>3", "sphinx-copybutton"]
 test = ["pytest", "pytest-playwright<0.6", "nbformat<5.10", "jupyterlab<4", "solara[pytest]"]
 
 [tool.setuptools]

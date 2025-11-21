@@ -24,6 +24,7 @@ extensions = [
     "jupyter_sphinx",
     "sphinx_design",
     "autoapi.extension",
+    "sphinx_copybutton",
     "_extension.api_admonition",
     "_extension.aknowledgement",
 ]
