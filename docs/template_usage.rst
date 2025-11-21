@@ -68,9 +68,9 @@ available using the normal wrapped Vuetify widgets:
                     .fruit-selector td {
                         border: 1px solid black;
                     }
-                    
+
                 </style>
-                
+
             '''
     fruits = FruitSelector(fruits=['Banana', 'Pear', 'Apple'])
     fruits
@@ -95,7 +95,7 @@ our VuetifyTemplate to it.
 Vuetify template ``fruit-selector.vue``:
 
 .. literalinclude:: fruit-selector.vue
-    :language: html
+    :language: vue
 
 
 Python:
