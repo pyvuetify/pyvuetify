@@ -4,7 +4,12 @@ This file only contains a selection of the most common options. For a full
 list see the documentation:
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
+import sys
 from datetime import datetime
+from pathlib import Path
+
+# add . to sys to import local extensions
+sys.path.append(str(Path(".").resolve()))
 
 # -- Project information -----------------------------------------------------
 
@@ -15,7 +20,13 @@ release = "1.11.3"
 
 # -- General configuration ---------------------------------------------------
 
-extensions = ["jupyter_sphinx", "sphinx_design", "autoapi.extension"]
+extensions = [
+    "jupyter_sphinx",
+    "sphinx_design",
+    "autoapi.extension",
+    "_extension.api_admonition",
+    "_extension.aknowledgement",
+]
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
