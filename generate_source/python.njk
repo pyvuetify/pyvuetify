@@ -43,7 +43,7 @@ class {{ widget.name }}({{ widget.inherits | join(", ") }}):
     {% endif %}
 
     def __init__(self, {% if widget.properties %}{% for n, p in widget.properties %}{% if not n.startsWith('_') %}{{ n }}=None, {% endif %}{% endfor %}{% endif %}**kwargs):
-        """A Widget that can be added to the DOM.
+        """Initialize an instance of {{ widget.name }} that can be added to the DOM.
 
 {% if widget.doc %}
         {{ widget.doc }}
@@ -53,11 +53,15 @@ class {{ widget.name }}({{ widget.inherits | join(", ") }}):
 {% if widget.properties %}
 {% for propName, prop in widget.properties %}
 {% if not propName.startsWith('_') %}
-            {{ propName }}: {% if prop.doc %}{{ prop.doc }}{% else %}No description available.{% endif %}\n
+            {{ propName }}: {% if prop.doc %}{{ prop.doc }}{% else %}No description available.{% endif %}
+
 {% endif %}
 {% endfor %}
 {% endif %}
             **kwargs: Additional keyword arguments passed to the parent class.
+
+        Returns:
+            An instance of {{ widget.name }} that can be added to the DOM.
         """
         super().__init__({% if widget.properties %}{% for n, p in widget.properties %}{% if not n.startsWith('_') %}{{ n }}={{ n }}, {% endif %}{% endfor %}{% endif %}**kwargs)
 {#
