@@ -178,7 +178,7 @@ You can use ``dense`` prop to reduce autocomplete height and lower max height of
             </template>
 
 No-Filter
-------
+---------
 
 The ``no-filter`` prop can be used to prevent filtering of the items. Useful when
 you want to display all options regardless of the search input.
