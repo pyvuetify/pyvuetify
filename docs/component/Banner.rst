@@ -1,14 +1,13 @@
 Banner
 ======
 
-.. warning::
-    This page is AI-generated and requires human review. The content may contain errors or inaccuracies.
-
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/banners/>`_.
     All examples have been converted to ipyvuetify syntax.
 
-The :py:class:`Banner <ipyvuetify.Banner>` component is used as middle-interruptive message to user with 1-2 actions. It comes in 2 variations single-line and multi-line (implicit). These can have icons which you can use with your message and actions.
+The :py:class:`Banner <ipyvuetify.Banner>` component is used as middle-interruptive message to user
+with 1-2 actions. It comes in 2 variations single-line and multi-line (implicit). These can have icons
+which you can use with your message and actions.
 
 .. api::
 
@@ -35,17 +34,18 @@ Banners can have 1-2 lines of text, actions and icon.
 Single line
 -----------
 
-Single-line :py:class:`Banner <ipyvuetify.Banner>` is used for small amount of information and is recommended for desktop only implementations. You can optionally enable the ``sticky`` prop to ensure the content is pinned to the screen (note: does not work in IE11).
+Single-line :py:class:`Banner <ipyvuetify.Banner>` is used for small amount of information and is
+recommended for desktop only implementations. You can optionally enable the ``sticky`` prop to ensure
+the content is pinned to the screen (note: does not work in IE11).
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. code-block:: python
+        .. jupyter-execute::
+            :hide-code:
 
             import ipyvuetify as v
-
-            sticky_state = v.use_state(False)
 
             switch = v.Switch(
                 v_model=False,
@@ -68,7 +68,6 @@ Single-line :py:class:`Banner <ipyvuetify.Banner>` is used for small amount of i
             )
 
             def update_sticky(widget, event, data):
-                sticky_state.set(data)
                 banner.sticky = data
 
             switch.on_event('change', update_sticky)
@@ -89,7 +88,7 @@ Single-line :py:class:`Banner <ipyvuetify.Banner>` is used for small amount of i
                     children=[
                         v.Sheet(
                             max_width=800,
-                            height=300,
+                            height=500,
                             class_='mx-auto'
                         )
                     ]
@@ -102,8 +101,6 @@ Single-line :py:class:`Banner <ipyvuetify.Banner>` is used for small amount of i
 
             import ipyvuetify as v
 
-            sticky_state = False
-
             switch = v.Switch(
                 v_model=False,
                 label='Sticky Banner',
@@ -125,8 +122,6 @@ Single-line :py:class:`Banner <ipyvuetify.Banner>` is used for small amount of i
             )
 
             def update_sticky(widget, event, data):
-                global sticky_state
-                sticky_state = data
                 banner.sticky = data
 
             switch.on_event('change', update_sticky)
@@ -147,7 +142,7 @@ Single-line :py:class:`Banner <ipyvuetify.Banner>` is used for small amount of i
                     children=[
                         v.Sheet(
                             max_width=800,
-                            height=300,
+                            height=500,
                             class_='mx-auto'
                         )
                     ]
@@ -159,49 +154,49 @@ Single-line :py:class:`Banner <ipyvuetify.Banner>` is used for small amount of i
         .. code-block:: vue
 
             <template>
-              <v-card>
-                <v-system-bar></v-system-bar>
-                <v-toolbar flat>
-                  <v-toolbar-title>My Document</v-toolbar-title>
-                  <v-spacer></v-spacer>
-                  <div>
-                    <v-switch
-                      v-model="sticky"
-                      label="Sticky Banner"
-                      hide-details
-                    ></v-switch>
-                  </div>
-                </v-toolbar>
-                <v-banner
-                  single-line
-                  :sticky="sticky"
-                >
-                  We can't save your edits while you are in offline mode.
-                  <template v-slot:actions>
-                    <v-btn
-                      text
-                      color="deep-purple accent-4"
+                <v-card>
+                    <v-system-bar></v-system-bar>
+                    <v-toolbar flat>
+                        <v-toolbar-title>My Document</v-toolbar-title>
+                        <v-spacer></v-spacer>
+                        <div>
+                            <v-switch
+                                v-model="sticky"
+                                label="Sticky Banner"
+                                hide-details
+                            ></v-switch>
+                        </div>
+                    </v-toolbar>
+                    <v-banner
+                        single-line
+                        :sticky="sticky"
                     >
-                      Get Online
-                    </v-btn>
-                  </template>
-                </v-banner>
-                <v-card-text class="grey lighten-4">
-                  <v-sheet
-                    max-width="800"
-                    height="300"
-                    class="mx-auto"
-                  ></v-sheet>
-                </v-card-text>
-              </v-card>
+                        We can't save your edits while you are in offline mode.
+                        <template v-slot:actions>
+                            <v-btn
+                                text
+                                color="deep-purple accent-4"
+                            >
+                                Get Online
+                            </v-btn>
+                        </template>
+                    </v-banner>
+                    <v-card-text class="grey lighten-4">
+                        <v-sheet
+                            max-width="800"
+                            height="300"
+                            class="mx-auto"
+                        ></v-sheet>
+                    </v-card-text>
+                </v-card>
             </template>
 
             <script>
-              export default {
-                data: () => ({
-                  sticky: false,
-                }),
-              }
+                export default {
+                    data: () => ({
+                    sticky: false,
+                    }),
+                }
             </script>
 
 Icon click event
@@ -283,37 +278,37 @@ Icon click event
         .. code-block:: vue
 
             <template>
-              <v-banner
-                single-line
-                @click:icon="alert"
-              >
-                <v-icon
-                  slot="icon"
-                  color="warning"
-                  size="36"
+                <v-banner
+                    single-line
+                    @click:icon="alert"
                 >
-                  mdi-wifi-strength-alert-outline
-                </v-icon>
-                Unable to verify your Internet connection
-                <template v-slot:actions>
-                  <v-btn
-                    color="primary"
-                    text
-                  >
-                    Connection Settings
-                  </v-btn>
-                </template>
-              </v-banner>
+                    <v-icon
+                        slot="icon"
+                        color="warning"
+                        size="36"
+                    >
+                        mdi-wifi-strength-alert-outline
+                    </v-icon>
+                    Unable to verify your Internet connection
+                    <template v-slot:actions>
+                        <v-btn
+                            color="primary"
+                            text
+                        >
+                            Connection Settings
+                        </v-btn>
+                    </template>
+                </v-banner>
             </template>
 
             <script>
-              export default {
-                methods: {
-                  alert () {
-                    alert('Hello, World!')
-                  },
-                },
-              }
+                export default {
+                    methods: {
+                        alert () {
+                            alert('Hello, World!')
+                        },
+                    },
+                }
             </script>
 
 Actions slot
@@ -325,11 +320,10 @@ The ``actions`` slot has ``dismiss`` function in its scope, you can use it to ea
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. code-block:: python
+        .. jupyter-execute::
+            :hide-code:
 
             import ipyvuetify as v
-
-            visible_state = v.use_state(True)
 
             checkbox = v.Checkbox(
                 v_model=True,
@@ -337,12 +331,10 @@ The ``actions`` slot has ``dismiss`` function in its scope, you can use it to ea
             )
 
             def on_dismiss(*args):
-                visible_state.set(False)
                 banner.v_model = False
                 checkbox.v_model = False
 
             def on_checkbox_change(widget, event, data):
-                visible_state.set(data)
                 banner.v_model = data
 
             checkbox.on_event('change', on_checkbox_change)
@@ -378,7 +370,7 @@ The ``actions`` slot has ``dismiss`` function in its scope, you can use it to ea
 
             import ipyvuetify as v
 
-            visible = True
+            visible_state = v.use_state(True)
 
             checkbox = v.Checkbox(
                 v_model=True,
@@ -386,24 +378,13 @@ The ``actions`` slot has ``dismiss`` function in its scope, you can use it to ea
             )
 
             def on_dismiss(*args):
-                global visible
-                visible = False
                 banner.v_model = False
                 checkbox.v_model = False
 
             def on_checkbox_change(widget, event, data):
-                global visible
-                visible = data
                 banner.v_model = data
 
             checkbox.on_event('change', on_checkbox_change)
-
-            dismiss_btn = v.Btn(
-                text=True,
-                color='primary',
-                children=['Dismiss']
-            )
-            dismiss_btn.on_event('click', on_dismiss)
 
             banner = v.Banner(
                 v_model=True,
@@ -412,7 +393,12 @@ The ``actions`` slot has ``dismiss`` function in its scope, you can use it to ea
                 v_slots=[{
                     'name': 'actions',
                     'children': [
-                        dismiss_btn,
+                        v.Btn(
+                            text=True,
+                            color='primary',
+                            children=['Dismiss'],
+                            on_click=on_dismiss
+                        ),
                         v.Btn(
                             text=True,
                             color='primary',
@@ -430,41 +416,42 @@ The ``actions`` slot has ``dismiss`` function in its scope, you can use it to ea
         .. code-block:: vue
 
             <template>
-              <div>
-                <v-checkbox
-                  v-model="v0"
-                  label="Visible"
-                ></v-checkbox>
-                <v-banner
-                  v-model="v0"
-                  single-line
-                  transition="slide-y-transition"
-                >
-                  No Internet connection
-                  <template v-slot:actions="{ dismiss }">
-                    <v-btn
-                      text
-                      color="primary"
-                      @click="dismiss"
+                <div>
+                    <v-checkbox
+                        v-model="v0"
+                        label="Visible"
+                    ></v-checkbox>
+                    <v-banner
+                        v-model="v0"
+                        single-line
+                        transition="slide-y-transition"
                     >
-                      Dismiss
-                    </v-btn>
-                    <v-btn
-                      text
-                      color="primary"
-                    >
-                      Retry
-                    </v-btn>
-                  </template>
-                </v-banner>
-              </div>
+                        No Internet connection
+                        <template v-slot:actions="{ dismiss }">
+                            <v-btn
+                                text
+                                color="primary"
+                                @click="dismiss"
+                            >
+                                Dismiss
+                            </v-btn>
+                            <v-btn
+                                text
+                                color="primary"
+                            >
+                                Retry
+                            </v-btn>
+                        </template>
+                    </v-banner>
+                </div>
             </template>
+
             <script>
-              export default {
-                data: () => ({
-                  v0: true,
-                }),
-              }
+                export default {
+                    data: () => ({
+                        v0: true,
+                    }),
+                }
             </script>
 
 Icon slot
@@ -512,7 +499,9 @@ The icon slot allows you to explicitly control the content and functionality wit
                     ]
                 }],
                 children=[
-                    'Three line text string example with two actions. One to two lines is preferable. Three lines should be considered the maximum string length on desktop in order to keep messages short and actionable.'
+                    'Three line text string example with two actions. One to two lines is preferable. '
+                    'Three lines should be considered the maximum string length on desktop in order to '
+                    'keep messages short and actionable.'
                 ]
             )
 
@@ -552,9 +541,7 @@ The icon slot allows you to explicitly control the content and functionality wit
                         )
                     ]
                 }],
-                children=[
-                    'Three line text string example with two actions. One to two lines is preferable. Three lines should be considered the maximum string length on desktop in order to keep messages short and actionable.'
-                ]
+                children=['Three line text string example with two actions....']
             )
 
     .. tab-item:: :fab:`vuejs` Vue template
@@ -562,43 +549,43 @@ The icon slot allows you to explicitly control the content and functionality wit
         .. code-block:: vue
 
             <template>
-              <v-banner two-line>
-                <v-avatar
-                  slot="icon"
-                  color="deep-purple accent-4"
-                  size="40"
-                >
-                  <v-icon
-                    icon="mdi-lock"
-                    color="white"
-                  >
-                    mdi-lock
-                  </v-icon>
-                </v-avatar>
+                <v-banner two-line>
+                    <v-avatar
+                        slot="icon"
+                        color="deep-purple accent-4"
+                        size="40"
+                    >
+                        <v-icon
+                            icon="mdi-lock"
+                            color="white"
+                        >
+                            mdi-lock
+                        </v-icon>
+                    </v-avatar>
 
-                Three line text string example with two actions. One to two lines is preferable. Three lines should be considered the maximum string length on desktop in order to keep messages short and actionable.
+                        Three line text string example with two actions. One to two lines is preferable. Three lines should be considered the maximum string length on desktop in order to keep messages short and actionable.
 
-                <template v-slot:actions>
-                  <v-btn
-                    text
-                    color="deep-purple accent-4"
-                  >
-                    Action
-                  </v-btn>
-                  <v-btn
-                    text
-                    color="deep-purple accent-4"
-                  >
-                    Action
-                  </v-btn>
-                </template>
-              </v-banner>
+                    <template v-slot:actions>
+                        <v-btn
+                            text
+                            color="deep-purple accent-4"
+                        >
+                            Action
+                        </v-btn>
+                        <v-btn
+                            text
+                            color="deep-purple accent-4"
+                        >
+                            Action
+                        </v-btn>
+                    </template>
+                </v-banner>
             </template>
-
 Two line
 --------
 
-Two-line :py:class:`Banner <ipyvuetify.Banner>` can store larger amount of data, use it for big messages. This is recommended for mobile implementations.
+Two-line :py:class:`Banner <ipyvuetify.Banner>` can store larger amount of data, use it for big messages.
+This is recommended for mobile implementations.
 
 .. tab-set::
 
@@ -626,7 +613,8 @@ Two-line :py:class:`Banner <ipyvuetify.Banner>` can store larger amount of data,
                     ]
                 }],
                 children=[
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus nec sem id malesuada. Curabitur lacinia sem et turpis euismod, eget elementum ex pretium.'
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus nec sem '
+                    'id malesuada. Curabitur lacinia sem et turpis euismod, eget elementum ex pretium.'
                 ]
             )
 
@@ -652,8 +640,7 @@ Two-line :py:class:`Banner <ipyvuetify.Banner>` can store larger amount of data,
                         )
                     ]
                 }],
-                children=[
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus nec sem id malesuada. Curabitur lacinia sem et turpis euismod, eget elementum ex pretium.'
+                children=['Lorem ipsum dolor sit amet, consectetur adipiscing elit...'
                 ]
             )
 
@@ -662,21 +649,21 @@ Two-line :py:class:`Banner <ipyvuetify.Banner>` can store larger amount of data,
         .. code-block:: vue
 
             <template>
-              <v-banner>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus nec sem id malesuada. Curabitur lacinia sem et turpis euismod, eget elementum ex pretium.
-                <template v-slot:actions>
-                  <v-btn
-                    text
-                    color="primary"
-                  >
-                    Dismiss
-                  </v-btn>
-                  <v-btn
-                    text
-                    color="primary"
-                  >
-                    Retry
-                  </v-btn>
-                </template>
-              </v-banner>
+                <v-banner>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus nec sem id malesuada. Curabitur lacinia sem et turpis euismod, eget elementum ex pretium.
+                    <template v-slot:actions>
+                        <v-btn
+                            text
+                            color="primary"
+                        >
+                            Dismiss
+                        </v-btn>
+                        <v-btn
+                            text
+                            color="primary"
+                        >
+                            Retry
+                        </v-btn>
+                    </template>
+                </v-banner>
             </template>
