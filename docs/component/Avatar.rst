@@ -469,7 +469,7 @@ Combining an avatar with other components allows you to build beautiful user int
                                                 v-if="message.total"
                                                 class="grey--text"
                                             >
-                                                &nbsp;({{ message.total }})
+                                                ({{ message.total }})
                                             </span>
                                         </v-col>
 
@@ -494,7 +494,7 @@ Combining an avatar with other components allows you to build beautiful user int
                                             v-if="message.excerpt"
                                             class="grey--text text-truncate hidden-sm-and-down"
                                         >
-                                            &mdash;
+                                            -
                                             {{ message.excerpt }}
                                         </v-col>
                                     </v-row>

@@ -8,7 +8,8 @@ BottomNavigation
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/bottom-navigation/>`_.
     All examples have been converted to ipyvuetify syntax.
 
-The :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component is an alternative to the sidebar. It is primarily used for mobile applications and comes in three variants, icons and text, and shift.
+The :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component is an alternative to the sidebar.
+It is primarily used for mobile applications and comes in three variants, icons and text, and shift.
 
 .. api::
 
@@ -17,7 +18,9 @@ The :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component is an a
 Usage
 -----
 
-While :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` is meant to be used with vue-router, you can also programmatically control the active state of the buttons by using the ``v_model`` property. A button is given a default value of its index with ``v-bottom-navigation``.
+While :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` is meant to be used with vue-router,
+you can also programmatically control the active state of the buttons by using the ``v_model`` property.
+A button is given a default value of its index with ``v-bottom-navigation``.
 
 .. jupyter-execute::
 
@@ -55,7 +58,8 @@ While :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` is meant to be 
 Color
 -----
 
-The ``color`` prop applies a color to the background of the bottom navigation. We recommend using the ``light`` and ``dark`` props to properly contrast text color.
+The ``color`` prop applies a color to the background of the bottom navigation. We recommend using the
+``light`` and ``dark`` props to properly contrast text color.
 
 .. tab-set::
 
@@ -115,37 +119,36 @@ The ``color`` prop applies a color to the background of the bottom navigation. W
         .. code-block:: vue
 
             <template>
-              <v-bottom-navigation
-                :value="value"
-                color="primary"
-              >
-                <v-btn>
-                  <span>Recents</span>
-                  <v-icon>mdi-history</v-icon>
-                </v-btn>
-
-                <v-btn>
-                  <span>Favorites</span>
-                  <v-icon>mdi-heart</v-icon>
-                </v-btn>
-
-                <v-btn>
-                  <span>Nearby</span>
-                  <v-icon>mdi-map-marker</v-icon>
-                </v-btn>
-              </v-bottom-navigation>
+                <v-bottom-navigation
+                    :value="value"
+                    color="primary"
+                >
+                    <v-btn>
+                        <span>Recents</span>
+                        <v-icon>mdi-history</v-icon>
+                    </v-btn>
+                    <v-btn>
+                        <span>Favorites</span>
+                        <v-icon>mdi-heart</v-icon>
+                    </v-btn>
+                    <v-btn>
+                        <span>Nearby</span>
+                        <v-icon>mdi-map-marker</v-icon>
+                    </v-btn>
+                </v-bottom-navigation>
             </template>
 
             <script>
-              export default {
-                data: () => ({ value: 1 }),
-              }
+                export default {
+                    data: () => ({ value: 1 }),
+                }
             </script>
 
 Grow
 ----
 
-Using the ``grow`` property forces :py:class:`Btn <ipyvuetify.Btn>` components to fill all available space. Buttons have a maximum width of 168px per the Bottom Navigation Material Design specification.
+Using the ``grow`` property forces :py:class:`Btn <ipyvuetify.Btn>` components to fill all available
+space. Buttons have a maximum width of 168px per the Bottom Navigation Material Design specification.
 
 .. tab-set::
 
@@ -207,38 +210,39 @@ Using the ``grow`` property forces :py:class:`Btn <ipyvuetify.Btn>` components t
         .. code-block:: vue
 
             <template>
-              <v-bottom-navigation
-                :value="value"
-                color="teal"
-                grow
-              >
-                <v-btn>
-                  <span>Recents</span>
-                  <v-icon>mdi-history</v-icon>
-                </v-btn>
-
-                <v-btn>
-                  <span>Favorites</span>
-                  <v-icon>mdi-heart</v-icon>
-                </v-btn>
-
-                <v-btn>
-                  <span>Nearby</span>
-                  <v-icon>mdi-map-marker</v-icon>
-                </v-btn>
-              </v-bottom-navigation>
+                <v-bottom-navigation
+                    :value="value"
+                    color="teal"
+                    grow
+                >
+                    <v-btn>
+                        <span>Recents</span>
+                        <v-icon>mdi-history</v-icon>
+                    </v-btn>
+                    <v-btn>
+                        <span>Favorites</span>
+                        <v-icon>mdi-heart</v-icon>
+                    </v-btn>
+                    <v-btn>
+                        <span>Nearby</span>
+                        <v-icon>mdi-map-marker</v-icon>
+                    </v-btn>
+                </v-bottom-navigation>
             </template>
 
             <script>
-              export default {
-                data: () => ({ value: 1 }),
-              }
+                export default {
+                    data: () => ({ value: 1 }),
+                }
             </script>
 
 Hide on scroll
 --------------
 
-The :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component hides when scrolling up when using the ``hide_on_scroll`` property. This is similar to the scrolling techniques that are supported in :py:class:`AppBar <ipyvuetify.AppBar>`. In the following example, scroll up and down to see this behavior.
+The :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component hides when scrolling up when
+using the ``hide_on_scroll`` property. This is similar to the scrolling techniques that are supported
+in :py:class:`AppBar <ipyvuetify.AppBar>`. In the following example, scroll up and down to see this
+behavior.
 
 .. tab-set::
 
@@ -250,10 +254,19 @@ The :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component hides w
             import ipyvuetify as v
 
             v.Card(
-                class_='overflow-hidden mx-auto',
+                class_='overflow-hidden my-2 mx-auto',
+                border=True,
                 height=200,
-                max_width=500,
+                width=500,
                 children=[
+                    v.Responsive(
+                        id='hide-on-scroll-example',
+                        class_='overflow-y-auto',
+                        max_height=600,
+                        children=[
+                            v.Responsive(height=1500)
+                        ]
+                    ),
                     v.BottomNavigation(
                         absolute=True,
                         hide_on_scroll=True,
@@ -286,14 +299,6 @@ The :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component hides w
                             ),
                         ]
                     ),
-                    v.Responsive(
-                        id='hide-on-scroll-example',
-                        class_='overflow-y-auto',
-                        max_height=600,
-                        children=[
-                            v.Responsive(height=1500)
-                        ]
-                    )
                 ]
             )
 
@@ -304,10 +309,19 @@ The :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component hides w
             import ipyvuetify as v
 
             v.Card(
-                class_='overflow-hidden mx-auto',
+                class_='overflow-hidden my-2 mx-auto',
+                border=True,
                 height=200,
-                max_width=500,
+                width=500,
                 children=[
+                    v.Responsive(
+                        id='hide-on-scroll-example',
+                        class_='overflow-y-auto',
+                        max_height=600,
+                        children=[
+                            v.Responsive(height=1500)
+                        ]
+                    ),
                     v.BottomNavigation(
                         absolute=True,
                         hide_on_scroll=True,
@@ -340,14 +354,6 @@ The :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component hides w
                             ),
                         ]
                     ),
-                    v.Responsive(
-                        id='hide-on-scroll-example',
-                        class_='overflow-y-auto',
-                        max_height=600,
-                        children=[
-                            v.Responsive(height=1500)
-                        ]
-                    )
                 ]
             )
 
@@ -356,56 +362,55 @@ The :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component hides w
         .. code-block:: vue
 
             <template>
-              <v-card
-                class="overflow-hidden mx-auto"
-                height="200"
-                max-width="500"
-              >
-                <v-bottom-navigation
-                  absolute
-                  hide-on-scroll
-                  horizontal
-                  scroll-target="#hide-on-scroll-example"
+                <v-card
+                    class="overflow-hidden mx-auto"
+                    height="200"
+                    max-width="500"
                 >
-                  <v-btn
-                    color="deep-purple accent-4"
-                    text
-                  >
-                    <span>Recents</span>
-                    <v-icon>mdi-history</v-icon>
-                  </v-btn>
+                    <v-bottom-navigation
+                        absolute
+                        hide-on-scroll
+                        horizontal
+                        scroll-target="#hide-on-scroll-example"
+                    >
+                        <v-btn
+                            color="deep-purple accent-4"
+                            text
+                        >
+                            <span>Recents</span>
+                            <v-icon>mdi-history</v-icon>
+                        </v-btn>
+                        <v-btn
+                            color="deep-purple accent-4"
+                            text
+                        >
+                            <span>Favorites</span>
+                            <v-icon>mdi-heart</v-icon>
+                        </v-btn>
+                        <v-btn
+                            color="deep-purple accent-4"
+                            text
+                        >
+                            <span>Nearby</span>
+                            <v-icon>mdi-map-marker</v-icon>
+                        </v-btn>
+                    </v-bottom-navigation>
 
-                  <v-btn
-                    color="deep-purple accent-4"
-                    text
-                  >
-                    <span>Favorites</span>
-                    <v-icon>mdi-heart</v-icon>
-                  </v-btn>
-
-                  <v-btn
-                    color="deep-purple accent-4"
-                    text
-                  >
-                    <span>Nearby</span>
-                    <v-icon>mdi-map-marker</v-icon>
-                  </v-btn>
-                </v-bottom-navigation>
-
-                <v-responsive
-                  id="hide-on-scroll-example"
-                  class="overflow-y-auto"
-                  max-height="600"
-                >
-                  <v-responsive height="1500"></v-responsive>
-                </v-responsive>
-              </v-card>
+                    <v-responsive
+                        id="hide-on-scroll-example"
+                        class="overflow-y-auto"
+                        max-height="600"
+                    >
+                        <v-responsive height="1500"></v-responsive>
+                    </v-responsive>
+                </v-card>
             </template>
 
 Horizontal
 ----------
 
-Adjust the style of buttons and icons by using the ``horizontal`` prop. This positions button text inline with the provided :py:class:`Icon <ipyvuetify.Icon>`.
+Adjust the style of buttons and icons by using the ``horizontal`` prop. This positions button text
+inline with the provided :py:class:`Icon <ipyvuetify.Icon>`.
 
 .. tab-set::
 
@@ -467,38 +472,37 @@ Adjust the style of buttons and icons by using the ``horizontal`` prop. This pos
         .. code-block:: vue
 
             <template>
-              <v-bottom-navigation
-                :value="value"
-                color="primary"
-                horizontal
-              >
-                <v-btn>
-                  <span>Recents</span>
-                  <v-icon>mdi-history</v-icon>
-                </v-btn>
-
-                <v-btn>
-                  <span>Favorites</span>
-                  <v-icon>mdi-heart</v-icon>
-                </v-btn>
-
-                <v-btn>
-                  <span>Nearby</span>
-                  <v-icon>mdi-map-marker</v-icon>
-                </v-btn>
-              </v-bottom-navigation>
+                <v-bottom-navigation
+                    :value="value"
+                    color="primary"
+                    horizontal
+                >
+                    <v-btn>
+                        <span>Recents</span>
+                        <v-icon>mdi-history</v-icon>
+                    </v-btn>
+                    <v-btn>
+                        <span>Favorites</span>
+                        <v-icon>mdi-heart</v-icon>
+                    </v-btn>
+                    <v-btn>
+                        <span>Nearby</span>
+                        <v-icon>mdi-map-marker</v-icon>
+                    </v-btn>
+                </v-bottom-navigation>
             </template>
 
             <script>
-              export default {
-                data: () => ({ value: 1 }),
-              }
+                export default {
+                    data: () => ({ value: 1 }),
+                }
             </script>
 
 Scroll threshold
 ----------------
 
-Modify the ``scroll_threshold`` property to increase the distance a user must scroll before the :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` is hidden.
+Modify the ``scroll_threshold`` property to increase the distance a user must scroll before the
+:py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` is hidden.
 
 .. tab-set::
 
@@ -510,9 +514,9 @@ Modify the ``scroll_threshold`` property to increase the distance a user must sc
             import ipyvuetify as v
 
             v.Card(
-                class_='mx-auto overflow-hidden',
+                class_='mx-auto overflow-hidden my-2',
                 height=200,
-                max_width=500,
+                width=500,
                 children=[
                     v.BottomNavigation(
                         absolute=True,
@@ -554,9 +558,9 @@ Modify the ``scroll_threshold`` property to increase the distance a user must sc
             import ipyvuetify as v
 
             v.Card(
-                class_='mx-auto overflow-hidden',
+                class_='mx-auto overflow-hidden my-2',
                 height=200,
-                max_width=500,
+                width=500,
                 children=[
                     v.BottomNavigation(
                         absolute=True,
@@ -596,59 +600,60 @@ Modify the ``scroll_threshold`` property to increase the distance a user must sc
         .. code-block:: vue
 
             <template>
-              <v-card
-                class="mx-auto overflow-hidden"
-                height="200"
-                max-width="500"
-              >
-                <v-bottom-navigation
-                  absolute
-                  color="white"
-                  hide-on-scroll
-                  horizontal
-                  scroll-target="#scroll-threshold-example"
-                  scroll-threshold="500"
+                <v-card
+                    class="mx-auto overflow-hidden"
+                    height="200"
+                    max-width="500"
                 >
-                  <v-btn>
-                    <span>Recents</span>
-                    <v-icon>mdi-history</v-icon>
-                  </v-btn>
-
-                  <v-btn>
-                    <span>Favorites</span>
-                    <v-icon>mdi-heart</v-icon>
-                  </v-btn>
-
-                  <v-btn>
-                    <span>Nearby</span>
-                    <v-icon>mdi-map-marker</v-icon>
-                  </v-btn>
-                </v-bottom-navigation>
-
-                <v-sheet
-                  id="scroll-threshold-example"
-                  class="overflow-y-auto pb-16"
-                  max-height="600"
-                >
-                  <v-responsive height="1500"></v-responsive>
-                </v-sheet>
-              </v-card>
+                    <v-bottom-navigation
+                        absolute
+                        color="white"
+                        hide-on-scroll
+                        horizontal
+                        scroll-target="#scroll-threshold-example"
+                        scroll-threshold="500"
+                    >
+                        <v-btn>
+                            <span>Recents</span>
+                            <v-icon>mdi-history</v-icon>
+                        </v-btn>
+                        <v-btn>
+                            <span>Favorites</span>
+                            <v-icon>mdi-heart</v-icon>
+                        </v-btn>
+                        <v-btn>
+                            <span>Nearby</span>
+                            <v-icon>mdi-map-marker</v-icon>
+                        </v-btn>
+                    </v-bottom-navigation>
+                    <v-sheet
+                        id="scroll-threshold-example"
+                        class="overflow-y-auto pb-16"
+                        max-height="600"
+                    >
+                        <v-responsive height="1500"></v-responsive>
+                    </v-sheet>
+                </v-card>
             </template>
 
 Shift
 -----
 
-The ``shift`` prop hides button text when not active. This provides an alternative visual style to the :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component.
+The ``shift`` prop hides button text when not active. This provides an alternative visual style to
+the :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component.
+
+.. note::
+    For this to work, :py:class:`Btn <ipyvuetify.Btn>` text is required to be wrapped in a
+    :py:class:`Html <ipyvuetify.Html>` `span` tag.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. code-block:: python
+        .. jupyter-execute::
+            :hide-code:
 
             import ipyvuetify as v
-
-            value_state = v.use_state(1)
 
             colors = ['blue-grey', 'teal', 'brown', 'indigo']
 
@@ -678,7 +683,6 @@ The ``shift`` prop hides button text when not active. This provides an alternati
             )
 
             def update_color(widget, event, data):
-                value_state.set(data)
                 if data < len(colors):
                     bottom_nav.background_color = colors[data]
 
@@ -692,7 +696,6 @@ The ``shift`` prop hides button text when not active. This provides an alternati
 
             import ipyvuetify as v
 
-            value = 1
             colors = ['blue-grey', 'teal', 'brown', 'indigo']
 
             bottom_nav = v.BottomNavigation(
@@ -721,8 +724,6 @@ The ``shift`` prop hides button text when not active. This provides an alternati
             )
 
             def update_color(widget, event, data):
-                global value
-                value = data
                 if data < len(colors):
                     bottom_nav.background_color = colors[data]
 
@@ -735,74 +736,73 @@ The ``shift`` prop hides button text when not active. This provides an alternati
         .. code-block:: vue
 
             <template>
-              <v-bottom-navigation
-                v-model="value"
-                :background-color="color"
-                dark
-                shift
-              >
-                <v-btn>
-                  <span>Video</span>
-                  <v-icon>mdi-television-play</v-icon>
-                </v-btn>
-
-                <v-btn>
-                  <span>Music</span>
-                  <v-icon>mdi-music-note</v-icon>
-                </v-btn>
-
-                <v-btn>
-                  <span>Book</span>
-                  <v-icon>mdi-book</v-icon>
-                </v-btn>
-
-                <v-btn>
-                  <span>Image</span>
-                  <v-icon>mdi-image</v-icon>
-                </v-btn>
-              </v-bottom-navigation>
+                <v-bottom-navigation
+                    v-model="value"
+                    :background-color="color"
+                    dark
+                    shift
+                >
+                    <v-btn>
+                        <span>Video</span>
+                        <v-icon>mdi-television-play</v-icon>
+                    </v-btn>
+                    <v-btn>
+                        <span>Music</span>
+                        <v-icon>mdi-music-note</v-icon>
+                    </v-btn>
+                    <v-btn>
+                        <span>Book</span>
+                        <v-icon>mdi-book</v-icon>
+                    </v-btn>
+                    <v-btn>
+                        <span>Image</span>
+                        <v-icon>mdi-image</v-icon>
+                    </v-btn>
+                </v-bottom-navigation>
             </template>
 
             <script>
-              export default {
-                data: () => ({ value: 1 }),
-                computed: {
-                  color () {
-                    switch (this.value) {
-                      case 0: return 'blue-grey'
-                      case 1: return 'teal'
-                      case 2: return 'brown'
-                      case 3: return 'indigo'
-                      default: return 'blue-grey'
-                    }
-                  },
-                },
-              }
+                export default {
+                    data: () => ({ value: 1 }),
+                    computed: {
+                        color () {
+                            switch (this.value) {
+                                case 0: return 'blue-grey'
+                                case 1: return 'teal'
+                                case 2: return 'brown'
+                                case 3: return 'indigo'
+                                default: return 'blue-grey'
+                            }
+                        }
+                    },
+                }
             </script>
 
 Toggle
 ------
 
-The display state of :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` can be toggled using the ``input_value`` prop. You can also control the currently active button using ``v_model``.
+The display state of :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` can be toggled using
+the ``input_value`` prop. You can also control the currently active button using ``v_model``.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. code-block:: python
+        .. jupyter-execute::
+            :hide-code:
 
             import ipyvuetify as v
-
-            active_state = v.use_state(True)
+            from ipywidgets import jslink
 
             toggle_btn = v.Btn(
                 color='deep-purple',
                 outlined=True,
-                children=['Toggle Navigation']
+                children=['Toggle Navigation'],
+                v_model=True,
             )
 
             bottom_nav = v.BottomNavigation(
-                v_model=1,
+                v_model=True,
                 input_value=True,
                 color='indigo',
                 children=[
@@ -822,11 +822,10 @@ The display state of :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` 
             )
 
             def toggle_navigation(widget, event, data):
-                current = active_state.value
-                active_state.set(not current)
-                bottom_nav.input_value = not current
+                bottom_nav.v_model = not widget.v_model
 
             toggle_btn.on_event('click', toggle_navigation)
+            jslink((toggle_btn, 'v_model'), (bottom_nav, 'v_model'))
 
             v.Container(
                 class_='overflow-hidden',
@@ -845,17 +844,17 @@ The display state of :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` 
         .. code-block:: python
 
             import ipyvuetify as v
-
-            active = True
+            from ipywidgets import jslink
 
             toggle_btn = v.Btn(
                 color='deep-purple',
                 outlined=True,
-                children=['Toggle Navigation']
+                children=['Toggle Navigation'],
+                v_model=True,
             )
 
             bottom_nav = v.BottomNavigation(
-                v_model=1,
+                v_model=True,
                 input_value=True,
                 color='indigo',
                 children=[
@@ -875,11 +874,10 @@ The display state of :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` 
             )
 
             def toggle_navigation(widget, event, data):
-                global active
-                active = not active
-                bottom_nav.input_value = active
+                bottom_nav.v_model = not widget.v_model
 
             toggle_btn.on_event('click', toggle_navigation)
+            jslink((toggle_btn, 'v_model'), (bottom_nav, 'v_model'))
 
             v.Container(
                 class_='overflow-hidden',
@@ -898,47 +896,45 @@ The display state of :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` 
         .. code-block:: vue
 
             <template>
-              <div class="overflow-hidden">
-                <div class="text-center mb-8">
-                  <v-btn
-                    color="deep-purple"
-                    outlined
-                    @click="active = !active"
-                  >
-                    Toggle Navigation
-                  </v-btn>
+                <div class="overflow-hidden">
+                    <div class="text-center mb-8">
+                        <v-btn
+                            color="deep-purple"
+                            outlined
+                            @click="active = !active"
+                        >
+                            Toggle Navigation
+                        </v-btn>
+                    </div>
+
+                    <v-bottom-navigation
+                        v-model="value"
+                        :input-value="active"
+                        color="indigo"
+                    >
+                        <v-btn>
+                            <span>Recents</span>
+                            <v-icon>mdi-history</v-icon>
+                        </v-btn>
+                        <v-btn>
+                            <span>Favorites</span>
+                            <v-icon>mdi-heart</v-icon>
+                        </v-btn>
+                        <v-btn>
+                            <span>Nearby</span>
+                            <v-icon>mdi-map-marker</v-icon>
+                        </v-btn>
+                    </v-bottom-navigation>
                 </div>
-
-                <v-bottom-navigation
-                  v-model="value"
-                  :input-value="active"
-                  color="indigo"
-                >
-                  <v-btn>
-                    <span>Recents</span>
-                    <v-icon>mdi-history</v-icon>
-                  </v-btn>
-
-                  <v-btn>
-                    <span>Favorites</span>
-                    <v-icon>mdi-heart</v-icon>
-                  </v-btn>
-
-                  <v-btn>
-                    <span>Nearby</span>
-                    <v-icon>mdi-map-marker</v-icon>
-                  </v-btn>
-                </v-bottom-navigation>
-              </div>
             </template>
 
             <script>
-              export default {
-                data () {
-                  return {
-                    value: 1,
-                    active: true,
-                  }
-                },
-              }
+                export default {
+                    data () {
+                        return {
+                            value: 1,
+                            active: true,
+                        }
+                    },
+                }
             </script>
