@@ -38,6 +38,8 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = "pydata_sphinx_theme"
 html_static_path = ["_static"]
 html_last_updated_fmt = None
+html_favicon = "_static/logo.png"
+html_logo = "_static/logo.png"
 html_css_files = [
     "custom.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
