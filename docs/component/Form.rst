@@ -35,20 +35,20 @@ The internal ``v-form`` component makes it easy to add validation to form inputs
                             v.TextField(
                                 label='First name',
                                 counter=10,
-                                rules=[lambda x: len(x) <= 10 or 'Max 10 characters']
+                                #rules=[lambda x: len(x) <= 10 or 'Max 10 characters']
                             )
                         ]),
                         v.Col(cols=12, md=4, children=[
                             v.TextField(
                                 label='Last name',
                                 counter=10,
-                                rules=[lambda x: len(x) <= 10 or 'Max 10 characters']
+                                #rules=[lambda x: len(x) <= 10 or 'Max 10 characters']
                             )
                         ]),
                         v.Col(cols=12, md=4, children=[
                             v.TextField(
                                 label='E-mail',
-                                rules=[lambda x: '@' in x or 'E-mail must be valid']
+                                #rules=[lambda x: '@' in x or 'E-mail must be valid']
                             )
                         ])
                     ])
@@ -68,20 +68,20 @@ The internal ``v-form`` component makes it easy to add validation to form inputs
                             v.TextField(
                                 label='First name',
                                 counter=10,
-                                rules=[lambda x: len(x) <= 10 or 'Max 10 characters']
+                                #rules=[lambda x: len(x) <= 10 or 'Max 10 characters']
                             )
                         ]),
                         v.Col(cols=12, md=4, children=[
                             v.TextField(
                                 label='Last name',
                                 counter=10,
-                                rules=[lambda x: len(x) <= 10 or 'Max 10 characters']
+                                #rules=[lambda x: len(x) <= 10 or 'Max 10 characters']
                             )
                         ]),
                         v.Col(cols=12, md=4, children=[
                             v.TextField(
                                 label='E-mail',
-                                rules=[lambda x: '@' in x or 'E-mail must be valid']
+                                #²rules=[lambda x: '@' in x or 'E-mail must be valid']
                             )
                         ])
                     ])
@@ -157,9 +157,6 @@ Rules allow you to apply custom validation on all form components. These are val
                         lambda x: x == 'Foobar' or 'Value must match Foobar'
                     ]
 
-            allow_spaces.on_event('change', update_rules)
-            update_rules()
-
             v.Container(children=[
                 text_field,
                 allow_spaces
@@ -192,9 +189,6 @@ Rules allow you to apply custom validation on all form components. These are val
                         lambda x: ' ' not in x or 'No spaces allowed',
                         lambda x: x == 'Foobar' or 'Value must match Foobar'
                     ]
-
-            allow_spaces.on_event('change', update_rules)
-            update_rules()
 
             v.Container(children=[text_field, allow_spaces])
 

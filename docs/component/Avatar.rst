@@ -68,7 +68,7 @@ this prop.
                 ]
             )
 
-    .. tab-item:: Python
+    .. tab-item:: :fab:`python` Python
 
         .. code-block:: python
 
@@ -95,7 +95,7 @@ this prop.
                 ]
             )
 
-    .. tab-item:: Vue template
+    .. tab-item:: :fab:`vuejs` Vue template
 
         .. code-block:: vue
 
@@ -132,7 +132,7 @@ with a simple square avatar.
 
 .. tab-set::
 
-    .. tab-item:: Rendered
+    .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
             :hide-code:
@@ -145,7 +145,7 @@ with a simple square avatar.
                 children=[v.Icon(dark=True, children=['mdi-alarm'])]
             )
 
-    .. tab-item:: Python
+    .. tab-item:: :fab:`python` Python
 
         .. code-block:: python
 
@@ -157,7 +157,7 @@ with a simple square avatar.
                 children=[v.Icon(dark=True, children=['mdi-alarm'])]
             )
 
-    .. tab-item:: Vue template
+    .. tab-item:: :fab:`vuejs` Vue template
 
         .. code-block:: vue
 
@@ -182,7 +182,7 @@ component, an image, or text. Mix and match these with other props to create som
 
 .. tab-set::
 
-    .. tab-item:: Rendered
+    .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
             :hide-code:
@@ -199,10 +199,8 @@ component, an image, or text. Mix and match these with other props to create som
                     v.Avatar(
                         children=[
                             v.Img(
-                                src='https://cdn.vuetifyjs.com/images/john.jpg',
+                                src='https://avatars.githubusercontent.com/u/12596392??v=4&s=460',
                                 alt='John',
-                                width=40,
-                                height=40
                             )
                         ]
                     ),
@@ -213,7 +211,7 @@ component, an image, or text. Mix and match these with other props to create som
                 ]
             )
 
-    .. tab-item:: Python
+    .. tab-item:: :fab:`python` Python
 
         .. code-block:: python
 
@@ -228,12 +226,9 @@ component, an image, or text. Mix and match these with other props to create som
                     ),
                     v.Avatar(
                         children=[
-                            v.Html(
-                                tag='img',
-                                attributes={
-                                    'src': 'https://cdn.vuetifyjs.com/images/john.jpg',
-                                    'alt': 'John'
-                                }
+                            v.Img(
+                                src='https://avatars.githubusercontent.com/u/12596392??v=4&s=460',
+                                alt='John',
                             )
                         ]
                     ),
@@ -244,7 +239,7 @@ component, an image, or text. Mix and match these with other props to create som
                 ]
             )
 
-    .. tab-item:: Vue template
+    .. tab-item:: :fab:`vuejs` Vue template
 
         .. code-block:: vue
 
@@ -258,7 +253,7 @@ component, an image, or text. Mix and match these with other props to create som
 
                     <v-avatar>
                         <img
-                            src="https://cdn.vuetifyjs.com/images/john.jpg"
+                            src="https://avatars.githubusercontent.com/u/12596392?v=4"
                             alt="John"
                         >
                     </v-avatar>
@@ -276,150 +271,292 @@ Combining an avatar with other components allows you to build beautiful user int
 
 .. tab-set::
 
-.. tab-item:: Rendered
+    .. tab-item:: :fas:`eye` Rendered
 
-    .. jupyter-execute::
-        :hide-code:
+        .. jupyter-execute::
+            :hide-code:
 
-        import ipyvuetify as v
+            import ipyvuetify as v
 
-        messages = [
-            {
-                'avatar': 'https://avatars0.githubusercontent.com/u/9064066?v=4&s=460',
-                'name': 'John Leider',
-                'title': 'Welcome to Vuetify!',
-                'excerpt': 'Thank you for joining our community...',
-                'new': None,
-                'total': None,
-                'color': None,
-                'icon': None
-            },
-            {
-                'color': 'red',
-                'icon': 'mdi-account-multiple',
-                'name': 'Social',
-                'new': 1,
-                'total': 3,
-                'title': 'Twitter',
-                'excerpt': None,
-                'avatar': None
-            },
-            {
-                'color': 'teal',
-                'icon': 'mdi-tag',
-                'name': 'Promos',
-                'new': 2,
-                'total': 4,
-                'title': 'Shop your way',
-                'excerpt': 'New deals available, Join Today',
-                'avatar': None
-            },
-        ]
-
-        lorem = (
-            'Lorem ipsum dolor sit amet, at aliquam vivendum vel, everti delicatissimi cu eos. Dico '
-            'iuvaret debitis mel an, et cum zril menandri.'
-        )
-
-        panels = []
-        for i, message in enumerate(messages):
-            avatar_content = []
-            if message['avatar']:
-                avatar_content.append(
-                    v.Img(
-                        alt='Avatar',
-                        src=message['avatar']
-                    )
-                )
-            else:
-                avatar_content.append(
-                    v.Icon(
-                        color=message['color'],
-                        children=[message['icon']]
-                    )
-                )
-
-            header_cols = [
-                v.Col(
-                    cols=4,
-                    sm=2,
-                    md=1,
-                    children=[
-                        v.Avatar(size=36, children=avatar_content)
-                    ]
-                ),
-                v.Col(
-                    class_='hidden-xs-only',
-                    sm=5,
-                    md=3,
-                    children=[
-                        v.Html(tag='strong', children=[message['name']]),
-                        v.Html(
-                            tag='span',
-                            class_='grey--text',
-                            children=[f" ({message['total']})" if 'total' in message else '']
-                        )
-                    ]
-                ),
-                v.Col(
-                    class_='text-no-wrap',
-                    cols=5,
-                    sm=3,
-                    children=[
-                        v.Chip(
-                            color=f"{message['color']} lighten-4",
-                            class_='ml-0 mr-2 black--text',
-                            label=True,
-                            small=True,
-                            children=[f"{message['new'] if 'new' in message else ''} new"]
-                        ),
-                        v.Html(tag='strong', children=[message['title']])
-                    ]
-                ),
+            messages = [
+                {
+                    'avatar': 'https://avatars0.githubusercontent.com/u/9064066?v=4&s=460',
+                    'name': 'John Leider',
+                    'title': 'Welcome to Vuetify!',
+                    'excerpt': 'Thank you for joining our community...',
+                    'new': None,
+                    'total': None,
+                    'color': None,
+                    'icon': None
+                },
+                {
+                    'color': 'red',
+                    'icon': 'mdi-account-multiple',
+                    'name': 'Social',
+                    'new': 1,
+                    'total': 3,
+                    'title': 'Twitter',
+                    'excerpt': None,
+                    'avatar': None
+                },
+                {
+                    'color': 'teal',
+                    'icon': 'mdi-tag',
+                    'name': 'Promos',
+                    'new': 2,
+                    'total': 4,
+                    'title': 'Shop your way',
+                    'excerpt': 'New deals available, Join Today',
+                    'avatar': None
+                },
             ]
 
-            if message['excerpt']:
-                header_cols.append(
-                    v.Col(
-                        class_='grey--text text-truncate hidden-sm-and-down',
-                        children=[f"— {message['excerpt']}"]
-                    )
-                )
-
-            panels.append(
-                v.ExpansionPanel(
-                    hide_actions=True,
-                    children=[
-                        v.ExpansionPanelHeader(children=[
-                            v.Row(
-                                align='center',
-                                class_='spacer',
-                                no_gutters=True,
-                                children=header_cols
-                            )
-                        ]),
-                        v.ExpansionPanelContent(children=[
-                            v.Divider(),
-                            v.CardText(children=[lorem])
-                        ])
-                    ]
-                )
+            lorem = (
+                'Lorem ipsum dolor sit amet, at aliquam vivendum vel, everti delicatissimi cu eos. Dico '
+                'iuvaret debitis mel an, et cum zril menandri.'
             )
 
-        v.Container(
-            fluid=True,
-            children=[
-                v.Row(
-                    justify='center',
-                    children=[
-                        v.Subheader(children=['Today']),
-                        v.ExpansionPanels(popout=True, children=panels)
-                    ]
-                )
-            ]
-        )
+            panels = []
+            for i, message in enumerate(messages):
+                avatar_content = []
+                if message['avatar']:
+                    avatar_content.append(
+                        v.Img(
+                            alt='Avatar',
+                            src=message['avatar']
+                        )
+                    )
+                else:
+                    avatar_content.append(
+                        v.Icon(
+                            color=message['color'],
+                            children=[message['icon']]
+                        )
+                    )
 
-    .. tab-item:: Vue template
+                header_cols = [
+                    v.Col(
+                        cols=4,
+                        sm=2,
+                        md=1,
+                        children=[
+                            v.Avatar(size=36, children=avatar_content)
+                        ]
+                    ),
+                    v.Col(
+                        class_='hidden-xs-only',
+                        sm=5,
+                        md=3,
+                        children=[
+                            v.Html(tag='strong', children=[message['name']]),
+                            v.Html(
+                                tag='span',
+                                class_='grey--text',
+                                children=[f" ({message['total']})" if 'total' in message else '']
+                            )
+                        ]
+                    ),
+                    v.Col(
+                        class_='text-no-wrap',
+                        cols=5,
+                        sm=3,
+                        children=[
+                            v.Chip(
+                                color=f"{message['color']} lighten-4",
+                                class_='ml-0 mr-2 black--text',
+                                label=True,
+                                small=True,
+                                children=[f"{message['new'] if 'new' in message else ''} new"]
+                            ),
+                            v.Html(tag='strong', children=[message['title']])
+                        ]
+                    ),
+                ]
+
+                if message['excerpt']:
+                    header_cols.append(
+                        v.Col(
+                            class_='grey--text text-truncate hidden-sm-and-down',
+                            children=[f"— {message['excerpt']}"]
+                        )
+                    )
+
+                panels.append(
+                    v.ExpansionPanel(
+                        hide_actions=True,
+                        children=[
+                            v.ExpansionPanelHeader(children=[
+                                v.Row(
+                                    align='center',
+                                    class_='spacer',
+                                    no_gutters=True,
+                                    children=header_cols
+                                )
+                            ]),
+                            v.ExpansionPanelContent(children=[
+                                v.Divider(),
+                                v.CardText(children=[lorem])
+                            ])
+                        ]
+                    )
+                )
+
+            v.Container(
+                fluid=True,
+                children=[
+                    v.Row(
+                        justify='center',
+                        children=[
+                            v.Subheader(children=['Today']),
+                            v.ExpansionPanels(popout=True, children=panels)
+                        ]
+                    )
+                ]
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            messages = [
+                {
+                    'avatar': 'https://avatars0.githubusercontent.com/u/9064066?v=4&s=460',
+                    'name': 'John Leider',
+                    'title': 'Welcome to Vuetify!',
+                    'excerpt': 'Thank you for joining our community...',
+                    'new': None,
+                    'total': None,
+                    'color': None,
+                    'icon': None
+                },
+                {
+                    'color': 'red',
+                    'icon': 'mdi-account-multiple',
+                    'name': 'Social',
+                    'new': 1,
+                    'total': 3,
+                    'title': 'Twitter',
+                    'excerpt': None,
+                    'avatar': None
+                },
+                {
+                    'color': 'teal',
+                    'icon': 'mdi-tag',
+                    'name': 'Promos',
+                    'new': 2,
+                    'total': 4,
+                    'title': 'Shop your way',
+                    'excerpt': 'New deals available, Join Today',
+                    'avatar': None
+                },
+            ]
+
+            lorem = (
+                'Lorem ipsum dolor sit amet, at aliquam vivendum vel, everti delicatissimi cu eos. Dico '
+                'iuvaret debitis mel an, et cum zril menandri.'
+            )
+
+            panels = []
+            for i, message in enumerate(messages):
+                avatar_content = []
+                if message['avatar']:
+                    avatar_content.append(
+                        v.Img(
+                            alt='Avatar',
+                            src=message['avatar']
+                        )
+                    )
+                else:
+                    avatar_content.append(
+                        v.Icon(
+                            color=message['color'],
+                            children=[message['icon']]
+                        )
+                    )
+
+                header_cols = [
+                    v.Col(
+                        cols=4,
+                        sm=2,
+                        md=1,
+                        children=[
+                            v.Avatar(size=36, children=avatar_content)
+                        ]
+                    ),
+                    v.Col(
+                        class_='hidden-xs-only',
+                        sm=5,
+                        md=3,
+                        children=[
+                            v.Html(tag='strong', children=[message['name']]),
+                            v.Html(
+                                tag='span',
+                                class_='grey--text',
+                                children=[f" ({message['total']})" if 'total' in message else '']
+                            )
+                        ]
+                    ),
+                    v.Col(
+                        class_='text-no-wrap',
+                        cols=5,
+                        sm=3,
+                        children=[
+                            v.Chip(
+                                color=f"{message['color']} lighten-4",
+                                class_='ml-0 mr-2 black--text',
+                                label=True,
+                                small=True,
+                                children=[f"{message['new'] if 'new' in message else ''} new"]
+                            ),
+                            v.Html(tag='strong', children=[message['title']])
+                        ]
+                    ),
+                ]
+
+                if message['excerpt']:
+                    header_cols.append(
+                        v.Col(
+                            class_='grey--text text-truncate hidden-sm-and-down',
+                            children=[f"— {message['excerpt']}"]
+                        )
+                    )
+
+                panels.append(
+                    v.ExpansionPanel(
+                        hide_actions=True,
+                        children=[
+                            v.ExpansionPanelHeader(children=[
+                                v.Row(
+                                    align='center',
+                                    class_='spacer',
+                                    no_gutters=True,
+                                    children=header_cols
+                                )
+                            ]),
+                            v.ExpansionPanelContent(children=[
+                                v.Divider(),
+                                v.CardText(children=[lorem])
+                            ])
+                        ]
+                    )
+                )
+
+            v.Container(
+                fluid=True,
+                children=[
+                    v.Row(
+                        justify='center',
+                        children=[
+                            v.Subheader(children=['Today']),
+                            v.ExpansionPanels(popout=True, children=panels)
+                        ]
+                    )
+                ]
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
 
         .. code-block:: vue
 
@@ -537,11 +674,11 @@ Combining an avatar with other components allows you to build beautiful user int
                                 title: 'Shop your way',
                                 excerpt: 'New deals available, Join Today',
                             },
-                    ],
-                    lorem: 'Lorem ipsum dolor sit amet...',
-                }),
-            }
-        </script>
+                        ],
+                        lorem: 'Lorem ipsum dolor sit amet...',
+                    }),
+                }
+            </script>
 
 Profile Card
 ------------
@@ -550,7 +687,7 @@ Using the ``tile`` prop, we can create a sleek hard-lined profile card.
 
 .. tab-set::
 
-    .. tab-item:: Rendered
+    .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
             :hide-code:
@@ -613,7 +750,7 @@ Using the ``tile`` prop, we can create a sleek hard-lined profile card.
                 ]
             )
 
-    .. tab-item:: Python
+    .. tab-item:: :fab:`python` Python
 
         .. code-block:: python
 
@@ -675,7 +812,7 @@ Using the ``tile`` prop, we can create a sleek hard-lined profile card.
                 ]
             )
 
-    .. tab-item:: Vue template
+    .. tab-item:: :fab:`vuejs` Vue template
 
         .. code-block:: vue
 
