@@ -22,6 +22,7 @@ release = "1.11.3"
 
 extensions = [
     "sphinx.ext.napoleon",
+    "sphinx.ext.autosectionlabel",
     "jupyter_sphinx",
     "sphinx_design",
     "autoapi.extension",
