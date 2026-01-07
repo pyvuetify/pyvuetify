@@ -12,8 +12,12 @@ or text color.
 
 .. api::
 
-    :py:class:`ipyvuetify.Btn`
-    :py:class:`ipyvuetify.BtnToggle`
+    -   :py:class:`ipyvuetify.Btn`
+    -   :py:class:`ipyvuetify.BtnToggle`
+
+.. seealso::
+
+    :doc:`BtnToggle`
 
 Usage
 -----

@@ -23,6 +23,7 @@ release = "1.11.3"
 extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.autosectionlabel",
+    "sphinx.ext.todo",
     "jupyter_sphinx",
     "sphinx_design",
     "autoapi.extension",
@@ -33,6 +34,7 @@ extensions = [
 ]
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+autosectionlabel_prefix_document = True
 
 # -- Options for HTML output -------------------------------------------------
 
