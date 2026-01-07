@@ -91,7 +91,9 @@ div.highlight-console pre span.go::before {
 * custom loader animation
 */
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .custom-loader {

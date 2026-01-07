@@ -12,12 +12,51 @@ The :py:class:`Carousel <ipyvuetify.Carousel>` component is used to display larg
 
 .. api::
 
-    :py:class:`ipyvuetify.Carousel`
+    - :py:class:`ipyvuetify.Carousel`
+    - :py:class:`ipyvuetify.CarouselItem`
+    - :py:class:`ipyvuetify.CarouselReverseTransition`
+    - :py:class:`ipyvuetify.CarouselTransition`
 
 Usage
 -----
 
-The Carousel component provides a simple way to cycle through images or content with built-in controls.
+The Carousel component expands upon the window component by providing additional features targeted at displaying images.
+
+.. jupyter-execute::
+
+    import ipyvuetify as v
+
+    colors = ['primary', 'secondary', 'error', 'success', 'warning']
+
+    v.Carousel(
+        v_model='model',
+        children=[
+            v.CarouselItem(
+                children=[
+                    v.Sheet(
+                        color=color,
+                        height='100%',
+                        tile=True,
+                        children=[
+                            v.Row(
+                                class_='fill-height',
+                                align='center',
+                                justify='center',
+                                children=[
+                                    v.Html(tag='h1', children=[f'Slide {i + 1}'])
+                                ]
+                            )
+                        ]
+                    )
+                ]
+            ) for i, color in enumerate(colors)
+        ]
+    )
+
+Custom delimiters
+-----------------
+
+Use any available icon as your carousel's slide delimiter.
 
 .. tab-set::
 
@@ -28,80 +67,36 @@ The Carousel component provides a simple way to cycle through images or content 
 
             import ipyvuetify as v
 
-            carousel = v.Carousel(
+            colors = ['primary', 'secondary', 'error', 'success', 'warning']
+
+            v.Carousel(
+                continuous=False,
+                cycle=False,
+                show_arrows=False,
+                hide_delimiter_background=True,
+                delimiter_icon='mdi-minus',
                 children=[
                     v.CarouselItem(
                         children=[
                             v.Sheet(
-                                height='400px',
-                                color='red lighten-2',
+                                color=color,
+                                height='100%',
+                                tile=True,
                                 children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
+                                    v.Row(
+                                        class_='fill-height',
+                                        align='center',
+                                        justify='center',
                                         children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 1'])
+                                            v.Html(tag='h1', children=[f'Slide {i + 1}'])
                                         ]
                                     )
                                 ]
                             )
                         ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='blue lighten-2',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 2'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='green lighten-2',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 3'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='orange lighten-2',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 4'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
+                    ) for i, color in enumerate(colors)
                 ]
             )
-
-            carousel
 
     .. tab-item:: :fab:`python` Python
 
@@ -109,117 +104,145 @@ The Carousel component provides a simple way to cycle through images or content 
 
             import ipyvuetify as v
 
-            carousel = v.Carousel(
+            colors = ['primary', 'secondary', 'error', 'success', 'warning']
+
+            v.Carousel(
+                continuous=False,
+                cycle=False,
+                show_arrows=False,
+                hide_delimiter_background=True,
+                delimiter_icon='mdi-minus',
                 children=[
                     v.CarouselItem(
                         children=[
                             v.Sheet(
-                                height='400px',
-                                color='red lighten-2',
+                                color=color,
+                                height='100%',
+                                tile=True,
                                 children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
+                                    v.Row(
+                                        class_='fill-height',
+                                        align='center',
+                                        justify='center',
                                         children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 1'])
+                                            v.Html(tag='h1', children=[f'Slide {i + 1}'])
                                         ]
                                     )
                                 ]
                             )
                         ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='blue lighten-2',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 2'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='green lighten-2',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 3'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='orange lighten-2',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 4'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
+                    ) for i, color in enumerate(colors)
                 ]
             )
-
-            carousel
 
     .. tab-item:: :fab:`vuejs` Vue
 
         .. code-block:: vue
 
             <template>
-              <v-carousel>
-                <v-carousel-item>
-                  <v-sheet height="400" color="red lighten-2">
-                    <v-container fill-height class="d-flex align-center justify-center">
-                      <h1 class="white--text">Slide 1</h1>
-                    </v-container>
-                  </v-sheet>
-                </v-carousel-item>
-                <v-carousel-item>
-                  <v-sheet height="400" color="blue lighten-2">
-                    <v-container fill-height class="d-flex align-center justify-center">
-                      <h1 class="white--text">Slide 2</h1>
-                    </v-container>
-                  </v-sheet>
-                </v-carousel-item>
-                <v-carousel-item>
-                  <v-sheet height="400" color="green lighten-2">
-                    <v-container fill-height class="d-flex align-center justify-center">
-                      <h1 class="white--text">Slide 3</h1>
-                    </v-container>
-                  </v-sheet>
-                </v-carousel-item>
-                <v-carousel-item>
-                  <v-sheet height="400" color="orange lighten-2">
-                    <v-container fill-height class="d-flex align-center justify-center">
-                      <h1 class="white--text">Slide 4</h1>
-                    </v-container>
-                  </v-sheet>
-                </v-carousel-item>
-              </v-carousel>
+                <v-carousel
+                    :continuous="false"
+                    :cycle="cycle"
+                    :show-arrows="false"
+                    hide-delimiter-background
+                    delimiter-icon="mdi-minus"
+                    height="300"
+                >
+                    <v-carousel-item
+                        v-for="(slide, i) in slides"
+                        :key="i"
+                    >
+                        <v-sheet
+                            :color="colors[i]"
+                            height="100%"
+                            tile
+                        >
+                            <v-row
+                                class="fill-height"
+                                align="center"
+                                justify="center"
+                            >
+                                <div class="text-h2">
+                                    {{ slide }} Slide
+                                </div>
+                            </v-row>
+                        </v-sheet>
+                    </v-carousel-item>
+                </v-carousel>
             </template>
+
+Custom transition
+-----------------
+
+The :py:class:`CarouselItem <ipyvuetify.CarouselItem>` component can have its
+transition/reverse-transition changed.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            items = [
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"},
+            ]
+
+            v.Carousel(
+                children=[
+                    v.CarouselItem(
+                        reverse_transition='fade-transition',
+                        transition='fade-transition',
+                        children=[v.Img(src=item["src"])]
+                    ) for item in items
+                ]
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            items = [
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"},
+            ]
+
+            v.Carousel(
+                children=[
+                    v.CarouselItem(
+                        reverse_transition='fade-transition',
+                        transition='fade-transition',
+                        children=[v.Img(src=item["src"])]
+                    ) for item in items
+                ]
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue
+
+        .. code-block:: vue
+
+            <template>
+                <v-carousel>
+                    <v-carousel-item
+                        v-for="(item,i) in items"
+                        :key="i"
+                        :src="item.src"
+                        reverse-transition="fade-transition"
+                        transition="fade-transition"
+                    ></v-carousel-item>
+                </v-carousel>
+            </template>
+
+
 
 Cycle
 -----
@@ -235,64 +258,35 @@ With the ``cycle`` prop you can have your slides automatically transition to the
 
             import ipyvuetify as v
 
-            carousel = v.Carousel(
+            colors = ['primary', 'secondary', 'error', 'success', 'warning']
+
+            v.Carousel(
+                continuous=False,
                 cycle=True,
+                hide_delimiter_background=True,
+                show_arrows_on_hover=True,
                 children=[
                     v.CarouselItem(
                         children=[
                             v.Sheet(
-                                height='400px',
-                                color='primary',
+                                color=color,
+                                height='100%',
+                                tile=True,
                                 children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
+                                    v.Row(
+                                        class_='fill-height',
+                                        align='center',
+                                        justify='center',
                                         children=[
-                                            v.Html(tag='h1', class_='white--text', children=['First Slide'])
+                                            v.Html(tag='h1', children=[f'Slide {i + 1}'])
                                         ]
                                     )
                                 ]
                             )
                         ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='secondary',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Second Slide'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='accent',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Third Slide'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
+                    ) for i, color in enumerate(colors)
                 ]
             )
-
-            carousel
 
     .. tab-item:: :fab:`python` Python
 
@@ -300,99 +294,74 @@ With the ``cycle`` prop you can have your slides automatically transition to the
 
             import ipyvuetify as v
 
-            carousel = v.Carousel(
+            colors = ['primary', 'secondary', 'error', 'success', 'warning']
+
+            v.Carousel(
+                continuous=False,
                 cycle=True,
+                hide_delimiter_background=True,
+                show_arrows_on_hover=True,
                 children=[
                     v.CarouselItem(
                         children=[
                             v.Sheet(
-                                height='400px',
-                                color='primary',
+                                color=color,
+                                height='100%',
+                                tile=True,
                                 children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
+                                    v.Row(
+                                        class_='fill-height',
+                                        align='center',
+                                        justify='center',
                                         children=[
-                                            v.Html(tag='h1', class_='white--text', children=['First Slide'])
+                                            v.Html(tag='h1', children=[f'Slide {i + 1}'])
                                         ]
                                     )
                                 ]
                             )
                         ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='secondary',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Second Slide'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='accent',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Third Slide'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
+                    ) for i, color in enumerate(colors)
                 ]
             )
-
-            carousel
 
     .. tab-item:: :fab:`vuejs` Vue
 
         .. code-block:: vue
 
             <template>
-              <v-carousel cycle>
-                <v-carousel-item>
-                  <v-sheet height="400" color="primary">
-                    <v-container fill-height class="d-flex align-center justify-center">
-                      <h1 class="white--text">First Slide</h1>
-                    </v-container>
-                  </v-sheet>
-                </v-carousel-item>
-                <v-carousel-item>
-                  <v-sheet height="400" color="secondary">
-                    <v-container fill-height class="d-flex align-center justify-center">
-                      <h1 class="white--text">Second Slide</h1>
-                    </v-container>
-                  </v-sheet>
-                </v-carousel-item>
-                <v-carousel-item>
-                  <v-sheet height="400" color="accent">
-                    <v-container fill-height class="d-flex align-center justify-center">
-                      <h1 class="white--text">Third Slide</h1>
-                    </v-container>
-                  </v-sheet>
-                </v-carousel-item>
-              </v-carousel>
+                <v-carousel
+                    :continuous="false"
+                    :cycle="true"
+                    height="300"
+                    show-arrows-on-hover
+                >
+                    <v-carousel-item
+                        v-for="(slide, i) in slides"
+                        :key="i"
+                    >
+                        <v-sheet
+                            :color="colors[i]"
+                            height="100%"
+                            tile
+                        >
+                            <v-row
+                                class="fill-height"
+                                align="center"
+                                justify="center"
+                            >
+                                <div class="text-h2">
+                                    {{ slide }} Slide
+                                </div>
+                            </v-row>
+                        </v-sheet>
+                    </v-carousel-item>
+                </v-carousel>
             </template>
 
 Hide controls
 -------------
 
-You can hide the carousel navigation controls with ``:show_arrows=False``. Similarly, you can hide the bottom delimiters with ``hide_delimiters`` prop.
+You can hide the carousel navigation controls with ``show_arrows=False``.
 
 .. tab-set::
 
@@ -403,65 +372,19 @@ You can hide the carousel navigation controls with ``:show_arrows=False``. Simil
 
             import ipyvuetify as v
 
-            carousel = v.Carousel(
-                show_arrows=False,
-                hide_delimiters=True,
-                children=[
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='indigo',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['No Controls'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='teal',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Hidden Navigation'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='purple',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Clean Look'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
-                ]
-            )
+            items = [
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"},
+            ]
 
-            carousel
+            v.Carousel(
+                continuous=False,
+                cycle=True,
+                show_arrows=False,
+                children=[v.CarouselItem(children=[v.Img(src=item["src"])]) for item in items]
+            )
 
     .. tab-item:: :fab:`python` Python
 
@@ -469,100 +392,319 @@ You can hide the carousel navigation controls with ``:show_arrows=False``. Simil
 
             import ipyvuetify as v
 
-            carousel = v.Carousel(
-                show_arrows=False,
-                hide_delimiters=True,
-                children=[
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='indigo',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['No Controls'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='teal',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Hidden Navigation'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='purple',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Clean Look'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
-                ]
-            )
+            items = [
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"},
+            ]
 
-            carousel
+            v.Carousel(
+                continuous=False,
+                cycle=True,
+                show_arrows=False,
+                children=[v.CarouselItem(children=[v.Img(src=item["src"])]) for item in items]
+            )
 
     .. tab-item:: :fab:`vuejs` Vue
 
         .. code-block:: vue
 
             <template>
-              <v-carousel :show-arrows="false" hide-delimiters>
-                <v-carousel-item>
-                  <v-sheet height="400" color="indigo">
-                    <v-container fill-height class="d-flex align-center justify-center">
-                      <h1 class="white--text">No Controls</h1>
-                    </v-container>
-                  </v-sheet>
-                </v-carousel-item>
-                <v-carousel-item>
-                  <v-sheet height="400" color="teal">
-                    <v-container fill-height class="d-flex align-center justify-center">
-                      <h1 class="white--text">Hidden Navigation</h1>
-                    </v-container>
-                  </v-sheet>
-                </v-carousel-item>
-                <v-carousel-item>
-                  <v-sheet height="400" color="purple">
-                    <v-container fill-height class="d-flex align-center justify-center">
-                      <h1 class="white--text">Clean Look</h1>
-                    </v-container>
-                  </v-sheet>
-                </v-carousel-item>
-              </v-carousel>
+                <v-carousel
+                    :continuous="false"
+                    :cycle="true"
+                    :show-arrows="false"
+                    height="300"
+                >
+                    <v-carousel-item
+                        v-for="(item,i) in items"
+                        :key="i"
+                        :src="item.src"
+                    ></v-carousel-item>
+                </v-carousel>
             </template>
 
+Customized arrows
+-----------------
+
+Arrows can be customized by using the ``prev`` and ``next`` slots to replace the
+default navigation controls.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            colors = ['primary', 'secondary', 'error', 'success', 'warning']
+
+            v.Carousel(
+                height='400px',
+                hide_delimiter_background=True,
+                show_arrows_on_hover=True,
+                children=[
+                    v.CarouselItem(
+                        children=[
+                            v.Sheet(
+                                color=color,
+                                height='100%',
+                                children=[
+                                    v.Row(
+                                        class_='fill-height',
+                                        align='center',
+                                        justify='center',
+                                        children=[
+                                            v.Html(tag='h2', children=[f'{i + 1} Slide'])
+                                        ]
+                                    )
+                                ]
+                            )
+                        ]
+                    ) for i, color in enumerate(colors)
+                ],
+                v_slots=[
+                    {
+                        "name": "prev",
+                        "variable": "var",
+                        "children": [v.Btn(color='success', children=['Previous slide'], v_bind="var.attrs", v_on="var.on")]
+                    },
+                    {
+                        "name": "next",
+                        "variable": "var",
+                        "children": [v.Btn(color='info', children=['Next slide'], v_bind="var.attrs", v_on="var.on")]
+                    }
+                ]
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            colors = ['primary', 'secondary', 'error', 'success', 'warning']
+
+            v.Carousel(
+                height='400px',
+                hide_delimiter_background=True,
+                show_arrows_on_hover=True,
+                children=[
+                    v.CarouselItem(
+                        children=[
+                            v.Sheet(
+                                color=color,
+                                height='100%',
+                                children=[
+                                    v.Row(
+                                        class_='fill-height',
+                                        align='center',
+                                        justify='center',
+                                        children=[
+                                            v.Html(tag='h2', children=[f'{i + 1} Slide'])
+                                        ]
+                                    )
+                                ]
+                            )
+                        ]
+                    ) for i, color in enumerate(colors)
+                ],
+                v_slots=[
+                    {
+                        "name": "prev",
+                        "variable": "var",
+                        "children": [v.Btn(color='success', children=['Previous slide'], v_bind="var.attrs", v_on="var.on")]
+                    },
+                    {
+                        "name": "next",
+                        "variable": "var",
+                        "children": [v.Btn(color='info', children=['Next slide'], v_bind="var.attrs", v_on="var.on")]
+                    }
+                ]
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue
+
+        .. code-block:: vue
+
+            <template>
+                <v-carousel
+                    cycle
+                    height="400"
+                    hide-delimiter-background
+                    show-arrows-on-hover
+                >
+                    <template v-slot:prev="{ on, attrs }">
+                        <v-btn
+                            color="success"
+                            v-bind="attrs"
+                            v-on="on"
+                        >Previous slide</v-btn>
+                    </template>
+                    <template v-slot:next="{ on, attrs }">
+                        <v-btn
+                            color="info"
+                            v-bind="attrs"
+                            v-on="on"
+                        >Next slide</v-btn>
+                    </template>
+                    <v-carousel-item
+                        v-for="(slide, i) in slides"
+                        :key="i"
+                    >
+                        <v-sheet
+                            :color="colors[i]"
+                            height="100%"
+                        >
+                            <v-row
+                                class="fill-height"
+                                align="center"
+                                justify="center"
+                            >
+                                <div class="text-h2">
+                                    {{ slide }} Slide
+                                </div>
+                            </v-row>
+                        </v-sheet>
+                    </v-carousel-item>
+                </v-carousel>
+            </template>
+
+Hide delimiters
+---------------
+
+You can hide the bottom controls with ``hide-delimiters`` prop.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            items = [
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"},
+            ]
+
+            v.Carousel(
+                hide_delimiters=True,
+                children=[v.CarouselItem(children=[v.Img(src=item["src"])]) for item in items]
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            items = [
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"},
+            ]
+
+            v.Carousel(
+                hide_delimiters=True,
+                children=[v.CarouselItem(children=[v.Img(src=item["src"])]) for item in items]
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue
+
+        .. code-block:: vue
+
+            <template>
+                <v-carousel
+                    hide-delimiters
+                    height="300"
+                >
+                    <v-carousel-item
+                        v-for="(item,i) in items"
+                        :key="i"
+                        :src="item.src"
+                    ></v-carousel-item>
+                </v-carousel>
+            </template>
+
+
+
+Progress
+--------
+
+You can show a linear progress bar with the ``progress`` prop. It will indicate
+how far into the cycle the carousel currently is.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :hide-code:
+
+            import ipyvuetify as v
+
+            items = [
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"},
+            ]
+
+            v.Carousel(
+                hide_delimiters=True,
+                progress=True,
+                children=[v.CarouselItem(children=[v.Img(src=item["src"])]) for item in items]
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            items = [
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"},
+                {"src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"},
+            ]
+
+            v.Carousel(
+                hide_delimiters=True,
+                progress=True,
+                children=[v.CarouselItem(children=[v.Img(src=item["src"])]) for item in items]
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue
+
+        .. code-block:: vue
+
+            <template>
+                <v-carousel
+                    hide-delimiters
+                    progress
+                    height="300"
+                >
+                    <v-carousel-item
+                        v-for="(item,i) in items"
+                        :key="i"
+                        :src="item.src"
+                    ></v-carousel-item>
+                </v-carousel>
+            </template>
 Model
 -----
 
-You can control the carousel with ``v_model``. This example demonstrates manual control with buttons.
+You can control the carousel with ``v_model``. This example demonstrates manual
+control with buttons. This example will start the carousel on the 3rd slide.
 
 .. tab-set::
 
@@ -573,89 +715,30 @@ You can control the carousel with ``v_model``. This example demonstrates manual 
 
             import ipyvuetify as v
 
-            carousel = v.Carousel(
-                v_model=0,
+            colors = ['primary', 'secondary', 'error', 'success', 'warning']
+
+            v.Carousel(
+                v_model=2,
                 children=[
                     v.CarouselItem(
                         children=[
                             v.Sheet(
-                                height='400px',
-                                color='red darken-2',
+                                color=color,
+                                height='100%',
+                                tile=True,
                                 children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
+                                    v.Row(
+                                        class_='fill-height',
+                                        align='center',
+                                        justify='center',
                                         children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 1'])
+                                            v.Html(tag='h1', children=[f'Slide {i + 1}'])
                                         ]
                                     )
                                 ]
                             )
                         ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='blue darken-2',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 2'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='green darken-2',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 3'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
-                ]
-            )
-
-            prev_btn = v.Btn(
-                color='primary',
-                children=[v.Icon(children=['mdi-chevron-left'])]
-            )
-            next_btn = v.Btn(
-                color='primary',
-                children=[v.Icon(children=['mdi-chevron-right'])]
-            )
-
-            def prev_slide(*args):
-                carousel.v_model = max(0, carousel.v_model - 1)
-
-            def next_slide(*args):
-                carousel.v_model = min(2, carousel.v_model + 1)
-
-            prev_btn.on_event('click', prev_slide)
-            next_btn.on_event('click', next_slide)
-
-            v.Container(
-                children=[
-                    carousel,
-                    v.Row(
-                        class_='mt-4',
-                        justify='center',
-                        children=[prev_btn, v.Spacer(), next_btn]
-                    )
+                    ) for i, color in enumerate(colors)
                 ]
             )
 
@@ -665,89 +748,30 @@ You can control the carousel with ``v_model``. This example demonstrates manual 
 
             import ipyvuetify as v
 
-            carousel = v.Carousel(
-                v_model=0,
+            colors = ['primary', 'secondary', 'error', 'success', 'warning']
+
+            v.Carousel(
+                v_model=2,
                 children=[
                     v.CarouselItem(
                         children=[
                             v.Sheet(
-                                height='400px',
-                                color='red darken-2',
+                                color=color,
+                                height='100%',
+                                tile=True,
                                 children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
+                                    v.Row(
+                                        class_='fill-height',
+                                        align='center',
+                                        justify='center',
                                         children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 1'])
+                                            v.Html(tag='h1', children=[f'Slide {i + 1}'])
                                         ]
                                     )
                                 ]
                             )
                         ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='blue darken-2',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 2'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-                    v.CarouselItem(
-                        children=[
-                            v.Sheet(
-                                height='400px',
-                                color='green darken-2',
-                                children=[
-                                    v.Container(
-                                        fill_height=True,
-                                        class_='d-flex align-center justify-center',
-                                        children=[
-                                            v.Html(tag='h1', class_='white--text', children=['Slide 3'])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
-                ]
-            )
-
-            prev_btn = v.Btn(
-                color='primary',
-                children=[v.Icon(children=['mdi-chevron-left'])]
-            )
-            next_btn = v.Btn(
-                color='primary',
-                children=[v.Icon(children=['mdi-chevron-right'])]
-            )
-
-            def prev_slide(*args):
-                carousel.v_model = max(0, carousel.v_model - 1)
-
-            def next_slide(*args):
-                carousel.v_model = min(2, carousel.v_model + 1)
-
-            prev_btn.on_event('click', prev_slide)
-            next_btn.on_event('click', next_slide)
-
-            v.Container(
-                children=[
-                    carousel,
-                    v.Row(
-                        class_='mt-4',
-                        justify='center',
-                        children=[prev_btn, v.Spacer(), next_btn]
-                    )
+                    ) for i, color in enumerate(colors)
                 ]
             )
 
@@ -756,48 +780,28 @@ You can control the carousel with ``v_model``. This example demonstrates manual 
         .. code-block:: vue
 
             <template>
-              <v-container>
-                <v-carousel v-model="model">
-                  <v-carousel-item>
-                    <v-sheet height="400" color="red darken-2">
-                      <v-container fill-height class="d-flex align-center justify-center">
-                        <h1 class="white--text">Slide 1</h1>
-                      </v-container>
-                    </v-sheet>
-                  </v-carousel-item>
-                  <v-carousel-item>
-                    <v-sheet height="400" color="blue darken-2">
-                      <v-container fill-height class="d-flex align-center justify-center">
-                        <h1 class="white--text">Slide 2</h1>
-                      </v-container>
-                    </v-sheet>
-                  </v-carousel-item>
-                  <v-carousel-item>
-                    <v-sheet height="400" color="green darken-2">
-                      <v-container fill-height class="d-flex align-center justify-center">
-                        <h1 class="white--text">Slide 3</h1>
-                      </v-container>
-                    </v-sheet>
-                  </v-carousel-item>
+                <v-carousel
+                    v-model="model"
+                    height="300"
+                >
+                    <v-carousel-item
+                        v-for="(slide, i) in slides"
+                        :key="i"
+                    >
+                        <v-sheet
+                            :color="colors[i]"
+                            height="100%"
+                            tile
+                        >
+                            <v-row
+                                class="fill-height"
+                                align="center"
+                                justify="center"
+                            >
+                                <div class="text-h2">
+                                    {{ slide }} Slide
+                                </div>
+                            </v-row>
+                        </v-sheet>
+                    </v-carousel-item>
                 </v-carousel>
-                <v-row class="mt-4" justify="center">
-                  <v-btn color="primary" @click="model = Math.max(0, model - 1)">
-                    <v-icon>mdi-chevron-left</v-icon>
-                  </v-btn>
-                  <v-spacer></v-spacer>
-                  <v-btn color="primary" @click="model = Math.min(2, model + 1)">
-                    <v-icon>mdi-chevron-right</v-icon>
-                  </v-btn>
-                </v-row>
-              </v-container>
-            </template>
-
-            <script>
-            export default {
-              data() {
-                return {
-                  model: 0
-                }
-              }
-            }
-            </script>
