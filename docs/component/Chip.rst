@@ -34,7 +34,8 @@ The default slot allows you to customize the content inside the chip.
 
 .. api::
 
-    :py:class:`ipyvuetify.Chip`
+    - :py:class:`ipyvuetify.Chip`
+    - :py:class:`ipyvuetify.ChipGroup`
 
 Closeable
 ---------
