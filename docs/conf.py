@@ -35,6 +35,8 @@ extensions = [
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 autosectionlabel_prefix_document = True
+todo_include_todos = True
+todo_emit_warnings = True
 
 # -- Options for HTML output -------------------------------------------------
 
