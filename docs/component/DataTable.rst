@@ -28,6 +28,7 @@ The standard :py:class:`DataTable <ipyvuetify.DataTable>` will by default render
 your data as simple rows.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -75,6 +76,7 @@ not be applied.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -219,6 +221,7 @@ Using the ``dense`` prop you are able to give your data tables an alternate styl
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -313,6 +316,7 @@ In the example below the dessert name column is no longer searchable.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -444,6 +448,7 @@ to this component using ``footer-props``.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -559,6 +564,7 @@ use the ``groupable`` property on header items to disable the group button.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -653,6 +659,7 @@ remove the default header and footer respectively.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -748,6 +755,7 @@ This message can be customized using the ``loading-text`` prop or the
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -797,6 +805,7 @@ to programmatically control the sorting, instead of single values.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -896,6 +905,7 @@ just one with the ``single-select`` prop.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1022,6 +1032,7 @@ The :py:class:`DataTable <ipyvuetify.DataTable>` exposes a ``search`` prop that 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1178,6 +1189,7 @@ sent to headers.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1281,6 +1293,7 @@ sent to headers. So to customize the calories column we're using the
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1398,6 +1411,7 @@ and will respect header alignment.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

@@ -24,6 +24,7 @@ Usage
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -66,6 +67,7 @@ When using the ``auto_grow`` prop, textarea's will automatically increase in siz
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -111,6 +113,7 @@ The ``counter`` prop informs the user of a character limit for the textarea.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

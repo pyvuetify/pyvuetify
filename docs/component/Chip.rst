@@ -16,6 +16,7 @@ Chips come in the following variations: closeable, colored, outlined, and sized.
 The default slot allows you to customize the content inside the chip.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -48,6 +49,7 @@ Closeable chips can be controlled with a ``v_model``. You can also listen to the
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -201,6 +203,7 @@ Any color from the Material Design palette can be used to change a chip's color.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -262,6 +265,7 @@ Draggable
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -319,6 +323,7 @@ additional icon to you if chip is active. It can be customized using ``filter-ic
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -445,6 +450,7 @@ Label chips use the :py:class:`Card <ipyvuetify.Card>` border-radius.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -597,6 +603,7 @@ No ripple
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -652,6 +659,7 @@ Outlined chips inherit their border color from the current text color.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -812,6 +820,7 @@ Sizes
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -900,6 +909,7 @@ Chips can use text or any icon available in the Material Icons font library.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

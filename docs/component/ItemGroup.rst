@@ -24,6 +24,7 @@ The core usage of the ``v-item-group`` is to create groups of anything that shou
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -120,6 +121,7 @@ Mandatory item groups must have at least 1 item selected.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -228,6 +230,7 @@ Item groups can have multiple items selected.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

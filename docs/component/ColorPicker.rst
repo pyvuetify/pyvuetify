@@ -16,6 +16,7 @@ The :py:class:`ColorPicker <ipyvuetify.ColorPicker>` allows you to select a colo
 using a variety of input methods.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -48,6 +49,7 @@ with the ``dot-size`` prop.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -145,6 +147,7 @@ to setting ``elevation`` to 0.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -230,6 +233,7 @@ through the ``mode`` prop.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -350,6 +354,7 @@ control the color displayed. It supports hex strings such as #FF00FF and
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -443,6 +448,7 @@ section with the ``swatches-max-height`` prop.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

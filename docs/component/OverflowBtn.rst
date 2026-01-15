@@ -24,6 +24,7 @@ Usage
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -65,6 +66,7 @@ Editable ``v-overflow-btn`` can be directly edited, just as ``v-text-field``.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -109,6 +111,7 @@ Segmented ``v-overflow-btn`` has an additional divider between the content and t
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -153,6 +156,7 @@ You can use ``dense`` prop to reduce overflow button height and lower max height
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

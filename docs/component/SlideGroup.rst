@@ -24,6 +24,7 @@ Similar to the v-window component, ``v-slide-group`` lets items take up as much 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -93,6 +94,7 @@ Using the ``center_active`` prop will make the active item always centered.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

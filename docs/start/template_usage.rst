@@ -8,6 +8,7 @@ When building larger UI's it may be convenient to write composite widgets using
 the Vue template syntax. Lets start with a basic example:
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
     import traitlets
@@ -40,6 +41,7 @@ While the first template is actually more code than simply creating a
 available using the normal wrapped Vuetify widgets:
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
     import traitlets

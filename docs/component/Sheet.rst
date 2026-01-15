@@ -24,6 +24,7 @@ The ``v-sheet`` component is a transformable piece of paper that provides a basi
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -71,6 +72,7 @@ The ``v-sheet`` component accepts a custom elevation between 0 and 24.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

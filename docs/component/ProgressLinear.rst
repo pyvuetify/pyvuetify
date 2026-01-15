@@ -24,6 +24,7 @@ In its simplest form, v-progress-linear displays a horizontal progress bar.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -56,6 +57,7 @@ Using the ``indeterminate`` prop, v-progress-linear continuously animates.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -88,6 +90,7 @@ The buffer prop adds a buffer section to the progress bar for showing buffered p
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

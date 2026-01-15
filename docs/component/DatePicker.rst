@@ -25,6 +25,7 @@ Usage
 Basic usage of :py:class:`DatePicker <ipyvuetify.DatePicker>`.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -52,6 +53,7 @@ Customize the color of :py:class:`DatePicker <ipyvuetify.DatePicker>` with the `
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -136,6 +138,7 @@ You can override the default icons used in the picker.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -195,6 +198,7 @@ Allow selecting multiple dates with :py:class:`DatePicker <ipyvuetify.DatePicker
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -342,6 +346,7 @@ array of length 2 or empty.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -438,6 +443,7 @@ Selecting new date could be disabled by adding ``readonly`` prop.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -493,6 +499,7 @@ the current one.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -563,6 +570,7 @@ displayed using the ``show-adjacent-months`` prop.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -614,6 +622,7 @@ You can specify the picker’s width or make it full width.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -688,6 +697,7 @@ event indicators.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -790,6 +800,7 @@ This will maintain an old value which can be replaced if the user cancels.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -923,6 +934,7 @@ of the week with the ``first-day-of-week`` prop.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -998,6 +1010,7 @@ Date pickers come in two orientation variations, portrait (default) and landscap
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

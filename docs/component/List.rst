@@ -24,6 +24,7 @@ Lists come in three main variations. single-line (default), two-line and three-l
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -119,6 +120,7 @@ Dense
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -223,6 +225,7 @@ A simple list utilizing ``v-list-item-icon``, ``v-list-item-title`` and ``v-list
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

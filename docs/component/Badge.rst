@@ -19,6 +19,7 @@ Usage
 Badges in their simplest form display to the upper right of the content that it wraps and requires the badge slot.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -45,6 +46,7 @@ The :py:class:`Badge <ipyvuetify.Badge>` component is flexible and can be used i
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -240,6 +242,7 @@ You can incorporate badges with dynamic content to make things such as a notific
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -407,6 +410,7 @@ You can do many things with visibility control, for example, show badge on hover
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -502,6 +506,7 @@ Badges help convey information to the user in a variety of ways.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

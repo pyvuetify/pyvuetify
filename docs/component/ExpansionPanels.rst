@@ -24,6 +24,7 @@ Expansion panels in their simplest form display a list of expandable items.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -119,6 +120,7 @@ Accordion expansion-panel hasn't got margins around active panel.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -220,6 +222,7 @@ Expansion panels can be controlled externally by modifying the ``v_model``. Its 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -331,6 +334,7 @@ The expansion-panel also has popout design. With it, expansion-panel is enlarged
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

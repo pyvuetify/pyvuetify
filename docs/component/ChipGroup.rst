@@ -17,6 +17,7 @@ implementations. By default, :py:class:`ChipGroup <ipyvuetify.ChipGroup>` will
 overflow to the right but can be changed to a **column** only mode.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -71,6 +72,7 @@ Chip groups with the ``column`` prop can wrap their chips in a vertical layout.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -216,6 +218,7 @@ chip is selected.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -465,6 +468,7 @@ This means a chip cannot be deselected if it's the only selected one.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -557,6 +561,7 @@ This allows you to select multiple chips at once.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -647,6 +652,7 @@ This example shows a product size selector.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -807,6 +813,7 @@ such as toothbrush bristle types.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

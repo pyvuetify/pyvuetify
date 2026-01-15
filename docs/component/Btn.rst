@@ -26,6 +26,7 @@ Buttons in their simplest form contain uppercase text, a slight elevation, hover
 ripple effect on click.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -43,6 +44,7 @@ Block
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -79,6 +81,7 @@ Depressed
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -126,6 +129,7 @@ Floating action buttons (FAB) are circular and typically contain an icon. Use ``
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -174,6 +178,7 @@ Buttons can be used as icon-only controls. This makes the button rounded and app
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -294,6 +299,7 @@ customized.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -428,6 +434,7 @@ Outlined
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -486,6 +493,7 @@ Plain
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -593,6 +601,7 @@ Rounded
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -625,6 +634,7 @@ Buttons can be given different sizing options to fit a multitude of scenarios.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -821,6 +831,7 @@ When used with the color prop, the supplied color is applied to the button text 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -868,6 +879,7 @@ Tile
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -915,6 +927,7 @@ Raised
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

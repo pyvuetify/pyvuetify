@@ -24,6 +24,7 @@ A ``v-switch`` in its simplest form provides a toggle between 2 values.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -66,6 +67,7 @@ Switches can be colored by using any of the builtin colors and contextual names 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -110,6 +112,7 @@ You can make switch render in inset mode.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

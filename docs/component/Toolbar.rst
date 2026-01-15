@@ -24,6 +24,7 @@ A toolbar is a flexible container that can be used in a number of ways. By defau
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -74,6 +75,7 @@ Dense toolbars reduce their height to 48px.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

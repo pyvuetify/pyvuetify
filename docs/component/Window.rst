@@ -24,6 +24,7 @@ Designed to easily cycle through content, ``v-window`` provides a simple interfa
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -123,6 +124,7 @@ Reverse ``v-window`` always displays reverse transition.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

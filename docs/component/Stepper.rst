@@ -24,6 +24,7 @@ A stepper can be used for a multitude of scenarios, including shopping carts, re
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -109,6 +110,7 @@ Vertical steppers move users along the y-axis and otherwise work exactly the sam
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

@@ -24,6 +24,7 @@ At its core, the ``v-file-input`` component is a basic container that extends v-
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -60,6 +61,7 @@ A selected file can be displayed as a chip. When using the ``chips`` and ``multi
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -113,6 +115,7 @@ The ``v-file-input`` can contain multiple files at the same time when using the 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -151,6 +154,7 @@ The displayed size of the selected file(s) can be configured with the ``show_siz
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

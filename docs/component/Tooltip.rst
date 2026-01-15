@@ -24,6 +24,7 @@ Tooltips can wrap any element.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -86,6 +87,7 @@ A tooltip can be aligned to any of the four sides of the activator element.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

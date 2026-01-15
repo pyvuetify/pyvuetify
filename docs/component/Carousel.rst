@@ -20,6 +20,7 @@ Usage
 The Carousel component expands upon the window component by providing additional features targeted at displaying images.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -60,6 +61,7 @@ Use any available icon as your carousel's slide delimiter.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -179,6 +181,7 @@ transition/reverse-transition changed.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -251,6 +254,7 @@ With the ``cycle`` prop you can have your slides automatically transition to the
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -365,6 +369,7 @@ You can hide the carousel navigation controls with ``show_arrows=False``.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -433,6 +438,7 @@ default navigation controls.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -580,6 +586,7 @@ You can hide the bottom controls with ``hide-delimiters`` prop.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -644,6 +651,7 @@ how far into the cycle the carousel currently is.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -708,6 +716,7 @@ control with buttons. This example will start the carousel on the 3rd slide.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

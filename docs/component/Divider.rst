@@ -24,6 +24,7 @@ Dividers in their simplest form display a horizontal line.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -74,6 +75,7 @@ Inset dividers are moved 72px to the right. This will cause them to line up with
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -187,6 +189,7 @@ Vertical dividers give you more tools for unique layouts.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -259,6 +262,7 @@ Dividers and subheaders can help break up content and can optionally line up wit
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

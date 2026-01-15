@@ -24,6 +24,7 @@ The internal ``v-form`` component makes it easy to add validation to form inputs
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -131,6 +132,7 @@ Rules allow you to apply custom validation on all form components. These are val
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

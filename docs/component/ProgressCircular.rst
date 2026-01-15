@@ -24,6 +24,7 @@ In its simplest form, v-progress-circular displays a circular progress bar. Use 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -74,6 +75,7 @@ Alternate colors can be applied to ``v-progress-circular`` using the ``color`` p
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -124,6 +126,7 @@ Using the ``indeterminate`` prop, a ``v-progress-circular`` continues to animate
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -174,6 +177,7 @@ The ``size`` and ``width`` props allow you to easily alter the size and width of
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

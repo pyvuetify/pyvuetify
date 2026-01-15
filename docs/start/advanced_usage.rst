@@ -42,6 +42,7 @@ An example for using the slot 'no-data', which changes what the Select widget sh
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -92,6 +93,7 @@ below the events of the parent widget are used in the slot content.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -137,6 +139,7 @@ with 'cols' as default) you would want one element to take up the full width. Pl
 your browser to see the effect.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 

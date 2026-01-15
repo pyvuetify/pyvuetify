@@ -26,6 +26,7 @@ Toggle buttons allow you to create a styled group of buttons that can be selecte
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -256,6 +257,7 @@ A :py:class:`BtnToggle <ipyvuetify.BtnToggle>` with the ``mandatory`` prop will 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -324,6 +326,7 @@ multiple return values as an array.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -391,6 +394,7 @@ You can make :py:class:`BtnToggle <ipyvuetify.BtnToggle>` rounded using the ``ro
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -458,6 +462,7 @@ Easily integrate customized button solutions with a v-toolbar.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

@@ -24,6 +24,7 @@ Remember to put the element that activates the menu in the ``activator`` slot.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -132,6 +133,7 @@ Menu can be offset by the X axis to make the activator visible.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -233,6 +235,7 @@ Menus can be accessed using hover instead of clicking with the ``open_on_hover``
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

@@ -17,6 +17,7 @@ Usage
 Here we display an example list of actions that could be present in an application.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -70,6 +71,7 @@ Bottom sheets can be inset, reducing their maximum width on desktop to 70%. This
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -218,6 +220,7 @@ Bottom sheets can be controlled using ``v_model``. You can use it to close them 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -354,6 +357,7 @@ Persistent bottom sheets can't be closed by clicking outside them.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -502,6 +506,7 @@ Using a inset bottom sheet, you can make practical components such as this simpl
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -681,6 +686,7 @@ By combining a functional list into a bottom sheet, you can create a simple 'ope
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

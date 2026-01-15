@@ -24,6 +24,7 @@ Radio groups allow you to select a single value from a group of radio buttons.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -71,6 +72,7 @@ Radio groups can be displayed in a row instead of a column.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

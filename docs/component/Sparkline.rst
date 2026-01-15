@@ -24,6 +24,7 @@ A sparkline is a tiny chart that provides a visual representation of data. Each 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -62,6 +63,7 @@ You can create a ``v-sparkline`` with fill using the ``fill`` property.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

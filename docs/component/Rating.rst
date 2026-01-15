@@ -24,6 +24,7 @@ The ``v-rating`` component provides a simple interface for gathering user feedba
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -65,6 +66,7 @@ The ``v-rating`` component can be colored as you want, you can set both selected
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -115,6 +117,7 @@ Sometimes an application will call for a customized implementation. Easily chang
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

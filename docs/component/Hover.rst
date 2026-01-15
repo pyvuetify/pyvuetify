@@ -24,6 +24,7 @@ The ``v-hover`` component is a wrapper that should contain only one child elemen
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -96,6 +97,7 @@ The ``disabled`` prop disables the hover functionality.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -156,6 +158,7 @@ Create highly customized components that respond to user interaction.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

@@ -22,6 +22,7 @@ Usage
 Alerts in their simplest form are flat sheets of paper that display a message.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -43,6 +44,7 @@ props like ``color``, ``dark``, and ``type`` to provide unique accents to the al
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -156,6 +158,7 @@ will default to the inverted color of the applied theme (black for light and whi
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -299,6 +302,7 @@ with the style.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -396,6 +400,7 @@ locale.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -468,6 +473,7 @@ will remove the icon altogether.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -576,6 +582,7 @@ it to the text and border, and making its background transparent.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -677,6 +684,7 @@ appearance of a normal alert but with the prominent icon effects.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -766,6 +774,7 @@ color. Similar to other styled props, ``text`` can be combined with other props 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -965,6 +974,7 @@ component hides and shows.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1045,6 +1055,7 @@ customizing Vuetify's theme.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1093,6 +1104,7 @@ props, you can create stylish custom alerts such as this Twitter notification.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

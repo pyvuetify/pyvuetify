@@ -24,6 +24,7 @@ Subheaders in their simplest form display a subheading with default theme.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -56,6 +57,7 @@ Inset subheaders are moved 72px to the right. This gives you the option to line 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

@@ -29,6 +29,7 @@ A card has 4 basic components: :py:class:`CardTitle <ipyvuetify.CardTitle>`,
 :py:class:`CardActions <ipyvuetify.CardActions>`.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -82,6 +83,7 @@ further actions and provides visual feedback with an indeterminate
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -260,6 +262,7 @@ An ``outlined`` card has 0 elevation and contains a soft border.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -392,6 +395,7 @@ activating the hidden card to be revealed.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -528,6 +532,7 @@ The ``v-card`` component is useful for wrapping content.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -726,6 +731,7 @@ With a simple conditional, you can easily add supplementary text that is hidden 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -873,6 +879,7 @@ Using grids, you can create beautiful layouts.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1100,6 +1107,7 @@ instead of covering.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1349,6 +1357,7 @@ Cards are entry points to more detailed information. To keep things concise, ens
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1446,6 +1455,7 @@ Using the layout system, we can add custom text anywhere within the background.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1579,6 +1589,7 @@ example is comprised of the :py:class:`CardTitle <ipyvuetify.CardTitle>`,
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1748,6 +1759,7 @@ a useful interface of selection to the user.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

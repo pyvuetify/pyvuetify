@@ -24,6 +24,7 @@ A parallax causes a shift in a background image when the user scrolls the page.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -62,6 +63,7 @@ You can also place any content inside of the parallax. This allows you to use th
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -162,6 +164,7 @@ You can specify a custom height on a parallax. Keep in mind this can break the p
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

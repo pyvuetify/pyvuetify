@@ -19,6 +19,7 @@ Usage
 Banners can have 1-2 lines of text, actions and icon.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -43,6 +44,7 @@ the content is pinned to the screen (note: does not work in IE11).
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -209,6 +211,7 @@ Icon click event
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -321,6 +324,7 @@ The ``actions`` slot has ``dismiss`` function in its scope, you can use it to ea
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -464,6 +468,7 @@ The icon slot allows you to explicitly control the content and functionality wit
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -592,6 +597,7 @@ This is recommended for mobile implementations.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

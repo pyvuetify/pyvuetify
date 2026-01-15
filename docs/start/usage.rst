@@ -11,6 +11,7 @@ Create an ipyvuetify widget
 Below you see how to create an ipyvuetify widget.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -22,6 +23,7 @@ Below you see how to create an ipyvuetify widget.
 Attributes are traits and thus can be changed at any time in the code e.g. to add an item:
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -85,6 +87,7 @@ Python uses snake_case to separate words in attributes, while Vuetify uses kebab
     .. tab-item:: :fas:`eye` Redendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -112,6 +115,7 @@ have to set the value to ``True``. For example ``clearable`` becomes ``clearable
     .. tab-item:: :fas:`eye` Redendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -138,6 +142,7 @@ Some attribute have naming conflicts with Python or ipywidgets. These are ``for`
     .. tab-item:: :fas:`eye` Redendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -179,6 +184,7 @@ for non-vuetify related attributes, the ones from the HTML tag, can be accessed 
     .. tab-item:: :fas:`eye` Redendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -233,6 +239,7 @@ explicitly set when creating the widget.
     .. tab-item:: :fas:`eye` Redendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -279,6 +286,7 @@ an item in ``children``, e.g. in ipywidgets the text of a button is set with the
     .. tab-item:: :fas:`eye` Redendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -314,6 +322,7 @@ This has the benefit of composability, e.g. the button can, in addition to text,
     .. tab-item:: :fas:`eye` Redendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -434,6 +443,7 @@ The attributes of the HTML tag can be accessed through the ``attributes`` trait.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -464,6 +474,7 @@ be set. Multiple CSS properties can be set by separating them with a semicolon `
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -482,6 +493,7 @@ Buttons without spacing:
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -507,6 +519,7 @@ With 2 units of margin in the x direction:
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -530,6 +543,7 @@ And colors:
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -565,6 +579,7 @@ The ``class`` attribute of a Vuetify DOM elements give access to the built-in st
         .. tab-item:: :fas:`eye` Rendered
 
             .. jupyter-execute::
+                :raises:
                 :hide-code:
 
                 import ipyvuetify as v
@@ -587,6 +602,7 @@ The ``class`` attribute of a Vuetify DOM elements give access to the built-in st
         .. tab-item:: :fas:`eye` Rendered
 
             .. jupyter-execute::
+                :raises:
                 :hide-code:
 
                 import ipyvuetify as v
@@ -609,6 +625,7 @@ The ``class`` attribute of a Vuetify DOM elements give access to the built-in st
         .. tab-item:: :fas:`eye` Rendered
 
             .. jupyter-execute::
+                :raises:
                 :hide-code:
 
                 import ipyvuetify as v
@@ -631,6 +648,7 @@ The ``class`` attribute of a Vuetify DOM elements give access to the built-in st
         .. tab-item:: :fas:`eye` Rendered
 
             .. jupyter-execute::
+                :raises:
                 :hide-code:
 
                 import ipyvuetify as v
@@ -658,6 +676,7 @@ Using ``hide`` will add the ``d-none`` class to the widget and ``show`` will rem
     .. tab-item:: :fas:`eye` Not rendered after call to ``hide()``
 
             .. jupyter-execute::
+                :raises:
                 :hide-code:
 
                 import ipyvuetify as v
@@ -678,6 +697,7 @@ Using ``hide`` will add the ``d-none`` class to the widget and ``show`` will rem
     .. tab-item:: :fas:`eye` Rendered after call to ``show()``
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -696,6 +716,7 @@ In ipywidgets you would layout a grid of widgets with HBox and VBox.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipywidgets as widgets
@@ -736,6 +757,7 @@ This can be done in ipyvuetify with the help of some classes described in
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -784,6 +806,7 @@ Icons can be displayed with the Icon widget:
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -803,6 +826,7 @@ In some widgets icons are specified by setting an attribute:
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

@@ -24,6 +24,7 @@ Icons come in two themes (light and dark), and five different sizes (x-small, sm
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -80,6 +81,7 @@ Using color helpers you can change the color of an icon from the standard dark a
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -136,6 +138,7 @@ Icons can be used inside of buttons to add emphasis to the action.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

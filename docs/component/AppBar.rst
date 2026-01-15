@@ -21,6 +21,7 @@ Usage
 The :py:class:`AppBar <ipyvuetify.AppBar>` component is used for application-wide actions and information.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -58,6 +59,7 @@ You can make app-bar dense. A dense app bar has lower height than regular one.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -132,6 +134,7 @@ elevation of 0dp until the user begins to scroll down. Once scrolling, the bar r
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -227,6 +230,7 @@ user is scrolling through content.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -330,6 +334,7 @@ that the user interacts with.
     .. tab-item:: Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -426,6 +431,7 @@ property for this.
     .. tab-item:: Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -541,6 +547,7 @@ provides you with an ``img`` slot.
     .. tab-item:: Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -662,6 +669,7 @@ The background image of a :py:class:`AppBar <ipyvuetify.AppBar>` can fade on scr
     .. tab-item:: Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -791,6 +799,7 @@ is supplied a default value of 0 will be used.
     .. tab-item:: Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -902,6 +911,7 @@ only after defined via ``scroll_threshold`` property amount of pixels.
     .. tab-item:: Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1032,6 +1042,7 @@ there. Click on last icon to see it in action.
     .. tab-item:: Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1218,6 +1229,7 @@ state of other components such as a :py:class:`NavigationDrawer <ipyvuetify.Navi
     .. tab-item:: Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

@@ -27,6 +27,7 @@ A calendar has a type and a value which determines what type of calendar is show
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -116,6 +117,7 @@ This is an example of an event calendar with all-day and timed events with a typ
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -197,6 +199,7 @@ This is an example of calendar with a type of ``day``.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

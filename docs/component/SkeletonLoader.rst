@@ -24,6 +24,7 @@ The ``v-skeleton-loader`` component provides a user with a visual indicator that
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -62,6 +63,7 @@ There are over 30 pre-defined options available that can be combined.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

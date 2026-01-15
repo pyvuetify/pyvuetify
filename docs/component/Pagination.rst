@@ -24,6 +24,7 @@ Pagination by default displays the number of pages based on the set length prop,
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -65,6 +66,7 @@ The circle prop gives you an alternate style for pagination buttons.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -109,6 +111,7 @@ Using the length prop you can set the length of ``v-pagination``, if the number 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -150,6 +153,7 @@ You can also manually set the maximum number of visible page buttons with the to
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

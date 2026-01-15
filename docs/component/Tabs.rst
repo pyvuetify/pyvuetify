@@ -24,6 +24,7 @@ The ``v-tabs`` component is a styled extension of v-item-group. It provides an e
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -104,6 +105,7 @@ The ``vertical`` prop allows for v-tab components to stack vertically.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

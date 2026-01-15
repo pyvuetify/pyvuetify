@@ -24,6 +24,7 @@ In its simplest form, the ``v-overlay`` component will add a dimmed layer over y
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -86,6 +87,7 @@ Absolute overlays are positioned absolutely and contained inside of their parent
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -164,6 +166,7 @@ Opacity allows you to customize the transparency of ``v-overlay`` components.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

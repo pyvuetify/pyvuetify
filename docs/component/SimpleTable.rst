@@ -24,6 +24,7 @@ The simple table is a wrapper component around the ``<table>`` element.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -111,6 +112,7 @@ You can show a dense version of the table by using the dense prop.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

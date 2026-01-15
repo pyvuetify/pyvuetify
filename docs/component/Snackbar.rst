@@ -24,6 +24,7 @@ A ``v-snackbar`` in its simplest form displays a temporary and closable notifica
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -83,6 +84,7 @@ The ``timeout`` property lets you customize the delay before the snackbar is hid
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -145,6 +147,7 @@ The ``vertical`` property allows you to stack the content of your snackbar.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

@@ -24,6 +24,7 @@ Select fields components are used for collecting user provided information from 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -65,6 +66,7 @@ You can use dense prop to reduce the field height and lower max height of list i
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -109,6 +111,7 @@ A multi-select can utilize v-chip as the display for selected items.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

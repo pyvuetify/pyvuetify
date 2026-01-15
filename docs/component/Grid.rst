@@ -13,6 +13,7 @@ media breakpoints that are used for targeting specific screen sizes or orientati
 the Viewport Breakpoints table.
 
 .. jupyter-execute::
+    :raises:
     :hide-code:
 
     import ipyvuetify as v
@@ -114,6 +115,7 @@ series of containers, rows, and columns to layout and align content.If you are *
 terminology, guidelines, and code snippets.
 
 .. jupyter-execute::
+    :raises:
     :hide-code:
 
     import ipyvuetify as v
@@ -168,6 +170,7 @@ Change the vertical alignment of flex items and their parents using the ``align`
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -344,6 +347,7 @@ Columns will automatically take up an equal amount of space within their parent 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -440,6 +444,7 @@ Change the horizontal alignment of flex items using the ``justify`` property.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -540,6 +545,7 @@ padding from its direct :py:class:`Col <ipyvuetify.Col>` children using the
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -671,6 +677,7 @@ precisely to your needs.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -933,6 +940,7 @@ Offset can also be applied on a per breakpoint basis.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1167,6 +1175,7 @@ to any application.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1312,6 +1321,7 @@ or ``13`` values respectively to the ``order`` CSS property.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1458,6 +1468,7 @@ line.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1604,6 +1615,7 @@ You can break equal width columns into multiple lines.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1765,6 +1777,7 @@ a value from 1 to 12.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -1904,6 +1917,7 @@ you can force sibling columns away from each other.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -2184,6 +2198,7 @@ layouts.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -2357,6 +2372,7 @@ have its siblings to automatically resize around it.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -2577,6 +2593,7 @@ The :py:class:`Spacer <ipyvuetify.Spacer>` component is useful when you want to 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -2812,6 +2829,7 @@ user interfaces.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -3034,6 +3052,7 @@ nature width of their content.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

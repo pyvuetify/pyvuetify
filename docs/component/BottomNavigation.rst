@@ -20,6 +20,7 @@ you can also programmatically control the active state of the buttons by using t
 A button is given a default value of its index with ``v-bottom-navigation``.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -63,6 +64,7 @@ The ``color`` prop applies a color to the background of the bottom navigation. W
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -152,6 +154,7 @@ space. Buttons have a maximum width of 168px per the Bottom Navigation Material 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -246,6 +249,7 @@ behavior.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -414,6 +418,7 @@ inline with the provided :py:class:`Icon <ipyvuetify.Icon>`.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -506,6 +511,7 @@ Modify the ``scroll_threshold`` property to increase the distance a user must sc
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -648,6 +654,7 @@ the :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -786,6 +793,7 @@ the ``input_value`` prop. You can also control the currently active button using
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

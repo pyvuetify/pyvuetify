@@ -20,6 +20,7 @@ Usage
 The autocomplete component extends :py:class:`Select <ipyvuetify.Select>` and adds the ability to filter items.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -43,6 +44,7 @@ You can use ``dense`` prop to reduce autocomplete height and lower max height of
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -188,6 +190,7 @@ you want to display all options regardless of the search input.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -355,6 +358,7 @@ With the power of slots, you can customize the visual output of the select. In t
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -646,6 +650,7 @@ prop and is REQUIRED when using asynchronous items and the multiple prop.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -746,6 +751,7 @@ can create a stylish toggleable autocomplete field such as this state selector.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

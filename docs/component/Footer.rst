@@ -24,6 +24,7 @@ The ``v-footer`` component in its simplest form is a container.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -66,6 +67,7 @@ The ``padless`` prop removes all default padding from the footer component.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -173,6 +175,7 @@ The footer component as a basic company footer with links.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

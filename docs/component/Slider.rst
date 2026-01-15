@@ -24,6 +24,7 @@ Sliders reflect a range of values along a bar, from which users may select a sin
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -57,6 +58,7 @@ Discrete sliders offer a thumb label that displays the exact current amount. Usi
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -102,6 +104,7 @@ You can set the colors of the slider using the props ``color``, ``track_color`` 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

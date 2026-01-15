@@ -24,6 +24,7 @@ The navigation drawer is primarily used to house links to the pages in your appl
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -166,6 +167,7 @@ A temporary drawer sits above its application and uses a scrim (overlay) to dark
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -277,6 +279,7 @@ Navigation drawers can also be positioned on the right side of your application.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

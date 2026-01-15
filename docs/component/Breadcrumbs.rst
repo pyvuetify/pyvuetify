@@ -32,6 +32,7 @@ By default, breadcrumbs use a text divider. This can be any string.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -100,6 +101,7 @@ Breadcrumbs separator can be set using ``divider`` property.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -175,6 +177,7 @@ Large breadcrumbs have larger font size.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -255,6 +258,7 @@ For the icon variant, breadcrumbs can use any icon in Material Design Icons.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -339,6 +343,7 @@ You can use the ``item`` slot to customize each breadcrumb.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

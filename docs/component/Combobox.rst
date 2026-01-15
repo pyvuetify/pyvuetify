@@ -17,6 +17,7 @@ With :py:class:`Combobox <ipyvuetify.Combobox>`, you can allow a user to create
 new values that may not be present in a provided items list.
 
 .. jupyter-execute::
+    :raises:
     :hide-code:
 
     import ipyvuetify as v
@@ -67,6 +68,7 @@ You can use ``dense`` prop to reduce combobox height and lower max height of lis
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -134,6 +136,7 @@ Previously known as **tags** - user is allowed to enter more than 1 value.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -358,6 +361,7 @@ when searching / creating items.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -460,6 +464,7 @@ dynamic input items.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

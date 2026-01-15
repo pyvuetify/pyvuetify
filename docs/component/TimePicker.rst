@@ -24,6 +24,7 @@ Time pickers have the light theme enabled by default.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -63,6 +64,7 @@ A time picker can be switched to 24hr format. Note that the ``format`` prop defi
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -105,6 +107,7 @@ Time picker can have seconds input.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

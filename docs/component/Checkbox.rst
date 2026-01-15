@@ -19,6 +19,7 @@ A :py:class:`Checkbox <ipyvuetify.Checkbox>` in its simplest form provides a tog
 between 2 values.
 
 .. jupyter-execute::
+    :raises:
 
     import ipyvuetify as v
 
@@ -42,6 +43,7 @@ using the ``color`` prop.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -402,6 +404,7 @@ Multiple :py:class:`Checkbox <ipyvuetify.Checkbox>`'s can share the same ``v_mod
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -463,6 +466,7 @@ A single :py:class:`Checkbox <ipyvuetify.Checkbox>` will have a boolean value as
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -525,6 +529,7 @@ disabled, and indeterminate.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -697,6 +702,7 @@ Checkbox labels can be defined in ``label`` slot - that will allow to use HTML c
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -808,6 +814,7 @@ such as :py:class:`TextField <ipyvuetify.TextField>`.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

@@ -24,6 +24,7 @@ The ``v-lazy`` component by default will not render its contents until it has be
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

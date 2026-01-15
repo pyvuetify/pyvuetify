@@ -24,6 +24,7 @@ The speed-dial component lets you display a set of actions that appear on hover 
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -97,6 +98,7 @@ The direction of the speed dial actions can be controlled with the ``direction``
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v

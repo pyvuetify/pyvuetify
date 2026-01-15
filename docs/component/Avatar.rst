@@ -20,6 +20,7 @@ Usage
 Avatars in their simplest form display content within a circular container.
 
 .. jupyter-execute::
+    :raises:
     :hide-code:
 
     import ipyvuetify as v
@@ -43,6 +44,7 @@ this prop.
     .. tab-item:: Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -135,6 +137,7 @@ with a simple square avatar.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -185,6 +188,7 @@ component, an image, or text. Mix and match these with other props to create som
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -274,6 +278,7 @@ Combining an avatar with other components allows you to build beautiful user int
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
@@ -690,6 +695,7 @@ Using the ``tile`` prop, we can create a sleek hard-lined profile card.
     .. tab-item:: :fas:`eye` Rendered
 
         .. jupyter-execute::
+            :raises:
             :hide-code:
 
             import ipyvuetify as v
