@@ -16,6 +16,7 @@ and row selection.
     - :py:class:`ipyvuetify.DataTableHeader`
     - :py:class:`ipyvuetify.DataFooter`
     - :py:class:`ipyvuetify.Data`
+    - :py:class:`ipyvuetify.EditDialog`
 
 .. seealso::
 
