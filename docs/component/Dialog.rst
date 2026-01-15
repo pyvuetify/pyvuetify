@@ -9,7 +9,9 @@ The :py:class:`Dialog <ipyvuetify.Dialog>` component inform users about a specif
 
 .. api::
 
-    :py:class:`ipyvuetify.Dialog`
+    - :py:class:`ipyvuetify.Dialog`
+    - :py:class:`ipyvuetify.DialogBottomTransition`
+    - :py:class:`ipyvuetify.DialogTransition`
 
 Usage
 -----
