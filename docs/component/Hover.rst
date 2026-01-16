@@ -1,14 +1,13 @@
 Hover
 =====
 
-.. warning::
-    This page is AI-generated and requires human review. The content may contain errors or inaccuracies.
-
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/hover/>`_.
+    This page is a Python adaptation of the `official Vuetify Hover documentation
+    <https://v2.vuetifyjs.com/en/components/hover/>`__.
     All examples have been converted to ipyvuetify syntax.
 
-The :py:class:`Hover <ipyvuetify.Hover>` component provides a clean interface for handling hover states for any component.
+The :py:class:`Hover <ipyvuetify.Hover>` component provides a clean interface for
+handling hover states for any component.
 
 .. api::
 
@@ -17,253 +16,55 @@ The :py:class:`Hover <ipyvuetify.Hover>` component provides a clean interface fo
 Usage
 -----
 
-The ``v-hover`` component is a wrapper that should contain only one child element, and can trigger an event when hovered over.
+The :py:class:`Hover <ipyvuetify.Hover>` component is a wrapper that should contain
+only one child element, and can trigger an event when hovered over. In order for
+:py:class:`Hover <ipyvuetify.Hover>` to work properly, either the value prop should
+be set to ``true`` or the wrapped element should contain ``v-slot="{ wrapper }"``.
 
-.. tab-set::
+.. todo::
 
-    .. tab-item:: :fas:`eye` Rendered
+    I don't understand how to use the slot syntax here. Please help me improve this section.
 
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-            card = v.Card(
-                elevation=0,
-                children=[
-                    v.CardText(children=['Hover over me!'])
-                ]
-            )
-
-            def on_hover(widget, event, data):
-                if data:
-                    card.elevation = 12
-                else:
-                    card.elevation = 0
-
-            hover = v.Hover(
-                children=[card]
-            )
-            hover.on_event('update:model-value', on_hover)
-
-            hover
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            card = v.Card(
-                elevation=0,
-                children=[
-                    v.CardText(children=['Hover over me!'])
-                ]
-            )
-
-            def on_hover(widget, event, data):
-                if data:
-                    card.elevation = 12
-                else:
-                    card.elevation = 0
-
-            hover = v.Hover(
-                children=[card]
-            )
-            hover.on_event('update:model-value', on_hover)
-
-            hover
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-              <v-hover v-slot="{ hover }">
-                <v-card :elevation="hover ? 12 : 0">
-                  <v-card-text>Hover over me!</v-card-text>
-                </v-card>
-              </v-hover>
-            </template>
+Examples
+--------
 
 Disabled
---------
+^^^^^^^^
 
 The ``disabled`` prop disables the hover functionality.
 
-.. tab-set::
+.. todo::
 
-    .. tab-item:: :fas:`eye` Rendered
+    I don't understand how to use the slot syntax here. Please help me improve this section.
 
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
+Open and close delay
+^^^^^^^^^^^^^^^^^^^^
 
-            import ipyvuetify as v
+Delay :py:class:`Hover <ipyvuetify.Hover>` events by using ``open-delay`` and
+``close-delay`` props in combination or separately.
 
-            card = v.Card(
-                elevation=0,
-                children=[
-                    v.CardText(children=['Hover over me!'])
-                ]
-            )
+.. todo::
 
-            hover = v.Hover(
-                disabled=True,
-                children=[card]
-            )
+    I don't understand how to use the slot syntax here. Please help me improve
+    this section.
 
-            hover
+Hover list
+^^^^^^^^^^
 
-    .. tab-item:: :fab:`python` Python
+:py:class:`Hover <ipyvuetify.Hover>` can be used in combination with ``v-for``
+to make a single item stand out when the user interacts with the list.
 
-        .. code-block:: python
+.. todo::
 
-            import ipyvuetify as v
-
-            card = v.Card(
-                elevation=0,
-                children=[
-                    v.CardText(children=['Hover over me!'])
-                ]
-            )
-
-            hover = v.Hover(
-                disabled=True,
-                children=[card]
-            )
-
-            hover
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-              <v-hover disabled>
-                <v-card elevation="0">
-                  <v-card-text>Hover over me!</v-card-text>
-                </v-card>
-              </v-hover>
-            </template>
+    I don't understand how to use the slot syntax here. Please help me improve
+    this section.
 
 Transition
-----------
+^^^^^^^^^^
 
 Create highly customized components that respond to user interaction.
 
-.. tab-set::
+.. todo::
 
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-            overlay = v.Overlay(
-                absolute=True,
-                opacity=0.8,
-                value=False,
-                children=[
-                    v.Html(tag='div', class_='text-h6 white--text', children=[
-                        'For the perfect meal'
-                    ])
-                ]
-            )
-
-            card = v.Card(
-                class_='mx-auto',
-                max_width='400',
-                children=[
-                    v.Img(
-                        height='250',
-                        src='https://cdn.vuetifyjs.com/images/cards/cooking.png',
-                        children=[overlay]
-                    ),
-                    v.CardTitle(children=['QW cooking utensils']),
-                    v.CardText(children=[
-                        'Our Vintage kitchen utensils delight any chef. Made of bamboo by hand.'
-                    ])
-                ]
-            )
-
-            def on_hover(widget, event, data):
-                overlay.value = data
-
-            hover = v.Hover(children=[card])
-            hover.on_event('update:model-value', on_hover)
-
-            hover
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            overlay = v.Overlay(
-                absolute=True,
-                opacity=0.8,
-                value=False,
-                children=[
-                    v.Html(tag='div', class_='text-h6 white--text', children=[
-                        'For the perfect meal'
-                    ])
-                ]
-            )
-
-            card = v.Card(
-                class_='mx-auto',
-                max_width='400',
-                children=[
-                    v.Img(
-                        height='250',
-                        src='https://cdn.vuetifyjs.com/images/cards/cooking.png',
-                        children=[overlay]
-                    ),
-                    v.CardTitle(children=['QW cooking utensils']),
-                    v.CardText(children=[
-                        'Our Vintage kitchen utensils delight any chef.'
-                    ])
-                ]
-            )
-
-            def on_hover(widget, event, data):
-                overlay.value = data
-
-            hover = v.Hover(children=[card])
-            hover.on_event('update:model-value', on_hover)
-
-            hover
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-              <v-hover v-slot="{ hover }">
-                <v-card class="mx-auto" max-width="400">
-                  <v-img
-                    height="250"
-                    src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-                  >
-                    <v-overlay
-                      :absolute="true"
-                      :opacity="0.8"
-                      :value="hover"
-                    >
-                      <div class="text-h6 white--text">
-                        For the perfect meal
-                      </div>
-                    </v-overlay>
-                  </v-img>
-                  <v-card-title>QW cooking utensils</v-card-title>
-                  <v-card-text>
-                    Our Vintage kitchen utensils delight any chef.
-                  </v-card-text>
-                </v-card>
-              </v-hover>
-            </template>
+    I don't understand how to use the slot syntax here. Please help me improve
+    this section.
