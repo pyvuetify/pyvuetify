@@ -1,149 +1,125 @@
 SlideGroup
 ==========
 
-.. warning::
-    This page is AI-generated and requires human review. The content may contain errors or inaccuracies.
-
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/slide-groups/>`_.
+    This page is a Python adaptation of the `official Vuetify Slide groups
+    documentation <https://v2.vuetifyjs.com/en/components/slide-groups/>`__.
     All examples have been converted to ipyvuetify syntax.
 
-The :py:class:`SlideGroup <ipyvuetify.SlideGroup>` component is used to display pseudo paginated information. It uses ItemGroup at its core and provides a baseline for components such as Tabs and ChipGroup.
+The :py:class:`SlideGroup <ipyvuetify.SlideGroup>` component is used to display
+pseudo paginated information. It uses :py:class:`ItemGroup
+<ipyvuetify.ItemGroup>` at its core and provides a baseline for components such
+as :py:class:`Tabs <ipyvuetify.Tabs>` and :py:class:`ChipGroup
+<ipyvuetify.ChipGroup>`.
 
 .. api::
 
-    :py:class:`ipyvuetify.SlideGroup`
+    - :py:class:`ipyvuetify.SlideGroup`
+    - :py:class:`ipyvuetify.SlideItem`
 
 Usage
 -----
 
-Similar to the v-window component, ``v-slide-group`` lets items take up as much space as needed, allowing the user to move horizontally through the provided information.
+Similar to the :py:class:`Window <ipyvuetify.Window>` component,
+:py:class:`SlideGroup <ipyvuetify.SlideGroup>` lets items to take up as much
+space as needed, allowing the user to move horizontally through the provided
+information.
 
-.. tab-set::
+.. jupyter-execute::
+    :raises:
 
-    .. tab-item:: :fas:`eye` Rendered
+    import ipyvuetify as v
 
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-            slide_group = v.SlideGroup(v_model=None, children=[
-                v.SlideItem(children=[
-                    v.Btn(children=['Option 1'], class_='ma-2')
-                ]),
-                v.SlideItem(children=[
-                    v.Btn(children=['Option 2'], class_='ma-2')
-                ]),
-                v.SlideItem(children=[
-                    v.Btn(children=['Option 3'], class_='ma-2')
-                ]),
-                v.SlideItem(children=[
-                    v.Btn(children=['Option 4'], class_='ma-2')
-                ]),
-                v.SlideItem(children=[
-                    v.Btn(children=['Option 5'], class_='ma-2')
-                ])
-            ])
-            slide_group
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            slide_group = v.SlideGroup(v_model=None, children=[
-                v.SlideItem(children=[
-                    v.Btn(children=['Option 1'])
-                ]),
-                v.SlideItem(children=[
-                    v.Btn(children=['Option 2'])
-                ]),
-                v.SlideItem(children=[
-                    v.Btn(children=['Option 3'])
-                ])
-            ])
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-              <v-slide-group v-model="model">
-                <v-slide-item>
-                  <v-btn>Option 1</v-btn>
-                </v-slide-item>
-                <v-slide-item>
-                  <v-btn>Option 2</v-btn>
-                </v-slide-item>
-                <v-slide-item>
-                  <v-btn>Option 3</v-btn>
-                </v-slide-item>
-              </v-slide-group>
-            </template>
-
-Center Active
--------------
-
-Using the ``center_active`` prop will make the active item always centered.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-            slide_group = v.SlideGroup(
-                v_model=0,
-                center_active=True,
+    v.Sheet(
+        class_="mx-auto my-2",
+        max_width=700,
+        children=[
+            v.SlideGroup(
+                multiple=True,
+                show_arrows=True,
                 children=[
                     v.SlideItem(
-                        v_slots=[{'name': 'default', 'variable': 'slotProps', 'children':
-                            v.Card(
-                                color='grey' if not 'slotProps.active' else 'primary',
-                                height='200',
-                                width='100',
-                                class_='ma-2'
+                        key=n,
+                        v_slots=[{
+                        "name": "default",
+                        "variable": "props",
+                        "children": v.Btn(
+                                class_="mx-2",
+                                #input_value="props.active",
+                                active_class="purple white--text",
+                                depressed=True,
+                                rounded=True,
+                                children=[f'Options {n}']
                             )
                         }]
-                    ) for i in range(10)
+                    ) for n in range(1, 26)
                 ]
             )
-            slide_group
+        ]
+    )
 
-    .. tab-item:: :fab:`python` Python
+Examples
+--------
 
-        .. code-block:: python
+Active class
+^^^^^^^^^^^^
 
-            import ipyvuetify as v
+active-class prop allows you to pass a class to customize the active items.
 
-            slide_group = v.SlideGroup(
-                v_model=0,
-                center_active=True,
-                children=[
-                    v.SlideItem(children=[
-                        v.Card(height='200', width='100')
-                    ]) for i in range(10)
-                ]
-            )
+.. todo::
 
-    .. tab-item:: :fab:`vuejs` Vue template
+    The slots cannot be activated from the current ipyvuetify implementation.
+    If anyone can help to improve this section, please contribute :fas:`cofee`
 
-        .. code-block:: vue
+Center active
+^^^^^^^^^^^^^
 
-            <template>
-              <v-slide-group
-                v-model="model"
-                center-active
-              >
-                <v-slide-item v-for="n in 10" :key="n">
-                  <v-card height="200" width="100"></v-card>
-                </v-slide-item>
-              </v-slide-group>
-            </template>
+Using the center-active prop will make the active item always centered.
+
+.. todo::
+
+    The slots cannot be activated from the current ipyvuetify implementation.
+    If anyone can help to improve this section, please contribute :fas:`cofee`
+
+Custom icons
+^^^^^^^^^^^^
+
+You can add your custom pagination icons instead of arrows using the next-icon
+and prev-icon props.
+
+.. todo::
+
+    The slots cannot be activated from the current ipyvuetify implementation.
+    If anyone can help to improve this section, please contribute :fas:`cofee`
+
+Mandatory
+^^^^^^^^^
+
+the mandatory prop will make the slide group require at least 1 item must be
+selected.
+
+.. todo::
+
+    The slots cannot be activated from the current ipyvuetify implementation.
+    If anyone can help to improve this section, please contribute :fas:`cofee`
+
+Multiple
+^^^^^^^^
+
+You can select multiple items by setting the multiple prop.
+
+.. todo::
+
+    The slots cannot be activated from the current ipyvuetify implementation.
+    If anyone can help to improve this section, please contribute :fas:`cofee`
+
+Pseudo Carousel
+^^^^^^^^^^^^^^^
+
+Customize the slide group to creatively display information on sheets. Using
+the selection, we can display auxillary information easily for the user.
+
+.. todo::
+
+    The slots cannot be activated from the current ipyvuetify implementation.
+    If anyone can help to improve this section, please contribute :fas:`cofee`
