@@ -1,23 +1,65 @@
 SimpleTable
 ===========
 
-.. warning::
-    This page is AI-generated and requires human review. The content may contain errors or inaccuracies.
-
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/simple-tables/>`_.
+    This page is a Python adaptation of the `official Vuetify Simple tables
+    documentation <https://v2.vuetifyjs.com/en/components/simple-tables/>`__.
     All examples have been converted to ipyvuetify syntax.
 
-The :py:class:`SimpleTable <ipyvuetify.SimpleTable>` component is a simple wrapper component around the table element. Inside the component you can use all the regular table elements.
+The :py:class:`SimpleTable <ipyvuetify.SimpleTable>` component is a simple
+wrapper component around the ``<table>`` element. Inside the component you can
+use all the regular table elements such as ``<thead>``, ``<tbody>``, ``<tr>``,
+etc.
 
 .. api::
 
-    :py:class:`ipyvuetify.SimpleTable`
+    - :py:class:`ipyvuetify.SimpleTable`
 
 Usage
 -----
 
 The simple table is a wrapper component around the ``<table>`` element.
+
+.. jupyter-execute::
+    :raises:
+
+    import ipyvuetify as v
+
+    desserts = [
+        ('Frozen Yogurt', 159),
+        ('Ice cream sandwich', 237),
+        ('Eclair', 262),
+        ('Cupcake', 305),
+        ('Gingerbread', 356),
+        ('Jelly bean', 375),
+        ('Lollipop', 392),
+        ('Honeycomb', 408),
+        ('Donut', 452),
+        ('KitKat', 518),
+    ]
+
+    v.SimpleTable(children=[
+        v.Html(tag='thead', children=[
+            v.Html(tag='tr', children=[
+                v.Html(tag='th', class_='text-left', children=['Name']),
+                v.Html(tag='th', class_='text-left', children=['Calories'])
+            ])
+        ]),
+        v.Html(tag='tbody', children=[
+            v.Html(tag='tr', children=[
+                v.Html(tag='td', children=[name]),
+                v.Html(tag='td', children=[str(calorie)])
+            ]) for name, calorie in desserts
+        ])
+    ])
+
+Examples
+--------
+
+Dark
+^^^^
+
+Use dark prop to switch table to the dark theme.
 
 .. tab-set::
 
@@ -29,28 +71,36 @@ The simple table is a wrapper component around the ``<table>`` element.
 
             import ipyvuetify as v
 
-            v.SimpleTable(children=[
-                v.Html(tag='thead', children=[
-                    v.Html(tag='tr', children=[
-                        v.Html(tag='th', children=['Dessert']),
-                        v.Html(tag='th', children=['Calories'])
-                    ])
-                ]),
-                v.Html(tag='tbody', children=[
-                    v.Html(tag='tr', children=[
-                        v.Html(tag='td', children=['Frozen Yogurt']),
-                        v.Html(tag='td', children=['159'])
+            desserts = [
+                ('Frozen Yogurt', 159),
+                ('Ice cream sandwich', 237),
+                ('Eclair', 262),
+                ('Cupcake', 305),
+                ('Gingerbread', 356),
+                ('Jelly bean', 375),
+                ('Lollipop', 392),
+                ('Honeycomb', 408),
+                ('Donut', 452),
+                ('KitKat', 518),
+            ]
+
+            v.SimpleTable(
+                dark=True,
+                children=[
+                    v.Html(tag='thead', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='th', class_='text-left', children=['Name']),
+                            v.Html(tag='th', class_='text-left', children=['Calories'])
+                        ])
                     ]),
-                    v.Html(tag='tr', children=[
-                        v.Html(tag='td', children=['Ice cream sandwich']),
-                        v.Html(tag='td', children=['237'])
-                    ]),
-                    v.Html(tag='tr', children=[
-                        v.Html(tag='td', children=['Eclair']),
-                        v.Html(tag='td', children=['262'])
+                    v.Html(tag='tbody', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='td', children=[name]),
+                            v.Html(tag='td', children=[str(calorie)])
+                        ]) for name, calorie in desserts
                     ])
-                ])
-            ])
+                ]
+            )
 
     .. tab-item:: :fab:`python` Python
 
@@ -58,52 +108,69 @@ The simple table is a wrapper component around the ``<table>`` element.
 
             import ipyvuetify as v
 
-            v.SimpleTable(children=[
-                v.Html(tag='thead', children=[
-                    v.Html(tag='tr', children=[
-                        v.Html(tag='th', children=['Dessert']),
-                        v.Html(tag='th', children=['Calories'])
-                    ])
-                ]),
-                v.Html(tag='tbody', children=[
-                    v.Html(tag='tr', children=[
-                        v.Html(tag='td', children=['Frozen Yogurt']),
-                        v.Html(tag='td', children=['159'])
+            desserts = [
+                ('Frozen Yogurt', 159),
+                ('Ice cream sandwich', 237),
+                ('Eclair', 262),
+                ('Cupcake', 305),
+                ('Gingerbread', 356),
+                ('Jelly bean', 375),
+                ('Lollipop', 392),
+                ('Honeycomb', 408),
+                ('Donut', 452),
+                ('KitKat', 518),
+            ]
+
+            v.SimpleTable(
+                dark=True,
+                children=[
+                    v.Html(tag='thead', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='th', class_='text-left', children=['Name']),
+                            v.Html(tag='th', class_='text-left', children=['Calories'])
+                        ])
                     ]),
-                    v.Html(tag='tr', children=[
-                        v.Html(tag='td', children=['Ice cream sandwich']),
-                        v.Html(tag='td', children=['237'])
+                    v.Html(tag='tbody', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='td', children=[name]),
+                            v.Html(tag='td', children=[str(calorie)])
+                        ]) for name, calorie in desserts
                     ])
-                ])
-            ])
+                ]
+            )
 
     .. tab-item:: :fab:`vuejs` Vue template
 
         .. code-block:: vue
 
             <template>
-              <v-simple-table>
+            <v-simple-table dark>
+                <template v-slot:default>
                 <thead>
-                  <tr>
-                    <th>Dessert</th>
-                    <th>Calories</th>
-                  </tr>
+                    <tr>
+                    <th class="text-left">
+                        Name
+                    </th>
+                    <th class="text-left">
+                        Calories
+                    </th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Frozen Yogurt</td>
-                    <td>159</td>
-                  </tr>
-                  <tr>
-                    <td>Ice cream sandwich</td>
-                    <td>237</td>
-                  </tr>
+                    <tr
+                    v-for="item in desserts"
+                    :key="item.name"
+                    >
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.calories }}</td>
+                    </tr>
                 </tbody>
-              </v-simple-table>
+                </template>
+            </v-simple-table>
             </template>
 
 Dense
------
+^^^^^
 
 You can show a dense version of the table by using the dense prop.
 
@@ -117,24 +184,33 @@ You can show a dense version of the table by using the dense prop.
 
             import ipyvuetify as v
 
+            desserts = [
+                ('Frozen Yogurt', 159),
+                ('Ice cream sandwich', 237),
+                ('Eclair', 262),
+                ('Cupcake', 305),
+                ('Gingerbread', 356),
+                ('Jelly bean', 375),
+                ('Lollipop', 392),
+                ('Honeycomb', 408),
+                ('Donut', 452),
+                ('KitKat', 518),
+            ]
+
             v.SimpleTable(
                 dense=True,
                 children=[
                     v.Html(tag='thead', children=[
                         v.Html(tag='tr', children=[
-                            v.Html(tag='th', children=['Dessert']),
-                            v.Html(tag='th', children=['Calories'])
+                            v.Html(tag='th', class_='text-left', children=['Name']),
+                            v.Html(tag='th', class_='text-left', children=['Calories'])
                         ])
                     ]),
                     v.Html(tag='tbody', children=[
                         v.Html(tag='tr', children=[
-                            v.Html(tag='td', children=['Frozen Yogurt']),
-                            v.Html(tag='td', children=['159'])
-                        ]),
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='td', children=['Ice cream sandwich']),
-                            v.Html(tag='td', children=['237'])
-                        ])
+                            v.Html(tag='td', children=[name]),
+                            v.Html(tag='td', children=[str(calorie)])
+                        ]) for name, calorie in desserts
                     ])
                 ]
             )
@@ -145,20 +221,33 @@ You can show a dense version of the table by using the dense prop.
 
             import ipyvuetify as v
 
+            desserts = [
+                ('Frozen Yogurt', 159),
+                ('Ice cream sandwich', 237),
+                ('Eclair', 262),
+                ('Cupcake', 305),
+                ('Gingerbread', 356),
+                ('Jelly bean', 375),
+                ('Lollipop', 392),
+                ('Honeycomb', 408),
+                ('Donut', 452),
+                ('KitKat', 518),
+            ]
+
             v.SimpleTable(
                 dense=True,
                 children=[
                     v.Html(tag='thead', children=[
                         v.Html(tag='tr', children=[
-                            v.Html(tag='th', children=['Dessert']),
-                            v.Html(tag='th', children=['Calories'])
+                            v.Html(tag='th', class_='text-left', children=['Name']),
+                            v.Html(tag='th', class_='text-left', children=['Calories'])
                         ])
                     ]),
                     v.Html(tag='tbody', children=[
                         v.Html(tag='tr', children=[
-                            v.Html(tag='td', children=['Frozen Yogurt']),
-                            v.Html(tag='td', children=['159'])
-                        ])
+                            v.Html(tag='td', children=[name]),
+                            v.Html(tag='td', children=[str(calorie)])
+                        ]) for name, calorie in desserts
                     ])
                 ]
             )
@@ -168,18 +257,259 @@ You can show a dense version of the table by using the dense prop.
         .. code-block:: vue
 
             <template>
-              <v-simple-table dense>
+            <v-simple-table dense>
+                <template v-slot:default>
                 <thead>
-                  <tr>
-                    <th>Dessert</th>
-                    <th>Calories</th>
-                  </tr>
+                    <tr>
+                    <th class="text-left">
+                        Name
+                    </th>
+                    <th class="text-left">
+                        Calories
+                    </th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Frozen Yogurt</td>
-                    <td>159</td>
-                  </tr>
+                    <tr
+                    v-for="item in desserts"
+                    :key="item.name"
+                    >
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.calories }}</td>
+                    </tr>
                 </tbody>
-              </v-simple-table>
+                </template>
+            </v-simple-table>
+            </template>
+
+Fixed header
+^^^^^^^^^^^^
+
+Use the fixed-header prop together with the height prop to fix the header to
+the top of the table.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            desserts = [
+                ('Frozen Yogurt', 159),
+                ('Ice cream sandwich', 237),
+                ('Eclair', 262),
+                ('Cupcake', 305),
+                ('Gingerbread', 356),
+                ('Jelly bean', 375),
+                ('Lollipop', 392),
+                ('Honeycomb', 408),
+                ('Donut', 452),
+                ('KitKat', 518),
+            ]
+
+            v.SimpleTable(
+                fixed_header=True,
+                height=300,
+                children=[
+                    v.Html(tag='thead', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='th', class_='text-left', children=['Name']),
+                            v.Html(tag='th', class_='text-left', children=['Calories'])
+                        ])
+                    ]),
+                    v.Html(tag='tbody', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='td', children=[name]),
+                            v.Html(tag='td', children=[str(calorie)])
+                        ]) for name, calorie in desserts
+                    ])
+                ]
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            desserts = [
+                ('Frozen Yogurt', 159),
+                ('Ice cream sandwich', 237),
+                ('Eclair', 262),
+                ('Cupcake', 305),
+                ('Gingerbread', 356),
+                ('Jelly bean', 375),
+                ('Lollipop', 392),
+                ('Honeycomb', 408),
+                ('Donut', 452),
+                ('KitKat', 518),
+            ]
+
+            v.SimpleTable(
+                fixed_header=True,
+                height=300,
+                children=[
+                    v.Html(tag='thead', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='th', class_='text-left', children=['Name']),
+                            v.Html(tag='th', class_='text-left', children=['Calories'])
+                        ])
+                    ]),
+                    v.Html(tag='tbody', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='td', children=[name]),
+                            v.Html(tag='td', children=[str(calorie)])
+                        ]) for name, calorie in desserts
+                    ])
+                ]
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <v-simple-table
+                fixed-header
+                height="300px"
+            >
+                <template v-slot:default>
+                <thead>
+                    <tr>
+                    <th class="text-left">
+                        Name
+                    </th>
+                    <th class="text-left">
+                        Calories
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                    v-for="item in desserts"
+                    :key="item.name"
+                    >
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.calories }}</td>
+                    </tr>
+                </tbody>
+                </template>
+            </v-simple-table>
+            </template>
+
+Height
+^^^^^^
+
+Use the height prop to set the height of the table.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            desserts = [
+                ('Frozen Yogurt', 159),
+                ('Ice cream sandwich', 237),
+                ('Eclair', 262),
+                ('Cupcake', 305),
+                ('Gingerbread', 356),
+                ('Jelly bean', 375),
+                ('Lollipop', 392),
+                ('Honeycomb', 408),
+                ('Donut', 452),
+                ('KitKat', 518),
+            ]
+
+            v.SimpleTable(
+                height=300,
+                children=[
+                    v.Html(tag='thead', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='th', class_='text-left', children=['Name']),
+                            v.Html(tag='th', class_='text-left', children=['Calories'])
+                        ])
+                    ]),
+                    v.Html(tag='tbody', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='td', children=[name]),
+                            v.Html(tag='td', children=[str(calorie)])
+                        ]) for name, calorie in desserts
+                    ])
+                ]
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            desserts = [
+                ('Frozen Yogurt', 159),
+                ('Ice cream sandwich', 237),
+                ('Eclair', 262),
+                ('Cupcake', 305),
+                ('Gingerbread', 356),
+                ('Jelly bean', 375),
+                ('Lollipop', 392),
+                ('Honeycomb', 408),
+                ('Donut', 452),
+                ('KitKat', 518),
+            ]
+
+            v.SimpleTable(
+                height=300,
+                children=[
+                    v.Html(tag='thead', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='th', class_='text-left', children=['Name']),
+                            v.Html(tag='th', class_='text-left', children=['Calories'])
+                        ])
+                    ]),
+                    v.Html(tag='tbody', children=[
+                        v.Html(tag='tr', children=[
+                            v.Html(tag='td', children=[name]),
+                            v.Html(tag='td', children=[str(calorie)])
+                        ]) for name, calorie in desserts
+                    ])
+                ]
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <v-simple-table height="300px">
+                <template v-slot:default>
+                <thead>
+                    <tr>
+                    <th class="text-left">
+                        Name
+                    </th>
+                    <th class="text-left">
+                        Calories
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                    v-for="item in desserts"
+                    :key="item.name"
+                    >
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.calories }}</td>
+                    </tr>
+                </tbody>
+                </template>
+            </v-simple-table>
             </template>
