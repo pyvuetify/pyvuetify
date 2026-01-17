@@ -1,14 +1,14 @@
 OverflowBtn
 ===========
 
-.. warning::
-    This page is AI-generated and requires human review. The content may contain errors or inaccuracies.
-
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/overflow-btns/>`_.
+    This page is a Python adaptation of the `official Vuetify Overflow buttons
+    documentation <https://v2.vuetifyjs.com/en/components/overflow-btns/>`__.
     All examples have been converted to ipyvuetify syntax.
 
-The :py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` component is used to give the user the ability to select items from the list. It has 3 variations: editable, overflow and segmented.
+The :py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` is used to give the user
+the ability to select items from the list. It has 3 variations: ``editable``,
+``overflow`` and ``segmented``.
 
 .. api::
 
@@ -17,49 +17,30 @@ The :py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` component is used to give t
 Usage
 -----
 
-``v-overflow-btn`` is used for creating selection lists.
+:py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` is used for creating selection
+lists.
 
-.. tab-set::
+.. jupyter-execute::
+    :raises:
 
-    .. tab-item:: :fas:`eye` Rendered
+    import ipyvuetify as v
 
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
+    items = ['Arial', 'Calibri', 'Courier', 'Verdana']
 
-            import ipyvuetify as v
+    v.OverflowBtn(
+        label='Select font',
+        items=items,
+        v_model='Arial',
+    )
 
-            v.OverflowBtn(
-                label='Overflow Btn',
-                items=['Option 1', 'Option 2', 'Option 3', 'Option 4']
-            )
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.OverflowBtn(
-                label='Overflow Btn',
-                items=['Option 1', 'Option 2', 'Option 3', 'Option 4']
-            )
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-              <v-overflow-btn
-                label="Overflow Btn"
-                :items="['Option 1', 'Option 2', 'Option 3', 'Option 4']"
-              ></v-overflow-btn>
-            </template>
-
-Editable
+Examples
 --------
 
-Editable ``v-overflow-btn`` can be directly edited, just as ``v-text-field``.
+Counter
+^^^^^^^
+
+You can add a counter to :py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` to
+control the max char count.
 
 .. tab-set::
 
@@ -71,10 +52,13 @@ Editable ``v-overflow-btn`` can be directly edited, just as ``v-text-field``.
 
             import ipyvuetify as v
 
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
             v.OverflowBtn(
-                editable=True,
-                label='Overflow Btn w/ editable',
-                items=['Option 1', 'Option 2', 'Option 3', 'Option 4']
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                counter=True,
             )
 
     .. tab-item:: :fab:`python` Python
@@ -83,10 +67,13 @@ Editable ``v-overflow-btn`` can be directly edited, just as ``v-text-field``.
 
             import ipyvuetify as v
 
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
             v.OverflowBtn(
-                editable=True,
-                label='Overflow Btn w/ editable',
-                items=['Option 1', 'Option 2', 'Option 3', 'Option 4']
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                counter=True,
             )
 
     .. tab-item:: :fab:`vuejs` Vue template
@@ -94,62 +81,22 @@ Editable ``v-overflow-btn`` can be directly edited, just as ``v-text-field``.
         .. code-block:: vue
 
             <template>
-              <v-overflow-btn
-                editable
-                label="Overflow Btn w/ editable"
-                :items="['Option 1', 'Option 2', 'Option 3', 'Option 4']"
-              ></v-overflow-btn>
-            </template>
-
-Segmented
----------
-
-Segmented ``v-overflow-btn`` has an additional divider between the content and the icon.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-            v.OverflowBtn(
-                segmented=True,
-                label='Overflow Btn w/ segmented',
-                items=['Option 1', 'Option 2', 'Option 3', 'Option 4']
-            )
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.OverflowBtn(
-                segmented=True,
-                label='Overflow Btn w/ segmented',
-                items=['Option 1', 'Option 2', 'Option 3', 'Option 4']
-            )
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-              <v-overflow-btn
-                segmented
-                label="Overflow Btn w/ segmented"
-                :items="['Option 1', 'Option 2', 'Option 3', 'Option 4']"
-              ></v-overflow-btn>
+            <v-container id="dropdown-example-3">
+                <v-overflow-btn
+                class="my-2"
+                :items="dropdown_edit"
+                label="Overflow Btn w/ counter"
+                counter
+                item-value="text"
+                ></v-overflow-btn>
+            </v-container>
             </template>
 
 Dense
------
+^^^^^
 
-You can use ``dense`` prop to reduce overflow button height and lower max height of list items.
+You can use ``dense`` prop to reduce overflow button height and lower max
+height of list items.
 
 .. tab-set::
 
@@ -161,10 +108,13 @@ You can use ``dense`` prop to reduce overflow button height and lower max height
 
             import ipyvuetify as v
 
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
             v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
                 dense=True,
-                label='Overflow Btn - Dense',
-                items=['Option 1', 'Option 2', 'Option 3', 'Option 4']
             )
 
     .. tab-item:: :fab:`python` Python
@@ -173,10 +123,13 @@ You can use ``dense`` prop to reduce overflow button height and lower max height
 
             import ipyvuetify as v
 
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
             v.OverflowBtn(
-                dense=True,
-                label='Overflow Btn - Dense',
-                items=['Option 1', 'Option 2', 'Option 3', 'Option 4']
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                counter=True,
             )
 
     .. tab-item:: :fab:`vuejs` Vue template
@@ -184,9 +137,459 @@ You can use ``dense`` prop to reduce overflow button height and lower max height
         .. code-block:: vue
 
             <template>
-              <v-overflow-btn
-                dense
+            <v-container>
+                <v-overflow-btn
+                class="my-2"
+                :items="items"
                 label="Overflow Btn - Dense"
-                :items="['Option 1', 'Option 2', 'Option 3', 'Option 4']"
-              ></v-overflow-btn>
+                dense
+                ></v-overflow-btn>
+            </v-container>
+            </template>
+
+Disabled
+^^^^^^^^
+
+:py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` can be disabled in order to
+prevent a user from interacting with it.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                disabled=True,
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                disabled=True,
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <v-container id="dropdown-example-1">
+                <v-overflow-btn
+                class="my-2"
+                :items="dropdown_font"
+                label="Overflow Btn w/ disabled"
+                disabled
+                target="#dropdown-example-1"
+                ></v-overflow-btn>
+            </v-container>
+            </template>
+
+Editable
+^^^^^^^^
+
+``editable`` :py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` can be directly
+edited, just as :py:class:`TextField <ipyvuetify.TextField>`.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                editable=True,
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                editable=True,
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <v-container id="dropdown-example-3">
+                <v-overflow-btn
+                class="my-2"
+                :items="dropdown_edit"
+                label="Overflow Btn w/ editable"
+                editable
+                item-value="text"
+                ></v-overflow-btn>
+            </v-container>
+            </template>
+
+Filled
+^^^^^^
+
+Text fields can be used with an alternative box design.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                filled=True,
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                filled=True,
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <v-container id="dropdown-example-1">
+                <v-overflow-btn
+                class="my-2"
+                :items="dropdown_font"
+                label="Overflow Btn - filled"
+                filled
+                target="#dropdown-example-1"
+                ></v-overflow-btn>
+            </v-container>
+            </template>
+
+Hint
+^^^^
+
+You can add a hint for the user using the ``hint`` property.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                hint='Select  a real font',
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                hint='Select  a real font',
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <v-container id="dropdown-example-1">
+                <v-overflow-btn
+                class="my-2"
+                :items="dropdown_font"
+                menu-props="top"
+                label="Overflow Btn w/ hint"
+                hint="Select font"
+                target="#dropdown-example-1"
+                ></v-overflow-btn>
+            </v-container>
+            </template>
+
+Loading
+^^^^^^^
+
+:py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` can have ``loading`` state
+with a linear progress bar under them.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                loading=True,
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                loading=True,
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <v-container id="dropdown-example-1">
+                <v-overflow-btn
+                class="my-2"
+                :items="dropdown_font"
+                label="Overflow Btn w/ loading"
+                loading
+                target="#dropdown-example-1"
+                ></v-overflow-btn>
+            </v-container>
+            </template>
+
+Menu props
+^^^^^^^^^^
+
+You can set underlying :py:class:`Menu <ipyvuetify.Menu>` props using
+``menu-props`` property.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                menu_props="top",
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                menu_props="top",
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <v-container id="dropdown-example-1">
+                <v-overflow-btn
+                class="my-2"
+                :items="dropdown_font"
+                menu-props="top"
+                label="Overflow Btn w/ menu-props"
+                target="#dropdown-example-1"
+                ></v-overflow-btn>
+            </v-container>
+            </template>
+
+Readonly
+^^^^^^^^
+
+:py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` can be put into ``readonly``
+mode, it'll become inactive but won't change the color.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                readonly=True,
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                readonly=True,
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <v-container id="dropdown-example-1">
+                <v-overflow-btn
+                class="my-2"
+                :items="dropdown_font"
+                label="Overflow Btn w/ readonly"
+                readonly
+                target="#dropdown-example-1"
+                ></v-overflow-btn>
+            </v-container>
+            </template>
+
+Segmented
+^^^^^^^^^
+
+``segmented`` :py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` has an
+additional divider between the content and the icon.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                segmented=True,
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            items = ['Arial', 'Calibri', 'Courier', 'Verdana']
+
+            v.OverflowBtn(
+                label='Select font',
+                items=items,
+                v_model='Arial',
+                segmented=True,
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <v-container id="dropdown-example-2">
+                <v-overflow-btn
+                class="my-2"
+                :items="dropdown_icon"
+                label="Overflow Btn w/ segmented"
+                segmented
+                target="#dropdown-example-2"
+                ></v-overflow-btn>
+            </v-container>
             </template>
