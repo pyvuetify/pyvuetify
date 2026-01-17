@@ -1,14 +1,16 @@
 Pagination
 ==========
 
-.. warning::
-    This page is AI-generated and requires human review. The content may contain errors or inaccuracies.
-
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/paginations/>`_.
+    This page is a Python adaptation of the `official Vuetify Pagination
+    documentation <https://v2.vuetifyjs.com/en/components/paginations/>`__.
     All examples have been converted to ipyvuetify syntax.
 
-The :py:class:`Pagination <ipyvuetify.Pagination>` component is used to separate long sets of data so that it is easier for a user to consume information. Depending on the length provided, the pagination component will automatically scale.
+The :py:class:`Pagination <ipyvuetify.Pagination>` component is used to
+separate long sets of data so that it is easier for a user to consume
+information. Depending on the length provided, the pagination component will
+automatically scale. To maintain the current page, simply supply a v-model
+attribute.
 
 .. api::
 
@@ -17,47 +19,25 @@ The :py:class:`Pagination <ipyvuetify.Pagination>` component is used to separate
 Usage
 -----
 
-Pagination by default displays the number of pages based on the set length prop, with prev and next buttons surrounding to help you navigate.
+Pagination by default displays the number of pages based on the set length
+prop, with prev and next buttons surrounding to help you navigate.
 
-.. tab-set::
+.. jupyter-execute::
+    :raises:
 
-    .. tab-item:: :fas:`eye` Rendered
+    import ipyvuetify as v
 
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
+    v.Pagination(
+        v_model=1,
+        length=10,
+        class_='text-center my-2',
+    )
 
-            import ipyvuetify as v
-
-            v.Pagination(
-                v_model=1,
-                length=15
-            )
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Pagination(
-                v_model=1,
-                length=15
-            )
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-              <v-pagination
-                v-model="page"
-                :length="15"
-              ></v-pagination>
-            </template>
+Examples
+--------
 
 Circle
-------
+^^^^^^
 
 The circle prop gives you an alternate style for pagination buttons.
 
@@ -73,8 +53,9 @@ The circle prop gives you an alternate style for pagination buttons.
 
             v.Pagination(
                 v_model=1,
-                length=5,
-                circle=True
+                length=4,
+                circle=True,
+                class_='text-center my-2',
             )
 
     .. tab-item:: :fab:`python` Python
@@ -85,8 +66,9 @@ The circle prop gives you an alternate style for pagination buttons.
 
             v.Pagination(
                 v_model=1,
-                length=5,
-                circle=True
+                length=4,
+                circle=True,
+                class_='text-center my-2',
             )
 
     .. tab-item:: :fab:`vuejs` Vue template
@@ -94,17 +76,120 @@ The circle prop gives you an alternate style for pagination buttons.
         .. code-block:: vue
 
             <template>
-              <v-pagination
+            <div class="text-center">
+                <v-pagination
                 v-model="page"
-                :length="5"
+                :length="4"
                 circle
-              ></v-pagination>
+                ></v-pagination>
+            </div>
+            </template>
+
+Disabled
+^^^^^^^^
+
+Pagination items can be manually deactivated using the disabled prop.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Pagination(
+                length=3,
+                disabled=True,
+                class_='text-center my-2',
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            v.Pagination(
+                length=3,
+                disabled=True,
+                class_='text-center my-2',
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <div class="text-center">
+                <v-pagination
+                :length="3"
+                disabled
+                ></v-pagination>
+            </div>
+            </template>
+
+Icons
+^^^^^
+
+Previous and next page icons can be customized with the prev-icon and next-icon
+props.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+            v.Pagination(
+                v_model=1,
+                length=4,
+                prev_icon='mdi-menu-left',
+                next_icon='mdi-menu-right',
+                class_='text-center my-2',
+            )
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+            v.Pagination(
+                v_model=1,
+                length=4,
+                prev_icon='mdi-menu-left',
+                next_icon='mdi-menu-right',
+                class_='text-center my-2',
+            )
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            <div class="text-center">
+                <v-pagination
+                v-model="page"
+                :length="4"
+                prev-icon="mdi-menu-left"
+                next-icon="mdi-menu-right"
+                ></v-pagination>
+            </div>
             </template>
 
 Length
-------
+^^^^^^
 
-Using the length prop you can set the length of ``v-pagination``, if the number of page buttons exceeds the parent container, it will truncate the list.
+Using the length prop you can set the length of
+:py:class:`Pagination <ipyvuetify.Pagination>`, if the number of page buttons
+exceeds the parent container, it will truncate the list.
 
 .. tab-set::
 
@@ -116,9 +201,16 @@ Using the length prop you can set the length of ``v-pagination``, if the number 
 
             import ipyvuetify as v
 
-            v.Pagination(
-                v_model=1,
-                length=100
+            v.Card(
+                class_='mx-auto my-2',
+                width='400px',
+                children=[
+                    v.Pagination(
+                        v_model=1,
+                        length=15,
+                        class_='text-center my-4',
+                    )
+                ]
             )
 
     .. tab-item:: :fab:`python` Python
@@ -127,9 +219,16 @@ Using the length prop you can set the length of ``v-pagination``, if the number 
 
             import ipyvuetify as v
 
-            v.Pagination(
-                v_model=1,
-                length=100
+            v.Card(
+                class_='mx-auto my-2',
+                width='400px',
+                children=[
+                    v.Pagination(
+                        v_model=1,
+                        length=15,
+                        class_='text-center my-4',
+                    )
+                ]
             )
 
     .. tab-item:: :fab:`vuejs` Vue template
@@ -137,16 +236,28 @@ Using the length prop you can set the length of ``v-pagination``, if the number 
         .. code-block:: vue
 
             <template>
-              <v-pagination
-                v-model="page"
-                :length="100"
-              ></v-pagination>
+            <div class="text-center">
+                <v-container>
+                <v-row justify="center">
+                    <v-col cols="8">
+                    <v-container class="max-width">
+                        <v-pagination
+                        v-model="page"
+                        class="my-4"
+                        :length="15"
+                        ></v-pagination>
+                    </v-container>
+                    </v-col>
+                </v-row>
+                </v-container>
+            </div>
             </template>
 
-Total Visible
--------------
+Total visible
+^^^^^^^^^^^^^
 
-You can also manually set the maximum number of visible page buttons with the total_visible prop.
+You can also manually set the maximum number of visible page buttons with the
+total-visible prop.
 
 .. tab-set::
 
@@ -161,7 +272,8 @@ You can also manually set the maximum number of visible page buttons with the to
             v.Pagination(
                 v_model=1,
                 length=15,
-                total_visible=7
+                total_visible=7,
+                class_='text-center my-2',
             )
 
     .. tab-item:: :fab:`python` Python
@@ -173,7 +285,8 @@ You can also manually set the maximum number of visible page buttons with the to
             v.Pagination(
                 v_model=1,
                 length=15,
-                total_visible=7
+                total_visible=7,
+                class_='text-center my-2',
             )
 
     .. tab-item:: :fab:`vuejs` Vue template
@@ -181,9 +294,11 @@ You can also manually set the maximum number of visible page buttons with the to
         .. code-block:: vue
 
             <template>
-              <v-pagination
+            <div class="text-center">
+                <v-pagination
                 v-model="page"
                 :length="15"
                 :total-visible="7"
-              ></v-pagination>
+                ></v-pagination>
+            </div>
             </template>
