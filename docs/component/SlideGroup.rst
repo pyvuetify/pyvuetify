@@ -69,7 +69,7 @@ active-class prop allows you to pass a class to customize the active items.
 .. todo::
 
     The slots cannot be activated from the current ipyvuetify implementation.
-    If anyone can help to improve this section, please contribute :fas:`cofee`
+    If anyone can help to improve this section, please contribute :fas:`coffee`
 
 Center active
 ^^^^^^^^^^^^^
@@ -79,7 +79,7 @@ Using the center-active prop will make the active item always centered.
 .. todo::
 
     The slots cannot be activated from the current ipyvuetify implementation.
-    If anyone can help to improve this section, please contribute :fas:`cofee`
+    If anyone can help to improve this section, please contribute :fas:`coffee`
 
 Custom icons
 ^^^^^^^^^^^^
@@ -90,7 +90,7 @@ and prev-icon props.
 .. todo::
 
     The slots cannot be activated from the current ipyvuetify implementation.
-    If anyone can help to improve this section, please contribute :fas:`cofee`
+    If anyone can help to improve this section, please contribute :fas:`coffee`
 
 Mandatory
 ^^^^^^^^^
@@ -101,7 +101,7 @@ selected.
 .. todo::
 
     The slots cannot be activated from the current ipyvuetify implementation.
-    If anyone can help to improve this section, please contribute :fas:`cofee`
+    If anyone can help to improve this section, please contribute :fas:`coffee`
 
 Multiple
 ^^^^^^^^
@@ -111,7 +111,7 @@ You can select multiple items by setting the multiple prop.
 .. todo::
 
     The slots cannot be activated from the current ipyvuetify implementation.
-    If anyone can help to improve this section, please contribute :fas:`cofee`
+    If anyone can help to improve this section, please contribute :fas:`coffee`
 
 Pseudo Carousel
 ^^^^^^^^^^^^^^^
@@ -122,4 +122,4 @@ the selection, we can display auxillary information easily for the user.
 .. todo::
 
     The slots cannot be activated from the current ipyvuetify implementation.
-    If anyone can help to improve this section, please contribute :fas:`cofee`
+    If anyone can help to improve this section, please contribute :fas:`coffee`
