@@ -58,6 +58,7 @@ html_theme_options = {
     "show_prev_next": True,
     "navbar_start": ["navbar-logo"],
     "article_footer_items": ["last-updated"],
+    "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "announcement": "https://raw.githubusercontent.com/12rambau/ipyvuetify/refs/heads/documetnation3/docs/_static/banner.html",
     "icon_links": [
         {

@@ -8,19 +8,20 @@ About Vuetify Components
 The ipyvuetify library provides Python wrappers for all Vuetify components, allowing you to build rich,
 interactive user interfaces directly in Jupyter notebooks and other IPython environments.
 
-**Key Features:**
+Key Features
+------------
 
-- **Standalone Components**: All components are self-contained and work out of the box without requiring
-  additional JavaScript or CSS imports. The Vuetify framework is automatically loaded when you import ipyvuetify.
+-   **Standalone Components**: All components are self-contained and work out of the box without requiring
+    additional JavaScript or CSS imports. The Vuetify framework is automatically loaded when you import ipyvuetify.
 
-- **Dual Representation**: Each example in this documentation provides two equivalent implementations:
+-   **Dual Representation**: Each example in this documentation provides two equivalent implementations:
 
-  - **Vue SFC (Single File Component)**: The standard Vue.js template syntax that you would use in a
-    traditional Vue.js application
-  - **Pure Python**: The ipyvuetify Python equivalent using the same component hierarchy and properties
+    -   **Vue SFC (Single File Component)**: The standard Vue.js template syntax that you would use in a
+        traditional Vue.js application
+    -   **Pure Python**: The ipyvuetify Python equivalent using the same component hierarchy and properties
 
-- **Python-First API**: All Vuetify properties, methods, and slots are accessible through Python, following
-  Pythonic naming conventions (e.g., ``colored-border`` becomes ``colored_border``).
+-   **Python-First API**: All Vuetify properties, methods, and slots are accessible through Python, following
+    Pythonic naming conventions (e.g., ``colored-border`` becomes ``colored_border``).
 
 .. important::
 
@@ -29,10 +30,10 @@ interactive user interfaces directly in Jupyter notebooks and other IPython envi
     This documentation is generated as a static document and does not have access to a live IPython kernel.
     As a result:
 
-    - Event handlers (like ``@click``, ``on_event``) are not captured in the rendered examples
-    - Interactive behaviors shown are primarily achieved through traitlets' ``jslink`` for simple state
-      synchronization
-    - Real-world applications can be much more sophisticated using actual Python event handlers and callbacks
+    -   Event handlers (like ``@click``, ``on_event``) are not captured in the rendered examples
+    -   Interactive behaviors shown are primarily achieved through traitlets' ``jslink`` for simple state
+        synchronization
+    -   Real-world applications can be much more sophisticated using actual Python event handlers and callbacks
 
     For complete, deployable examples demonstrating full event handling and interactivity, please refer to
     the **Gallery** section.
