@@ -1,18 +1,42 @@
 Touch
 =====
 
-.. warning::
-    This page is AI-generated and requires human review. The content may contain errors or inaccuracies.
-
-.. danger::
-    This component does not have a dedicated documentation page on the official Vuetify website. It will be reviewed during human proofreading.
-
 .. aknowledgement::
-    This page is a Python adaptation of the official Vuetify documentation.
-    All examples have been converted to ipyvuetify syntax.
+    This page is a Python adaptation of the `official Vuetify Touch directive
+    documentation <https://v2.vuetifyjs.com/en/directives/touch/>`__. All
+    examples have been converted to ipyvuetify syntax.
 
-The Touch directive provides touch gesture support.
+The ``v-touch`` directive allows you to capture swipe gestures and apply
+directional callbacks.
 
 .. api::
 
-    :py:class:`ipyvuetify.Touch`
+    - :py:class:`ipyvuetify.Touch`
+
+Usage
+-----
+
+On a mobile device, try swiping in various directions.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            </template>

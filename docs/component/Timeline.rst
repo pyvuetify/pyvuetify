@@ -1,23 +1,25 @@
 Timeline
 ========
 
-.. warning::
-    This page is AI-generated and requires human review. The content may contain errors or inaccuracies.
-
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/timelines/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    This page is a Python adaptation of the `official Vuetify Timelines
+    documentation <https://v2.vuetifyjs.com/en/components/timelines/>`__. All
+    examples have been converted to ipyvuetify syntax.
 
-The :py:class:`Timeline <ipyvuetify.Timeline>` is useful for stylistically displaying chronological information.
+The :py:class:`Timeline <ipyvuetify.Timeline>` is useful for stylistically
+displaying chronological information.
 
 .. api::
 
-    :py:class:`ipyvuetify.Timeline`
+    - :py:class:`ipyvuetify.Timeline`
+    - :py:class:`ipyvuetify.TimelineItem`
 
 Usage
 -----
 
-``v-timeline``'s in their simplest form display a vertical timeline that should contain at least one ``v-timeline-item``.
+:py:class:`Timeline <ipyvuetify.Timeline>`'s in their simplest form display a
+vertical timeline that should contain at least one
+:py:class:`TimelineItem <ipyvuetify.TimelineItem>`.
 
 .. tab-set::
 
@@ -29,11 +31,36 @@ Usage
 
             import ipyvuetify as v
 
-            v.Timeline(children=[
-                v.TimelineItem(children=['Timeline item 1']),
-                v.TimelineItem(children=['Timeline item 2']),
-                v.TimelineItem(children=['Timeline item 3'])
-            ])
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            </template>
+
+Examples
+--------
+
+Color
+^^^^^
+
+Colored dots create visual breakpoints that make your timelines easier to read.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
 
     .. tab-item:: :fab:`python` Python
 
@@ -41,28 +68,19 @@ Usage
 
             import ipyvuetify as v
 
-            v.Timeline(children=[
-                v.TimelineItem(children=['Timeline item 1']),
-                v.TimelineItem(children=['Timeline item 2']),
-                v.TimelineItem(children=['Timeline item 3'])
-            ])
-
     .. tab-item:: :fab:`vuejs` Vue template
 
         .. code-block:: vue
 
             <template>
-              <v-timeline>
-                <v-timeline-item>Timeline item 1</v-timeline-item>
-                <v-timeline-item>Timeline item 2</v-timeline-item>
-                <v-timeline-item>Timeline item 3</v-timeline-item>
-              </v-timeline>
             </template>
 
 Dense
------
+^^^^^
 
-Dense timelines position all content to the right.
+**Dense** timelines position all content to the right. In this example,
+:py:class:`Alert <ipyvuetify.Alert>` replaces the card to provide a different
+design.
 
 .. tab-set::
 
@@ -74,20 +92,34 @@ Dense timelines position all content to the right.
 
             import ipyvuetify as v
 
-            v.Timeline(
-                dense=True,
-                children=[
-                    v.TimelineItem(small=True, children=[
-                        v.Alert(color='info', children=['Timeline item 1'])
-                    ]),
-                    v.TimelineItem(small=True, children=[
-                        v.Alert(color='success', children=['Timeline item 2'])
-                    ]),
-                    v.TimelineItem(small=True, children=[
-                        v.Alert(color='error', children=['Timeline item 3'])
-                    ])
-                ]
-            )
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            </template>
+
+Icon dots
+^^^^^^^^^
+
+Conditionally use icons within the :py:class:`TimelineItem <ipyvuetify.TimelineItem>`'s
+dot to provide additional context.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
 
     .. tab-item:: :fab:`python` Python
 
@@ -95,29 +127,182 @@ Dense timelines position all content to the right.
 
             import ipyvuetify as v
 
-            v.Timeline(
-                dense=True,
-                children=[
-                    v.TimelineItem(small=True, children=[
-                        v.Alert(color='info', children=['Timeline item 1'])
-                    ]),
-                    v.TimelineItem(small=True, children=[
-                        v.Alert(color='success', children=['Timeline item 2'])
-                    ])
-                ]
-            )
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            </template>
+
+Reverse
+^^^^^^^
+
+You can reverse the direction of the timeline items by using the ``reverse`` prop.
+This works both in default and dense mode.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
 
     .. tab-item:: :fab:`vuejs` Vue template
 
         .. code-block:: vue
 
             <template>
-              <v-timeline dense>
-                <v-timeline-item small>
-                  <v-alert color="info">Timeline item 1</v-alert>
-                </v-timeline-item>
-                <v-timeline-item small>
-                  <v-alert color="success">Timeline item 2</v-alert>
-                </v-timeline-item>
-              </v-timeline>
+            </template>
+
+Small
+^^^^^
+
+The ``small`` prop allows alternate styles to provide a unique design.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            </template>
+
+Icon
+^^^^
+
+Insert avatars into dots with use of the ``icon`` slot and
+:py:class:`Avatar <ipyvuetify.Avatar>`.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            </template>
+
+Opposite
+^^^^^^^^
+
+The ``opposite`` slot provides an additional layer of customization within your
+timelines.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            </template>
+
+Timeline item default
+^^^^^^^^^^^^^^^^^^^^^
+
+If you place a :py:class:`Card <ipyvuetify.Card>` inside of a
+:py:class:`TimelineItem <ipyvuetify.TimelineItem>`, a caret will appear on the side
+of the card.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
+            </template>
+
+Advanced
+^^^^^^^^
+
+Modular components allow you to create highly customized solutions that just work.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute::
+            :raises:
+            :hide-code:
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`python` Python
+
+        .. code-block:: python
+
+            import ipyvuetify as v
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. code-block:: vue
+
+            <template>
             </template>
