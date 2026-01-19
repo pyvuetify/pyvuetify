@@ -1842,18 +1842,210 @@ will smoothly scale to the new size.
             :hide-code:
 
             import ipyvuetify as v
+            from ipywidgets import jslink
+
+            text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+
+            tabs = v.Tabs(
+                v_model=0,
+                centered=True,
+                children=[
+                    v.Tab(children=[f'Item {i}']) for i in range(1, 4)
+                ]
+            )
+
+            tab_items = v.TabsItems(
+                v_model=0,
+                children=[
+                    v.TabItem(
+                        key=0,
+                        children=[
+                            v.Card(
+                                flat=True,
+                                children=[
+                                    v.CardText(
+                                        children=[text] * (i+1)
+                                    )
+                                ]
+                            )
+                        ]
+                    ) for i in range(3)
+                ]
+            )
+
+            jslink((tabs, 'v_model'), (tab_items, 'v_model'))
+
+            v.Card(
+                class_="mx-auto my-2",
+                max_width=700,
+                children=[
+                    v.Toolbar(
+                        color="purple",
+                        dark=True,
+                        flat=True,
+                        tabs=True,
+                        children=[
+                            v.AppBarNavIcon(),
+                            v.ToolbarTitle(children=["Dynamic Height Tabs"]),
+                            v.Spacer(),
+                            v.Btn(icon=True, children=[v.Icon(children=["mdi-magnify"])]),
+                            v.Btn(icon=True, children=[v.Icon(children=["mdi-dots-vertical"])]),
+                        ],
+                        v_slots=[{
+                            "name": "extension",
+                            "children": [tabs]
+                        }]
+                    ),
+                    tab_items
+                ]
+            )
 
     .. tab-item:: :fab:`python` Python
 
         .. code-block:: python
 
             import ipyvuetify as v
+            from ipywidgets import jslink
+
+            text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+
+            tabs = v.Tabs(
+                v_model=0,
+                centered=True,
+                children=[
+                    v.Tab(children=[f'Item {i}']) for i in range(1, 4)
+                ]
+            )
+
+            tab_items = v.TabsItems(
+                v_model=0,
+                children=[
+                    v.TabItem(
+                        key=0,
+                        children=[
+                            v.Card(
+                                flat=True,
+                                children=[
+                                    v.CardText(
+                                        children=[text] * (i+1)
+                                    )
+                                ]
+                            )
+                        ]
+                    ) for i in range(3)
+                ]
+            )
+
+            jslink((tabs, 'v_model'), (tab_items, 'v_model'))
+
+            v.Card(
+                class_="mx-auto my-2",
+                max_width=700,
+                children=[
+                    v.Toolbar(
+                        color="purple",
+                        dark=True,
+                        flat=True,
+                        tabs=True,
+                        children=[
+                            v.AppBarNavIcon(),
+                            v.ToolbarTitle(children=["Dynamic Height Tabs"]),
+                            v.Spacer(),
+                            v.Btn(icon=True, children=[v.Icon(children=["mdi-magnify"])]),
+                            v.Btn(icon=True, children=[v.Icon(children=["mdi-dots-vertical"])]),
+                        ],
+                        v_slots=[{
+                            "name": "extension",
+                            "children": [tabs]
+                        }]
+                    ),
+                    tab_items
+                ]
+            )
 
     .. tab-item:: :fab:`vuejs` Vue template
 
         .. code-block:: vue
 
             <template>
+            <v-card>
+                <v-toolbar
+                color="purple"
+                dark
+                flat
+                prominent
+                >
+                <v-text-field
+                    append-icon="mdi-microphone"
+                    class="mx-4"
+                    flat
+                    hide-details
+                    label="Search"
+                    prepend-inner-icon="mdi-magnify"
+                    solo-inverted
+                ></v-text-field>
+
+                <template v-slot:extension>
+                    <v-tabs
+                    v-model="tabs"
+                    centered
+                    >
+                    <v-tab
+                        v-for="n in 3"
+                        :key="n"
+                    >
+                        Item {{ n }}
+                    </v-tab>
+                    </v-tabs>
+                </template>
+                </v-toolbar>
+
+                <v-tabs-items v-model="tabs">
+                <v-tab-item>
+                    <v-card flat>
+                    <v-card-text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </v-card-text>
+                    </v-card>
+                </v-tab-item>
+                <v-tab-item>
+                    <v-card flat>
+                    <v-card-title class="text-h5">
+                        An awesome title
+                    </v-card-title>
+                    <v-card-text>
+                        <p>
+                        Duis lobortis massa imperdiet quam. Donec vitae orci sed dolor rutrum auctor. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Praesent congue erat at massa.
+                        </p>
+
+                        <p>
+                        Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Etiam sit amet orci eget eros faucibus tincidunt. Donec sodales sagittis magna.
+                        </p>
+
+                        <p class="mb-0">
+                        Ut leo. Suspendisse potenti. Duis vel nibh at velit scelerisque suscipit. Fusce pharetra convallis urna.
+                        </p>
+                    </v-card-text>
+                    </v-card>
+                </v-tab-item>
+                <v-tab-item>
+                    <v-card flat>
+                    <v-card-title class="text-h5">
+                        An even better title
+                    </v-card-title>
+                    <v-card-text>
+                        <p>
+                        Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Sed hendrerit. Maecenas malesuada. Vestibulum ullamcorper mauris at ligula. Proin faucibus arcu quis ante.
+                        </p>
+
+                        <p class="mb-0">
+                        Etiam vitae tortor. Curabitur ullamcorper ultricies nisi. Sed magna purus, fermentum eu, tincidunt eu, varius ut, felis. Aliquam lobortis. Suspendisse potenti.
+                        </p>
+                    </v-card-text>
+                    </v-card>
+                </v-tab-item>
+                </v-tabs-items>
+            </v-card>
             </template>
 
 Dynamic Tabs
@@ -1866,56 +2058,19 @@ match. As we add more tabs and overflow the container, the selected item will
 be automatically scrolled into view. Remove all :py:class:`Tab <ipyvuetify.Tab>`
 and the slider will disappear.
 
-.. tab-set::
+.. todo::
 
-    .. tab-item:: :fas:`eye` Rendered
+    Require an active kernel to be documented properly.
 
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-            </template>
 
 Overflow to menu
 ^^^^^^^^^^^^^^^^
 
 You can use a menu to hold additional tabs, swapping them out on the fly.
 
-.. tab-set::
+.. todo::
 
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-            </template>
+    Require an active kernel to be documented properly.
 
 Tab Items
 ^^^^^^^^^
@@ -1934,6 +2089,58 @@ selected :py:class:`Tab <ipyvuetify.Tab>`.
             :hide-code:
 
             import ipyvuetify as v
+            from ipywidgets import jslink
+
+            items = [
+                {"tab": "One", "content": "Tab 1 Content"},
+                {"tab": "Two", "content": "Tab 2 Content"},
+                {"tab": "Three", "content": "Tab 3 Content"},
+                {"tab": "Four", "content": "Tab 4 Content"},
+                {"tab": "Five", "content": "Tab 5 Content"},
+                {"tab": "Six", "content": "Tab 6 Content"},
+                {"tab": "Seven", "content": "Tab 7 Content"},
+                {"tab": "Eight", "content": "Tab 8 Content"},
+                {"tab": "Nine", "content": "Tab 9 Content"},
+                {"tab": "Ten", "content": "Tab 10 Content"},
+            ]
+
+            tabs = v.Tabs(
+                v_model=0,
+                background_color="primary",
+                dark=True,
+                children=[
+                    v.Tab(
+                        key=i,
+                        children=[item["tab"]]
+                    ) for i, item in enumerate(items)
+                ]
+            )
+
+            tab_items = v.TabsItems(
+                v_model=0,
+                children=[
+                    v.TabItem(
+                        key=idx,
+                        children=[
+                            v.Card(
+                                flat=True,
+                                children=[
+                                    v.CardText(
+                                        children=[item["content"]]
+                                    )
+                                ]
+                            )
+                        ]
+                    ) for idx, item in enumerate(items)
+                ]
+            )
+
+            jslink((tabs, 'v_model'), (tab_items, 'v_model'))
+
+            v.Card(
+                class_="my-2 mx-auto",
+                children=[tabs, tab_items]
+            )
 
     .. tab-item:: :fab:`python` Python
 
@@ -1946,4 +2153,29 @@ selected :py:class:`Tab <ipyvuetify.Tab>`.
         .. code-block:: vue
 
             <template>
+            <v-card>
+                <v-tabs
+                v-model="tab"
+                background-color="primary"
+                dark
+                >
+                <v-tab
+                    v-for="item in items"
+                    :key="item.tab"
+                >
+                    {{ item.tab }}
+                </v-tab>
+                </v-tabs>
+
+                <v-tabs-items v-model="tab">
+                <v-tab-item
+                    v-for="item in items"
+                    :key="item.tab"
+                >
+                    <v-card flat>
+                    <v-card-text>{{ item.content }}</v-card-text>
+                    </v-card>
+                </v-tab-item>
+                </v-tabs-items>
+            </v-card>
             </template>
