@@ -23,28 +23,11 @@ Usage
 Designed to easily cycle through content, :py:class:`Window <ipyvuetify.Window>`
 provides a simple interface to create truly custom implementations.
 
-.. tab-set::
+.. todo::
 
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-            </template>
+    Like all the window examples below, this one requires an interactive live kernel
+    to function as intended. help us improve this by suggesting better ways to
+    demonstrate such components in the documentation :fas:`thumbs-up`.
 
 Examples
 --------
@@ -55,28 +38,11 @@ Reverse
 **Reverse** :py:class:`Window <ipyvuetify.Window>` always displays reverse
 transition.
 
-.. tab-set::
+.. todo::
 
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-            </template>
+    Like all the window examples below, this one requires an interactive live kernel
+    to function as intended. help us improve this by suggesting better ways to
+    demonstrate such components in the documentation :fas:`thumbs-up`.
 
 Vertical
 ^^^^^^^^
@@ -84,56 +50,22 @@ Vertical
 :py:class:`Window <ipyvuetify.Window>` can be vertical. Vertical windows have **Y
 axis** transition instead of **X axis** transition.
 
-.. tab-set::
+.. todo::
 
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-            </template>
+    Like all the window examples below, this one requires an interactive live kernel
+    to function as intended. help us improve this by suggesting better ways to
+    demonstrate such components in the documentation :fas:`thumbs-up`.
 
 Customized arrows
 ^^^^^^^^^^^^^^^^^
 
 Arrows can be customized by using ``prev`` and ``next`` slots.
 
-.. tab-set::
+.. todo::
 
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-            </template>
+    Like all the window examples below, this one requires an interactive live kernel
+    to function as intended. help us improve this by suggesting better ways to
+    demonstrate such components in the documentation :fas:`thumbs-up`.
 
 Misc
 ----
@@ -145,28 +77,11 @@ Create rich forms with smooth animations. :py:class:`Window <ipyvuetify.Window>`
 automatically tracks the current selection index to automatically change the
 transition direction. This can be manually controlled with the ``reverse`` prop.
 
-.. tab-set::
+.. todo::
 
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-            </template>
+    Like all the window examples below, this one requires an interactive live kernel
+    to function as intended. help us improve this by suggesting better ways to
+    demonstrate such components in the documentation :fas:`thumbs-up`.
 
 Onboarding
 ^^^^^^^^^^
@@ -174,25 +89,8 @@ Onboarding
 :py:class:`Window <ipyvuetify.Window>` makes it easy to create custom components
 such as a different styled stepper.
 
-.. tab-set::
+.. todo::
 
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute::
-            :raises:
-            :hide-code:
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`python` Python
-
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. code-block:: vue
-
-            <template>
-            </template>
+    Like all the window examples below, this one requires an interactive live kernel
+    to function as intended. help us improve this by suggesting better ways to
+    demonstrate such components in the documentation :fas:`thumbs-up`.
