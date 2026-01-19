@@ -22,32 +22,8 @@ Usage
 appended slot, the default slot, and messages. These make up the core logic
 shared between all form components.
 
-.. jupyter-execute::
+.. jupyter-execute:: Input/usage.py
     :raises:
-
-    import ipyvuetify as v
-
-    v.Container(
-        id="input-usage",
-        fluid=True,
-        children=[
-            v.Row(
-                children=[
-                    v.Col(
-                        cols=12,
-                        children=[
-                            v.Input(
-                                messages=['Messages'],
-                                append_icon='mdi-close',
-                                prepend_icon='mdi-phone',
-                                children=['Default Slot']
-                            )
-                        ]
-                    )
-                ]
-            )
-        ]
-    )
 
 .. warning::
 
@@ -76,48 +52,17 @@ You can add multiple errors to :py:class:`Input <ipyvuetify.Input>` using
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Input/error_count.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Input(
-                error_count=2,
-                error_messages=['Fatal error', 'Another error'],
-                error=True,
-                disabled=True,
-                children=['Input']
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Input(
-                error_count=2,
-                error_messages=['Fatal error', 'Another error'],
-                error=True,
-                disabled=True,
-                children=['Input']
-            )
+        .. literalinclude:: Input/error_count.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-input
-                error-count="2"
-                :error-messages="['Fatal error', 'Another error']"
-                error
-                disabled
-            >
-                Input
-            </v-input>
-            </template>
+        .. literalinclude:: Input/error_count.vue
 
 .. tab-set::
 
@@ -179,58 +124,17 @@ if there's a message (hint, error message etc) to display.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Input/hide_details.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                tag='div',
-                children=[
-                    v.TextField(
-                        label='Main input',
-                        hide_details='auto',
-                    ),
-                    v.TextField(
-                        label='Another input'
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                tag='div',
-                children=[
-                    v.TextField(
-                        label='Main input',
-                        hide_details='auto',
-                    ),
-                    v.TextField(
-                        label='Another input'
-                    )
-                ]
-            )
+        .. literalinclude:: Input/hide_details.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-text-field
-                label="Main input"
-                :rules="rules"
-                hide-details="auto"
-                ></v-text-field>
-                <v-text-field label="Another input"></v-text-field>
-            </div>
-            </template>
+        .. literalinclude:: Input/hide_details.vue
 
 Hint
 ^^^^
@@ -243,75 +147,17 @@ messages are displayed.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Input/hint.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            message = v.Select(
-                v_model=[],
-                items=["message"],
-                label='Message',
-                multiple=True,
-                clearable=True,
-            )
-            input_field = v.Input(
-                hint='I am hint',
-                persistent_hint=True,
-                messages=[],
-                children=['Input']
-            )
-
-            jslink((message, 'v_model'), (input_field, 'messages'))
-
-            v.Container(children=[message, input_field])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            message = v.Select(
-                v_model=[],
-                items=["message"],
-                label='Message',
-                multiple=True,
-                clearable=True,
-            )
-            input_field = v.Input(
-                hint='I am hint',
-                persistent_hint=True,
-                messages=[],
-                children=['Input']
-            )
-
-            jslink((message, 'v_model'), (input_field, 'messages'))
-
-            v.Container(children=[message, input_field])
+        .. literalinclude:: Input/hint.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-row>
-                <v-switch
-                v-model="showMessages"
-                label="Show messages"
-                ></v-switch>
-                <v-input
-                hint="I am hint"
-                persistent-hint
-                :messages="messages"
-                >
-                Input
-                </v-input>
-            </v-row>
-            </template>
+        .. literalinclude:: Input/hint.vue
 
 Loading
 ^^^^^^^
@@ -324,41 +170,17 @@ is used just for example.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Input/loading.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.TextField(
-                color='success',
-                loading=True,
-                disabled=True,
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.TextField(
-                color='success',
-                loading=True,
-                disabled=True,
-            )
+        .. literalinclude:: Input/loading.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-text-field
-                color="success"
-                loading
-                disabled
-            ></v-text-field>
-            </template>
+        .. literalinclude:: Input/loading.vue
 
 Rules
 ^^^^^
@@ -383,45 +205,17 @@ be set to success state using ``success`` prop, you can add message to it using
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Input/success.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Input(
-                success_messages=['Success'],
-                success=True,
-                disabled=True,
-                children=['Input']
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Input(
-                success_messages=['Success'],
-                success=True,
-                disabled=True,
-                children=['Input']
-            )
+        .. literalinclude:: Input/success.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-input
-                :success-messages="['Success']"
-                success
-                disabled
-            >
-                Input
-            </v-input>
-            </template>
+        .. literalinclude:: Input/success.vue
 
 Append and prepend
 ^^^^^^^^^^^^^^^^^^
@@ -433,82 +227,15 @@ can place custom icons in them.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Input/append_and_prepend.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.TextField(
-                v_slots = [{
-                    "name": "append",
-                    "children": [
-                        v.Icon(
-                            children=['mdi-plus'],
-                            slot='append',
-                            color='red',
-                        ),
-                    ]
-                },
-                {
-                    "name": "prepend",
-                    "children": [
-                        v.Icon(
-                            children=['mdi-minus'],
-                            slot='prepend',
-                            color='green',
-                        )
-                    ]
-                }],
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-
-            import ipyvuetify as v
-
-            v.TextField(
-                v_slots = [{
-                    "name": "append",
-                    "children": [
-                        v.Icon(
-                            children=['mdi-plus'],
-                            slot='append',
-                            color='red',
-                        ),
-                    ]
-                },
-                {
-                    "name": "prepend",
-                    "children": [
-                        v.Icon(
-                            children=['mdi-minus'],
-                            slot='prepend',
-                            color='green',
-                        )
-                    ]
-                }],
-            )
+        .. literalinclude:: Input/append_and_prepend.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
+        .. literalinclude:: Input/append_and_prepend.vue
 
-            <template>
-            <v-text-field>
-                <v-icon
-                slot="append"
-                color="red"
-                >
-                mdi-plus
-                </v-icon>
-                <v-icon
-                slot="prepend"
-                color="green"
-                >
-                mdi-minus
-                </v-icon>
-            </v-text-field>
-            </template>

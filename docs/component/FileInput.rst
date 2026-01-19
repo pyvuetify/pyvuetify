@@ -20,17 +20,8 @@ Usage
 At its core, the :py:class:`FileInput <ipyvuetify.FileInput>` component is a basic
 container that extends :py:class:`TextField <ipyvuetify.TextField>`.
 
-.. jupyter-execute::
+.. jupyter-execute:: FileInput/usage.py
     :raises:
-
-    import ipyvuetify as v
-
-    v.FileInput(
-        chips=True,
-        counter=True,
-        show_size=True,
-        truncate_length=20,
-    )
 
 Examples
 --------
@@ -46,38 +37,17 @@ on the `accept attribute <https://developer.mozilla.org/en-US/docs/Web/HTML/Elem
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: FileInput/accept.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.FileInput(
-                accept="image/*",
-                label="File input",
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.FileInput(
-                accept="image/*",
-                label="File input",
-            )
+        .. literalinclude:: FileInput/accept.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-file-input
-                accept="image/*"
-                label="File input"
-            ></v-file-input>
-            </template>
+        .. literalinclude:: FileInput/accept.vue
 
 Chips
 ^^^^^
@@ -90,68 +60,17 @@ the file count).
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: FileInput/chips.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            chip = v.FileInput(
-                v_model=None,
-                chips=True,
-                label="File input w/ chips",
-            )
-            small_chip = v.FileInput(
-                v_model=None,
-                small_chips=True,
-                label="File input w/ small chips",
-            )
-
-            jslink((chip, 'v_model'), (small_chip, 'v_model'))
-
-            v.Container(children=[chip, small_chip])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            chip = v.FileInput(
-                v_model=None,
-                chips=True,
-                label="File input w/ chips",
-            )
-            small_chip = v.FileInput(
-                v_model=None,
-                small_chips=True,
-                label="File input w/ small chips",
-            )
-
-            jslink((chip, 'v_model'), (small_chip, 'v_model'))
-
-            v.Container(children=[chip, small_chip])
+        .. literalinclude:: FileInput/chips.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-file-input
-                chips
-                multiple
-                label="File input w/ chips"
-                ></v-file-input>
-                <v-file-input
-                small-chips
-                multiple
-                label="File input w/ small chips"
-                ></v-file-input>
-            </div>
-            </template>
+        .. literalinclude:: FileInput/chips.vue
 
 Counter
 ^^^^^^^
@@ -163,44 +82,17 @@ files and size will be displayed under the input.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: FileInput/counter.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.FileInput(
-                show_size=True,
-                counter=True,
-                multiple=True,
-                label="File input",
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.FileInput(
-                show_size=True,
-                counter=True,
-                multiple=True,
-                label="File input",
-            )
+        .. literalinclude:: FileInput/counter.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-file-input
-                show-size
-                counter
-                multiple
-                label="File input"
-            ></v-file-input>
-            </template>
+        .. literalinclude:: FileInput/counter.vue
 
 Dense
 ^^^^^
@@ -211,41 +103,17 @@ You can reduces the file input height with ``dense`` prop.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: FileInput/dense.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.FileInput(
-                label="File input",
-                outlined=True,
-                dense=True,
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.FileInput(
-                label="File input",
-                outlined=True,
-                dense=True,
-            )
+        .. literalinclude:: FileInput/dense.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-file-input
-                label="File input"
-                outlined
-                dense
-            ></v-file-input>
-            </template>
+        .. literalinclude:: FileInput/dense.vue
 
 Multiple
 ^^^^^^^^
@@ -257,38 +125,17 @@ same time when using the ``multiple`` prop.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: FileInput/multiple.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.FileInput(
-                multiple=True,
-                label="File input",
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.FileInput(
-                multiple=True,
-                label="File input",
-            )
+        .. literalinclude:: FileInput/multiple.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-file-input
-                multiple
-                label="File input"
-            ></v-file-input>
-            </template>
+        .. literalinclude:: FileInput/multiple.vue
 
 Prepend icon
 ^^^^^^^^^^^^
@@ -302,41 +149,17 @@ changing global components can be found on the
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: FileInput/prepend_icon.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.FileInput(
-                label="File input",
-                filled=True,
-                prepend_icon="mdi-camera",
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.FileInput(
-                label="File input",
-                filled=True,
-                prepend_icon="mdi-camera",
-            )
+        .. literalinclude:: FileInput/prepend_icon.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-file-input
-                label="File input"
-                filled
-                prepend-icon="mdi-camera"
-            ></v-file-input>
-            </template>
+        .. literalinclude:: FileInput/prepend_icon.vue
 
 Show size
 ^^^^^^^^^
@@ -349,38 +172,17 @@ property. Display sizes can be either 1024 (the default used when providing
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: FileInput/show_size.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.FileInput(
-                show_size=True,
-                label="File input"
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.FileInput(
-                show_size=True,
-                label="File input"
-            )
+        .. literalinclude:: FileInput/show_size.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-file-input
-                show-size
-                label="File input"
-            ></v-file-input>
-            </template>
+        .. literalinclude:: FileInput/show_size.vue
 
 Validation
 ^^^^^^^^^^
@@ -404,77 +206,17 @@ any component or markup can be used.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: FileInput/selection_slot.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.FileInput(
-                v_model=None,
-                label="File input",
-                multiple=True,
-                placeholder="Upload your documents",
-                prepend_icon="mdi-paperclip",
-                v_slots = [{
-                    'name': 'selection',
-                    'variable': 'selection',
-                    'children': v.Chip(
-                        children=['selection.text'],
-                        small=True,
-                        label=True,
-                        color='primary',
-                    ),
-                }],
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.FileInput(
-                v_model=None,
-                label="File input",
-                multiple=True,
-                placeholder="Upload your documents",
-                prepend_icon="mdi-paperclip",
-                v_slots = [{
-                    'name': 'selection',
-                    'variable': 'selection',
-                    'children': v.Chip(
-                        children=['selection.text'],
-                        small=True,
-                        label=True,
-                        color='primary',
-                    ),
-                }],
-            )
+        .. literalinclude:: FileInput/selection_slot.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-file-input
-                v-model="files"
-                placeholder="Upload your documents"
-                label="File input"
-                multiple
-                prepend-icon="mdi-paperclip"
-            >
-                <template v-slot:selection="{ text }">
-                <v-chip
-                    small
-                    label
-                    color="primary"
-                >
-                    {{ text }}
-                </v-chip>
-                </template>
-            </v-file-input>
-            </template>
+        .. literalinclude:: FileInput/selection_slot.vue
 
 Complex selection slot
 ^^^^^^^^^^^^^^^^^^^^^^

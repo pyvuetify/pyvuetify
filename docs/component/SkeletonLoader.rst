@@ -23,22 +23,8 @@ The :py:class:`SkeletonLoader <ipyvuetify.SkeletonLoader>` component provides
 a user with a visual indicator that content is coming / loading. This is better
 received than traditional full-screen loaders.
 
-.. jupyter-execute::
+.. jupyter-execute:: SkeletonLoader/usage.py
     :raises:
-
-    import ipyvuetify as v
-
-    v.Sheet(
-        class_='pa-3',
-        color="grey lighten-4",
-        children=[
-            v.SkeletonLoader(
-                type='card',
-                width=300,
-                class_='mx-auto my-2'
-            )
-        ]
-    )
 
 Examples
 --------
@@ -56,188 +42,17 @@ custom data property to apply the same props to multiple
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: SkeletonLoader/boilerplate_component.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Container(
-                children=[
-                    v.Row(
-                        children=[
-                            v.Col(
-                                cols=12,
-                                md=4,
-                                children=[
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='card-avatar, article, actions',
-                                        class_='my-3'
-                                    ),
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='date-picker',
-                                        class_='my-3'
-                                    )
-                                ]
-                            ),
-                            v.Col(
-                                cols=12,
-                                md=4,
-                                children=[
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='article, actions',
-                                        class_='my-3'
-                                    ),
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='table-heading, list-item-two-line, image, table-tfoot',
-                                        class_='my-3'
-                                    )
-                                ]
-                            ),
-                            v.Col(
-                                cols=12,
-                                md=4,
-                                children=[
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='list-item-avatar, divider, list-item-three-line, card-heading, image, actions',
-                                        class_='my-3'
-                                    ),
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='list-item-avatar-three-line, image, article',
-                                        class_='my-3'
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Container(
-                children=[
-                    v.Row(
-                        children=[
-                            v.Col(
-                                cols=12,
-                                md=4,
-                                children=[
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='card-avatar, article, actions',
-                                        class_='my-3'
-                                    ),
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='date-picker',
-                                        class_='my-3'
-                                    )
-                                ]
-                            ),
-                            v.Col(
-                                cols=12,
-                                md=4,
-                                children=[
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='article, actions',
-                                        class_='my-3'
-                                    ),
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='table-heading, list-item-two-line, image, table-tfoot',
-                                        class_='my-3'
-                                    )
-                                ]
-                            ),
-                            v.Col(
-                                cols=12,
-                                md=4,
-                                children=[
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='list-item-avatar, divider, list-item-three-line, card-heading, image, actions',
-                                        class_='my-3'
-                                    ),
-                                    v.SkeletonLoader(
-                                        elevation=6,
-                                        type='list-item-avatar-three-line, image, article',
-                                        class_='my-3'
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
-
-                ]
-            )
+        .. literalinclude:: SkeletonLoader/boilerplate_component.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-container>
-                <v-row>
-                <v-col
-                    cols="12"
-                    md="4"
-                >
-                    <v-skeleton-loader
-                    v-bind="attrs"
-                    type="card-avatar, article, actions"
-                    ></v-skeleton-loader>
-
-                    <v-skeleton-loader
-                    v-bind="attrs"
-                    type="date-picker"
-                    ></v-skeleton-loader>
-                </v-col>
-
-                <v-col
-                    cols="12"
-                    md="4"
-                >
-                    <v-skeleton-loader
-                    v-bind="attrs"
-                    type="article, actions"
-                    ></v-skeleton-loader>
-
-                    <v-skeleton-loader
-                    v-bind="attrs"
-                    type="table-heading, list-item-two-line, image, table-tfoot"
-                    ></v-skeleton-loader>
-                </v-col>
-
-                <v-col
-                    cols="12"
-                    md="4"
-                >
-                    <v-skeleton-loader
-                    v-bind="attrs"
-                    type="list-item-avatar, divider, list-item-three-line, card-heading, image, actions"
-                    ></v-skeleton-loader>
-
-                    <v-skeleton-loader
-                    v-bind="attrs"
-                    type="list-item-avatar-three-line, image, article"
-                    ></v-skeleton-loader>
-                </v-col>
-                </v-row>
-            </v-container>
-            </template>
+        .. literalinclude:: SkeletonLoader/boilerplate_component.vue
 
 Accessibility
 -------------

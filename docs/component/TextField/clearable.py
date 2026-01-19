@@ -1,0 +1,63 @@
+import ipyvuetify as v
+
+message = "You can clear me!"
+
+v.Form(
+    children=[
+        v.Container(
+            children=[
+                v.Row(
+                    children=[
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    v_model=message,
+                                    label="Regular",
+                                    clearable=True,
+                                )
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    v_model=message,
+                                    solo=True,
+                                    label="Solo",
+                                    clearable=True,
+                                )
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    v_model=message,
+                                    filled=True,
+                                    label="Filled",
+                                    clearable=True,
+                                )
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    v_model=message,
+                                    label="Outlined",
+                                    outlined=True,
+                                    clearable=True,
+                                )
+                            ],
+                        ),
+                    ]
+                )
+            ]
+        )
+    ]
+)

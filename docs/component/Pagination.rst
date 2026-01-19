@@ -22,16 +22,8 @@ Usage
 Pagination by default displays the number of pages based on the set length
 prop, with prev and next buttons surrounding to help you navigate.
 
-.. jupyter-execute::
+.. jupyter-execute:: Pagination/usage.py
     :raises:
-
-    import ipyvuetify as v
-
-    v.Pagination(
-        v_model=1,
-        length=10,
-        class_='text-center my-2',
-    )
 
 Examples
 --------
@@ -45,45 +37,17 @@ The circle prop gives you an alternate style for pagination buttons.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Pagination/circle.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Pagination(
-                v_model=1,
-                length=4,
-                circle=True,
-                class_='text-center my-2',
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Pagination(
-                v_model=1,
-                length=4,
-                circle=True,
-                class_='text-center my-2',
-            )
+        .. literalinclude:: Pagination/circle.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div class="text-center">
-                <v-pagination
-                v-model="page"
-                :length="4"
-                circle
-                ></v-pagination>
-            </div>
-            </template>
+        .. literalinclude:: Pagination/circle.vue
 
 Disabled
 ^^^^^^^^
@@ -94,42 +58,17 @@ Pagination items can be manually deactivated using the disabled prop.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Pagination/disabled.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Pagination(
-                length=3,
-                disabled=True,
-                class_='text-center my-2',
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Pagination(
-                length=3,
-                disabled=True,
-                class_='text-center my-2',
-            )
+        .. literalinclude:: Pagination/disabled.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div class="text-center">
-                <v-pagination
-                :length="3"
-                disabled
-                ></v-pagination>
-            </div>
-            </template>
+        .. literalinclude:: Pagination/disabled.vue
 
 Icons
 ^^^^^
@@ -141,48 +80,17 @@ props.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Pagination/icons.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Pagination(
-                v_model=1,
-                length=4,
-                prev_icon='mdi-menu-left',
-                next_icon='mdi-menu-right',
-                class_='text-center my-2',
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Pagination(
-                v_model=1,
-                length=4,
-                prev_icon='mdi-menu-left',
-                next_icon='mdi-menu-right',
-                class_='text-center my-2',
-            )
+        .. literalinclude:: Pagination/icons.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div class="text-center">
-                <v-pagination
-                v-model="page"
-                :length="4"
-                prev-icon="mdi-menu-left"
-                next-icon="mdi-menu-right"
-                ></v-pagination>
-            </div>
-            </template>
+        .. literalinclude:: Pagination/icons.vue
 
 Length
 ^^^^^^
@@ -195,63 +103,17 @@ exceeds the parent container, it will truncate the list.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Pagination/length.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Card(
-                class_='mx-auto my-2',
-                width='400px',
-                children=[
-                    v.Pagination(
-                        v_model=1,
-                        length=15,
-                        class_='text-center my-4',
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Card(
-                class_='mx-auto my-2',
-                width='400px',
-                children=[
-                    v.Pagination(
-                        v_model=1,
-                        length=15,
-                        class_='text-center my-4',
-                    )
-                ]
-            )
+        .. literalinclude:: Pagination/length.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div class="text-center">
-                <v-container>
-                <v-row justify="center">
-                    <v-col cols="8">
-                    <v-container class="max-width">
-                        <v-pagination
-                        v-model="page"
-                        class="my-4"
-                        :length="15"
-                        ></v-pagination>
-                    </v-container>
-                    </v-col>
-                </v-row>
-                </v-container>
-            </div>
-            </template>
+        .. literalinclude:: Pagination/length.vue
 
 Total visible
 ^^^^^^^^^^^^^
@@ -263,42 +125,15 @@ total-visible prop.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Pagination/total_visible.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Pagination(
-                v_model=1,
-                length=15,
-                total_visible=7,
-                class_='text-center my-2',
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Pagination(
-                v_model=1,
-                length=15,
-                total_visible=7,
-                class_='text-center my-2',
-            )
+        .. literalinclude:: Pagination/total_visible.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
+        .. literalinclude:: Pagination/total_visible.vue
 
-            <template>
-            <div class="text-center">
-                <v-pagination
-                v-model="page"
-                :length="15"
-                :total-visible="7"
-                ></v-pagination>
-            </div>
-            </template>

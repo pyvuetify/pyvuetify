@@ -1,0 +1,58 @@
+import ipyvuetify as v
+
+v.Container(
+    class_="mx-auto my-2",
+    children=[
+        v.Form(
+            children=[
+                v.Row(
+                    children=[
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Regular",
+                                    single_line=True,
+                                )
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Solo",
+                                    single_line=True,
+                                    solo=True,
+                                )
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Filled",
+                                    single_line=True,
+                                    filled=True,
+                                )
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Outlined",
+                                    single_line=True,
+                                    outlined=True,
+                                )
+                            ],
+                        ),
+                    ]
+                )
+            ]
+        )
+    ],
+)

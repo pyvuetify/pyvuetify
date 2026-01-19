@@ -15,21 +15,8 @@ Usage
 The :py:class:`ColorPicker <ipyvuetify.ColorPicker>` allows you to select a color
 using a variety of input methods.
 
-.. jupyter-execute::
+.. jupyter-execute:: ColorPicker/usage.py
     :raises:
-
-    import ipyvuetify as v
-
-    v.Container(
-        children=[
-            v.ColorPicker(
-                class_='mx-auto',
-                dot_size=25,
-                swatches_max_height=200,
-            ),
-        ],
-        class_='my-2',
-    )
 
 .. api::
 
@@ -48,92 +35,17 @@ with the ``dot-size`` prop.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ColorPicker/canvas.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            color_picker1 = v.ColorPicker(
-                hide_canvas=True,
-                class_='mx-auto my-2',
-            )
-            color_picker2 = v.ColorPicker(
-                canvas_height=300,
-                class_='mx-auto my-2',
-            )
-            color_picker3 = v.ColorPicker(
-                dot_size=30,
-                class_='mx-auto my-2',
-            )
-
-            v.Container(
-                children=[
-                    v.Row(
-                        justify='space-around',
-                        children=[
-                            color_picker1,
-                            color_picker2,
-                            color_picker3,
-                        ],
-                    ),
-                ],
-                class_='my-2',
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            color_picker1 = v.ColorPicker(
-                hide_canvas=True,
-                class_='mx-auto my-2',
-            )
-            color_picker2 = v.ColorPicker(
-                canvas_height=300,
-                class_='mx-auto my-2',
-            )
-            color_picker3 = v.ColorPicker(
-                dot_size=30,
-                class_='mx-auto my-2',
-            )
-
-            v.Container(
-                children=[
-                    v.Row(
-                        justify='space-around',
-                        children=[
-                            color_picker1,
-                            color_picker2,
-                            color_picker3,
-                        ],
-                    ),
-                ],
-                class_='my-2',
-            )
+        .. literalinclude:: ColorPicker/canvas.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-          <template>
-            <v-row justify="space-around">
-                <v-color-picker
-                class="mx-auto my-2"
-                hide-canvas
-                ></v-color-picker>
-                <v-color-picker
-                class="mx-auto my-2"
-                :canvas-height="300"
-                ></v-color-picker>
-                <v-color-picker
-                class="mx-auto my-2"
-                :dot-size="30"
-                ></v-color-picker>
-            </v-row>
-          </template>
+        .. literalinclude:: ColorPicker/canvas.vue
 
 Elevation
 ---------
@@ -146,79 +58,17 @@ to setting ``elevation`` to 0.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ColorPicker/elevation.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            color_picker1 = v.ColorPicker(
-                class_='mx-auto my-2',
-                flat=True,
-            )
-            color_picker2 = v.ColorPicker(
-                class_='mx-auto my-2',
-                elevation=15,
-            )
-
-            v.Container(
-                children=[
-                    v.Row(
-                        justify='space-around',
-                        children=[
-                            color_picker1,
-                            color_picker2,
-                        ],
-                    ),
-                ],
-                class_='my-2',
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            color_picker1 = v.ColorPicker(
-                class_='mx-auto my-2',
-                flat=True,
-            )
-            color_picker2 = v.ColorPicker(
-                class_='mx-auto my-2',
-                elevation=15,
-            )
-
-            v.Container(
-                children=[
-                    v.Row(
-                        justify='space-around',
-                        children=[
-                            color_picker1,
-                            color_picker2,
-                        ],
-                    ),
-                ],
-                class_='my-2',
-            )
-
+        .. literalinclude:: ColorPicker/elevation.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-row justify="space-around">
-                <v-color-picker
-                class="mx-auto my-2"
-                flat
-                ></v-color-picker>
-                <v-color-picker
-                class="mx-auto my-2"
-                :elevation="15"
-                ></v-color-picker>
-            </v-row>
-            </template>
+        .. literalinclude:: ColorPicker/elevation.vue
 
 Inputs
 ------
@@ -232,115 +82,17 @@ through the ``mode`` prop.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ColorPicker/inputs.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            color_picker1 = v.ColorPicker(
-                class_='ma-2',
-                hide_inputs=True,
-            )
-            color_picker2 = v.ColorPicker(
-                class_='ma-2',
-                hide_mode_switch=True,
-            )
-            color_picker3 = v.ColorPicker(
-                class_='ma-2',
-                mode='hsla',
-            )
-            color_picker4 = v.ColorPicker(
-                class_='ma-2',
-                mode='hexa',
-            )
-
-            jslink((color_picker1, 'v_model'), (color_picker2, 'v_model'))
-            jslink((color_picker1, 'v_model'), (color_picker3, 'v_model'))
-            jslink((color_picker1, 'v_model'), (color_picker4, 'v_model'))
-
-            v.Container(
-                children=[
-                    v.Row(
-                        justify='space-around',
-                        children=[
-                            color_picker1,
-                            color_picker2,
-                            color_picker3,
-                            color_picker4,
-                        ],
-                    ),
-                ],
-                class_='my-2',
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            color_picker1 = v.ColorPicker(
-                class_='ma-2',
-                hide_inputs=True,
-            )
-            color_picker2 = v.ColorPicker(
-                class_='ma-2',
-                hide_mode_switch=True,
-            )
-            color_picker3 = v.ColorPicker(
-                class_='ma-2',
-                mode='hsla',
-            )
-            color_picker4 = v.ColorPicker(
-                class_='ma-2',
-                mode='hexa',
-            )
-
-            jslink((color_picker1, 'mode'), (color_picker2, 'mode'))
-            jslink((color_picker1, 'mode'), (color_picker3, 'mode'))
-            jslink((color_picker1, 'mode'), (color_picker4, 'mode'))
-
-            v.Container(
-                children=[
-                    v.Row(
-                        justify='space-around',
-                        children=[
-                            color_picker1,
-                            color_picker2,
-                            color_picker3,
-                            color_picker4,
-                        ],
-                    ),
-                ],
-                class_='my-2',
-            )
+        .. literalinclude:: ColorPicker/inputs.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-row justify="space-around">
-                <v-color-picker
-                class="ma-2"
-                hide-inputs
-                ></v-color-picker>
-                <v-color-picker
-                class="ma-2"
-                hide-mode-switch
-                ></v-color-picker>
-                <v-color-picker
-                class="ma-2"
-                mode="hsla"
-                ></v-color-picker>
-                <v-color-picker
-                class="ma-2"
-                mode="hexa"
-                ></v-color-picker>
-            </v-row>
+        .. literalinclude:: ColorPicker/inputs.vue
 
 Model
 -----
@@ -353,85 +105,17 @@ control the color displayed. It supports hex strings such as #FF00FF and
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ColorPicker/model.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            color_picker1 = v.ColorPicker(
-                mode="hexa",
-                v_model='#FF5733',
-                class_='ma-2',
-            )
-
-            color_picker2 = v.ColorPicker(
-                v_model={'r': 255, 'g': 87, 'b': 51, 'a': 1},
-                class_='ma-2',
-            )
-
-            jslink((color_picker1, 'v_model'), (color_picker2, 'v_model'))
-
-            v.Container(
-                children=[
-                    v.Row(
-                        justify='space-around',
-                        children=[color_picker1, color_picker2],
-                    ),
-                ],
-                class_='my-2',
-            )
-
-
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            color_picker1 = v.ColorPicker(
-                mode="hexa",
-                v_model='#FF5733',
-                class_='ma-2',
-            )
-
-            color_picker2 = v.ColorPicker(
-                v_model={'r': 255, 'g': 87, 'b': 51, 'a': 1},
-                class_='ma-2',
-            )
-
-            jslink((color_picker1, 'v_model'), (color_picker2, 'v_model'))
-
-            v.Container(
-                children=[
-                    v.Row(
-                        justify='space-around',
-                        children=[color_picker1, color_picker2],
-                    ),
-                ],
-                class_='my-2',
-            )
+        .. literalinclude:: ColorPicker/model.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-row justify="space-around">
-                <v-color-picker
-                class="ma-2"
-                mode="hexa"
-                v-model="colorHex"
-                ></v-color-picker>
-                <v-color-picker
-                class="ma-2"
-                v-model="colorRgba"
-                ></v-color-picker>
-            </v-row>
-            </template>
+        .. literalinclude:: ColorPicker/model.vue
 
 Swatches
 --------
@@ -447,100 +131,15 @@ section with the ``swatches-max-height`` prop.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ColorPicker/swatches.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            colors =  [
-                ['#FF0000', '#AA0000', '#550000'],
-                ['#FFFF00', '#AAAA00', '#555500'],
-                ['#00FF00', '#00AA00', '#005500'],
-                ['#00FFFF', '#00AAAA', '#005555'],
-            ]
-
-            v.Container(
-                children=[
-                    v.Row(
-                        justify='space-around',
-                        children=[
-                            v.ColorPicker(
-                                class_='ma-2',
-                                show_swatches=True,
-                            ),
-                            v.ColorPicker(
-                                class_='ma-2',
-                                swatches=colors,
-                                show_swatches=True,
-                            ),
-                            v.ColorPicker(
-                                class_='ma-2',
-                                show_swatches=True,
-                                swatches_max_height=300,
-                            ),
-                        ],
-                    ),
-                ],
-                class_='my-2',
-            )
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            colors =  [
-                ['#FF0000', '#AA0000', '#550000'],
-                ['#FFFF00', '#AAAA00', '#555500'],
-                ['#00FF00', '#00AA00', '#005500'],
-                ['#00FFFF', '#00AAAA', '#005555'],
-            ]
-
-            v.Container(
-                children=[
-                    v.Row(
-                        justify='space-around',
-                        children=[
-                            v.ColorPicker(
-                                class_='ma-2',
-                                show_swatches=True,
-                            ),
-                            v.ColorPicker(
-                                class_='ma-2',
-                                swatches=colors,
-                                show_swatches=True,
-                            ),
-                            v.ColorPicker(
-                                class_='ma-2',
-                                show_swatches=True,
-                                swatches_max_height=300,
-                            ),
-                        ],
-                    ),
-                ],
-                class_='my-2',
-            )
+        .. literalinclude:: ColorPicker/swatches.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
+        .. literalinclude:: ColorPicker/swatches.vue
 
-            <template>
-            <v-row justify="space-around">
-                <v-color-picker
-                class="ma-2"
-                show-swatches
-                ></v-color-picker>
-                <v-color-picker
-                class="ma-2"
-                :swatches="swatches"
-                show-swatches
-                ></v-color-picker>
-                <v-color-picker
-                class="ma-2"
-                show-swatches
-                swatches-max-height="300px"
-                ></v-color-picker>
-            </v-row>
-            </template>

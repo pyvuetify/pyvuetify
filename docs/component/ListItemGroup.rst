@@ -31,49 +31,8 @@ By default, the :py:class:`ListItemGroup <ipyvuetify.ListItemGroup>` operates
 similarly to :py:class:`ItemGroup <ipyvuetify.ItemGroup>`. If a value is not
 provided, the group will provide a default based upon its index.
 
-.. jupyter-execute::
+.. jupyter-execute:: ListItemGroup/usage.py
     :raises:
-
-    import ipyvuetify as v
-
-    items = [
-        {"icon": "mdi-inbox", "text": "Inbox"},
-        {"icon": "mdi-star", "text": "Star"},
-        {"icon": "mdi-send", "text": "Send"},
-        {"icon": "mdi-email-open", "text": "Drafts"},
-    ]
-
-    v.Card(
-        class_="mx-auto my-2",
-        width=400,
-        children=[
-            v.List(
-                children=[
-                    v.ListItemGroup(
-                        v_model=2,
-                        color="indigo",
-                        children=[
-                            v.ListItem(
-                                key=i,
-                                children=[
-                                    v.ListItemIcon(
-                                        children=[v.Icon(children=[item["icon"]])]
-                                    ),
-                                    v.ListItemContent(
-                                        children=[
-                                            v.ListItemTitle(children=[item["text"]])
-                                        ]
-                                    ),
-                                ],
-                            )
-                            for i, item in enumerate(items)
-                        ],
-                    )
-                ]
-            )
-        ],
-    )
-
 
 Examples
 --------
@@ -87,137 +46,17 @@ You can set a class which will be added when an item is selected.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ListItemGroup/active_class.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            items = [
-                {"icon": "mdi-wifi", "text": "Wifi",},
-                {"icon": "mdi-bluetooth", "text": "Bluetooth",},
-                {"icon": "mdi-chart-donut", "text": "Data Usage"},
-            ]
-
-            v.Card(
-                class_="mx-auto my-2",
-                width=400,
-                children=[
-                    v.List(
-                        children=[
-                            v.ListItemGroup(
-                                v_model=1,
-                                active_class="border",
-                                color="indigo",
-                                children=[
-                                    v.ListItem(
-                                        key=i,
-                                        children=[
-                                            v.ListItemIcon(
-                                                children=[
-                                                    v.Icon(
-                                                        children=[item["icon"]]
-                                                    )
-                                                ]
-                                            ),
-                                            v.ListItemContent(
-                                                children=[
-                                                    v.ListItemTitle(
-                                                        children=[item["text"]]
-                                                    )
-                                                ]
-                                            ),
-                                        ],
-                                    )
-                                    for i, item in enumerate(items)
-                                ],
-                            )
-                        ]
-                    )
-                ],
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            items = [
-                {"icon": "mdi-wifi", "text": "Wifi",},
-                {"icon": "mdi-bluetooth", "text": "Bluetooth",},
-                {"icon": "mdi-chart-donut", "text": "Data Usage"},
-            ]
-
-            v.Card(
-                class_="mx-auto my-2",
-                width=400,
-                children=[
-                    v.List(
-                        children=[
-                            v.ListItemGroup(
-                                v_model=1,
-                                active_class="border",
-                                color="indigo",
-                                children=[
-                                    v.ListItem(
-                                        key=i,
-                                        children=[
-                                            v.ListItemIcon(
-                                                children=[
-                                                    v.Icon(
-                                                        children=[item["icon"]]
-                                                    )
-                                                ]
-                                            ),
-                                            v.ListItemContent(
-                                                children=[
-                                                    v.ListItemTitle(
-                                                        children=[item["text"]]
-                                                    )
-                                                ]
-                                            ),
-                                        ],
-                                    )
-                                    for i, item in enumerate(items)
-                                ],
-                            )
-                        ]
-                    )
-                ],
-            )
+        .. literalinclude:: ListItemGroup/active_class.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-card
-                class="mx-auto"
-                max-width="400"
-            >
-                <v-list>
-                <v-list-item-group
-                    v-model="model"
-                    active-class="border"
-                    color="indigo"
-                >
-                    <v-list-item
-                    v-for="(item, i) in items"
-                    :key="i"
-                    >
-                    <v-list-item-icon>
-                        <v-icon v-text="item.icon"></v-icon>
-                    </v-list-item-icon>
-
-                    <v-list-item-content>
-                        <v-list-item-title v-text="item.text"></v-list-item-title>
-                    </v-list-item-content>
-                    </v-list-item>
-                </v-list-item-group>
-                </v-list>
-            </v-card>
-            </template>
+        .. literalinclude:: ListItemGroup/active_class.vue
 
 Mandatory
 ^^^^^^^^^
@@ -228,133 +67,17 @@ At least one item must be selected.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ListItemGroup/mandatory.py
             :raises:
             :hide-code:
 
-            items = [
-                {"icon": "mdi-wifi", "text": "Wifi",},
-                {"icon": "mdi-bluetooth", "text": "Bluetooth",},
-                {"icon": "mdi-chart-donut", "text": "Data Usage"},
-            ]
-
-            v.Card(
-                class_="mx-auto my-2",
-                width=400,
-                children=[
-                    v.List(
-                        children=[
-                            v.ListItemGroup(
-                                mandatory=True,
-                                v_model=1,
-                                color="indigo",
-                                children=[
-                                    v.ListItem(
-                                        key=i,
-                                        children=[
-                                            v.ListItemIcon(
-                                                children=[
-                                                    v.Icon(
-                                                        children=[item["icon"]]
-                                                    )
-                                                ]
-                                            ),
-                                            v.ListItemContent(
-                                                children=[
-                                                    v.ListItemTitle(
-                                                        children=[item["text"]]
-                                                    )
-                                                ]
-                                            ),
-                                        ],
-                                    )
-                                    for i, item in enumerate(items)
-                                ],
-                            )
-                        ]
-                    )
-                ],
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            items = [
-                {"icon": "mdi-wifi", "text": "Wifi",},
-                {"icon": "mdi-bluetooth", "text": "Bluetooth",},
-                {"icon": "mdi-chart-donut", "text": "Data Usage"},
-            ]
-
-            v.Card(
-                class_="mx-auto my-2",
-                width=400,
-                children=[
-                    v.List(
-                        children=[
-                            v.ListItemGroup(
-                                mandatory=True,
-                                v_model=1,
-                                color="indigo",
-                                children=[
-                                    v.ListItem(
-                                        key=i,
-                                        children=[
-                                            v.ListItemIcon(
-                                                children=[
-                                                    v.Icon(
-                                                        children=[item["icon"]]
-                                                    )
-                                                ]
-                                            ),
-                                            v.ListItemContent(
-                                                children=[
-                                                    v.ListItemTitle(
-                                                        children=[item["text"]]
-                                                    )
-                                                ]
-                                            ),
-                                        ],
-                                    )
-                                    for i, item in enumerate(items)
-                                ],
-                            )
-                        ]
-                    )
-                ],
-            )
+        .. literalinclude:: ListItemGroup/mandatory.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-card
-                class="mx-auto"
-                max-width="400"
-            >
-                <v-list>
-                <v-list-item-group
-                    v-model="model"
-                    mandatory
-                    color="indigo"
-                >
-                    <v-list-item
-                    v-for="(item, i) in items"
-                    :key="i"
-                    >
-                    <v-list-item-icon>
-                        <v-icon v-text="item.icon"></v-icon>
-                    </v-list-item-icon>
-
-                    <v-list-item-content>
-                        <v-list-item-title v-text="item.text"></v-list-item-title>
-                    </v-list-item-content>
-                    </v-list-item>
-                </v-list-item-group>
-                </v-list>
-            </v-card>
-            </template>
+        .. literalinclude:: ListItemGroup/mandatory.vue
 
 Multiple
 ^^^^^^^^
@@ -365,133 +88,17 @@ You can select multiple items at one time.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ListItemGroup/multiple.py
             :raises:
             :hide-code:
 
-            items = [
-                {"icon": "mdi-wifi", "text": "Wifi",},
-                {"icon": "mdi-bluetooth", "text": "Bluetooth",},
-                {"icon": "mdi-chart-donut", "text": "Data Usage"},
-            ]
-
-            v.Card(
-                class_="mx-auto my-2",
-                width=400,
-                children=[
-                    v.List(
-                        children=[
-                            v.ListItemGroup(
-                                multiple=True,
-                                v_model=[1, 2],
-                                color="indigo",
-                                children=[
-                                    v.ListItem(
-                                        key=i,
-                                        children=[
-                                            v.ListItemIcon(
-                                                children=[
-                                                    v.Icon(
-                                                        children=[item["icon"]]
-                                                    )
-                                                ]
-                                            ),
-                                            v.ListItemContent(
-                                                children=[
-                                                    v.ListItemTitle(
-                                                        children=[item["text"]]
-                                                    )
-                                                ]
-                                            ),
-                                        ],
-                                    )
-                                    for i, item in enumerate(items)
-                                ],
-                            )
-                        ]
-                    )
-                ],
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            items = [
-                {"icon": "mdi-wifi", "text": "Wifi",},
-                {"icon": "mdi-bluetooth", "text": "Bluetooth",},
-                {"icon": "mdi-chart-donut", "text": "Data Usage"},
-            ]
-
-            v.Card(
-                class_="mx-auto my-2",
-                width=400,
-                children=[
-                    v.List(
-                        children=[
-                            v.ListItemGroup(
-                                multiple=True,
-                                v_model=[1, 2],
-                                color="indigo",
-                                children=[
-                                    v.ListItem(
-                                        key=i,
-                                        children=[
-                                            v.ListItemIcon(
-                                                children=[
-                                                    v.Icon(
-                                                        children=[item["icon"]]
-                                                    )
-                                                ]
-                                            ),
-                                            v.ListItemContent(
-                                                children=[
-                                                    v.ListItemTitle(
-                                                        children=[item["text"]]
-                                                    )
-                                                ]
-                                            ),
-                                        ],
-                                    )
-                                    for i, item in enumerate(items)
-                                ],
-                            )
-                        ]
-                    )
-                ],
-            )
+        .. literalinclude:: ListItemGroup/multiple.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-card
-                class="mx-auto"
-                max-width="400"
-            >
-                <v-list>
-                <v-list-item-group
-                    v-model="model"
-                    multiple
-                    color="indigo"
-                >
-                    <v-list-item
-                    v-for="(item, i) in items"
-                    :key="i"
-                    >
-                    <v-list-item-icon>
-                        <v-icon v-text="item.icon"></v-icon>
-                    </v-list-item-icon>
-
-                    <v-list-item-content>
-                        <v-list-item-title v-text="item.text"></v-list-item-title>
-                    </v-list-item-content>
-                    </v-list-item>
-                </v-list-item-group>
-                </v-list>
-            </v-card>
-            </template>
+        .. literalinclude:: ListItemGroup/multiple.vue
 
 Flat list
 ^^^^^^^^^
@@ -504,133 +111,17 @@ user's choices.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ListItemGroup/flat_list.py
             :raises:
             :hide-code:
 
-
-            items = [
-                {"icon": "mdi-wifi", "text": "Wifi",},
-                {"icon": "mdi-bluetooth", "text": "Bluetooth",},
-                {"icon": "mdi-chart-donut", "text": "Data Usage"},
-            ]
-
-            v.Card(
-                class_="mx-auto my-2",
-                width=400,
-                children=[
-                    v.List(
-                        flat=True,
-                        children=[
-                            v.ListItemGroup(
-                                v_model=1,
-                                color="indigo",
-                                children=[
-                                    v.ListItem(
-                                        key=i,
-                                        children=[
-                                            v.ListItemIcon(
-                                                children=[
-                                                    v.Icon(
-                                                        children=[item["icon"]]
-                                                    )
-                                                ]
-                                            ),
-                                            v.ListItemContent(
-                                                children=[
-                                                    v.ListItemTitle(
-                                                        children=[item["text"]]
-                                                    )
-                                                ]
-                                            ),
-                                        ],
-                                    )
-                                    for i, item in enumerate(items)
-                                ],
-                            )
-                        ]
-                    )
-                ],
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            items = [
-                {"icon": "mdi-wifi", "text": "Wifi",},
-                {"icon": "mdi-bluetooth", "text": "Bluetooth",},
-                {"icon": "mdi-chart-donut", "text": "Data Usage"},
-            ]
-
-            v.Card(
-                class_="mx-auto my-2",
-                width=400,
-                children=[
-                    v.List(
-                        flat=True,
-                        children=[
-                            v.ListItemGroup(
-                                v_model=1,
-                                color="indigo",
-                                children=[
-                                    v.ListItem(
-                                        key=i,
-                                        children=[
-                                            v.ListItemIcon(
-                                                children=[
-                                                    v.Icon(
-                                                        children=[item["icon"]]
-                                                    )
-                                                ]
-                                            ),
-                                            v.ListItemContent(
-                                                children=[
-                                                    v.ListItemTitle(
-                                                        children=[item["text"]]
-                                                    )
-                                                ]
-                                            ),
-                                        ],
-                                    )
-                                    for i, item in enumerate(items)
-                                ],
-                            )
-                        ]
-                    )
-                ],
-            )
+        .. literalinclude:: ListItemGroup/flat_list.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-card
-                class="mx-auto"
-                max-width="400"
-            >
-                <v-list flat>
-                <v-list-item-group
-                    v-model="model"
-                    color="indigo"
-                >
-                    <v-list-item
-                    v-for="(item, i) in items"
-                    :key="i"
-                    >
-                    <v-list-item-icon>
-                        <v-icon v-text="item.icon"></v-icon>
-                    </v-list-item-icon>
-
-                    <v-list-item-content>
-                        <v-list-item-title v-text="item.text"></v-list-item-title>
-                    </v-list-item-content>
-                    </v-list-item>
-                </v-list-item-group>
-                </v-list>
-            </v-card>
-            </template>
+        .. literalinclude:: ListItemGroup/flat_list.vue
 
 Selection controls
 ^^^^^^^^^^^^^^^^^^
@@ -643,159 +134,15 @@ checkbox to link its state to the :py:class:`ListItem <ipyvuetify.ListItem>`.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ListItemGroup/selection_controls.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            items = [
-                "Wifi",
-                "Bluetooth",
-                "Data Usage",
-                None,
-                "Airplane Mode",
-                "Hotspot",
-            ]
-
-            v.Card(
-                class_="mx-auto my-2",
-                width=500,
-                children=[
-                    v.List(
-                        shaped=True,
-                        children=[
-                            v.ListItemGroup(
-                                multiple=True,
-                                v_model=[4],
-                                children=[
-                                    v.ListItem(
-                                        key=i,
-                                        value=item,
-                                        active_class="deep-purple--text text--accent-4",
-                                        children=[
-                                            v.ListItemContent(
-                                                children=[
-                                                    v.ListItemTitle(children=[item])
-                                                ]
-                                            ),
-                                            v.ListItemAction(
-                                                children=[
-                                                    v.Checkbox(
-                                                        input_value=False,
-                                                        true_value=True,
-                                                        color="deep-purple accent-4",
-                                                        v_bind="{ 'input-value': active }",
-                                                    )
-                                                ]
-                                            ),
-                                        ],
-                                    ) if item else v.Divider()
-                                    for i, item in enumerate(items)
-                                ],
-                            )
-                        ]
-                    )
-                ],
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            items = [
-                "Wifi",
-                "Bluetooth",
-                "Data Usage",
-                None,
-                "Airplane Mode",
-                "Hotspot",
-            ]
-
-            v.Card(
-                class_="mx-auto my-2",
-                width=500,
-                children=[
-                    v.List(
-                        shaped=True,
-                        children=[
-                            v.ListItemGroup(
-                                multiple=True,
-                                v_model=[4],
-                                children=[
-                                    v.ListItem(
-                                        key=i,
-                                        value=item,
-                                        active_class="deep-purple--text text--accent-4",
-                                        children=[
-                                            v.ListItemContent(
-                                                children=[
-                                                    v.ListItemTitle(children=[item])
-                                                ]
-                                            ),
-                                            v.ListItemAction(
-                                                children=[
-                                                    v.Checkbox(
-                                                        input_value=False,
-                                                        true_value=True,
-                                                        color="deep-purple accent-4",
-                                                        v_bind="{ 'input-value': active }",
-                                                    )
-                                                ]
-                                            ),
-                                        ],
-                                    ) if item else v.Divider()
-                                    for i, item in enumerate(items)
-                                ],
-                            )
-                        ]
-                    )
-                ],
-            )
+        .. literalinclude:: ListItemGroup/selection_controls.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
+        .. literalinclude:: ListItemGroup/selection_controls.vue
 
-            <template>
-            <v-card
-                class="mx-auto"
-                max-width="500"
-            >
-                <v-list shaped>
-                <v-list-item-group
-                    v-model="model"
-                    multiple
-                >
-                    <template v-for="(item, i) in items">
-                    <v-divider
-                        v-if="!item"
-                        :key="`divider-${i}`"
-                    ></v-divider>
-
-                    <v-list-item
-                        v-else
-                        :key="`item-${i}`"
-                        :value="item"
-                        active-class="deep-purple--text text--accent-4"
-                    >
-                        <template v-slot:default="{ active }">
-                        <v-list-item-content>
-                            <v-list-item-title v-text="item"></v-list-item-title>
-                        </v-list-item-content>
-
-                        <v-list-item-action>
-                            <v-checkbox
-                            :input-value="active"
-                            color="deep-purple accent-4"
-                            ></v-checkbox>
-                        </v-list-item-action>
-                        </template>
-                    </v-list-item>
-                    </template>
-                </v-list-item-group>
-                </v-list>
-            </v-card>
-            </template>

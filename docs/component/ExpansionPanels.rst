@@ -24,33 +24,8 @@ Usage
 
 Expansion panels in their simplest form display a list of expandable items.
 
-.. jupyter-execute::
+.. jupyter-execute:: ExpansionPanels/usage.py
     :raises:
-
-    import ipyvuetify as v
-
-    v.Card(
-        elevation=15,
-        class_="pa-2",
-        children=[
-            v.ExpansionPanels(
-                children=[
-                    v.ExpansionPanel(
-                        children=[
-                            v.ExpansionPanelHeader(
-                                children=["Item"]
-                            ),
-                            v.ExpansionPanelContent(
-                                children=[
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                ]
-                            ),
-                        ]
-                    ) for i in range(5)
-                ]
-            )
-        ]
-    )
 
 Examples
 --------
@@ -64,85 +39,17 @@ Accordion expansion-panel hasn't got margins around active panel.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ExpansionPanels/accordion.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Card(
-                elevation=15,
-                class_="pa-2",
-                children=[
-                    v.ExpansionPanels(
-                        accordion=True,
-                        children=[
-                            v.ExpansionPanel(
-                                children=[
-                                    v.ExpansionPanelHeader(
-                                        children=["Item"]
-                                    ),
-                                    v.ExpansionPanelContent(
-                                        children=[
-                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                        ]
-                                    ),
-                                ]
-                            ) for i in range(5)
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Card(
-                elevation=15,
-                class_="pa-2",
-                children=[
-                    v.ExpansionPanels(
-                        accordion=True,
-                        children=[
-                            v.ExpansionPanel(
-                                children=[
-                                    v.ExpansionPanelHeader(
-                                        children=["Item"]
-                                    ),
-                                    v.ExpansionPanelContent(
-                                        children=[
-                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                        ]
-                                    ),
-                                ]
-                            ) for i in range(5)
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: ExpansionPanels/accordion.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-row justify="center">
-                <v-expansion-panels accordion>
-                <v-expansion-panel
-                    v-for="(item,i) in 5"
-                    :key="i"
-                >
-                    <v-expansion-panel-header>Item</v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-                </v-expansion-panels>
-            </v-row>
-            </template>
+        .. literalinclude:: ExpansionPanels/accordion.vue
 
 Disabled
 ^^^^^^^^
@@ -154,119 +61,17 @@ can be disabled using the ``disabled`` prop.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ExpansionPanels/disabled.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            checkbox = v.Checkbox(label="Disabled", v_model=False)
-
-            panels = v.ExpansionPanels(
-                disabled=False,
-                children=[
-                    v.ExpansionPanel(
-                        children=[
-                            v.ExpansionPanelHeader(
-                                children=[f"Panel {i+1}"]
-                            ),
-                            v.ExpansionPanelContent(
-                                children=[
-                                    "Some content"
-                                ]
-                            ),
-                        ]
-                    ) for i in range(3)
-                ]
-            )
-
-            jslink((checkbox, "v_model"), (panels, "disabled"))
-
-            v.Container(
-                children=[
-                    v.Row(children=[checkbox]),
-                    panels
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            checkbox = v.Checkbox(label="Disabled", v_model=False)
-
-            panels = v.ExpansionPanels(
-                disabled=False,
-                children=[
-                    v.ExpansionPanel(
-                        children=[
-                            v.ExpansionPanelHeader(
-                                children=[f"Panel {i+1}"]
-                            ),
-                            v.ExpansionPanelContent(
-                                children=[
-                                    "Some content"
-                                ]
-                            ),
-                        ]
-                    ) for i in range(3)
-                ]
-            )
-
-            jslink((checkbox, "v_model"), (panels, "disabled"))
-
-            v.Container(
-                children=[
-                    v.Row(children=[checkbox]),
-                    panels
-                ]
-            )
+        .. literalinclude:: ExpansionPanels/disabled.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <div class="d-flex">
-                <v-checkbox
-                    v-model="disabled"
-                    label="Disabled"
-                ></v-checkbox>
-                </div>
-
-                <v-expansion-panels
-                v-model="panel"
-                :disabled="disabled"
-                multiple
-                >
-                <v-expansion-panel>
-                    <v-expansion-panel-header>Panel 1</v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Some content
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                    <v-expansion-panel-header>Panel 2</v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Some content
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                    <v-expansion-panel-header>Panel 3</v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Some content
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-                </v-expansion-panels>
-            </div>
-            </template>
+        .. literalinclude:: ExpansionPanels/disabled.vue
 
 Focusable
 ^^^^^^^^^
@@ -277,83 +82,17 @@ The expansion-panel headers can be made focusable with the prop ``focusable``.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ExpansionPanels/focusable.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Card(
-                elevation=15,
-                class_="pa-2",
-                children=[
-                    v.ExpansionPanels(
-                        focusable=True,
-                        children=[
-                            v.ExpansionPanel(
-                                children=[
-                                    v.ExpansionPanelHeader(
-                                        children=["Item"]
-                                    ),
-                                    v.ExpansionPanelContent(
-                                        children=[
-                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                        ]
-                                    ),
-                                ]
-                            ) for i in range(5)
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Card(
-                elevation=15,
-                class_="pa-2",
-                children=[
-                    v.ExpansionPanels(
-                        focusable=True,
-                        children=[
-                            v.ExpansionPanel(
-                                children=[
-                                    v.ExpansionPanelHeader(
-                                        children=["Item"]
-                                    ),
-                                    v.ExpansionPanelContent(
-                                        children=[
-                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                        ]
-                                    ),
-                                ]
-                            ) for i in range(5)
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: ExpansionPanels/focusable.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-expansion-panels focusable>
-                <v-expansion-panel
-                v-for="(item,i) in 5"
-                :key="i"
-                >
-                <v-expansion-panel-header>Item</v-expansion-panel-header>
-                <v-expansion-panel-content>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </v-expansion-panel-content>
-                </v-expansion-panel>
-            </v-expansion-panels>
-            </template>
+        .. literalinclude:: ExpansionPanels/focusable.vue
 
 Inset
 ^^^^^
@@ -364,85 +103,17 @@ Inset expansion-panel becomes smaller when activated.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ExpansionPanels/inset.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Card(
-                elevation=15,
-                class_="pa-2",
-                children=[
-                    v.ExpansionPanels(
-                        inset=True,
-                        children=[
-                            v.ExpansionPanel(
-                                children=[
-                                    v.ExpansionPanelHeader(
-                                        children=["Item"]
-                                    ),
-                                    v.ExpansionPanelContent(
-                                        children=[
-                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                        ]
-                                    ),
-                                ]
-                            ) for i in range(5)
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Card(
-                elevation=15,
-                class_="pa-2",
-                children=[
-                    v.ExpansionPanels(
-                        inset=True,
-                        children=[
-                            v.ExpansionPanel(
-                                children=[
-                                    v.ExpansionPanelHeader(
-                                        children=["Item"]
-                                    ),
-                                    v.ExpansionPanelContent(
-                                        children=[
-                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                        ]
-                                    ),
-                                ]
-                            ) for i in range(5)
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: ExpansionPanels/inset.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-row justify="center">
-                <v-expansion-panels inset>
-                <v-expansion-panel
-                    v-for="(item,i) in 5"
-                    :key="i"
-                >
-                    <v-expansion-panel-header>Item</v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-                </v-expansion-panels>
-            </v-row>
-            </template>
+        .. literalinclude:: ExpansionPanels/inset.vue
 
 Model
 ^^^^^
@@ -456,124 +127,17 @@ of the open items.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ExpansionPanels/model.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            select = v.Select(
-                label="Select panels",
-                v_model=[],
-                items=[{"text": f"Panel {i+1}", "value": i} for i in range(5)],
-                multiple=True,
-                readonly=True,
-                chips=True,
-            )
-
-            panels = v.ExpansionPanels(
-                v_model=[],
-                inset=True,
-                multiple=True,
-                children=[
-                    v.ExpansionPanel(
-                        children=[
-                            v.ExpansionPanelHeader(
-                                children=["Item"]
-                            ),
-                            v.ExpansionPanelContent(
-                                children=[
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                ]
-                            ),
-                        ]
-                    ) for i in range(5)
-                ]
-            )
-
-            jslink((select, "v_model"), (panels, "v_model"))
-
-            v.Card(
-                class_="pa-2",
-                children=[select, panels]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            select = v.Select(
-                label="Select panels",
-                v_model=[],
-                items=[{"text": f"Panel {i+1}", "value": i} for i in range(5)],
-                multiple=True,
-                readonly=True,
-                chips=True,
-            )
-
-            panels = v.ExpansionPanels(
-                v_model=[],
-                inset=True,
-                multiple=True,
-                children=[
-                    v.ExpansionPanel(
-                        children=[
-                            v.ExpansionPanelHeader(
-                                children=["Item"]
-                            ),
-                            v.ExpansionPanelContent(
-                                children=[
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                ]
-                            ),
-                        ]
-                    ) for i in range(5)
-                ]
-            )
-
-            jslink((select, "v_model"), (panels, "v_model"))
-
-            v.Card(
-                class_="pa-2",
-                children=[select, panels]
-            )
+        .. literalinclude:: ExpansionPanels/model.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <div class="text-center d-flex pb-4">
-                <v-btn @click="all">
-                    all
-                </v-btn>
-                <div>{{ panel }}</div>
-                <v-btn @click="none">
-                    none
-                </v-btn>
-                </div>
-
-                <v-expansion-panels
-                v-model="panel"
-                multiple
-                >
-                <v-expansion-panel
-                    v-for="(item,i) in items"
-                    :key="i"
-                >
-                    <v-expansion-panel-header>Header {{ item }}</v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-                </v-expansion-panels>
-            </div>
-            </template>
+        .. literalinclude:: ExpansionPanels/model.vue
 
 Popout
 ^^^^^^
@@ -585,85 +149,17 @@ enlarged when activated.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ExpansionPanels/popout.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Card(
-                elevation=15,
-                class_="pa-2",
-                children=[
-                    v.ExpansionPanels(
-                        popout=True,
-                        children=[
-                            v.ExpansionPanel(
-                                children=[
-                                    v.ExpansionPanelHeader(
-                                        children=["Item"]
-                                    ),
-                                    v.ExpansionPanelContent(
-                                        children=[
-                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                        ]
-                                    ),
-                                ]
-                            ) for i in range(5)
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Card(
-                elevation=15,
-                class_="pa-2",
-                children=[
-                    v.ExpansionPanels(
-                        popout=True,
-                        children=[
-                            v.ExpansionPanel(
-                                children=[
-                                    v.ExpansionPanelHeader(
-                                        children=["Item"]
-                                    ),
-                                    v.ExpansionPanelContent(
-                                        children=[
-                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                        ]
-                                    ),
-                                ]
-                            ) for i in range(5)
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: ExpansionPanels/popout.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-row justify="center">
-                <v-expansion-panels popout>
-                <v-expansion-panel
-                    v-for="(item,i) in 5"
-                    :key="i"
-                >
-                    <v-expansion-panel-header>Item</v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-                </v-expansion-panels>
-            </v-row>
-            </template>
+        .. literalinclude:: ExpansionPanels/popout.vue
 
 Readonly
 ^^^^^^^^
@@ -674,119 +170,17 @@ The ``readonly`` prop does the same thing as ``disabled``, but it doesn't touch 
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ExpansionPanels/readonly.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            checkbox = v.Checkbox(label="Readonly", v_model=False)
-
-            panels = v.ExpansionPanels(
-                readonly=False,
-                children=[
-                    v.ExpansionPanel(
-                        children=[
-                            v.ExpansionPanelHeader(
-                                children=[f"Panel {i+1}"]
-                            ),
-                            v.ExpansionPanelContent(
-                                children=[
-                                    "Some content"
-                                ]
-                            ),
-                        ]
-                    ) for i in range(3)
-                ]
-            )
-
-            jslink((checkbox, "v_model"), (panels, "disabled"))
-
-            v.Container(
-                children=[
-                    v.Row(children=[checkbox]),
-                    panels
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            checkbox = v.Checkbox(label="Readonly", v_model=False)
-
-            panels = v.ExpansionPanels(
-                readonly=False,
-                children=[
-                    v.ExpansionPanel(
-                        children=[
-                            v.ExpansionPanelHeader(
-                                children=[f"Panel {i+1}"]
-                            ),
-                            v.ExpansionPanelContent(
-                                children=[
-                                    "Some content"
-                                ]
-                            ),
-                        ]
-                    ) for i in range(3)
-                ]
-            )
-
-            jslink((checkbox, "v_model"), (panels, "disabled"))
-
-            v.Container(
-                children=[
-                    v.Row(children=[checkbox]),
-                    panels
-                ]
-            )
+        .. literalinclude:: ExpansionPanels/readonly.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <div class="d-flex">
-                <v-checkbox
-                    v-model="readonly"
-                    label="Readonly"
-                ></v-checkbox>
-                </div>
-
-                <v-expansion-panels
-                v-model="panel"
-                :readonly="readonly"
-                multiple
-                >
-                <v-expansion-panel>
-                    <v-expansion-panel-header>Panel 1</v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Some content
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                    <v-expansion-panel-header>Panel 2</v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Some content
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                    <v-expansion-panel-header>Panel 3</v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Some content
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-                </v-expansion-panels>
-            </div>
-            </template>
+        .. literalinclude:: ExpansionPanels/readonly.vue
 
 Advanced
 ^^^^^^^^
@@ -811,156 +205,15 @@ Expand action icon can be customized with ``expand_icon`` prop or the ``actions`
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: ExpansionPanels/custom_icon.py
             :raises:
             :hide-code:
 
-                import ipyvuetify as v
-
-                list_icons = [
-                    {"icon": "mdi-chevron-up", "color": "primary" },
-                    { "icon": "mdi-check", "color": "teal" },
-                    { "icon": "mdi-alert-circle", "color": "error" },
-                ]
-
-                v.Card(
-                    elevation=15,
-                    class_="pa-2",
-                    children=[
-                        v.ExpansionPanels(
-                            children=[
-                                v.ExpansionPanel(
-                                    children=[
-                                        v.ExpansionPanelHeader(
-                                            disable_icon_rotate=i!=0,
-                                            children=["Item"],
-                                            v_slots=[
-                                                {
-                                                    "name": "actions",
-                                                    "children": v.Icon(
-                                                        color=list_icons[i]["color"],
-                                                        children=[list_icons[i]["icon"]]
-                                                    )
-                                                }
-                                            ]
-                                        ),
-                                        v.ExpansionPanelContent(
-                                            children=[
-                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                            ]
-                                        ),
-                                    ]
-                                ) for i in range(3)
-                            ]
-                        )
-                    ]
-                )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-                import ipyvuetify as v
-
-                list_icons = [
-                    {"icon": "mdi-chevron-up", "color": "primary" },
-                    { "icon": "mdi-check", "color": "teal" },
-                    { "icon": "mdi-alert-circle", "color": "error" },
-                ]
-
-                v.Card(
-                    elevation=15,
-                    class_="pa-2",
-                    children=[
-                        v.ExpansionPanels(
-                            children=[
-                                v.ExpansionPanel(
-                                    children=[
-                                        v.ExpansionPanelHeader(
-                                            disable_icon_rotate=i!=0,
-                                            children=["Item"],
-                                            v_slots=[
-                                                {
-                                                    "name": "actions",
-                                                    "children": v.Icon(
-                                                        color=list_icons[i]["color"],
-                                                        children=[list_icons[i]["icon"]]
-                                                    )
-                                                }
-                                            ]
-                                        ),
-                                        v.ExpansionPanelContent(
-                                            children=[
-                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                            ]
-                                        ),
-                                    ]
-                                ) for i in range(3)
-                            ]
-                        )
-                    ]
-                )
+        .. literalinclude:: ExpansionPanels/custom_icon.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
+        .. literalinclude:: ExpansionPanels/custom_icon.vue
 
-            <template>
-            <div>
-                <v-expansion-panels class="mb-6">
-                <v-expansion-panel
-                    v-for="(item,i) in 5"
-                    :key="i"
-                >
-                    <v-expansion-panel-header expand-icon="mdi-menu-down">
-                    Item
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-expansion-panel-content>
-                </v-expansion-panel>
-                </v-expansion-panels>
-
-                <v-expansion-panels>
-                <v-expansion-panel>
-                    <v-expansion-panel-header>
-                    Item
-                    <template v-slot:actions>
-                        <v-icon color="primary">
-                        $expand
-                        </v-icon>
-                    </template>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                    <v-expansion-panel-header disable-icon-rotate>
-                    Item
-                    <template v-slot:actions>
-                        <v-icon color="teal">
-                        mdi-check
-                        </v-icon>
-                    </template>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                    <v-expansion-panel-header disable-icon-rotate>
-                    Item
-                    <template v-slot:actions>
-                        <v-icon color="error">
-                        mdi-alert-circle
-                        </v-icon>
-                    </template>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-                </v-expansion-panels>
-            </div>
-            </template>

@@ -19,39 +19,8 @@ While :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` is meant to be 
 you can also programmatically control the active state of the buttons by using the ``v_model`` property.
 A button is given a default value of its index with ``v-bottom-navigation``.
 
-.. jupyter-execute::
+.. jupyter-execute:: BottomNavigation/usage.py
     :raises:
-
-    import ipyvuetify as v
-
-    bottom_nav = v.BottomNavigation(
-        v_model='recent',
-        children=[
-            v.Btn(
-                value='recent',
-                children=[
-                    v.Html(tag='span', children=['Recent']),
-                    v.Icon(children=['mdi-history'])
-                ]
-            ),
-            v.Btn(
-                value='favorites',
-                children=[
-                    v.Html(tag='span', children=['Favorites']),
-                    v.Icon(children=['mdi-heart'])
-                ]
-            ),
-            v.Btn(
-                value='nearby',
-                children=[
-                    v.Html(tag='span', children=['Nearby']),
-                    v.Icon(children=['mdi-map-marker'])
-                ]
-            ),
-        ]
-    )
-
-    v.Container(children=[bottom_nav])
 
 Color
 -----
@@ -63,85 +32,17 @@ The ``color`` prop applies a color to the background of the bottom navigation. W
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: BottomNavigation/color.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.BottomNavigation(
-                value=1,
-                color='primary',
-                children=[
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Recents']),
-                        v.Icon(children=['mdi-history'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Favorites']),
-                        v.Icon(children=['mdi-heart'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Nearby']),
-                        v.Icon(children=['mdi-map-marker'])
-                    ]),
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.BottomNavigation(
-                value=1,
-                color='primary',
-                children=[
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Recents']),
-                        v.Icon(children=['mdi-history'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Favorites']),
-                        v.Icon(children=['mdi-heart'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Nearby']),
-                        v.Icon(children=['mdi-map-marker'])
-                    ]),
-                ]
-            )
+        .. literalinclude:: BottomNavigation/color.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <v-bottom-navigation
-                    :value="value"
-                    color="primary"
-                >
-                    <v-btn>
-                        <span>Recents</span>
-                        <v-icon>mdi-history</v-icon>
-                    </v-btn>
-                    <v-btn>
-                        <span>Favorites</span>
-                        <v-icon>mdi-heart</v-icon>
-                    </v-btn>
-                    <v-btn>
-                        <span>Nearby</span>
-                        <v-icon>mdi-map-marker</v-icon>
-                    </v-btn>
-                </v-bottom-navigation>
-            </template>
-
-            <script>
-                export default {
-                    data: () => ({ value: 1 }),
-                }
-            </script>
+        .. literalinclude:: BottomNavigation/color.vue
 
 Grow
 ----
@@ -153,88 +54,17 @@ space. Buttons have a maximum width of 168px per the Bottom Navigation Material 
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: BottomNavigation/grow.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.BottomNavigation(
-                value=1,
-                color='teal',
-                grow=True,
-                children=[
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Recents']),
-                        v.Icon(children=['mdi-history'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Favorites']),
-                        v.Icon(children=['mdi-heart'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Nearby']),
-                        v.Icon(children=['mdi-map-marker'])
-                    ]),
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.BottomNavigation(
-                value=1,
-                color='teal',
-                grow=True,
-                children=[
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Recents']),
-                        v.Icon(children=['mdi-history'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Favorites']),
-                        v.Icon(children=['mdi-heart'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Nearby']),
-                        v.Icon(children=['mdi-map-marker'])
-                    ]),
-                ]
-            )
+        .. literalinclude:: BottomNavigation/grow.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <v-bottom-navigation
-                    :value="value"
-                    color="teal"
-                    grow
-                >
-                    <v-btn>
-                        <span>Recents</span>
-                        <v-icon>mdi-history</v-icon>
-                    </v-btn>
-                    <v-btn>
-                        <span>Favorites</span>
-                        <v-icon>mdi-heart</v-icon>
-                    </v-btn>
-                    <v-btn>
-                        <span>Nearby</span>
-                        <v-icon>mdi-map-marker</v-icon>
-                    </v-btn>
-                </v-bottom-navigation>
-            </template>
-
-            <script>
-                export default {
-                    data: () => ({ value: 1 }),
-                }
-            </script>
+        .. literalinclude:: BottomNavigation/grow.vue
 
 Hide on scroll
 --------------
@@ -248,164 +78,17 @@ behavior.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: BottomNavigation/hide_on_scroll.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Card(
-                class_='overflow-hidden my-2 mx-auto',
-                border=True,
-                height=200,
-                width=500,
-                children=[
-                    v.Responsive(
-                        id='hide-on-scroll-example',
-                        class_='overflow-y-auto',
-                        max_height=600,
-                        children=[
-                            v.Responsive(height=1500)
-                        ]
-                    ),
-                    v.BottomNavigation(
-                        absolute=True,
-                        hide_on_scroll=True,
-                        horizontal=True,
-                        scroll_target='#hide-on-scroll-example',
-                        children=[
-                            v.Btn(
-                                color='deep-purple accent-4',
-                                text=True,
-                                children=[
-                                    v.Html(tag='span', children=['Recents']),
-                                    v.Icon(children=['mdi-history'])
-                                ]
-                            ),
-                            v.Btn(
-                                color='deep-purple accent-4',
-                                text=True,
-                                children=[
-                                    v.Html(tag='span', children=['Favorites']),
-                                    v.Icon(children=['mdi-heart'])
-                                ]
-                            ),
-                            v.Btn(
-                                color='deep-purple accent-4',
-                                text=True,
-                                children=[
-                                    v.Html(tag='span', children=['Nearby']),
-                                    v.Icon(children=['mdi-map-marker'])
-                                ]
-                            ),
-                        ]
-                    ),
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Card(
-                class_='overflow-hidden my-2 mx-auto',
-                border=True,
-                height=200,
-                width=500,
-                children=[
-                    v.Responsive(
-                        id='hide-on-scroll-example',
-                        class_='overflow-y-auto',
-                        max_height=600,
-                        children=[
-                            v.Responsive(height=1500)
-                        ]
-                    ),
-                    v.BottomNavigation(
-                        absolute=True,
-                        hide_on_scroll=True,
-                        horizontal=True,
-                        scroll_target='#hide-on-scroll-example',
-                        children=[
-                            v.Btn(
-                                color='deep-purple accent-4',
-                                text=True,
-                                children=[
-                                    v.Html(tag='span', children=['Recents']),
-                                    v.Icon(children=['mdi-history'])
-                                ]
-                            ),
-                            v.Btn(
-                                color='deep-purple accent-4',
-                                text=True,
-                                children=[
-                                    v.Html(tag='span', children=['Favorites']),
-                                    v.Icon(children=['mdi-heart'])
-                                ]
-                            ),
-                            v.Btn(
-                                color='deep-purple accent-4',
-                                text=True,
-                                children=[
-                                    v.Html(tag='span', children=['Nearby']),
-                                    v.Icon(children=['mdi-map-marker'])
-                                ]
-                            ),
-                        ]
-                    ),
-                ]
-            )
+        .. literalinclude:: BottomNavigation/hide_on_scroll.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <v-card
-                    class="overflow-hidden mx-auto"
-                    height="200"
-                    max-width="500"
-                >
-                    <v-bottom-navigation
-                        absolute
-                        hide-on-scroll
-                        horizontal
-                        scroll-target="#hide-on-scroll-example"
-                    >
-                        <v-btn
-                            color="deep-purple accent-4"
-                            text
-                        >
-                            <span>Recents</span>
-                            <v-icon>mdi-history</v-icon>
-                        </v-btn>
-                        <v-btn
-                            color="deep-purple accent-4"
-                            text
-                        >
-                            <span>Favorites</span>
-                            <v-icon>mdi-heart</v-icon>
-                        </v-btn>
-                        <v-btn
-                            color="deep-purple accent-4"
-                            text
-                        >
-                            <span>Nearby</span>
-                            <v-icon>mdi-map-marker</v-icon>
-                        </v-btn>
-                    </v-bottom-navigation>
-
-                    <v-responsive
-                        id="hide-on-scroll-example"
-                        class="overflow-y-auto"
-                        max-height="600"
-                    >
-                        <v-responsive height="1500"></v-responsive>
-                    </v-responsive>
-                </v-card>
-            </template>
+        .. literalinclude:: BottomNavigation/hide_on_scroll.vue
 
 Horizontal
 ----------
@@ -417,88 +100,17 @@ inline with the provided :py:class:`Icon <ipyvuetify.Icon>`.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: BottomNavigation/horizontal.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.BottomNavigation(
-                value=1,
-                color='primary',
-                horizontal=True,
-                children=[
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Recents']),
-                        v.Icon(children=['mdi-history'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Favorites']),
-                        v.Icon(children=['mdi-heart'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Nearby']),
-                        v.Icon(children=['mdi-map-marker'])
-                    ]),
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.BottomNavigation(
-                value=1,
-                color='primary',
-                horizontal=True,
-                children=[
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Recents']),
-                        v.Icon(children=['mdi-history'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Favorites']),
-                        v.Icon(children=['mdi-heart'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Nearby']),
-                        v.Icon(children=['mdi-map-marker'])
-                    ]),
-                ]
-            )
+        .. literalinclude:: BottomNavigation/horizontal.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <v-bottom-navigation
-                    :value="value"
-                    color="primary"
-                    horizontal
-                >
-                    <v-btn>
-                        <span>Recents</span>
-                        <v-icon>mdi-history</v-icon>
-                    </v-btn>
-                    <v-btn>
-                        <span>Favorites</span>
-                        <v-icon>mdi-heart</v-icon>
-                    </v-btn>
-                    <v-btn>
-                        <span>Nearby</span>
-                        <v-icon>mdi-map-marker</v-icon>
-                    </v-btn>
-                </v-bottom-navigation>
-            </template>
-
-            <script>
-                export default {
-                    data: () => ({ value: 1 }),
-                }
-            </script>
+        .. literalinclude:: BottomNavigation/horizontal.vue
 
 Scroll threshold
 ----------------
@@ -510,134 +122,17 @@ Modify the ``scroll_threshold`` property to increase the distance a user must sc
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: BottomNavigation/scroll_threshold.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Card(
-                class_='mx-auto overflow-hidden my-2',
-                height=200,
-                width=500,
-                children=[
-                    v.BottomNavigation(
-                        absolute=True,
-                        color='white',
-                        hide_on_scroll=True,
-                        horizontal=True,
-                        scroll_target='#scroll-threshold-example',
-                        scroll_threshold=500,
-                        children=[
-                            v.Btn(children=[
-                                v.Html(tag='span', children=['Recents']),
-                                v.Icon(children=['mdi-history'])
-                            ]),
-                            v.Btn(children=[
-                                v.Html(tag='span', children=['Favorites']),
-                                v.Icon(children=['mdi-heart'])
-                            ]),
-                            v.Btn(children=[
-                                v.Html(tag='span', children=['Nearby']),
-                                v.Icon(children=['mdi-map-marker'])
-                            ]),
-                        ]
-                    ),
-                    v.Sheet(
-                        id='scroll-threshold-example',
-                        class_='overflow-y-auto pb-16',
-                        max_height=600,
-                        children=[
-                            v.Responsive(height=1500)
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Card(
-                class_='mx-auto overflow-hidden my-2',
-                height=200,
-                width=500,
-                children=[
-                    v.BottomNavigation(
-                        absolute=True,
-                        color='white',
-                        hide_on_scroll=True,
-                        horizontal=True,
-                        scroll_target='#scroll-threshold-example',
-                        scroll_threshold=500,
-                        children=[
-                            v.Btn(children=[
-                                v.Html(tag='span', children=['Recents']),
-                                v.Icon(children=['mdi-history'])
-                            ]),
-                            v.Btn(children=[
-                                v.Html(tag='span', children=['Favorites']),
-                                v.Icon(children=['mdi-heart'])
-                            ]),
-                            v.Btn(children=[
-                                v.Html(tag='span', children=['Nearby']),
-                                v.Icon(children=['mdi-map-marker'])
-                            ]),
-                        ]
-                    ),
-                    v.Sheet(
-                        id='scroll-threshold-example',
-                        class_='overflow-y-auto pb-16',
-                        max_height=600,
-                        children=[
-                            v.Responsive(height=1500)
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: BottomNavigation/scroll_threshold.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <v-card
-                    class="mx-auto overflow-hidden"
-                    height="200"
-                    max-width="500"
-                >
-                    <v-bottom-navigation
-                        absolute
-                        color="white"
-                        hide-on-scroll
-                        horizontal
-                        scroll-target="#scroll-threshold-example"
-                        scroll-threshold="500"
-                    >
-                        <v-btn>
-                            <span>Recents</span>
-                            <v-icon>mdi-history</v-icon>
-                        </v-btn>
-                        <v-btn>
-                            <span>Favorites</span>
-                            <v-icon>mdi-heart</v-icon>
-                        </v-btn>
-                        <v-btn>
-                            <span>Nearby</span>
-                            <v-icon>mdi-map-marker</v-icon>
-                        </v-btn>
-                    </v-bottom-navigation>
-                    <v-sheet
-                        id="scroll-threshold-example"
-                        class="overflow-y-auto pb-16"
-                        max-height="600"
-                    >
-                        <v-responsive height="1500"></v-responsive>
-                    </v-sheet>
-                </v-card>
-            </template>
+        .. literalinclude:: BottomNavigation/scroll_threshold.vue
 
 Shift
 -----
@@ -653,134 +148,17 @@ the :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>` component.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: BottomNavigation/shift.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            colors = ['blue-grey', 'teal', 'brown', 'indigo']
-
-            bottom_nav = v.BottomNavigation(
-                v_model=1,
-                background_color=colors[1],
-                dark=True,
-                shift=True,
-                children=[
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Video']),
-                        v.Icon(children=['mdi-television-play'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Music']),
-                        v.Icon(children=['mdi-music-note'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Book']),
-                        v.Icon(children=['mdi-book'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Image']),
-                        v.Icon(children=['mdi-image'])
-                    ]),
-                ]
-            )
-
-            def update_color(widget, event, data):
-                if data < len(colors):
-                    bottom_nav.background_color = colors[data]
-
-            bottom_nav.on_event('change', update_color)
-
-            v.Container(children=[bottom_nav])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            colors = ['blue-grey', 'teal', 'brown', 'indigo']
-
-            bottom_nav = v.BottomNavigation(
-                v_model=1,
-                background_color=colors[1],
-                dark=True,
-                shift=True,
-                children=[
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Video']),
-                        v.Icon(children=['mdi-television-play'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Music']),
-                        v.Icon(children=['mdi-music-note'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Book']),
-                        v.Icon(children=['mdi-book'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Image']),
-                        v.Icon(children=['mdi-image'])
-                    ]),
-                ]
-            )
-
-            def update_color(widget, event, data):
-                if data < len(colors):
-                    bottom_nav.background_color = colors[data]
-
-            bottom_nav.on_event('change', update_color)
-
-            v.Container(children=[bottom_nav])
+        .. literalinclude:: BottomNavigation/shift.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <v-bottom-navigation
-                    v-model="value"
-                    :background-color="color"
-                    dark
-                    shift
-                >
-                    <v-btn>
-                        <span>Video</span>
-                        <v-icon>mdi-television-play</v-icon>
-                    </v-btn>
-                    <v-btn>
-                        <span>Music</span>
-                        <v-icon>mdi-music-note</v-icon>
-                    </v-btn>
-                    <v-btn>
-                        <span>Book</span>
-                        <v-icon>mdi-book</v-icon>
-                    </v-btn>
-                    <v-btn>
-                        <span>Image</span>
-                        <v-icon>mdi-image</v-icon>
-                    </v-btn>
-                </v-bottom-navigation>
-            </template>
-
-            <script>
-                export default {
-                    data: () => ({ value: 1 }),
-                    computed: {
-                        color () {
-                            switch (this.value) {
-                                case 0: return 'blue-grey'
-                                case 1: return 'teal'
-                                case 2: return 'brown'
-                                case 3: return 'indigo'
-                                default: return 'blue-grey'
-                            }
-                        }
-                    },
-                }
-            </script>
+        .. literalinclude:: BottomNavigation/shift.vue
 
 Toggle
 ------
@@ -792,154 +170,15 @@ the ``input_value`` prop. You can also control the currently active button using
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: BottomNavigation/toggle.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            toggle_btn = v.Btn(
-                color='deep-purple',
-                outlined=True,
-                children=['Toggle Navigation'],
-                v_model=True,
-            )
-
-            bottom_nav = v.BottomNavigation(
-                v_model=True,
-                input_value=True,
-                color='indigo',
-                children=[
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Recents']),
-                        v.Icon(children=['mdi-history'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Favorites']),
-                        v.Icon(children=['mdi-heart'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Nearby']),
-                        v.Icon(children=['mdi-map-marker'])
-                    ]),
-                ]
-            )
-
-            def toggle_navigation(widget, event, data):
-                bottom_nav.v_model = not widget.v_model
-
-            toggle_btn.on_event('click', toggle_navigation)
-            jslink((toggle_btn, 'v_model'), (bottom_nav, 'v_model'))
-
-            v.Container(
-                class_='overflow-hidden',
-                children=[
-                    v.Html(
-                        tag='div',
-                        class_='text-center mb-8',
-                        children=[toggle_btn]
-                    ),
-                    bottom_nav
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            toggle_btn = v.Btn(
-                color='deep-purple',
-                outlined=True,
-                children=['Toggle Navigation'],
-                v_model=True,
-            )
-
-            bottom_nav = v.BottomNavigation(
-                v_model=True,
-                input_value=True,
-                color='indigo',
-                children=[
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Recents']),
-                        v.Icon(children=['mdi-history'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Favorites']),
-                        v.Icon(children=['mdi-heart'])
-                    ]),
-                    v.Btn(children=[
-                        v.Html(tag='span', children=['Nearby']),
-                        v.Icon(children=['mdi-map-marker'])
-                    ]),
-                ]
-            )
-
-            def toggle_navigation(widget, event, data):
-                bottom_nav.v_model = not widget.v_model
-
-            toggle_btn.on_event('click', toggle_navigation)
-            jslink((toggle_btn, 'v_model'), (bottom_nav, 'v_model'))
-
-            v.Container(
-                class_='overflow-hidden',
-                children=[
-                    v.Html(
-                        tag='div',
-                        class_='text-center mb-8',
-                        children=[toggle_btn]
-                    ),
-                    bottom_nav
-                ]
-            )
+        .. literalinclude:: BottomNavigation/toggle.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
+        .. literalinclude:: BottomNavigation/toggle.vue
 
-            <template>
-                <div class="overflow-hidden">
-                    <div class="text-center mb-8">
-                        <v-btn
-                            color="deep-purple"
-                            outlined
-                            @click="active = !active"
-                        >
-                            Toggle Navigation
-                        </v-btn>
-                    </div>
-
-                    <v-bottom-navigation
-                        v-model="value"
-                        :input-value="active"
-                        color="indigo"
-                    >
-                        <v-btn>
-                            <span>Recents</span>
-                            <v-icon>mdi-history</v-icon>
-                        </v-btn>
-                        <v-btn>
-                            <span>Favorites</span>
-                            <v-icon>mdi-heart</v-icon>
-                        </v-btn>
-                        <v-btn>
-                            <span>Nearby</span>
-                            <v-icon>mdi-map-marker</v-icon>
-                        </v-btn>
-                    </v-bottom-navigation>
-                </div>
-            </template>
-
-            <script>
-                export default {
-                    data () {
-                        return {
-                            value: 1,
-                            active: true,
-                        }
-                    },
-                }
-            </script>

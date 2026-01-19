@@ -31,65 +31,17 @@ By default, breadcrumbs use a text divider. This can be any string.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Breadcrumbs/usage.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            items = [
-                {'text': 'Dashboard', 'disabled': False, 'href': 'breadcrumbs_dashboard'},
-                {'text': 'Link 1', 'disabled': False, 'href': 'breadcrumbs_link_1'},
-                {'text': 'Link 2', 'disabled': True, 'href': 'breadcrumbs_link_2'}
-            ]
-
-            v.Breadcrumbs(items=items)
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            items = [
-                {'text': 'Dashboard', 'disabled': False, 'href': 'breadcrumbs_dashboard'},
-                {'text': 'Link 1', 'disabled': False, 'href': 'breadcrumbs_link_1'},
-                {'text': 'Link 2', 'disabled': True, 'href': 'breadcrumbs_link_2'}
-            ]
-
-            v.Breadcrumbs(items=items)
+        .. literalinclude:: Breadcrumbs/usage.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <v-breadcrumbs :items="items"></v-breadcrumbs>
-            </template>
-
-            <script>
-                export default {
-                    data: () => ({
-                        items: [
-                            {
-                                text: 'Dashboard',
-                                disabled: false,
-                                href: 'breadcrumbs_dashboard',
-                            },
-                            {
-                                text: 'Link 1',
-                                disabled: false,
-                                href: 'breadcrumbs_link_1',
-                            },
-                            {
-                                text: 'Link 2',
-                                disabled: true,
-                                href: 'breadcrumbs_link_2',
-                            },
-                        ],
-                    }),
-                }
-            </script>
+        .. literalinclude:: Breadcrumbs/usage.vue
 
 Divider
 -------
@@ -100,72 +52,17 @@ Breadcrumbs separator can be set using ``divider`` property.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Breadcrumbs/divider.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            items = [
-                {'text': 'Dashboard', 'disabled': False, 'href': 'breadcrumbs_dashboard'},
-                {'text': 'Link 1', 'disabled': False, 'href': 'breadcrumbs_link_1'},
-                {'text': 'Link 2', 'disabled': True, 'href': 'breadcrumbs_link_2'}
-            ]
-
-            v.Container(children=[
-                v.Breadcrumbs(items=items, divider="."),
-                v.Breadcrumbs(items=items, divider="-"),
-            ])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            items = [
-                {'text': 'Dashboard', 'disabled': False, 'href': 'breadcrumbs_dashboard'},
-                {'text': 'Link 1', 'disabled': False, 'href': 'breadcrumbs_link_1'},
-                {'text': 'Link 2', 'disabled': True, 'href': 'breadcrumbs_link_2'}
-            ]
-
-            v.Container(children=[
-                v.Breadcrumbs(items=items, divider="."),
-                v.Breadcrumbs(items=items, divider="-"),
-            ])
+        .. literalinclude:: Breadcrumbs/divider.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <v-breadcrumbs :items="items" divider="."></v-breadcrumbs>
-                <v-breadcrumbs :items="items" divider="-"></v-breadcrumbs>
-            </template>
-
-            <script>
-                export default {
-                    data: () => ({
-                        items: [
-                            {
-                                text: 'Dashboard',
-                                disabled: false,
-                                href: 'breadcrumbs_dashboard',
-                            },
-                            {
-                                text: 'Link 1',
-                                disabled: false,
-                                href: 'breadcrumbs_link_1',
-                            },
-                            {
-                                text: 'Link 2',
-                                disabled: true,
-                                href: 'breadcrumbs_link_2',
-                            },
-                        ],
-                    }),
-                }
-            </script>
+        .. literalinclude:: Breadcrumbs/divider.vue
 
 Large
 -----
@@ -176,77 +73,17 @@ Large breadcrumbs have larger font size.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Breadcrumbs/large.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            items = [
-                {'text': 'Dashboard', 'disabled': False, 'href': 'breadcrumbs_dashboard'},
-                {'text': 'Link 1', 'disabled': False, 'href': 'breadcrumbs_link_1'},
-                {'text': 'Link 2', 'disabled': True, 'href': 'breadcrumbs_link_2'}
-            ]
-
-            v.Container(children=[
-                v.Breadcrumbs(items=items),
-                v.Breadcrumbs(items=items, large=True)
-            ])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            items = [
-                {'text': 'Dashboard', 'disabled': False, 'href': 'breadcrumbs_dashboard'},
-                {'text': 'Link 1', 'disabled': False, 'href': 'breadcrumbs_link_1'},
-                {'text': 'Link 2', 'disabled': True, 'href': 'breadcrumbs_link_2'}
-            ]
-
-            v.Container(children=[
-                v.Breadcrumbs(items=items),
-                v.Breadcrumbs(items=items, large=True)
-            ])
+        .. literalinclude:: Breadcrumbs/large.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-breadcrumbs :items="items"></v-breadcrumbs>
-                    <v-breadcrumbs
-                        :items="items"
-                        large
-                    ></v-breadcrumbs>
-                </div>
-            </template>
-
-            <script>
-                export default {
-                    data: () => ({
-                        items: [
-                            {
-                                text: 'Dashboard',
-                                disabled: false,
-                                href: 'breadcrumbs_dashboard',
-                            },
-                            {
-                                text: 'Link 1',
-                                disabled: false,
-                                href: 'breadcrumbs_link_1',
-                            },
-                            {
-                                text: 'Link 2',
-                                disabled: true,
-                                href: 'breadcrumbs_link_2',
-                            },
-                        ],
-                    }),
-                }
-            </script>
+        .. literalinclude:: Breadcrumbs/large.vue
 
 Icon Dividers
 -------------
@@ -257,81 +94,17 @@ For the icon variant, breadcrumbs can use any icon in Material Design Icons.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Breadcrumbs/icon_dividers.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            items = [
-                {'text': 'Dashboard', 'disabled': False, 'href': 'breadcrumbs_dashboard'},
-                {'text': 'Link 1', 'disabled': False, 'href': 'breadcrumbs_link_1'},
-                {'text': 'Link 2', 'disabled': True, 'href': 'breadcrumbs_link_2'}
-            ]
-
-            v.Breadcrumbs(
-                items=items,
-                v_slots=[{
-                    'name': 'divider',
-                    'children': v.Icon(children=['mdi-forward'])
-                }]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            items = [
-                {'text': 'Dashboard', 'disabled': False, 'href': 'breadcrumbs_dashboard'},
-                {'text': 'Link 1', 'disabled': False, 'href': 'breadcrumbs_link_1'},
-                {'text': 'Link 2', 'disabled': True, 'href': 'breadcrumbs_link_2'}
-            ]
-
-            v.Breadcrumbs(
-                items=items,
-                v_slots=[{
-                    'name': 'divider',
-                    'children': v.Icon(children=['mdi-forward'])
-                }]
-            )
+        .. literalinclude:: Breadcrumbs/icon_dividers.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <v-breadcrumbs :items="items">
-                    <template v-slot:divider>
-                        <v-icon>mdi-forward</v-icon>
-                    </template>
-                </v-breadcrumbs>
-            </template>
-
-            <script>
-                export default {
-                    data: () => ({
-                        items: [
-                            {
-                                text: 'Dashboard',
-                                disabled: false,
-                                href: 'breadcrumbs_dashboard',
-                            },
-                            {
-                                text: 'Link 1',
-                                disabled: false,
-                                href: 'breadcrumbs_link_1',
-                            },
-                            {
-                                text: 'Link 2',
-                                disabled: true,
-                                href: 'breadcrumbs_link_2',
-                            },
-                        ],
-                    }),
-                }
-            </script>
+        .. literalinclude:: Breadcrumbs/icon_dividers.vue
 
 Item
 ----
@@ -342,91 +115,15 @@ You can use the ``item`` slot to customize each breadcrumb.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Breadcrumbs/item.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            items = [
-                {'text': 'Dashboard', 'disabled': False, 'href': 'breadcrumbs_dashboard'},
-                {'text': 'Link 1', 'disabled': False, 'href': 'breadcrumbs_link_1'},
-                {'text': 'Link 2', 'disabled': True, 'href': 'breadcrumbs_link_2'}
-            ]
-
-            v.Breadcrumbs(
-                items=items,
-                v_slots=[{
-                    'name': 'item',
-                    'variable': 'props',
-                    'children': v.BreadcrumbsItem(
-                        v_bind='props',
-                        children=[v.Html(tag='span', children=['{{ props.item.text.toUpperCase() }}'])]
-                    )
-                }]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            items = [
-                {'text': 'Dashboard', 'disabled': False, 'href': 'breadcrumbs_dashboard'},
-                {'text': 'Link 1', 'disabled': False, 'href': 'breadcrumbs_link_1'},
-                {'text': 'Link 2', 'disabled': True, 'href': 'breadcrumbs_link_2'}
-            ]
-
-            v.Breadcrumbs(
-                items=items,
-                v_slots=[{
-                    'name': 'item',
-                    'variable': 'props',
-                    'children': v.BreadcrumbsItem(
-                        v_bind='props',
-                        children=[v.Html(tag='span', children=[props.item.text])]
-                    )
-                }]
-            )
+        .. literalinclude:: Breadcrumbs/item.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
+        .. literalinclude:: Breadcrumbs/item.vue
 
-            <template>
-                <v-breadcrumbs :items="items">
-                    <template v-slot:item="{ item }">
-                        <v-breadcrumbs-item
-                            :href="item.href"
-                            :disabled="item.disabled"
-                        >
-                            {{ item.text.toUpperCase() }}
-                        </v-breadcrumbs-item>
-                    </template>
-                </v-breadcrumbs>
-            </template>
-
-            <script>
-                export default {
-                    data: () => ({
-                        items: [
-                            {
-                                text: 'Dashboard',
-                                disabled: false,
-                                href: 'breadcrumbs_dashboard',
-                            },
-                            {
-                                text: 'Link 1',
-                                disabled: false,
-                                href: 'breadcrumbs_link_1',
-                            },
-                            {
-                                text: 'Link 2',
-                                disabled: true,
-                                href: 'breadcrumbs_link_2',
-                            },
-                        ],
-                    }),
-                }
-            </script>

@@ -21,19 +21,8 @@ Usage
 In its simplest form, the :py:class:`Overlay <ipyvuetify.Overlay>` component
 will add a dimmed layer over your application.
 
-.. jupyter-execute::
+.. jupyter-execute:: Overlay/usage.py
     :raises:
-
-    import ipyvuetify as v
-    from ipywidgets import jslink
-
-    switch = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-2")
-    switch2 = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-2")
-    overlay = v.Overlay(v_model=False, children=[switch2])
-    jslink((switch, 'v_model'), (overlay, 'v_model'))
-    jslink((switch2, 'v_model'), (overlay, 'v_model'))
-
-    v.Layout(children=[switch, overlay])
 
 Examples
 --------
@@ -48,83 +37,17 @@ parent element.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Overlay/absolute.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            switch = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-auto")
-            switch2 = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-2")
-            overlay = v.Overlay(absolute=True, v_model=False, children=[switch2])
-            jslink((switch, 'v_model'), (overlay, 'v_model'))
-            jslink((switch2, 'v_model'), (overlay, 'v_model'))
-
-            v.Card(
-                class_="mx-auto my-2",
-                height=300,
-                width=300,
-                children=[switch, overlay]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            switch = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-auto")
-            switch2 = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-2")
-            overlay = v.Overlay(absolute=True, v_model=False, children=[switch2])
-            jslink((switch, 'v_model'), (overlay, 'v_model'))
-            jslink((switch2, 'v_model'), (overlay, 'v_model'))
-
-            v.Card(
-                class_="mx-auto my-2",
-                height=300,
-                width=300,
-                children=[switch, overlay]
-            )
+        .. literalinclude:: Overlay/absolute.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-row
-                align="center"
-                justify="center"
-            >
-                <v-card
-                height="300"
-                width="250"
-                >
-                <v-row justify="center">
-                    <v-btn
-                    color="success"
-                    class="mt-12"
-                    @click="overlay = !overlay"
-                    >
-                    Show Overlay
-                    </v-btn>
-
-                    <v-overlay
-                    :absolute="absolute"
-                    :value="overlay"
-                    >
-                    <v-btn
-                        color="success"
-                        @click="overlay = false"
-                    >
-                        Hide Overlay
-                    </v-btn>
-                    </v-overlay>
-                </v-row>
-                </v-card>
-            </v-row>
-            </template>
+        .. literalinclude:: Overlay/absolute.vue
 
 Opacity
 ^^^^^^^
@@ -136,84 +59,17 @@ Opacity
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Overlay/opacity.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            switch = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-auto")
-            switch2 = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-2")
-            overlay = v.Overlay(absolute=True, v_model=False, opacity=1, children=[switch2])
-            jslink((switch, 'v_model'), (overlay, 'v_model'))
-            jslink((switch2, 'v_model'), (overlay, 'v_model'))
-
-            v.Card(
-                class_="mx-auto my-2",
-                height=300,
-                width=300,
-                children=[switch, overlay]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            switch = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-auto")
-            switch2 = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-2")
-            overlay = v.Overlay(absolute=True, v_model=False, opacity=1, children=[switch2])
-            jslink((switch, 'v_model'), (overlay, 'v_model'))
-            jslink((switch2, 'v_model'), (overlay, 'v_model'))
-
-            v.Card(
-                class_="mx-auto my-2",
-                height=300,
-                width=300,
-                children=[switch, overlay]
-            )
+        .. literalinclude:: Overlay/opacity.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-row
-                align="center"
-                justify="center"
-            >
-                <v-card
-                height="300"
-                width="250"
-                >
-                <v-row justify="center">
-                    <v-btn
-                    color="orange lighten-2"
-                    class="mt-12"
-                    @click="overlay = !overlay"
-                    >
-                    Show Overlay
-                    </v-btn>
-
-                    <v-overlay
-                    :absolute="absolute"
-                    :opacity="opacity"
-                    :value="overlay"
-                    >
-                    <v-btn
-                        color="orange lighten-2"
-                        @click="overlay = false"
-                    >
-                        Hide Overlay
-                    </v-btn>
-                    </v-overlay>
-                </v-row>
-                </v-card>
-            </v-row>
-            </template>
+        .. literalinclude:: Overlay/opacity.vue
 
 Advanced
 ^^^^^^^^
@@ -225,145 +81,17 @@ over the information card with additional actions the user can take.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Overlay/advanced.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Hover(
-                v_slots=[{
-                    'name': 'default',
-                    'variable': 'default',
-                    'children': v.Card(
-                        class_="mx-auto",
-                        max_width=344,
-                        children=[
-                            v.Img(src="https://cdn.vuetifyjs.com/images/cards/forest-art.jpg"),
-                            v.CardText(children=[
-                                v.Html(tag='h2', class_="text-h6 primary--text", children=["Magento Forests"]),
-                                "Travel to the best outdoor experience on planet Earth. A vacation you will never forget!"
-                            ]),
-                            v.CardTitle(children=[
-                                v.Rating(
-                                    value=4,
-                                    dense=True,
-                                    color="orange",
-                                    background_color="orange",
-                                    hover=True,
-                                    class_="mr-2"
-                                ),
-                                v.Html(tag='span', class_="primary--text text-subtitle-2", children=["64 Reviews"])
-                            ]),
-                            v.FadeTransition(
-                                children=[
-                                    v.Overlay(
-                                        v_if='default.hover',
-                                        absolute=True,
-                                        color="#036358",
-                                        children=[
-                                            v.Btn(children=["See more info"])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
-                }]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Hover(
-                v_slots=[{
-                    'name': 'default',
-                    'variable': 'default',
-                    'children': v.Card(
-                        class_="mx-auto",
-                        max_width=344,
-                        children=[
-                            v.Img(src="https://cdn.vuetifyjs.com/images/cards/forest-art.jpg"),
-                            v.CardText(children=[
-                                v.Html(tag='h2', class_="text-h6 primary--text", children=["Magento Forests"]),
-                                "Travel to the best outdoor experience on planet Earth. A vacation you will never forget!"
-                            ]),
-                            v.CardTitle(children=[
-                                v.Rating(
-                                    value=4,
-                                    dense=True,
-                                    color="orange",
-                                    background_color="orange",
-                                    hover=True,
-                                    class_="mr-2"
-                                ),
-                                v.Html(tag='span', class_="primary--text text-subtitle-2", children=["64 Reviews"])
-                            ]),
-                            v.FadeTransition(
-                                children=[
-                                    v.Overlay(
-                                        v_if='default.hover',
-                                        absolute=True,
-                                        color="#036358",
-                                        children=[
-                                            v.Btn(children=["See more info"])
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
-                }]
-            )
+        .. literalinclude:: Overlay/advanced.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-hover>
-                <template v-slot:default="{ hover }">
-                <v-card
-                    class="mx-auto"
-                    max-width="344"
-                >
-                    <v-img src="https://cdn.vuetifyjs.com/images/cards/forest-art.jpg"></v-img>
-
-                    <v-card-text>
-                    <h2 class="text-h6 primary--text">
-                        Magento Forests
-                    </h2>
-                    Travel to the best outdoor experience on planet Earth. A vacation you will never forget!
-                    </v-card-text>
-
-                    <v-card-title>
-                    <v-rating
-                        :value="4"
-                        dense
-                        color="orange"
-                        background-color="orange"
-                        hover
-                        class="mr-2"
-                    ></v-rating>
-                    <span class="primary--text text-subtitle-2">64 Reviews</span>
-                    </v-card-title>
-
-                    <v-fade-transition>
-                    <v-overlay
-                        v-if="hover"
-                        absolute
-                        color="#036358"
-                    >
-                        <v-btn>See more info</v-btn>
-                    </v-overlay>
-                    </v-fade-transition>
-                </v-card>
-                </template>
-            </v-hover>
-            </template>
+        .. literalinclude:: Overlay/advanced.vue
 
 Loader
 ^^^^^^
@@ -375,60 +103,15 @@ progress component to easily create a custom loader.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Overlay/loader.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            switch = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-2")
-            switch2 = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-2")
-            progress = v.ProgressCircular(indeterminate=True, size=64)
-            overlay = v.Overlay(v_model=False, children=[switch2, progress])
-            jslink((switch, 'v_model'), (overlay, 'v_model'))
-            jslink((switch2, 'v_model'), (overlay, 'v_model'))
-
-            v.Layout(children=[switch, overlay])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            switch = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-2")
-            switch2 = v.Switch(label='Show Overlay', v_model=False, class_="mx-auto my-2")
-            progress = v.ProgressCircular(indeterminate=True, size=64)
-            overlay = v.Overlay(v_model=False, children=[switch2, progress])
-            jslink((switch, 'v_model'), (overlay, 'v_model'))
-            jslink((switch2, 'v_model'), (overlay, 'v_model'))
-
-            v.Layout(children=[switch, overlay])
+        .. literalinclude:: Overlay/loader.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
+        .. literalinclude:: Overlay/loader.vue
 
-            <template>
-            <div class="text-center">
-                <v-btn
-                color="deep-purple accent-4"
-                class="white--text"
-                @click="overlay = !overlay"
-                >
-                Launch Application
-                <v-icon right>
-                    mdi-open-in-new
-                </v-icon>
-                </v-btn>
-
-                <v-overlay :value="overlay">
-                <v-progress-circular
-                    indeterminate
-                    size="64"
-                ></v-progress-circular>
-                </v-overlay>
-            </div>
-            </template>

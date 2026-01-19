@@ -20,38 +20,8 @@ Usage
 
 The simple table is a wrapper component around the ``<table>`` element.
 
-.. jupyter-execute::
+.. jupyter-execute:: SimpleTable/usage.py
     :raises:
-
-    import ipyvuetify as v
-
-    desserts = [
-        ('Frozen Yogurt', 159),
-        ('Ice cream sandwich', 237),
-        ('Eclair', 262),
-        ('Cupcake', 305),
-        ('Gingerbread', 356),
-        ('Jelly bean', 375),
-        ('Lollipop', 392),
-        ('Honeycomb', 408),
-        ('Donut', 452),
-        ('KitKat', 518),
-    ]
-
-    v.SimpleTable(children=[
-        v.Html(tag='thead', children=[
-            v.Html(tag='tr', children=[
-                v.Html(tag='th', class_='text-left', children=['Name']),
-                v.Html(tag='th', class_='text-left', children=['Calories'])
-            ])
-        ]),
-        v.Html(tag='tbody', children=[
-            v.Html(tag='tr', children=[
-                v.Html(tag='td', children=[name]),
-                v.Html(tag='td', children=[str(calorie)])
-            ]) for name, calorie in desserts
-        ])
-    ])
 
 Examples
 --------
@@ -65,109 +35,17 @@ Use dark prop to switch table to the dark theme.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: SimpleTable/dark.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            desserts = [
-                ('Frozen Yogurt', 159),
-                ('Ice cream sandwich', 237),
-                ('Eclair', 262),
-                ('Cupcake', 305),
-                ('Gingerbread', 356),
-                ('Jelly bean', 375),
-                ('Lollipop', 392),
-                ('Honeycomb', 408),
-                ('Donut', 452),
-                ('KitKat', 518),
-            ]
-
-            v.SimpleTable(
-                dark=True,
-                children=[
-                    v.Html(tag='thead', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='th', class_='text-left', children=['Name']),
-                            v.Html(tag='th', class_='text-left', children=['Calories'])
-                        ])
-                    ]),
-                    v.Html(tag='tbody', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='td', children=[name]),
-                            v.Html(tag='td', children=[str(calorie)])
-                        ]) for name, calorie in desserts
-                    ])
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            desserts = [
-                ('Frozen Yogurt', 159),
-                ('Ice cream sandwich', 237),
-                ('Eclair', 262),
-                ('Cupcake', 305),
-                ('Gingerbread', 356),
-                ('Jelly bean', 375),
-                ('Lollipop', 392),
-                ('Honeycomb', 408),
-                ('Donut', 452),
-                ('KitKat', 518),
-            ]
-
-            v.SimpleTable(
-                dark=True,
-                children=[
-                    v.Html(tag='thead', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='th', class_='text-left', children=['Name']),
-                            v.Html(tag='th', class_='text-left', children=['Calories'])
-                        ])
-                    ]),
-                    v.Html(tag='tbody', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='td', children=[name]),
-                            v.Html(tag='td', children=[str(calorie)])
-                        ]) for name, calorie in desserts
-                    ])
-                ]
-            )
+        .. literalinclude:: SimpleTable/dark.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-simple-table dark>
-                <template v-slot:default>
-                <thead>
-                    <tr>
-                    <th class="text-left">
-                        Name
-                    </th>
-                    <th class="text-left">
-                        Calories
-                    </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr
-                    v-for="item in desserts"
-                    :key="item.name"
-                    >
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.calories }}</td>
-                    </tr>
-                </tbody>
-                </template>
-            </v-simple-table>
-            </template>
+        .. literalinclude:: SimpleTable/dark.vue
 
 Dense
 ^^^^^
@@ -178,109 +56,17 @@ You can show a dense version of the table by using the dense prop.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: SimpleTable/dense.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            desserts = [
-                ('Frozen Yogurt', 159),
-                ('Ice cream sandwich', 237),
-                ('Eclair', 262),
-                ('Cupcake', 305),
-                ('Gingerbread', 356),
-                ('Jelly bean', 375),
-                ('Lollipop', 392),
-                ('Honeycomb', 408),
-                ('Donut', 452),
-                ('KitKat', 518),
-            ]
-
-            v.SimpleTable(
-                dense=True,
-                children=[
-                    v.Html(tag='thead', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='th', class_='text-left', children=['Name']),
-                            v.Html(tag='th', class_='text-left', children=['Calories'])
-                        ])
-                    ]),
-                    v.Html(tag='tbody', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='td', children=[name]),
-                            v.Html(tag='td', children=[str(calorie)])
-                        ]) for name, calorie in desserts
-                    ])
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            desserts = [
-                ('Frozen Yogurt', 159),
-                ('Ice cream sandwich', 237),
-                ('Eclair', 262),
-                ('Cupcake', 305),
-                ('Gingerbread', 356),
-                ('Jelly bean', 375),
-                ('Lollipop', 392),
-                ('Honeycomb', 408),
-                ('Donut', 452),
-                ('KitKat', 518),
-            ]
-
-            v.SimpleTable(
-                dense=True,
-                children=[
-                    v.Html(tag='thead', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='th', class_='text-left', children=['Name']),
-                            v.Html(tag='th', class_='text-left', children=['Calories'])
-                        ])
-                    ]),
-                    v.Html(tag='tbody', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='td', children=[name]),
-                            v.Html(tag='td', children=[str(calorie)])
-                        ]) for name, calorie in desserts
-                    ])
-                ]
-            )
+        .. literalinclude:: SimpleTable/dense.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-simple-table dense>
-                <template v-slot:default>
-                <thead>
-                    <tr>
-                    <th class="text-left">
-                        Name
-                    </th>
-                    <th class="text-left">
-                        Calories
-                    </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr
-                    v-for="item in desserts"
-                    :key="item.name"
-                    >
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.calories }}</td>
-                    </tr>
-                </tbody>
-                </template>
-            </v-simple-table>
-            </template>
+        .. literalinclude:: SimpleTable/dense.vue
 
 Fixed header
 ^^^^^^^^^^^^
@@ -292,114 +78,17 @@ the top of the table.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: SimpleTable/fixed_header.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            desserts = [
-                ('Frozen Yogurt', 159),
-                ('Ice cream sandwich', 237),
-                ('Eclair', 262),
-                ('Cupcake', 305),
-                ('Gingerbread', 356),
-                ('Jelly bean', 375),
-                ('Lollipop', 392),
-                ('Honeycomb', 408),
-                ('Donut', 452),
-                ('KitKat', 518),
-            ]
-
-            v.SimpleTable(
-                fixed_header=True,
-                height=300,
-                children=[
-                    v.Html(tag='thead', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='th', class_='text-left', children=['Name']),
-                            v.Html(tag='th', class_='text-left', children=['Calories'])
-                        ])
-                    ]),
-                    v.Html(tag='tbody', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='td', children=[name]),
-                            v.Html(tag='td', children=[str(calorie)])
-                        ]) for name, calorie in desserts
-                    ])
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            desserts = [
-                ('Frozen Yogurt', 159),
-                ('Ice cream sandwich', 237),
-                ('Eclair', 262),
-                ('Cupcake', 305),
-                ('Gingerbread', 356),
-                ('Jelly bean', 375),
-                ('Lollipop', 392),
-                ('Honeycomb', 408),
-                ('Donut', 452),
-                ('KitKat', 518),
-            ]
-
-            v.SimpleTable(
-                fixed_header=True,
-                height=300,
-                children=[
-                    v.Html(tag='thead', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='th', class_='text-left', children=['Name']),
-                            v.Html(tag='th', class_='text-left', children=['Calories'])
-                        ])
-                    ]),
-                    v.Html(tag='tbody', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='td', children=[name]),
-                            v.Html(tag='td', children=[str(calorie)])
-                        ]) for name, calorie in desserts
-                    ])
-                ]
-            )
+        .. literalinclude:: SimpleTable/fixed_header.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-simple-table
-                fixed-header
-                height="300px"
-            >
-                <template v-slot:default>
-                <thead>
-                    <tr>
-                    <th class="text-left">
-                        Name
-                    </th>
-                    <th class="text-left">
-                        Calories
-                    </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr
-                    v-for="item in desserts"
-                    :key="item.name"
-                    >
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.calories }}</td>
-                    </tr>
-                </tbody>
-                </template>
-            </v-simple-table>
-            </template>
+        .. literalinclude:: SimpleTable/fixed_header.vue
 
 Height
 ^^^^^^
@@ -410,106 +99,15 @@ Use the height prop to set the height of the table.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: SimpleTable/height.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            desserts = [
-                ('Frozen Yogurt', 159),
-                ('Ice cream sandwich', 237),
-                ('Eclair', 262),
-                ('Cupcake', 305),
-                ('Gingerbread', 356),
-                ('Jelly bean', 375),
-                ('Lollipop', 392),
-                ('Honeycomb', 408),
-                ('Donut', 452),
-                ('KitKat', 518),
-            ]
-
-            v.SimpleTable(
-                height=300,
-                children=[
-                    v.Html(tag='thead', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='th', class_='text-left', children=['Name']),
-                            v.Html(tag='th', class_='text-left', children=['Calories'])
-                        ])
-                    ]),
-                    v.Html(tag='tbody', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='td', children=[name]),
-                            v.Html(tag='td', children=[str(calorie)])
-                        ]) for name, calorie in desserts
-                    ])
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            desserts = [
-                ('Frozen Yogurt', 159),
-                ('Ice cream sandwich', 237),
-                ('Eclair', 262),
-                ('Cupcake', 305),
-                ('Gingerbread', 356),
-                ('Jelly bean', 375),
-                ('Lollipop', 392),
-                ('Honeycomb', 408),
-                ('Donut', 452),
-                ('KitKat', 518),
-            ]
-
-            v.SimpleTable(
-                height=300,
-                children=[
-                    v.Html(tag='thead', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='th', class_='text-left', children=['Name']),
-                            v.Html(tag='th', class_='text-left', children=['Calories'])
-                        ])
-                    ]),
-                    v.Html(tag='tbody', children=[
-                        v.Html(tag='tr', children=[
-                            v.Html(tag='td', children=[name]),
-                            v.Html(tag='td', children=[str(calorie)])
-                        ]) for name, calorie in desserts
-                    ])
-                ]
-            )
+        .. literalinclude:: SimpleTable/height.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
+        .. literalinclude:: SimpleTable/height.vue
 
-            <template>
-            <v-simple-table height="300px">
-                <template v-slot:default>
-                <thead>
-                    <tr>
-                    <th class="text-left">
-                        Name
-                    </th>
-                    <th class="text-left">
-                        Calories
-                    </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr
-                    v-for="item in desserts"
-                    :key="item.name"
-                    >
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.calories }}</td>
-                    </tr>
-                </tbody>
-                </template>
-            </v-simple-table>
-            </template>

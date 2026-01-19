@@ -21,17 +21,8 @@ Usage
 
 Alerts in their simplest form are flat sheets of paper that display a message.
 
-.. jupyter-execute::
+.. jupyter-execute:: Alert/usage.py
     :raises:
-
-    import ipyvuetify as v
-
-    alert = v.Alert(
-        children=["I'm an Alert Usage Example"],
-        type="success",
-    )
-
-    v.Container(children=[alert])
 
 Border
 ------
@@ -43,108 +34,17 @@ props like ``color``, ``dark``, and ``type`` to provide unique accents to the al
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Alert/border.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    border="top",
-                    color="red lighten-2",
-                    dark=True,
-                    children=["I'm an alert with a top border and red color"]
-                ),
-                v.Alert(
-                    border="right",
-                    color="blue-grey",
-                    dark=True,
-                    children=["I'm an alert with a right border and blue-grey color"]
-                ),
-                v.Alert(
-                    border="bottom",
-                    color="pink darken-1",
-                    dark=True,
-                    children=["I'm an alert with a bottom border and pink color"]
-                ),
-                v.Alert(
-                    border="left",
-                    color="indigo",
-                    dark=True,
-                    children=["I'm an alert with a border left type info"]
-                ),
-            ])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    border="top",
-                    color="red lighten-2",
-                    dark=True,
-                    children=["I'm an alert with a top border and red color"]
-                ),
-                v.Alert(
-                    border="right",
-                    color="blue-grey",
-                    dark=True,
-                    children=["I'm an alert with a right border and blue-grey color"]
-                ),
-                v.Alert(
-                    border="bottom",
-                    color="pink darken-1",
-                    dark=True,
-                    children=["I'm an alert with a bottom border and pink color"]
-                ),
-                v.Alert(
-                    border="left",
-                    color="indigo",
-                    dark=True,
-                    children=["I'm an alert with a border left type info"]
-                ),
-            ])
+        .. literalinclude:: Alert/border.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-alert
-                        border="top"
-                        color="red lighten-2"
-                        dark
-                    >
-                        I'm an alert with a top border and red color
-                    </v-alert>
-                    <v-alert
-                        border="right"
-                        color="blue-grey"
-                        dark
-                    >
-                        I'm an alert with a right border and blue-grey color
-                    </v-alert>
-                    <v-alert
-                        border="bottom"
-                        color="pink darken-1"
-                        dark
-                    >
-                    I'm an alert with a bottom border and pink color
-                    </v-alert>
-                    <v-alert
-                        border="left"
-                        color="indigo"
-                        dark
-                    >
-                        I'm an alert with a border left type info
-                    </v-alert>
-                </div>
-            </template>
+        .. literalinclude:: Alert/border.vue
 
 Colored Border
 --------------
@@ -157,138 +57,17 @@ will default to the inverted color of the applied theme (black for light and whi
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Alert/colored_border.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    border="left",
-                    colored_border=True,
-                    color="deep-purple accent-4",
-                    elevation=2,
-                    children=[
-                        "Aliquam eu nunc. Fusce commodo aliquam arcu. In consectetuer turpis ut velit. "
-                        "Nulla facilisi.. Morbi mollis tellus ac sapien. Fusce vel dui. Praesent ut ligula "
-                        "non mi varius sagittis. Vivamus consectetuer hendrerit lacus. Suspendisse enim "
-                        "turpis, dictum sed, iaculis a, condimentum nec, nisi."
-                    ]
-                ),
-                v.Alert(
-                    border="top",
-                    colored_border=True,
-                    type="info",
-                    elevation=2,
-                    children=[
-                        "Vestibulum ullamcorper mauris at ligula. Nam pretium turpis et arcu. Ut varius "
-                        "tincidunt libero. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere "
-                        "imperdiet, leo. Morbi nec metus."
-                    ]
-                ),
-                v.Alert(
-                    border="bottom",
-                    colored_border=True,
-                    type="warning",
-                    elevation=2,
-                    children=[
-                        "Sed in libero ut nibh placerat accumsan. Phasellus leo dolor, tempus non, auctor "
-                        "et, hendrerit quis, nisi. Phasellus leo dolor, tempus non, auctor et, hendrerit "
-                        "quis, nisi. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, "
-                        "quis gravida magna mi a libero. Donec elit libero, sodales nec, volutpat a, "
-                        "suscipit non, turpis."
-                    ]
-                ),
-                v.Alert(
-                    border="right",
-                    colored_border=True,
-                    type="error",
-                    elevation=2,
-                    children=[
-                        "Fusce commodo aliquam arcu. Pellentesque posuere. Phasellus tempus. Donec "
-                        "posuere vulputate arcu."
-                    ]
-                ),
-            ])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    border="left",
-                    colored_border=True,
-                    color="deep-purple accent-4",
-                    elevation=2,
-                    children=["Aliquam eu nunc..."]
-                ),
-                v.Alert(
-                    border="top",
-                    colored_border=True,
-                    type="info",
-                    elevation=2,
-                    children=["Vestibulum ullamcorper mauris at ligula..."]
-                ),
-                v.Alert(
-                    border="bottom",
-                    colored_border=True,
-                    type="warning",
-                    elevation=2,
-                    children=["Sed in libero ut nibh placerat accumsan. Phasellus leo dolor..."]
-                ),
-                v.Alert(
-                    border="right",
-                    colored_border=True,
-                    type="error",
-                    elevation=2,
-                    children=["Fusce commodo aliquam arcu. Pellentesque posuere..."]
-                ),
-            ])
+        .. literalinclude:: Alert/colored_border.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-alert
-                        border="left"
-                        colored-border
-                        color="deep-purple accent-4"
-                        elevation="2"
-                    >
-                        Aliquam eu nunc. Fusce commodo aliquam arcu...
-                    </v-alert>
-                    <v-alert
-                        border="top"
-                        colored-border
-                        type="info"
-                        elevation="2"
-                    >
-                        Vestibulum ullamcorper mauris at ligula...
-                    </v-alert>
-                    <v-alert
-                        border="bottom"
-                        colored-border
-                        type="warning"
-                        elevation="2"
-                    >
-                        Sed in libero ut nibh placerat accumsan...
-                    </v-alert>
-                    <v-alert
-                        border="right"
-                        colored-border
-                        type="error"
-                        elevation="2"
-                    >
-                        Fusce commodo aliquam arcu...
-                    </v-alert>
-                </div>
-            </template>
+        .. literalinclude:: Alert/colored_border.vue
 
 Dense
 -----
@@ -301,90 +80,17 @@ with the style.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Alert/dense.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    dense=True,
-                    type="info",
-                    children=["I'm a dense alert with a type of info"]
-                ),
-                v.Alert(
-                    dense=True,
-                    text=True,
-                    type="success",
-                    children=["I'm a dense alert with the text prop and a type of success"]
-                ),
-                v.Alert(
-                    dense=True,
-                    border="left",
-                    type="warning",
-                    children=["I'm a dense alert with the border prop and a type of warning"]
-                ),
-                v.Alert(
-                    dense=True,
-                    outlined=True,
-                    type="error",
-                    children=["I'm a dense alert with the outlined prop and a type of error"]
-                ),
-            ])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    dense=True,
-                    type="info",
-                    children=["I'm a dense alert with a type of info"]
-                ),
-                v.Alert(
-                    dense=True,
-                    text=True,
-                    type="success",
-                    children=["I'm a dense alert with the text prop and a type of success"]
-                ),
-                v.Alert(
-                    dense=True,
-                    border="left",
-                    type="warning",
-                    children=["I'm a dense alert with the border prop and a type of warning"]
-                ),
-                v.Alert(
-                    dense=True,
-                    outlined=True,
-                    type="error",
-                    children=["I'm a dense alert with the outlined prop and a type of error"]
-                ),
-            ])
+        .. literalinclude:: Alert/dense.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-alert dense type="info">
-                        I'm a dense alert with a type of info
-                    </v-alert>
-                    <v-alert dense text type="success">
-                        I'm a dense alert with the text prop and a type of success
-                    </v-alert>
-                    <v-alert dense border="left" type="warning">
-                        I'm a dense alert with the border prop and a type of warning
-                    </v-alert>
-                    <v-alert dense outlined type="error">
-                        I'm a dense alert with the outlined prop and a type of error
-                    </v-alert>
-                </div>
-            </template>
+        .. literalinclude:: Alert/dense.vue
 
 Dismissible
 -----------
@@ -399,67 +105,17 @@ locale.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Alert/dismissible.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            alert = v.Alert(
-                v_model=True,
-                border="left",
-                close_text="Close Alert",
-                color="deep-purple accent-4",
-                dark=True,
-                dismissible=True,
-                children=[
-                    "Aenean imperdiet. Quisque id odio. Cras dapibus. Pellentesque ut neque. Cras "
-                    "dapibus. Vivamus consectetuer hendrerit lacus. Sed mollis, eros et ultrices "
-                    "tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Sed "
-                    "mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing "
-                    "dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, "
-                    "tincidunt non, euismod vitae, posuere imperdiet, leo."
-                ]
-            )
-
-            v.Container(children=[alert])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            alert = v.Alert(
-                v_model=True,
-                border="left",
-                close_text="Close Alert",
-                color="deep-purple accent-4",
-                dark=True,
-                dismissible=True,
-                children=["Aenean imperdiet. Quisque id odio. Cras dapibus..."]
-            )
-
-            v.Container(children=[alert])
+        .. literalinclude:: Alert/dismissible.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-alert
-                        v-model="alert"
-                        border="left"
-                        close-text="Close Alert"
-                        color="deep-purple accent-4"
-                        dark
-                        dismissible
-                    >
-                        Aenean imperdiet. Quisque id odio...
-                    </v-alert>
-                </div>
-            </template>
+        .. literalinclude:: Alert/dismissible.vue
 
 Icon
 ----
@@ -472,104 +128,17 @@ will remove the icon altogether.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Alert/icon.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    color="#2A3B4D",
-                    dark=True,
-                    icon="mdi-firework",
-                    dense=True,
-                    children=[
-                        "Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. "
-                        "Vivamus quis mi. Quisque ut nisi. Maecenas malesuada."
-                    ]
-                ),
-                v.Alert(
-                    color="#C51162",
-                    dark=True,
-                    icon="mdi-material-design",
-                    border="right",
-                    children=[
-                        "Phasellus blandit leo ut odio. Morbi mattis ullamcorper velit. Donec orci "
-                        "lectus, aliquam ut, faucibus non, euismod id, nulla. In ut quam vitae odio "
-                        "lacinia tincidunt."
-                    ]
-                ),
-                v.Alert(
-                    color="primary",
-                    dark=True,
-                    icon="mdi-vuetify",
-                    border="left",
-                    prominent=True,
-                    children=[
-                        "Praesent congue erat at massa. Nullam vel sem. Aliquam lorem ante, dapibus "
-                        "in, viverra quis, feugiat a, tellus. Proin viverra, ligula sit amet ultrices "
-                        "semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. "
-                        "Curabitur at lacus ac velit ornare lobortis."
-                    ]
-                ),
-            ])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    color="#2A3B4D",
-                    dark=True,
-                    icon="mdi-firework",
-                    dense=True,
-                    children=["Suspendisse enim turpis, dictum sed..."]
-                ),
-                v.Alert(
-                    color="#C51162",
-                    dark=True,
-                    icon="mdi-material-design",
-                    border="right",
-                    children=["Phasellus blandit leo ut odio..."]
-                ),
-                v.Alert(
-                    color="primary",
-                    dark=True,
-                    icon="mdi-vuetify",
-                    border="left",
-                    prominent=True,
-                    children=["Praesent congue erat at massa..."]
-                ),
-            ])
+        .. literalinclude:: Alert/icon.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-alert
-                        color="#2A3B4D"
-                        dark
-                        icon="mdi-firework"
-                        dense
-                    >
-                        Suspendisse enim turpis...
-                    </v-alert>
-                    <v-alert
-                        color="#C51162"
-                        dark
-                        icon="mdi-material-design"
-                        border="right"
-                    >
-                        Phasellus blandit leo ut odio...
-                    </v-alert>
-                </div>
-            </template>
+        .. literalinclude:: Alert/icon.vue
 
 Outlined
 --------
@@ -581,96 +150,17 @@ it to the text and border, and making its background transparent.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Alert/outlined.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    outlined=True,
-                    color="purple",
-                    children=[
-                        v.Html(tag="h5", class_="mt-1", children=["Lorem Ipsum"]),
-                        (
-                            "Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, "
-                            "condimentum viverra felis nunc et lorem. Duis vel nibh at velit scelerisque "
-                            "suscipit. Praesent blandit laoreet nibh. Aenean posuere, tortor sed cursus "
-                            "feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. "
-                            "Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, "
-                            "quis venenatis ante odio sit amet eros."
-                        )
-                    ]
-                ),
-                v.Alert(
-                    outlined=True,
-                    type="success",
-                    text=True,
-                    children=[
-                        "Praesent venenatis metus at tortor pulvinar varius. Aenean commodo ligula eget "
-                        "dolor. Praesent ac massa at ligula laoreet iaculis. Vestibulum ullamcorper mauris "
-                        "at ligula."
-                    ]
-                ),
-                v.Alert(
-                    outlined=True,
-                    type="warning",
-                    prominent=True,
-                    border="left",
-                    children=[
-                        "Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. "
-                        "Suspendisse non nisl sit amet velit hendrerit rutrum. Nullam vel sem. "
-                        "Pellentesque dapibus hendrerit tortor."
-                    ]
-                ),
-            ])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    outlined=True,
-                    color="purple",
-                    children=[
-                        v.Html(tag="h5", class_="mt-1", children=["Lorem Ipsum"]),
-                        "Maecenas ullamcorper..."
-                    ]
-                ),
-                v.Alert(
-                    outlined=True,
-                    type="success",
-                    text=True,
-                    children=["Praesent venenatis metus..."]
-                ),
-                v.Alert(
-                    outlined=True,
-                    type="warning",
-                    prominent=True,
-                    border="left",
-                    children=["Duis arcu tortor..."]
-                ),
-            ])
+        .. literalinclude:: Alert/outlined.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-alert outlined color="purple">
-                        <h5 class="mt-1">Lorem Ipsum</h5>
-                        <div>Maecenas ullamcorper...</div>
-                    </v-alert>
-                    <v-alert outlined type="success" text>
-                        Praesent venenatis metus...
-                    </v-alert>
-                </div>
-            </template>
+        .. literalinclude:: Alert/outlined.vue
 
 Prominent
 ---------
@@ -683,84 +173,17 @@ appearance of a normal alert but with the prominent icon effects.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Alert/prominent.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    prominent=True,
-                    type="error",
-                    children=[v.Row(align="center", children=[
-                        v.Col(class_="grow", children=[
-                            "Nunc nonummy metus. Nunc interdum lacus sit amet orci. Nullam dictum felis "
-                            "eu pede mollis pretium. Cras id dui."
-                        ]),
-                        v.Col(class_="shrink", children=[v.Btn(children=["Take action"])])
-                    ])]
-                ),
-                v.Alert(
-                    color="blue-grey",
-                    dark=True,
-                    dense=True,
-                    icon="mdi-school",
-                    prominent=True,
-                    children=["Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui."]
-                ),
-                v.Alert(
-                    icon="mdi-shield-lock-outline",
-                    prominent=True,
-                    text=True,
-                    type="info",
-                    children=["Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem."]
-                ),
-            ])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    prominent=True,
-                    type="error",
-                    children=[v.Row(align="center", children=[
-                        v.Col(class_="grow", children=["Nunc nonummy metus..."]),
-                        v.Col(class_="shrink", children=[v.Btn(children=["Take action"])])
-                    ])]
-                ),
-                v.Alert(
-                    color="blue-grey",
-                    dark=True,
-                    dense=True,
-                    icon="mdi-school",
-                    prominent=True,
-                    children=["Sed augue ipsum..."]
-                ),
-            ])
+        .. literalinclude:: Alert/prominent.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-alert prominent type="error">
-                        <v-row align="center">
-                            <v-col class="grow">
-                                Nunc nonummy metus...
-                            </v-col>
-                            <v-col class="shrink">
-                                <v-btn>Take action</v-btn>
-                            </v-col>
-                        </v-row>
-                    </v-alert>
-                </div>
-            </template>
+        .. literalinclude:: Alert/prominent.vue
 
 Text
 ----
@@ -773,195 +196,17 @@ color. Similar to other styled props, ``text`` can be combined with other props 
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Alert/text.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    text=True,
-                    color="info",
-                    children=[
-                        v.Html(tag="h5", class_="mt-1", children=["Lorem Ipsum"]),
-                        v.Html(tag="div", children=[
-                            "Maecenas nec odio et ante tincidunt tempus. Sed mollis, eros et ultrices "
-                            "tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. "
-                            "Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique "
-                            "sapien, a accumsan nisi mauris ac eros. Curabitur turpis."
-                        ]),
-                        v.Divider(class_="my-4 info", style_="opacity: 0.22"),
-                        v.Row(
-                            align="center",
-                            no_gutters=True,
-                            children=[
-                                v.Col(class_="grow", children=[
-                                    "Proin magna. Vivamus in erat ut urna cursus vestibulum. Etiam "
-                                    "imperdiet imperdiet orci."
-                                ]),
-                                v.Spacer(),
-                                v.Col(class_="shrink", children=[
-                                    v.Btn(color="info", outlined=True, children=["Okay"])
-                                ])
-                            ]
-                        )
-                    ]
-                ),
-                v.Alert(
-                    text=True,
-                    outlined=True,
-                    color="deep-orange",
-                    icon="mdi-fire",
-                    children=[
-                        "Nullam tincidunt adipiscing enim. In consectetuer turpis ut velit. "
-                        "Maecenas egestas arcu quis ligula mattis placerat. Praesent metus tellus, "
-                        "elementum eu, semper a, adipiscing nec, purus."
-                    ]
-                ),
-                v.Alert(
-                    text=True,
-                    dense=True,
-                    color="teal",
-                    icon="mdi-clock-fast",
-                    border="left",
-                    children=[
-                        "Vestibulum ullamcorper mauris at ligula. Nulla porta dolor. Vestibulum facilisis, "
-                        "purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna "
-                        "in dolor. Curabitur at lacus ac velit ornare lobortis."
-                    ]
-                ),
-                v.Alert(
-                    text=True,
-                    prominent=True,
-                    type="error",
-                    icon="mdi-cloud-alert",
-                    children=[
-                        "Praesent blandit laoreet nibh. Praesent nonummy mi in odio. Phasellus tempus. "
-                        "Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Duis leo."
-                    ]
-                )
-            ])
-
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    text=True,
-                    color="info",
-                    children=[
-                        v.Html(tag="h5", class_="mt-1", children=["Lorem Ipsum"]),
-                        v.Html(tag="div", children=["Maecenas nec odio et ante..."]),
-                        v.Divider(class_="my-4 info", style_="opacity: 0.22"),
-                        v.Row(
-                            align="center",
-                            no_gutters=True,
-                            children=[
-                                v.Col(class_="grow", children=["Proin magna..."]),
-                                v.Spacer(),
-                                v.Col(class_="shrink", children=[
-                                    v.Btn(color="info", outlined=True, children=["Okay"])
-                                ])
-                            ]
-                        )
-                    ]
-                ),
-                v.Alert(
-                    text=True,
-                    outlined=True,
-                    color="deep-orange",
-                    icon="mdi-fire",
-                    children=["Nullam tincidunt adipiscing enim...."]
-                ),
-                v.Alert(
-                    text=True,
-                    dense=True,
-                    color="teal",
-                    icon="mdi-clock-fast",
-                    border="left",
-                    children=["Vestibulum ullamcorper mauris at ligula..."]
-                ),
-                v.Alert(
-                    text=True,
-                    prominent=True,
-                    type="error",
-                    icon="mdi-cloud-alert",
-                    children=["Praesent blandit laoreet nibh..."]
-                )
-            ])
+        .. literalinclude:: Alert/text.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-alert
-                        text
-                        color="info"
-                    >
-                        <h5 class="mt-1">
-                            Lorem Ipsum
-                        </h5>
-                        <div>
-                            Maecenas nec odio et ante tincidunt tempus...
-                        </div>
-
-                        <v-divider
-                            class="my-4 info"
-                            style="opacity: 0.22"
-                        ></v-divider>
-
-                        <v-row
-                            align="center"
-                            no-gutters
-                        >
-                            <v-col class="grow">
-                                Proin magna...
-                            </v-col>
-                            <v-spacer></v-spacer>
-                            <v-col class="shrink">
-                                <v-btn
-                                    color="info"
-                                    outlined
-                                >
-                                    Okay
-                                </v-btn>
-                            </v-col>
-                        </v-row>
-                    </v-alert>
-                    <v-alert
-                        text
-                        outlined
-                        color="deep-orange"
-                        icon="mdi-fire"
-                    >
-                        Nullam tincidunt adipiscing enim...
-                    </v-alert>
-                    <v-alert
-                        text
-                        dense
-                        color="teal"
-                        icon="mdi-clock-fast"
-                        border="left"
-                    >
-                        Vestibulum ullamcorper mauris at ligula...
-                    </v-alert>
-                    <v-alert
-                        text
-                        prominent
-                        type="error"
-                        icon="mdi-cloud-alert"
-                    >
-                        Praesent blandit laoreet nibh...
-                    </v-alert>
-                </div>
-            </template>
+        .. literalinclude:: Alert/text.vue
 
 Transition
 ----------
@@ -973,75 +218,17 @@ component hides and shows.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Alert/transition.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            alert = v.Alert(
-                value=True,
-                color="pink",
-                dark=True,
-                border="top",
-                icon="mdi-home",
-                transition="scale-transition",
-                children=[
-                    "Phasellus tempus. Fusce ac felis sit amet ligula pharetra condimentum. In dui magna, "
-                    "posuere eget, vestibulum et, tempor auctor, justo. Pellentesque posuere. Curabitur "
-                    "ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Phasellus nec "
-                    "sem in justo pellentesque facilisis. Phasellus magna. Cras risus ipsum, faucibus ut, "
-                    "ullamcorper id, varius ac, leo. In hac habitasse platea dictumst. Praesent turpis."
-                ]
-            )
-
-            btn = v.Btn(color="primary", children=["Toggle"])
-            btn.on_event("click", lambda w, e, d: setattr(alert, 'value', not alert.value))
-
-            v.Container(children=[btn, alert])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            alert = v.Alert(
-                value=True,
-                color="pink",
-                dark=True,
-                border="top",
-                icon="mdi-home",
-                transition="scale-transition",
-                children=["Phasellus tempus. Fusce ac felis..."]
-            )
-
-            btn = v.Btn(color="primary", children=["Toggle"])
-            btn.on_event("click", lambda w, e, d: setattr(alert, 'value', not alert.value))
-
-            v.Container(children=[btn, alert])
+        .. literalinclude:: Alert/transition.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-btn color="primary" @click="alert = !alert">
-                        Toggle
-                    </v-btn>
-                    <v-alert
-                        :value="alert"
-                        color="pink"
-                        dark
-                        border="top"
-                        icon="mdi-home"
-                        transition="scale-transition"
-                    >
-                        Phasellus tempus...
-                    </v-alert>
-                </div>
-            </template>
+        .. literalinclude:: Alert/transition.vue
 
 Type
 ----
@@ -1054,44 +241,17 @@ customizing Vuetify's theme.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Alert/type.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(type="success", children=["I'm a success alert."]),
-                v.Alert(type="info", children=["I'm an info alert."]),
-                v.Alert(type="warning", children=["I'm a warning alert."]),
-                v.Alert(type="error", children=["I'm an error alert."]),
-            ])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(type="success", children=["I'm a success alert."]),
-                v.Alert(type="info", children=["I'm an info alert."]),
-                v.Alert(type="warning", children=["I'm a warning alert."]),
-                v.Alert(type="error", children=["I'm an error alert."]),
-            ])
+        .. literalinclude:: Alert/type.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-alert type="success">I'm a success alert.</v-alert>
-                    <v-alert type="info">I'm an info alert.</v-alert>
-                    <v-alert type="warning">I'm a warning alert.</v-alert>
-                    <v-alert type="error">I'm an error alert.</v-alert>
-                </div>
-            </template>
+        .. literalinclude:: Alert/type.vue
 
 Twitter Example
 ---------------
@@ -1103,57 +263,17 @@ props, you can create stylish custom alerts such as this Twitter notification.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Alert/twitter_example.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    color="#26c6da",
-                    border="left",
-                    elevation=2,
-                    colored_border=True,
-                    icon="mdi-twitter",
-                    children=["You've got 5 new updates on your timeline!"]
-                ),
-            ])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Container(children=[
-                v.Alert(
-                    color="#26c6da",
-                    border="left",
-                    elevation=2,
-                    colored_border=True,
-                    icon="mdi-twitter",
-                    children=["You've got 5 new updates on your timeline!"]
-                ),
-            ])
+        .. literalinclude:: Alert/twitter_example.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-                <div>
-                    <v-alert
-                        color="#26c6da"
-                        border="left"
-                        elevation="2"
-                        colored-border
-                        icon="mdi-twitter"
-                    >
-                        You've got 5 new updates on your timeline!
-                    </v-alert>
-                </div>
-            </template>
+        .. literalinclude:: Alert/twitter_example.vue
 
 Accessibility
 -------------

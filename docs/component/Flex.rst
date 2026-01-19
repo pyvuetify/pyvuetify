@@ -31,51 +31,17 @@ property utilities, you can customize their interaction even further.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/enabling_flexbox.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Card(
-                class_="d-flex pa-2",
-                outlined=True,
-                tile=True,
-                children=[
-                    v.Html(tag="div", children=["I'm a flexbox container!"])
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Card(
-                class_="d-flex pa-2",
-                outlined=True,
-                tile=True,
-                children=[
-                    v.Html(tag="div", children=["I'm a flexbox container!"])
-                ]
-            )
+        .. literalinclude:: Flex/enabling_flexbox.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-card
-                class="d-flex pa-2"
-                outlined
-                tile
-            >
-                <div>
-                I'm a flexbox container!
-                </div>
-            </v-card>
-            </template>
+        .. literalinclude:: Flex/enabling_flexbox.vue
 
 .. tab-set::
 
@@ -153,126 +119,17 @@ However, there may be situations where you need to explicitly define it.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/flex_direction.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex flex-row mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=[f"Flex item {n}"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex flex-row-reverse",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=[f"Flex item {n}"]
-                            ) for n in range(1, 4)
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex flex-row mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=[f"Flex item {n}"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex flex-row-reverse",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=[f"Flex item {n}"]
-                            ) for n in range(1, 4)
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: Flex/flex_direction.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-card
-                class="d-flex flex-row mb-6"
-                :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-                flat
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    Flex item {{ n }}
-                </v-card>
-                </v-card>
-                <v-card
-                class="d-flex flex-row-reverse"
-                :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-                flat
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    Flex item {{ n }}
-                </v-card>
-                </v-card>
-            </div>
-            </template>
+        .. literalinclude:: Flex/flex_direction.vue
 
 The ``flex-column`` and ``flex-column-reverse`` utility classes can be used to
 change the orientation of the flexbox container. Keep in mind that IE11 and Safari
@@ -428,264 +285,17 @@ using ``flex-direction: column``, modifying the y-axis. Choose from ``start``
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/flex_justify.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                class_="ma-2",
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex justify-start mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["justify-start"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex justify-end mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["justify-end"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex justify-center mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["justify-center"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex justify-space-between mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["justify-space-between"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex justify-space-around mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["justify-space-around"]
-                            ) for n in range(1, 4)
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                class_="ma-2",
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex justify-start mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["justify-start"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex justify-end mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["justify-end"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex justify-center mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["justify-center"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex justify-space-between mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["justify-space-between"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex justify-space-around mb-6",
-                        color="grey lighten-4",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["justify-space-around"]
-                            ) for n in range(1, 4)
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: Flex/flex_justify.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-card
-                class="d-flex justify-start mb-6"
-                :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-                flat
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    justify-start
-                </v-card>
-                </v-card>
-
-                <v-card
-                class="d-flex justify-end mb-6"
-                :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-                flat
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    justify-end
-                </v-card>
-                </v-card>
-
-                <v-card
-                class="d-flex justify-center mb-6"
-                :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-                flat
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    justify-center
-                </v-card>
-                </v-card>
-
-                <v-card
-                class="d-flex justify-space-between mb-6"
-                :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-                flat
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    justify-space-between
-                </v-card>
-                </v-card>
-
-                <v-card
-                class="d-flex justify-space-around mb-6"
-                :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-                flat
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    justify-space-around
-                </v-card>
-                </v-card>
-            </div>
-            </template>
+        .. literalinclude:: Flex/flex_justify.vue
 
 There are also responsive variations for ``justify-content``:
 
@@ -727,277 +337,17 @@ The ``align-items`` flex setting can be changed using the flex align classes. Th
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/flex_align.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex align-start mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["align-start"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex align-end mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["align-end"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex align-center mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["align-center"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex align-baseline mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["align-baseline"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex align-stretch mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["align-stretch"]
-                            ) for n in range(1, 4)
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex align-start mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["align-start"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex align-end mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["align-end"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex align-center mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["align-center"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex align-baseline mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["align-baseline"]
-                            ) for n in range(1, 4)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex align-stretch mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["align-stretch"]
-                            ) for n in range(1, 4)
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: Flex/flex_align.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-card
-                class="d-flex align-start mb-6"
-                color="grey lighten-2"
-                flat
-                height="100"
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    align-start
-                </v-card>
-                </v-card>
-
-                <v-card
-                class="d-flex align-end mb-6"
-                color="grey lighten-2"
-                flat
-                height="100"
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    align-end
-                </v-card>
-                </v-card>
-
-                <v-card
-                class="d-flex align-center mb-6"
-                color="grey lighten-2"
-                flat
-                height="100"
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    align-center
-                </v-card>
-                </v-card>
-
-                <v-card
-                class="d-flex align-baseline mb-6"
-                color="grey lighten-2"
-                flat
-                height="100"
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    align-baseline
-                </v-card>
-                </v-card>
-
-                <v-card
-                class="d-flex align-stretch mb-6"
-                color="grey lighten-2"
-                flat
-                height="100"
-                tile
-                >
-                <v-card
-                    v-for="n in 3"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    align-stretch
-                </v-card>
-                </v-card>
-            </div>
-            </template>
+        .. literalinclude:: Flex/flex_align.vue
 
 There are also responsive variations for ``align-items``:
 
@@ -1036,445 +386,17 @@ The ``align-self`` flex setting can be changed using the flex align-self classes
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/flex_align_self.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-start",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned start"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-center",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned center"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-end",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned end"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-baseline",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned baseline"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-auto",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned auto"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-stretch",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned stretch"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-start",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned start"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-center",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned center"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-end",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned end"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-baseline",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned baseline"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-auto",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned auto"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        height="100",
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 align-self-stretch",
-                                outlined=True,
-                                tile=True,
-                                children=["Aligned stretch"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["flex item"]
-                            )
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: Flex/flex_align_self.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-card class="d-flex mb-6" color="grey lighten-2" flat height="100" tile>
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-
-                <v-card class="pa-2 align-self-start" outlined tile>
-                    Aligned start
-                </v-card>
-
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-                </v-card>
-
-                <v-card class="d-flex mb-6" color="grey lighten-2" flat height="100" tile>
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-
-                <v-card class="pa-2 align-self-center" outlined tile>
-                    Aligned center
-                </v-card>
-
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-                </v-card>
-
-                <v-card class="d-flex mb-6" color="grey lighten-2" flat height="100" tile>
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-
-                <v-card class="pa-2 align-self-end" outlined tile>
-                    Aligned end
-                </v-card>
-
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-                </v-card>
-
-                <v-card class="d-flex mb-6" color="grey lighten-2" flat height="100" tile>
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-
-                <v-card class="pa-2 align-self-baseline" outlined tile>
-                    Aligned baseline
-                </v-card>
-
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-                </v-card>
-
-                <v-card class="d-flex mb-6" color="grey lighten-2" flat height="100" tile>
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-
-                <v-card class="pa-2 align-self-auto" outlined tile>
-                    Aligned auto
-                </v-card>
-
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-                </v-card>
-
-                <v-card class="d-flex mb-6" color="grey lighten-2" flat height="100" tile>
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-
-                <v-card class="pa-2 align-self-stretch" outlined tile>
-                    Aligned stretch
-                </v-card>
-
-                <v-card class="pa-2" outlined tile>
-                    flex item
-                </v-card>
-                </v-card>
-            </div>
-            </template>
+        .. literalinclude:: Flex/flex_align_self.vue
 
 There are also responsive variations for ``align-self``:
 
@@ -1520,191 +442,17 @@ positioning of flex items on the x-axis or y-axis when using ``flex-row`` or
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/auto_margins.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ) for _ in range(3)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2 mr-auto",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 ml-auto",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            )
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ) for _ in range(3)
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2 mr-auto",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 ml-auto",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            )
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: Flex/auto_margins.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-card class="d-flex mb-6" color="grey lighten-2" flat tile>
-                <v-card v-for="n in 3" :key="n" class="pa-2" outlined tile>
-                    Flex item
-                </v-card>
-                </v-card>
-
-                <v-card class="d-flex mb-6" color="grey lighten-2" flat tile>
-                <v-card class="pa-2 mr-auto" outlined tile> Flex item </v-card>
-
-                <v-card class="pa-2" outlined tile> Flex item </v-card>
-
-                <v-card class="pa-2" outlined tile> Flex item </v-card>
-                </v-card>
-
-                <v-card class="d-flex" color="grey lighten-2" flat tile>
-                <v-card class="pa-2" outlined tile> Flex item </v-card>
-
-                <v-card class="pa-2" outlined tile> Flex item </v-card>
-
-                <v-card class="pa-2 ml-auto" outlined tile> Flex item </v-card>
-                </v-card>
-            </div>
-            </template>
+        .. literalinclude:: Flex/auto_margins.vue
 
 Using align-items
 """""""""""""""""
@@ -1716,173 +464,17 @@ and ``.mb-auto`` helper classes to adjust flex item positioning.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/using_align_items.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex align-start flex-column mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        height="200",
-                        children=[
-                            v.Card(
-                                class_="pa-2 mb-auto",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex align-end flex-column",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        height="200",
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 mt-auto",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            )
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex align-start flex-column mb-6",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        height="200",
-                        children=[
-                            v.Card(
-                                class_="pa-2 mb-auto",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            )
-                        ]
-                    ),
-                    v.Card(
-                        class_="d-flex align-end flex-column",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        height="200",
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ),
-                            v.Card(
-                                class_="pa-2 mt-auto",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            )
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: Flex/using_align_items.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-card
-                class="d-flex align-start flex-column mb-6"
-                color="grey lighten-2"
-                flat
-                tile
-                height="200"
-                >
-                <v-card class="pa-2 mb-auto" outlined tile> Flex item </v-card>
-
-                <v-card class="pa-2" outlined tile> Flex item </v-card>
-
-                <v-card class="pa-2" outlined tile> Flex item </v-card>
-                </v-card>
-
-                <v-card
-                class="d-flex align-end flex-column"
-                color="grey lighten-2"
-                flat
-                tile
-                height="200"
-                >
-                <v-card class="pa-2" outlined tile> Flex item </v-card>
-
-                <v-card class="pa-2" outlined tile> Flex item </v-card>
-
-                <v-card class="pa-2 mt-auto" outlined tile> Flex item </v-card>
-                </v-card>
-            </div>
-            </template>
+        .. literalinclude:: Flex/using_align_items.vue
 
 Flex wrap
 ^^^^^^^^^
@@ -1896,85 +488,17 @@ or ``wrap-reverse``.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/flex_wrap.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex flex-nowrap py-3",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        width="125",
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ) for _ in range(5)
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex flex-nowrap py-3",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        width="125",
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ) for _ in range(5)
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: Flex/flex_wrap.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-card
-                class="d-flex flex-nowrap py-3"
-                color="grey lighten-2"
-                flat
-                tile
-                width="125"
-                >
-                <v-card
-                    v-for="n in 5"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    Flex item
-                </v-card>
-                </v-card>
-            </div>
-            </template>
+        .. literalinclude:: Flex/flex_wrap.vue
 
 .. tab-set::
 
@@ -2166,97 +690,17 @@ You can change the visual order of flex items with the ``order`` utilities.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/flex_order.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex flex-wrap-reverse",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="order-3 pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["First flex item"]
-                            ),
-                            v.Card(
-                                class_="order-1 pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Second flex item"]
-                            ),
-                            v.Card(
-                                class_="order-2 pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Third flex item"]
-                            )
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex flex-wrap-reverse",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        children=[
-                            v.Card(
-                                class_="order-3 pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["First flex item"]
-                            ),
-                            v.Card(
-                                class_="order-1 pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Second flex item"]
-                            ),
-                            v.Card(
-                                class_="order-2 pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Third flex item"]
-                            )
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: Flex/flex_order.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-card class="d-flex flex-wrap-reverse" color="grey lighten-2" flat tile>
-                <v-card class="order-3 pa-2" outlined tile> First flex item </v-card>
-
-                <v-card class="order-1 pa-2" outlined tile> Second flex item </v-card>
-
-                <v-card class="order-2 pa-2" outlined tile> Third flex item </v-card>
-                </v-card>
-            </div>
-            </template>
+        .. literalinclude:: Flex/flex_order.vue
 
 There are also responsive variations for ``order``:
 
@@ -2285,85 +729,17 @@ The ``align-content`` flex setting can be changed using the flex align-content c
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/flex_align_content.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex align-content-start flex-wrap",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        min_height="200",
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ) for _ in range(20)
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex align-content-start flex-wrap",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        min_height="200",
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ) for _ in range(20)
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: Flex/flex_align_content.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-card
-                class="d-flex align-content-start flex-wrap"
-                color="grey lighten-2"
-                flat
-                tile
-                min-height="200"
-                >
-                <v-card
-                    v-for="n in 20"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    Flex item
-                </v-card>
-                </v-card>
-            </div>
-            </template>
+        .. literalinclude:: Flex/flex_align_content.vue
 
 .. tab-set::
 
@@ -2537,85 +913,17 @@ The ``align-content`` flex setting can be changed using the flex align-content c
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/flex_align_content_2.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex align-content-space-between flex-wrap",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        min_height="200",
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ) for _ in range(20)
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Card(
-                        class_="d-flex align-content-space-between flex-wrap",
-                        color="grey lighten-2",
-                        flat=True,
-                        tile=True,
-                        min_height="200",
-                        children=[
-                            v.Card(
-                                class_="pa-2",
-                                outlined=True,
-                                tile=True,
-                                children=["Flex item"]
-                            ) for _ in range(20)
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: Flex/flex_align_content_2.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-card
-                class="d-flex align-content-space-between flex-wrap"
-                color="grey lighten-2"
-                flat
-                tile
-                min-height="200"
-                >
-                <v-card
-                    v-for="n in 20"
-                    :key="n"
-                    class="pa-2"
-                    outlined
-                    tile
-                >
-                    Flex item
-                </v-card>
-                </v-card>
-            </div>
-            </template>
+        .. literalinclude:: Flex/flex_align_content_2.vue
 
 .. tab-set::
 
@@ -2751,179 +1059,17 @@ the condition.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Flex/flex_grow_and_shrink.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Container(
-                        class_="grey lighten-5",
-                        children=[
-                            v.Row(
-                                no_gutters=True,
-                                style_="flex-wrap: nowrap;",
-                                children=[
-                                    v.Col(
-                                        cols=2,
-                                        class_="flex-grow-0 flex-shrink-0",
-                                        children=[
-                                            v.Card(
-                                                class_="pa-2",
-                                                outlined=True,
-                                                tile=True,
-                                                children=["I'm 2 column wide"]
-                                            )
-                                        ]
-                                    ),
-                                    v.Col(
-                                        cols=1,
-                                        style_="min-width: 100px; max-width: 100%;",
-                                        class_="flex-grow-1 flex-shrink-0",
-                                        children=[
-                                            v.Card(
-                                                class_="pa-2",
-                                                outlined=True,
-                                                tile=True,
-                                                children=["I'm 1 column wide and I grow to take all the space"]
-                                            )
-                                        ]
-                                    ),
-                                    v.Col(
-                                        cols=5,
-                                        style_="min-width: 100px;",
-                                        class_="flex-grow-0 flex-shrink-1",
-                                        children=[
-                                            v.Card(
-                                                class_="pa-2",
-                                                outlined=True,
-                                                tile=True,
-                                                children=["I'm 5 column wide and I shrink if there's not enough space"]
-                                            )
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
-                ]
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.Html(
-                tag="div",
-                children=[
-                    v.Container(
-                        class_="grey lighten-5",
-                        children=[
-                            v.Row(
-                                no_gutters=True,
-                                style_="flex-wrap: nowrap;",
-                                children=[
-                                    v.Col(
-                                        cols=2,
-                                        class_="flex-grow-0 flex-shrink-0",
-                                        children=[
-                                            v.Card(
-                                                class_="pa-2",
-                                                outlined=True,
-                                                tile=True,
-                                                children=["I'm 2 column wide"]
-                                            )
-                                        ]
-                                    ),
-                                    v.Col(
-                                        cols=1,
-                                        style_="min-width: 100px; max-width: 100%;",
-                                        class_="flex-grow-1 flex-shrink-0",
-                                        children=[
-                                            v.Card(
-                                                class_="pa-2",
-                                                outlined=True,
-                                                tile=True,
-                                                children=["I'm 1 column wide and I grow to take all the space"]
-                                            )
-                                        ]
-                                    ),
-                                    v.Col(
-                                        cols=5,
-                                        style_="min-width: 100px;",
-                                        class_="flex-grow-0 flex-shrink-1",
-                                        children=[
-                                            v.Card(
-                                                class_="pa-2",
-                                                outlined=True,
-                                                tile=True,
-                                                children=["I'm 5 column wide and I shrink if there's not enough space"]
-                                            )
-                                        ]
-                                    )
-                                ]
-                            )
-                        ]
-                    )
-                ]
-            )
+        .. literalinclude:: Flex/flex_grow_and_shrink.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-container class="grey lighten-5">
-                <v-row
-                no-gutters
-                style="flex-wrap: nowrap;"
-                >
-                <v-col
-                    cols="2"
-                    class="flex-grow-0 flex-shrink-0"
-                >
-                    <v-card
-                    class="pa-2"
-                    outlined
-                    tile
-                    >
-                    I'm 2 column wide
-                    </v-card>
-                </v-col>
-                <v-col
-                    cols="1"
-                    style="min-width: 100px; max-width: 100%;"
-                    class="flex-grow-1 flex-shrink-0"
-                >
-                    <v-card
-                    class="pa-2"
-                    outlined
-                    tile
-                    >
-                    I'm 1 column wide and I grow to take all the space
-                    </v-card>
-                </v-col>
-                <v-col
-                    cols="5"
-                    style="min-width: 100px;"
-                    class="flex-grow-0 flex-shrink-1"
-                >
-                    <v-card
-                    class="pa-2"
-                    outlined
-                    tile
-                    >
-                    I'm 5 column wide and I shrink if there's not enough space
-                    </v-card>
-                </v-col>
-                </v-row>
-            </v-container>
-            </template>
+        .. literalinclude:: Flex/flex_grow_and_shrink.vue
 
 The following classes are available:
 

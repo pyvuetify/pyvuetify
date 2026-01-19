@@ -26,86 +26,17 @@ A calendar has a type and a value which determines what type of calendar is show
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Calendar/usage.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            events = [
-                {'name': 'Meeting', 'start': '2025-11-01 09:00', 'end': '2025-11-01 10:00'},
-                {'name': 'Conference', 'start': '2025-11-05 14:00', 'end': '2025-11-05 17:00'},
-                {'name': 'Birthday Party', 'start': '2025-11-10', 'color': 'green'},
-                {'name': 'PTO', 'start': '2025-11-15', 'end': '2025-11-17', 'color': 'blue'}
-            ]
-
-            v.Calendar(
-                type='month',
-                value='2025-11-01',
-                events=events
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            events = [
-                {'name': 'Meeting', 'start': '2025-11-01 09:00', 'end': '2025-11-01 10:00'},
-                {'name': 'Conference', 'start': '2025-11-05 14:00', 'end': '2025-11-05 17:00'},
-                {'name': 'Birthday Party', 'start': '2025-11-10', 'color': 'green'},
-                {'name': 'PTO', 'start': '2025-11-15', 'end': '2025-11-17', 'color': 'blue'}
-            ]
-
-            v.Calendar(
-                type='month',
-                value='2025-11-01',
-                events=events
-            )
+        .. literalinclude:: Calendar/usage.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-              <v-calendar
-                type="month"
-                :value="value"
-                :events="events"
-              ></v-calendar>
-            </template>
-
-            <script>
-              export default {
-                data: () => ({
-                  value: '2025-11-01',
-                  events: [
-                    {
-                      name: 'Meeting',
-                      start: '2025-11-01 09:00',
-                      end: '2025-11-01 10:00',
-                    },
-                    {
-                      name: 'Conference',
-                      start: '2025-11-05 14:00',
-                      end: '2025-11-05 17:00',
-                    },
-                    {
-                      name: 'Birthday Party',
-                      start: '2025-11-10',
-                      color: 'green',
-                    },
-                    {
-                      name: 'PTO',
-                      start: '2025-11-15',
-                      end: '2025-11-17',
-                      color: 'blue',
-                    },
-                  ],
-                }),
-              }
-            </script>
+        .. literalinclude:: Calendar/usage.vue
 
 Type Week
 ---------
@@ -116,78 +47,17 @@ This is an example of an event calendar with all-day and timed events with a typ
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Calendar/type_week.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            events = [
-                {'name': 'Weekly Meeting', 'start': '2025-11-07 09:00', 'end': '2025-11-07 10:00'},
-                {'name': 'Lunch', 'start': '2025-11-08 12:30', 'end': '2025-11-08 13:30'},
-                {'name': 'Thomas Birthday', 'start': '2025-11-10', 'color': 'green'}
-            ]
-
-            v.Calendar(
-                type='week',
-                value='2025-11-07',
-                events=events
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            events = [
-                {'name': 'Weekly Meeting', 'start': '2025-11-07 09:00', 'end': '2025-11-07 10:00'},
-                {'name': 'Lunch', 'start': '2025-11-08 12:30', 'end': '2025-11-08 13:30'},
-                {'name': 'Thomas Birthday', 'start': '2025-11-10', 'color': 'green'}
-            ]
-
-            v.Calendar(
-                type='week',
-                value='2025-11-07',
-                events=events
-            )
+        .. literalinclude:: Calendar/type_week.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-              <v-calendar
-                type="week"
-                :value="value"
-                :events="events"
-              ></v-calendar>
-            </template>
-
-            <script>
-              export default {
-                data: () => ({
-                  value: '2025-11-07',
-                  events: [
-                    {
-                      name: 'Weekly Meeting',
-                      start: '2025-11-07 09:00',
-                      end: '2025-11-07 10:00',
-                    },
-                    {
-                      name: 'Lunch',
-                      start: '2025-11-08 12:30',
-                      end: '2025-11-08 13:30',
-                    },
-                    {
-                      name: 'Thomas Birthday',
-                      start: '2025-11-10',
-                      color: 'green',
-                    },
-                  ],
-                }),
-              }
-            </script>
+        .. literalinclude:: Calendar/type_week.vue
 
 Type Day
 --------
@@ -198,75 +68,15 @@ This is an example of calendar with a type of ``day``.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Calendar/type_day.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            events = [
-                {'name': 'Morning Meeting', 'start': '2025-11-28 09:00', 'end': '2025-11-28 10:00'},
-                {'name': 'Lunch Break', 'start': '2025-11-28 12:00', 'end': '2025-11-28 13:00'},
-                {'name': 'Afternoon Session', 'start': '2025-11-28 14:00', 'end': '2025-11-28 16:00'}
-            ]
-
-            v.Calendar(
-                type='day',
-                value='2025-11-28',
-                events=events
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            events = [
-                {'name': 'Morning Meeting', 'start': '2025-11-28 09:00', 'end': '2025-11-28 10:00'},
-                {'name': 'Lunch Break', 'start': '2025-11-28 12:00', 'end': '2025-11-28 13:00'},
-                {'name': 'Afternoon Session', 'start': '2025-11-28 14:00', 'end': '2025-11-28 16:00'}
-            ]
-
-            v.Calendar(
-                type='day',
-                value='2025-11-28',
-                events=events
-            )
+        .. literalinclude:: Calendar/type_day.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
+        .. literalinclude:: Calendar/type_day.vue
 
-            <template>
-              <v-calendar
-                type="day"
-                :value="value"
-                :events="events"
-              ></v-calendar>
-            </template>
-
-            <script>
-              export default {
-                data: () => ({
-                  value: '2025-11-28',
-                  events: [
-                    {
-                      name: 'Morning Meeting',
-                      start: '2025-11-28 09:00',
-                      end: '2025-11-28 10:00',
-                    },
-                    {
-                      name: 'Lunch Break',
-                      start: '2025-11-28 12:00',
-                      end: '2025-11-28 13:00',
-                    },
-                    {
-                      name: 'Afternoon Session',
-                      start: '2025-11-28 14:00',
-                      end: '2025-11-28 16:00',
-                    },
-                  ],
-                }),
-              }
-            </script>

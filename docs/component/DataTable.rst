@@ -28,38 +28,8 @@ Usage
 The standard :py:class:`DataTable <ipyvuetify.DataTable>` will by default render
 your data as simple rows.
 
-.. jupyter-execute::
+.. jupyter-execute:: DataTable/usage.py
     :raises:
-
-    import ipyvuetify as v
-
-    headers = [
-        {'text': 'Dessert (100g serving)', 'value': 'name'},
-        {'text': 'Calories', 'value': 'calories'},
-        {'text': 'Fat (g)', 'value': 'fat'},
-        {'text': 'Carbs (g)', 'value': 'carbs'},
-        {'text': 'Protein (g)', 'value': 'protein'},
-        {'text': 'Iron (%)', 'value': 'iron'},
-    ]
-
-    desserts = [
-        {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-        {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-        {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-        {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-        {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-        {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-        {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-        {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-        {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-        {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-    ]
-
-    v.DataTable(
-        headers=headers,
-        items=desserts,
-        items_per_page=5,
-    )
 
 Custom filter
 -------------
@@ -76,141 +46,17 @@ not be applied.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/custom_filter.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            search = v.TextField(
-                v_model=None,
-                label="Search",
-                class_="mx-4",
-            )
-
-            data_table = v.DataTable(
-                headers=headers,
-                items=desserts,
-                item_key="name",
-                search=None,
-                v_slots=[
-                    {"name": "top", "children": search}
-                ],
-            )
-
-            jslink((search, 'v_model'), (data_table, 'search'))
-
-            data_table
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            search = v.TextField(
-                v_model=None,
-                label="Search",
-                class_="mx-4",
-            )
-
-            data_table = v.DataTable(
-                headers=headers,
-                items=desserts,
-                item_key="name",
-                search=None,
-                v_slots=[
-                    {"name": "top", "children": search}
-                ],
-            )
-
-            jslink((search, 'v_model'), (data_table, 'search'))
-
-            data_table
+        .. literalinclude:: DataTable/custom_filter.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-data-table
-                :headers="headers"
-                :items="desserts"
-                item-key="name"
-                class="elevation-1"
-                :search="search"
-                :custom-filter="filterOnlyCapsText"
-                >
-                <template v-slot:top>
-                    <v-text-field
-                    v-model="search"
-                    label="Search (UPPER CASE ONLY)"
-                    class="mx-4"
-                    ></v-text-field>
-                </template>
-                <template v-slot:body.append>
-                    <tr>
-                    <td></td>
-                    <td>
-                        <v-text-field
-                        v-model="calories"
-                        type="number"
-                        label="Less than"
-                        ></v-text-field>
-                    </td>
-                    <td colspan="4"></td>
-                    </tr>
-                </template>
-                </v-data-table>
-            </div>
-            </template>
+        .. literalinclude:: DataTable/custom_filter.vue
 
 Dense
 -----
@@ -221,89 +67,17 @@ Using the ``dense`` prop you are able to give your data tables an alternate styl
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/dense.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                dense=True,
-                headers=headers,
-                items=desserts,
-                items_per_page=5,
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                dense=True,
-                headers=headers,
-                items=desserts,
-                items_per_page=5,
-            )
+        .. literalinclude:: DataTable/dense.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-data-table
-                dense
-                :headers="headers"
-                :items="desserts"
-                item-key="name"
-                class="elevation-1"
-            ></v-data-table>
-            </template>
+        .. literalinclude:: DataTable/dense.vue
 
 Filterable
 ----------
@@ -316,126 +90,17 @@ In the example below the dessert name column is no longer searchable.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/filterable.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            search = v.TextField(
-                v_model=None,
-                label="Search",
-                class_="mx-4",
-            )
-
-            data_table = v.DataTable(
-                headers=headers,
-                items=desserts,
-                item_key="name",
-                search=None,
-                v_slots=[
-                    {"name": "top", "children": search}
-                ],
-            )
-
-            jslink((search, 'v_model'), (data_table, 'search'))
-
-            data_table
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            search = v.TextField(
-                v_model=None,
-                label="Search",
-                class_="mx-4",
-            )
-
-            data_table = v.DataTable(
-                headers=headers,
-                items=desserts,
-                item_key="name",
-                search=None,
-                v_slots=[
-                    {"name": "top", "children": search}
-                ],
-            )
-
-            jslink((search, 'v_model'), (data_table, 'search'))
-
-            data_table
+        .. literalinclude:: DataTable/filterable.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-card>
-                <v-card-title>
-                <v-text-field
-                    v-model="search"
-                    append-icon="mdi-magnify"
-                    label="Search"
-                    single-line
-                    hide-details
-                ></v-text-field>
-                </v-card-title>
-                <v-data-table
-                :headers="headers"
-                :items="desserts"
-                :search="search"
-                ></v-data-table>
-            </v-card>
-            </template>
+        .. literalinclude:: DataTable/filterable.vue
 
 Footer props
 ------------
@@ -448,110 +113,17 @@ to this component using ``footer-props``.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/footer_props.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                items_per_page=3,
-                item_keys="name",
-                footer_props={
-                    "showFirstLastPage": True,
-                    "firstIcon": "mdi-arrow-collapse-left",
-                    "lastIcon": "mdi-arrow-collapse-right",
-                    "prevIcon": "mdi-minus",
-                    "nextIcon": "mdi-plus",
-                },
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                items_per_page=3,
-                item_keys="name",
-                footer_props={
-                    "showFirstLastPage": True,
-                    "firstIcon": "mdi-arrow-collapse-left",
-                    "lastIcon": "mdi-arrow-collapse-right",
-                    "prevIcon": "mdi-minus",
-                    "nextIcon": "mdi-plus",
-                },
-            )
+        .. literalinclude:: DataTable/footer_props.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-data-table
-                :headers="headers"
-                :items="desserts"
-                :items-per-page="5"
-                item-key="name"
-                class="elevation-1"
-                :footer-props="{
-                showFirstLastPage: true,
-                firstIcon: 'mdi-arrow-collapse-left',
-                lastIcon: 'mdi-arrow-collapse-right',
-                prevIcon: 'mdi-minus',
-                nextIcon: 'mdi-plus'
-                }"
-            ></v-data-table>
-            </template>
+        .. literalinclude:: DataTable/footer_props.vue
 
 Grouping
 --------
@@ -564,90 +136,17 @@ use the ``groupable`` property on header items to disable the group button.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/grouping.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            headers = [
-                {"text": 'Dessert (100g serving)', "align": 'start', "value": 'name', "groupable": False},
-                {"text": 'Category', "value": 'category', "align": 'right' },
-                {"text": 'Dairy', "value": 'dairy', "align": 'right' },
-            ]
-
-            desserts = [
-                {"name": 'Frozen Yogurt', "category": 'Ice cream', "dairy": 'Yes'},
-                {"name": 'Ice cream sandwich', "category": 'Ice cream', "dairy": 'Yes'},
-                {"name": 'Eclair', "category": 'Cookie', "dairy": 'Yes'},
-                {"name": 'Cupcake', "category": 'Pastry', "dairy": 'Yes'},
-                {"name": 'Gingerbread', "category": 'Cookie', "dairy": 'No'},
-                {"name": 'Jelly bean', "category": 'Candy', "dairy": 'No'},
-                {"name": 'Lollipop', "category": 'Candy', "dairy": 'No'},
-                {"name": 'Honeycomb', "category": 'Toffee', "dairy": 'No'},
-                {"name": 'Donut', "category": 'Pastry', "dairy": 'Yes'},
-                {"name": 'KitKat', "category": 'Candy', "dairy": 'Yes'},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                item_key="name",
-                sort_by="name",
-                group_by="category",
-                show_group_by=True,
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            headers = [
-                {"text": 'Dessert (100g serving)', "align": 'start', "value": 'name', "groupable": False},
-                {"text": 'Category', "value": 'category', "align": 'right' },
-                {"text": 'Dairy', "value": 'dairy', "align": 'right' },
-            ]
-
-            desserts = [
-                {"name": 'Frozen Yogurt', "category": 'Ice cream', "dairy": 'Yes'},
-                {"name": 'Ice cream sandwich', "category": 'Ice cream', "dairy": 'Yes'},
-                {"name": 'Eclair', "category": 'Cookie', "dairy": 'Yes'},
-                {"name": 'Cupcake', "category": 'Pastry', "dairy": 'Yes'},
-                {"name": 'Gingerbread', "category": 'Cookie', "dairy": 'No'},
-                {"name": 'Jelly bean', "category": 'Candy', "dairy": 'No'},
-                {"name": 'Lollipop', "category": 'Candy', "dairy": 'No'},
-                {"name": 'Honeycomb', "category": 'Toffee', "dairy": 'No'},
-                {"name": 'Donut', "category": 'Pastry', "dairy": 'Yes'},
-                {"name": 'KitKat', "category": 'Candy', "dairy": 'Yes'},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                item_key="name",
-                sort_by="name",
-                group_by="category",
-                show_group_by=True,
-            )
-
+        .. literalinclude:: DataTable/grouping.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-data-table
-                :headers="headers"
-                :items="desserts"
-                item-key="name"
-                sort-by="name"
-                group-by="category"
-                class="elevation-1"
-                show-group-by
-            ></v-data-table>
-            </template>
+        .. literalinclude:: DataTable/grouping.vue
 
 Hide default header and footer
 -------------------------------
@@ -659,89 +158,17 @@ remove the default header and footer respectively.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/hide_default_header_and_footer.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                hide_default_header=True,
-                hide_default_footer=True,
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                hide_default_header=True,
-                hide_default_footer=True,
-            )
+        .. literalinclude:: DataTable/hide_default_header_and_footer.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-data-table
-                :headers="headers"
-                :items="desserts"
-                hide-default-header
-                hide-default-footer
-                class="elevation-1"
-            ></v-data-table>
-            </template>
+        .. literalinclude:: DataTable/hide_default_header_and_footer.vue
 
 Loading
 -------
@@ -755,44 +182,17 @@ This message can be customized using the ``loading-text`` prop or the
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/loading.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            v.DataTable(
-                item_key="name",
-                class_="elevation-1",
-                loading=True,
-                loading_text="Loading... Please wait",
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            v.DataTable(
-                item_key="name",
-                class_="elevation_1",
-                loading=True,
-                loading_text="Loading... Please wait",
-            )
+        .. literalinclude:: DataTable/loading.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-data-table
-                item-key="name"
-                class="elevation-1"
-                loading
-                loading-text="Loading... Please wait"
-            ></v-data-table>
-            </template>
+        .. literalinclude:: DataTable/loading.vue
 
 Multi sort
 ----------
@@ -805,92 +205,17 @@ to programmatically control the sorting, instead of single values.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/multi_sort.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                sort_by=['calories', 'fat'],
-                sort_desc=[False, True],
-                multi_sort=True,
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                sort_by=['calories', 'fat'],
-                sort_desc=[False, True],
-                multi_sort=True,
-            )
+        .. literalinclude:: DataTable/multi_sort.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-data-table
-                :headers="headers"
-                :items="desserts"
-                :sort-by="['calories', 'fat']"
-                :sort-desc="[false, true]"
-                multi-sort
-                class="elevation-1"
-            ></v-data-table>
-            </template>
+        .. literalinclude:: DataTable/multi_sort.vue
 
 Row selection
 -------------
@@ -905,123 +230,17 @@ just one with the ``single-select`` prop.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/row_selection.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            single_select = v.Switch(
-                label="Single select",
-                class_="pa-3",
-                v_model=False,
-            )
-
-            data_table = v.DataTable(
-                v_model=[],
-                headers=headers,
-                items=desserts,
-                show_select=True,
-                single_select=False,
-            )
-
-            jslink((single_select, 'v_model'), (data_table, 'single_select'))
-
-            v.Container(children=[single_select, data_table])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            single_select = v.Switch(
-                label="Single select",
-                class_="pa-3",
-                v_model=False,
-            )
-
-            data_table = v.DataTable(
-                v_model=[],
-                headers=headers,
-                items=desserts,
-                show_select=True,
-                single_select=False,
-            )
-
-            jslink((single_select, 'v_model'), (data_table, 'single_select'))
-
-            v.Container(children=[single_select, data_table])
+        .. literalinclude:: DataTable/row_selection.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-data-table
-                v-model="selected"
-                :headers="headers"
-                :items="desserts"
-                :single-select="singleSelect"
-                item-key="name"
-                show-select
-                class="elevation-1"
-            >
-                <template v-slot:top>
-                <v-switch
-                    v-model="singleSelect"
-                    label="Single select"
-                    class="pa-3"
-                ></v-switch>
-                </template>
-            </v-data-table>
-            </template>
+        .. literalinclude:: DataTable/row_selection.vue
 
 Search
 ------
@@ -1032,140 +251,17 @@ The :py:class:`DataTable <ipyvuetify.DataTable>` exposes a ``search`` prop that 
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/search.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            search = v.TextField(
-                append_icon="mdi-magnify",
-                label="Search",
-                single_line=True,
-                hide_details=True,
-                v_model=None,
-            )
-
-            data_table = v.DataTable(
-                v_model=[],
-                headers=headers,
-                items=desserts,
-                search=None,
-            )
-
-            jslink((search, 'v_model'), (data_table, 'search'))
-
-            v.Card(children=[
-                v.CardTitle(children=[
-                    "Nutrition",
-                    v.Spacer(),
-                    search,
-                ]),
-                data_table,
-            ])
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-            from ipywidgets import jslink
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            search = v.TextField(
-                append_icon="mdi-magnify",
-                label="Search",
-                single_line=True,
-                hide_details=True,
-                v_model=None,
-            )
-
-            data_table = v.DataTable(
-                v_model=[],
-                headers=headers,
-                items=desserts,
-                search=None,
-            )
-
-            jslink((search, 'v_model'), (data_table, 'search'))
-
-            v.Card(children=[
-                v.CardTitle(children=[
-                    "Nutrition",
-                    v.Spacer(),
-                    search,
-                ]),
-                data_table,
-            ])
+        .. literalinclude:: DataTable/search.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-card>
-                <v-card-title>
-                Nutrition
-                <v-spacer></v-spacer>
-                <v-text-field
-                    v-model="search"
-                    append-icon="mdi-magnify"
-                    label="Search"
-                    single-line
-                    hide-details
-                ></v-text-field>
-                </v-card-title>
-                <v-data-table
-                :headers="headers"
-                :items="desserts"
-                :search="search"
-                ></v-data-table>
-            </v-card>
-            </template>
+        .. literalinclude:: DataTable/search.vue
 
 Slots
 -----
@@ -1189,97 +285,17 @@ sent to headers.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/header.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                v_slots=[{
-                    "name": "header.name",
-                    "variable": "name",
-                    "children": "{{ name.header.text.toUpperCase() }}"
-                }],
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                v_slots=[{
-                    "name": "header.name",
-                    "variable": "name",
-                    "children": "{{ name.header.text.toUpperCase() }}"
-                }],
-            )
+        .. literalinclude:: DataTable/header.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-data-table
-                :headers="headers"
-                :items="desserts"
-                class="elevation-1"
-            >
-                <template v-slot:header.name="{ header }">
-                {{ header.text.toUpperCase() }}
-                </template>
-            </v-data-table>
-            </template>
+        .. literalinclude:: DataTable/header.vue
 
 Item
 ^^^^
@@ -1293,110 +309,17 @@ sent to headers. So to customize the calories column we're using the
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/item.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                v_slots=[{
-                    "name": "item.calories",
-                    "variable": "item",
-                    "children": v.Chip(
-                        children=["item.item.calories"],
-                        #color="getColor(item.calories)",
-                        dark=True,
-                    )
-                }],
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                v_slots=[{
-                    "name": "item.calories",
-                    "variable": "item",
-                    "children": v.Chip(
-                        children=["item.item.calories"],
-                        #color="getColor(item.calories)",
-                        dark=True,
-                    )
-                }],
-            )
+        .. literalinclude:: DataTable/item.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <v-data-table
-                :headers="headers"
-                :items="desserts"
-                class="elevation-1"
-            >
-                <template v-slot:item.calories="{ item }">
-                <v-chip
-                    :color="getColor(item.calories)"
-                    dark
-                >
-                    {{ item.calories }}
-                </v-chip>
-                </template>
-            </v-data-table>
-            </template>
+        .. literalinclude:: DataTable/item.vue
 
 Simple checkbox
 ---------------
@@ -1411,108 +334,17 @@ and will respect header alignment.
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: DataTable/simple_checkbox.py
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1, "glutenfree": True},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1, "glutenfree": False},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7, "glutenfree": False},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8, "glutenfree": False},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16, "glutenfree": True},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0, "glutenfree": True},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2, "glutenfree": True},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45, "glutenfree": True},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22, "glutenfree": False},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6, "glutenfree": False},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                v_slots=[{
-                    "name": "item.glutenfree",
-                    "variable": "item",
-                    "children": v.SimpleCheckbox(
-                        v_model="item.item.glutenfree",
-                        disabled=True,
-                    )
-                }],
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import ipyvuetify as v
-
-            headers = [
-                {'text': 'Dessert (100g serving)', 'value': 'name'},
-                {'text': 'Calories', 'value': 'calories'},
-                {'text': 'Fat (g)', 'value': 'fat'},
-                {'text': 'Carbs (g)', 'value': 'carbs'},
-                {'text': 'Protein (g)', 'value': 'protein'},
-                {'text': 'Iron (%)', 'value': 'iron'},
-            ]
-
-            desserts = [
-                {'name': 'Frozen Yogurt', 'calories': 159, 'fat': 6.0, 'carbs': 24, 'protein': 4.0, 'iron': 1, "glutenfree": True},
-                {'name': 'Ice cream sandwich', 'calories': 237, 'fat': 9.0, 'carbs': 37, 'protein': 4.3, 'iron': 1, "glutenfree": False},
-                {'name': 'Eclair', 'calories': 262, 'fat': 16.0, 'carbs': 23, 'protein': 6.0, 'iron': 7, "glutenfree": False},
-                {'name': 'Cupcake', 'calories': 305, 'fat': 3.7, 'carbs': 67, 'protein': 4.3, 'iron': 8, "glutenfree": False},
-                {'name': 'Gingerbread', 'calories': 356, 'fat': 16.0, 'carbs': 49, 'protein': 3.9, 'iron': 16, "glutenfree": True},
-                {'name': 'Jelly bean', 'calories': 375, 'fat': 0.0, 'carbs': 94, 'protein': 0.0, 'iron': 0, "glutenfree": True},
-                {'name': 'Lollipop', 'calories': 392, 'fat': 0.2, 'carbs': 98, 'protein': 0.0, 'iron': 2, "glutenfree": True},
-                {'name': 'Honeycomb', 'calories': 408, 'fat': 3.2, 'carbs': 87, 'protein': 6.5, 'iron': 45, "glutenfree": True},
-                {'name': 'Donut', 'calories': 452, 'fat': 25.0, 'carbs': 51, 'protein': 4.9, 'iron': 22, "glutenfree": False},
-                {'name': 'KitKat', 'calories': 518, 'fat': 26.0, 'carbs': 65, 'protein': 7.0, 'iron': 6, "glutenfree": False},
-            ]
-
-            v.DataTable(
-                headers=headers,
-                items=desserts,
-                v_slots=[{
-                    "name": "item.glutenfree",
-                    "variable": "item",
-                    "children": v.SimpleCheckbox(
-                        v_model="item.item.glutenfree",
-                        disabled=True,
-                    )
-                }],
-            )
+        .. literalinclude:: DataTable/simple_checkbox.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
-
-            <template>
-            <div>
-                <v-data-table
-                :headers="headers"
-                :items="desserts"
-                class="elevation-1"
-                >
-                <template v-slot:item.glutenfree="{ item }">
-                    <v-simple-checkbox
-                    v-model="item.glutenfree"
-                    disabled
-                    ></v-simple-checkbox>
-                </template>
-                </v-data-table>
-            </div>
-            </template>
+        .. literalinclude:: DataTable/simple_checkbox.vue
 
 Miscellaneous examples
 ----------------------
