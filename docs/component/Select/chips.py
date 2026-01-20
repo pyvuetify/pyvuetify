@@ -1,0 +1,74 @@
+import ipyvuetify as v
+
+items = ["Foo", "Bar", "Fizz", "Buzz"]
+
+v.Container(
+    fluid=True,
+    children=[
+        v.Row(
+            align="center",
+            children=[
+                v.Col(
+                    class_="d-flex",
+                    cols=12,
+                    sm=6,
+                    children=[
+                        v.Select(
+                            v_model=items,
+                            items=items,
+                            attach=True,
+                            chips=True,
+                            label="Chips",
+                            multiple=True,
+                        ),
+                    ],
+                ),
+                v.Col(
+                    class_="d-flex",
+                    cols=12,
+                    sm=6,
+                    children=[
+                        v.Select(
+                            v_model=items,
+                            items=items,
+                            filled=True,
+                            chips=True,
+                            label="Chips",
+                            multiple=True,
+                        ),
+                    ],
+                ),
+                v.Col(
+                    class_="d-flex",
+                    cols=12,
+                    sm=6,
+                    children=[
+                        v.Select(
+                            v_model=items,
+                            items=items,
+                            chips=True,
+                            label="Chips",
+                            multiple=True,
+                            outlined=True,
+                        ),
+                    ],
+                ),
+                v.Col(
+                    class_="d-flex",
+                    cols=12,
+                    sm=6,
+                    children=[
+                        v.Select(
+                            v_model=items,
+                            items=items,
+                            chips=True,
+                            label="Chips",
+                            multiple=True,
+                            solo=True,
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

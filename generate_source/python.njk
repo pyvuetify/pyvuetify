@@ -33,11 +33,37 @@ class {{ widget.name }}({{ widget.inherits | join(", ") }}):
     {% if widget.properties %}
     {% for propName, prop in widget.properties %}
     {{ propName }} = {{ prop.traitDef }}
+    {% if prop.doc %}
+    """{{ prop.doc }}"""
+    {% endif %}
 
     {% endfor %}
     {% else %}
     pass
     {% endif %}
+
+    def __init__(self, {% if widget.properties %}{% for n, p in widget.properties %}{% if not n.startsWith('_') %}{{ n }}=None, {% endif %}{% endfor %}{% endif %}**kwargs):
+        """Initialize an instance of {{ widget.name }} that can be added to the DOM.
+
+{% if widget.doc %}
+        {{ widget.doc }}
+{% endif %}
+
+        Arguments:
+{% if widget.properties %}
+{% for propName, prop in widget.properties %}
+{% if not propName.startsWith('_') %}
+            {{ propName }}: {% if prop.doc %}{{ prop.doc }}{% else %}No description available.{% endif %}
+
+{% endif %}
+{% endfor %}
+{% endif %}
+            **kwargs: Additional keyword arguments passed to the parent class.
+
+        Returns:
+            An instance of {{ widget.name }} that can be added to the DOM.
+        """
+        super().__init__({% if widget.properties %}{% for n, p in widget.properties %}{% if not n.startsWith('_') %}{{ n }}={{ n }}, {% endif %}{% endfor %}{% endif %}**kwargs)
 {#
 # Bug in traitlets, it doesn't set it, which triggers the bug fixed here:
 # https://github.com/jupyter-widgets/ipywidgets/pull/1675
@@ -50,6 +76,9 @@ class {{ widget.name }}({{ widget.inherits | join(", ") }}):
 {% endif %}
 {% endfor %}
 {% endif %}
+
+
+
 {% endblock %}
 {% endblock %}
 {% endfor %}

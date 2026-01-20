@@ -24,6 +24,7 @@ js/lib
 
 # Sphinx documentation
 docs/_build/
+docs/autoapi/
 
 # Jupyter Notebook
 .ipynb_checkpoints

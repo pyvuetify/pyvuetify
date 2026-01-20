@@ -1,0 +1,60 @@
+import ipyvuetify as v
+
+colors = ["indigo", "pink", "success", "error"]
+
+v.Container(
+    class_="mx-auto my-2",
+    children=[
+        v.Row(
+            children=[
+                v.Col(
+                    cols="12",
+                    sm="6",
+                    children=[
+                        v.TextField(
+                            color=colors[0],
+                            v_model=colors[0],
+                            label="Regular",
+                        )
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    sm="6",
+                    children=[
+                        v.TextField(
+                            color=colors[1],
+                            v_model=colors[1],
+                            solo=True,
+                            label="Solo",
+                        )
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    sm="6",
+                    children=[
+                        v.TextField(
+                            color=colors[2],
+                            v_model=colors[2],
+                            filled=True,
+                            label="Filled",
+                        )
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    sm="6",
+                    children=[
+                        v.TextField(
+                            color=colors[3],
+                            v_model=colors[3],
+                            label="Outlined",
+                            outlined=True,
+                        )
+                    ],
+                ),
+            ]
+        )
+    ],
+)

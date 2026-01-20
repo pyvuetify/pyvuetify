@@ -1,0 +1,11 @@
+<template>
+  <v-data-table
+    :headers="headers"
+    :items="desserts"
+    item-key="name"
+    sort-by="name"
+    group-by="category"
+    class="elevation-1"
+    show-group-by
+  ></v-data-table>
+</template>

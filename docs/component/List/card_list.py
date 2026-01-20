@@ -1,0 +1,146 @@
+import ipyvuetify as v
+
+v.Card(
+    width=500,
+    class_="mx-auto my-2",
+    children=[
+        v.Img(
+            src="https://cdn.vuetifyjs.com/images/lists/ali.png",
+            height="300px",
+            dark=True,
+            children=[
+                v.Row(
+                    class_="fill-height",
+                    children=[
+                        v.CardTitle(
+                            children=[
+                                v.Btn(
+                                    dark=True,
+                                    icon=True,
+                                    children=[v.Icon(children=["mdi-chevron-left"])],
+                                ),
+                                v.Spacer(),
+                                v.Btn(
+                                    dark=True,
+                                    icon=True,
+                                    class_="mr-4",
+                                    children=[v.Icon(children=["mdi-pencil"])],
+                                ),
+                                v.Btn(
+                                    dark=True,
+                                    icon=True,
+                                    children=[v.Icon(children=["mdi-dots-vertical"])],
+                                ),
+                            ]
+                        ),
+                        v.Spacer(),
+                        v.CardTitle(
+                            class_="white--text pl-12 pt-12",
+                            children=[
+                                v.Html(
+                                    tag="div",
+                                    class_="text-h4 pl-12 pt-12",
+                                    children=["Ali Conners"],
+                                ),
+                            ],
+                        ),
+                    ],
+                )
+            ],
+        ),
+        v.List(
+            two_line=True,
+            children=[
+                v.ListItem(
+                    children=[
+                        v.ListItemIcon(
+                            children=[
+                                v.Icon(color="indigo", children=["mdi-phone"]),
+                            ]
+                        ),
+                        v.ListItemContent(
+                            children=[
+                                v.ListItemTitle(children=["(650) 555-1234"]),
+                                v.ListItemSubtitle(children=["Mobile"]),
+                            ]
+                        ),
+                        v.ListItemIcon(
+                            children=[
+                                v.Icon(children=["mdi-message-text"]),
+                            ]
+                        ),
+                    ]
+                ),
+                v.ListItem(
+                    children=[
+                        v.ListItemAction(),
+                        v.ListItemContent(
+                            children=[
+                                v.ListItemTitle(children=["(323) 555-6789"]),
+                                v.ListItemSubtitle(children=["Work"]),
+                            ]
+                        ),
+                        v.ListItemIcon(
+                            children=[
+                                v.Icon(children=["mdi-message-text"]),
+                            ]
+                        ),
+                    ]
+                ),
+                v.Divider(inset=True),
+                v.ListItem(
+                    children=[
+                        v.ListItemIcon(
+                            children=[
+                                v.Icon(color="indigo", children=["mdi-email"]),
+                            ]
+                        ),
+                        v.ListItemContent(
+                            children=[
+                                v.ListItemTitle(children=["ali.conners@example.com"]),
+                                v.ListItemSubtitle(children=["Personnal"]),
+                            ]
+                        ),
+                        v.ListItemIcon(
+                            children=[
+                                v.Icon(children=["mdi-email-outline"]),
+                            ]
+                        ),
+                    ]
+                ),
+                v.ListItem(
+                    children=[
+                        v.ListItemAction(),
+                        v.ListItemContent(
+                            children=[
+                                v.ListItemTitle(children=["ali.conners@example.com"]),
+                                v.ListItemSubtitle(children=["Email"]),
+                            ]
+                        ),
+                        v.ListItemIcon(
+                            children=[
+                                v.Icon(children=["mdi-email-outline"]),
+                            ]
+                        ),
+                    ]
+                ),
+                v.Divider(inset=True),
+                v.ListItem(
+                    children=[
+                        v.ListItemIcon(
+                            children=[
+                                v.Icon(color="indigo", children=["mdi-map-marker"]),
+                            ]
+                        ),
+                        v.ListItemContent(
+                            children=[
+                                v.ListItemTitle(children=["1400 Main Street"]),
+                                v.ListItemSubtitle(children=["Orlando, FL 79938"]),
+                            ]
+                        ),
+                    ]
+                ),
+            ],
+        ),
+    ],
+)

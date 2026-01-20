@@ -1,0 +1,65 @@
+import ipyvuetify as v
+
+v.Card(
+    height="300",
+    flat=True,
+    children=[
+        v.Snackbar(
+            v_model=True,
+            absolute=True,
+            left=True,
+            shaped=True,
+            top=True,
+            children=["snackbar with ", v.Html(tag="strong", children=["Shaped"]), " property."],
+        ),
+        v.Snackbar(
+            v_model=True,
+            color="blue-grey",
+            absolute=True,
+            right=True,
+            rounded="pill",
+            top=True,
+            children=['rounded="pill"'],
+        ),
+        v.Snackbar(
+            v_model=True,
+            absolute=True,
+            centered=True,
+            left=True,
+            color="deep-purple accent-4",
+            elevation=24,
+            children=[
+                "snackbar with ",
+                v.Html(tag="strong", children=["elevation: 24"]),
+                " property.",
+            ],
+        ),
+        v.Snackbar(
+            v_model=True,
+            absolute=True,
+            centered=True,
+            right=True,
+            tile=True,
+            color="red accent-2",
+            children=["snackbar with ", v.Html(tag="strong", children=["tile"]), " property."],
+        ),
+        v.Snackbar(
+            v_model=True,
+            absolute=True,
+            bottom=True,
+            color="primary",
+            left=True,
+            text=True,
+            children=["snackbar with ", v.Html(tag="strong", children=["text"]), " property."],
+        ),
+        v.Snackbar(
+            v_model=True,
+            absolute=True,
+            bottom=True,
+            color="success",
+            outlined=True,
+            right=True,
+            children=["snackbar with ", v.Html(tag="strong", children=["outlined"]), " property."],
+        ),
+    ],
+)

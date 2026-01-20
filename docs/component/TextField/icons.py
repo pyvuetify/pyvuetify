@@ -1,0 +1,54 @@
+import ipyvuetify as v
+
+v.Container(
+    children=[
+        v.Form(
+            children=[
+                v.Row(
+                    children=[
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Prepend",
+                                    prepend_icon="mdi-map-marker",
+                                ),
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Prepend inner",
+                                    prepend_inner_icon="mdi-map-marker",
+                                )
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Append",
+                                    append_icon="mdi-map-marker",
+                                )
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Append outer",
+                                    append_outer_icon="mdi-map-marker",
+                                )
+                            ],
+                        ),
+                    ]
+                )
+            ]
+        )
+    ]
+)
