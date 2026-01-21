@@ -1,54 +1,46 @@
 [build-system]
-requires = [ "jupyterlab~=4.0", "setuptools>=40.8.0", "wheel", "pynpm"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
-name = "ipyvuetify"
-version = "1.11.3"
-description="Jupyter widgets based on vuetify UI components"
-requires-python = ">=3.6"
-dependencies = ["ipyvue>=1.7,<2"]
-keywords=["ipython", "jupyter", "widgets"]
-license-files = ["LICENSE"]
-authors = [
-    {name = "Mario Buikhuizen", email = "mbuikhuizen@gmail.com"},
-    {name = "Maarten Breddels", email = "maartenbreddels@gmail.com"},
-]
+name = "pyvuetify"
+version = "0.0.0"
+dependencies = ["anywidget"]
+readme = "README.md"
+description="interactive IPython widgets based on vuetify UI components"
 classifiers=[
-    "Development Status :: 5 - Production/Stable",
     "Framework :: IPython",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
     "Topic :: Multimedia :: Graphics",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3",
 ]
+requires-python = ">=3.10"
+
+[[project.authors]]
+name = "Pierrick Rambaud"
+email = "pierrick.rambaud40@gmail.com"
 
 [project.urls]
-repository = "https://github.com/widgetti/ipyvuetify"
+repository = "https://github.com/pyvuetify/pyvuetify"
 
-[project.readme]
-file = "README.md"
-content-type = "text/markdown"
+[dependency-groups]
+dev = ["watchfiles", "jupyter"]
+docs = ["sphinx", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme", "sphinx-autoapi", "sphinx-design", "astroid>3", "sphinx-copybutton", "sphinx-last-updated-by-git"]
 
-[project.optional-dependencies]
-dev = ["nox", "pre-commit", "mypy"]
-doc = ["sphinx", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme", "sphinx-autoapi", "sphinx-design", "astroid>3", "sphinx-copybutton", "sphinx-last-updated-by-git"]
-test = ["pytest", "pytest-playwright<0.6", "nbformat<5.10", "jupyterlab<4", "solara[pytest]"]
+[tool.hatch.build]
+only-packages = true
+artifacts = ["pyvuetify/static/*"]
 
-[tool.setuptools]
-include-package-data = true
+[tool.hatch.build.hooks.jupyter-builder]
+build-function = "hatch_jupyter_builder.npm_builder"
+ensured-targets = ["pyvuetify/static/widget.js"]
+skip-if-exists = ["pyvuetify/static/widget.js"]
+dependencies = ["hatch-jupyter-builder>=0.5.0"]
 
-[tool.setuptools.packages.find]
-include = ["ipyvuetify*"]
-exclude = ["docs*", "tests*"]
-
-[tool.distutils.bdist_wheel]
-universal = true
+[tool.hatch.build.hooks.jupyter-builder.build-kwargs]
+npm = "npm"
+build_cmd = "build"
 
 [tool.ruff]
 ignore-init-module-imports = true
