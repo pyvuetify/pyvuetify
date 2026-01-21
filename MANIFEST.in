@@ -1,4 +1,0 @@
-include LICENSE
-recursive-include prefix *.*
-recursive-include ipyvuetify/extra *.vue
-recursive-include ipyvuetify/generated *.*
