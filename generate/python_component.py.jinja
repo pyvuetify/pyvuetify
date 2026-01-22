@@ -1,0 +1,40 @@
+import pathlib
+
+import anywidget
+import traitlets
+
+bundled_path = pathlib.Path(__file__).parent / "static"
+
+
+class {{ class_name }}(anywidget.AnyWidget):
+    """The {{ class_name }} component.
+{%- if doc %}
+
+    {{ doc }}
+{%- endif %}
+
+    Args:
+{%- for prop in props %}
+        {{ prop.name }}: {{ prop.doc }}
+{%- endfor %}
+
+    Returns:
+        A {{ class_name }} widget.
+    """
+
+    _esm = bundled_path / "{{ esm_filename }}"
+    _css = bundled_path / "{{ css_filename }}"
+
+{%- for prop in props %}
+
+    {{ prop.name }} = traitlets.Any(allow_none=True).tag(sync=True)
+    """{{ prop.doc }}"""
+{%- endfor %}
+
+    def __init__(self, {%- for prop in props %}{{ prop.name }}=None,{% endfor %} **kwargs):
+        """Initialize a {{ class_name }} widget."""
+{% for prop in props %}
+        self.{{ prop.name }} = {{ prop.name or 'None' }}
+{%- endfor %}
+
+        super().__init__(**kwargs)

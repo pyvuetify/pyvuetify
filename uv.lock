@@ -1432,6 +1432,7 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "jinja2" },
     { name = "jupyter" },
     { name = "watchfiles" },
 ]
@@ -1456,6 +1457,7 @@ requires-dist = [{ name = "anywidget" }]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "jinja2" },
     { name = "jupyter" },
     { name = "watchfiles" },
 ]
