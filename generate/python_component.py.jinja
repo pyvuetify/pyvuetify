@@ -3,38 +3,51 @@ import pathlib
 import anywidget
 import traitlets
 
-bundled_path = pathlib.Path(__file__).parent / "static"
+bundled_path = pathlib.Path(__file__).parents[1] / "static"
 
 
-class {{ class_name }}(anywidget.AnyWidget):
-    """The {{ class_name }} component.
-{%- if doc %}
+class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
+    """The {{ v_component.name.removeprefix("V") }} component.
 
-    {{ doc }}
-{%- endif %}
+    {{ v_component.description }}
 
     Args:
-{%- for prop in props %}
-        {{ prop.name }}: {{ prop.doc }}
+        children: The child nodes of the DOM element.
+{%- for p in v_component.attributes %}
+        {{ p.name | to_snake }}: {{ p.description | default("No description available.") }}
 {%- endfor %}
 
     Returns:
-        A {{ class_name }} widget.
+        A {{ v_component.name }} widget.
+
+    seealso:
+        `{{ v_component["doc-url"] }}`__
     """
 
-    _esm = bundled_path / "{{ esm_filename }}"
-    _css = bundled_path / "{{ css_filename }}"
+    _esm = bundled_path / "{{ v_component.name }}.mjs"
+    _css = bundled_path / "{{ v_component.name }}.css"
 
-{%- for prop in props %}
+    children = traitlets.Any(allow_none=True).tag(sync=True)
+    """The child nodes of the DOM element."""
 
-    {{ prop.name }} = traitlets.Any(allow_none=True).tag(sync=True)
-    """{{ prop.doc }}"""
+{%- for p in v_component.attributes %}
+
+    {{ p.name | to_snake }} = traitlets.{{ p.value.type | map_type }}(allow_none=True).tag(sync=True)
+    """{{ p.description | default("No description available.") }}"""
 {%- endfor %}
 
-    def __init__(self, {%- for prop in props %}{{ prop.name }}=None,{% endfor %} **kwargs):
-        """Initialize a {{ class_name }} widget."""
-{% for prop in props %}
-        self.{{ prop.name }} = {{ prop.name or 'None' }}
-{%- endfor %}
+    def __init__(
+        self,
+        children=None,
+        {%- for p in v_component.attributes %}
+        {{ p.name | to_snake }}={{ p.get("default", "null") | map_default }},
+        {%- endfor %}
+        **kwargs
+    ):
+        """Initialize a {{ v_component.name.removeprefix("V") }} widget."""
+        self.children = children
+        {%- for p in v_component.attributes %}
+        self.{{ p.name | to_snake }} = {{ p.name | to_snake }}
+        {%- endfor %}
 
         super().__init__(**kwargs)

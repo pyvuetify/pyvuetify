@@ -5,21 +5,31 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
 
+from extension import TypeMapperExtension
+
 # Setup logging
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 # create constant Path variables
 HERE = Path(__file__).parent
-API_JSON = HERE / "vuetify_api.json"
-OUTPUT_JS_DIR = HERE.parent / "js" / "component"
-OUTPUT_PYTHON_DIR = HERE.parent / "pyvuetify"
+ROOT = HERE.parent
+API_JSON = ROOT / "node_modules" / "vuetify" / "dist" / "json" / "web-types.json"
+OUTPUT_JS_DIR = ROOT / "js" / "component"
+OUTPUT_PYTHON_DIR = ROOT / "pyvuetify" / "_component"
+
 
 # compiled regex pattern for snake_case conversion
 pattern = re.compile(r"(?<!^)(?=[A-Z])")
 
 # Setup Jinja2 environment
-jinja_env = Environment(loader=FileSystemLoader(HERE))
+jinja_env = Environment(
+    loader=FileSystemLoader(HERE),
+    extensions=["jinja2_strcase.StrcaseExtension", TypeMapperExtension],
+)
 
+# limit for deugging
+limit = 10
 
 def to_camel_case(s: str) -> str:
     """Convert a component name from kebab-case to CamelCase."""
@@ -38,40 +48,53 @@ def generate_component_files():
     OUTPUT_JS_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_PYTHON_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Read the JSON file
-    api_data = json.loads(API_JSON.read_text(encoding="utf-8"))
+    # Read the JSON file for the complete API description
+    # add the missing case adaptation of the names that will be used in the files
+    if not API_JSON.exists():
+        msg = f"API JSON file not found at {API_JSON}, please run 'npm install' first to install Vuetify."
+        raise FileNotFoundError(msg)
+    api_data = json.loads(API_JSON.read_text(encoding="utf-8"))["contributions"]["html"]["tags"]
 
     # Process each component
-    for i, (component_name, component_data) in enumerate(api_data.items()):
+    for i, v_component in enumerate(api_data):
 
-        # create the files
-        camel_case_name = to_camel_case(component_name)
-        vue_file = OUTPUT_JS_DIR / f"{camel_case_name}.vue"
-        vue_file.write_text("", encoding="utf-8")
-        logger.info(f"Created: {camel_case_name}.vue")
+        # add the case adapted names to the api_data
 
-        js_file = OUTPUT_JS_DIR / f"{camel_case_name}.js"
-        js_file.write_text("", encoding="utf-8")
-        logger.info(f"Created: {camel_case_name}.js")
+        # create the vue component file from template
+        vue_file = OUTPUT_JS_DIR / f"{v_component['name']}.vue"
+        vue_template = jinja_env.get_template("vue_component.vue.jinja")
+        vue_content = vue_template.render(v_component=v_component)
+        vue_file.write_text(vue_content, encoding="utf-8")
+        logger.info(f"Created: {v_component['name']}.vue")
+
+        # create the js component file from template
+        js_file = OUTPUT_JS_DIR / f"{v_component['name']}.js"
+        js_template = jinja_env.get_template("js_component.js.jinja")
+        js_content = js_template.render(v_component=v_component)
+        js_file.write_text(js_content, encoding="utf-8")
+        logger.info(f"Created: {v_component['name']}.js")
 
         # Generate Python file from template
-        python_file = OUTPUT_PYTHON_DIR / f"{camel_case_name}.py"
+        python_file = OUTPUT_PYTHON_DIR / f"{v_component['name'].removeprefix('V')}.py"
         python_template = jinja_env.get_template("python_component.py.jinja")
-        props = component_data.get("props", [])
-        props = [{"name": to_snake_case(p["name"]), "doc": p.get("doc", "")} for p in props]
-        python_content = python_template.render(
-            class_name=camel_case_name,
-            esm_filename=f"{camel_case_name}.mjs",
-            css_filename=f"{camel_case_name}.css",
-            props=props,
-            doc=component_data.get("doc", ""),
-        )
+        python_content = python_template.render(v_component=v_component)
         python_file.write_text(python_content, encoding="utf-8")
-        logger.info(f"Created: {camel_case_name}.py")
+        logger.info(f"Created: {v_component['name'].removeprefix('V')}.py")
 
-        if i == 10:
-            break  # Limit to first 10 components for demonstration
+        if i == limit:
+            break
 
+    # create an init file for each component of the package
+    # init_file = OUTPUT_PYTHON_DIR / "__init__.py"
+    # module_names = []
+    # for i, component_name in enumerate(api_data.keys()):
+    #     module_names.append(to_camel_case(component_name))
+    #     if i == limit:
+    #         break
+    # init_template = jinja_env.get_template("python_init.py.jinja")
+    # init_content = init_template.render(module_names=module_names)
+    # init_file.write_text(init_content, encoding="utf-8")
+    # logger.info(f"Created: __init__.py")
 
 if __name__ == "__main__":
     generate_component_files()

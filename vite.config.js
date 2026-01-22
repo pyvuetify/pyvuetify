@@ -13,11 +13,11 @@ export default defineConfig({
   build: {
     outDir: resolve(__dirname, "pyvuetify/static"),
     lib: {
-      entry: resolve(__dirname, "js/component/alert.js"),
-      fileName: "alert",
+      entry: resolve(__dirname, "js/component/VAlert.js"),
+      fileName: "VAlert",
       formats: ["es"],
     },
-    minify: false, // Uncomment to make it easier to debug errors.
+    minify: false,
   },
   define: {
     // DOCS: https://vite.dev/guide/build.html#css-support

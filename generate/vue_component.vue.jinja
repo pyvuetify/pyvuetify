@@ -1,0 +1,19 @@
+<template>
+  <{{ v_component.name | to_kebab }}
+  {%- for p in v_component.attributes %}
+    :{{ p.name }}="{{ p.name }}"
+  {%- endfor %}
+  >
+    {% raw %}{{ children }}{% endraw %}
+  </{{ v_component.name | to_kebab }}>
+</template>
+
+<script setup>
+import { useModelState } from "@pyvuetify/vuetify";
+
+// Reactive state synced with Python
+const children = useModelState("children");
+{%- for p in v_component.attributes %}
+const {{ p.name }} = useModelState("{{ p.name | to_snake }}");
+{%- endfor %}
+</script>
