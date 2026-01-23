@@ -9,184 +9,288 @@ bundled_path = pathlib.Path(__file__).parents[1] / "static"
 class BottomSheet(anywidget.AnyWidget):
     """The BottomSheet component.
 
-    The v-bottom-sheet component is used to display supplemental content anchored to the bottom of the screen. It's a variation of the v-dialog component.
+    
 
     Args:
         children: The child nodes of the DOM element.
-        activator: Designate a custom activator when the `activator` slot is not used. String can be any valid querySelector and Object can be any valid Node.
-        attach: Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default.
-        close_delay: Milliseconds to wait before closing component. Only applies to hover and focus events.
-        content_class: Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the `v-app` component (unless the **attach** prop is provided) and is not targetable by classes passed directly on the component.
-        dark: Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html).
         disabled: Removes the ability to click or target the component.
-        eager: Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.
-        fullscreen: 
-        hide_overlay: Hides the display of the overlay.
-        inset: Reduces the sheet content maximum width to 70%.
-        internal_activator: 
-        light: Applies the light theme variant to the component.
-        max_width: Sets the maximum width for the component.
-        no_click_animation: 
-        open_delay: Milliseconds to wait before opening component. Only applies to hover and focus events.
-        open_on_hover: 
-        origin: Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin).
-        overlay_color: Sets the overlay color.
-        overlay_opacity: Sets the overlay opacity.
-        persistent: Clicking outside or pressing **esc** key will not dismiss the dialog
-        retain_focus: 
-        return_value: 
-        scrollable: Allows the use of the mouse wheel in the picker
-        transition: Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own.
-        value: Controls whether the component is visible or hidden.
+        height: Sets the height for the component.
         width: Sets the width for the component.
+        model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
+        location: Specifies the anchor point for positioning the component, using directional cues to align it either horizontally, vertically, or both..
+        absolute: Applies **position: absolute** to the content element.
+        theme: Specify a theme for this component and all of its children.
+        transition: Sets the component transition. Can be one of the [built in](/styles/transitions/) or custom transition.
+        max_height: Sets the maximum height for the component.
+        max_width: Sets the maximum width for the component.
+        min_height: Sets the minimum height for the component.
+        min_width: Sets the minimum width for the component.
+        activator: Explicitly sets the overlay's activator.
+        inset: Reduces the sheet content maximum width to 70%.
+        fullscreen: Changes layout for fullscreen display.
+        scrollable: When set to true, expects a `v-card` and a `v-card-text` component with a designated height. For more information, check out the [scrollable example](/components/dialogs#scrollable).
+        close_on_back: Closes the overlay content when the browser's back button is pressed or `$router.back()` is called, cancelling the original navigation. `persistent` overlays will cancel navigation and animate as if they were clicked outside instead of closing.
+        contained: Limits the size of the component and scrim to its offset parent. Implies `absolute` and `attach`. (Note: The parent element must have position: relative.).
+        content_class: Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the `v-app` component (unless the **attach** prop is provided) and is not targetable by classes passed directly on the component.
+        content_props: Apply custom properties to the content.
+        opacity: Sets the opacity of the scrim element. Only applies if `scrim` is enabled.
+        no_click_animation: Disables the bounce effect when clicking outside of the content element when using the persistent prop.
+        persistent: Clicking outside of the element or pressing esc key will not deactivate it.
+        scrim: Accepts true/false to enable background, and string to define color.
+        z_index: The z-index used for the component.
+        target: For locationStrategy="connected", specify an element or array of x,y coordinates that the overlay should position itself relative to. This will be the activator element by default.
+        activator_props: Apply custom properties to the activator.
+        open_on_click: Activate the component when the activator is clicked.
+        open_on_hover: Activate the component when the activator is hovered.
+        open_on_focus: Activate the component when the activator is focused.
+        close_on_content_click: Closes component when you click on its content.
+        close_delay: Milliseconds to wait before closing component. Only applies to hover and focus events.
+        open_delay: Milliseconds to wait before opening component. Only applies to hover and focus events.
+        eager: Forces the component's content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.
+        location_strategy: A function used to specifies how the component should position relative to its activator.
+        origin: Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin).
+        offset: Increases distance from the target. When passed as a pair of numbers, the second value shifts anchor along the side and away from the target.
+        stick_to_target: Enables the overlay content to go off-screen when scrolling.
+        viewport_margin: Sets custom viewport margin for the overlay content
+        scroll_strategy: Strategy used when the component is activate and user scrolls.
+        retain_focus: Captures and keeps focus within the content element when using **Tab** and **Shift**+**Tab**. Recommended to be `false` when using external tools that require focus such as TinyMCE or vue-clipboard.
+        capture_focus: MISSING DESCRIPTION ([edit in github](https://github.com/vuetifyjs/vuetify/tree//packages/api-generator/src/locale/en/focusTrap.json))
+        attach: Specifies which DOM element the overlay content should teleport to. Can be a direct element reference, querySelector string, or `true` to disable teleporting. Uses `body` by default.
 
     Returns:
-        A BottomSheet widget.
+        A VBottomSheet widget.
+
+    seealso:
+        `https://vuetifyjs.com/api/v-bottom-sheet`__
     """
 
-    _esm = bundled_path / "BottomSheet.js"
-    _css = bundled_path / "pyvuetify.css"
+    _esm = bundled_path / "VBottomSheet.js"
+    _css = bundled_path / "VBottomSheet-pyvuetify.css"
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
 
-    activator = traitlets.Any(allow_none=True).tag(sync=True)
-    """Designate a custom activator when the `activator` slot is not used. String can be any valid querySelector and Object can be any valid Node."""
-
-    attach = traitlets.Any(allow_none=True).tag(sync=True)
-    """Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default."""
-
-    close_delay = traitlets.Any(allow_none=True).tag(sync=True)
-    """Milliseconds to wait before closing component. Only applies to hover and focus events."""
-
-    content_class = traitlets.Any(allow_none=True).tag(sync=True)
-    """Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the `v-app` component (unless the **attach** prop is provided) and is not targetable by classes passed directly on the component."""
-
-    dark = traitlets.Any(allow_none=True).tag(sync=True)
-    """Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html)."""
-
-    disabled = traitlets.Any(allow_none=True).tag(sync=True)
+    disabled = traitlets.Bool(allow_none=True).tag(sync=True)
     """Removes the ability to click or target the component."""
 
-    eager = traitlets.Any(allow_none=True).tag(sync=True)
-    """Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO."""
-
-    fullscreen = traitlets.Any(allow_none=True).tag(sync=True)
-    """"""
-
-    hide_overlay = traitlets.Any(allow_none=True).tag(sync=True)
-    """Hides the display of the overlay."""
-
-    inset = traitlets.Any(allow_none=True).tag(sync=True)
-    """Reduces the sheet content maximum width to 70%."""
-
-    internal_activator = traitlets.Any(allow_none=True).tag(sync=True)
-    """"""
-
-    light = traitlets.Any(allow_none=True).tag(sync=True)
-    """Applies the light theme variant to the component."""
-
-    max_width = traitlets.Any(allow_none=True).tag(sync=True)
-    """Sets the maximum width for the component."""
-
-    no_click_animation = traitlets.Any(allow_none=True).tag(sync=True)
-    """"""
-
-    open_delay = traitlets.Any(allow_none=True).tag(sync=True)
-    """Milliseconds to wait before opening component. Only applies to hover and focus events."""
-
-    open_on_hover = traitlets.Any(allow_none=True).tag(sync=True)
-    """"""
-
-    origin = traitlets.Any(allow_none=True).tag(sync=True)
-    """Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin)."""
-
-    overlay_color = traitlets.Any(allow_none=True).tag(sync=True)
-    """Sets the overlay color."""
-
-    overlay_opacity = traitlets.Any(allow_none=True).tag(sync=True)
-    """Sets the overlay opacity."""
-
-    persistent = traitlets.Any(allow_none=True).tag(sync=True)
-    """Clicking outside or pressing **esc** key will not dismiss the dialog"""
-
-    retain_focus = traitlets.Any(allow_none=True).tag(sync=True)
-    """"""
-
-    return_value = traitlets.Any(allow_none=True).tag(sync=True)
-    """"""
-
-    scrollable = traitlets.Any(allow_none=True).tag(sync=True)
-    """Allows the use of the mouse wheel in the picker"""
-
-    transition = traitlets.Any(allow_none=True).tag(sync=True)
-    """Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own."""
-
-    value = traitlets.Any(allow_none=True).tag(sync=True)
-    """Controls whether the component is visible or hidden."""
+    height = traitlets.Any(allow_none=True).tag(sync=True)
+    """Sets the height for the component."""
 
     width = traitlets.Any(allow_none=True).tag(sync=True)
     """Sets the width for the component."""
 
+    model_value = traitlets.Bool(allow_none=True).tag(sync=True)
+    """The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array."""
+
+    location = traitlets.Any(allow_none=True).tag(sync=True)
+    """Specifies the anchor point for positioning the component, using directional cues to align it either horizontally, vertically, or both.."""
+
+    absolute = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Applies **position: absolute** to the content element."""
+
+    theme = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Specify a theme for this component and all of its children."""
+
+    transition = traitlets.Any(allow_none=True).tag(sync=True)
+    """Sets the component transition. Can be one of the [built in](/styles/transitions/) or custom transition."""
+
+    max_height = traitlets.Any(allow_none=True).tag(sync=True)
+    """Sets the maximum height for the component."""
+
+    max_width = traitlets.Any(allow_none=True).tag(sync=True)
+    """Sets the maximum width for the component."""
+
+    min_height = traitlets.Any(allow_none=True).tag(sync=True)
+    """Sets the minimum height for the component."""
+
+    min_width = traitlets.Any(allow_none=True).tag(sync=True)
+    """Sets the minimum width for the component."""
+
+    activator = traitlets.Any(allow_none=True).tag(sync=True)
+    """Explicitly sets the overlay's activator."""
+
+    inset = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Reduces the sheet content maximum width to 70%."""
+
+    fullscreen = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Changes layout for fullscreen display."""
+
+    scrollable = traitlets.Bool(allow_none=True).tag(sync=True)
+    """When set to true, expects a `v-card` and a `v-card-text` component with a designated height. For more information, check out the [scrollable example](/components/dialogs#scrollable)."""
+
+    close_on_back = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Closes the overlay content when the browser's back button is pressed or `$router.back()` is called, cancelling the original navigation. `persistent` overlays will cancel navigation and animate as if they were clicked outside instead of closing."""
+
+    contained = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Limits the size of the component and scrim to its offset parent. Implies `absolute` and `attach`. (Note: The parent element must have position: relative.)."""
+
+    content_class = traitlets.Any(allow_none=True).tag(sync=True)
+    """Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the `v-app` component (unless the **attach** prop is provided) and is not targetable by classes passed directly on the component."""
+
+    content_props = traitlets.Any(allow_none=True).tag(sync=True)
+    """Apply custom properties to the content."""
+
+    opacity = traitlets.Any(allow_none=True).tag(sync=True)
+    """Sets the opacity of the scrim element. Only applies if `scrim` is enabled."""
+
+    no_click_animation = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Disables the bounce effect when clicking outside of the content element when using the persistent prop."""
+
+    persistent = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Clicking outside of the element or pressing esc key will not deactivate it."""
+
+    scrim = traitlets.Any(allow_none=True).tag(sync=True)
+    """Accepts true/false to enable background, and string to define color."""
+
+    z_index = traitlets.Any(allow_none=True).tag(sync=True)
+    """The z-index used for the component."""
+
+    target = traitlets.Any(allow_none=True).tag(sync=True)
+    """For locationStrategy="connected", specify an element or array of x,y coordinates that the overlay should position itself relative to. This will be the activator element by default."""
+
+    activator_props = traitlets.Any(allow_none=True).tag(sync=True)
+    """Apply custom properties to the activator."""
+
+    open_on_click = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Activate the component when the activator is clicked."""
+
+    open_on_hover = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Activate the component when the activator is hovered."""
+
+    open_on_focus = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Activate the component when the activator is focused."""
+
+    close_on_content_click = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Closes component when you click on its content."""
+
+    close_delay = traitlets.Any(allow_none=True).tag(sync=True)
+    """Milliseconds to wait before closing component. Only applies to hover and focus events."""
+
+    open_delay = traitlets.Any(allow_none=True).tag(sync=True)
+    """Milliseconds to wait before opening component. Only applies to hover and focus events."""
+
+    eager = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Forces the component's content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO."""
+
+    location_strategy = traitlets.Any(allow_none=True).tag(sync=True)
+    """A function used to specifies how the component should position relative to its activator."""
+
+    origin = traitlets.Any(allow_none=True).tag(sync=True)
+    """Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin)."""
+
+    offset = traitlets.Any(allow_none=True).tag(sync=True)
+    """Increases distance from the target. When passed as a pair of numbers, the second value shifts anchor along the side and away from the target."""
+
+    stick_to_target = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Enables the overlay content to go off-screen when scrolling."""
+
+    viewport_margin = traitlets.Any(allow_none=True).tag(sync=True)
+    """Sets custom viewport margin for the overlay content"""
+
+    scroll_strategy = traitlets.Any(allow_none=True).tag(sync=True)
+    """Strategy used when the component is activate and user scrolls."""
+
+    retain_focus = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Captures and keeps focus within the content element when using **Tab** and **Shift**+**Tab**. Recommended to be `false` when using external tools that require focus such as TinyMCE or vue-clipboard."""
+
+    capture_focus = traitlets.Bool(allow_none=True).tag(sync=True)
+    """MISSING DESCRIPTION ([edit in github](https://github.com/vuetifyjs/vuetify/tree//packages/api-generator/src/locale/en/focusTrap.json))"""
+
+    attach = traitlets.Any(allow_none=True).tag(sync=True)
+    """Specifies which DOM element the overlay content should teleport to. Can be a direct element reference, querySelector string, or `true` to disable teleporting. Uses `body` by default."""
+
     def __init__(
         self,
         children=None,
-        activator=None,
-        attach=None,
-        close_delay=None,
-        content_class=None,
-        dark=None,
-        disabled=None,
-        eager=None,
-        fullscreen=None,
-        hide_overlay=None,
-        inset=None,
-        internal_activator=None,
-        light=None,
-        max_width=None,
-        no_click_animation=None,
-        open_delay=None,
-        open_on_hover=None,
-        origin=None,
-        overlay_color=None,
-        overlay_opacity=None,
-        persistent=None,
-        retain_focus=None,
-        return_value=None,
-        scrollable=None,
-        transition=None,
-        value=None,
+        disabled=False,
+        height=None,
         width=None,
+        model_value=False,
+        location="bottom",
+        absolute=False,
+        theme=None,
+        transition="bottom-sheet-transition",
+        max_height=None,
+        max_width=None,
+        min_height=None,
+        min_width=None,
+        activator=None,
+        inset=False,
+        fullscreen=False,
+        scrollable=False,
+        close_on_back=True,
+        contained=False,
+        content_class=None,
+        content_props=None,
+        opacity=None,
+        no_click_animation=False,
+        persistent=False,
+        scrim=True,
+        z_index="2400",
+        target=None,
+        activator_props="{}",
+        open_on_click=None,
+        open_on_hover=False,
+        open_on_focus=None,
+        close_on_content_click=False,
+        close_delay=None,
+        open_delay=None,
+        eager=False,
+        location_strategy="static",
+        origin="center center",
+        offset=None,
+        stick_to_target=False,
+        viewport_margin="12",
+        scroll_strategy="block",
+        retain_focus=True,
+        capture_focus=True,
+        attach=False,
         **kwargs
     ):
         """Initialize a BottomSheet widget."""
         self.children = children
-
-        self.activator = activator
-        self.attach = attach
-        self.close_delay = close_delay
-        self.content_class = content_class
-        self.dark = dark
         self.disabled = disabled
-        self.eager = eager
-        self.fullscreen = fullscreen
-        self.hide_overlay = hide_overlay
-        self.inset = inset
-        self.internal_activator = internal_activator
-        self.light = light
-        self.max_width = max_width
-        self.no_click_animation = no_click_animation
-        self.open_delay = open_delay
-        self.open_on_hover = open_on_hover
-        self.origin = origin
-        self.overlay_color = overlay_color
-        self.overlay_opacity = overlay_opacity
-        self.persistent = persistent
-        self.retain_focus = retain_focus
-        self.return_value = return_value
-        self.scrollable = scrollable
-        self.transition = transition
-        self.value = value
+        self.height = height
         self.width = width
+        self.model_value = model_value
+        self.location = location
+        self.absolute = absolute
+        self.theme = theme
+        self.transition = transition
+        self.max_height = max_height
+        self.max_width = max_width
+        self.min_height = min_height
+        self.min_width = min_width
+        self.activator = activator
+        self.inset = inset
+        self.fullscreen = fullscreen
+        self.scrollable = scrollable
+        self.close_on_back = close_on_back
+        self.contained = contained
+        self.content_class = content_class
+        self.content_props = content_props
+        self.opacity = opacity
+        self.no_click_animation = no_click_animation
+        self.persistent = persistent
+        self.scrim = scrim
+        self.z_index = z_index
+        self.target = target
+        self.activator_props = activator_props
+        self.open_on_click = open_on_click
+        self.open_on_hover = open_on_hover
+        self.open_on_focus = open_on_focus
+        self.close_on_content_click = close_on_content_click
+        self.close_delay = close_delay
+        self.open_delay = open_delay
+        self.eager = eager
+        self.location_strategy = location_strategy
+        self.origin = origin
+        self.offset = offset
+        self.stick_to_target = stick_to_target
+        self.viewport_margin = viewport_margin
+        self.scroll_strategy = scroll_strategy
+        self.retain_focus = retain_focus
+        self.capture_focus = capture_focus
+        self.attach = attach
 
         super().__init__(**kwargs)

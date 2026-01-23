@@ -1,8 +1,10 @@
 {
   "name": "pyvuetify",
+  "type": "module",
   "scripts": {
     "dev": "npx vite",
-    "build": "npx vite build"
+    "build": "node build-components.js",
+    "build:single": "npx vite build"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",

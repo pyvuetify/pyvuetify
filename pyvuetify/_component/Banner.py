@@ -46,8 +46,8 @@ class Banner(anywidget.AnyWidget):
         `https://vuetifyjs.com/api/v-banner`__
     """
 
-    _esm = bundled_path / "VBanner.mjs"
-    _css = bundled_path / "VBanner.css"
+    _esm = bundled_path / "VBanner.js"
+    _css = bundled_path / "VBanner-pyvuetify.css"
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""

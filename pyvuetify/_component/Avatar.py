@@ -35,8 +35,8 @@ class Avatar(anywidget.AnyWidget):
         `https://vuetifyjs.com/api/v-avatar`__
     """
 
-    _esm = bundled_path / "VAvatar.mjs"
-    _css = bundled_path / "VAvatar.css"
+    _esm = bundled_path / "VAvatar.js"
+    _css = bundled_path / "VAvatar-pyvuetify.css"
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""

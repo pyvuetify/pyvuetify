@@ -9,166 +9,168 @@ bundled_path = pathlib.Path(__file__).parents[1] / "static"
 class BottomNavigation(anywidget.AnyWidget):
     """The BottomNavigation component.
 
-    The v-bottom-navigation component is a bottom navigation bar used for mobile applications. It displays 3-5 destinations at the bottom of a screen.
+    
 
     Args:
         children: The child nodes of the DOM element.
-        absolute: Applies **position: absolute** to the component.
-        active_class: The class applied to a [v-btn](/components/buttons) when activated.
-        app: Designates the component as part of the application layout. Used for dynamically adjusting content sizing. Components using this prop should reside **outside** of `v-main` component to function properly. You can find more information about layouts on the [application page](/components/application). **Note:** this prop automatically applies **position: fixed** to the layout element. You can overwrite this functionality by using the `absolute` prop
-        background_color: Changes the background-color for the component.
-        color: Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors).
-        dark: Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html).
-        fixed: Applies **position: fixed** to the component.
-        grow: Force [v-btn](/components/buttons)s to take up all available space.
+        tag: Specify a custom tag used on the root element.
+        name: Assign a specific name for layout registration.
+        mode: Changes the orientation and active state styling of the component.
+        disabled: Puts all children components into a disabled state.
         height: Sets the height for the component.
-        hide_on_scroll: Will transition the navigation off screen when scrolling up.
-        horizontal: Uses an alternative horizontal styling for [v-btn](/components/buttons).
-        input_value: Controls whether the component is visible or hidden. Supports the **.sync** modifier.
-        light: Applies the light theme variant to the component.
-        mandatory: Forces a value to always be selected (if available).
-        max_height: Sets the maximum height for the component.
-        max_width: Sets the maximum width for the component.
-        min_height: Sets the minimum height for the component.
-        min_width: Sets the minimum width for the component.
-        scroll_target: Designates the element to target for scrolling events. Uses `window` by default.
-        scroll_threshold: The amount of scroll distance down before **hide-on-scroll** activates.
-        shift: Hides text of [v-btn](/components/buttons)s when they are not active.
-        value: Holds the value of the currently active [v-btn](/components/buttons). If the button has no value supplied, its index will be used instead..
-        width: Sets the width for the component.
+        max: Sets a maximum number of selections that can be made.
+        multiple: Allows one to select multiple items.
+        model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
+        absolute: Applies **position: absolute** to the component.
+        color: Applies specified color to the control - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors).
+        density: Adjusts the vertical height used by the component.
+        border: Applies utility border classes to the component. To use it, you need to omit the `border-` prefix, (for example use `border-sm` as `border="sm"`).  Find a list of the built-in border classes on the [borders page](/styles/borders).
+        elevation: Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation).
+        rounded: Designates the **border-radius** applied to the component. This can be **0**, **xs**, **sm**, true, **lg**, **xl**, **pill**, **circle**, and **shaped**. Find more information on available border radius classes on the [Border Radius page](/styles/border-radius).
+        tile: Removes any applied **border-radius** from the component.
+        theme: Specify a theme for this component and all of its children.
+        order: Adjust the order of the component in relation to its registration order.
+        bg_color: Applies specified color to the control's background. Used on components that also support the **color** prop. - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors).
+        base_color: Sets the color of component when not focused.
+        grow: Force all [v-btn](/components/buttons) children to take up all available horizontal space.
+        active: Controls the **active** state of the item. This is typically used to highlight the component.
+        selected_class: Configure the active CSS class applied when an item is selected.
+        mandatory: Forces at least one item to always be selected (if available).
 
     Returns:
-        A BottomNavigation widget.
+        A VBottomNavigation widget.
+
+    seealso:
+        `https://vuetifyjs.com/api/v-bottom-navigation`__
     """
 
-    _esm = bundled_path / "BottomNavigation.js"
-    _css = bundled_path / "pyvuetify.css"
+    _esm = bundled_path / "VBottomNavigation.js"
+    _css = bundled_path / "VBottomNavigation-pyvuetify.css"
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
 
-    absolute = traitlets.Any(allow_none=True).tag(sync=True)
-    """Applies **position: absolute** to the component."""
+    tag = traitlets.Any(allow_none=True).tag(sync=True)
+    """Specify a custom tag used on the root element."""
 
-    active_class = traitlets.Any(allow_none=True).tag(sync=True)
-    """The class applied to a [v-btn](/components/buttons) when activated."""
+    name = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Assign a specific name for layout registration."""
 
-    app = traitlets.Any(allow_none=True).tag(sync=True)
-    """Designates the component as part of the application layout. Used for dynamically adjusting content sizing. Components using this prop should reside **outside** of `v-main` component to function properly. You can find more information about layouts on the [application page](/components/application). **Note:** this prop automatically applies **position: fixed** to the layout element. You can overwrite this functionality by using the `absolute` prop"""
+    mode = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Changes the orientation and active state styling of the component."""
 
-    background_color = traitlets.Any(allow_none=True).tag(sync=True)
-    """Changes the background-color for the component."""
-
-    color = traitlets.Any(allow_none=True).tag(sync=True)
-    """Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors)."""
-
-    dark = traitlets.Any(allow_none=True).tag(sync=True)
-    """Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html)."""
-
-    fixed = traitlets.Any(allow_none=True).tag(sync=True)
-    """Applies **position: fixed** to the component."""
-
-    grow = traitlets.Any(allow_none=True).tag(sync=True)
-    """Force [v-btn](/components/buttons)s to take up all available space."""
+    disabled = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Puts all children components into a disabled state."""
 
     height = traitlets.Any(allow_none=True).tag(sync=True)
     """Sets the height for the component."""
 
-    hide_on_scroll = traitlets.Any(allow_none=True).tag(sync=True)
-    """Will transition the navigation off screen when scrolling up."""
+    max = traitlets.Float(allow_none=True).tag(sync=True)
+    """Sets a maximum number of selections that can be made."""
 
-    horizontal = traitlets.Any(allow_none=True).tag(sync=True)
-    """Uses an alternative horizontal styling for [v-btn](/components/buttons)."""
+    multiple = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Allows one to select multiple items."""
 
-    input_value = traitlets.Any(allow_none=True).tag(sync=True)
-    """Controls whether the component is visible or hidden. Supports the **.sync** modifier."""
+    model_value = traitlets.Any(allow_none=True).tag(sync=True)
+    """The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array."""
 
-    light = traitlets.Any(allow_none=True).tag(sync=True)
-    """Applies the light theme variant to the component."""
+    absolute = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Applies **position: absolute** to the component."""
+
+    color = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Applies specified color to the control - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors)."""
+
+    density = traitlets.Any(allow_none=True).tag(sync=True)
+    """Adjusts the vertical height used by the component."""
+
+    border = traitlets.Any(allow_none=True).tag(sync=True)
+    """Applies utility border classes to the component. To use it, you need to omit the `border-` prefix, (for example use `border-sm` as `border="sm"`).  Find a list of the built-in border classes on the [borders page](/styles/borders)."""
+
+    elevation = traitlets.Any(allow_none=True).tag(sync=True)
+    """Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation)."""
+
+    rounded = traitlets.Any(allow_none=True).tag(sync=True)
+    """Designates the **border-radius** applied to the component. This can be **0**, **xs**, **sm**, true, **lg**, **xl**, **pill**, **circle**, and **shaped**. Find more information on available border radius classes on the [Border Radius page](/styles/border-radius)."""
+
+    tile = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Removes any applied **border-radius** from the component."""
+
+    theme = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Specify a theme for this component and all of its children."""
+
+    order = traitlets.Any(allow_none=True).tag(sync=True)
+    """Adjust the order of the component in relation to its registration order."""
+
+    bg_color = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Applies specified color to the control's background. Used on components that also support the **color** prop. - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors)."""
+
+    base_color = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Sets the color of component when not focused."""
+
+    grow = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Force all [v-btn](/components/buttons) children to take up all available horizontal space."""
+
+    active = traitlets.Bool(allow_none=True).tag(sync=True)
+    """Controls the **active** state of the item. This is typically used to highlight the component."""
+
+    selected_class = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Configure the active CSS class applied when an item is selected."""
 
     mandatory = traitlets.Any(allow_none=True).tag(sync=True)
-    """Forces a value to always be selected (if available)."""
-
-    max_height = traitlets.Any(allow_none=True).tag(sync=True)
-    """Sets the maximum height for the component."""
-
-    max_width = traitlets.Any(allow_none=True).tag(sync=True)
-    """Sets the maximum width for the component."""
-
-    min_height = traitlets.Any(allow_none=True).tag(sync=True)
-    """Sets the minimum height for the component."""
-
-    min_width = traitlets.Any(allow_none=True).tag(sync=True)
-    """Sets the minimum width for the component."""
-
-    scroll_target = traitlets.Any(allow_none=True).tag(sync=True)
-    """Designates the element to target for scrolling events. Uses `window` by default."""
-
-    scroll_threshold = traitlets.Any(allow_none=True).tag(sync=True)
-    """The amount of scroll distance down before **hide-on-scroll** activates."""
-
-    shift = traitlets.Any(allow_none=True).tag(sync=True)
-    """Hides text of [v-btn](/components/buttons)s when they are not active."""
-
-    value = traitlets.Any(allow_none=True).tag(sync=True)
-    """Holds the value of the currently active [v-btn](/components/buttons). If the button has no value supplied, its index will be used instead.."""
-
-    width = traitlets.Any(allow_none=True).tag(sync=True)
-    """Sets the width for the component."""
+    """Forces at least one item to always be selected (if available)."""
 
     def __init__(
         self,
         children=None,
-        absolute=None,
-        active_class=None,
-        app=None,
-        background_color=None,
+        tag="header",
+        name="bottom-navigation",
+        mode=None,
+        disabled=False,
+        height="56",
+        max=None,
+        multiple=False,
+        model_value=None,
+        absolute=False,
         color=None,
-        dark=None,
-        fixed=None,
-        grow=None,
-        height=None,
-        hide_on_scroll=None,
-        horizontal=None,
-        input_value=None,
-        light=None,
-        mandatory=None,
-        max_height=None,
-        max_width=None,
-        min_height=None,
-        min_width=None,
-        scroll_target=None,
-        scroll_threshold=None,
-        shift=None,
-        value=None,
-        width=None,
+        density="default",
+        border=False,
+        elevation=None,
+        rounded=None,
+        tile=False,
+        theme=None,
+        order="0",
+        bg_color=None,
+        base_color=None,
+        grow=False,
+        active=True,
+        selected_class="v-btn--selected",
+        mandatory=False,
         **kwargs
     ):
         """Initialize a BottomNavigation widget."""
         self.children = children
-
-        self.absolute = absolute
-        self.active_class = active_class
-        self.app = app
-        self.background_color = background_color
-        self.color = color
-        self.dark = dark
-        self.fixed = fixed
-        self.grow = grow
+        self.tag = tag
+        self.name = name
+        self.mode = mode
+        self.disabled = disabled
         self.height = height
-        self.hide_on_scroll = hide_on_scroll
-        self.horizontal = horizontal
-        self.input_value = input_value
-        self.light = light
+        self.max = max
+        self.multiple = multiple
+        self.model_value = model_value
+        self.absolute = absolute
+        self.color = color
+        self.density = density
+        self.border = border
+        self.elevation = elevation
+        self.rounded = rounded
+        self.tile = tile
+        self.theme = theme
+        self.order = order
+        self.bg_color = bg_color
+        self.base_color = base_color
+        self.grow = grow
+        self.active = active
+        self.selected_class = selected_class
         self.mandatory = mandatory
-        self.max_height = max_height
-        self.max_width = max_width
-        self.min_height = min_height
-        self.min_width = min_width
-        self.scroll_target = scroll_target
-        self.scroll_threshold = scroll_threshold
-        self.shift = shift
-        self.value = value
-        self.width = width
 
         super().__init__(**kwargs)

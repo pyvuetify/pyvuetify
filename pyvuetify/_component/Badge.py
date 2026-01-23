@@ -46,8 +46,8 @@ class Badge(anywidget.AnyWidget):
         `https://vuetifyjs.com/api/v-badge`__
     """
 
-    _esm = bundled_path / "VBadge.mjs"
-    _css = bundled_path / "VBadge.css"
+    _esm = bundled_path / "VBadge.js"
+    _css = bundled_path / "VBadge-pyvuetify.css"
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""

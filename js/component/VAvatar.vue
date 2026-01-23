@@ -1,19 +1,19 @@
 <template>
   <v-avatar
-    :tag="tag"
-    :size="size"
-    :image="image"
-    :start="start"
-    :end="end"
-    :color="color"
-    :density="density"
-    :border="border"
-    :rounded="rounded"
-    :tile="tile"
-    :theme="theme"
-    :text="text"
-    :icon="icon"
-    :variant="variant"
+    :tag="_tag"
+    :size="_size"
+    :image="_image"
+    :start="_start"
+    :end="_end"
+    :color="_color"
+    :density="_density"
+    :border="_border"
+    :rounded="_rounded"
+    :tile="_tile"
+    :theme="_theme"
+    :text="_text"
+    :icon="_icon"
+    :variant="_variant"
   >
     {{ children }}
   </v-avatar>
@@ -24,18 +24,18 @@ import { useModelState } from "@pyvuetify/vuetify";
 
 // Reactive state synced with Python
 const children = useModelState("children");
-const tag = useModelState("tag");
-const size = useModelState("size");
-const image = useModelState("image");
-const start = useModelState("start");
-const end = useModelState("end");
-const color = useModelState("color");
-const density = useModelState("density");
-const border = useModelState("border");
-const rounded = useModelState("rounded");
-const tile = useModelState("tile");
-const theme = useModelState("theme");
-const text = useModelState("text");
-const icon = useModelState("icon");
-const variant = useModelState("variant");
+const _tag = useModelState("tag");
+const _size = useModelState("size");
+const _image = useModelState("image");
+const _start = useModelState("start");
+const _end = useModelState("end");
+const _color = useModelState("color");
+const _density = useModelState("density");
+const _border = useModelState("border");
+const _rounded = useModelState("rounded");
+const _tile = useModelState("tile");
+const _theme = useModelState("theme");
+const _text = useModelState("text");
+const _icon = useModelState("icon");
+const _variant = useModelState("variant");
 </script>

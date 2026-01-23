@@ -9,7 +9,7 @@ bundled_path = pathlib.Path(__file__).parents[1] / "static"
 class Alert(anywidget.AnyWidget):
     """The Alert component.
 
-
+    
 
     Args:
         children: The child nodes of the DOM element.
@@ -50,8 +50,8 @@ class Alert(anywidget.AnyWidget):
         `https://vuetifyjs.com/api/v-alert`__
     """
 
-    _esm = bundled_path / "VAlert.mjs"
-    _css = bundled_path / "VAlert.css"
+    _esm = bundled_path / "VAlert.js"
+    _css = bundled_path / "VAlert-pyvuetify.css"
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
@@ -165,7 +165,7 @@ class Alert(anywidget.AnyWidget):
         min_width=None,
         width=None,
         elevation=None,
-        icon_sizes="[['x-small', 10],['small', 16],['default', 24],['large', 28],['x-large', 32]]",
+        icon_sizes="[  ['x-small', 10],  ['small', 16],  ['default', 24],  ['large', 28],  ['x-large', 32]]",
         icon_size=None,
         location=None,
         position=None,

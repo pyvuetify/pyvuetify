@@ -1,0 +1,7 @@
+import { createRender } from "@pyvuetify/vuetify";
+import VFileInput from "./VFileInput.vue";
+import "@mdi/font/css/materialdesignicons.css";
+import "vuetify/styles";
+
+const render = createRender(VFileInput);
+export default { render };

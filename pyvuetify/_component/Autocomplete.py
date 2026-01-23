@@ -113,8 +113,8 @@ class Autocomplete(anywidget.AnyWidget):
         `https://vuetifyjs.com/api/v-autocomplete`__
     """
 
-    _esm = bundled_path / "VAutocomplete.mjs"
-    _css = bundled_path / "VAutocomplete.css"
+    _esm = bundled_path / "VAutocomplete.js"
+    _css = bundled_path / "VAutocomplete-pyvuetify.css"
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""

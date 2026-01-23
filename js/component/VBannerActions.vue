@@ -1,7 +1,7 @@
 <template>
   <v-banner-actions
-    :color="color"
-    :density="density"
+    :color="_color"
+    :density="_density"
   >
     {{ children }}
   </v-banner-actions>
@@ -12,6 +12,6 @@ import { useModelState } from "@pyvuetify/vuetify";
 
 // Reactive state synced with Python
 const children = useModelState("children");
-const color = useModelState("color");
-const density = useModelState("density");
+const _color = useModelState("color");
+const _density = useModelState("density");
 </script>

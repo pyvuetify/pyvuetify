@@ -1,7 +1,7 @@
 <template>
   <v-app
-    :theme="theme"
-    :overlaps="overlaps"
+    :theme="_theme"
+    :overlaps="_overlaps"
   >
     {{ children }}
   </v-app>
@@ -12,6 +12,6 @@ import { useModelState } from "@pyvuetify/vuetify";
 
 // Reactive state synced with Python
 const children = useModelState("children");
-const theme = useModelState("theme");
-const overlaps = useModelState("overlaps");
+const _theme = useModelState("theme");
+const _overlaps = useModelState("overlaps");
 </script>

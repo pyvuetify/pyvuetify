@@ -46,8 +46,8 @@ class AppBar(anywidget.AnyWidget):
         `https://vuetifyjs.com/api/v-app-bar`__
     """
 
-    _esm = bundled_path / "VAppBar.mjs"
-    _css = bundled_path / "VAppBar.css"
+    _esm = bundled_path / "VAppBar.js"
+    _css = bundled_path / "VAppBar-pyvuetify.css"
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""

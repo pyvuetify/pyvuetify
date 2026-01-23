@@ -22,8 +22,8 @@ class AlertTitle(anywidget.AnyWidget):
         `https://vuetifyjs.com/api/v-alert-title`__
     """
 
-    _esm = bundled_path / "VAlertTitle.mjs"
-    _css = bundled_path / "VAlertTitle.css"
+    _esm = bundled_path / "VAlertTitle.js"
+    _css = bundled_path / "VAlertTitle-pyvuetify.css"
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""

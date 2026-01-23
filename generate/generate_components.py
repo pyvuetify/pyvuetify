@@ -9,7 +9,7 @@ from extension import TypeMapperExtension
 
 # Setup logging
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logging.basicConfig(level=logging.INFO)
 
 # create constant Path variables
 HERE = Path(__file__).parent
@@ -29,7 +29,7 @@ jinja_env = Environment(
 )
 
 # limit for deugging
-limit = 10
+limit = None
 
 def to_camel_case(s: str) -> str:
     """Convert a component name from kebab-case to CamelCase."""
@@ -85,17 +85,16 @@ def generate_component_files():
             break
 
     # create an init file for each component of the package
-    # init_file = OUTPUT_PYTHON_DIR / "__init__.py"
-    # module_names = []
-    # for i, component_name in enumerate(api_data.keys()):
-    #     module_names.append(to_camel_case(component_name))
-    #     if i == limit:
-    #         break
-    # init_template = jinja_env.get_template("python_init.py.jinja")
-    # init_content = init_template.render(module_names=module_names)
-    # init_file.write_text(init_content, encoding="utf-8")
-    # logger.info(f"Created: __init__.py")
+    init_file = OUTPUT_PYTHON_DIR / "__init__.py"
+    module_names = []
+    for i, v_component in enumerate(api_data):
+        module_names.append(v_component["name"].removeprefix("V"))
+        if i == limit:
+            break
+    init_template = jinja_env.get_template("python_init.py.jinja")
+    init_content = init_template.render(module_names=module_names)
+    init_file.write_text(init_content, encoding="utf-8")
+    logger.info(f"Created: __init__.py")
 
-if __name__ == "__main__":
-    generate_component_files()
-    print("\nComponent files generation completed!")
+generate_component_files()
+logger.info("\nComponent files generation completed!")

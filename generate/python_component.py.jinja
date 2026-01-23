@@ -24,8 +24,8 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
         `{{ v_component["doc-url"] }}`__
     """
 
-    _esm = bundled_path / "{{ v_component.name }}.mjs"
-    _css = bundled_path / "{{ v_component.name }}.css"
+    _esm = bundled_path / "{{ v_component.name }}.js"
+    _css = bundled_path / "{{ v_component.name }}-pyvuetify.css"
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
@@ -40,7 +40,7 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
         self,
         children=None,
         {%- for p in v_component.attributes %}
-        {{ p.name | to_snake }}={{ p.get("default", "null") | map_default }},
+        {{ p.name | to_snake }}={{ p.get("default", "null").replace("\n", "") | map_default }},
         {%- endfor %}
         **kwargs
     ):

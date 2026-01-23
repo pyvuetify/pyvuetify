@@ -23,8 +23,8 @@ class AppBarTitle(anywidget.AnyWidget):
         `https://vuetifyjs.com/api/v-app-bar-title`__
     """
 
-    _esm = bundled_path / "VAppBarTitle.mjs"
-    _css = bundled_path / "VAppBarTitle.css"
+    _esm = bundled_path / "VAppBarTitle.js"
+    _css = bundled_path / "VAppBarTitle-pyvuetify.css"
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""

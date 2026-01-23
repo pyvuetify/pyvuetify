@@ -1,7 +1,7 @@
 <template>
   <v-app-bar-title
-    :tag="tag"
-    :text="text"
+    :tag="_tag"
+    :text="_text"
   >
     {{ children }}
   </v-app-bar-title>
@@ -12,6 +12,6 @@ import { useModelState } from "@pyvuetify/vuetify";
 
 // Reactive state synced with Python
 const children = useModelState("children");
-const tag = useModelState("tag");
-const text = useModelState("text");
+const _tag = useModelState("tag");
+const _text = useModelState("text");
 </script>
