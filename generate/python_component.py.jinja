@@ -13,6 +13,7 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
 
     Args:
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
 {%- for p in v_component.attributes %}
         {{ p.name | to_snake }}: {{ p.description | default("No description available.") }}
 {%- endfor %}
@@ -30,6 +31,9 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
 
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
+
 {%- for p in v_component.attributes %}
 
     {{ p.name | to_snake }} = traitlets.{{ p.value.type | map_type }}(allow_none=True).tag(sync=True)
@@ -39,6 +43,7 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
     def __init__(
         self,
         children=None,
+        style=None,
         {%- for p in v_component.attributes %}
         {{ p.name | to_snake }}={{ p.get("default", "null").replace("\n", "") | map_default }},
         {%- endfor %}
@@ -46,6 +51,7 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
     ):
         """Initialize a {{ v_component.name.removeprefix("V") }} widget."""
         self.children = children
+        self.style = style
         {%- for p in v_component.attributes %}
         self.{{ p.name | to_snake }} = {{ p.name | to_snake }}
         {%- endfor %}

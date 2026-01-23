@@ -4,15 +4,20 @@
     :{{ p.name }}="_{{ p.name | to_snake }}"
   {%- endfor %}
   >
-    {% raw %}{{ children }}{% endraw %}
+    {% raw %}{{ _children }}{% endraw %}
   </{{ v_component.name | to_kebab }}>
 </template>
+
+<style scoped>
+  {% raw %}{{ _style }}{% endraw %}
+</style>
 
 <script setup>
 import { useModelState } from "@pyvuetify/vuetify";
 
 // Reactive state synced with Python
-const children = useModelState("children");
+const _children = useModelState("children");
+const _style = useModelState("style");
 {%- for p in v_component.attributes %}
 const _{{ p.name | to_snake }} = useModelState("{{ p.name | to_snake }}");
 {%- endfor %}
