@@ -12,7 +12,9 @@ class Chip(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         filter: Displays a selection icon when selected.
         replace: Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [replace](https://router.vuejs.org/api/#replace) prop on the vue-router documentation.
         link: Designates that the component is a link. This is automatic when using the href or to prop.
@@ -59,8 +61,14 @@ class Chip(anywidget.AnyWidget):
     _esm = bundled_path / "VChip.js"
     _css = bundled_path / "VChip-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     filter = traitlets.Bool(allow_none=True).tag(sync=True)
     """Displays a selection icon when selected."""
@@ -169,7 +177,9 @@ class Chip(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         filter=False,
         replace=False,
         link=None,
@@ -208,7 +218,9 @@ class Chip(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Chip widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.filter = filter
         self.replace = replace
         self.link = link

@@ -13,6 +13,7 @@ class Select(anywidget.AnyWidget):
 
     Args:
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         flat: Removes box shadow when using a variant with elevation.
         type: Sets input type.
         reverse: Reverses the orientation.
@@ -106,6 +107,9 @@ class Select(anywidget.AnyWidget):
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     flat = traitlets.Bool(allow_none=True).tag(sync=True)
     """Removes box shadow when using a variant with elevation."""
@@ -350,6 +354,7 @@ class Select(anywidget.AnyWidget):
     def __init__(
         self,
         children=None,
+        style=None,
         flat=False,
         type="text",
         reverse=False,
@@ -380,21 +385,21 @@ class Select(anywidget.AnyWidget):
         base_color=None,
         active=False,
         eager=False,
-        items="[]",
+        items=[],
         prepend_icon=None,
         append_icon=None,
         readonly=None,
         loading=False,
-        messages="[]",
+        messages=[],
         center_affix=None,
         glow=False,
         icon_color=False,
         hide_spin_buttons=False,
         hint=None,
         persistent_hint=False,
-        error_messages="[]",
+        error_messages=[],
         max_errors="1",
-        rules="[]",
+        rules=[],
         validate_on=None,
         focused=False,
         hide_details=False,
@@ -434,6 +439,7 @@ class Select(anywidget.AnyWidget):
     ):
         """Initialize a Select widget."""
         self.children = children
+        self.style = style
         self.flat = flat
         self.type = type
         self.reverse = reverse

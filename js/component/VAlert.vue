@@ -1,26 +1,27 @@
 <template>
   <v-alert
+    :style="_style"
     :title="_title"
     :text="_text"
     :border="_border"
-    :borderColor="_border_color"
+    :border-color="_border_color"
     :closable="_closable"
-    :closeIcon="_close_icon"
+    :close-icon="_close_icon"
     :type="_type"
-    :closeLabel="_close_label"
+    :close-label="_close_label"
     :icon="_icon"
-    :modelValue="_model_value"
+    :model-value="_model_value"
     :prominent="_prominent"
     :density="_density"
     :height="_height"
-    :maxHeight="_max_height"
-    :maxWidth="_max_width"
-    :minHeight="_min_height"
-    :minWidth="_min_width"
+    :max-height="_max_height"
+    :max-width="_max_width"
+    :min-height="_min_height"
+    :min-width="_min_width"
     :width="_width"
     :elevation="_elevation"
-    :iconSizes="_icon_sizes"
-    :iconSize="_icon_size"
+    :icon-sizes="_icon_sizes"
+    :icon-size="_icon_size"
     :location="_location"
     :position="_position"
     :rounded="_rounded"
@@ -30,7 +31,7 @@
     :color="_color"
     :variant="_variant"
   >
-    {{ children }}
+    {{ _children }}
   </v-alert>
 </template>
 
@@ -38,7 +39,8 @@
 import { useModelState } from "@pyvuetify/vuetify";
 
 // Reactive state synced with Python
-const children = useModelState("children");
+const _children = useModelState("children");
+const _style = useModelState("style");
 const _title = useModelState("title");
 const _text = useModelState("text");
 const _border = useModelState("border");

@@ -12,7 +12,9 @@ class SelectionControlGroup(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         type: Provides the default type for children selection controls.
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
         error: Puts the input in a manual error state.
@@ -41,8 +43,14 @@ class SelectionControlGroup(anywidget.AnyWidget):
     _esm = bundled_path / "VSelectionControlGroup.js"
     _css = bundled_path / "VSelectionControlGroup-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     type = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Provides the default type for children selection controls."""
@@ -97,7 +105,9 @@ class SelectionControlGroup(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         type=None,
         model_value=None,
         error=False,
@@ -118,7 +128,9 @@ class SelectionControlGroup(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a SelectionControlGroup widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.type = type
         self.model_value = model_value
         self.error = error

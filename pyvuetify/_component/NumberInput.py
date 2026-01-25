@@ -12,7 +12,9 @@ class NumberInput(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         flat: Removes box shadow when using a variant with elevation.
         type: **IGNORED** underlying input is always of type 'text'
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
@@ -89,8 +91,14 @@ class NumberInput(anywidget.AnyWidget):
     _esm = bundled_path / "VNumberInput.js"
     _css = bundled_path / "VNumberInput-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     flat = traitlets.Bool(allow_none=True).tag(sync=True)
     """Removes box shadow when using a variant with elevation."""
@@ -289,7 +297,9 @@ class NumberInput(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         flat=False,
         type="text",
         model_value=None,
@@ -358,7 +368,9 @@ class NumberInput(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a NumberInput widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.flat = flat
         self.type = type
         self.model_value = model_value

@@ -12,7 +12,9 @@ class BreadcrumbsItem(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         replace: Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [replace](https://router.vuejs.org/api/#replace) prop on the vue-router documentation.
         tag: Specify a custom tag used on the root element.
         title: Specify a title text for the component.
@@ -37,8 +39,14 @@ class BreadcrumbsItem(anywidget.AnyWidget):
     _esm = bundled_path / "VBreadcrumbsItem.js"
     _css = bundled_path / "VBreadcrumbsItem-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     replace = traitlets.Bool(allow_none=True).tag(sync=True)
     """Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [replace](https://router.vuejs.org/api/#replace) prop on the vue-router documentation."""
@@ -81,7 +89,9 @@ class BreadcrumbsItem(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         replace=False,
         tag="li",
         title=None,
@@ -98,7 +108,9 @@ class BreadcrumbsItem(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a BreadcrumbsItem widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.replace = replace
         self.tag = tag
         self.title = title

@@ -12,7 +12,9 @@ class TreeviewItem(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         title: Generates a `v-list-item-title` component with the supplied value. Note that this overrides the native [`title`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title) attribute, that must be set with `v-bind:title.attr` instead.
         replace: Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [replace](https://router.vuejs.org/api/#replace) prop on the vue-router documentation.
         link: Designates that the component is a link. This is automatic when using the href or to prop.
@@ -66,8 +68,14 @@ class TreeviewItem(anywidget.AnyWidget):
     _esm = bundled_path / "VTreeviewItem.js"
     _css = bundled_path / "VTreeviewItem-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     title = traitlets.Any(allow_none=True).tag(sync=True)
     """Generates a `v-list-item-title` component with the supplied value. Note that this overrides the native [`title`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title) attribute, that must be set with `v-bind:title.attr` instead."""
@@ -197,7 +205,9 @@ class TreeviewItem(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         title=None,
         replace=False,
         link=None,
@@ -243,7 +253,9 @@ class TreeviewItem(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a TreeviewItem widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.title = title
         self.replace = replace
         self.link = link

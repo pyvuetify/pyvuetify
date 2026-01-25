@@ -12,7 +12,9 @@ class ProgressLinear(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
         reverse: Displays reversed progress (right to left in LTR mode and left to right in RTL).
         height: Sets the height for the component.
@@ -50,8 +52,14 @@ class ProgressLinear(anywidget.AnyWidget):
     _esm = bundled_path / "VProgressLinear.js"
     _css = bundled_path / "VProgressLinear-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     model_value = traitlets.Any(allow_none=True).tag(sync=True)
     """The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array."""
@@ -133,7 +141,9 @@ class ProgressLinear(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         model_value="0",
         reverse=False,
         height="4",
@@ -163,7 +173,9 @@ class ProgressLinear(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a ProgressLinear widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.model_value = model_value
         self.reverse = reverse
         self.height = height

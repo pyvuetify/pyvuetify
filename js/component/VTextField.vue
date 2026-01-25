@@ -1,13 +1,14 @@
 <template>
   <v-text-field
+    :style="_style"
     :flat="_flat"
     :type="_type"
-    :modelValue="_model_value"
+    :model-value="_model_value"
     :error="_error"
     :reverse="_reverse"
     :density="_density"
-    :maxWidth="_max_width"
-    :minWidth="_min_width"
+    :max-width="_max_width"
+    :min-width="_min_width"
     :width="_width"
     :rounded="_rounded"
     :tile="_tile"
@@ -23,42 +24,42 @@
     :role="_role"
     :autofocus="_autofocus"
     :active="_active"
-    :baseColor="_base_color"
-    :prependIcon="_prepend_icon"
-    :appendIcon="_append_icon"
+    :base-color="_base_color"
+    :prepend-icon="_prepend_icon"
+    :append-icon="_append_icon"
     :readonly="_readonly"
     :loading="_loading"
     :label="_label"
-    :bgColor="_bg_color"
+    :bg-color="_bg_color"
     :counter="_counter"
-    :persistentPlaceholder="_persistent_placeholder"
-    :persistentCounter="_persistent_counter"
+    :persistent-placeholder="_persistent_placeholder"
+    :persistent-counter="_persistent_counter"
     :suffix="_suffix"
-    :centerAffix="_center_affix"
+    :center-affix="_center_affix"
     :glow="_glow"
-    :iconColor="_icon_color"
-    :hideSpinButtons="_hide_spin_buttons"
+    :icon-color="_icon_color"
+    :hide-spin-buttons="_hide_spin_buttons"
     :hint="_hint"
-    :persistentHint="_persistent_hint"
+    :persistent-hint="_persistent_hint"
     :messages="_messages"
-    :errorMessages="_error_messages"
-    :maxErrors="_max_errors"
+    :error-messages="_error_messages"
+    :max-errors="_max_errors"
     :rules="_rules"
-    :validateOn="_validate_on"
-    :validationValue="_validation_value"
+    :validate-on="_validate_on"
+    :validation-value="_validation_value"
     :focused="_focused"
-    :hideDetails="_hide_details"
-    :appendInnerIcon="_append_inner_icon"
+    :hide-details="_hide_details"
+    :append-inner-icon="_append_inner_icon"
     :clearable="_clearable"
-    :clearIcon="_clear_icon"
+    :clear-icon="_clear_icon"
     :dirty="_dirty"
-    :persistentClear="_persistent_clear"
-    :prependInnerIcon="_prepend_inner_icon"
-    :singleLine="_single_line"
-    :counterValue="_counter_value"
-    :modelModifiers="_model_modifiers"
+    :persistent-clear="_persistent_clear"
+    :prepend-inner-icon="_prepend_inner_icon"
+    :single-line="_single_line"
+    :counter-value="_counter_value"
+    :model-modifiers="_model_modifiers"
   >
-    {{ children }}
+    {{ _children }}
   </v-text-field>
 </template>
 
@@ -66,7 +67,8 @@
 import { useModelState } from "@pyvuetify/vuetify";
 
 // Reactive state synced with Python
-const children = useModelState("children");
+const _children = useModelState("children");
+const _style = useModelState("style");
 const _flat = useModelState("flat");
 const _type = useModelState("type");
 const _model_value = useModelState("model_value");

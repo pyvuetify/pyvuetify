@@ -12,7 +12,9 @@ class FileInput(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         flat: Removes box shadow when using a variant with elevation.
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
         error: Puts the input in a manual error state.
@@ -78,8 +80,14 @@ class FileInput(anywidget.AnyWidget):
     _esm = bundled_path / "VFileInput.js"
     _css = bundled_path / "VFileInput-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     flat = traitlets.Bool(allow_none=True).tag(sync=True)
     """Removes box shadow when using a variant with elevation."""
@@ -245,7 +253,9 @@ class FileInput(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         flat=False,
         model_value=None,
         error=False,
@@ -303,7 +313,9 @@ class FileInput(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a FileInput widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.flat = flat
         self.model_value = model_value
         self.error = error

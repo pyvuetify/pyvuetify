@@ -12,7 +12,9 @@ class Textarea(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         flat: Removes box shadow when using a variant with elevation.
         reverse: Reverses the orientation.
         name: Sets the component's name attribute.
@@ -84,8 +86,14 @@ class Textarea(anywidget.AnyWidget):
     _esm = bundled_path / "VTextarea.js"
     _css = bundled_path / "VTextarea-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     flat = traitlets.Bool(allow_none=True).tag(sync=True)
     """Removes box shadow when using a variant with elevation."""
@@ -269,7 +277,9 @@ class Textarea(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         flat=False,
         reverse=False,
         name=None,
@@ -333,7 +343,9 @@ class Textarea(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Textarea widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.flat = flat
         self.reverse = reverse
         self.name = name

@@ -12,7 +12,9 @@ class PieSegment(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         pattern: Decal pattern to put on top of the outer slice.
         value: The value used for calculate segment/arc angle size.
         color: Sets segment color to be passed straight to CSS style attribute.
@@ -36,8 +38,14 @@ class PieSegment(anywidget.AnyWidget):
     _esm = bundled_path / "VPieSegment.js"
     _css = bundled_path / "VPieSegment-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     pattern = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Decal pattern to put on top of the outer slice."""
@@ -77,7 +85,9 @@ class PieSegment(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         pattern=None,
         value="0",
         color=None,
@@ -93,7 +103,9 @@ class PieSegment(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a PieSegment widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.pattern = pattern
         self.value = value
         self.color = color

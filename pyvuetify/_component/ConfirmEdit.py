@@ -12,7 +12,9 @@ class ConfirmEdit(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         disabled: Control the disabled state of action buttons. If not provided, internal logic will be used to determine the disabled state.
         model_value: Represents the committed v-model value
         color: Applies specified color to the control - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors).
@@ -30,8 +32,14 @@ class ConfirmEdit(anywidget.AnyWidget):
     _esm = bundled_path / "VConfirmEdit.js"
     _css = bundled_path / "VConfirmEdit-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     disabled = traitlets.Any(allow_none=True).tag(sync=True)
     """Control the disabled state of action buttons. If not provided, internal logic will be used to determine the disabled state."""
@@ -53,7 +61,9 @@ class ConfirmEdit(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         disabled=None,
         model_value=None,
         color=None,
@@ -63,7 +73,9 @@ class ConfirmEdit(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a ConfirmEdit widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.disabled = disabled
         self.model_value = model_value
         self.color = color

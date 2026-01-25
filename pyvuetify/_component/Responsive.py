@@ -12,7 +12,9 @@ class Responsive(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         height: Sets the height for the component.
         width: Sets the width for the component.
         inline: Display as an inline element instead of a block, also disables flex-grow.
@@ -33,8 +35,14 @@ class Responsive(anywidget.AnyWidget):
     _esm = bundled_path / "VResponsive.js"
     _css = bundled_path / "VResponsive-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     height = traitlets.Any(allow_none=True).tag(sync=True)
     """Sets the height for the component."""
@@ -65,7 +73,9 @@ class Responsive(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         height=None,
         width=None,
         inline=False,
@@ -78,7 +88,9 @@ class Responsive(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Responsive widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.height = height
         self.width = width
         self.inline = inline

@@ -12,7 +12,9 @@ class Pagination(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         length: The number of pages.
         tag: Specify a custom tag used on the root element.
         disabled: Removes the ability to click or target the component.
@@ -53,8 +55,14 @@ class Pagination(anywidget.AnyWidget):
     _esm = bundled_path / "VPagination.js"
     _css = bundled_path / "VPagination-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     length = traitlets.Any(allow_none=True).tag(sync=True)
     """The number of pages."""
@@ -145,7 +153,9 @@ class Pagination(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         length="1",
         tag="nav",
         disabled=False,
@@ -178,7 +188,9 @@ class Pagination(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Pagination widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.length = length
         self.tag = tag
         self.disabled = disabled

@@ -12,7 +12,9 @@ class ListSubheader(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         title: Specify a title text for the component.
         sticky: Sticks the header to the top of the table.
         tag: Specify a custom tag used on the root element.
@@ -29,8 +31,14 @@ class ListSubheader(anywidget.AnyWidget):
     _esm = bundled_path / "VListSubheader.js"
     _css = bundled_path / "VListSubheader-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     title = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Specify a title text for the component."""
@@ -49,7 +57,9 @@ class ListSubheader(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         title=None,
         sticky=False,
         tag="div",
@@ -58,7 +68,9 @@ class ListSubheader(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a ListSubheader widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.title = title
         self.sticky = sticky
         self.tag = tag

@@ -12,7 +12,9 @@ class Pie(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         legend: Controls legend visibility, position and text format.
         title: Specify a title text for the component.
         size: Sets the height and width of the chart (excluding title and legend).
@@ -44,8 +46,14 @@ class Pie(anywidget.AnyWidget):
     _esm = bundled_path / "VPie.js"
     _css = bundled_path / "VPie-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     legend = traitlets.Any(allow_none=True).tag(sync=True)
     """Controls legend visibility, position and text format."""
@@ -109,7 +117,9 @@ class Pie(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         legend=False,
         title=None,
         size="250",
@@ -133,7 +143,9 @@ class Pie(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Pie widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.legend = legend
         self.title = title
         self.size = size

@@ -12,7 +12,9 @@ class DataTableServer(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         search: Text input used to filter items.
         tag: Specify a custom tag used on the root element.
         height: Use the height prop to set the height of the table.
@@ -94,8 +96,14 @@ class DataTableServer(anywidget.AnyWidget):
     _esm = bundled_path / "VDataTableServer.js"
     _css = bundled_path / "VDataTableServer-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     search = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Text input used to filter items."""
@@ -297,7 +305,9 @@ class DataTableServer(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         search=None,
         tag="div",
         height=None,
@@ -365,7 +375,9 @@ class DataTableServer(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a DataTableServer widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.search = search
         self.tag = tag
         self.height = height

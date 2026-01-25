@@ -1,16 +1,13 @@
 <template>
   <{{ v_component.name | to_kebab }}
-  {%- for p in v_component.attributes %}
-    :{{ p.name }}="_{{ p.name | to_snake }}"
+    :style="_style"
+  {%- for p in v_component.attributes%}
+    :{{ p.name | to_kebab }}="_{{ p.name | to_snake }}"
   {%- endfor %}
   >
     {% raw %}{{ _children }}{% endraw %}
   </{{ v_component.name | to_kebab }}>
 </template>
-
-<style scoped>
-  {% raw %}{{ _style }}{% endraw %}
-</style>
 
 <script setup>
 import { useModelState } from "@pyvuetify/vuetify";

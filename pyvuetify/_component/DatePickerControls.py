@@ -12,7 +12,9 @@ class DatePickerControls(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         text: Specify content text for the component.
         disabled: Removes the ability to click or target the component.
         active: Controls the **active** state of the item. This is typically used to highlight the component.
@@ -37,8 +39,14 @@ class DatePickerControls(anywidget.AnyWidget):
     _esm = bundled_path / "VDatePickerControls.js"
     _css = bundled_path / "VDatePickerControls-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     text = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Specify content text for the component."""
@@ -79,7 +87,9 @@ class DatePickerControls(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         text=None,
         disabled=None,
         active=None,
@@ -95,7 +105,9 @@ class DatePickerControls(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a DatePickerControls widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.text = text
         self.disabled = disabled
         self.active = active

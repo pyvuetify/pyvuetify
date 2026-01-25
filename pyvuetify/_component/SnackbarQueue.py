@@ -12,7 +12,9 @@ class SnackbarQueue(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         text: Specify content text for the component.
         closable: Adds a dismiss button that closes the active snackbar.
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
@@ -68,8 +70,14 @@ class SnackbarQueue(anywidget.AnyWidget):
     _esm = bundled_path / "VSnackbarQueue.js"
     _css = bundled_path / "VSnackbarQueue-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     text = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Specify content text for the component."""
@@ -205,7 +213,9 @@ class SnackbarQueue(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         text=None,
         closable=False,
         model_value="[]",
@@ -253,7 +263,9 @@ class SnackbarQueue(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a SnackbarQueue widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.text = text
         self.closable = closable
         self.model_value = model_value

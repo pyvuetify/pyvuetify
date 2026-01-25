@@ -2131,8 +2131,8 @@ function VS(e) {
   } = t;
   if (u && _S(u, a, null), o)
     for (const N in o) {
-      const Q = o[N];
-      Be(Q) && (a[N] = Q.bind(n));
+      const J = o[N];
+      Be(J) && (a[N] = J.bind(n));
     }
   if (l) {
     const N = l.call(n, n);
@@ -2140,7 +2140,7 @@ function VS(e) {
   }
   if (ss = !0, i)
     for (const N in i) {
-      const Q = i[N], q = Be(Q) ? Q.bind(n, n) : Be(Q.get) ? Q.get.bind(n, n) : Pn, O = !Be(Q) && Be(Q.set) ? Q.set.bind(n) : Pn, ne = _({
+      const J = i[N], q = Be(J) ? J.bind(n, n) : Be(J.get) ? J.get.bind(n, n) : Pn, O = !Be(J) && Be(J.set) ? J.set.bind(n) : Pn, ne = _({
         get: q,
         set: O
       });
@@ -2156,21 +2156,21 @@ function VS(e) {
       Hv(r[N], a, n, N);
   if (s) {
     const N = Be(s) ? s.call(n) : s;
-    Reflect.ownKeys(N).forEach((Q) => {
-      Xe(Q, N[Q]);
+    Reflect.ownKeys(N).forEach((J) => {
+      Xe(J, N[J]);
     });
   }
   c && Kc(c, e, "c");
-  function W(N, Q) {
-    Ee(Q) ? Q.forEach((q) => N(q.bind(n))) : Q && N(Q.bind(n));
+  function W(N, J) {
+    Ee(J) ? J.forEach((q) => N(q.bind(n))) : J && N(J.bind(n));
   }
   if (W(Bl, d), W(ht, f), W($v, v), W(qo, k), W(Fv, m), W(ku, y), W(wS, C), W(kS, g), W(SS, I), W(Dt, x), W(Xo, b), W(bS, T), Ee(P))
     if (P.length) {
       const N = e.exposed || (e.exposed = {});
-      P.forEach((Q) => {
-        Object.defineProperty(N, Q, {
-          get: () => n[Q],
-          set: (q) => n[Q] = q,
+      P.forEach((J) => {
+        Object.defineProperty(N, J, {
+          get: () => n[J],
+          set: (q) => n[J] = q,
           enumerable: !0
         });
       });
@@ -2993,7 +2993,7 @@ function US(e, t) {
       re,
       Lr($, z),
       oe
-    ) : me || Q(
+    ) : me || J(
       M,
       $,
       Y,
@@ -3100,7 +3100,7 @@ function US(e, t) {
       $,
       !0
       /* shallow */
-    )) : Q(
+    )) : J(
       M,
       $,
       j,
@@ -3225,7 +3225,7 @@ function US(e, t) {
     $.component = M;
     const re = M.vnode.props;
     M.vnode = $, M.next = null, RS(M, $.props, re, j), jS(M, $.children, j), Kn(), Nc(M), Gn();
-  }, Q = (M, $, j, re, z, oe, me, Y, le = !1) => {
+  }, J = (M, $, j, re, z, oe, me, Y, le = !1) => {
     const ie = M && M.children, ge = M ? M.shapeFlag : 0, ye = $.children, { patchFlag: Se, shapeFlag: we } = $;
     if (Se > 0) {
       if (Se & 128) {
@@ -3577,7 +3577,7 @@ function US(e, t) {
     r: H,
     mt: D,
     mc: C,
-    pc: Q,
+    pc: J,
     pbc: P,
     n: Z,
     o: e
@@ -5611,7 +5611,7 @@ function Ot(e) {
   }
   return e;
 }
-function J() {
+function Q() {
   let e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !0;
   return (t) => (e ? Ot : Mv)(t);
 }
@@ -5620,7 +5620,7 @@ function D0(e, t) {
 }
 function ea(e) {
   let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "div", n = arguments.length > 2 ? arguments[2] : void 0;
-  return J()({
+  return Q()({
     name: n ?? Bn(zt(e.replace(/__/g, "-"))),
     props: {
       tag: {
@@ -5793,7 +5793,7 @@ const pe = [String, Function, Object, Array], ps = /* @__PURE__ */ Symbol.for("v
     type: [String, Object, Function],
     required: !0
   }
-}, "icon"), xs = J()({
+}, "icon"), xs = Q()({
   name: "VComponentIcon",
   props: nr(),
   setup(e, t) {
@@ -7667,7 +7667,7 @@ function Qm(e) {
       o.set(C, T), l.set(C, P), i.set(C, F), r.set(C, B), D && s.set(C, D);
       const N = hl(Xm, x?.vnode).indexOf(g);
       N > -1 ? a.value.splice(N, 0, C) : a.value.push(C);
-      const Q = _(() => y.value.findIndex((K) => K.id === C)), q = _(() => n.value + f.value.length * 2 - Q.value * 2), O = _(() => {
+      const J = _(() => y.value.findIndex((K) => K.id === C)), q = _(() => n.value + f.value.length * 2 - J.value * 2), O = _(() => {
         const K = P.value === "left" || P.value === "right", H = P.value === "right", G = P.value === "bottom", X = A.value ?? F.value, ve = X === 0 ? "%" : "px", Z = {
           [P.value]: 0,
           zIndex: q.value,
@@ -7678,7 +7678,7 @@ function Qm(e) {
           }
         };
         if (!w.value) return Z;
-        const de = y.value[Q.value], xe = d.value.get(C);
+        const de = y.value[J.value], xe = d.value.get(C);
         return xe && (de[xe.position] += xe.amount), {
           ...Z,
           height: K ? `calc(100% - ${de.top}px - ${de.bottom}px)` : A.value ? `${A.value}px` : void 0,
@@ -7878,7 +7878,7 @@ const ep = R({
   ...be(),
   ...Me(Zm(), ["fullHeight"]),
   ...Oe()
-}, "VApp"), tp = J()({
+}, "VApp"), tp = Q()({
   name: "VApp",
   props: ep(),
   setup(e, t) {
@@ -7917,7 +7917,7 @@ const ep = R({
   text: String,
   ...be(),
   ...Pe()
-}, "VToolbarTitle"), Hu = J()({
+}, "VToolbarTitle"), Hu = Q()({
   name: "VToolbarTitle",
   props: ng(),
   setup(e, t) {
@@ -7945,7 +7945,7 @@ const ep = R({
   origin: String
 }, "transition");
 function ln(e, t, n) {
-  return J()({
+  return Q()({
     name: e,
     props: np({
       mode: n,
@@ -8006,7 +8006,7 @@ function ln(e, t, n) {
 }
 function ag(e, t) {
   let n = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : "in-out";
-  return J()({
+  return Q()({
     name: e,
     props: {
       mode: {
@@ -8076,7 +8076,7 @@ function lg() {
 }
 const ap = R({
   target: [Object, Array]
-}, "v-dialog-transition"), Ur = /* @__PURE__ */ new WeakMap(), ir = J()({
+}, "v-dialog-transition"), Ur = /* @__PURE__ */ new WeakMap(), ir = Q()({
   name: "VDialogTransition",
   props: ap(),
   setup(e, t) {
@@ -8202,7 +8202,7 @@ const lp = ln("fab-transition", "center center", "out-in"), ip = ln("dialog-bott
   reset: [Number, String],
   root: [Boolean, String],
   scoped: Boolean
-}, "VDefaultsProvider"), Te = J(!1)({
+}, "VDefaultsProvider"), Te = Q(!1)({
   name: "VDefaultsProvider",
   props: mp(),
   setup(e, t) {
@@ -8255,7 +8255,7 @@ const ig = R({
   inline: Boolean,
   ...be(),
   ...dt()
-}, "VResponsive"), Vs = J()({
+}, "VResponsive"), Vs = Q()({
   name: "VResponsive",
   props: ig(),
   setup(e, t) {
@@ -8446,7 +8446,7 @@ const Sn = {
   ...be(),
   ...Ze(),
   ...ta()
-}, "VImg"), Zn = J()({
+}, "VImg"), Zn = Q()({
   name: "VImg",
   directives: {
     vIntersect: Sn
@@ -8698,7 +8698,7 @@ const yp = [null, "prominent", "default", "comfortable", "compact"], ug = R({
     tag: "header"
   }),
   ...Oe()
-}, "VToolbar"), _s = J()({
+}, "VToolbar"), _s = Q()({
   name: "VToolbar",
   props: ug(),
   setup(e, t) {
@@ -8913,7 +8913,7 @@ const kp = R({
     type: [Number, String],
     default: 64
   }
-}, "VAppBar"), wp = J()({
+}, "VAppBar"), wp = Q()({
   name: "VAppBar",
   props: kp(),
   emits: {
@@ -9081,7 +9081,7 @@ const cg = R({
   ...Pe(),
   ...Oe(),
   ...on()
-}, "VBtnGroup"), Is = J()({
+}, "VBtnGroup"), Is = Q()({
   name: "VBtnGroup",
   props: cg(),
   setup(e, t) {
@@ -9269,7 +9269,7 @@ function Vp(e, t) {
 const Uu = /* @__PURE__ */ Symbol.for("vuetify:v-btn-toggle"), _p = R({
   ...cg(),
   ...ll()
-}, "VBtnToggle"), Ip = J()({
+}, "VBtnToggle"), Ip = Q()({
   name: "VBtnToggle",
   props: _p(),
   emits: {
@@ -9340,7 +9340,7 @@ const Tp = R({
     tag: "i"
   }),
   ...Oe()
-}, "VIcon"), Re = J()({
+}, "VIcon"), Re = Q()({
   name: "VIcon",
   props: Tp(),
   setup(e, t) {
@@ -9429,7 +9429,7 @@ const Ap = R({
     tag: "div"
   }),
   ...Oe()
-}, "VProgressCircular"), Sa = J()({
+}, "VProgressCircular"), Sa = Q()({
   name: "VProgressCircular",
   props: Ap(),
   setup(e, t) {
@@ -9636,7 +9636,7 @@ const Mp = R({
   ...Ze(),
   ...Pe(),
   ...Oe()
-}, "VProgressLinear"), rr = J()({
+}, "VProgressLinear"), rr = Q()({
   name: "VProgressLinear",
   props: Mp(),
   emits: {
@@ -9678,17 +9678,17 @@ const Mp = R({
     Pt(F, () => {
       const {
         resizeRef: N
-      } = dn((Q) => P.value = Q[0].contentRect.width);
+      } = dn((J) => P.value = J[0].contentRect.width);
       at(() => N.value = a.value);
     });
     const D = _(() => F.value ? B(g.value) : g.value), L = _(() => F.value ? B(I.value) : I.value);
     function W(N) {
       if (!x.value) return;
       const {
-        left: Q,
+        left: J,
         right: q,
         width: O
-      } = x.value.getBoundingClientRect(), ne = C.value ? O - N.clientX + (q - O) : N.clientX - Q;
+      } = x.value.getBoundingClientRect(), ne = C.value ? O - N.clientX + (q - O) : N.clientX - J;
       l.value = Math.round(ne / O * b.value);
     }
     return at(() => {
@@ -10090,7 +10090,7 @@ const _t = {
   ...on({
     variant: "elevated"
   })
-}, "VBtn"), Le = J()({
+}, "VBtn"), Le = Q()({
   name: "VBtn",
   props: ur(),
   emits: {
@@ -10223,7 +10223,7 @@ const _t = {
     icon: "$menu",
     variant: "text"
   }), ["spaced"])
-}, "VAppBarNavIcon"), Yp = J()({
+}, "VAppBarNavIcon"), Yp = Q()({
   name: "VAppBarNavIcon",
   props: jp(),
   setup(e, t) {
@@ -10234,7 +10234,7 @@ const _t = {
       class: ["v-app-bar-nav-icon"]
     }), n)), {};
   }
-}), Up = J()({
+}), Up = Q()({
   name: "VAppBarTitle",
   props: ng(),
   setup(e, t) {
@@ -10303,7 +10303,7 @@ const Kp = ["success", "info", "warning", "error"], Gp = R({
   ...on({
     variant: "flat"
   })
-}, "VAlert"), qp = J()({
+}, "VAlert"), qp = Q()({
   name: "VAlert",
   props: Gp(),
   emits: {
@@ -10435,7 +10435,7 @@ const Kp = ["success", "info", "warning", "error"], Gp = R({
   ...on({
     variant: "flat"
   })
-}, "VAvatar"), nn = J()({
+}, "VAvatar"), nn = Q()({
   name: "VAvatar",
   props: Xp(),
   setup(e, t) {
@@ -10494,7 +10494,7 @@ const Kp = ["success", "info", "warning", "error"], Gp = R({
   onClick: Vt(),
   ...be(),
   ...Oe()
-}, "VLabel"), Ol = J()({
+}, "VLabel"), Ol = Q()({
   name: "VLabel",
   props: Zp(),
   setup(e, t) {
@@ -10547,7 +10547,7 @@ const Kp = ["success", "info", "warning", "error"], Gp = R({
   ...Ku({
     defaultsTarget: "VSelectionControl"
   })
-}, "VSelectionControlGroup"), Cg = J()({
+}, "VSelectionControlGroup"), Cg = Q()({
   name: "VSelectionControlGroup",
   props: Jp(),
   emits: {
@@ -10639,7 +10639,7 @@ function Qp(e) {
     icon: f
   };
 }
-const ka = J()({
+const ka = Q()({
   name: "VSelectionControl",
   directives: {
     vRipple: _t
@@ -10764,7 +10764,7 @@ const ka = J()({
     falseIcon: "$checkboxOff",
     trueIcon: "$checkboxOn"
   })
-}, "VCheckboxBtn"), kn = J()({
+}, "VCheckboxBtn"), kn = Q()({
   name: "VCheckboxBtn",
   props: Vg(),
   emits: {
@@ -10843,7 +10843,7 @@ const ex = R({
       group: !0
     }
   })
-}, "VMessages"), _g = J()({
+}, "VMessages"), _g = Q()({
   name: "VMessages",
   props: ex(),
   setup(e, t) {
@@ -11148,7 +11148,7 @@ const oa = R({
   ...jt(dt(), ["maxWidth", "minWidth", "width"]),
   ...Oe(),
   ...Pg()
-}, "VInput"), Tt = J()({
+}, "VInput"), Tt = Q()({
   name: "VInput",
   props: {
     ...oa()
@@ -11315,7 +11315,7 @@ function bt(e) {
 const ix = R({
   ...Me(oa(), ["direction"]),
   ...Me(Vg(), ["inline"])
-}, "VCheckbox"), ox = J()({
+}, "VCheckbox"), ox = Q()({
   name: "VCheckbox",
   inheritAttrs: !1,
   props: ix(),
@@ -11447,7 +11447,7 @@ const Gu = /* @__PURE__ */ Symbol.for("vuetify:v-slide-group"), qu = R({
   ...ll({
     selectedClass: "v-slide-group-item--active"
   })
-}, "VSlideGroup"), Vi = J()({
+}, "VSlideGroup"), Vi = Q()({
   name: "VSlideGroup",
   props: qu(),
   emits: {
@@ -11590,7 +11590,7 @@ const Gu = /* @__PURE__ */ Symbol.for("vuetify:v-slide-group"), qu = R({
       prev: o.prev,
       select: o.select,
       isSelected: o.isSelected
-    })), Q = _(() => r.value || Math.abs(s.value) > 0), q = _(() => {
+    })), J = _(() => r.value || Math.abs(s.value) > 0), q = _(() => {
       switch (e.showArrows) {
         case "never":
           return !1;
@@ -11603,18 +11603,18 @@ const Gu = /* @__PURE__ */ Symbol.for("vuetify:v-slide-group"), qu = R({
         // Show arrows on mobile when overflowing.
         // This matches the default 2.2 behavior
         case !0:
-          return Q.value;
+          return J.value;
         // Always show on mobile
         case "mobile":
-          return i.value || Q.value;
+          return i.value || J.value;
         // https://material.io/components/tabs#scrollable-tabs
         // Always show arrows when
         // overflowed on desktop
         default:
-          return !i.value && Q.value;
+          return !i.value && J.value;
       }
     }), O = _(() => Math.abs(s.value) > 1), ne = _(() => {
-      if (!f.value || !Q.value) return !1;
+      if (!f.value || !J.value) return !1;
       const K = df(d.value, f.el), H = ux(d.value, f.el);
       return K - H - Math.abs(s.value) > 1;
     });
@@ -11691,7 +11691,7 @@ const Gu = /* @__PURE__ */ Symbol.for("vuetify:v-slide-group"), qu = R({
   ...on({
     variant: "tonal"
   })
-}, "VChipGroup"), dx = J()({
+}, "VChipGroup"), dx = Q()({
   name: "VChipGroup",
   props: cx(),
   emits: {
@@ -11793,7 +11793,7 @@ const Gu = /* @__PURE__ */ Symbol.for("vuetify:v-slide-group"), qu = R({
   ...on({
     variant: "tonal"
   })
-}, "VChip"), Jn = J()({
+}, "VChip"), Jn = Q()({
   name: "VChip",
   directives: {
     vRipple: _t
@@ -11979,7 +11979,7 @@ const Gu = /* @__PURE__ */ Symbol.for("vuetify:v-slide-group"), qu = R({
   },
   ...be(),
   ...Oe()
-}, "VDivider"), tn = J()({
+}, "VDivider"), tn = Q()({
   name: "VDivider",
   props: mx(),
   setup(e, t) {
@@ -12676,7 +12676,7 @@ const Xu = (e) => {
   value: null,
   ...be(),
   ...Pe()
-}, "VListGroup"), _i = J()({
+}, "VListGroup"), _i = Q()({
   name: "VListGroup",
   props: Hg(),
   setup(e, t) {
@@ -12750,7 +12750,7 @@ const Xu = (e) => {
   opacity: [Number, String],
   ...be(),
   ...Pe()
-}, "VListItemSubtitle"), Wg = J()({
+}, "VListItemSubtitle"), Wg = Q()({
   name: "VListItemSubtitle",
   props: _x(),
   setup(e, t) {
@@ -12813,7 +12813,7 @@ const Xu = (e) => {
   ...on({
     variant: "text"
   })
-}, "VListItem"), fn = J()({
+}, "VListItem"), fn = Q()({
   name: "VListItem",
   directives: {
     vRipple: _t
@@ -12864,7 +12864,7 @@ const Xu = (e) => {
       colorStyles: W,
       variantClasses: N
     } = aa(F), {
-      densityClasses: Q
+      densityClasses: J
     } = Mt(e), {
       dimensionStyles: q
     } = ft(e), {
@@ -12897,7 +12897,7 @@ const Xu = (e) => {
           "v-list-item--nav": e.nav,
           "v-list-item--slim": e.slim,
           [`${e.activeClass}`]: e.activeClass && w.value
-        }, B.value, D.value, L.value, Q.value, O.value, K.value, ne.value, N.value, e.class],
+        }, B.value, D.value, L.value, J.value, O.value, K.value, ne.value, N.value, e.class],
         style: [{
           "--v-list-prepend-gap": ce(e.prependGap)
         }, W.value, q.value, e.style],
@@ -13005,7 +13005,7 @@ const Xu = (e) => {
   title: String,
   ...be(),
   ...Pe()
-}, "VListSubheader"), Rl = J()({
+}, "VListSubheader"), Rl = Q()({
   name: "VListSubheader",
   props: Ix(),
   setup(e, t) {
@@ -13036,7 +13036,7 @@ const Xu = (e) => {
 }), Px = R({
   items: Array,
   returnObject: Boolean
-}, "VListChildren"), Yg = J()({
+}, "VListChildren"), Yg = Q()({
   name: "VListChildren",
   props: Px(),
   setup(e, t) {
@@ -13277,7 +13277,7 @@ const Xg = R({
   ...on({
     variant: "text"
   })
-}, "VList"), Al = J()({
+}, "VList"), Al = Q()({
   name: "VList",
   props: Xg(),
   emits: {
@@ -13414,7 +13414,7 @@ const Xg = R({
   end: Boolean,
   ...be(),
   ...Pe()
-}, "VListItemAction"), Qu = J()({
+}, "VListItemAction"), Qu = Q()({
   name: "VListItemAction",
   props: Mx(),
   setup(e, t) {
@@ -13434,7 +13434,7 @@ const Xg = R({
   end: Boolean,
   ...be(),
   ...Pe()
-}, "VListItemMedia"), Fx = J()({
+}, "VListItemMedia"), Fx = Q()({
   name: "VListItemMedia",
   props: Bx(),
   setup(e, t) {
@@ -13631,14 +13631,14 @@ function Hx(e, t, n) {
       const D = new un(h), L = ff(B.anchor, m), W = ff(B.origin, D);
       let {
         x: N,
-        y: Q
+        y: J
       } = Lx(L, W);
       switch (B.anchor.side) {
         case "top":
-          Q -= c.value[0];
+          J -= c.value[0];
           break;
         case "bottom":
-          Q += c.value[0];
+          J += c.value[0];
           break;
         case "left":
           N -= c.value[0];
@@ -13649,10 +13649,10 @@ function Hx(e, t, n) {
       }
       switch (B.anchor.align) {
         case "top":
-          Q -= c.value[1];
+          J -= c.value[1];
           break;
         case "bottom":
-          Q += c.value[1];
+          J += c.value[1];
           break;
         case "left":
           N -= c.value[1];
@@ -13661,10 +13661,10 @@ function Hx(e, t, n) {
           N += c.value[1];
           break;
       }
-      return D.x += N, D.y += Q, D.width = Math.min(D.width, s.value), D.height = Math.min(D.height, u.value), {
+      return D.x += N, D.y += J, D.width = Math.min(D.width, s.value), D.height = Math.min(D.height, u.value), {
         overflows: Md(D, b),
         x: N,
-        y: Q
+        y: J
       };
     }
     let I = 0, C = 0;
@@ -13684,10 +13684,10 @@ function Hx(e, t, n) {
       } = g(S);
       I += B, C += D, h.x += B, h.y += D;
       {
-        const W = Ed(S.anchor), N = L.x.before || L.x.after, Q = L.y.before || L.y.after;
+        const W = Ed(S.anchor), N = L.x.before || L.x.after, J = L.y.before || L.y.after;
         let q = !1;
         if (["x", "y"].forEach((O) => {
-          if (O === "x" && N && !P.x || O === "y" && Q && !P.y) {
+          if (O === "x" && N && !P.x || O === "y" && J && !P.y) {
             const ne = {
               anchor: {
                 ...S.anchor
@@ -14293,7 +14293,7 @@ const Ki = R({
   ...th(),
   ...Oe(),
   ...ta()
-}, "VOverlay"), En = J()({
+}, "VOverlay"), En = Q()({
   name: "VOverlay",
   directives: {
     vClickOutside: Bs
@@ -14378,7 +14378,7 @@ const Ki = R({
       isActive: c,
       updateLocation: N
     });
-    function Q(Z) {
+    function J(Z) {
       l("click:outside", Z), e.persistent ? G() : c.value = !1;
     }
     function q(Z) {
@@ -14475,7 +14475,7 @@ const Ki = R({
         }, P.value, e.contentProps), [n.default?.({
           isActive: c
         })]), [[wn, c.value], [Bs, {
-          handler: Q,
+          handler: J,
           closeConditional: q,
           include: () => [b.value]
         }]])]
@@ -14510,7 +14510,7 @@ const Ki = R({
       component: ir
     }
   }), ["absolute"])
-}, "VMenu"), Dl = J()({
+}, "VMenu"), Dl = Q()({
   name: "VMenu",
   props: oh(),
   emits: {
@@ -14610,7 +14610,7 @@ const Ki = R({
       component: zu
     }
   })
-}, "VCounter"), dr = J()({
+}, "VCounter"), dr = Q()({
   name: "VCounter",
   functional: !0,
   props: nC(),
@@ -14637,7 +14637,7 @@ const Ki = R({
 }), aC = R({
   floating: Boolean,
   ...be()
-}, "VFieldLabel"), Xl = J()({
+}, "VFieldLabel"), Xl = Q()({
   name: "VFieldLabel",
   props: aC(),
   setup(e, t) {
@@ -14692,7 +14692,7 @@ const Ki = R({
   ...sr(),
   ...Ze(),
   ...Oe()
-}, "VField"), wa = J()({
+}, "VField"), wa = Q()({
   name: "VField",
   inheritAttrs: !1,
   props: {
@@ -14739,12 +14739,12 @@ const Ki = R({
     } = Ct(C);
     ue(k, (W) => {
       if (y.value && !An()) {
-        const N = b.value.$el, Q = S.value.$el;
+        const N = b.value.$el, J = S.value.$el;
         requestAnimationFrame(() => {
-          const q = Du(N), O = Q.getBoundingClientRect(), ne = O.x - q.x, K = O.y - q.y - (q.height / 2 - O.height / 2), H = O.width / 0.75, G = Math.abs(H - q.width) > 1 ? {
+          const q = Du(N), O = J.getBoundingClientRect(), ne = O.x - q.x, K = O.y - q.y - (q.height / 2 - O.height / 2), H = O.width / 0.75, G = Math.abs(H - q.width) > 1 ? {
             maxWidth: ce(H)
-          } : void 0, X = getComputedStyle(N), ve = getComputedStyle(Q), Z = parseFloat(X.transitionDuration) * 1e3 || 150, de = parseFloat(ve.getPropertyValue("--v-field-label-scale")), xe = ve.getPropertyValue("color");
-          N.style.visibility = "visible", Q.style.visibility = "hidden", Wn(N, {
+          } : void 0, X = getComputedStyle(N), ve = getComputedStyle(J), Z = parseFloat(X.transitionDuration) * 1e3 || 150, de = parseFloat(ve.getPropertyValue("--v-field-label-scale")), xe = ve.getPropertyValue("color");
+          N.style.visibility = "visible", J.style.visibility = "hidden", Wn(N, {
             transform: `translate(${ne}px, ${K}px) scale(${de})`,
             color: xe,
             ...G
@@ -14753,7 +14753,7 @@ const Ki = R({
             easing: hi,
             direction: W ? "normal" : "reverse"
           }).finished.then(() => {
-            N.style.removeProperty("visibility"), Q.style.removeProperty("visibility");
+            N.style.removeProperty("visibility"), J.style.removeProperty("visibility");
           });
         });
       }
@@ -14772,7 +14772,7 @@ const Ki = R({
       W.target !== document.activeElement && W.preventDefault();
     }
     return te(() => {
-      const W = e.variant === "outlined", N = !!(l["prepend-inner"] || e.prependInnerIcon), Q = !!(e.clearable || l.clear) && !e.disabled, q = !!(l["append-inner"] || e.appendInnerIcon || Q), O = () => l.label ? l.label({
+      const W = e.variant === "outlined", N = !!(l["prepend-inner"] || e.prependInnerIcon), J = !!(e.clearable || l.clear) && !e.disabled, q = !!(l["append-inner"] || e.appendInnerIcon || J), O = () => l.label ? l.label({
         ...D.value,
         label: e.label,
         props: {
@@ -14848,7 +14848,7 @@ const Ki = R({
         id: x.value,
         class: "v-field__input",
         "aria-describedby": w.value
-      }, null)]), Q && p(ju, {
+      }, null)]), J && p(ju, {
         key: "clear"
       }, {
         default: () => [Ge(V("div", {
@@ -14957,7 +14957,7 @@ const iC = ["color", "file", "time", "date", "datetime-local", "week", "month"],
   ...rh(),
   ...Me(oa(), ["direction"]),
   ...Gi()
-}, "VTextField"), Mn = J()({
+}, "VTextField"), Mn = Q()({
   name: "VTextField",
   directives: {
     vIntersect: Sn
@@ -15040,7 +15040,7 @@ const iC = ["color", "file", "time", "date", "datetime-local", "week", "month"],
             id: L,
             isDisabled: W,
             isDirty: N,
-            isReadonly: Q,
+            isReadonly: J,
             isValid: q,
             hasDetails: O,
             reset: ne
@@ -15075,7 +15075,7 @@ const iC = ["color", "file", "time", "date", "datetime-local", "week", "month"],
                 value: i.value,
                 onInput: g,
                 autofocus: e.autofocus,
-                readonly: Q.value,
+                readonly: J.value,
                 disabled: W.value,
                 name: y.fieldName.value,
                 autocomplete: y.fieldAutocomplete.value,
@@ -15120,7 +15120,7 @@ const iC = ["color", "file", "time", "date", "datetime-local", "week", "month"],
 }), oC = R({
   renderless: Boolean,
   ...be()
-}, "VVirtualScrollItem"), uh = J()({
+}, "VVirtualScrollItem"), uh = Q()({
   name: "VVirtualScrollItem",
   inheritAttrs: !1,
   props: oC(),
@@ -15199,7 +15199,7 @@ function dh(e, t) {
   }, h), S = ue(k, (O) => {
     O && (S(), c = u.value.offsetTop, b.immediate(), W(), ~x && Ie(() => {
       je && window.requestAnimationFrame(() => {
-        Q(x), x = -1;
+        J(x), x = -1;
       });
     }));
   });
@@ -15250,7 +15250,7 @@ function dh(e, t) {
     }
     o.value = I(l.value), r.value = I(t.value.length) - I(i.value);
   }
-  function Q(O) {
+  function J(O) {
     const ne = I(O);
     !s.value || O && !ne ? x = O : s.value.scrollTop = ne;
   }
@@ -15277,7 +15277,7 @@ function dh(e, t) {
     computedItems: q,
     paddingTop: o,
     paddingBottom: r,
-    scrollToIndex: Q,
+    scrollToIndex: J,
     handleScroll: B,
     handleScrollend: D,
     handleItemResize: g
@@ -15304,7 +15304,7 @@ const cC = R({
   ...ch(),
   ...be(),
   ...dt()
-}, "VVirtualScroll"), fr = J()({
+}, "VVirtualScroll"), fr = Q()({
   name: "VVirtualScroll",
   props: cC(),
   setup(e, t) {
@@ -15487,7 +15487,7 @@ const sc = R({
       component: ir
     }
   })
-}, "VSelect"), uc = J()({
+}, "VSelect"), uc = Q()({
   name: "VSelect",
   props: fC(),
   emits: {
@@ -15536,9 +15536,9 @@ const sc = R({
       g.value || (C.value = !C.value);
     }
     function N(X) {
-      _l(X) && Q(X);
+      _l(X) && J(X);
     }
-    function Q(X) {
+    function J(X) {
       if (!X.key || f.isReadonly.value) return;
       if (["Enter", " ", "ArrowDown", "ArrowUp", "Home", "End"].includes(X.key) && X.preventDefault(), ["Enter", "ArrowDown", " "].includes(X.key) && (C.value = !0), ["Escape", "Tab"].includes(X.key) && (C.value = !1), e.clearable && X.key === "Backspace") {
         X.preventDefault(), c.value = [], L();
@@ -15636,7 +15636,7 @@ const sc = R({
         "onClick:clear": L,
         "onMousedown:control": W,
         onBlur: O,
-        onKeydown: Q,
+        onKeydown: J,
         "aria-expanded": P.value,
         "aria-controls": F.value
       }), {
@@ -15937,7 +15937,7 @@ const gC = R({
     modelValue: null,
     role: "combobox"
   }), ["validationValue", "dirty"])
-}, "VAutocomplete"), hC = J()({
+}, "VAutocomplete"), hC = Q()({
   name: "VAutocomplete",
   props: gC(),
   emits: {
@@ -15973,7 +15973,7 @@ const gC = R({
         W.value && !z && s.value?.ΨopenChildren.size || z && L.value || (W.value = z);
       }
     }), {
-      menuId: Q,
+      menuId: J,
       ariaExpanded: q,
       ariaControls: O
     } = rc(e, N), ne = /* @__PURE__ */ ae(), K = oc(ne, l);
@@ -16111,7 +16111,7 @@ const gC = R({
             id: le
           } = Y;
           return V(he, null, [p(Dl, U({
-            id: Q.value,
+            id: J.value,
             ref: s,
             modelValue: N.value,
             "onUpdate:modelValue": (ie) => N.value = ie,
@@ -16312,7 +16312,7 @@ const gC = R({
     transition: "scale-rotate-transition"
   }),
   ...dt()
-}, "VBadge"), vh = J()({
+}, "VBadge"), vh = Q()({
   name: "VBadge",
   inheritAttrs: !1,
   props: yC(),
@@ -16369,7 +16369,7 @@ const gC = R({
   color: String,
   density: String,
   ...be()
-}, "VBannerActions"), mh = J()({
+}, "VBannerActions"), mh = Q()({
   name: "VBannerActions",
   props: bC(),
   setup(e, t) {
@@ -16410,7 +16410,7 @@ const gC = R({
   ...Ze(),
   ...Pe(),
   ...Oe()
-}, "VBanner"), kC = J()({
+}, "VBanner"), kC = Q()({
   name: "VBanner",
   props: SC(),
   setup(e, t) {
@@ -16520,7 +16520,7 @@ const gC = R({
     selectedClass: "v-btn--selected"
   }),
   ...Oe()
-}, "VBottomNavigation"), pC = J()({
+}, "VBottomNavigation"), pC = Q()({
   name: "VBottomNavigation",
   props: wC(),
   emits: {
@@ -16595,7 +16595,7 @@ const gC = R({
     zIndex: 2400,
     retainFocus: !0
   }), ["disableInitialFocus"])
-}, "VDialog"), Fs = J()({
+}, "VDialog"), Fs = Q()({
   name: "VDialog",
   props: hh(),
   emits: {
@@ -16668,7 +16668,7 @@ const gC = R({
   ...hh({
     transition: "bottom-sheet-transition"
   })
-}, "VBottomSheet"), CC = J()({
+}, "VBottomSheet"), CC = Q()({
   name: "VBottomSheet",
   props: xC(),
   emits: {
@@ -16695,7 +16695,7 @@ const gC = R({
 }), VC = R({
   divider: [Number, String],
   ...be()
-}, "VBreadcrumbsDivider"), yh = J()({
+}, "VBreadcrumbsDivider"), yh = Q()({
   name: "VBreadcrumbsDivider",
   props: VC(),
   setup(e, t) {
@@ -16721,7 +16721,7 @@ const gC = R({
   ...Pe({
     tag: "li"
   })
-}, "VBreadcrumbsItem"), bh = J()({
+}, "VBreadcrumbsItem"), bh = Q()({
   name: "VBreadcrumbsItem",
   props: _C(),
   setup(e, t) {
@@ -16771,7 +16771,7 @@ const gC = R({
   ...Pe({
     tag: "ul"
   })
-}, "VBreadcrumbs"), PC = J()({
+}, "VBreadcrumbs"), PC = Q()({
   name: "VBreadcrumbs",
   props: IC(),
   setup(e, t) {
@@ -16902,7 +16902,7 @@ const gC = R({
   ...on({
     variant: "flat"
   })
-}, "VIconBtn"), Sh = J()({
+}, "VIconBtn"), Sh = Q()({
   name: "VIconBtn",
   props: TC(),
   emits: {
@@ -17730,7 +17730,7 @@ const Ii = {
       return o.intervals.value.length ? o.intervals.value[0].map(A) : null;
     }
     function A(B) {
-      const D = ce(e.intervalHeight), L = e.shortIntervals, Q = (e.showIntervalLabel || o.showIntervalLabelDefault)(B) ? o.intervalFormatter.value(B, L) : void 0;
+      const D = ce(e.intervalHeight), L = e.shortIntervals, J = (e.showIntervalLabel || o.showIntervalLabelDefault)(B) ? o.intervalFormatter.value(B, L) : void 0;
       return V("div", {
         key: B.time,
         class: "v-calendar-daily__interval",
@@ -17739,7 +17739,7 @@ const Ii = {
         }
       }, [V("div", {
         class: "v-calendar-daily__interval-text"
-      }, [Q])]);
+      }, [J])]);
     }
     return ht(r), te(() => Ge(V("div", {
       class: ee(["v-calendar-daily", a.class]),
@@ -18318,12 +18318,12 @@ function VV(e, t, n) {
     for (const W in L) {
       const {
         parent: N,
-        events: Q,
+        events: J,
         more: q
       } = L[W];
       if (!q)
         break;
-      const O = N.getBoundingClientRect(), ne = Q.length - 1, K = Q.map((G) => ({
+      const O = N.getBoundingClientRect(), ne = J.length - 1, K = J.map((G) => ({
         event: G,
         bottom: G.getBoundingClientRect().bottom
       })).sort((G, X) => G.bottom - X.bottom);
@@ -18350,7 +18350,7 @@ function VV(e, t, n) {
     let {
       event: W
     } = D;
-    const N = e.eventHeight || 0, Q = e.eventMarginBottom || 0, q = gt(L), O = L.week, ne = q === W.startIdentifier;
+    const N = e.eventHeight || 0, J = e.eventMarginBottom || 0, q = gt(L), O = L.week, ne = q === W.startIdentifier;
     let K = q === W.endIdentifier, H = xV;
     if (!i.value)
       for (let X = L.index + 1; X < O.length; X++) {
@@ -18376,7 +18376,7 @@ function VV(e, t, n) {
       style: {
         height: `${N}px`,
         width: `${H}%`,
-        marginBottom: `${Q}px`
+        marginBottom: `${J}px`
       },
       "data-date": L.date
     });
@@ -18385,7 +18385,7 @@ function VV(e, t, n) {
     let {
       event: W,
       left: N,
-      width: Q
+      width: J
     } = D;
     const q = L.timeDelta(W.start, L), O = L.timeDelta(W.end, L);
     if (O === !1 || q === !1 || O < 0 || q >= 1 || kV(W, L))
@@ -18403,12 +18403,12 @@ function VV(e, t, n) {
         top: `${G}px`,
         height: `${ve}px`,
         left: `${N}%`,
-        width: `${Q}%`
+        width: `${J}%`
       }
     });
   }
   function b(D, L, W, N) {
-    const Q = t.event, q = c.value(D.input), O = k(D.input), ne = D.start.hour < 12 && D.end.hour >= 12, K = qC(D.start, D.end) <= u.value, H = (de, xe) => a.getFormatter({
+    const J = t.event, q = c.value(D.input), O = k(D.input), ne = D.start.hour < 12 && D.end.hour >= 12, K = qC(D.start, D.end) <= u.value, H = (de, xe) => a.getFormatter({
       timeZone: "UTC",
       hour: "numeric",
       minute: de.minute > 0 ? "numeric" : void 0
@@ -18448,7 +18448,7 @@ function VV(e, t, n) {
     }), Z, N, {
       ref_for: !0,
       ref: m
-    }), [Q?.(ve) ?? S(X)]), [[_t, e.eventRipple ?? !0]]);
+    }), [J?.(ve) ?? S(X)]), [[_t, e.eventRipple ?? !0]]);
   }
   function S(D) {
     return V("div", {
@@ -18467,8 +18467,8 @@ function VV(e, t, n) {
     }, null);
   }
   function I(D) {
-    const L = e.eventHeight || 0, W = e.eventMarginBottom || 0, N = en(n, ":more", (Q) => ({
-      nativeEvent: Q,
+    const L = e.eventHeight || 0, W = e.eventMarginBottom || 0, N = en(n, ":more", (J) => ({
+      nativeEvent: J,
       ...D
     }));
     return Ge(V("div", U({
@@ -18509,8 +18509,8 @@ function VV(e, t, n) {
       return {
         ...t
       };
-    const D = f.value(s.value, v.value[0], u.value), L = (N) => !!N, W = (N, Q, q, O) => {
-      const ne = Q(N), K = D(N, ne, O, i.value);
+    const D = f.value(s.value, v.value[0], u.value), L = (N) => !!N, W = (N, J, q, O) => {
+      const ne = J(N), K = D(N, ne, O, i.value);
       if (O)
         return K.map((G) => q(G, N)).filter(L);
       const H = [];
@@ -18524,26 +18524,26 @@ function VV(e, t, n) {
     return {
       ...t,
       day: (N) => {
-        let Q = W(N, P, x, !1);
-        if (Q && Q.length > 0 && e.eventMore && Q.push(I(N)), t.day) {
+        let J = W(N, P, x, !1);
+        if (J && J.length > 0 && e.eventMore && J.push(I(N)), t.day) {
           const q = t.day(N);
-          q && (Q = Q ? Q.concat(q) : q);
+          q && (J = J ? J.concat(q) : q);
         }
-        return Q;
+        return J;
       },
       "day-header": (N) => {
-        let Q = W(N, F, x, !1);
+        let J = W(N, F, x, !1);
         if (t["day-header"]) {
           const q = t["day-header"](N);
-          q && (Q = Q ? Q.concat(q) : q);
+          q && (J = J ? J.concat(q) : q);
         }
-        return Q;
+        return J;
       },
       "day-body": (N) => {
-        const Q = W(N, A, w, !0);
+        const J = W(N, A, w, !0);
         let q = [V("div", {
           class: "v-event-timed-container"
-        }, [Q])];
+        }, [J])];
         if (t["day-body"]) {
           const O = t["day-body"](N);
           O && (q = q.concat(O));
@@ -18582,7 +18582,7 @@ function VV(e, t, n) {
     getScopedSlots: B
   };
 }
-const _V = J()({
+const _V = Q()({
   name: "VCalendar",
   directives: {
     vResize: Ii
@@ -18797,7 +18797,7 @@ const _V = J()({
 }), IV = R({
   ...be(),
   ...Pe()
-}, "VCardActions"), Nh = J()({
+}, "VCardActions"), Nh = Q()({
   name: "VCardActions",
   props: IV(),
   setup(e, t) {
@@ -18818,7 +18818,7 @@ const _V = J()({
   opacity: [Number, String],
   ...be(),
   ...Pe()
-}, "VCardSubtitle"), Rh = J()({
+}, "VCardSubtitle"), Rh = Q()({
   name: "VCardSubtitle",
   props: PV(),
   setup(e, t) {
@@ -18848,7 +18848,7 @@ const _V = J()({
   ...be(),
   ...ot(),
   ...Pe()
-}, "VCardItem"), Wh = J()({
+}, "VCardItem"), Wh = Q()({
   name: "VCardItem",
   props: TV(),
   setup(e, t) {
@@ -18927,7 +18927,7 @@ const _V = J()({
   opacity: [Number, String],
   ...be(),
   ...Pe()
-}, "VCardText"), zh = J()({
+}, "VCardText"), zh = Q()({
   name: "VCardText",
   props: AV(),
   setup(e, t) {
@@ -18985,7 +18985,7 @@ const _V = J()({
   ...on({
     variant: "elevated"
   })
-}, "VCard"), EV = J()({
+}, "VCard"), EV = Q()({
   name: "VCard",
   directives: {
     vRipple: _t
@@ -19198,7 +19198,7 @@ const Oo = {
   ...be(),
   ...Pe(),
   ...Oe()
-}, "VWindow"), Ka = J()({
+}, "VWindow"), Ka = Q()({
   name: "VWindow",
   directives: {
     vTouch: Oo
@@ -19352,7 +19352,7 @@ const Oo = {
     mandatory: "force",
     showArrows: !0
   })
-}, "VCarousel"), HV = J()({
+}, "VCarousel"), HV = Q()({
   name: "VCarousel",
   props: RV(),
   emits: {
@@ -19448,7 +19448,7 @@ const Oo = {
   ...be(),
   ...il(),
   ...ac()
-}, "VWindowItem"), Ga = J()({
+}, "VWindowItem"), Ga = Q()({
   name: "VWindowItem",
   directives: {
     vTouch: Oo
@@ -19510,7 +19510,7 @@ const Oo = {
 }), WV = R({
   ...sg(),
   ...yr()
-}, "VCarouselItem"), zV = J()({
+}, "VCarouselItem"), zV = Q()({
   name: "VCarouselItem",
   inheritAttrs: !1,
   props: WV(),
@@ -20068,8 +20068,8 @@ const Kh = R({
       value: de
     });
   }
-  function Q(Z) {
-    Z.stopPropagation(), Z.preventDefault(), D(Z), window.removeEventListener("mousemove", N, W), window.removeEventListener("mouseup", Q);
+  function J(Z) {
+    Z.stopPropagation(), Z.preventDefault(), D(Z), window.removeEventListener("mousemove", N, W), window.removeEventListener("mouseup", J);
   }
   function q(Z) {
     D(Z), window.removeEventListener("touchmove", N, W), Z.target?.removeEventListener("touchend", q);
@@ -20080,12 +20080,12 @@ const Kh = R({
     });
   }
   function ne(Z) {
-    Z.button === 0 && (Z.preventDefault(), L(Z), window.addEventListener("mousemove", N, W), window.addEventListener("mouseup", Q, {
+    Z.button === 0 && (Z.preventDefault(), L(Z), window.addEventListener("mousemove", N, W), window.addEventListener("mouseup", J, {
       passive: !1
     }));
   }
   it(() => {
-    window.removeEventListener("touchmove", N), window.removeEventListener("mousemove", N), window.removeEventListener("mouseup", Q);
+    window.removeEventListener("touchmove", N), window.removeEventListener("mousemove", N), window.removeEventListener("mouseup", J);
   });
   const K = (Z) => {
     const de = (Z - f.value) / (v.value - f.value) * 100;
@@ -20173,7 +20173,7 @@ const Kh = R({
   name: String,
   noKeyboard: Boolean,
   ...be()
-}, "VSliderThumb"), Ws = J()({
+}, "VSliderThumb"), Ws = Q()({
   name: "VSliderThumb",
   directives: {
     vRipple: _t
@@ -20223,16 +20223,16 @@ const Kh = R({
       end: L,
       home: W,
       left: N,
-      right: Q,
+      right: J,
       down: q,
       up: O
-    } = gs, ne = [B, D, L, W, N, Q, q, O], K = _(() => d.value ? [1, 2, 3] : [1, 5, 10]);
+    } = gs, ne = [B, D, L, W, N, J, q, O], K = _(() => d.value ? [1, 2, 3] : [1, 5, 10]);
     function H(X, ve) {
       if (e.noKeyboard || f.value || !ne.includes(X.key)) return;
       X.preventDefault();
       const Z = d.value || 0.1, de = (s.value - r.value) / Z;
-      if ([N, Q, q, O].includes(X.key)) {
-        const Ce = (h.value ? [i.value ? N : Q, y.value ? q : O] : g.value !== i.value ? [N, O] : [Q, O]).includes(X.key) ? 1 : -1, _e = X.shiftKey ? 2 : X.ctrlKey ? 1 : 0;
+      if ([N, J, q, O].includes(X.key)) {
+        const Ce = (h.value ? [i.value ? N : J, y.value ? q : O] : g.value !== i.value ? [N, O] : [J, O]).includes(X.key) ? 1 : -1, _e = X.shiftKey ? 2 : X.ctrlKey ? 1 : 0;
         Ce === -1 && ve === s.value && !_e && !Number.isInteger(de) ? ve = ve - de % 1 * Z : ve = ve + Ce * Z * K.value[_e];
       } else if (X.key === W)
         ve = r.value;
@@ -20303,7 +20303,7 @@ const Kh = R({
     required: !0
   },
   ...be()
-}, "VSliderTrack"), Xh = J()({
+}, "VSliderTrack"), Xh = Q()({
   name: "VSliderTrack",
   props: a1(),
   emits: {},
@@ -20393,7 +20393,7 @@ const Kh = R({
     type: [Number, String],
     default: 0
   }
-}, "VSlider"), zs = J()({
+}, "VSlider"), zs = Q()({
   name: "VSlider",
   inheritAttrs: !1,
   props: l1(),
@@ -20975,7 +20975,7 @@ const T1 = Ot({
   ...Ze(),
   ...Pe(),
   ...Oe()
-}, "VSheet"), Pi = J()({
+}, "VSheet"), Pi = Q()({
   name: "VSheet",
   props: hc(),
   setup(e, t) {
@@ -21013,7 +21013,7 @@ const T1 = Ot({
   hideHeader: Boolean,
   hideTitle: Boolean,
   ...hc()
-}, "VPicker"), El = J()({
+}, "VPicker"), El = Q()({
   name: "VPicker",
   props: br(),
   setup(e, t) {
@@ -21216,7 +21216,7 @@ const T1 = Ot({
     modelValue: null,
     role: "combobox"
   }), ["validationValue", "dirty"])
-}, "VCombobox"), B1 = J()({
+}, "VCombobox"), B1 = Q()({
   name: "VCombobox",
   props: M1(),
   emits: {
@@ -21264,7 +21264,7 @@ const T1 = Ot({
         W.value && !Y && u.value?.ΨopenChildren.size || Y && L.value || (W.value = Y);
       }
     }), {
-      menuId: Q,
+      menuId: J,
       ariaExpanded: q,
       ariaControls: O
     } = rc(e, N);
@@ -21417,7 +21417,7 @@ const T1 = Ot({
             id: ye
           } = ge;
           return V(he, null, [p(Dl, U({
-            id: Q.value,
+            id: J.value,
             ref: u,
             modelValue: N.value,
             "onUpdate:modelValue": (Se) => N.value = Se,
@@ -21604,7 +21604,7 @@ const T1 = Ot({
     default: void 0
   },
   hideActions: Boolean
-}, "VConfirmEdit"), L1 = J()({
+}, "VConfirmEdit"), L1 = Q()({
   name: "VConfirmEdit",
   props: F1(),
   emits: {
@@ -22242,7 +22242,7 @@ const K1 = R({
       hideOnLeave: !0
     }
   })
-}, "VDataIterator"), G1 = J()({
+}, "VDataIterator"), G1 = Q()({
   name: "VDataIterator",
   props: K1(),
   emits: {
@@ -22319,7 +22319,7 @@ const K1 = R({
       isSelected: L,
       select: W,
       selectAll: N,
-      toggleSelect: Q
+      toggleSelect: J
     } = xr(e, {
       allItems: i,
       currentPage: D
@@ -22347,7 +22347,7 @@ const K1 = R({
       isSelected: L,
       select: W,
       selectAll: N,
-      toggleSelect: Q,
+      toggleSelect: J,
       isExpanded: q,
       toggleExpand: O,
       isGroupOpen: h,
@@ -22468,7 +22468,7 @@ const X1 = R({
   ...on({
     variant: "text"
   })
-}, "VPagination"), js = J()({
+}, "VPagination"), js = Q()({
   name: "VPagination",
   props: X1(),
   emits: {
@@ -22732,7 +22732,7 @@ const X1 = R({
     }]
   },
   showCurrentPage: Boolean
-}, "VDataTableFooter"), Ti = J()({
+}, "VDataTableFooter"), Ti = Q()({
   name: "VDataTableFooter",
   props: xc(),
   setup(e, t) {
@@ -23068,7 +23068,7 @@ const Sy = R({
   ...ot(),
   ...el(),
   ...sr()
-}, "VDataTableHeaders"), qa = J()({
+}, "VDataTableHeaders"), qa = Q()({
   name: "VDataTableHeaders",
   props: Sy(),
   setup(e, t) {
@@ -23187,7 +23187,7 @@ const Sy = R({
             key: "badge",
             class: ee(["v-data-table-header__sort-badge", ...h.value]),
             style: fe(x.value)
-          }, [i.value.findIndex((Q) => Q.key === P.key) + 1])]);
+          }, [i.value.findIndex((J) => J.key === P.key) + 1])]);
         }
       });
     }, C = () => {
@@ -23265,7 +23265,7 @@ const Sy = R({
     default: "$tableGroupExpand"
   },
   ...ot()
-}, "VDataTableGroupHeaderRow"), a_ = J()({
+}, "VDataTableGroupHeaderRow"), a_ = Q()({
   name: "VDataTableGroupHeaderRow",
   props: ky(),
   setup(e, t) {
@@ -23351,7 +23351,7 @@ const Sy = R({
   onDblclick: Vt(),
   ...ot(),
   ...el()
-}, "VDataTableRow"), _c = J()({
+}, "VDataTableRow"), _c = Q()({
   name: "VDataTableRow",
   props: wy(),
   setup(e, t) {
@@ -23498,7 +23498,7 @@ const Sy = R({
   ...jt(wy(), ["collapseIcon", "expandIcon", "density"]),
   ...jt(ky(), ["groupCollapseIcon", "groupExpandIcon", "density"]),
   ...el()
-}, "VDataTableRows"), Xa = J()({
+}, "VDataTableRows"), Xa = Q()({
   name: "VDataTableRows",
   inheritAttrs: !1,
   props: py(),
@@ -23613,7 +23613,7 @@ const Sy = R({
   ...ot(),
   ...Pe(),
   ...Oe()
-}, "VTable"), Za = J()({
+}, "VTable"), Za = Q()({
   name: "VTable",
   props: xy(),
   setup(e, t) {
@@ -23704,7 +23704,7 @@ const Pc = R({
   ...Pc(),
   ...Hl(),
   ...xc()
-}, "VDataTable"), s_ = J()({
+}, "VDataTable"), s_ = Q()({
   name: "VDataTable",
   props: r_(),
   emits: {
@@ -23796,7 +23796,7 @@ const Pc = R({
       startIndex: B,
       stopIndex: D,
       itemsPerPage: c
-    }), Q = _(() => I(N.value)), {
+    }), J = _(() => I(N.value)), {
       isSelected: q,
       select: O,
       selectAll: ne,
@@ -23805,7 +23805,7 @@ const Pc = R({
       allSelected: G
     } = xr(e, {
       allItems: h,
-      currentPage: Q
+      currentPage: J
     }), {
       isExpanded: X,
       toggleExpand: ve
@@ -23841,8 +23841,8 @@ const Pc = R({
       toggleExpand: ve,
       isGroupOpen: C,
       toggleGroup: T,
-      items: Q.value.map((de) => de.raw),
-      internalItems: Q.value,
+      items: J.value.map((de) => de.raw),
+      internalItems: J.value,
       groupedItems: N.value,
       columns: f.value,
       headers: v.value
@@ -23877,7 +23877,7 @@ const Pc = R({
   ...yc(),
   ...ch(),
   ...Hl()
-}, "VDataTableVirtual"), c_ = J()({
+}, "VDataTableVirtual"), c_ = Q()({
   name: "VDataTableVirtual",
   props: u_(),
   emits: {
@@ -23958,7 +23958,7 @@ const Pc = R({
       currentPage: P
     }), {
       isExpanded: N,
-      toggleExpand: Q
+      toggleExpand: J
     } = Sr(e), {
       containerRef: q,
       markerRef: O,
@@ -23998,7 +23998,7 @@ const Pc = R({
       selectAll: B,
       toggleSelect: D,
       isExpanded: N,
-      toggleExpand: Q,
+      toggleExpand: J,
       isGroupOpen: g,
       toggleGroup: I,
       items: P.value.map((_e) => _e.raw),
@@ -24094,7 +24094,7 @@ const Pc = R({
   ...Sc(),
   ...Pc(),
   ...xc()
-}, "VDataTableServer"), f_ = J()({
+}, "VDataTableServer"), f_ = Q()({
   name: "VDataTableServer",
   props: d_(),
   emits: {
@@ -24206,14 +24206,14 @@ const Pc = R({
       toggleExpand: L,
       isGroupOpen: x,
       toggleGroup: w,
-      items: W.value.map((Q) => Q.raw),
+      items: W.value.map((J) => J.raw),
       internalItems: W.value,
       groupedItems: I.value,
       columns: v.value,
       headers: k.value
     }));
     te(() => {
-      const Q = Ti.filterProps(e), q = qa.filterProps(Me(e, ["multiSort"])), O = Xa.filterProps(e), ne = Za.filterProps(e);
+      const J = Ti.filterProps(e), q = qa.filterProps(Me(e, ["multiSort"])), O = Xa.filterProps(e), ne = Za.filterProps(e);
       return p(Za, U({
         class: ["v-data-table", {
           "v-data-table--loading": e.loading
@@ -24235,7 +24235,7 @@ const Pc = R({
         }, [a["body.prepend"]?.(N.value), a.body ? a.body(N.value) : p(Xa, U(n, O, {
           items: I.value
         }), a), a["body.append"]?.(N.value)]), a.tbody?.(N.value), a.tfoot?.(N.value)]),
-        bottom: () => a.bottom ? a.bottom(N.value) : !e.hideDefaultFooter && V(he, null, [p(tn, null, null), p(Ti, Q, {
+        bottom: () => a.bottom ? a.bottom(N.value) : !e.hideDefaultFooter && V(he, null, [p(tn, null, null), p(Ti, J, {
           prepend: a["footer.prepend"]
         })])
       });
@@ -24249,7 +24249,7 @@ const Pc = R({
   ...be(),
   ...dt(),
   ...Pe()
-}, "VContainer"), m_ = J()({
+}, "VContainer"), m_ = Q()({
   name: "VContainer",
   props: v_(),
   setup(e, t) {
@@ -24321,7 +24321,7 @@ const h_ = ["auto", "start", "end", "center", "baseline", "stretch"], y_ = R({
   },
   ...be(),
   ...Pe()
-}, "VCol"), b_ = J()({
+}, "VCol"), b_ = Q()({
   name: "VCol",
   props: y_(),
   setup(e, t) {
@@ -24412,7 +24412,7 @@ const C_ = R({
   ...My,
   ...be(),
   ...Pe()
-}, "VRow"), V_ = J()({
+}, "VRow"), V_ = Q()({
   name: "VRow",
   props: C_(),
   setup(e, t) {
@@ -24474,7 +24474,7 @@ const C_ = R({
     type: String,
     default: "month"
   }
-}, "VDatePickerControls"), Ks = J()({
+}, "VDatePickerControls"), Ks = Q()({
   name: "VDatePickerControls",
   props: By(),
   emits: {
@@ -24624,7 +24624,7 @@ const C_ = R({
   header: String,
   transition: String,
   onClick: Vt()
-}, "VDatePickerHeader"), Gs = J()({
+}, "VDatePickerHeader"), Gs = Q()({
   name: "VDatePickerHeader",
   props: __(),
   emits: {
@@ -24834,7 +24834,7 @@ const Ly = R({
     default: () => null
   },
   ...Me(I_(), ["displayValue"])
-}, "VDatePickerMonth"), qs = J()({
+}, "VDatePickerMonth"), qs = Q()({
   name: "VDatePickerMonth",
   props: Ly(),
   emits: {
@@ -24974,7 +24974,7 @@ const Ly = R({
   modelValue: Number,
   year: Number,
   allowedMonths: [Array, Function]
-}, "VDatePickerMonths"), Xs = J()({
+}, "VDatePickerMonths"), Xs = Q()({
   name: "VDatePickerMonths",
   props: $y(),
   emits: {
@@ -25044,7 +25044,7 @@ const Ly = R({
   max: null,
   modelValue: Number,
   allowedYears: [Array, Function]
-}, "VDatePickerYears"), Zs = J()({
+}, "VDatePickerYears"), Zs = Q()({
   name: "VDatePickerYears",
   props: Oy(),
   directives: {
@@ -25167,7 +25167,7 @@ const Ly = R({
     title: "$vuetify.datePicker.title"
   }),
   modelValue: null
-}, "VDatePicker"), A_ = J()({
+}, "VDatePicker"), A_ = Q()({
   name: "VDatePicker",
   props: T_(),
   emits: {
@@ -25271,7 +25271,7 @@ const Ly = R({
       }
       H();
     }
-    function Q() {
+    function J() {
       if (h.value--, u.value) {
         const G = String(m.value + 1).padStart(2, "0"), X = l.endOfMonth(l.parseISO(`${h.value}-${G}-01`));
         l.isAfter(u.value, X) && (m.value = l.getMonth(u.value));
@@ -25343,7 +25343,7 @@ const Ly = R({
           "onClick:next": L,
           "onClick:prev": W,
           "onClick:nextYear": N,
-          "onClick:prevYear": Q,
+          "onClick:prevYear": J,
           "onClick:month": O,
           "onClick:year": ne
         }), {
@@ -25416,7 +25416,7 @@ const Ly = R({
     size: void 0
   }),
   ...Oe()
-}, "VEmptyState"), E_ = J()({
+}, "VEmptyState"), E_ = Q()({
   name: "VEmptyState",
   props: D_(),
   emits: {
@@ -25515,7 +25515,7 @@ const Ly = R({
 }), Di = /* @__PURE__ */ Symbol.for("vuetify:v-expansion-panel"), Ny = R({
   ...be(),
   ...ac()
-}, "VExpansionPanelText"), Js = J()({
+}, "VExpansionPanelText"), Js = Q()({
   name: "VExpansionPanelText",
   props: Ny(),
   setup(e, t) {
@@ -25559,7 +25559,7 @@ const Ly = R({
   readonly: Boolean,
   ...be(),
   ...dt()
-}, "VExpansionPanelTitle"), Qs = J()({
+}, "VExpansionPanelTitle"), Qs = Q()({
   name: "VExpansionPanelTitle",
   directives: {
     vRipple: _t
@@ -25619,7 +25619,7 @@ const Ly = R({
   ...Pe(),
   ...Ry(),
   ...Ny()
-}, "VExpansionPanel"), M_ = J()({
+}, "VExpansionPanel"), M_ = Q()({
   name: "VExpansionPanel",
   props: Hy(),
   emits: {
@@ -25693,7 +25693,7 @@ const Ly = R({
     default: "default",
     validator: (e) => B_.includes(e)
   }
-}, "VExpansionPanels"), L_ = J()({
+}, "VExpansionPanels"), L_ = Q()({
   name: "VExpansionPanels",
   props: F_(),
   emits: {
@@ -25758,7 +25758,7 @@ const Ly = R({
   ...ta({
     transition: "fab-transition"
   })
-}, "VFab"), O_ = J()({
+}, "VFab"), O_ = Q()({
   name: "VFab",
   props: $_(),
   emits: {
@@ -25921,7 +25921,7 @@ const z_ = R({
   ...Gi({
     clearable: !0
   })
-}, "VFileInput"), j_ = J()({
+}, "VFileInput"), j_ = Q()({
   name: "VFileInput",
   inheritAttrs: !1,
   props: z_(),
@@ -25995,18 +25995,18 @@ const z_ = R({
     async function W(q) {
       if (q.preventDefault(), q.stopImmediatePropagation(), S.value = !1, !x.value || !I(q)) return;
       const O = await g(q);
-      Q(O);
+      J(O);
     }
     function N(q) {
       if (!(!q.target || q.repack))
         if (e.filterByType)
-          Q([...q.target.files]);
+          J([...q.target.files]);
         else {
           const O = q.target;
           r.value = [...O.files ?? []];
         }
     }
-    function Q(q) {
+    function J(q) {
       const O = new DataTransfer(), {
         accepted: ne,
         rejected: K
@@ -26135,7 +26135,7 @@ const z_ = R({
     tag: "footer"
   }),
   ...Oe()
-}, "VFooter"), U_ = J()({
+}, "VFooter"), U_ = Q()({
   name: "VFooter",
   props: Y_(),
   setup(e, t) {
@@ -26182,7 +26182,7 @@ const z_ = R({
 }), K_ = R({
   ...be(),
   ...tx()
-}, "VForm"), G_ = J()({
+}, "VForm"), G_ = Q()({
   name: "VForm",
   props: K_(),
   emits: {
@@ -26226,7 +26226,7 @@ const z_ = R({
   }),
   ...Oe(),
   ...vt()
-}, "VKbd"), eu = J()({
+}, "VKbd"), eu = Q()({
   name: "VKbd",
   props: q_(),
   setup(e, t) {
@@ -26418,7 +26418,7 @@ function Df(e, t, n, a) {
   }
   return ["text", n.toUpperCase(), n];
 }
-const J_ = J()({
+const J_ = Q()({
   name: "VHotkey",
   props: X_(),
   setup(e) {
@@ -26539,7 +26539,7 @@ const J_ = J()({
     default: null
   },
   ...tc()
-}, "VHover"), eI = J()({
+}, "VHover"), eI = Q()({
   name: "VHover",
   props: Q_(),
   emits: {
@@ -26619,7 +26619,7 @@ const J_ = J()({
       ref: a
     }, [Kt(" ")])), {};
   }
-}), nI = J()({
+}), nI = Q()({
   name: "VInfiniteScroll",
   props: tI(),
   emits: {
@@ -26768,7 +26768,7 @@ const J_ = J()({
   }),
   ...Pe(),
   ...Oe()
-}, "VItemGroup"), lI = J()({
+}, "VItemGroup"), lI = Q()({
   name: "VItemGroup",
   props: aI(),
   emits: {
@@ -26800,7 +26800,7 @@ const J_ = J()({
       })]
     });
   }
-}), iI = J()({
+}), iI = Q()({
   name: "VItem",
   props: il(),
   emits: {
@@ -26831,7 +26831,7 @@ const J_ = J()({
   ...be(),
   ...dt(),
   ...Zm()
-}, "VLayout"), rI = J()({
+}, "VLayout"), rI = Q()({
   name: "VLayout",
   props: oI(),
   setup(e, t) {
@@ -26868,7 +26868,7 @@ const J_ = J()({
   modelValue: Boolean,
   ...be(),
   ...tl()
-}, "VLayoutItem"), uI = J()({
+}, "VLayoutItem"), uI = Q()({
   name: "VLayoutItem",
   props: sI(),
   setup(e, t) {
@@ -26909,7 +26909,7 @@ const J_ = J()({
   ...ta({
     transition: "fade-transition"
   })
-}, "VLazy"), dI = J()({
+}, "VLazy"), dI = Q()({
   name: "VLazy",
   directives: {
     vIntersect: Sn
@@ -26952,7 +26952,7 @@ const J_ = J()({
     default: void 0
   },
   ...be()
-}, "VLocaleProvider"), vI = J()({
+}, "VLocaleProvider"), vI = Q()({
   name: "VLocaleProvider",
   props: fI(),
   setup(e, t) {
@@ -26974,7 +26974,7 @@ const J_ = J()({
   ...Pe({
     tag: "main"
   })
-}, "VMain"), gI = J()({
+}, "VMain"), gI = Q()({
   name: "VMain",
   props: mI(),
   setup(e, t) {
@@ -27243,7 +27243,7 @@ const pI = ["start", "end", "left", "right", "top", "bottom"], xI = R({
     tag: "nav"
   }),
   ...Oe()
-}, "VNavigationDrawer"), CI = J()({
+}, "VNavigationDrawer"), CI = Q()({
   name: "VNavigationDrawer",
   props: xI(),
   emits: {
@@ -27330,7 +27330,7 @@ const pI = ["start", "end", "left", "right", "top", "bottom"], xI = R({
       rootEl: x,
       isSticky: P,
       layoutItemStyles: D
-    }), Q = We(() => typeof e.scrim == "string" ? e.scrim : null), q = _(() => ({
+    }), J = We(() => typeof e.scrim == "string" ? e.scrim : null), q = _(() => ({
       ...F.value ? {
         opacity: A.value * 0.2,
         transition: "none"
@@ -27391,8 +27391,8 @@ const pI = ["start", "end", "left", "right", "top", "bottom"], xI = R({
         name: "fade-transition"
       }, {
         default: () => [T.value && (F.value || m.value) && !!e.scrim && V("div", U({
-          class: ["v-navigation-drawer__scrim", Q.backgroundColorClasses.value],
-          style: [q.value, Q.backgroundColorStyles.value],
+          class: ["v-navigation-drawer__scrim", J.backgroundColorClasses.value],
+          style: [q.value, J.backgroundColorStyles.value],
           onClick: () => {
             C.value || (m.value = !1);
           }
@@ -27470,7 +27470,7 @@ const TI = R({
     validator: (e) => !e || e.length === 1
   },
   ...Me(qi(), ["modelValue", "validationValue"])
-}, "VNumberInput"), AI = J()({
+}, "VNumberInput"), AI = Q()({
   name: "VNumberInput",
   props: {
     ...TI()
@@ -27537,7 +27537,7 @@ const TI = R({
       }
     };
     ue(() => e.precision, () => q()), ue(() => e.minFractionDigits, () => q()), ht(() => {
-      Q();
+      J();
     });
     function P(H) {
       if (H == null) return 0;
@@ -27571,7 +27571,7 @@ const TI = R({
       }
     }
     async function B(H) {
-      ["Enter", "ArrowLeft", "ArrowRight", "Backspace", "Delete", "Tab"].includes(H.key) || H.ctrlKey || ["ArrowDown", "ArrowUp"].includes(H.key) && (H.preventDefault(), H.stopPropagation(), Q(), await Ie(), H.key === "ArrowDown" ? F(!1) : F());
+      ["Enter", "ArrowLeft", "ArrowRight", "Backspace", "Delete", "Tab"].includes(H.key) || H.ctrlKey || ["ArrowDown", "ArrowUp"].includes(H.key) && (H.preventDefault(), H.stopPropagation(), J(), await Ie(), H.key === "ArrowDown" ? F(!1) : F());
     }
     function D(H) {
       H.stopPropagation();
@@ -27585,7 +27585,7 @@ const TI = R({
     function N(H) {
       H.currentTarget?.setPointerCapture(H.pointerId), H.preventDefault(), H.stopPropagation(), l("down");
     }
-    function Q() {
+    function J() {
       if (r.value || !a.value) return;
       const H = a.value.value, G = Number(H.replace(c.value, "."));
       H && !isNaN(G) ? m.value = d(ze(G, e.min, e.max)) : m.value = null;
@@ -27606,7 +27606,7 @@ const TI = R({
       O();
     }
     function K() {
-      Q();
+      J();
     }
     return te(() => {
       const {
@@ -27759,7 +27759,7 @@ const TI = R({
   ...jt(Gi({
     variant: "outlined"
   }), ["baseColor", "bgColor", "class", "color", "disabled", "error", "loading", "rounded", "style", "theme", "variant"])
-}, "VOtpInput"), EI = J()({
+}, "VOtpInput"), EI = Q()({
   name: "VOtpInput",
   props: DI(),
   emits: {
@@ -27936,7 +27936,7 @@ const BI = R({
     default: 0.5
   },
   ...be()
-}, "VParallax"), FI = J()({
+}, "VParallax"), FI = Q()({
   name: "VParallax",
   props: BI(),
   setup(e, t) {
@@ -27989,7 +27989,7 @@ const BI = R({
     falseIcon: "$radioOff",
     trueIcon: "$radioOn"
   })
-}, "VRadio"), $I = J()({
+}, "VRadio"), $I = Q()({
   name: "VRadio",
   props: LI(),
   setup(e, t) {
@@ -28024,7 +28024,7 @@ const BI = R({
     type: String,
     default: "radio"
   }
-}, "VRadioGroup"), NI = J()({
+}, "VRadioGroup"), NI = Q()({
   name: "VRadioGroup",
   inheritAttrs: !1,
   props: OI(),
@@ -28093,7 +28093,7 @@ const BI = R({
     type: Array,
     default: () => [0, 0]
   }
-}, "VRangeSlider"), HI = J()({
+}, "VRangeSlider"), HI = Q()({
   name: "VRangeSlider",
   inheritAttrs: !1,
   props: RI(),
@@ -28190,7 +28190,7 @@ const BI = R({
         default: (W) => {
           let {
             id: N,
-            messagesId: Q
+            messagesId: J
           } = W;
           return V("div", {
             class: "v-slider__container",
@@ -28218,7 +28218,7 @@ const BI = R({
             "tick-label": n["tick-label"]
           }), p(Ws, U({
             ref: i,
-            "aria-describedby": Q.value,
+            "aria-describedby": J.value,
             focused: I && f.value === i.value?.$el,
             modelValue: d.value[0],
             "onUpdate:modelValue": (q) => d.value = [q, d.value[1]],
@@ -28236,7 +28236,7 @@ const BI = R({
             "thumb-label": n["thumb-label"]
           }), p(Ws, U({
             ref: o,
-            "aria-describedby": Q.value,
+            "aria-describedby": J.value,
             focused: I && f.value === o.value?.$el,
             modelValue: d.value[1],
             "onUpdate:modelValue": (q) => d.value = [d.value[0], q],
@@ -28300,7 +28300,7 @@ const BI = R({
   ...$n(),
   ...Pe(),
   ...Oe()
-}, "VRating"), zI = J()({
+}, "VRating"), zI = Q()({
   name: "VRating",
   props: WI(),
   emits: {
@@ -28522,7 +28522,7 @@ const UI = R({
   ...dt(),
   ...vt(),
   ...Oe()
-}, "VSkeletonLoader"), KI = J()({
+}, "VSkeletonLoader"), KI = Q()({
   name: "VSkeletonLoader",
   inheritAttrs: !1,
   props: UI(),
@@ -28557,7 +28557,7 @@ const UI = R({
       }, f, n), [c.value]) : V(he, null, [a.default?.()]);
     }), {};
   }
-}), GI = J()({
+}), GI = Q()({
   name: "VSlideGroupItem",
   props: il(),
   emits: {
@@ -28623,7 +28623,7 @@ const Ky = R({
   ...Me(Ki({
     transition: "v-snackbar-transition"
   }), ["persistent", "noClickAnimation", "retainFocus", "captureFocus", "disableInitialFocus", "scrim", "scrollStrategy", "stickToTarget", "viewportMargin"])
-}, "VSnackbar"), tu = J()({
+}, "VSnackbar"), tu = Q()({
   name: "VSnackbar",
   props: Ky(),
   emits: {
@@ -28756,7 +28756,7 @@ const Ky = R({
     default: () => []
   },
   ...Me(Ky(), ["modelValue"])
-}, "VSnackbarQueue"), ZI = J()({
+}, "VSnackbarQueue"), ZI = Q()({
   name: "VSnackbarQueue",
   props: XI(),
   emits: {
@@ -28888,7 +28888,7 @@ const Ky = R({
 }, "Line"), qy = R({
   autoLineWidth: Boolean,
   ...Gy()
-}, "VBarline"), $f = J()({
+}, "VBarline"), $f = Q()({
   name: "VBarline",
   props: qy(),
   setup(e, t) {
@@ -29031,7 +29031,7 @@ function Nf(e, t, n) {
 const Xy = R({
   fill: Boolean,
   ...Gy()
-}, "VTrendline"), Rf = J()({
+}, "VTrendline"), Rf = Q()({
   name: "VTrendline",
   props: Xy(),
   setup(e, t) {
@@ -29133,7 +29133,7 @@ const Xy = R({
   },
   ...qy(),
   ...Xy()
-}, "VSparkline"), tP = J()({
+}, "VSparkline"), tP = Q()({
   name: "VSparkline",
   props: eP(),
   setup(e, t) {
@@ -29167,7 +29167,7 @@ const Xy = R({
     location: "top center",
     transition: "scale-transition"
   })
-}, "VSpeedDial"), aP = J()({
+}, "VSpeedDial"), aP = Q()({
   name: "VSpeedDial",
   props: nP(),
   emits: {
@@ -29228,7 +29228,7 @@ const Xy = R({
     type: String,
     default: "$vuetify.stepper.next"
   }
-}, "VStepperActions"), Jy = J()({
+}, "VStepperActions"), Jy = Q()({
   name: "VStepperActions",
   props: Zy(),
   emits: {
@@ -29316,7 +29316,7 @@ const Xy = R({
 }, "StepperItem"), iP = R({
   ...lP(),
   ...il()
-}, "VStepperItem"), eb = J()({
+}, "VStepperItem"), eb = Q()({
   name: "VStepperItem",
   directives: {
     vRipple: _t
@@ -29374,7 +29374,7 @@ const Xy = R({
   }
 }), oP = R({
   ...Me(hr(), ["continuous", "nextIcon", "prevIcon", "showArrows", "touch", "mandatory"])
-}, "VStepperWindow"), tb = J()({
+}, "VStepperWindow"), tb = Q()({
   name: "VStepperWindow",
   props: oP(),
   emits: {
@@ -29408,7 +29408,7 @@ const Xy = R({
   }
 }), rP = R({
   ...yr()
-}, "VStepperWindowItem"), nb = J()({
+}, "VStepperWindowItem"), nb = Q()({
   name: "VStepperWindowItem",
   props: rP(),
   setup(e, t) {
@@ -29460,7 +29460,7 @@ const Xy = R({
   }),
   ...hc(),
   ...jt(Zy(), ["prevText", "nextText"])
-}, "VStepper"), cP = J()({
+}, "VStepper"), cP = Q()({
   name: "VStepper",
   props: uP(),
   emits: {
@@ -29576,7 +29576,7 @@ const Xy = R({
   },
   ...oa(),
   ...cr()
-}, "VSwitch"), fP = J()({
+}, "VSwitch"), fP = Q()({
   name: "VSwitch",
   inheritAttrs: !1,
   props: dP(),
@@ -29696,9 +29696,9 @@ const Xy = R({
                   active: !0,
                   color: F.value === !1 ? void 0 : v.value
                 }, {
-                  default: (Q) => a.loader ? a.loader(Q) : p(Sa, {
-                    active: Q.isActive,
-                    color: Q.color,
+                  default: (J) => a.loader ? a.loader(J) : p(Sa, {
+                    active: J.isActive,
+                    color: J.color,
                     indeterminate: !0,
                     size: "16",
                     width: "2"
@@ -29725,7 +29725,7 @@ const Xy = R({
   ...Ze(),
   ...Pe(),
   ...Oe()
-}, "VSystemBar"), mP = J()({
+}, "VSystemBar"), mP = Q()({
   name: "VSystemBar",
   props: vP(),
   setup(e, t) {
@@ -29776,7 +29776,7 @@ const Xy = R({
     selectedClass: "v-tab--selected",
     variant: "text"
   }), ["active", "block", "flat", "location", "position", "symbol"])
-}, "VTab"), lb = J()({
+}, "VTab"), lb = Q()({
   name: "VTab",
   props: ab(),
   setup(e, t) {
@@ -29862,7 +29862,7 @@ const Xy = R({
   }
 }), gP = R({
   ...Me(hr(), ["continuous", "nextIcon", "prevIcon", "showArrows", "touch", "mandatory"])
-}, "VTabsWindow"), ib = J()({
+}, "VTabsWindow"), ib = Q()({
   name: "VTabsWindow",
   props: gP(),
   emits: {
@@ -29896,7 +29896,7 @@ const Xy = R({
   }
 }), hP = R({
   ...yr()
-}, "VTabsWindowItem"), ob = J()({
+}, "VTabsWindowItem"), ob = Q()({
   name: "VTabsWindowItem",
   props: hP(),
   setup(e, t) {
@@ -29950,7 +29950,7 @@ const bP = R({
   }),
   ...ot(),
   ...Pe()
-}, "VTabs"), SP = J()({
+}, "VTabs"), SP = Q()({
   name: "VTabs",
   props: bP(),
   emits: {
@@ -30058,7 +30058,7 @@ const bP = R({
   ...rh(),
   ...Me(oa(), ["direction"]),
   ...Gi()
-}, "VTextarea"), wP = J()({
+}, "VTextarea"), wP = Q()({
   name: "VTextarea",
   directives: {
     vIntersect: Sn
@@ -30111,10 +30111,10 @@ const bP = R({
         i.value = L.value;
         return;
       }
-      const W = L.value, N = L.selectionStart, Q = L.selectionEnd;
+      const W = L.value, N = L.selectionStart, J = L.selectionEnd;
       i.value = W, Ie(() => {
         let q = 0;
-        W.trimStart().length === L.value.length && (q = W.length - L.value.length), N != null && (L.selectionStart = N - q), Q != null && (L.selectionEnd = Q - q);
+        W.trimStart().length === L.value.length && (q = W.length - L.value.length), N != null && (L.selectionStart = N - q), J != null && (L.selectionEnd = J - q);
       });
     }
     const T = /* @__PURE__ */ ae(), P = /* @__PURE__ */ ae(Number(e.rows)), F = _(() => ["plain", "underlined"].includes(e.variant));
@@ -30135,8 +30135,8 @@ const bP = R({
         y.value = Math.max(0, D - L);
       }), e.autoGrow && Ie(() => {
         if (!T.value || !v.value) return;
-        const D = getComputedStyle(T.value), L = getComputedStyle(v.value.$el), W = parseFloat(D.getPropertyValue("--v-field-padding-top")) + parseFloat(D.getPropertyValue("--v-input-padding-top")) + parseFloat(D.getPropertyValue("--v-field-padding-bottom")), N = T.value.scrollHeight, Q = parseFloat(D.lineHeight), q = Math.max(parseFloat(e.rows) * Q + W, parseFloat(L.getPropertyValue("--v-input-control-height"))), O = e.maxHeight ? parseFloat(e.maxHeight) : parseFloat(e.maxRows) * Q + W || 1 / 0, ne = ze(N ?? 0, q, O);
-        P.value = Math.floor((ne - W) / Q), k.value = ce(ne);
+        const D = getComputedStyle(T.value), L = getComputedStyle(v.value.$el), W = parseFloat(D.getPropertyValue("--v-field-padding-top")) + parseFloat(D.getPropertyValue("--v-input-padding-top")) + parseFloat(D.getPropertyValue("--v-field-padding-bottom")), N = T.value.scrollHeight, J = parseFloat(D.lineHeight), q = Math.max(parseFloat(e.rows) * J + W, parseFloat(L.getPropertyValue("--v-input-control-height"))), O = e.maxHeight ? parseFloat(e.maxHeight) : parseFloat(e.maxRows) * J + W || 1 / 0, ne = ze(N ?? 0, q, O);
+        P.value = Math.floor((ne - W) / J), k.value = ce(ne);
       });
     }
     ht(A), ue(i, A), ue(() => e.rows, A), ue(() => e.maxHeight, A), ue(() => e.maxRows, A), ue(() => e.density, A), ue(P, (D) => {
@@ -30149,7 +30149,7 @@ const bP = R({
       B?.disconnect();
     }), te(() => {
       const D = !!(l.counter || e.counter || e.counterValue), L = !!(D || l.details), [W, N] = Fn(n), {
-        modelValue: Q,
+        modelValue: J,
         ...q
       } = Tt.filterProps(e), O = {
         ...wa.filterProps(e),
@@ -30263,7 +30263,7 @@ const bP = R({
   ...be(),
   ...Oe(),
   ...Pe()
-}, "VThemeProvider"), xP = J()({
+}, "VThemeProvider"), xP = Q()({
   name: "VThemeProvider",
   props: pP(),
   setup(e, t) {
@@ -30291,7 +30291,7 @@ const bP = R({
   ...Ze(),
   ...$n(),
   ...vt()
-}, "VTimelineDivider"), VP = J()({
+}, "VTimelineDivider"), VP = Q()({
   name: "VTimelineDivider",
   props: CP(),
   setup(e, t) {
@@ -30369,7 +30369,7 @@ const bP = R({
   ...Ze(),
   ...$n(),
   ...Pe()
-}, "VTimelineItem"), _P = J()({
+}, "VTimelineItem"), _P = Q()({
   name: "VTimelineItem",
   props: rb(),
   setup(e, t) {
@@ -30448,7 +30448,7 @@ const bP = R({
   ...ot(),
   ...Pe(),
   ...Oe()
-}, "VTimeline"), PP = J()({
+}, "VTimeline"), PP = Q()({
   name: "VTimeline",
   props: IP(),
   setup(e, t) {
@@ -30534,7 +30534,7 @@ const bP = R({
   modelValue: {
     type: Number
   }
-}, "VTimePickerClock"), nu = J()({
+}, "VTimePickerClock"), nu = Q()({
   name: "VTimePickerClock",
   props: TP(),
   emits: {
@@ -30639,13 +30639,13 @@ const bP = R({
         if (M = F(xe + $ * y.value, Ce), g(M) || (M = F(xe - $ * y.value, Ce), g(M))) return L(M);
     }
     function N(O) {
-      e.disabled || (O.preventDefault(), window.addEventListener("mousemove", W), window.addEventListener("touchmove", W), window.addEventListener("mouseup", Q), window.addEventListener("touchend", Q), r.value = null, s.value = null, o.value = !0, W(O));
+      e.disabled || (O.preventDefault(), window.addEventListener("mousemove", W), window.addEventListener("touchmove", W), window.addEventListener("mouseup", J), window.addEventListener("touchend", J), r.value = null, s.value = null, o.value = !0, W(O));
     }
-    function Q(O) {
+    function J(O) {
       O.stopPropagation(), q(), o.value = !1, s.value !== null && g(s.value) && n("change", s.value);
     }
     function q() {
-      window.removeEventListener("mousemove", W), window.removeEventListener("touchmove", W), window.removeEventListener("mouseup", Q), window.removeEventListener("touchend", Q);
+      window.removeEventListener("mousemove", W), window.removeEventListener("touchmove", W), window.removeEventListener("mouseup", J), window.removeEventListener("touchend", J);
     }
     it(q), te(() => V("div", {
       class: ee([{
@@ -30687,7 +30687,7 @@ const bP = R({
   label: String,
   modelValue: String,
   readonly: Boolean
-}, "VTimePickerField"), ns = J()({
+}, "VTimePickerField"), ns = Q()({
   name: "VTimePickerField",
   inheritAttrs: !1,
   props: AP(),
@@ -30796,7 +30796,7 @@ const EP = R({
   useSeconds: Boolean,
   value: Number,
   viewMode: String
-}, "VTimePickerControls"), lu = J()({
+}, "VTimePickerControls"), lu = Q()({
   name: "VTimePickerControls",
   props: EP(),
   emits: {
@@ -31003,7 +31003,7 @@ const FP = R({
     title: "$vuetify.timePicker.title"
   }), ["landscape"]),
   ...ot()
-}, "VTimePicker"), LP = J()({
+}, "VTimePicker"), LP = Q()({
   name: "VTimePicker",
   props: FP(),
   emits: {
@@ -31033,17 +31033,17 @@ const FP = R({
       const B = !y.value || o.value === null || y.value(o.value);
       if (e.allowedMinutes instanceof Array ? A = (O) => e.allowedMinutes.includes(O) : A = e.allowedMinutes, !e.min && !e.max)
         return B ? A : () => !1;
-      const [D, L] = e.min ? e.min.split(":").map(Number) : [0, 0], [W, N] = e.max ? e.max.split(":").map(Number) : [23, 59], Q = D * 60 + Number(L), q = W * 60 + Number(N);
+      const [D, L] = e.min ? e.min.split(":").map(Number) : [0, 0], [W, N] = e.max ? e.max.split(":").map(Number) : [23, 59], J = D * 60 + Number(L), q = W * 60 + Number(N);
       return (O) => {
         const ne = 60 * o.value + O;
-        return ne >= Q && ne <= q && B && (!A || A(O));
+        return ne >= J && ne <= q && B && (!A || A(O));
       };
     }), x = _(() => {
       let A;
       const D = (!y.value || o.value === null || y.value(o.value)) && (!h.value || r.value === null || h.value(r.value));
       if (e.allowedSeconds instanceof Array ? A = (H) => e.allowedSeconds.includes(H) : A = e.allowedSeconds, !e.min && !e.max)
         return D ? A : () => !1;
-      const [L, W, N] = e.min ? e.min.split(":").map(Number) : [0, 0, 0], [Q, q, O] = e.max ? e.max.split(":").map(Number) : [23, 59, 59], ne = L * 3600 + W * 60 + Number(N || 0), K = Q * 3600 + q * 60 + Number(O || 0);
+      const [L, W, N] = e.min ? e.min.split(":").map(Number) : [0, 0, 0], [J, q, O] = e.max ? e.max.split(":").map(Number) : [23, 59, 59], ne = L * 3600 + W * 60 + Number(N || 0), K = J * 3600 + q * 60 + Number(O || 0);
       return (H) => {
         const G = 3600 * o.value + 60 * r.value + H;
         return G >= ne && G <= K && D && (!A || A(H));
@@ -31150,7 +31150,7 @@ const FP = R({
   ...on({
     variant: "text"
   })
-}, "VToolbarItems"), OP = J()({
+}, "VToolbarItems"), OP = Q()({
   name: "VToolbarItems",
   props: $P(),
   setup(e, t) {
@@ -31186,7 +31186,7 @@ const FP = R({
     scrollStrategy: "reposition",
     transition: null
   }), ["absolute", "retainFocus", "captureFocus", "disableInitialFocus"])
-}, "VTooltip"), cb = J()({
+}, "VTooltip"), cb = Q()({
   name: "VTooltip",
   props: NP(),
   emits: {
@@ -31235,7 +31235,7 @@ const FP = R({
     collapseIcon: "$treeviewCollapse",
     expandIcon: "$treeviewExpand"
   }), ["subgroup"])
-}, "VTreeviewGroup"), iu = J()({
+}, "VTreeviewGroup"), iu = Q()({
   name: "VTreeviewGroup",
   props: RP(),
   setup(e, t) {
@@ -31274,7 +31274,7 @@ const FP = R({
   ...jg({
     slim: !0
   })
-}, "VTreeviewItem"), ou = J()({
+}, "VTreeviewItem"), ou = Q()({
   name: "VTreeviewItem",
   props: fb(),
   emits: {
@@ -31422,7 +31422,7 @@ const FP = R({
   },
   ...jt(fb(), ["hideActions"]),
   ...ot()
-}, "VTreeviewChildren"), No = J()({
+}, "VTreeviewChildren"), No = Q()({
   name: "VTreeviewChildren",
   props: vb(),
   setup(e, t) {
@@ -31601,7 +31601,7 @@ const HP = R({
     slim: !0
   }), ["nav", "openStrategy"]),
   modelValue: Array
-}, "VTreeview"), WP = J()({
+}, "VTreeview"), WP = Q()({
   name: "VTreeview",
   props: HP(),
   emits: {
@@ -31699,7 +31699,7 @@ const HP = R({
       });
     }), {};
   }
-}), zP = J()({
+}), zP = Q()({
   name: "VValidation",
   props: Pg(),
   emits: {
@@ -32048,39 +32048,40 @@ function aT(e) {
 const lT = {
   __name: "VAlert",
   setup(e) {
-    const t = Ue("children"), n = Ue("title"), a = Ue("text"), l = Ue("border"), i = Ue("border_color"), o = Ue("closable"), r = Ue("close_icon"), s = Ue("type"), u = Ue("close_label"), c = Ue("icon"), d = Ue("model_value"), f = Ue("prominent"), v = Ue("density"), k = Ue("height"), m = Ue("max_height"), y = Ue("max_width"), h = Ue("min_height"), x = Ue("min_width"), w = Ue("width"), b = Ue("elevation"), S = Ue("icon_sizes"), g = Ue("icon_size"), I = Ue("location"), C = Ue("position"), T = Ue("rounded"), P = Ue("tile"), F = Ue("tag"), A = Ue("theme"), B = Ue("color"), D = Ue("variant");
-    return (L, W) => {
-      const N = Nv("v-alert", !0);
-      return XS(), QS(N, {
-        title: De(n),
-        text: De(a),
-        border: De(l),
-        borderColor: De(i),
-        closable: De(o),
-        closeIcon: De(r),
-        type: De(s),
-        closeLabel: De(u),
-        icon: De(c),
-        modelValue: De(d),
-        prominent: De(f),
-        density: De(v),
-        height: De(k),
-        maxHeight: De(m),
-        maxWidth: De(y),
-        minHeight: De(h),
-        minWidth: De(x),
-        width: De(w),
-        elevation: De(b),
-        iconSizes: De(S),
-        iconSize: De(g),
-        location: De(I),
-        position: De(C),
-        rounded: De(T),
-        tile: De(P),
-        tag: De(F),
-        theme: De(A),
-        color: De(B),
-        variant: De(D)
+    const t = Ue("children"), n = Ue("style"), a = Ue("title"), l = Ue("text"), i = Ue("border"), o = Ue("border_color"), r = Ue("closable"), s = Ue("close_icon"), u = Ue("type"), c = Ue("close_label"), d = Ue("icon"), f = Ue("model_value"), v = Ue("prominent"), k = Ue("density"), m = Ue("height"), y = Ue("max_height"), h = Ue("max_width"), x = Ue("min_height"), w = Ue("min_width"), b = Ue("width"), S = Ue("elevation"), g = Ue("icon_sizes"), I = Ue("icon_size"), C = Ue("location"), T = Ue("position"), P = Ue("rounded"), F = Ue("tile"), A = Ue("tag"), B = Ue("theme"), D = Ue("color"), L = Ue("variant");
+    return (W, N) => {
+      const J = Nv("v-alert", !0);
+      return XS(), QS(J, {
+        style: fe(De(n)),
+        title: De(a),
+        text: De(l),
+        border: De(i),
+        "border-color": De(o),
+        closable: De(r),
+        "close-icon": De(s),
+        type: De(u),
+        "close-label": De(c),
+        icon: De(d),
+        "model-value": De(f),
+        prominent: De(v),
+        density: De(k),
+        height: De(m),
+        "max-height": De(y),
+        "max-width": De(h),
+        "min-height": De(x),
+        "min-width": De(w),
+        width: De(b),
+        elevation: De(S),
+        "icon-sizes": De(g),
+        "icon-size": De(I),
+        location: De(C),
+        position: De(T),
+        rounded: De(P),
+        tile: De(F),
+        tag: De(A),
+        theme: De(B),
+        color: De(D),
+        variant: De(L)
       }, {
         default: pv(() => [
           Kt(
@@ -32091,7 +32092,7 @@ const lT = {
         ]),
         _: 1
         /* STABLE */
-      }, 8, ["title", "text", "border", "borderColor", "closable", "closeIcon", "type", "closeLabel", "icon", "modelValue", "prominent", "density", "height", "maxHeight", "maxWidth", "minHeight", "minWidth", "width", "elevation", "iconSizes", "iconSize", "location", "position", "rounded", "tile", "tag", "theme", "color", "variant"]);
+      }, 8, ["style", "title", "text", "border", "border-color", "closable", "close-icon", "type", "close-label", "icon", "model-value", "prominent", "density", "height", "max-height", "max-width", "min-height", "min-width", "width", "elevation", "icon-sizes", "icon-size", "location", "position", "rounded", "tile", "tag", "theme", "color", "variant"]);
     };
   }
 }, iT = aT(lT), oT = { render: iT };

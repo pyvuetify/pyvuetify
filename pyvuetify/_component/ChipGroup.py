@@ -12,7 +12,9 @@ class ChipGroup(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         symbol: The [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) used to hook into group functionality for components like [v-btn-toggle](/components/btn-toggle) and [v-bottom-navigation](/components/bottom-navigations/).
         filter: Applies an checkmark icon in front of every chip for using it like a filter.
         tag: Specify a custom tag used on the root element.
@@ -48,8 +50,14 @@ class ChipGroup(anywidget.AnyWidget):
     _esm = bundled_path / "VChipGroup.js"
     _css = bundled_path / "VChipGroup-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     symbol = traitlets.Any(allow_none=True).tag(sync=True)
     """The [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) used to hook into group functionality for components like [v-btn-toggle](/components/btn-toggle) and [v-bottom-navigation](/components/bottom-navigations/)."""
@@ -125,7 +133,9 @@ class ChipGroup(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         symbol=None,
         filter=False,
         tag="div",
@@ -153,7 +163,9 @@ class ChipGroup(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a ChipGroup widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.symbol = symbol
         self.filter = filter
         self.tag = tag

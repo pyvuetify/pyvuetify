@@ -12,7 +12,9 @@ class Counter(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         disabled: Removes the ability to click or target the component.
         max: Sets the maximum allowed value.
         value: Sets the current counter value.
@@ -29,8 +31,14 @@ class Counter(anywidget.AnyWidget):
     _esm = bundled_path / "VCounter.js"
     _css = bundled_path / "VCounter-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     disabled = traitlets.Bool(allow_none=True).tag(sync=True)
     """Removes the ability to click or target the component."""
@@ -49,7 +57,9 @@ class Counter(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         disabled=False,
         max=None,
         value="0",
@@ -58,7 +68,9 @@ class Counter(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Counter widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.disabled = disabled
         self.max = max
         self.value = value

@@ -12,7 +12,9 @@ class Switch(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         flat: Display component without elevation. Default elevation for thumb is 4dp, `flat` resets it.
         type: Provides the default type for children selection controls.
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
@@ -70,8 +72,14 @@ class Switch(anywidget.AnyWidget):
     _esm = bundled_path / "VSwitch.js"
     _css = bundled_path / "VSwitch-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     flat = traitlets.Bool(allow_none=True).tag(sync=True)
     """Display component without elevation. Default elevation for thumb is 4dp, `flat` resets it."""
@@ -213,7 +221,9 @@ class Switch(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         flat=False,
         type=None,
         model_value=None,
@@ -263,7 +273,9 @@ class Switch(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Switch widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.flat = flat
         self.type = type
         self.model_value = model_value

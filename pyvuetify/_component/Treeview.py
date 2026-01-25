@@ -12,7 +12,9 @@ class Treeview(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         search: The search model for filtering results.
         border: Applies utility border classes to the component. To use it, you need to omit the `border-` prefix, (for example use `border-sm` as `border="sm"`).  Find a list of the built-in border classes on the [borders page](/styles/borders).
         model_value: Allows one to control which nodes are selected. The array contains the values of currently selected items. It is equivalent to the `v-model:selected`
@@ -102,8 +104,14 @@ class Treeview(anywidget.AnyWidget):
     _esm = bundled_path / "VTreeview.js"
     _css = bundled_path / "VTreeview-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     search = traitlets.Unicode(allow_none=True).tag(sync=True)
     """The search model for filtering results."""
@@ -315,7 +323,9 @@ class Treeview(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         search=None,
         border=False,
         model_value=None,
@@ -384,7 +394,9 @@ class Treeview(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Treeview widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.search = search
         self.border = border
         self.model_value = model_value

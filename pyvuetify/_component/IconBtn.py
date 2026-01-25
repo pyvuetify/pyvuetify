@@ -12,7 +12,9 @@ class IconBtn(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         text: Specify content text for the component.
         border: Applies utility border classes to the component. To use it, you need to omit the `border-` prefix, (for example use `border-sm` as `border="sm"`).  Find a list of the built-in border classes on the [borders page](/styles/borders).
         icon: Apply a specific icon using the [v-icon](/components/icons/) component.
@@ -52,8 +54,14 @@ class IconBtn(anywidget.AnyWidget):
     _esm = bundled_path / "VIconBtn.js"
     _css = bundled_path / "VIconBtn-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     text = traitlets.Any(allow_none=True).tag(sync=True)
     """Specify content text for the component."""
@@ -141,7 +149,9 @@ class IconBtn(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         text=None,
         border=False,
         icon=None,
@@ -173,7 +183,9 @@ class IconBtn(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a IconBtn widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.text = text
         self.border = border
         self.icon = icon

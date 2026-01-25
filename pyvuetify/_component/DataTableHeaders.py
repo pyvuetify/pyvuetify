@@ -12,7 +12,9 @@ class DataTableHeaders(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         color: Applies a color to checkboxes, page size dropdown and sort badges in the table header.
         density: Adjusts the vertical height used by the component.
         sticky: Deprecated, use `fixed-header` instead.
@@ -37,8 +39,14 @@ class DataTableHeaders(anywidget.AnyWidget):
     _esm = bundled_path / "VDataTableHeaders.js"
     _css = bundled_path / "VDataTableHeaders-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     color = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Applies a color to checkboxes, page size dropdown and sort badges in the table header."""
@@ -81,7 +89,9 @@ class DataTableHeaders(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         color=None,
         density="default",
         sticky=False,
@@ -98,7 +108,9 @@ class DataTableHeaders(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a DataTableHeaders widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.color = color
         self.density = density
         self.sticky = sticky

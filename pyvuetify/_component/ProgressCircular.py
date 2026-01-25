@@ -12,7 +12,9 @@ class ProgressCircular(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         tag: Specify a custom tag used on the root element.
         indeterminate: Constantly animates, use when loading progress is unknown. If set to the string `'disable-shrink'` it will use a simpler animation that does not run on the main thread.
         size: Sets the diameter of the circle in pixels.
@@ -34,8 +36,14 @@ class ProgressCircular(anywidget.AnyWidget):
     _esm = bundled_path / "VProgressCircular.js"
     _css = bundled_path / "VProgressCircular-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     tag = traitlets.Any(allow_none=True).tag(sync=True)
     """Specify a custom tag used on the root element."""
@@ -69,7 +77,9 @@ class ProgressCircular(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         tag="div",
         indeterminate=False,
         size="default",
@@ -83,7 +93,9 @@ class ProgressCircular(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a ProgressCircular widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.tag = tag
         self.indeterminate = indeterminate
         self.size = size

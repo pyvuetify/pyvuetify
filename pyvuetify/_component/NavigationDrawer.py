@@ -12,7 +12,9 @@ class NavigationDrawer(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         border: Applies utility border classes to the component. To use it, you need to omit the `border-` prefix, (for example use `border-sm` as `border="sm"`).  Find a list of the built-in border classes on the [borders page](/styles/borders).
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
         width: Sets the width for the component.
@@ -56,8 +58,14 @@ class NavigationDrawer(anywidget.AnyWidget):
     _esm = bundled_path / "VNavigationDrawer.js"
     _css = bundled_path / "VNavigationDrawer-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     border = traitlets.Any(allow_none=True).tag(sync=True)
     """Applies utility border classes to the component. To use it, you need to omit the `border-` prefix, (for example use `border-sm` as `border="sm"`).  Find a list of the built-in border classes on the [borders page](/styles/borders)."""
@@ -157,7 +165,9 @@ class NavigationDrawer(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         border=False,
         model_value=None,
         width="256",
@@ -193,7 +203,9 @@ class NavigationDrawer(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a NavigationDrawer widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.border = border
         self.model_value = model_value
         self.width = width

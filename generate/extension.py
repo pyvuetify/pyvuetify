@@ -46,7 +46,8 @@ class TypeMapperExtension(Extension):
         mapping = {
             "false": "False",
             "true": "True",
-            "null": "None"
+            "null": "None",
+            "[]": [],
         }
         value = value.strip("'")
         return mapping.get(value, f'"{value}"')

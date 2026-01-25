@@ -12,7 +12,9 @@ class TimelineItem(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         icon: Apply a specific icon to the inside dot using the [v-icon](/components/icons/) component.
         density: Adjusts the vertical height used by the component.
         height: Sets the height for the component.
@@ -44,8 +46,14 @@ class TimelineItem(anywidget.AnyWidget):
     _esm = bundled_path / "VTimelineItem.js"
     _css = bundled_path / "VTimelineItem-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     icon = traitlets.Any(allow_none=True).tag(sync=True)
     """Apply a specific icon to the inside dot using the [v-icon](/components/icons/) component."""
@@ -109,7 +117,9 @@ class TimelineItem(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         icon=None,
         density=None,
         height=None,
@@ -133,7 +143,9 @@ class TimelineItem(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a TimelineItem widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.icon = icon
         self.density = density
         self.height = height

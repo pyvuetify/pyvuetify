@@ -12,7 +12,9 @@ class SystemBar(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         height: Sets the height for the component.
         elevation: Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation).
         absolute: Applies **position: absolute** to the component.
@@ -35,8 +37,14 @@ class SystemBar(anywidget.AnyWidget):
     _esm = bundled_path / "VSystemBar.js"
     _css = bundled_path / "VSystemBar-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     height = traitlets.Any(allow_none=True).tag(sync=True)
     """Sets the height for the component."""
@@ -73,7 +81,9 @@ class SystemBar(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         height=None,
         elevation=None,
         absolute=False,
@@ -88,7 +98,9 @@ class SystemBar(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a SystemBar widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.height = height
         self.elevation = elevation
         self.absolute = absolute

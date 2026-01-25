@@ -12,7 +12,9 @@ class PieTooltip(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
         item: Data item related to hovered segment
         target: MISSING DESCRIPTION ([edit in github](https://github.com/vuetifyjs/vuetify/tree//packages/api-generator/src/locale/en/VPieTooltip.json))
@@ -31,8 +33,14 @@ class PieTooltip(anywidget.AnyWidget):
     _esm = bundled_path / "VPieTooltip.js"
     _css = bundled_path / "VPieTooltip-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     model_value = traitlets.Bool(allow_none=True).tag(sync=True)
     """The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array."""
@@ -57,7 +65,9 @@ class PieTooltip(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         model_value=False,
         item=None,
         target=None,
@@ -68,7 +78,9 @@ class PieTooltip(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a PieTooltip widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.model_value = model_value
         self.item = item
         self.target = target

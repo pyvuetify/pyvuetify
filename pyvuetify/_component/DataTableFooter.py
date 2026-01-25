@@ -12,7 +12,9 @@ class DataTableFooter(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         color: Applies specified color to the control - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors).
         next_icon: Next icon.
         prev_icon: Previous icon.
@@ -37,8 +39,14 @@ class DataTableFooter(anywidget.AnyWidget):
     _esm = bundled_path / "VDataTableFooter.js"
     _css = bundled_path / "VDataTableFooter-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     color = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Applies specified color to the control - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors)."""
@@ -81,7 +89,9 @@ class DataTableFooter(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         color=None,
         next_icon="$next",
         prev_icon="$prev",
@@ -98,7 +108,9 @@ class DataTableFooter(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a DataTableFooter widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.color = color
         self.next_icon = next_icon
         self.prev_icon = prev_icon

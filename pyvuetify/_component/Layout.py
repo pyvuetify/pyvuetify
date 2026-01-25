@@ -12,7 +12,9 @@ class Layout(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         height: Sets the height for the component.
         max_height: Sets the maximum height for the component.
         max_width: Sets the maximum width for the component.
@@ -32,8 +34,14 @@ class Layout(anywidget.AnyWidget):
     _esm = bundled_path / "VLayout.js"
     _css = bundled_path / "VLayout-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     height = traitlets.Any(allow_none=True).tag(sync=True)
     """Sets the height for the component."""
@@ -61,7 +69,9 @@ class Layout(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         height=None,
         max_height=None,
         max_width=None,
@@ -73,7 +83,9 @@ class Layout(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Layout widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.height = height
         self.max_height = max_height
         self.max_width = max_width

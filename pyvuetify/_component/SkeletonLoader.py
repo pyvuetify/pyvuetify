@@ -12,7 +12,9 @@ class SkeletonLoader(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         type: A string delimited list of skeleton components to create such as `type="text@3"` or `type="card, list-item"`. Will recursively generate a corresponding skeleton from the provided string. Also supports short-hand for multiple elements such as **article@3** and **paragraph@2** which will generate 3 _article_ skeletons and 2 _paragraph_ skeletons. Please see below for a list of available pre-defined options.
         height: Sets the height for the component.
         max_height: Sets the maximum height for the component.
@@ -37,8 +39,14 @@ class SkeletonLoader(anywidget.AnyWidget):
     _esm = bundled_path / "VSkeletonLoader.js"
     _css = bundled_path / "VSkeletonLoader-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     type = traitlets.Any(allow_none=True).tag(sync=True)
     """A string delimited list of skeleton components to create such as `type="text@3"` or `type="card, list-item"`. Will recursively generate a corresponding skeleton from the provided string. Also supports short-hand for multiple elements such as **article@3** and **paragraph@2** which will generate 3 _article_ skeletons and 2 _paragraph_ skeletons. Please see below for a list of available pre-defined options."""
@@ -81,7 +89,9 @@ class SkeletonLoader(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         type="ossein",
         height=None,
         max_height=None,
@@ -98,7 +108,9 @@ class SkeletonLoader(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a SkeletonLoader widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.type = type
         self.height = height
         self.max_height = max_height

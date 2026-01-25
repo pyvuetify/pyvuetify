@@ -12,7 +12,9 @@ class Calendar(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         type: A string which is one of `month`, `week`, `day`, `4day`, `custom-weekly`, `custom-daily`, and `category`. The custom types look at the `start` and `end` dates passed to the component as opposed to the `value`.
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
         start: The starting date on the calendar (inclusive) in the format of `YYYY-MM-DD`. This may be ignored depending on the `type` of the calendar.
@@ -57,8 +59,14 @@ class Calendar(anywidget.AnyWidget):
     _esm = bundled_path / "VCalendar.js"
     _css = bundled_path / "VCalendar-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     type = traitlets.Any(allow_none=True).tag(sync=True)
     """A string which is one of `month`, `week`, `day`, `4day`, `custom-weekly`, `custom-daily`, and `category`. The custom types look at the `start` and `end` dates passed to the component as opposed to the `value`."""
@@ -161,7 +169,9 @@ class Calendar(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         type="month",
         model_value=None,
         start="2026-01-20",
@@ -198,7 +208,9 @@ class Calendar(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Calendar widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.type = type
         self.model_value = model_value
         self.start = start

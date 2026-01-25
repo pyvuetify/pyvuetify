@@ -12,7 +12,9 @@ class Tab(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         text: Specify content text for the component.
         replace: Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [replace](https://router.vuejs.org/api/#replace) prop on the vue-router documentation.
         fixed: Forces component to take up all available space up to their maximum width (300px), and centers it.
@@ -66,8 +68,14 @@ class Tab(anywidget.AnyWidget):
     _esm = bundled_path / "VTab.js"
     _css = bundled_path / "VTab-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     text = traitlets.Any(allow_none=True).tag(sync=True)
     """Specify content text for the component."""
@@ -197,7 +205,9 @@ class Tab(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         text=None,
         replace=False,
         fixed=False,
@@ -243,7 +253,9 @@ class Tab(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Tab widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.text = text
         self.replace = replace
         self.fixed = fixed

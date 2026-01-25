@@ -12,7 +12,9 @@ class TimePickerControls(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         color: Applies specified color to the control - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors).
         disabled: Removes the ability to click or target the component.
         value: The current value of the timepicker.
@@ -35,8 +37,14 @@ class TimePickerControls(anywidget.AnyWidget):
     _esm = bundled_path / "VTimePickerControls.js"
     _css = bundled_path / "VTimePickerControls-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     color = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Applies specified color to the control - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors)."""
@@ -73,7 +81,9 @@ class TimePickerControls(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         color=None,
         disabled=False,
         value=None,
@@ -88,7 +98,9 @@ class TimePickerControls(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a TimePickerControls widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.color = color
         self.disabled = disabled
         self.value = value

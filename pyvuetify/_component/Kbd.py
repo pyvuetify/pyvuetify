@@ -12,7 +12,9 @@ class Kbd(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         border: Applies utility border classes to the component. To use it, you need to omit the `border-` prefix, (for example use `border-sm` as `border="sm"`).  Find a list of the built-in border classes on the [borders page](/styles/borders).
         elevation: Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation).
         rounded: Designates the **border-radius** applied to the component. This can be **0**, **xs**, **sm**, true, **lg**, **xl**, **pill**, **circle**, and **shaped**. Find more information on available border radius classes on the [Border Radius page](/styles/border-radius).
@@ -31,8 +33,14 @@ class Kbd(anywidget.AnyWidget):
     _esm = bundled_path / "VKbd.js"
     _css = bundled_path / "VKbd-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     border = traitlets.Any(allow_none=True).tag(sync=True)
     """Applies utility border classes to the component. To use it, you need to omit the `border-` prefix, (for example use `border-sm` as `border="sm"`).  Find a list of the built-in border classes on the [borders page](/styles/borders)."""
@@ -57,7 +65,9 @@ class Kbd(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         border=False,
         elevation=None,
         rounded=None,
@@ -68,7 +78,9 @@ class Kbd(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Kbd widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.border = border
         self.elevation = elevation
         self.rounded = rounded

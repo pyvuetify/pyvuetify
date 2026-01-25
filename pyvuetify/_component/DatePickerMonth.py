@@ -12,7 +12,9 @@ class DatePickerMonth(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
         color: Applies specified color to the control - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors).
         disabled: Removes the ability to click or target the component.
@@ -45,8 +47,14 @@ class DatePickerMonth(anywidget.AnyWidget):
     _esm = bundled_path / "VDatePickerMonth.js"
     _css = bundled_path / "VDatePickerMonth-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     model_value = traitlets.Any(allow_none=True).tag(sync=True)
     """The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array."""
@@ -113,7 +121,9 @@ class DatePickerMonth(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         model_value=None,
         color=None,
         disabled=None,
@@ -138,7 +148,9 @@ class DatePickerMonth(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a DatePickerMonth widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.model_value = model_value
         self.color = color
         self.disabled = disabled

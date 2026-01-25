@@ -12,7 +12,9 @@ class Video(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         type: Media file type (optional)
         playing: Applies correct icon of the default play button.
         progress: Controls main slider value (0 ~ 100)
@@ -63,8 +65,14 @@ class Video(anywidget.AnyWidget):
     _esm = bundled_path / "VVideo.js"
     _css = bundled_path / "VVideo-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     type = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Media file type (optional)"""
@@ -185,7 +193,9 @@ class Video(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         type=None,
         playing=False,
         progress="0",
@@ -228,7 +238,9 @@ class Video(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Video widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.type = type
         self.playing = playing
         self.progress = progress

@@ -12,7 +12,9 @@ class Img(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         alt: Alternate text for screen readers. Leave empty for decorative images.
         height: Sets the height for the component.
         src: The image URL. This prop is mandatory.
@@ -52,8 +54,14 @@ NOTE: This prop has no effect unless either `height` or `aspect-ratio` are provi
     _esm = bundled_path / "VImg.js"
     _css = bundled_path / "VImg-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     alt = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Alternate text for screen readers. Leave empty for decorative images."""
@@ -139,7 +147,9 @@ NOTE: This prop has no effect unless either `height` or `aspect-ratio` are provi
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         alt=None,
         height=None,
         src="",
@@ -170,7 +180,9 @@ NOTE: This prop has no effect unless either `height` or `aspect-ratio` are provi
         **kwargs
     ):
         """Initialize a Img widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.alt = alt
         self.height = height
         self.src = src

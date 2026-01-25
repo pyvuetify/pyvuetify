@@ -12,7 +12,9 @@ class Toolbar(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         flat: Removes the toolbar's box-shadow.
         tag: Specify a custom tag used on the root element.
         title: Specify a title text for the component.
@@ -42,8 +44,14 @@ class Toolbar(anywidget.AnyWidget):
     _esm = bundled_path / "VToolbar.js"
     _css = bundled_path / "VToolbar-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     flat = traitlets.Bool(allow_none=True).tag(sync=True)
     """Removes the toolbar's box-shadow."""
@@ -101,7 +109,9 @@ class Toolbar(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         flat=False,
         tag="header",
         title=None,
@@ -123,7 +133,9 @@ class Toolbar(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Toolbar widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.flat = flat
         self.tag = tag
         self.title = title

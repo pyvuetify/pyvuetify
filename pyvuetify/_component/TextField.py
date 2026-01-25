@@ -13,6 +13,7 @@ class TextField(anywidget.AnyWidget):
 
     Args:
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         flat: Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props.
         type: Sets input type.
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
@@ -83,6 +84,9 @@ class TextField(anywidget.AnyWidget):
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     flat = traitlets.Bool(allow_none=True).tag(sync=True)
     """Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props."""
@@ -258,6 +262,7 @@ class TextField(anywidget.AnyWidget):
     def __init__(
         self,
         children=None,
+        style=None,
         flat=False,
         type="text",
         model_value=None,
@@ -298,10 +303,10 @@ class TextField(anywidget.AnyWidget):
         hide_spin_buttons=False,
         hint=None,
         persistent_hint=False,
-        messages="[]",
-        error_messages="[]",
+        messages=[],
+        error_messages=[],
         max_errors="1",
-        rules="[]",
+        rules=[],
         validate_on=None,
         validation_value=None,
         focused=False,
@@ -319,6 +324,7 @@ class TextField(anywidget.AnyWidget):
     ):
         """Initialize a TextField widget."""
         self.children = children
+        self.style = style
         self.flat = flat
         self.type = type
         self.model_value = model_value

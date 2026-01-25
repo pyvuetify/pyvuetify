@@ -12,7 +12,9 @@ class Sparkline(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         type: Choose between a trendline or bars.
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
         fill: Using the **fill** property allows you to better customize the look and feel of your sparkline.
@@ -46,8 +48,14 @@ class Sparkline(anywidget.AnyWidget):
     _esm = bundled_path / "VSparkline.js"
     _css = bundled_path / "VSparkline-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     type = traitlets.Any(allow_none=True).tag(sync=True)
     """Choose between a trendline or bars."""
@@ -117,7 +125,9 @@ class Sparkline(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         type="trend",
         model_value="[]",
         fill=False,
@@ -143,7 +153,9 @@ class Sparkline(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Sparkline widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.type = type
         self.model_value = model_value
         self.fill = fill

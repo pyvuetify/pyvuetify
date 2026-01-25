@@ -12,7 +12,9 @@ class Hotkey(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         keys: String representing keyboard shortcuts to display. Supports multiple formats:
 - **Single keys:** `"k"`, `"enter"`, `"escape"`
 - **Key combinations:** `"ctrl+k"`, `"meta+shift+p"`, `"alt+arrowup"`
@@ -96,8 +98,14 @@ This is particularly useful for:
     _esm = bundled_path / "VHotkey.js"
     _css = bundled_path / "VHotkey-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     keys = traitlets.Unicode(allow_none=True).tag(sync=True)
     """String representing keyboard shortcuts to display. Supports multiple formats:
@@ -203,7 +211,9 @@ This is particularly useful for:
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         keys=None,
         border=False,
         elevation=None,
@@ -222,7 +232,9 @@ This is particularly useful for:
         **kwargs
     ):
         """Initialize a Hotkey widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.keys = keys
         self.border = border
         self.elevation = elevation

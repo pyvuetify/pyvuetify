@@ -12,7 +12,9 @@ class Tabs(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         symbol: The [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) used to hook into group functionality for components like [v-btn-toggle](/components/btn-toggle) and [v-bottom-navigation](/components/bottom-navigations/).
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
         density: Adjusts the vertical height used by the component.
@@ -58,8 +60,14 @@ class Tabs(anywidget.AnyWidget):
     _esm = bundled_path / "VTabs.js"
     _css = bundled_path / "VTabs-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     symbol = traitlets.Any(allow_none=True).tag(sync=True)
     """The [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) used to hook into group functionality for components like [v-btn-toggle](/components/btn-toggle) and [v-bottom-navigation](/components/bottom-navigations/)."""
@@ -165,7 +173,9 @@ class Tabs(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         symbol=None,
         model_value=None,
         density="default",
@@ -203,7 +213,9 @@ class Tabs(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Tabs widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.symbol = symbol
         self.model_value = model_value
         self.density = density

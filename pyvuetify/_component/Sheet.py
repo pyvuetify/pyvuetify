@@ -12,7 +12,9 @@ class Sheet(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         border: Applies utility border classes to the component. To use it, you need to omit the `border-` prefix, (for example use `border-sm` as `border="sm"`).  Find a list of the built-in border classes on the [borders page](/styles/borders).
         height: Sets the height for the component.
         max_height: Sets the maximum height for the component.
@@ -39,8 +41,14 @@ class Sheet(anywidget.AnyWidget):
     _esm = bundled_path / "VSheet.js"
     _css = bundled_path / "VSheet-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     border = traitlets.Any(allow_none=True).tag(sync=True)
     """Applies utility border classes to the component. To use it, you need to omit the `border-` prefix, (for example use `border-sm` as `border="sm"`).  Find a list of the built-in border classes on the [borders page](/styles/borders)."""
@@ -89,7 +97,9 @@ class Sheet(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         border=False,
         height=None,
         max_height=None,
@@ -108,7 +118,9 @@ class Sheet(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Sheet widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.border = border
         self.height = height
         self.max_height = max_height

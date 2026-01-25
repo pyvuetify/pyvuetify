@@ -12,7 +12,9 @@ class ScrollXTransition(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         mode: Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/api/built-in-components.html#transition).
         disabled: Removes the ability to click or target the component.
         group: Creates a `transition-group` component. You can find more information in the [vue docs](https://vuejs.org/api/built-in-components.html#transitiongroup).
@@ -30,8 +32,14 @@ class ScrollXTransition(anywidget.AnyWidget):
     _esm = bundled_path / "VScrollXTransition.js"
     _css = bundled_path / "VScrollXTransition-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     mode = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/api/built-in-components.html#transition)."""
@@ -53,7 +61,9 @@ class ScrollXTransition(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         mode=None,
         disabled=False,
         group=False,
@@ -63,7 +73,9 @@ class ScrollXTransition(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a ScrollXTransition widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.mode = mode
         self.disabled = disabled
         self.group = group

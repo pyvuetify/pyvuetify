@@ -12,7 +12,9 @@ class Icon(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         end: Applies margin at the start of the component.
         start: Applies margin at the end of the component.
         icon: Apply a specific icon using the [v-icon](/components/icons/) component.
@@ -33,8 +35,14 @@ class Icon(anywidget.AnyWidget):
     _esm = bundled_path / "VIcon.js"
     _css = bundled_path / "VIcon-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     end = traitlets.Bool(allow_none=True).tag(sync=True)
     """Applies margin at the start of the component."""
@@ -65,7 +73,9 @@ class Icon(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         end=False,
         start=False,
         icon=None,
@@ -78,7 +88,9 @@ class Icon(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Icon widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.end = end
         self.start = start
         self.icon = icon

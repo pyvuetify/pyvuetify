@@ -12,7 +12,9 @@ class Autocomplete(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         flat: Removes box shadow when using a variant with elevation.
         search: Text input used to filter items.
         type: Sets input type.
@@ -116,8 +118,14 @@ class Autocomplete(anywidget.AnyWidget):
     _esm = bundled_path / "VAutocomplete.js"
     _css = bundled_path / "VAutocomplete-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     flat = traitlets.Bool(allow_none=True).tag(sync=True)
     """Removes box shadow when using a variant with elevation."""
@@ -387,7 +395,9 @@ class Autocomplete(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         flat=False,
         search=None,
         type="text",
@@ -478,7 +488,9 @@ class Autocomplete(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Autocomplete widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.flat = flat
         self.search = search
         self.type = type

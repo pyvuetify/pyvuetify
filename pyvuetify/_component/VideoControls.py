@@ -12,7 +12,9 @@ class VideoControls(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         density: Adjusts the vertical height used by the component.
         elevation: Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation).
         theme: Specify a theme for this component and all of its children.
@@ -44,8 +46,14 @@ class VideoControls(anywidget.AnyWidget):
     _esm = bundled_path / "VVideoControls.js"
     _css = bundled_path / "VVideoControls-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     density = traitlets.Any(allow_none=True).tag(sync=True)
     """Adjusts the vertical height used by the component."""
@@ -109,7 +117,9 @@ class VideoControls(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         density="default",
         elevation=None,
         theme=None,
@@ -133,7 +143,9 @@ class VideoControls(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a VideoControls widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.density = density
         self.elevation = elevation
         self.theme = theme

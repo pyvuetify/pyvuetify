@@ -13,6 +13,7 @@ class Alert(anywidget.AnyWidget):
 
     Args:
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         title: Specify a title text for the component.
         text: Specify content text for the component.
         border: Adds a colored border to the component.
@@ -55,6 +56,9 @@ class Alert(anywidget.AnyWidget):
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     title = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Specify a title text for the component."""
@@ -146,6 +150,7 @@ class Alert(anywidget.AnyWidget):
     def __init__(
         self,
         children=None,
+        style=None,
         title=None,
         text=None,
         border=False,
@@ -179,6 +184,7 @@ class Alert(anywidget.AnyWidget):
     ):
         """Initialize a Alert widget."""
         self.children = children
+        self.style = style
         self.title = title
         self.text = text
         self.border = border

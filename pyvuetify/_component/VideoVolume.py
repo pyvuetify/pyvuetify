@@ -12,7 +12,9 @@ class VideoVolume(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         model_value: Volume value (0 ~ 100)
         label: Text to display in tooltip and passed to `aria-label`.
         menu_props: Props passed to VMenu containing volume slider. Useful to adjust **location** and control menu alignment
@@ -30,8 +32,14 @@ class VideoVolume(anywidget.AnyWidget):
     _esm = bundled_path / "VVideoVolume.js"
     _css = bundled_path / "VVideoVolume-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     model_value = traitlets.Float(allow_none=True).tag(sync=True)
     """Volume value (0 ~ 100)"""
@@ -53,7 +61,9 @@ class VideoVolume(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         model_value="0",
         label=None,
         menu_props=None,
@@ -63,7 +73,9 @@ class VideoVolume(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a VideoVolume widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.model_value = model_value
         self.label = label
         self.menu_props = menu_props

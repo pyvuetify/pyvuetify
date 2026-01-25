@@ -12,7 +12,9 @@ class OtpInput(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         length: The OTP field's length.
         type: Supported types: `text`, `password`, `number`.
         error: Puts the input in a manual error state.
@@ -48,8 +50,14 @@ class OtpInput(anywidget.AnyWidget):
     _esm = bundled_path / "VOtpInput.js"
     _css = bundled_path / "VOtpInput-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     length = traitlets.Any(allow_none=True).tag(sync=True)
     """The OTP field's length."""
@@ -125,7 +133,9 @@ class OtpInput(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         length="6",
         type="number",
         error=False,
@@ -153,7 +163,9 @@ class OtpInput(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a OtpInput widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.length = length
         self.type = type
         self.error = error

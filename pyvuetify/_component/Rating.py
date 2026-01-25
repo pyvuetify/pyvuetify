@@ -12,7 +12,9 @@ class Rating(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         length: The amount of items to show.
         tag: Specify a custom tag used on the root element.
         name: Sets the component's name attribute.
@@ -44,8 +46,14 @@ class Rating(anywidget.AnyWidget):
     _esm = bundled_path / "VRating.js"
     _css = bundled_path / "VRating-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     length = traitlets.Any(allow_none=True).tag(sync=True)
     """The amount of items to show."""
@@ -109,7 +117,9 @@ class Rating(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         length="5",
         tag="div",
         name=None,
@@ -133,7 +143,9 @@ class Rating(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Rating widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.length = length
         self.tag = tag
         self.name = name

@@ -12,7 +12,9 @@ class WindowItem(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         disabled: Prevents the item from becoming active when using the "next" and "prev" buttons or the `toggle` method.
         value: The value used when the component is selected in a group. If not provided, a unique ID will be used.
         selected_class: Configure the active CSS class applied when an item is selected.
@@ -30,8 +32,14 @@ class WindowItem(anywidget.AnyWidget):
     _esm = bundled_path / "VWindowItem.js"
     _css = bundled_path / "VWindowItem-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     disabled = traitlets.Bool(allow_none=True).tag(sync=True)
     """Prevents the item from becoming active when using the "next" and "prev" buttons or the `toggle` method."""
@@ -53,7 +61,9 @@ class WindowItem(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         disabled=False,
         value=None,
         selected_class=None,
@@ -63,7 +73,9 @@ class WindowItem(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a WindowItem widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.disabled = disabled
         self.value = value
         self.selected_class = selected_class

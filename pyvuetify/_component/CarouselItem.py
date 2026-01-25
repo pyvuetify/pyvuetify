@@ -12,7 +12,9 @@ class CarouselItem(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         alt: Alternate text for screen readers. Leave empty for decorative images.
         disabled: Prevents the item from becoming active when using the "next" and "prev" buttons or the `toggle` method.
         height: Sets the height for the component.
@@ -56,8 +58,14 @@ NOTE: This prop has no effect unless either `height` or `aspect-ratio` are provi
     _esm = bundled_path / "VCarouselItem.js"
     _css = bundled_path / "VCarouselItem-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     alt = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Alternate text for screen readers. Leave empty for decorative images."""
@@ -155,7 +163,9 @@ NOTE: This prop has no effect unless either `height` or `aspect-ratio` are provi
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         alt=None,
         disabled=False,
         height=None,
@@ -190,7 +200,9 @@ NOTE: This prop has no effect unless either `height` or `aspect-ratio` are provi
         **kwargs
     ):
         """Initialize a CarouselItem widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.alt = alt
         self.disabled = disabled
         self.height = height

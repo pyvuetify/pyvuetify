@@ -12,7 +12,9 @@ class Validation(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         name: Sets the component's name attribute.
         error: Puts the input in a manual error state.
         label: Sets the text of the [v-label](/api/v-label/) or [v-field-label](/api/v-field-label/) component.
@@ -36,8 +38,14 @@ class Validation(anywidget.AnyWidget):
     _esm = bundled_path / "VValidation.js"
     _css = bundled_path / "VValidation-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     name = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Sets the component's name attribute."""
@@ -77,7 +85,9 @@ class Validation(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         name=None,
         error=False,
         label=None,
@@ -93,7 +103,9 @@ class Validation(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Validation widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.name = name
         self.error = error
         self.label = label

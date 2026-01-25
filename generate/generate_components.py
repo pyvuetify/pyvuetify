@@ -28,9 +28,6 @@ jinja_env = Environment(
     extensions=["jinja2_strcase.StrcaseExtension", TypeMapperExtension],
 )
 
-# limit for deugging
-limit = None
-
 def to_camel_case(s: str) -> str:
     """Convert a component name from kebab-case to CamelCase."""
     return "".join(w.capitalize() for w in s.removeprefix("v-").split("-"))
@@ -58,7 +55,8 @@ def generate_component_files():
     # Process each component
     for i, v_component in enumerate(api_data):
 
-        # add the case adapted names to the api_data
+        if not v_component["name"] in ["VAlert", "VSelect", "VTextField"]:
+            continue
 
         # create the vue component file from template
         vue_file = OUTPUT_JS_DIR / f"{v_component['name']}.vue"
@@ -81,16 +79,13 @@ def generate_component_files():
         python_file.write_text(python_content, encoding="utf-8")
         logger.info(f"Created: {v_component['name'].removeprefix('V')}.py")
 
-        if i == limit:
-            break
-
     # create an init file for each component of the package
     init_file = OUTPUT_PYTHON_DIR / "__init__.py"
     module_names = []
     for i, v_component in enumerate(api_data):
+        if not v_component["name"] in ["VAlert", "VSelect", "VTextField"]:
+            continue
         module_names.append(v_component["name"].removeprefix("V"))
-        if i == limit:
-            break
     init_template = jinja_env.get_template("python_init.py.jinja")
     init_content = init_template.render(module_names=module_names)
     init_file.write_text(init_content, encoding="utf-8")

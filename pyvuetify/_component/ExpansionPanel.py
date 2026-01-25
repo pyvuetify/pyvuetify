@@ -12,7 +12,9 @@ class ExpansionPanel(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         title: Specify a title text for the component.
         text: Specify content text for the component.
         height: Sets the height for the component.
@@ -49,8 +51,14 @@ class ExpansionPanel(anywidget.AnyWidget):
     _esm = bundled_path / "VExpansionPanel.js"
     _css = bundled_path / "VExpansionPanel-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     title = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Specify a title text for the component."""
@@ -129,7 +137,9 @@ class ExpansionPanel(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         title=None,
         text=None,
         height=None,
@@ -158,7 +168,9 @@ class ExpansionPanel(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a ExpansionPanel widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.title = title
         self.text = text
         self.height = height

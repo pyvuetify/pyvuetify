@@ -12,7 +12,9 @@ class Window(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         tag: Specify a custom tag used on the root element.
         reverse: Reverse the normal transition direction.
         disabled: Removes the ability to click or target the component.
@@ -40,8 +42,14 @@ class Window(anywidget.AnyWidget):
     _esm = bundled_path / "VWindow.js"
     _css = bundled_path / "VWindow-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     tag = traitlets.Any(allow_none=True).tag(sync=True)
     """Specify a custom tag used on the root element."""
@@ -93,7 +101,9 @@ class Window(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         tag="div",
         reverse=False,
         disabled=False,
@@ -113,7 +123,9 @@ class Window(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Window widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.tag = tag
         self.reverse = reverse
         self.disabled = disabled

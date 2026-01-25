@@ -12,7 +12,9 @@ class Divider(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         length: Sets the dividers length. Default unit is px.
         theme: Specify a theme for this component and all of its children.
         color: Applies specified color to the control - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors).
@@ -34,8 +36,14 @@ class Divider(anywidget.AnyWidget):
     _esm = bundled_path / "VDivider.js"
     _css = bundled_path / "VDivider-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     length = traitlets.Any(allow_none=True).tag(sync=True)
     """Sets the dividers length. Default unit is px."""
@@ -69,7 +77,9 @@ class Divider(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         length=None,
         theme=None,
         color=None,
@@ -83,7 +93,9 @@ class Divider(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Divider widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.length = length
         self.theme = theme
         self.color = color

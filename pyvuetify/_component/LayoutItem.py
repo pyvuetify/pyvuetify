@@ -12,7 +12,9 @@ class LayoutItem(anywidget.AnyWidget):
     
 
     Args:
+        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
         name: Assign a specific name for layout registration.
         size: Sets the height and width of the component.
         model_value: The v-model value of the component. If component supports the **multiple** prop, this defaults to an empty array.
@@ -30,8 +32,14 @@ class LayoutItem(anywidget.AnyWidget):
     _esm = bundled_path / "VLayoutItem.js"
     _css = bundled_path / "VLayoutItem-pyvuetify.css"
 
+    v_model = traitlets.Any(allow_none=True).tag(sync=True)
+    """Two-way binding for the component's value."""
+
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
 
     name = traitlets.Unicode(allow_none=True).tag(sync=True)
     """Assign a specific name for layout registration."""
@@ -53,7 +61,9 @@ class LayoutItem(anywidget.AnyWidget):
 
     def __init__(
         self,
+        v_model=None,
         children=None,
+        style=None,
         name=None,
         size="300",
         model_value=False,
@@ -63,7 +73,9 @@ class LayoutItem(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a LayoutItem widget."""
+        self.v_model = v_model
         self.children = children
+        self.style = style
         self.name = name
         self.size = size
         self.model_value = model_value
