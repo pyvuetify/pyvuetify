@@ -2,19 +2,13 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readdirSync, rmSync, mkdirSync, existsSync } from "node:fs";
-import { webcrypto } from "node:crypto";
 import { build } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vuetify from "vite-plugin-vuetify";
 
-// Polyfill crypto.getRandomValues for Node.js
-if (!globalThis.crypto) {
-  globalThis.crypto = webcrypto;
-}
-
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const componentDir = resolve(__dirname, "js/component");
-const outDir = resolve(__dirname, "pyvuetify/static");
+const outDir = resolve(__dirname, "pyvuetify/_static");
 
 // Clean output directory
 if (existsSync(outDir)) {

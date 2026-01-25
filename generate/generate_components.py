@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 HERE = Path(__file__).parent
 ROOT = HERE.parent
 API_JSON = ROOT / "node_modules" / "vuetify" / "dist" / "json" / "web-types.json"
-OUTPUT_JS_DIR = ROOT / "js" / "component"
+OUTPUT_JS_DIR = ROOT / "js" / "_component"
 OUTPUT_PYTHON_DIR = ROOT / "pyvuetify" / "_component"
 
 

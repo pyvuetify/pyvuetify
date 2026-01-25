@@ -28,3 +28,8 @@ package-lock.json
 
 # uv installation files
 uv.lock
+
+# generated files on build
+pyvuetify/_component
+pyvuetify/_static
+js/_component

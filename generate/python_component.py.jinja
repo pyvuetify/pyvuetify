@@ -3,7 +3,7 @@ import pathlib
 import anywidget
 import traitlets
 
-bundled_path = pathlib.Path(__file__).parents[1] / "static"
+bundled_path = pathlib.Path(__file__).parents[1] / "_static"
 
 
 class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
