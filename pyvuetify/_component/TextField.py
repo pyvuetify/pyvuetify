@@ -9,7 +9,7 @@ bundled_path = pathlib.Path(__file__).parents[1] / "static"
 class TextField(anywidget.AnyWidget):
     """The TextField component.
 
-    
+
 
     Args:
         children: The child nodes of the DOM element.
@@ -71,6 +71,34 @@ class TextField(anywidget.AnyWidget):
         single_line: Label does not move on focus/dirty.
         counter_value: Function returns the counter display text.
         model_modifiers: **FOR INTERNAL USE ONLY**
+
+
+    Slots:
+        prepend: Adds an item outside the input and before input content.
+        append: Adds an item inside the input and after input content.
+        clear: Slot for custom clear icon (displayed when the **clearable** prop is equal to true).
+        loader: Slot for custom loader (displayed when [loading](#props-loading) prop is equal to true).
+        details: Slot for custom input details to modifying the display of [messages](#props-messages).
+        message: Slot used to customize the message content.
+        prepend-inner: Slot that is prepended to the input.
+        append-inner: Slot that is appended to the input.
+        label: The default slot of the [v-label](/api/v-label/) or [v-field-label](/api/v-field-label/) component.
+        default: The default Vue slot.
+        counter: Slot for the input’s counter text.
+
+
+
+    Events:
+        update:modelValue: Event that is emitted when the component's model changes.
+        click:prepend: Emitted when prepended icon is clicked.
+        click:append: Emitted when append icon is clicked.
+        update:focused: Emitted when the input is focused or blurred
+        click:clear: Emitted when clearable icon clicked.
+        click:appendInner: Emitted when appended inner icon is clicked.
+        click:prependInner: Emitted when prepended inner icon is clicked.
+        click:control: Emitted when the main input is clicked.
+        mousedown:control: Event that is emitted when using mousedown on the main control area.
+
 
     Returns:
         A VTextField widget.

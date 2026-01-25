@@ -9,7 +9,7 @@ bundled_path = pathlib.Path(__file__).parents[1] / "static"
 class Alert(anywidget.AnyWidget):
     """The Alert component.
 
-    
+
 
     Args:
         children: The child nodes of the DOM element.
@@ -43,6 +43,22 @@ class Alert(anywidget.AnyWidget):
         theme: Specify a theme for this component and all of its children.
         color: Applies specified color to the control - supports utility colors (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). Find a list of built-in classes on the [colors page](/styles/colors#material-colors).
         variant: Applies a distinct style to the component.
+
+
+    Slots:
+        default: The default Vue slot.
+        prepend: Slot for icon at beginning of alert.
+        title: Slot for the component's title content.
+        text: Slot for the component's text content.
+        append: Slot for icon at end of alert.
+        close: Slot for icon used in **dismissible** prop.
+
+
+
+    Events:
+        click:close: Emitted when close icon is clicked.
+        update:modelValue: Event that is emitted when the component's model changes.
+
 
     Returns:
         A VAlert widget.

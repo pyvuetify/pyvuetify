@@ -9,7 +9,7 @@ bundled_path = pathlib.Path(__file__).parents[1] / "static"
 class Select(anywidget.AnyWidget):
     """The Select component.
 
-    
+
 
     Args:
         children: The child nodes of the DOM element.
@@ -94,6 +94,39 @@ class Select(anywidget.AnyWidget):
         no_auto_scroll: Prevents the select menu to scroll to the selected item automatically.
         close_text: Text set to the inputs `aria-label` and `title` when input menu is closed.
         open_text: Text set to the inputs **aria-label** and **title** when input menu is open.
+
+
+    Slots:
+        details: Slot for custom input details to modifying the display of [messages](#props-messages).
+        label: The default slot of the [v-label](/api/v-label/) or [v-field-label](/api/v-field-label/) component.
+        append: Adds an item inside the input and after input content.
+        prepend: Adds an item outside the input and before input content.
+        clear: Slot for custom clear icon (displayed when the **clearable** prop is equal to true).
+        loader: Slot for custom loader (displayed when [loading](#props-loading) prop is equal to true).
+        message: Slot used to customize the message content.
+        prepend-inner: Slot that is prepended to the input.
+        append-inner: Slot that is appended to the input.
+        item: Define a custom item appearance. The root element of this slot must be a **v-list-item** with `v-bind="props"` applied. `props` includes everything required for the default select list behaviour - including title, value, click handlers, virtual scrolling, and anything else that has been added with [`item-props`](api/v-select/#props-item-props).
+        chip: Slot for custom chip when using the [chip](#property-chip) prop.
+        selection: Define a custom selection appearance.
+        subheader: MISSING DESCRIPTION ([edit in github](https://github.com/vuetifyjs/vuetify/tree//packages/api-generator/src/locale/en/vuetify/src/components/VSelect/VSelect.tsx#L126-L126.json))
+        divider: MISSING DESCRIPTION ([edit in github](https://github.com/vuetifyjs/vuetify/tree//packages/api-generator/src/locale/en/vuetify/src/components/VSelect/VSelect.tsx#L127-L127.json))
+        prepend-item: Adds an item before menu content.
+        append-item: Adds an item after menu content.
+        no-data: Defines content for when no items are provided.
+
+
+
+    Events:
+        update:modelValue: Event that is emitted when the component's model changes.
+        click:prepend: Emitted when prepended icon is clicked.
+        click:append: Emitted when append icon is clicked.
+        update:focused: Emitted when the input is focused or blurred
+        click:clear: Emitted when clearable icon clicked.
+        click:appendInner: Emitted when appended inner icon is clicked.
+        click:prependInner: Emitted when prepended inner icon is clicked.
+        update:menu: Event that is emitted when the component's menu state changes.
+
 
     Returns:
         A VSelect widget.

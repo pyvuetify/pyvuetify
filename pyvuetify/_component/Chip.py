@@ -9,10 +9,9 @@ bundled_path = pathlib.Path(__file__).parents[1] / "static"
 class Chip(anywidget.AnyWidget):
     """The Chip component.
 
-    
+
 
     Args:
-        v_model: Two-way binding for the component's value.
         children: The child nodes of the DOM element.
         style: Custom CSS styles to apply to the component.
         filter: Displays a selection icon when selected.
@@ -51,6 +50,24 @@ class Chip(anywidget.AnyWidget):
         filter_icon: Change the default icon used for **filter** chips.
         pill: Remove `v-avatar` padding.
 
+
+    Slots:
+        default: The default Vue slot.
+        label: The default slot of the [v-label](/api/v-label/) or [v-field-label](/api/v-field-label/) component.
+        prepend: Adds an item outside the input and before input content.
+        append: Adds an item inside the input and after input content.
+        close: Slot for icon used in **close** prop.
+        filter: Slot for icon used in **filter** prop.
+
+
+
+    Events:
+        click: Emitted when component is clicked, toggles chip if contained in a chip group - Will trigger component to ripple when clicked unless the `.native` modifier is used.
+        update:modelValue: Event that is emitted when the component's model changes.
+        group:selected: Event that is emitted when an item is selected within a group.
+        click:close: Emitted when close icon is clicked.
+
+
     Returns:
         A VChip widget.
 
@@ -60,9 +77,6 @@ class Chip(anywidget.AnyWidget):
 
     _esm = bundled_path / "VChip.js"
     _css = bundled_path / "VChip-pyvuetify.css"
-
-    v_model = traitlets.Any(allow_none=True).tag(sync=True)
-    """Two-way binding for the component's value."""
 
     children = traitlets.Any(allow_none=True).tag(sync=True)
     """The child nodes of the DOM element."""
@@ -177,7 +191,6 @@ class Chip(anywidget.AnyWidget):
 
     def __init__(
         self,
-        v_model=None,
         children=None,
         style=None,
         filter=False,
@@ -218,7 +231,6 @@ class Chip(anywidget.AnyWidget):
         **kwargs
     ):
         """Initialize a Chip widget."""
-        self.v_model = v_model
         self.children = children
         self.style = style
         self.filter = filter

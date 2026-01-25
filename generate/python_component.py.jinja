@@ -18,6 +18,20 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
         {{ p.name | to_snake }}: {{ p.description | default("No description available.") }}
 {%- endfor %}
 
+    {% if v_component.slots | length > 0 %}
+    Slots:
+    {%- for s in v_component.slots %}
+        {{ s.name }}: {{ s.description | default("No description available.") }}
+    {%- endfor %}
+    {% endif %}
+
+    {% if v_component.events | length > 0 %}
+    Events:
+    {%- for e in v_component.events %}
+        {{ e.name }}: {{ e.description | default("No description available.") }}
+    {%- endfor %}
+    {% endif %}
+
     Returns:
         A {{ v_component.name }} widget.
 

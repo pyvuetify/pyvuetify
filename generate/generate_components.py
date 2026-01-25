@@ -3,9 +3,8 @@ import logging
 import re
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader
-
 from extension import TypeMapperExtension
+from jinja2 import Environment, FileSystemLoader
 
 # Setup logging
 logger = logging.getLogger(__name__)
@@ -27,6 +26,7 @@ jinja_env = Environment(
     loader=FileSystemLoader(HERE),
     extensions=["jinja2_strcase.StrcaseExtension", TypeMapperExtension],
 )
+
 
 def to_camel_case(s: str) -> str:
     """Convert a component name from kebab-case to CamelCase."""
@@ -55,7 +55,7 @@ def generate_component_files():
     # Process each component
     for i, v_component in enumerate(api_data):
 
-        if not v_component["name"] in ["VAlert", "VSelect", "VTextField"]:
+        if v_component["name"] not in ["VAlert", "VSelect", "VTextField", "VChip"]:
             continue
 
         # create the vue component file from template
@@ -83,13 +83,14 @@ def generate_component_files():
     init_file = OUTPUT_PYTHON_DIR / "__init__.py"
     module_names = []
     for i, v_component in enumerate(api_data):
-        if not v_component["name"] in ["VAlert", "VSelect", "VTextField"]:
+        if v_component["name"] not in ["VAlert", "VSelect", "VTextField", "VChip"]:
             continue
         module_names.append(v_component["name"].removeprefix("V"))
     init_template = jinja_env.get_template("python_init.py.jinja")
     init_content = init_template.render(module_names=module_names)
     init_file.write_text(init_content, encoding="utf-8")
-    logger.info(f"Created: __init__.py")
+    logger.info("Created: __init__.py")
+
 
 generate_component_files()
 logger.info("\nComponent files generation completed!")
