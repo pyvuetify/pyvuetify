@@ -7,7 +7,7 @@ import vue from "@vitejs/plugin-vue";
 import vuetify from "vite-plugin-vuetify";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const componentDir = resolve(__dirname, "js/component");
+const componentDir = resolve(__dirname, "js/_component");
 const outDir = resolve(__dirname, "pyvuetify/_static");
 
 // Clean output directory

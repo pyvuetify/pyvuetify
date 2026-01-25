@@ -1,6 +1,7 @@
 <template>
   <{{ v_component.name | to_kebab }}
     :style="_style"
+    :class="_class"
   {%- for p in v_component.attributes%}
     :{{ p.name | to_kebab }}="_{{ p.name | to_snake }}"
   {%- endfor %}
@@ -15,6 +16,7 @@ import { useModelState } from "@pyvuetify/vuetify";
 // Reactive state synced with Python
 const _children = useModelState("children");
 const _style = useModelState("style");
+const _class = useModelState("class_");
 {%- for p in v_component.attributes %}
 const _{{ p.name | to_snake }} = useModelState("{{ p.name | to_snake }}");
 {%- endfor %}
