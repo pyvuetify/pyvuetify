@@ -16,7 +16,7 @@ import { useModelState } from "@pyvuetify/vuetify";
 // Reactive state synced with Python
 const _children = useModelState("children");
 const _style = useModelState("style");
-const _class = useModelState("class_");
+const _class = useModelState("klass");
 {%- for p in v_component.attributes %}
 const _{{ p.name | to_snake }} = useModelState("{{ p.name | to_snake }}");
 {%- endfor %}
