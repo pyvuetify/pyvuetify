@@ -1,0 +1,7 @@
+{%- raw %}import { createRender } from "@pyvuetify/vuetify";{%- endraw %}
+import {{ v_component.name }} from "./{{ v_component.name }}.vue";
+import "@mdi/font/css/materialdesignicons.css";
+import "vuetify/styles";
+
+const render = createRender({{ v_component.name }});
+export default { render };

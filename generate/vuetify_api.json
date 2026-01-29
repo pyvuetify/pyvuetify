@@ -334,7 +334,7 @@
         "type": "string",
         "default": "undefined",
         "source": "v-alert",
-        "doc": "Puts a border on the alert. Accepts **top** \\| **right** \\| **bottom** \\| **left**."
+        "doc": "Puts a border on the alert. Accepts **top** | **right** | **bottom** | **left**."
       },
       {
         "name": "closeLabel",

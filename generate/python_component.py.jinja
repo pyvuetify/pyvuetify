@@ -1,0 +1,89 @@
+import pathlib
+
+import anywidget
+import traitlets
+
+bundled_path = pathlib.Path(__file__).parents[1] / "_static"
+
+
+class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
+    """The {{ v_component.name.removeprefix("V") }} component.
+
+    {{ v_component.description }}
+
+    Args:
+        children: The child nodes of the DOM element.
+        style: Custom CSS styles to apply to the component.
+        klass: Custom CSS classes to apply to the component.
+        {%- for p in v_component.attributes %}
+        {{ p.name | to_snake }}: {{ p.description | default("No description available.") }}
+        {%- endfor %}
+
+    Slots:
+        {%- for s in v_component.slots %}
+        slot_{{ s.name | to_snake }}: {{ s.description | default("No description available.") }}
+        {%- endfor %}
+
+    Events:
+        {%- for e in v_component.events %}
+        {{ e.name }}: {{ e.description | default("No description available.") }}
+        {%- endfor %}
+
+    Returns:
+        A {{ v_component.name }} widget.
+
+    seealso:
+        `{{ v_component["doc-url"] }}`__
+    """
+
+    _esm = bundled_path / "{{ v_component.name }}.js"
+    _css = bundled_path / "{{ v_component.name }}-pyvuetify.css"
+
+    children = traitlets.Any(allow_none=True).tag(sync=True)
+    """The child nodes of the DOM element."""
+
+    style = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS styles to apply to the component."""
+
+    klass = traitlets.Unicode(allow_none=True).tag(sync=True)
+    """Custom CSS classes to apply to the component."""
+
+{%- for p in v_component.attributes %}
+
+    {{ p.name | to_snake }} = traitlets.{{ p.value.type | map_type }}(allow_none=True).tag(sync=True)
+    """{{ p.description | default("No description available.") }}"""
+
+{%- endfor %}
+
+{%- for s in v_component.slots %}
+
+    slot_{{ s.name | to_snake }} = traitlets.Any(allow_none=True).tag(sync=True)
+    """{{ s.description | default("No description available.") }}"""
+
+{%- endfor %}
+
+    def __init__(
+        self,
+        children=None,
+        style=None,
+        klass=None,
+        {%- for p in v_component.attributes %}
+        {{ p.name | to_snake }}={{ p.get("default", "null").replace("\n", "") | map_default }},
+        {%- endfor %}
+        {%- for s in v_component.slots %}
+        slot_{{ s.name | to_snake }}=None,
+        {%- endfor %}
+        **kwargs
+    ):
+        """Initialize a ``{{ v_component.name.removeprefix("V") }}`` widget."""
+        self.children = children
+        self.style = style
+        self.klass = klass
+        {%- for p in v_component.attributes %}
+        self.{{ p.name | to_snake }} = {{ p.name | to_snake }}
+        {%- endfor %}
+        {%- for s in v_component.slots %}
+        self.slot_{{ s.name | to_snake }} = slot_{{ s.name | to_snake }}
+        {%- endfor %}
+
+        super().__init__(**kwargs)
