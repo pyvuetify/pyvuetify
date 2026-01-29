@@ -15,23 +15,19 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
         children: The child nodes of the DOM element.
         style: Custom CSS styles to apply to the component.
         klass: Custom CSS classes to apply to the component.
-{%- for p in v_component.attributes %}
+        {%- for p in v_component.attributes %}
         {{ p.name | to_snake }}: {{ p.description | default("No description available.") }}
-{%- endfor %}
+        {%- endfor %}
 
-    {% if v_component.slots | length > 0 %}
     Slots:
-    {%- for s in v_component.slots %}
-        {{ s.name }}: {{ s.description | default("No description available.") }}
-    {%- endfor %}
-    {% endif %}
+        {%- for s in v_component.slots %}
+        slot_{{ s.name | to_snake }}: {{ s.description | default("No description available.") }}
+        {%- endfor %}
 
-    {% if v_component.events | length > 0 %}
     Events:
-    {%- for e in v_component.events %}
+        {%- for e in v_component.events %}
         {{ e.name }}: {{ e.description | default("No description available.") }}
-    {%- endfor %}
-    {% endif %}
+        {%- endfor %}
 
     Returns:
         A {{ v_component.name }} widget.
@@ -56,6 +52,14 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
 
     {{ p.name | to_snake }} = traitlets.{{ p.value.type | map_type }}(allow_none=True).tag(sync=True)
     """{{ p.description | default("No description available.") }}"""
+
+{%- endfor %}
+
+{%- for s in v_component.slots %}
+
+    slot_{{ s.name | to_snake }} = traitlets.Any(allow_none=True).tag(sync=True)
+    """{{ s.description | default("No description available.") }}"""
+
 {%- endfor %}
 
     def __init__(
@@ -66,14 +70,20 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
         {%- for p in v_component.attributes %}
         {{ p.name | to_snake }}={{ p.get("default", "null").replace("\n", "") | map_default }},
         {%- endfor %}
+        {%- for s in v_component.slots %}
+        slot_{{ s.name | to_snake }}=None,
+        {%- endfor %}
         **kwargs
     ):
-        """Initialize a {{ v_component.name.removeprefix("V") }} widget."""
+        """Initialize a ``{{ v_component.name.removeprefix("V") }}`` widget."""
         self.children = children
         self.style = style
         self.klass = klass
         {%- for p in v_component.attributes %}
         self.{{ p.name | to_snake }} = {{ p.name | to_snake }}
+        {%- endfor %}
+        {%- for s in v_component.slots %}
+        self.slot_{{ s.name | to_snake }} = slot_{{ s.name | to_snake }}
         {%- endfor %}
 
         super().__init__(**kwargs)
