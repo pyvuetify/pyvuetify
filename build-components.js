@@ -32,6 +32,7 @@ const sharedConfig = {
   root: __dirname,
   resolve: {
     alias: {
+      "@pyvuetify/vuetify": resolve(__dirname, "js/_runtime.js"),
       "vuetify/styles": resolve(__dirname, "node_modules/vuetify/lib/styles/main.css"),
       "vuetify/components": resolve(__dirname, "node_modules/vuetify/lib/components/index.js"),
       "vuetify/directives": resolve(__dirname, "node_modules/vuetify/lib/directives/index.js"),
