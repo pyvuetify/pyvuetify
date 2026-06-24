@@ -6,12 +6,15 @@
     :{{ p.name | to_kebab }}="_{{ p.name | to_snake }}"
   {%- endfor %}
   >
-    {% raw %}{{ _children }}{% endraw %}
+    <template v-if="Array.isArray(_children)">
+      <WidgetSlot v-for="(child, i) in _children" :key="i" :reference="child" />
+    </template>
+    <WidgetSlot v-else-if="_children != null" :reference="_children" />
   </{{ v_component.name | to_kebab }}>
 </template>
 
 <script setup>
-import { useModelState } from "@pyvuetify/vuetify";
+import { useModelState, WidgetSlot } from "@pyvuetify/vuetify";
 
 // Reactive state synced with Python
 const _children = useModelState("children");

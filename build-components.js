@@ -38,6 +38,15 @@ for (const component of componentFiles) {
     await build({
       configFile: false,
       root: __dirname,
+      resolve: {
+        alias: {
+          "vuetify/styles": resolve(__dirname, "node_modules/vuetify/lib/styles/main.css"),
+          "vuetify/components": resolve(__dirname, "node_modules/vuetify/lib/components/index.js"),
+          "vuetify/directives": resolve(__dirname, "node_modules/vuetify/lib/directives/index.js"),
+          "vuetify": resolve(__dirname, "node_modules/vuetify"),
+          "vue": resolve(__dirname, "node_modules/vue"),
+        },
+      },
       plugins: [vue(), vuetify({ autoImport: true })],
       build: {
         outDir,

@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "@pyvuetify/vuetify": "^0.2.5"
+    "@pyvuetify/vuetify": "0.2.6"
   },
   "devDependencies": {
     "@types/node": "^25.0.9",
