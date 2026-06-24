@@ -1,7 +1,7 @@
 """Custom Jinja2 extensions."""
 
-from jinja2 import nodes
 from jinja2.ext import Extension
+
 
 class TypeMapperExtension(Extension):
     """
@@ -13,8 +13,8 @@ class TypeMapperExtension(Extension):
 
     def __init__(self, environment):
         super().__init__(environment)
-        environment.filters['map_type'] = self.map_type
-        environment.filters['map_default'] = self.map_default
+        environment.filters["map_type"] = self.map_type
+        environment.filters["map_default"] = self.map_default
 
     def map_type(self, value: str) -> str:
         """
@@ -26,11 +26,7 @@ class TypeMapperExtension(Extension):
         Returns:
             The mapped type as a string
         """
-        mapping = {
-            "string": "Unicode",
-            "number": "Float",
-            "boolean": "Bool"
-        }
+        mapping = {"string": "Unicode", "number": "Float", "boolean": "Bool"}
         return mapping.get(value, "Any")
 
     def map_default(self, value: str) -> str:
@@ -51,4 +47,3 @@ class TypeMapperExtension(Extension):
         }
         value = value.strip("'")
         return mapping.get(value, f'"{value}"')
-

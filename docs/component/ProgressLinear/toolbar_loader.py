@@ -1,6 +1,5 @@
-from ipywidgets import jslink
-
 import ipyvuetify as v
+from ipywidgets import jslink
 
 card = v.Card(
     class_="mx-auto my-2",

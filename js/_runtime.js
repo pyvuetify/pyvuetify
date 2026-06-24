@@ -88,13 +88,13 @@ const WidgetWrapper = defineComponent(
   {
     props: ["model", "experimental", "host"],
     name: "WidgetWrapper",
-  },
+  }
 );
 
 export function createRender(Widget) {
   return ({ el, model, experimental, host }) => {
     const app = createApp(
-      h(WidgetWrapper, { model, experimental, host }, h(Widget)),
+      h(WidgetWrapper, { model, experimental, host }, h(Widget))
     );
     app.use(vuetify).mount(el);
     return () => app.unmount();
@@ -114,10 +114,7 @@ export const WidgetSlot = defineComponent(
       }
       if (!container.value) return;
 
-      if (
-        typeof reference === "string" &&
-        reference.startsWith("anywidget:")
-      ) {
+      if (typeof reference === "string" && reference.startsWith("anywidget:")) {
         abortController = new AbortController();
         const child = await host.getWidget(reference);
         if (abortController.signal.aborted) return;
@@ -138,12 +135,15 @@ export const WidgetSlot = defineComponent(
       if (abortController) abortController.abort();
     });
 
-    watch(() => props.reference, (newRef) => mountWidget(newRef));
+    watch(
+      () => props.reference,
+      (newRef) => mountWidget(newRef)
+    );
 
     return () => h("span", { ref: container });
   },
   {
     props: ["reference"],
     name: "WidgetSlot",
-  },
+  }
 );

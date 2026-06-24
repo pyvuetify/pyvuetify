@@ -1,6 +1,5 @@
-from ipywidgets import jslink
-
 import ipyvuetify as v
+from ipywidgets import jslink
 
 date_picker = v.DatePicker(v_model=None)
 

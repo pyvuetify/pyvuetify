@@ -1,6 +1,5 @@
-from ipywidgets import jslink
-
 import ipyvuetify as v
+from ipywidgets import jslink
 
 chip = v.FileInput(
     v_model=None,

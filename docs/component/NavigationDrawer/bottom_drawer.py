@@ -1,6 +1,5 @@
-from ipywidgets import jslink
-
 import ipyvuetify as v
+from ipywidgets import jslink
 
 switch = v.Switch(label="Toggle Drawer", v_model=True)
 

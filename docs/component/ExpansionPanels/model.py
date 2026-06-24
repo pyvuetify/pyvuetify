@@ -1,6 +1,5 @@
-from ipywidgets import jslink
-
 import ipyvuetify as v
+from ipywidgets import jslink
 
 select = v.Select(
     label="Select panels",

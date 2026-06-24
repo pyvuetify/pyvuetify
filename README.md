@@ -1,6 +1,6 @@
 # TODO
 
-# build instruction 
+# build instruction
 
 1. clone the repository
 
@@ -8,7 +8,7 @@
 git clone git@github.com:pyvuetify/pyvuetify.git
 ```
 
-2. generate the components 
+2. generate the components
 
 ```
 python generate/generate_component.py

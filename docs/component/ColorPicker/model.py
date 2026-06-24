@@ -1,6 +1,5 @@
-from ipywidgets import jslink
-
 import ipyvuetify as v
+from ipywidgets import jslink
 
 color_picker1 = v.ColorPicker(
     mode="hexa",

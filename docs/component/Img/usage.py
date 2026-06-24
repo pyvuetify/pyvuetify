@@ -1,6 +1,5 @@
-from ipywidgets import jslink
-
 import ipyvuetify as v
+from ipywidgets import jslink
 
 contains = v.Checkbox(label="Contain", v_model=False)
 max_height = v.Slider(label="Max Height", min=100, max=500, step=1, v_model=300)

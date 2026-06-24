@@ -33,11 +33,20 @@ const sharedConfig = {
   resolve: {
     alias: {
       "@pyvuetify/vuetify": resolve(__dirname, "js/_runtime.js"),
-      "vuetify/styles": resolve(__dirname, "node_modules/vuetify/lib/styles/main.css"),
-      "vuetify/components": resolve(__dirname, "node_modules/vuetify/lib/components/index.js"),
-      "vuetify/directives": resolve(__dirname, "node_modules/vuetify/lib/directives/index.js"),
-      "vuetify": resolve(__dirname, "node_modules/vuetify"),
-      "vue": resolve(__dirname, "node_modules/vue"),
+      "vuetify/styles": resolve(
+        __dirname,
+        "node_modules/vuetify/lib/styles/main.css"
+      ),
+      "vuetify/components": resolve(
+        __dirname,
+        "node_modules/vuetify/lib/components/index.js"
+      ),
+      "vuetify/directives": resolve(
+        __dirname,
+        "node_modules/vuetify/lib/directives/index.js"
+      ),
+      vuetify: resolve(__dirname, "node_modules/vuetify"),
+      vue: resolve(__dirname, "node_modules/vue"),
     },
   },
   define: {
@@ -113,8 +122,13 @@ for (let i = 0; i < componentFiles.length; i += CONCURRENCY) {
       successCount++;
     } else {
       failCount++;
-      errors.push({ component: batch[j].name, error: results[j].reason.message });
-      console.error(`✗ Failed to build ${batch[j].name}: ${results[j].reason.message}`);
+      errors.push({
+        component: batch[j].name,
+        error: results[j].reason.message,
+      });
+      console.error(
+        `✗ Failed to build ${batch[j].name}: ${results[j].reason.message}`
+      );
     }
   }
 }

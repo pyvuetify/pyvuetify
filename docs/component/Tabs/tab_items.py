@@ -1,6 +1,5 @@
-from ipywidgets import jslink
-
 import ipyvuetify as v
+from ipywidgets import jslink
 
 items = [
     {"tab": "One", "content": "Tab 1 Content"},

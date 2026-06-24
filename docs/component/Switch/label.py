@@ -1,6 +1,5 @@
-from ipywidgets import jslink
-
 import ipyvuetify as v
+from ipywidgets import jslink
 
 progress = v.ProgressCircular(indeterminate=False, size=24, class_="ml-2")
 

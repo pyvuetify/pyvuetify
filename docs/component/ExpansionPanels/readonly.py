@@ -1,6 +1,5 @@
-from ipywidgets import jslink
-
 import ipyvuetify as v
+from ipywidgets import jslink
 
 checkbox = v.Checkbox(label="Readonly", v_model=False)
 
