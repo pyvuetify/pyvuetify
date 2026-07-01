@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Sheet(
     class_="px-7 pt-7 pb-4 mx-auto text-center d-inline-block",

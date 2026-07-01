@@ -4,21 +4,21 @@ Input
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Input documentation
     <https://v2.vuetifyjs.com/en/components/inputs/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Input <ipyvuetify.Input>` component gives you a baseline to
+The :py:class:`Input <pyvuetify.Input>` component gives you a baseline to
 create your own custom inputs. It consists of a prepend/append slot, messages,
 and a default slot. It is recommended that you extend this component, but it can
 be used as a standalone.
 
 .. api::
 
-    :py:class:`ipyvuetify.Input`
+    :py:class:`pyvuetify.Input`
 
 Usage
 -----
 
-:py:class:`Input <ipyvuetify.Input>` has 4 main areas. The prepended slot, the
+:py:class:`Input <pyvuetify.Input>` has 4 main areas. The prepended slot, the
 appended slot, the default slot, and messages. These make up the core logic
 shared between all form components.
 
@@ -27,7 +27,7 @@ shared between all form components.
 
 .. warning::
 
-    The :py:class:`Input <ipyvuetify.Input>` component is used as a wrapper for all
+    The :py:class:`Input <pyvuetify.Input>` component is used as a wrapper for all
     of the Vuetify form controls. It does NOT inherit attributes as they are
     expected to be passed down to inner inputs.
 
@@ -37,7 +37,7 @@ Examples
 Error
 ^^^^^
 
-As any validatable Vuetify component, :py:class:`Input <ipyvuetify.Input>` can
+As any validatable Vuetify component, :py:class:`Input <pyvuetify.Input>` can
 be set to error state using ``error`` prop, messages can be added using
 ``error-messages`` prop. You can determine error messages count to show using
 ``error-count`` property.
@@ -45,7 +45,7 @@ be set to error state using ``error`` prop, messages can be added using
 Error count
 ^^^^^^^^^^^
 
-You can add multiple errors to :py:class:`Input <ipyvuetify.Input>` using
+You can add multiple errors to :py:class:`Input <pyvuetify.Input>` using
 ``error-count`` property.
 
 .. tab-set::
@@ -72,7 +72,7 @@ You can add multiple errors to :py:class:`Input <ipyvuetify.Input>` using
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Input(
                 error_messages=['Fatal error'],
@@ -85,7 +85,7 @@ You can add multiple errors to :py:class:`Input <ipyvuetify.Input>` using
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Input(
                 error_messages=['Fatal error'],
@@ -117,7 +117,7 @@ if there's a message (hint, error message etc) to display.
 
 .. todo::
 
-    The rule syntax is not clearly available through ipyvuetify at the moment.
+    The rule syntax is not clearly available through pyvuetify at the moment.
     Please help me improve this section.
 
 .. tab-set::
@@ -139,7 +139,7 @@ if there's a message (hint, error message etc) to display.
 Hint
 ^^^^
 
-:py:class:`Input <ipyvuetify.Input>` can have hint which can tell user how to
+:py:class:`Input <pyvuetify.Input>` can have hint which can tell user how to
 use the input. ``persistent-hint`` prop makes the hint visible always if no
 messages are displayed.
 
@@ -162,8 +162,8 @@ messages are displayed.
 Loading
 ^^^^^^^
 
-:py:class:`Input <ipyvuetify.Input>` has loading state which can be used, e.g.
-for data loading indication. Note: :py:class:`TextField <ipyvuetify.TextField>`
+:py:class:`Input <pyvuetify.Input>` has loading state which can be used, e.g.
+for data loading indication. Note: :py:class:`TextField <pyvuetify.TextField>`
 is used just for example.
 
 .. tab-set::
@@ -185,19 +185,19 @@ is used just for example.
 Rules
 ^^^^^
 
-You can add custom validation rules to :py:class:`Input <ipyvuetify.Input>`,
+You can add custom validation rules to :py:class:`Input <pyvuetify.Input>`,
 add them as functions returning ``true``/error message. Note:
-:py:class:`TextField <ipyvuetify.TextField>` is used just for example.
+:py:class:`TextField <pyvuetify.TextField>` is used just for example.
 
 .. todo::
 
-    We need to better understand how to set customized rules in ipyvuetify.
+    We need to better understand how to set customized rules in pyvuetify.
     help welcomed :fas:`coffee`
 
 Success
 ^^^^^^^
 
-As any validatable Vuetify component, :py:class:`Input <ipyvuetify.Input>` can
+As any validatable Vuetify component, :py:class:`Input <pyvuetify.Input>` can
 be set to success state using ``success`` prop, you can add message to it using
 ``success-messages`` prop.
 
@@ -220,7 +220,7 @@ be set to success state using ``success`` prop, you can add message to it using
 Append and prepend
 ^^^^^^^^^^^^^^^^^^
 
-:py:class:`Input <ipyvuetify.Input>` has ``append`` and ``prepend`` slots. You
+:py:class:`Input <pyvuetify.Input>` has ``append`` and ``prepend`` slots. You
 can place custom icons in them.
 
 .. tab-set::

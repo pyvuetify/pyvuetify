@@ -1,5 +1,6 @@
-import ipyvuetify as v
 from ipywidgets import jslink
+
+import pyvuetify as v
 
 chip1 = v.Chip(class_="ma-2", input_value=True, filter=True, children=["I'm v-chip"])
 chip2 = v.Chip(

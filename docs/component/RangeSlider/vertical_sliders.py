@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.RangeSlider(
     class_="mx-auto my-3",

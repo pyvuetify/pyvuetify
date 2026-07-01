@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Sheet(
     class_="mx-auto my-2",

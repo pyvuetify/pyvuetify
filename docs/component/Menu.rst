@@ -4,14 +4,14 @@ Menu
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Menus documentation
     <https://v2.vuetifyjs.com/en/components/menus/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Menu <ipyvuetify.Menu>` component shows a menu at the position
+The :py:class:`Menu <pyvuetify.Menu>` component shows a menu at the position
 of the element used to activate it.
 
 .. api::
 
-    :py:class:`ipyvuetify.Menu`
+    :py:class:`pyvuetify.Menu`
 
 Usage
 -----
@@ -70,7 +70,7 @@ Menu can be closed when lost focus.
 Close on content click
 ^^^^^^^^^^^^^^^^^^^^^^
 
-You can configure whether :py:class:`Menu <ipyvuetify.Menu>` should be closed
+You can configure whether :py:class:`Menu <pyvuetify.Menu>` should be closed
 when its content is clicked.
 
 .. tab-set::
@@ -201,11 +201,11 @@ Activator and tooltip
 ^^^^^^^^^^^^^^^^^^^^^
 
 With the new ``v-slot`` syntax, nested activators such as those seen with a
-:py:class:`Menu <ipyvuetify.Menu>` and :py:class:`Tooltip <ipyvuetify.Tooltip>`
+:py:class:`Menu <pyvuetify.Menu>` and :py:class:`Tooltip <pyvuetify.Tooltip>`
 attached to the same activator button, need a particular setup in order to
 function correctly. Note: this same syntax is used for other nested activators
-such as :py:class:`Dialog <ipyvuetify.Dialog>` w/ :py:class:`Tooltip
-<ipyvuetify.Tooltip>`.
+such as :py:class:`Dialog <pyvuetify.Dialog>` w/ :py:class:`Tooltip
+<pyvuetify.Tooltip>`.
 
 .. todo::
 
@@ -283,7 +283,7 @@ Menus can be placed within almost any component.
 Accessibility
 -------------
 
-By default, :py:class:`Menu <ipyvuetify.Menu>` components are detached and
+By default, :py:class:`Menu <pyvuetify.Menu>` components are detached and
 moved to the root of your application. In order to properly support `inserting
 dynamic content into the DOM
 <https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/SCR26>`__, you

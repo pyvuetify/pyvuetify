@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 values = [200, 675, 410, 390, 310, 460, 250, 240]
 labels = ["12am", "3am", "6am", "9am", "12pm", "3pm", "6pm", "9pm"]

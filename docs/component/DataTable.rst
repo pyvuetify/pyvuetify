@@ -4,28 +4,28 @@ DataTable
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation
     <https://v2.vuetifyjs.com/en/components/data-tables/>`_. All examples have
-    been converted to ipyvuetify syntax.
+    been converted to pyvuetify syntax.
 
-The :py:class:`DataTable <ipyvuetify.DataTable>` component is used for displaying
+The :py:class:`DataTable <pyvuetify.DataTable>` component is used for displaying
 tabular data. Features include sorting, searching, pagination, content-editing,
 and row selection.
 
 .. api::
 
-    - :py:class:`ipyvuetify.DataTable`
-    - :py:class:`ipyvuetify.DataTableHeader`
-    - :py:class:`ipyvuetify.DataFooter`
-    - :py:class:`ipyvuetify.Data`
-    - :py:class:`ipyvuetify.EditDialog`
+    - :py:class:`pyvuetify.DataTable`
+    - :py:class:`pyvuetify.DataTableHeader`
+    - :py:class:`pyvuetify.DataFooter`
+    - :py:class:`pyvuetify.Data`
+    - :py:class:`pyvuetify.EditDialog`
 
 .. seealso::
 
-    - :py:class:`ipyvuetify.DataIterator`
+    - :py:class:`pyvuetify.DataIterator`
 
 Usage
 -----
 
-The standard :py:class:`DataTable <ipyvuetify.DataTable>` will by default render
+The standard :py:class:`DataTable <pyvuetify.DataTable>` will by default render
 your data as simple rows.
 
 .. jupyter-execute:: DataTable/usage.py
@@ -105,8 +105,8 @@ In the example below the dessert name column is no longer searchable.
 Footer props
 ------------
 
-The :py:class:`DataTable <ipyvuetify.DataTable>` renders a default footer using
-the :py:class:`DataFooter <ipyvuetify.DataFooter>` component. You can pass props
+The :py:class:`DataTable <pyvuetify.DataTable>` renders a default footer using
+the :py:class:`DataFooter <pyvuetify.DataFooter>` component. You can pass props
 to this component using ``footer-props``.
 
 .. tab-set::
@@ -245,7 +245,7 @@ just one with the ``single-select`` prop.
 Search
 ------
 
-The :py:class:`DataTable <ipyvuetify.DataTable>` exposes a ``search`` prop that allows you to filter your data.
+The :py:class:`DataTable <pyvuetify.DataTable>` exposes a ``search`` prop that allows you to filter your data.
 
 .. tab-set::
 
@@ -266,7 +266,7 @@ The :py:class:`DataTable <ipyvuetify.DataTable>` exposes a ``search`` prop that 
 Slots
 -----
 
-The :py:class:`DataTable <ipyvuetify.DataTable>` provides a large number of slots
+The :py:class:`DataTable <pyvuetify.DataTable>` provides a large number of slots
 for customizing the table. This example showcases some of these slots and what you
 can do with each. It is important to note some slots (e.g., ``item``/``body``/``header``)
 will completely take over the internal rendering of the component which will require
@@ -325,9 +325,9 @@ Simple checkbox
 ---------------
 
 When wanting to use a checkbox component inside of a slot template in your data
-tables, use the :py:class:`SimpleCheckbox <ipyvuetify.SimpleCheckbox>` component
-rather than the :py:class:`Checkbox <ipyvuetify.Checkbox>` component. The
-:py:class:`SimpleCheckbox <ipyvuetify.SimpleCheckbox>` component is used internally
+tables, use the :py:class:`SimpleCheckbox <pyvuetify.SimpleCheckbox>` component
+rather than the :py:class:`Checkbox <pyvuetify.Checkbox>` component. The
+:py:class:`SimpleCheckbox <pyvuetify.SimpleCheckbox>` component is used internally
 and will respect header alignment.
 
 .. tab-set::
@@ -352,8 +352,8 @@ Miscellaneous examples
 CRUD Actions
 ^^^^^^^^^^^^
 
-:py:class:`DataTable <ipyvuetify.DataTable>` with CRUD actions using a
-:py:class:`Dialog <ipyvuetify.Dialog>` component for editing each row.
+:py:class:`DataTable <pyvuetify.DataTable>` with CRUD actions using a
+:py:class:`Dialog <pyvuetify.Dialog>` component for editing each row.
 
 .. todo::
 
@@ -362,9 +362,9 @@ CRUD Actions
 Edit dialog
 ^^^^^^^^^^^
 
-The :py:class:`EditDialog <ipyvuetify.EditDialog>` component can be used for
-editing data directly within a :py:class:`DataTable <ipyvuetify.DataTable>`. You
-can block the closing of the :py:class:`EditDialog <ipyvuetify.EditDialog>` when
+The :py:class:`EditDialog <pyvuetify.EditDialog>` component can be used for
+editing data directly within a :py:class:`DataTable <pyvuetify.DataTable>`. You
+can block the closing of the :py:class:`EditDialog <pyvuetify.EditDialog>` when
 clicked outside by adding the ``persistent`` prop.
 
 .. todo::

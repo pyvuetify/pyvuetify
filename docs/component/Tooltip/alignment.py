@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 directions = ["left", "top", "bottom", "right"]
 

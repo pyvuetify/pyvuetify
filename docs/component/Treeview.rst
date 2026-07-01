@@ -4,15 +4,15 @@ Treeview
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Treeview
     documentation <https://v2.vuetifyjs.com/en/components/treeview/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Treeview <ipyvuetify.Treeview>` component is useful for displaying
+The :py:class:`Treeview <pyvuetify.Treeview>` component is useful for displaying
 large amounts of nested data.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Treeview`
-    - :py:class:`ipyvuetify.TreeviewNode`
+    - :py:class:`pyvuetify.Treeview`
+    - :py:class:`pyvuetify.TreeviewNode`
 
 Usage
 -----
@@ -299,7 +299,7 @@ Search and filter
 Easily filter your treeview by using the ``search`` prop. You can easily apply your
 custom filtering function if you need case-sensitive or fuzzy filtering by setting
 the ``filter`` prop. This works similar to the
-:py:class:`Autocomplete <ipyvuetify.Autocomplete>`__.
+:py:class:`Autocomplete <pyvuetify.Autocomplete>`__.
 
 .. __: https://v2.vuetifyjs.com/en/components/autocompletes/
 

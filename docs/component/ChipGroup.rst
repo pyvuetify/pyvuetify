@@ -3,9 +3,9 @@ ChipGroup
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/chip-groups/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`ChipGroup <ipyvuetify.ChipGroup>` supercharges the :py:class:`Chip <ipyvuetify.Chip>`
+The :py:class:`ChipGroup <pyvuetify.ChipGroup>` supercharges the :py:class:`Chip <pyvuetify.Chip>`
 component by providing groupable functionality. It is used for creating groups of
 selections using chips.
 
@@ -13,7 +13,7 @@ Usage
 -----
 
 Chip groups make it easy for users to select filtering options for more complex
-implementations. By default, :py:class:`ChipGroup <ipyvuetify.ChipGroup>` will
+implementations. By default, :py:class:`ChipGroup <pyvuetify.ChipGroup>` will
 overflow to the right but can be changed to a **column** only mode.
 
 .. jupyter-execute:: ChipGroup/usage.py
@@ -21,8 +21,8 @@ overflow to the right but can be changed to a **column** only mode.
 
 .. api::
 
-    - :py:class:`ipyvuetify.ChipGroup`
-    - :py:class:`ipyvuetify.Chip`
+    - :py:class:`pyvuetify.ChipGroup`
+    - :py:class:`pyvuetify.Chip`
 
 Column
 ------

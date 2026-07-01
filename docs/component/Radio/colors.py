@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 colors = ["red", "red darken-3", "indigo", "indigo darken-3", "orange", "orange darken-3"]
 theme = ["primary", "secondary", "success", "info", "warning", "error"]

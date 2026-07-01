@@ -4,28 +4,28 @@ ItemGroup
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Item groups
     documentation <https://v2.vuetifyjs.com/en/components/item-groups/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`ItemGroup <ipyvuetify.ItemGroup>` provides the ability to create
+The :py:class:`ItemGroup <pyvuetify.ItemGroup>` provides the ability to create
 a group of selectable items out of any component. This is the baseline
-functionality for components such as :py:class:`Tabs <ipyvuetify.Tabs>` and
-:py:class:`Carousel <ipyvuetify.Carousel>`.
+functionality for components such as :py:class:`Tabs <pyvuetify.Tabs>` and
+:py:class:`Carousel <pyvuetify.Carousel>`.
 
 .. api::
 
-    - :py:class:`ipyvuetify.ItemGroup`
-    - :py:class:`ipyvuetify.Item`
+    - :py:class:`pyvuetify.ItemGroup`
+    - :py:class:`pyvuetify.Item`
 
 Usage
 -----
 
-The core usage of the :py:class:`ItemGroup <ipyvuetify.ItemGroup>` is to create
+The core usage of the :py:class:`ItemGroup <pyvuetify.ItemGroup>` is to create
 groups of anything that should be controlled by a model.
 
 .. todo::
 
     The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of ipyvuetify.
+    called item. It's not possible with the current implementation of pyvuetify.
 
 Examples
 --------
@@ -39,7 +39,7 @@ items.
 .. todo::
 
     The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of ipyvuetify.
+    called item. It's not possible with the current implementation of pyvuetify.
 
 Mandatory
 ^^^^^^^^^
@@ -49,7 +49,7 @@ Mandatory
 .. todo::
 
     The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of ipyvuetify.
+    called item. It's not possible with the current implementation of pyvuetify.
 
 Multiple
 ^^^^^^^^
@@ -59,7 +59,7 @@ Item groups can have multiple items selected.
 .. todo::
 
     The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of ipyvuetify.
+    called item. It's not possible with the current implementation of pyvuetify.
 Chips
 ^^^^^
 
@@ -68,7 +68,7 @@ Easily hook up a custom chip group.
 .. todo::
 
     The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of ipyvuetify.
+    called item. It's not possible with the current implementation of pyvuetify.
 
 Selection
 ^^^^^^^^^
@@ -79,4 +79,4 @@ of a single choice, such as marking an item as a favorite.
 .. todo::
 
     The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of ipyvuetify.
+    called item. It's not possible with the current implementation of pyvuetify.

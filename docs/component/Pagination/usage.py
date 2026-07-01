@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Pagination(
     v_model=1,

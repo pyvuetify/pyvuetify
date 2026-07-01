@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 items = [
     {"icon": True, "title": "Jason Oner", "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg"},

@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 switch = v.Switch(v_model=False, label="Sticky Banner", hide_details=True)
 

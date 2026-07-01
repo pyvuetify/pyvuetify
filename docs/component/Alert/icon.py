@@ -1,8 +1,9 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Container(
     children=[
         v.Alert(
+            klass="ma-1",
             color="#2A3B4D",
             dark=True,
             icon="mdi-firework",
@@ -13,6 +14,7 @@ v.Container(
             ],
         ),
         v.Alert(
+            klass="ma-1",
             color="#C51162",
             dark=True,
             icon="mdi-material-design",
@@ -24,6 +26,7 @@ v.Container(
             ],
         ),
         v.Alert(
+            klass="ma-1",
             color="primary",
             dark=True,
             icon="mdi-vuetify",

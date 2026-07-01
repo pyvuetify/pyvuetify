@@ -4,21 +4,21 @@ Rating
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Ratings
     documentation <https://v2.vuetifyjs.com/en/components/ratings/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Rating <ipyvuetify.Rating>` component is a specialized but
+The :py:class:`Rating <pyvuetify.Rating>` component is a specialized but
 crucial piece in building user widgets. Collecting user feedback via ratings
 is a simple analytic that can provide a lot of feedback to your product or
 application.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Rating`
+    - :py:class:`pyvuetify.Rating`
 
 Usage
 -----
 
-The :py:class:`Rating <ipyvuetify.Rating>` component provides a simple
+The :py:class:`Rating <pyvuetify.Rating>` component provides a simple
 interface for gathering user feedback.
 
 .. jupyter-execute:: Rating/usage.py
@@ -30,7 +30,7 @@ Examples
 Color
 ^^^^^
 
-The :py:class:`Rating <ipyvuetify.Rating>` component can be colored as you
+The :py:class:`Rating <pyvuetify.Rating>` component can be colored as you
 want, you can set both selected and not selected colors.
 
 .. tab-set::
@@ -96,7 +96,7 @@ half-increments prop) and empty-icon.
 Size
 ^^^^
 
-Utilize the same sizing classes available in :py:class:`Icon <ipyvuetify.Icon>`
+Utilize the same sizing classes available in :py:class:`Icon <pyvuetify.Icon>`
 or provide your own with the size prop.
 
 .. tab-set::
@@ -161,7 +161,7 @@ rating.
 Advanced usage
 ^^^^^^^^^^^^^^
 
-The :py:class:`Rating <ipyvuetify.Rating>` component fits right in with
+The :py:class:`Rating <pyvuetify.Rating>` component fits right in with
 existing components. Build truly complex examples with rich features and
 beautiful designs.
 

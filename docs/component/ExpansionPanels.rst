@@ -4,20 +4,20 @@ ExpansionPanels
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Expansion Panels documentation
     <https://v2.vuetifyjs.com/en/components/expansion-panels/>`__. All examples have been converted
-    to ipyvuetify syntax.
+    to pyvuetify syntax.
 
-The :py:class:`ExpansionPanel <ipyvuetify.ExpansionPanel>` component is useful for reducing
+The :py:class:`ExpansionPanel <pyvuetify.ExpansionPanel>` component is useful for reducing
 vertical space with large amounts of information. The default functionality of the component is
 to only display one expansion-panel body at a time; however, with the ``multiple`` property,
 the expansion-panel can remain open until explicitly closed.
 
 .. api::
 
-    - :py:class:`ipyvuetify.ExpansionPanels`
-    - :py:class:`ipyvuetify.ExpansionPanel`
-    - :py:class:`ipyvuetify.ExpansionPanelHeader`
-    - :py:class:`ipyvuetify.ExpansionPanelContent`
-    - :py:class:`ipyvuetify.ExpandTransition`
+    - :py:class:`pyvuetify.ExpansionPanels`
+    - :py:class:`pyvuetify.ExpansionPanel`
+    - :py:class:`pyvuetify.ExpansionPanelHeader`
+    - :py:class:`pyvuetify.ExpansionPanelContent`
+    - :py:class:`pyvuetify.ExpandTransition`
 
 Usage
 -----
@@ -54,7 +54,7 @@ Accordion expansion-panel hasn't got margins around active panel.
 Disabled
 ^^^^^^^^
 
-Both the :py:class:`ExpansionPanel <ipyvuetify.ExpansionPanel>` and its content
+Both the :py:class:`ExpansionPanel <pyvuetify.ExpansionPanel>` and its content
 can be disabled using the ``disabled`` prop.
 
 .. tab-set::
@@ -187,13 +187,13 @@ Advanced
 
 The expansion panel component provides a rich playground to build truly advanced
 implementations. Here we take advantage of slots in the
-:py:class:`ExpansionPanelHeader <ipyvuetify.ExpansionPanelHeader>` component to
+:py:class:`ExpansionPanelHeader <pyvuetify.ExpansionPanelHeader>` component to
 react to the state of being open or closed by fading content in and out.
 
 .. todo::
 
     This example depends heavily on the slot system which is quite sophisticated,
-    any brave soul willing to translate it to ipyvuetify syntax will be greatly appreciated.
+    any brave soul willing to translate it to pyvuetify syntax will be greatly appreciated.
     :fas:`heart`
 
 Custom icon

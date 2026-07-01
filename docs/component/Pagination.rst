@@ -4,9 +4,9 @@ Pagination
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Pagination
     documentation <https://v2.vuetifyjs.com/en/components/paginations/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Pagination <ipyvuetify.Pagination>` component is used to
+The :py:class:`Pagination <pyvuetify.Pagination>` component is used to
 separate long sets of data so that it is easier for a user to consume
 information. Depending on the length provided, the pagination component will
 automatically scale. To maintain the current page, simply supply a v-model
@@ -14,7 +14,7 @@ attribute.
 
 .. api::
 
-    :py:class:`ipyvuetify.Pagination`
+    :py:class:`pyvuetify.Pagination`
 
 Usage
 -----
@@ -96,7 +96,7 @@ Length
 ^^^^^^
 
 Using the length prop you can set the length of
-:py:class:`Pagination <ipyvuetify.Pagination>`, if the number of page buttons
+:py:class:`Pagination <pyvuetify.Pagination>`, if the number of page buttons
 exceeds the parent container, it will truncate the list.
 
 .. tab-set::

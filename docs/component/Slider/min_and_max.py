@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Col(
     class_="mx-1 mt-2",

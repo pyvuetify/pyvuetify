@@ -4,7 +4,7 @@ Grid
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation
     <https://v2.vuetifyjs.com/en/components/grids/>`_. All examples have been
-    converted to ipyvuetify syntax.
+    converted to pyvuetify syntax.
 
 Vuetify comes with a 12 point grid system built using flexbox. The grid is used to
 create specific layouts within an application's content. It contains 5 types of
@@ -18,10 +18,10 @@ the Viewport Breakpoints table.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Container`
-    - :py:class:`ipyvuetify.Row`
-    - :py:class:`ipyvuetify.Col`
-    - :py:class:`ipyvuetify.Spacer`
+    - :py:class:`pyvuetify.Container`
+    - :py:class:`pyvuetify.Row`
+    - :py:class:`pyvuetify.Col`
+    - :py:class:`pyvuetify.Spacer`
 
 Sub-components
 --------------
@@ -29,24 +29,24 @@ Sub-components
 Container
 ~~~~~~~~~
 
-:py:class:`Container <ipyvuetify.Container>` provides the ability to center and
+:py:class:`Container <pyvuetify.Container>` provides the ability to center and
 horizontally pad your site's contents. You can also use the ``fluid`` prop to
 fully extend the container across all viewport and device sizes. Maintains previous
 1.x functionality in which props are passed through as classes on
-:py:class:`Container <ipyvuetify.Container>` allowing for the application of helper
+:py:class:`Container <pyvuetify.Container>` allowing for the application of helper
 classes (such as ``ma-#``/``pa-#``/``fill-height``) to easily be applied.
 
 Col
 ~~~
 
-:py:class:`Col <ipyvuetify.Col>` is a content holder that must be a direct child
-of :py:class:`Row <ipyvuetify.Row>`. This is the 2.x replacement for v-flex in 1.x.
+:py:class:`Col <pyvuetify.Col>` is a content holder that must be a direct child
+of :py:class:`Row <pyvuetify.Row>`. This is the 2.x replacement for v-flex in 1.x.
 
 Row
 ~~~
 
-:py:class:`Row <ipyvuetify.Row>` is a wrapper component for
-:py:class:`Col <ipyvuetify.Col>`. It utilizes flex properties to control the
+:py:class:`Row <pyvuetify.Row>` is a wrapper component for
+:py:class:`Col <pyvuetify.Col>`. It utilizes flex properties to control the
 layout and flow of its inner columns. It uses a standard gutter of 24px. This
 can be reduced with the ``dense`` prop or removed completely with ``no-gutters``.
 This is the 2.x replacement for v-layout in 1.x.
@@ -54,11 +54,11 @@ This is the 2.x replacement for v-layout in 1.x.
 Spacer
 ~~~~~~
 
-:py:class:`Spacer <ipyvuetify.Spacer>` is a basic yet versatile spacing component
+:py:class:`Spacer <pyvuetify.Spacer>` is a basic yet versatile spacing component
 used to distribute remaining width in-between a parent's child components. When
-placing a single :py:class:`Spacer <ipyvuetify.Spacer>` before or after the child
+placing a single :py:class:`Spacer <pyvuetify.Spacer>` before or after the child
 components, the components will push to the right and left of its container. When
-more than one :py:class:`Spacer <ipyvuetify.Spacer>` are used between multiple
+more than one :py:class:`Spacer <pyvuetify.Spacer>` are used between multiple
 components, the remaining width is evenly distributed between each spacer.
 
 Usage
@@ -77,17 +77,17 @@ terminology, guidelines, and code snippets.
 .. note::
 
     ``fill-height`` applies ``height: 100%`` to an element. When applied to
-    :py:class:`Container <ipyvuetify.Container>` it will also ``align-items: center``.
+    :py:class:`Container <pyvuetify.Container>` it will also ``align-items: center``.
 
 .. note::
 
     Breakpoints based props on grid components work in an ``andUp`` fashion. With this
     in mind the ``xs`` breakpoint is assumed and has been removed from the props context.
     This applies to ``offset``, ``justify``, ``align``, and single breakpoint props on
-    :py:class:`Col <ipyvuetify.Col>`.
+    :py:class:`Col <pyvuetify.Col>`.
 
     Props like ``justify-sm`` and ``justify-md`` exist, but ``justify-xs`` does not, it is
-    simply ``justify``. The ``xs`` prop does not exist on :py:class:`Col <ipyvuetify.Col>`.
+    simply ``justify``. The ``xs`` prop does not exist on :py:class:`Col <pyvuetify.Col>`.
     The equivalent to this is  the ``cols`` prop
 
 Align
@@ -156,8 +156,8 @@ Change the horizontal alignment of flex items using the ``justify`` property.
 No gutters
 ----------
 
-You can remove the negative margins from :py:class:`Row <ipyvuetify.Row>` and the
-padding from its direct :py:class:`Col <ipyvuetify.Col>` children using the
+You can remove the negative margins from :py:class:`Row <pyvuetify.Row>` and the
+padding from its direct :py:class:`Col <pyvuetify.Col>` children using the
 ``no-gutters`` property.
 
 .. tab-set::
@@ -316,7 +316,7 @@ Grow and Shrink
 By default, flex components will automatically fill the available space in a row
 or column. They will also shrink relative to the rest of the flex items in the flex
 container when a specific size is not designated. You can define the column width
-of the :py:class:`Col <ipyvuetify.Col>` by using the ``cols`` prop and providing
+of the :py:class:`Col <pyvuetify.Col>` by using the ``cols`` prop and providing
 a value from 1 to 12.
 
 .. tab-set::
@@ -404,7 +404,7 @@ have its siblings to automatically resize around it.
 Spacers
 -------
 
-The :py:class:`Spacer <ipyvuetify.Spacer>` component is useful when you want to fill available space or make space between two components.
+The :py:class:`Spacer <pyvuetify.Spacer>` component is useful when you want to fill available space or make space between two components.
 
 .. tab-set::
 

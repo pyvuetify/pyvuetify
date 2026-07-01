@@ -4,15 +4,15 @@ Slider
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Slider
     documentation <https://v2.vuetifyjs.com/en/components/sliders/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Slider <ipyvuetify.Slider>` component is a better visualization
+The :py:class:`Slider <pyvuetify.Slider>` component is a better visualization
 of the number input. It is used for gathering numerical user data.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Slider`
-    - :py:class:`ipyvuetify.RangeSlider`
+    - :py:class:`pyvuetify.Slider`
+    - :py:class:`pyvuetify.RangeSlider`
 
 Usage
 -----
@@ -119,7 +119,7 @@ callback function when click the icon.
 Inverse label
 ^^^^^^^^^^^^^
 
-:py:class:`Slider <ipyvuetify.Slider>` with ``inverse_label`` property
+:py:class:`Slider <pyvuetify.Slider>` with ``inverse_label`` property
 displays label at the end of it.
 
 .. tab-set::
@@ -183,7 +183,7 @@ You cannot interact with ``readonly`` sliders, but they look as ordinary ones.
 Step
 ^^^^
 
-:py:class:`Slider <ipyvuetify.Slider>` can have steps other than 1. This can
+:py:class:`Slider <pyvuetify.Slider>` can have steps other than 1. This can
 be helpful for some applications where you need to adjust values with more or
 less accuracy.
 
@@ -260,7 +260,7 @@ Functions pass the current ``v_model`` as an argument and must return either
 
 .. todo::
 
-    rule props is not usable in the current ipyvuetify implementation.
+    rule props is not usable in the current pyvuetify implementation.
     If anyone can help to improve this section, please contribute :fas:`coffee`
 
 Vertical sliders
@@ -292,11 +292,11 @@ Append and prepend
 ^^^^^^^^^^^^^^^^^^
 
 Use slots such as ``append`` and ``prepend`` to easily customize the
-:py:class:`Slider <ipyvuetify.Slider>` to fit any situation.
+:py:class:`Slider <pyvuetify.Slider>` to fit any situation.
 
 .. todo::
 
-    The animation does not work in the current ipyvuetify implementation.
+    The animation does not work in the current pyvuetify implementation.
     If anyone can help to improve this section, please contribute :fas:`coffee`
 
 .. tab-set::
@@ -319,12 +319,12 @@ Append text field
 ^^^^^^^^^^^^^^^^^
 
 Sliders can be combined with other components in its ``append`` slot, such as
-:py:class:`TextField <ipyvuetify.TextField>`, to add additional functionality
+:py:class:`TextField <pyvuetify.TextField>`, to add additional functionality
 to the component.
 
 .. todo::
 
-    The two-way binding does not work in the current ipyvuetify implementation.
+    The two-way binding does not work in the current pyvuetify implementation.
     If anyone can help to improve this section, please contribute :fas:`coffee`
 
 .. tab-set::

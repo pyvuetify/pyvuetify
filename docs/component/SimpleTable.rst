@@ -4,16 +4,16 @@ SimpleTable
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Simple tables
     documentation <https://v2.vuetifyjs.com/en/components/simple-tables/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`SimpleTable <ipyvuetify.SimpleTable>` component is a simple
+The :py:class:`SimpleTable <pyvuetify.SimpleTable>` component is a simple
 wrapper component around the ``<table>`` element. Inside the component you can
 use all the regular table elements such as ``<thead>``, ``<tbody>``, ``<tr>``,
 etc.
 
 .. api::
 
-    - :py:class:`ipyvuetify.SimpleTable`
+    - :py:class:`pyvuetify.SimpleTable`
 
 Usage
 -----

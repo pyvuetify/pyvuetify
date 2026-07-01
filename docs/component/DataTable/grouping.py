@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 headers = [
     {"text": "Dessert (100g serving)", "align": "start", "value": "name", "groupable": False},

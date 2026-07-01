@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 colors = [
     ["#FF0000", "#AA0000", "#550000"],

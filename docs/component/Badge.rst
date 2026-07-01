@@ -3,15 +3,15 @@ Badge
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/badges/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Badge <ipyvuetify.Badge>` component superscripts or subscripts an avatar-like icon or
+The :py:class:`Badge <pyvuetify.Badge>` component superscripts or subscripts an avatar-like icon or
 text onto content to highlight information to a user or to just draw attention to a specific element.
 Content within the badge usually contains numbers or icons.
 
 .. api::
 
-    :py:class:`ipyvuetify.Badge`
+    :py:class:`pyvuetify.Badge`
 
 Usage
 -----
@@ -24,7 +24,7 @@ Badges in their simplest form display to the upper right of the content that it 
 Customization options
 ---------------------
 
-The :py:class:`Badge <ipyvuetify.Badge>` component is flexible and can be used in a variety of use-cases over numerous elements. Options to tweak the location are also available through the ``offset_x`` and ``offset_y`` props.
+The :py:class:`Badge <pyvuetify.Badge>` component is flexible and can be used in a variety of use-cases over numerous elements. Options to tweak the location are also available through the ``offset_x`` and ``offset_y`` props.
 
 .. tab-set::
 

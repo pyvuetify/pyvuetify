@@ -4,21 +4,21 @@ Overlay
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Overlays
     documentation <https://v2.vuetifyjs.com/en/components/overlays/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Overlay <ipyvuetify.Overlay>` component is used to provide
+The :py:class:`Overlay <pyvuetify.Overlay>` component is used to provide
 emphasis on a particular element or parts of it. It signals to the user of a
 state change within the application and can be used for creating loaders,
 dialogs and more.
 
 .. api::
 
-    :py:class:`ipyvuetify.Overlay`
+    :py:class:`pyvuetify.Overlay`
 
 Usage
 -----
 
-In its simplest form, the :py:class:`Overlay <ipyvuetify.Overlay>` component
+In its simplest form, the :py:class:`Overlay <pyvuetify.Overlay>` component
 will add a dimmed layer over your application.
 
 .. jupyter-execute:: Overlay/usage.py
@@ -53,7 +53,7 @@ Opacity
 ^^^^^^^
 
 ``opacity`` allows you to customize the transparency of
-:py:class:`Overlay <ipyvuetify.Overlay>` components.
+:py:class:`Overlay <pyvuetify.Overlay>` components.
 
 .. tab-set::
 
@@ -74,7 +74,7 @@ Opacity
 Advanced
 ^^^^^^^^
 
-Using the :py:class:`Hover <ipyvuetify.Hover>`, we are able to add a nice scrim
+Using the :py:class:`Hover <pyvuetify.Hover>`, we are able to add a nice scrim
 over the information card with additional actions the user can take.
 
 .. tab-set::
@@ -96,7 +96,7 @@ over the information card with additional actions the user can take.
 Loader
 ^^^^^^
 
-Using the :py:class:`Overlay <ipyvuetify.Overlay>` as a background, add a
+Using the :py:class:`Overlay <pyvuetify.Overlay>` as a background, add a
 progress component to easily create a custom loader.
 
 .. tab-set::

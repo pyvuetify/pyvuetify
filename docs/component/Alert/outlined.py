@@ -1,8 +1,9 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Container(
     children=[
         v.Alert(
+            klass="ma-1",
             outlined=True,
             color="purple",
             children=[
@@ -18,6 +19,7 @@ v.Container(
             ],
         ),
         v.Alert(
+            klass="ma-1",
             outlined=True,
             type="success",
             text=True,
@@ -28,6 +30,7 @@ v.Container(
             ],
         ),
         v.Alert(
+            klass="ma-1",
             outlined=True,
             type="warning",
             prominent=True,

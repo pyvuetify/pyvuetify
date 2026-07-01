@@ -4,25 +4,25 @@ Toolbar
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Toolbars
     documentation <https://v2.vuetifyjs.com/en/components/toolbars/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Toolbar <ipyvuetify.Toolbar>` component is pivotal to any graphical
+The :py:class:`Toolbar <pyvuetify.Toolbar>` component is pivotal to any graphical
 user interface (GUI), as it generally is the primary source of site navigation. The
 toolbar component works great in conjunction with
-:py:class:`NavigationDrawer <ipyvuetify.NavigationDrawer>` and
-:py:class:`Card <ipyvuetify.Card>`.
+:py:class:`NavigationDrawer <pyvuetify.NavigationDrawer>` and
+:py:class:`Card <pyvuetify.Card>`.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Toolbar`
-    - :py:class:`ipyvuetify.ToolbarItems`
-    - :py:class:`ipyvuetify.ToolbarTitle`
+    - :py:class:`pyvuetify.Toolbar`
+    - :py:class:`pyvuetify.ToolbarItems`
+    - :py:class:`pyvuetify.ToolbarTitle`
 
 .. warning::
 
-    When :py:class:`Btn <ipyvuetify.Btn>`s with the ``icon`` prop are used inside
-    of :py:class:`Toolbar <ipyvuetify.Toolbar>` and
-    :py:class:`AppBar <ipyvuetify.AppBar>` they will automatically have their size
+    When :py:class:`Btn <pyvuetify.Btn>`s with the ``icon`` prop are used inside
+    of :py:class:`Toolbar <pyvuetify.Toolbar>` and
+    :py:class:`AppBar <pyvuetify.AppBar>` they will automatically have their size
     increased and negative margin applied to ensure proper spacing according to the
     Material Design Specification. If you choose to wrap your buttons in any
     container, such as a ``div``, you will need to apply negative margin to that
@@ -34,9 +34,9 @@ Usage
 A toolbar is a flexible container that can be used in a number of ways. By default,
 the toolbar is **64px** high on desktop and **56px** high on mobile. There are a
 number of helper components available to use with the toolbar. The
-:py:class:`ToolbarTitle <ipyvuetify.ToolbarTitle>` is used for displaying a title
-and :py:class:`ToolbarItems <ipyvuetify.ToolbarItems>` allow
-:py:class:`Btn <ipyvuetify.Btn>` to extend full height.
+:py:class:`ToolbarTitle <pyvuetify.ToolbarTitle>` is used for displaying a title
+and :py:class:`ToolbarItems <pyvuetify.ToolbarItems>` allow
+:py:class:`Btn <pyvuetify.Btn>` to extend full height.
 
 .. jupyter-execute:: Toolbar/usage.py
     :raises:
@@ -49,8 +49,8 @@ Background
 
 Toolbars can display a background as opposed to a solid color using the ``src``
 prop. This can be modified further by using the ``img`` slot and providing your own
-:py:class:`Img <ipyvuetify.Img>` component. Backgrounds can be faded using a
-:py:class:`AppBar <ipyvuetify.AppBar>`__.
+:py:class:`Img <pyvuetify.Img>` component. Backgrounds can be faded using a
+:py:class:`AppBar <pyvuetify.AppBar>`__.
 
 .. __: https://v2.vuetifyjs.com/en/components/app-bars/#prominent-w-scroll-shrink-and-image
 
@@ -203,10 +203,10 @@ white text.
 Prominent toolbars
 ^^^^^^^^^^^^^^^^^^
 
-**Prominent** toolbars increase the :py:class:`Toolbar <ipyvuetify.Toolbar>`'s
+**Prominent** toolbars increase the :py:class:`Toolbar <pyvuetify.Toolbar>`'s
 height to **128px** and positions the
-:py:class:`ToolbarTitle <ipyvuetify.ToolbarTitle>` towards the bottom of the
-container. This is expanded upon in :py:class:`AppBar <ipyvuetify.AppBar>`__ with
+:py:class:`ToolbarTitle <pyvuetify.ToolbarTitle>` towards the bottom of the
+container. This is expanded upon in :py:class:`AppBar <pyvuetify.AppBar>`__ with
 the ability to shrink a prominent toolbar to a dense or short one.
 
 .. __: https://v2.vuetifyjs.com/en/components/app-bars/#prominent-w-scroll-shrink
@@ -232,7 +232,7 @@ Contextual action bar
 
 It is possible to update the appearance of a toolbar in response to changes in app
 state. In this example, the color and content of the toolbar changes in response to
-user selections in the :py:class:`Select <ipyvuetify.Select>`.
+user selections in the :py:class:`Select <pyvuetify.Select>`.
 
 .. tab-set::
 

@@ -4,16 +4,16 @@ Btn
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Btn documentation
     <https://v2.vuetifyjs.com/en/components/buttons/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Btn <ipyvuetify.Btn>` component replaces the standard html button with a material
+The :py:class:`Btn <pyvuetify.Btn>` component replaces the standard html button with a material
 design theme and many configurable options. Any color helper class can be used to alter background
 or text color.
 
 .. api::
 
-    -   :py:class:`ipyvuetify.Btn`
-    -   :py:class:`ipyvuetify.BtnToggle`
+    -   :py:class:`pyvuetify.Btn`
+    -   :py:class:`pyvuetify.BtnToggle`
 
 .. seealso::
 
@@ -116,7 +116,7 @@ Loaders
 -------
 
 Using the loading prop, you can notify a user that there is processing taking place. The default
-behavior is to use a :py:class:`ProgressBar <ipyvuetify.ProgressBar>` component but this can be
+behavior is to use a :py:class:`ProgressBar <pyvuetify.ProgressBar>` component but this can be
 customized.
 
 .. tab-set::

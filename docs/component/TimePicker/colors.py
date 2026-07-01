@@ -1,5 +1,6 @@
-import ipyvuetify as v
 from ipywidgets import jslink
+
+import pyvuetify as v
 
 time_picker = v.TimePicker(
     v_model="10:10",

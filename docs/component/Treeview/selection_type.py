@@ -1,5 +1,6 @@
-import ipyvuetify as v
 from ipywidgets import jslink
+
+import pyvuetify as v
 
 select_type = v.Select(items=["leaf", "independent"], label="Selection type", v_model="independent")
 

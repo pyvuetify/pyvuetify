@@ -1,5 +1,6 @@
-import ipyvuetify as v
 from ipywidgets import jslink
+
+import pyvuetify as v
 
 headers = [
     {"text": "Dessert (100g serving)", "value": "name"},

@@ -1,5 +1,6 @@
-import ipyvuetify as v
 from ipywidgets import jslink
+
+import pyvuetify as v
 
 checkbox = v.Checkbox(label="Disabled", v_model=False)
 

@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 close_btn = v.Btn(class_="mt-6", text=True, color="error", children=["close"])
 

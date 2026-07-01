@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 sizes = ["x-small", "small", "default", "large", "x-large"]
 

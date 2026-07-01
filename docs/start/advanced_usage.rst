@@ -45,7 +45,7 @@ An example for using the slot 'no-data', which changes what the Select widget sh
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Select(v_slots=[{
                 'name': 'no-data',
@@ -63,7 +63,7 @@ below the events of the parent widget are used in the slot content.
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Container(children=[
                 v.Tooltip(bottom=True, v_slots=[{
@@ -96,7 +96,7 @@ below the events of the parent widget are used in the slot content.
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Container(children=[
                 v.Tooltip(bottom=True, v_slots=[{
@@ -141,7 +141,7 @@ your browser to see the effect.
 .. jupyter-execute::
     :raises:
 
-    import ipyvuetify as v
+    import pyvuetify as v
 
     v.Row(children=[
         v.Col(cols=12, md=6, children=[
@@ -183,7 +183,7 @@ When you see ``.sync`` appended to an attribute in Vuetify syntax, it means the 
 <https://vuejs.org/v2/guide/components-custom-events.html#sync-Modifier>`_ (like ``v-model``). This is shorthand in Vue
 that automatically listens to an event named ``update:<attributeNameInCamelCase>``.
 
-We can achieve the same manually in ipyvuetify by setting an event handler
+We can achieve the same manually in pyvuetify by setting an event handler
 ``<widget>.on_event('update:<attributeNameInCamelCase>', <function>)``
 
 .. tab-set::

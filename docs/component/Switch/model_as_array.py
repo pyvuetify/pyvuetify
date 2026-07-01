@@ -1,5 +1,6 @@
-import ipyvuetify as v
 from ipywidgets import jslink
+
+import pyvuetify as v
 
 select = v.Select(chips=True, items=["John", "Jacob"], v_model=[], multiple=True, readonly=True)
 switch1 = v.Switch(v_model=[], label="John", value="John")

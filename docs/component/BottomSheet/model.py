@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 open_btn = v.Btn(color="blue", dark=True, children=["Open v-model"])
 

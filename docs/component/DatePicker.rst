@@ -3,33 +3,33 @@ DatePicker
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/date-pickers/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`DatePicker <ipyvuetify.DatePicker>` component is used for selecting dates. It supports multiple selection modes, formatting, internationalization, and can be embedded in dialogs or menus.
+The :py:class:`DatePicker <pyvuetify.DatePicker>` component is used for selecting dates. It supports multiple selection modes, formatting, internationalization, and can be embedded in dialogs or menus.
 
 .. api::
 
-    - :py:class:`ipyvuetify.DatePicker`
-    - :py:class:`ipyvuetify.Menu`
-    - :py:class:`ipyvuetify.Dialog`
-    - :py:class:`ipyvuetify.TextField`
-    - :py:class:`ipyvuetify.DatePickerTable`
-    - :py:class:`ipyvuetify.DatePickerHeader`
-    - :py:class:`ipyvuetify.DatePickerMonthTable`
-    - :py:class:`ipyvuetify.DatePickerYears`
-    - :py:class:`ipyvuetify.DatePickerTitle`
+    - :py:class:`pyvuetify.DatePicker`
+    - :py:class:`pyvuetify.Menu`
+    - :py:class:`pyvuetify.Dialog`
+    - :py:class:`pyvuetify.TextField`
+    - :py:class:`pyvuetify.DatePickerTable`
+    - :py:class:`pyvuetify.DatePickerHeader`
+    - :py:class:`pyvuetify.DatePickerMonthTable`
+    - :py:class:`pyvuetify.DatePickerYears`
+    - :py:class:`pyvuetify.DatePickerTitle`
 
 Usage
 -----
 
-Basic usage of :py:class:`DatePicker <ipyvuetify.DatePicker>`.
+Basic usage of :py:class:`DatePicker <pyvuetify.DatePicker>`.
 
 .. jupyter-execute:: DatePicker/usage.py
     :raises:
 
 .. warning::
 
-    :py:class:`DatePicker <ipyvuetify.DatePicker>` accepts ISO 8601 **date** strings
+    :py:class:`DatePicker <pyvuetify.DatePicker>` accepts ISO 8601 **date** strings
     (YYYY-MM-DD). For more information regarding ISO 8601 and other standards,
     visit the official ISO (International Organization for Standardization)
     `International Standards <https://www.iso.org/standards.html>`__ page.
@@ -37,7 +37,7 @@ Basic usage of :py:class:`DatePicker <ipyvuetify.DatePicker>`.
 Colors
 ------
 
-Customize the color of :py:class:`DatePicker <ipyvuetify.DatePicker>` with the ``color`` prop.
+Customize the color of :py:class:`DatePicker <pyvuetify.DatePicker>` with the ``color`` prop.
 
 .. tab-set::
 
@@ -58,7 +58,7 @@ Customize the color of :py:class:`DatePicker <ipyvuetify.DatePicker>` with the `
 Elevation
 ---------
 
-The :py:class:`DatePicker <ipyvuetify.DatePicker>` component supports elevation
+The :py:class:`DatePicker <pyvuetify.DatePicker>` component supports elevation
 up to a maximum value of 24. For more information on elevations, visit the
 `official Material Design elevations <https://material.io/design/environment/elevation.html>`__
 page.
@@ -91,7 +91,7 @@ You can override the default icons used in the picker.
 Multiple
 --------
 
-Allow selecting multiple dates with :py:class:`DatePicker <ipyvuetify.DatePicker>`.
+Allow selecting multiple dates with :py:class:`DatePicker <pyvuetify.DatePicker>`.
 
 .. tab-set::
 
@@ -123,7 +123,7 @@ the `.sync` modifier.
 Range
 -----
 
-Enable date range selection with :py:class:`DatePicker <ipyvuetify.DatePicker>`
+Enable date range selection with :py:class:`DatePicker <pyvuetify.DatePicker>`
 using ``range``. When using ``range`` prop date picker expects its model to be an
 array of length 2 or empty.
 
@@ -269,7 +269,7 @@ birthday picker.
 Dialog and menu
 ---------------
 
-When integrating a ``picker`` into a :py:class:`TextField <ipyvuetify.TextField>`,
+When integrating a ``picker`` into a :py:class:`TextField <pyvuetify.TextField>`,
 it is recommended to use the ``readonly`` prop. This will prevent mobile keyboards
 from triggering. To save vertical space, you can also hide the picker title.
 

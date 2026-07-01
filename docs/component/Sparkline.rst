@@ -4,15 +4,15 @@ Sparkline
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Sparkline
     documentation <https://v2.vuetifyjs.com/en/components/sparklines/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Sparkline <ipyvuetify.Sparkline>` component can be used to
+The :py:class:`Sparkline <pyvuetify.Sparkline>` component can be used to
 create simple graphs, like GitHub's contribution chart. The sparkline
 component comes in 2 variations, trend (default) and bar.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Sparkline`
+    - :py:class:`pyvuetify.Sparkline`
 
 Usage
 -----
@@ -31,7 +31,7 @@ Examples
 Fill
 ^^^^
 
-You can create a :py:class:`Sparkline <ipyvuetify.Sparkline>` with fill using
+You can create a :py:class:`Sparkline <pyvuetify.Sparkline>` with fill using
 the ``fill`` property.
 
 .. tab-set::
@@ -54,7 +54,7 @@ Width
 ^^^^^
 
 You can customize the line width of a :py:class:`Sparkline
-<ipyvuetify.Sparkline>` using the ``line_width`` property.
+<pyvuetify.Sparkline>` using the ``line_width`` property.
 
 .. tab-set::
 
@@ -76,7 +76,7 @@ smooth
 ^^^^^^
 
 You can customize the smoothness of a :py:class:`Sparkline
-<ipyvuetify.Sparkline>` using the ``smooth`` property.
+<pyvuetify.Sparkline>` using the ``smooth`` property.
 
 
 .. tab-set::
@@ -99,7 +99,7 @@ padding
 ^^^^^^^
 
 You can customize the padding of a :py:class:`Sparkline
-<ipyvuetify.Sparkline>` using the ``padding`` property.
+<pyvuetify.Sparkline>` using the ``padding`` property.
 
 .. tab-set::
 
@@ -147,8 +147,8 @@ information on the svg ``<text>`` element, navigate to the
 Dashboard card
 ^^^^^^^^^^^^^^
 
-The :py:class:`Sparkline <ipyvuetify.Sparkline>` component pairs nicely with
-:py:class:`Card <ipyvuetify.Card>` and :py:class:`Sheet <ipyvuetify.Sheet>`
+The :py:class:`Sparkline <pyvuetify.Sparkline>` component pairs nicely with
+:py:class:`Card <pyvuetify.Card>` and :py:class:`Sheet <pyvuetify.Sheet>`
 to create customized information cards, perfect for admin dashboards. Here we
 use custom labels to provide additional context for the sparkline.
 

@@ -4,20 +4,20 @@ OverflowBtn
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Overflow buttons
     documentation <https://v2.vuetifyjs.com/en/components/overflow-btns/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` is used to give the user
+The :py:class:`OverflowBtn <pyvuetify.OverflowBtn>` is used to give the user
 the ability to select items from the list. It has 3 variations: ``editable``,
 ``overflow`` and ``segmented``.
 
 .. api::
 
-    :py:class:`ipyvuetify.OverflowBtn`
+    :py:class:`pyvuetify.OverflowBtn`
 
 Usage
 -----
 
-:py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` is used for creating selection
+:py:class:`OverflowBtn <pyvuetify.OverflowBtn>` is used for creating selection
 lists.
 
 .. jupyter-execute:: OverflowBtn/usage.py
@@ -29,7 +29,7 @@ Examples
 Counter
 ^^^^^^^
 
-You can add a counter to :py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` to
+You can add a counter to :py:class:`OverflowBtn <pyvuetify.OverflowBtn>` to
 control the max char count.
 
 .. tab-set::
@@ -73,7 +73,7 @@ height of list items.
 Disabled
 ^^^^^^^^
 
-:py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` can be disabled in order to
+:py:class:`OverflowBtn <pyvuetify.OverflowBtn>` can be disabled in order to
 prevent a user from interacting with it.
 
 .. tab-set::
@@ -95,8 +95,8 @@ prevent a user from interacting with it.
 Editable
 ^^^^^^^^
 
-``editable`` :py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` can be directly
-edited, just as :py:class:`TextField <ipyvuetify.TextField>`.
+``editable`` :py:class:`OverflowBtn <pyvuetify.OverflowBtn>` can be directly
+edited, just as :py:class:`TextField <pyvuetify.TextField>`.
 
 .. tab-set::
 
@@ -159,7 +159,7 @@ You can add a hint for the user using the ``hint`` property.
 Loading
 ^^^^^^^
 
-:py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` can have ``loading`` state
+:py:class:`OverflowBtn <pyvuetify.OverflowBtn>` can have ``loading`` state
 with a linear progress bar under them.
 
 .. tab-set::
@@ -181,7 +181,7 @@ with a linear progress bar under them.
 Menu props
 ^^^^^^^^^^
 
-You can set underlying :py:class:`Menu <ipyvuetify.Menu>` props using
+You can set underlying :py:class:`Menu <pyvuetify.Menu>` props using
 ``menu-props`` property.
 
 .. tab-set::
@@ -203,7 +203,7 @@ You can set underlying :py:class:`Menu <ipyvuetify.Menu>` props using
 Readonly
 ^^^^^^^^
 
-:py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` can be put into ``readonly``
+:py:class:`OverflowBtn <pyvuetify.OverflowBtn>` can be put into ``readonly``
 mode, it'll become inactive but won't change the color.
 
 .. tab-set::
@@ -225,7 +225,7 @@ mode, it'll become inactive but won't change the color.
 Segmented
 ^^^^^^^^^
 
-``segmented`` :py:class:`OverflowBtn <ipyvuetify.OverflowBtn>` has an
+``segmented`` :py:class:`OverflowBtn <pyvuetify.OverflowBtn>` has an
 additional divider between the content and the icon.
 
 .. tab-set::

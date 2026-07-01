@@ -4,16 +4,16 @@ Combobox
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation
     <https://v2.vuetifyjs.com/en/components/combobox/>`_. All examples have been
-    converted to ipyvuetify syntax.
+    converted to pyvuetify syntax.
 
-The :py:class:`Combobox <ipyvuetify.Combobox>` component is a :py:class:`Autocomplete
-<ipyvuetify.Autocomplete>` that allows the user to enter values that do not exist
+The :py:class:`Combobox <pyvuetify.Combobox>` component is a :py:class:`Autocomplete
+<pyvuetify.Autocomplete>` that allows the user to enter values that do not exist
 within the provided items. Created items will be returned as strings.
 
 Usage
 -----
 
-With :py:class:`Combobox <ipyvuetify.Combobox>`, you can allow a user to create
+With :py:class:`Combobox <pyvuetify.Combobox>`, you can allow a user to create
 new values that may not be present in a provided items list.
 
 .. jupyter-execute:: Combobox/usage.py
@@ -22,7 +22,7 @@ new values that may not be present in a provided items list.
 
 .. api::
 
-    :py:class:`ipyvuetify.Combobox`
+    :py:class:`pyvuetify.Combobox`
 
 Caveats
 -------
@@ -110,9 +110,9 @@ when searching / creating items.
 Advanced custom options
 -----------------------
 
-The :py:class:`Combobox <ipyvuetify.Combobox>` improves upon the added functionality
-from :py:class:`Select <ipyvuetify.Select>` and :py:class:`Autocomplete
-<ipyvuetify.Autocomplete>`. This provides you with an expansive interface to
+The :py:class:`Combobox <pyvuetify.Combobox>` improves upon the added functionality
+from :py:class:`Select <pyvuetify.Select>` and :py:class:`Autocomplete
+<pyvuetify.Autocomplete>`. This provides you with an expansive interface to
 create truly customized implementations. This example takes advantage of some more
 advanced features such as a custom filter algorithm, inline list editing and
 dynamic input items.

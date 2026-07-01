@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 drawer = v.NavigationDrawer(
     v_model=False,

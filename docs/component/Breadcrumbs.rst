@@ -3,18 +3,18 @@ Breadcrumbs
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/breadcrumbs/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Breadcrumbs <ipyvuetify.Breadcrumbs>` component is a navigational helper for pages.
+The :py:class:`Breadcrumbs <pyvuetify.Breadcrumbs>` component is a navigational helper for pages.
 It can accept a Material Icons icon or text characters as a divider. An array of objects can be passed
 to the ``items`` property of the component. Additionally, slots exists for more control of the breadcrumbs,
-either utilizing :py:class:`BreadcrumbsItem <ipyvuetify.BreadcrumbsItem>` or other custom markup.
+either utilizing :py:class:`BreadcrumbsItem <pyvuetify.BreadcrumbsItem>` or other custom markup.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Breadcrumbs`
-    - :py:class:`ipyvuetify.BreadcrumbsItem`
-    - :py:class:`ipyvuetify.BreadcrumbsDivider`
+    - :py:class:`pyvuetify.Breadcrumbs`
+    - :py:class:`pyvuetify.BreadcrumbsItem`
+    - :py:class:`pyvuetify.BreadcrumbsDivider`
 
 .. note:: Caveat
 

@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 text = "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus."
 items = [

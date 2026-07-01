@@ -4,9 +4,9 @@ Alert
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/alerts/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Alert <ipyvuetify.Alert>` component is used to convey important information to the user
+The :py:class:`Alert <pyvuetify.Alert>` component is used to convey important information to the user
 through the use of contextual types, icons, and colors. These default types come in 4 variations:
 ``success``, ``info``, ``warning``, and ``error``. Default icons are assigned which help represent
 different actions each type portrays. Many parts of an alert such as ``border``, ``icon``, and ``color``
@@ -14,7 +14,7 @@ can also be customized to fit almost any situation.
 
 .. api::
 
-    :py:class:`ipyvuetify.Alert`
+    :py:class:`pyvuetify.Alert`
 
 Usage
 -----
@@ -233,7 +233,7 @@ component hides and shows.
 Type
 ----
 
-The ``type`` prop provides 4 default :py:class:`Alert <ipyvuetify.Alert>` styles: success, info, warning, and error. Each of
+The ``type`` prop provides 4 default :py:class:`Alert <pyvuetify.Alert>` styles: success, info, warning, and error. Each of
 these styles provides a default icon and color. The default colors can be configured globally by
 customizing Vuetify's theme.
 
@@ -278,7 +278,7 @@ props, you can create stylish custom alerts such as this Twitter notification.
 Accessibility
 -------------
 
-By default, :py:class:`Alert <ipyvuetify.Alert>` components are assigned the WAI-ARIA role of alert
+By default, :py:class:`Alert <pyvuetify.Alert>` components are assigned the WAI-ARIA role of alert
 which denotes that the alert "is a live region with important and usually time-sensitive information."
 When using the ``dismissible`` prop, the close icon will receive a corresponding ``aria-label``.
 This value can be modified by changing either the ``close-label`` prop or globally through customizing

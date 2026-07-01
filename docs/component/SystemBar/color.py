@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 colors = ["primary", "red lighten-2", "indigo darken-2"]
 

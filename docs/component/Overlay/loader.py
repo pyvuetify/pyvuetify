@@ -1,5 +1,6 @@
-import ipyvuetify as v
 from ipywidgets import jslink
+
+import pyvuetify as v
 
 switch = v.Switch(label="Show Overlay", v_model=False, class_="mx-auto my-2")
 switch2 = v.Switch(label="Show Overlay", v_model=False, class_="mx-auto my-2")

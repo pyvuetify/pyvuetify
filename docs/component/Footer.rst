@@ -4,19 +4,19 @@ Footer
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Footer documentation
     <https://v2.vuetifyjs.com/en/components/footer/>`__. All examples have been converted
-    to ipyvuetify syntax.
+    to pyvuetify syntax.
 
-The :py:class:`Footer <ipyvuetify.Footer>` component is used for displaying general
+The :py:class:`Footer <pyvuetify.Footer>` component is used for displaying general
 information that a user might want to access from any page within your site.
 
 .. api::
 
-    :py:class:`ipyvuetify.Footer`
+    :py:class:`pyvuetify.Footer`
 
 Usage
 -----
 
-The :py:class:`Footer <ipyvuetify.Footer>` component in its simplest form is a container.
+The :py:class:`Footer <pyvuetify.Footer>` component in its simplest form is a container.
 
 .. jupyter-execute:: Footer/usage.py
     :raises:

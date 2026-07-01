@@ -4,19 +4,19 @@ Lazy
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Lazy documentation
     <https://v2.vuetifyjs.com/en/components/lazy/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Lazy <ipyvuetify.Lazy>` component is used to dynamically load
+The :py:class:`Lazy <pyvuetify.Lazy>` component is used to dynamically load
 components based upon an elements visibility.
 
 .. api::
 
-    :py:class:`ipyvuetify.Lazy`
+    :py:class:`pyvuetify.Lazy`
 
 Usage
 -----
 
-The :py:class:`Lazy <ipyvuetify.Lazy>` component by default will not render its
+The :py:class:`Lazy <pyvuetify.Lazy>` component by default will not render its
 contents until it has been intersected. Scroll down and watch the element render
 as you go past it.
 
@@ -27,7 +27,7 @@ as you go past it.
 Caveats
 -------
 
-The :py:class:`Lazy <ipyvuetify.Lazy>` component uses the `v-intersect
+The :py:class:`Lazy <pyvuetify.Lazy>` component uses the `v-intersect
 <https://v2.vuetifyjs.com/en/directives/intersect/>`__ directive which requires
 a `Polyfill <https://v2.vuetifyjs.com/en/directives/intersect/#polyfill>`__ in
 order to work on IE11 / Safari. It's possible on some iOS versions will also

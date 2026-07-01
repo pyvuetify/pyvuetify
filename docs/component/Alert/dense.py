@@ -1,21 +1,28 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Container(
     children=[
-        v.Alert(dense=True, type="info", children=["I'm a dense alert with a type of info"]),
         v.Alert(
+            klass="ma-1",
             dense=True,
-            text=True,
+            type="info",
+            children=["I'm a dense alert with a type of info"],
+        ),
+        v.Alert(
+            klass="ma-1",
+            dense=True,
             type="success",
             children=["I'm a dense alert with the text prop and a type of success"],
         ),
         v.Alert(
+            klass="ma-1",
             dense=True,
-            border="left",
+            border="start",
             type="warning",
             children=["I'm a dense alert with the border prop and a type of warning"],
         ),
         v.Alert(
+            klass="ma-1",
             dense=True,
             outlined=True,
             type="error",

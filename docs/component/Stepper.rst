@@ -4,18 +4,18 @@ Stepper
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Stepper
     documentation <https://v2.vuetifyjs.com/en/components/steppers/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Stepper <ipyvuetify.Stepper>` component displays progress
+The :py:class:`Stepper <pyvuetify.Stepper>` component displays progress
 through numbered steps.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Stepper`
-    - :py:class:`ipyvuetify.StepperContent`
-    - :py:class:`ipyvuetify.StepperHeader`
-    - :py:class:`ipyvuetify.StepperItems`
-    - :py:class:`ipyvuetify.StepperStep`
+    - :py:class:`pyvuetify.Stepper`
+    - :py:class:`pyvuetify.StepperContent`
+    - :py:class:`pyvuetify.StepperHeader`
+    - :py:class:`pyvuetify.StepperItems`
+    - :py:class:`pyvuetify.StepperStep`
 
 Usage
 -----

@@ -1,5 +1,6 @@
-import ipyvuetify as v
 from ipywidgets import jslink
+
+import pyvuetify as v
 
 items = [
     {"tab": "One", "content": "Tab 1 Content"},

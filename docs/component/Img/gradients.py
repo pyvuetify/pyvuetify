@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Img(
     src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg",

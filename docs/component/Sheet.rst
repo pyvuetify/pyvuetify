@@ -4,22 +4,22 @@ Sheet
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Sheets
     documentation <https://v2.vuetifyjs.com/en/components/sheets/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Sheet <ipyvuetify.Sheet>` component is the baseline for
-numerous components such as :py:class:`Card <ipyvuetify.Card>`,
-:py:class:`Toolbar <ipyvuetify.Toolbar>`, and more. The available properties
+The :py:class:`Sheet <pyvuetify.Sheet>` component is the baseline for
+numerous components such as :py:class:`Card <pyvuetify.Card>`,
+:py:class:`Toolbar <pyvuetify.Toolbar>`, and more. The available properties
 form the foundation of Material Design — the concept of paper and elevation
 (shadows).
 
 .. api::
 
-    - :py:class:`ipyvuetify.Sheet`
+    - :py:class:`pyvuetify.Sheet`
 
 Usage
 -----
 
-The :py:class:`Sheet <ipyvuetify.Sheet>` component is a transformable piece of
+The :py:class:`Sheet <pyvuetify.Sheet>` component is a transformable piece of
 paper that provides a basic foundation for Vuetify features. For example,
 properties such as rounded and shaped modify the ``border-radius`` property
 while elevation increases/decreases ``box-shadow``.
@@ -33,7 +33,7 @@ Examples
 Elevation
 ^^^^^^^^^
 
-The :py:class:`Sheet <ipyvuetify.Sheet>` component accepts a custom elevation
+The :py:class:`Sheet <pyvuetify.Sheet>` component accepts a custom elevation
 between 0 and 24 (0 is default). The elevation property modifies the
 ``box-shadow`` property. More information is located in the `MD Elevation
 Design Specification
@@ -60,7 +60,7 @@ Color
 
 Sheets and components based on them can have different sizes and colors.
 
-The :py:class:`Sheet <ipyvuetify.Sheet>` component accepts custom `Material
+The :py:class:`Sheet <pyvuetify.Sheet>` component accepts custom `Material
 Design Color <https://v2.vuetifyjs.com/en/styles/colors/>`__ values such as
 ``warning``, ``amber darken-3``, and ``deep-purple accent`` — as well as rgb,
 rgba, and hexadecimal values.

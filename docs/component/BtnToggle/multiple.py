@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 toggle_multiple = v.BtnToggle(
     v_model=[0, 1, 2],

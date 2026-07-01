@@ -4,14 +4,14 @@ Subheader
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Subheader
     documentation <https://v2.vuetifyjs.com/en/components/subheaders/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Subheader <ipyvuetify.Subheader>` component is used to separate
+The :py:class:`Subheader <pyvuetify.Subheader>` component is used to separate
 sections of lists.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Subheader`
+    - :py:class:`pyvuetify.Subheader`
 
 Usage
 -----

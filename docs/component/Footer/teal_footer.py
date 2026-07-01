@@ -1,6 +1,6 @@
 from datetime import datetime as dt
 
-import ipyvuetify as v
+import pyvuetify as v
 
 icons = ["mdi-facebook", "mdi-twitter", "mdi-instagram", "mdi-linkedin"]
 

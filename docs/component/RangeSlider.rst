@@ -4,17 +4,17 @@ RangeSlider
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Range Sliders
     documentation <https://v2.vuetifyjs.com/en/components/range-sliders/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`RangeSlider <ipyvuetify.RangeSlider>` component complements
-the :py:class:`Slider <ipyvuetify.Slider>` component by allowing the
+The :py:class:`RangeSlider <pyvuetify.RangeSlider>` component complements
+the :py:class:`Slider <pyvuetify.Slider>` component by allowing the
 selection of a range of values. It is ideal for adjusting settings such as
 volume, brightness, or applying image filters.
 
 .. api::
 
-    - :py:class:`ipyvuetify.RangeSlider`
-    - :py:class:`ipyvuetify.Slider`
+    - :py:class:`pyvuetify.RangeSlider`
+    - :py:class:`pyvuetify.Slider`
 
 Usage
 -----
@@ -74,7 +74,7 @@ You can set min and max values of sliders.
 Step
 ^^^^
 
-:py:class:`RangeSlider <ipyvuetify.RangeSlider>` can have steps other than
+:py:class:`RangeSlider <pyvuetify.RangeSlider>` can have steps other than
 1. This can be helpful for some applications where you need to adjust values
 with more or less accuracy.
 

@@ -24,18 +24,21 @@ email = "pierrick.rambaud40@gmail.com"
 [project.urls]
 repository = "https://github.com/pyvuetify/pyvuetify"
 
+[project.optional-dependencies]
+doc = ["sphinx", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme", "sphinx-autoapi", "sphinx-design", "astroid>3", "sphinx-copybutton", "sphinx-last-updated-by-git"]
+
 [dependency-groups]
 dev = ["watchfiles", "jupyter", "jinja2", "jinja2-strcase", "marimo"]
 docs = ["sphinx", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme", "sphinx-autoapi", "sphinx-design", "astroid>3", "sphinx-copybutton", "sphinx-last-updated-by-git"]
 
 [tool.hatch.build]
 only-packages = true
-artifacts = ["pyvuetify/static/*"]
+artifacts = ["pyvuetify/_static/*"]
 
 [tool.hatch.build.hooks.jupyter-builder]
 build-function = "hatch_jupyter_builder.npm_builder"
-ensured-targets = ["pyvuetify/static/widget.js"]
-skip-if-exists = ["pyvuetify/static/widget.js"]
+ensured-targets = ["pyvuetify/_static/pyvuetify.css"]
+skip-if-exists = ["pyvuetify/_static/pyvuetify.css"]
 dependencies = ["hatch-jupyter-builder>=0.5.0"]
 
 [tool.hatch.build.hooks.jupyter-builder.build-kwargs]

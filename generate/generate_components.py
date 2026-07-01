@@ -80,8 +80,6 @@ def generate_component_files():
     init_file = OUTPUT_PYTHON_DIR / "__init__.py"
     module_names = []
     for i, v_component in enumerate(api_data):
-        if v_component["name"] not in ["VAlert", "VSelect", "VTextField", "VChip"]:
-            continue
         module_names.append(v_component["name"].removeprefix("V"))
     init_template = jinja_env.get_template("python_init.py.jinja")
     init_content = init_template.render(module_names=module_names)

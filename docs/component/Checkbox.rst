@@ -3,19 +3,19 @@ Checkbox
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/checkboxes/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Checkbox <ipyvuetify.Checkbox>` component provides users the ability
+The :py:class:`Checkbox <pyvuetify.Checkbox>` component provides users the ability
 to choose between two distinct values. These are very similar to a switch and can
 be used in complex forms and checklists. A simpler version,
-:py:class:`SimpleCheckbox <ipyvuetify.SimpleCheckbox>` is used primarily as a
+:py:class:`SimpleCheckbox <pyvuetify.SimpleCheckbox>` is used primarily as a
 lightweight alternative in data-table components to select rows or display inline
 boolean data.
 
 Usage
 -----
 
-A :py:class:`Checkbox <ipyvuetify.Checkbox>` in its simplest form provides a toggle
+A :py:class:`Checkbox <pyvuetify.Checkbox>` in its simplest form provides a toggle
 between 2 values.
 
 .. jupyter-execute:: Checkbox/usage.py
@@ -23,8 +23,8 @@ between 2 values.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Checkbox`
-    - :py:class:`ipyvuetify.SimpleCheckbox`
+    - :py:class:`pyvuetify.Checkbox`
+    - :py:class:`pyvuetify.SimpleCheckbox`
 
 Colors
 ------
@@ -51,7 +51,7 @@ using the ``color`` prop.
 Model as Array
 --------------
 
-Multiple :py:class:`Checkbox <ipyvuetify.Checkbox>`'s can share the same ``v_model`` by using an array.
+Multiple :py:class:`Checkbox <pyvuetify.Checkbox>`'s can share the same ``v_model`` by using an array.
 
 .. tab-set::
 
@@ -72,7 +72,7 @@ Multiple :py:class:`Checkbox <ipyvuetify.Checkbox>`'s can share the same ``v_mod
 Model as boolean
 ----------------
 
-A single :py:class:`Checkbox <ipyvuetify.Checkbox>` will have a boolean value as its value.
+A single :py:class:`Checkbox <pyvuetify.Checkbox>` will have a boolean value as its value.
 
 .. tab-set::
 
@@ -93,7 +93,7 @@ A single :py:class:`Checkbox <ipyvuetify.Checkbox>` will have a boolean value as
 States
 ------
 
-:py:class:`Checkbox <ipyvuetify.Checkbox>` can have different states such as default,
+:py:class:`Checkbox <pyvuetify.Checkbox>` can have different states such as default,
 disabled, and indeterminate.
 
 .. tab-set::
@@ -136,8 +136,8 @@ Checkbox labels can be defined in ``label`` slot - that will allow to use HTML c
 Inline text field
 -----------------
 
-You can place :py:class:`Checkbox <ipyvuetify.Checkbox>` in line with other components
-such as :py:class:`TextField <ipyvuetify.TextField>`.
+You can place :py:class:`Checkbox <pyvuetify.Checkbox>` in line with other components
+such as :py:class:`TextField <pyvuetify.TextField>`.
 
 .. tab-set::
 

@@ -6,14 +6,14 @@ Using pip
 
 .. code-block:: console
 
-    pip install ipyvuetify
+    pip install pyvuetify
 
 Using conda
 -----------
 
 .. code-block:: console
 
-    conda install -c conda-forge ipyvuetify
+    conda install -c conda-forge pyvuetify
 
 Jupyter Lab
 -----------
@@ -26,6 +26,6 @@ has to be installed in Jupyter Lab:
     jupyter labextension install jupyter-vuetify
 
 .. note::
-    ipyvuetify depends on ipywidgets being installed in Jupyter Lab, see the `ipywidgets documentation
+    pyvuetify depends on ipywidgets being installed in Jupyter Lab, see the `ipywidgets documentation
     <https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-the-jupyterlab-extension>`_
     on how to do that.

@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 states = [
     {"name": "Florida", "abbr": "FL", "id": 1},

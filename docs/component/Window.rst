@@ -4,23 +4,23 @@ Window
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Windows
     documentation <https://v2.vuetifyjs.com/en/components/windows/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Window <ipyvuetify.Window>` component provides the baseline
+The :py:class:`Window <pyvuetify.Window>` component provides the baseline
 functionality for transitioning content from **1** pane to another. Other components
-such as :py:class:`Tabs <ipyvuetify.Tabs>`,
-:py:class:`Carousel <ipyvuetify.Carousel>` and
-:py:class:`Stepper <ipyvuetify.Stepper>` utilize this component at their core.
+such as :py:class:`Tabs <pyvuetify.Tabs>`,
+:py:class:`Carousel <pyvuetify.Carousel>` and
+:py:class:`Stepper <pyvuetify.Stepper>` utilize this component at their core.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Window`
-    - :py:class:`ipyvuetify.WindowItem`
+    - :py:class:`pyvuetify.Window`
+    - :py:class:`pyvuetify.WindowItem`
 
 Usage
 -----
 
-Designed to easily cycle through content, :py:class:`Window <ipyvuetify.Window>`
+Designed to easily cycle through content, :py:class:`Window <pyvuetify.Window>`
 provides a simple interface to create truly custom implementations.
 
 .. todo::
@@ -35,7 +35,7 @@ Examples
 Reverse
 ^^^^^^^
 
-**Reverse** :py:class:`Window <ipyvuetify.Window>` always displays reverse
+**Reverse** :py:class:`Window <pyvuetify.Window>` always displays reverse
 transition.
 
 .. todo::
@@ -47,7 +47,7 @@ transition.
 Vertical
 ^^^^^^^^
 
-:py:class:`Window <ipyvuetify.Window>` can be vertical. Vertical windows have **Y
+:py:class:`Window <pyvuetify.Window>` can be vertical. Vertical windows have **Y
 axis** transition instead of **X axis** transition.
 
 .. todo::
@@ -73,7 +73,7 @@ Misc
 Account creation
 ^^^^^^^^^^^^^^^^
 
-Create rich forms with smooth animations. :py:class:`Window <ipyvuetify.Window>`
+Create rich forms with smooth animations. :py:class:`Window <pyvuetify.Window>`
 automatically tracks the current selection index to automatically change the
 transition direction. This can be manually controlled with the ``reverse`` prop.
 
@@ -86,7 +86,7 @@ transition direction. This can be manually controlled with the ``reverse`` prop.
 Onboarding
 ^^^^^^^^^^
 
-:py:class:`Window <ipyvuetify.Window>` makes it easy to create custom components
+:py:class:`Window <pyvuetify.Window>` makes it easy to create custom components
 such as a different styled stepper.
 
 .. todo::

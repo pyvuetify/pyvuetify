@@ -1,8 +1,9 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Container(
     children=[
         v.Alert(
+            klass="ma-1",
             text=True,
             color="info",
             children=[
@@ -38,6 +39,7 @@ v.Container(
             ],
         ),
         v.Alert(
+            klass="ma-1",
             text=True,
             outlined=True,
             color="deep-orange",
@@ -49,6 +51,7 @@ v.Container(
             ],
         ),
         v.Alert(
+            klass="ma-1",
             text=True,
             dense=True,
             color="teal",
@@ -61,6 +64,7 @@ v.Container(
             ],
         ),
         v.Alert(
+            klass="ma-1",
             text=True,
             prominent=True,
             type="error",

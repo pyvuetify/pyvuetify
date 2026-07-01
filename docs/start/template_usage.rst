@@ -10,7 +10,7 @@ the Vue template syntax. Lets start with a basic example:
 .. jupyter-execute::
     :raises:
 
-    import ipyvuetify as v
+    import pyvuetify as v
     import traitlets
 
     class FruitSelector(v.VuetifyTemplate):
@@ -43,7 +43,7 @@ available using the normal wrapped Vuetify widgets:
 .. jupyter-execute::
     :raises:
 
-    import ipyvuetify as v
+    import pyvuetify as v
     import traitlets
 
 
@@ -99,7 +99,7 @@ our VuetifyTemplate to it.
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
             import traitlets
             import random
 
@@ -163,7 +163,7 @@ them in the template with the ``jupyter-widget`` tag:
 
 .. code-block:: python
 
-    import ipyvuetify as v
+    import pyvuetify as v
     import ipywidgets as widgets
     import traitlets
 

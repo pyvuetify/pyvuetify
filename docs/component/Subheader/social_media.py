@@ -1,6 +1,6 @@
 from random import random
 
-import ipyvuetify as v
+import pyvuetify as v
 
 types = ["Places to Be", "Places to See"]
 cards = ["Good", "Best", "Finest"]

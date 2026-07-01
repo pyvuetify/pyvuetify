@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 values = [423, 446, 675, 510, 590, 610, 760]
 

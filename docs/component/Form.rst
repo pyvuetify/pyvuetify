@@ -4,7 +4,7 @@ Form
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Form documentation
     <https://v2.vuetifyjs.com/en/components/forms/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
 When it comes to form validation, Vuetify has a multitude of integrations and baked
 in functionality. Want to use a 3rd party validation plugin? Out of the box you
@@ -13,12 +13,12 @@ can use `Vee-validate <https://github.com/baianat/Vee-validate>`__ and
 
 .. api::
 
-    :py:class:`ipyvuetify.Form`
+    :py:class:`pyvuetify.Form`
 
 Usage
 -----
 
-The internal :py:class:`Form <ipyvuetify.Form>` component makes it easy to add
+The internal :py:class:`Form <pyvuetify.Form>` component makes it easy to add
 validation to form inputs. All input components have a ``rules`` prop which accepts
 a mixed array of types ``function``, ``boolean`` and ``string``. These allow you
 to specify conditions in which the input is valid or invalid. Whenever the value
@@ -59,7 +59,7 @@ order your rules accordingly.
 Validation with submit & clear
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The :py:class:`Form <ipyvuetify.Form>` component has **three** functions that can be
+The :py:class:`Form <pyvuetify.Form>` component has **three** functions that can be
 accessed by setting a ref on the component. A ref allows us to access internal
 methods on a component, for example, ``<v-form ref="form">``.
 ``this.$refs.form.validate()`` will validate all inputs and return if they are
@@ -91,7 +91,7 @@ vee-validate is a template Based Validation Framework for Vue.js.
 
 .. todo::
 
-    Add Vee-validate example when ipyvuetify supports it.
+    Add Vee-validate example when pyvuetify supports it.
 
 Vuelidate
 ^^^^^^^^^
@@ -101,4 +101,4 @@ vuelidate is a simple, lightweight model-based validation for Vue.js.
 
 .. todo::
 
-    Add Vuelidate example when ipyvuetify supports it.
+    Add Vuelidate example when pyvuetify supports it.

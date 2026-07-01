@@ -1,3 +1,3 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Slider(readonly=True, label="Readonly", value=30)

@@ -1,19 +1,19 @@
 Usage
 =====
 
-This page shows how to use ipyvuetify and explains how it is different from other widget libraries you
+This page shows how to use pyvuetify and explains how it is different from other widget libraries you
 may know such as ipywidgets. It also explains how to use the Vuetify documentation. Most examples
 display real widgets which have animations and behavior.
 
-Create an ipyvuetify widget
+Create an pyvuetify widget
 ---------------------------
 
-Below you see how to create an ipyvuetify widget.
+Below you see how to create an pyvuetify widget.
 
 .. jupyter-execute::
     :raises:
 
-    import ipyvuetify as v
+    import pyvuetify as v
 
     my_select = v.Select(
         label='Fruits',
@@ -25,7 +25,7 @@ Attributes are traits and thus can be changed at any time in the code e.g. to ad
 .. jupyter-execute::
     :raises:
 
-    import ipyvuetify as v
+    import pyvuetify as v
 
     my_select = v.Select(
         label='Fruits',
@@ -43,7 +43,7 @@ What widgets are available and how they look can be found in the
 `Vuetify documentation <https://v2.vuetifyjs.com/components/selects/>`_. Browse the side bar on the left hand side and
 select a widget, then click <> on the right hand side on an example to see the source code for it. The HTML code may
 seem unfamiliar at first, but this documentation will guide you through it. For starters to translate the Vuetify widget
-names, which are starting with ``v-``, to ipyvuetify, remove the ``v-`` prefix and CamelCase the remaining
+names, which are starting with ``v-``, to pyvuetify, remove the ``v-`` prefix and CamelCase the remaining
 name. E.g ``v-select`` becomes ``Select`` and ``v-list-item`` becomes ``ListItem``.
 
 These 2 syntax are perfectly equivalent:
@@ -90,7 +90,7 @@ Python uses snake_case to separate words in attributes, while Vuetify uses kebab
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Select(append_icon='mdi-gamepad-down', label='Fruits')
 
@@ -118,7 +118,7 @@ have to set the value to ``True``. For example ``clearable`` becomes ``clearable
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Select(clearable=True, label='Fruits', items=['Apple', 'Pear', 'Cherry'], value='Apple')
 
@@ -145,17 +145,17 @@ Some attribute have naming conflicts with Python or ipywidgets. These are ``for`
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Select(style_='width: 75px', label='Fruits')
 
 In the Vuetify HTML examples you'll see attributes prefixed with a colon ``:``. This means the attribute is bound to
 a variable or it is evaluated as an expression. If it is bound to a variable you'll see that variable being used in
-other parts of the example. In ipyvuetify we use ``jslink()`` to link these attributes. In the next section you'll
+other parts of the example. In pyvuetify we use ``jslink()`` to link these attributes. In the next section you'll
 see an example of this. To look at how that variable is initialized you select the 'script' tab on a Vuetify example.
 
 If it's an expression it's mostly used to set a ``List`` or a ``Dict``, as is done with ``items`` in the examples above.
-This can be the same in ipyvuetify.
+This can be the same in pyvuetify.
 
 for non-vuetify related attributes, the ones from the HTML tag, can be accessed through the ``attributes`` trait.
 
@@ -187,7 +187,7 @@ for non-vuetify related attributes, the ones from the HTML tag, can be accessed 
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Btn(
                 class_="ma-2",
@@ -242,7 +242,7 @@ explicitly set when creating the widget.
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
             from ipywidgets import jslink
 
             color_select = v.Select(
@@ -257,17 +257,17 @@ explicitly set when creating the widget.
             v.Container(children=[color_select, color_display])
 
 .. note::
-    ipyvuetify widgets have a ``value`` attribute, but that's only used for setting the value,
+    pyvuetify widgets have a ``value`` attribute, but that's only used for setting the value,
     it will not change on interactions with the widget.
 
 The children attribute
 ----------------------
 
-Because ipyvuetify is based on HTML, which represents a GUI as a tree of elements, all widgets have an
+Because pyvuetify is based on HTML, which represents a GUI as a tree of elements, all widgets have an
 attribute ``children`` which is a list of widgets or strings. This way the same tree can be represented
 in Python. Sometimes something you would expect to be specified as an attribute, must be specified as
 an item in ``children``, e.g. in ipywidgets the text of a button is set with the attribute
-``description`` while in ipyvuetify the text is set with setting an item in the ``children`` list:
+``description`` while in pyvuetify the text is set with setting an item in the ``children`` list:
 
 .. tab-set::
 
@@ -289,7 +289,7 @@ an item in ``children``, e.g. in ipywidgets the text of a button is set with the
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Btn(color="primary", children=['Click me'])
 
@@ -325,7 +325,7 @@ This has the benefit of composability, e.g. the button can, in addition to text,
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Btn(color='primary', children=[
                 v.Icon(left=True, children=[
@@ -342,7 +342,7 @@ like in ipywidgets.
 
 .. code-block:: python
 
-    import ipyvuetify as v
+    import pyvuetify as v
 
     # define a global counter (bad practice but ok for this simple example)
     count = 0
@@ -386,7 +386,7 @@ perfectly equivalent:
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             count = 0
 
@@ -446,7 +446,7 @@ The attributes of the HTML tag can be accessed through the ``attributes`` trait.
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Container(children=[
                 v.Html(
@@ -477,7 +477,7 @@ be set. Multiple CSS properties can be set by separating them with a semicolon `
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Select(label='Fruit', style_='width: 75px; opacity: 0.7')
 
@@ -496,7 +496,7 @@ Buttons without spacing:
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Container(children=[
                 v.Btn(children=[f'Button {i}']) for i in range(3)
@@ -522,7 +522,7 @@ With 2 units of margin in the x direction:
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Container(children=[
                 v.Btn(class_='mx-2', children=[f'Button {i}']) for i in range(3)
@@ -546,7 +546,7 @@ And colors:
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Container(children=[
                 v.Btn(class_=f'mx-2 indigo lighten-{i+1}', children=[f'Button {i}']) for i in range(3)
@@ -563,7 +563,7 @@ And colors:
 ClassList attribute
 ^^^^^^^^^^^^^^^^^^^
 
-The ``class`` attribute of a Vuetify DOM elements give access to the built-in styles of the lib. See the `vuetify site <https://v2.vuetifyjs.com/en/styles/colors/>`__ to know more about available styling class. As mentioned in the previous section this can be set using the ``class_`` member of the widget. In addition, ipyvuetify provides a ``class_list`` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods:
+The ``class`` attribute of a Vuetify DOM elements give access to the built-in styles of the lib. See the `vuetify site <https://v2.vuetifyjs.com/en/styles/colors/>`__ to know more about available styling class. As mentioned in the previous section this can be set using the ``class_`` member of the widget. In addition, pyvuetify provides a ``class_list`` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods:
 
 -   ``add(*args)``: add class elements to the class\_ trait of the widget
 
@@ -582,7 +582,7 @@ The ``class`` attribute of a Vuetify DOM elements give access to the built-in st
                 :raises:
                 :hide-code:
 
-                import ipyvuetify as v
+                import pyvuetify as v
 
                 w = v.Btn(children=["click"])
                 w.class_list.add("red", "white--text")
@@ -605,7 +605,7 @@ The ``class`` attribute of a Vuetify DOM elements give access to the built-in st
                 :raises:
                 :hide-code:
 
-                import ipyvuetify as v
+                import pyvuetify as v
 
                 w = v.Btn(children=["click"], class_="red white--text")
                 w.class_list.remove("white--text")
@@ -628,7 +628,7 @@ The ``class`` attribute of a Vuetify DOM elements give access to the built-in st
                 :raises:
                 :hide-code:
 
-                import ipyvuetify as v
+                import pyvuetify as v
 
                 w = v.Btn(children=["click"], class_="red white--text")
                 w.class_list.replace("red", "orange")
@@ -651,7 +651,7 @@ The ``class`` attribute of a Vuetify DOM elements give access to the built-in st
                 :raises:
                 :hide-code:
 
-                import ipyvuetify as v
+                import pyvuetify as v
 
                 w = v.Btn(children=["click"], class_="red white--text")
                 w.class_list.toggle("blue", "red")
@@ -660,7 +660,7 @@ The ``class`` attribute of a Vuetify DOM elements give access to the built-in st
 Visibility
 ^^^^^^^^^^
 
-ipyvuetify widgets visibility can be changed using the built-in methods ``hide()`` and ``show()``.
+pyvuetify widgets visibility can be changed using the built-in methods ``hide()`` and ``show()``.
 Using ``hide`` will add the ``d-none`` class to the widget and ``show`` will remove it, hiding and showing the widget to the end user without removing it from the notebook.
 
 
@@ -679,7 +679,7 @@ Using ``hide`` will add the ``d-none`` class to the widget and ``show`` will rem
                 :raises:
                 :hide-code:
 
-                import ipyvuetify as v
+                import pyvuetify as v
 
                 w = v.Icon(children=['mdi-eye-off'])
                 w.hide()
@@ -700,7 +700,7 @@ Using ``hide`` will add the ``d-none`` class to the widget and ``show`` will rem
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             w = v.Icon(children=['mdi-eye'], class_="d-none")
             w.show()
@@ -749,7 +749,7 @@ In ipywidgets you would layout a grid of widgets with HBox and VBox.
                 ]),
             ])
 
-This can be done in ipyvuetify with the help of some classes described in
+This can be done in pyvuetify with the help of some classes described in
 `flex helpers <https://v2.vuetifyjs.com/styles/flex/>`_.
 
 .. tab-set::
@@ -760,7 +760,7 @@ This can be done in ipyvuetify with the help of some classes described in
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(tag='div', class_='d-flex flex-row', children=[
                 v.Html(tag='div', class_='d-flex flex-column', children=[
@@ -777,7 +777,7 @@ This can be done in ipyvuetify with the help of some classes described in
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(tag='div', class_='d-flex flex-row', children=[
                 v.Html(tag='div', class_='d-flex flex-column', children=[
@@ -809,7 +809,7 @@ Icons can be displayed with the Icon widget:
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Icon(children=['mdi-thumb-up'])
 
@@ -829,7 +829,7 @@ In some widgets icons are specified by setting an attribute:
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Select(prepend_icon='mdi-thumb-up')
 
@@ -887,15 +887,15 @@ In all cases, the `dark_effective` attribute can be used to know if the dark the
 Summary
 -------
 
-Below you will find a summary of all concepts of Vuetify and how they translate to ipyvuetify to help with the
-translation from Vuetify examples to ipyvuetify.
+Below you will find a summary of all concepts of Vuetify and how they translate to pyvuetify to help with the
+translation from Vuetify examples to pyvuetify.
 
 - Component names convert to CamelCase and the v- prefix is stripped
 
   +------------+------------------------+
   | Vuetify    | ``<v-list-tile .../>`` |
   +------------+------------------------+
-  | ipyvuetify | ``ListTitle(...)``     |
+  | pyvuetify | ``ListTitle(...)``     |
   +------------+------------------------+
 
 - Attributes
@@ -905,7 +905,7 @@ translation from Vuetify examples to ipyvuetify.
     +------------+----------------------------+
     | Vuetify    | ``<v-menu offset-y ...``   |
     +------------+----------------------------+
-    | ipyvuetify | ``Menu(offset_y=True ...`` |
+    | pyvuetify | ``Menu(offset_y=True ...`` |
     +------------+----------------------------+
 
   - must have a value
@@ -913,7 +913,7 @@ translation from Vuetify examples to ipyvuetify.
     +------------+------------------------+
     | Vuetify    | ``<v-btn round ...``   |
     +------------+------------------------+
-    | ipyvuetify | ``Btn(round=True ...`` |
+    | pyvuetify | ``Btn(round=True ...`` |
     +------------+------------------------+
 
   - with naming conflicts, ``style``, ``class``, ``open`` and ``for``, are suffixed with an ``_``
@@ -921,7 +921,7 @@ translation from Vuetify examples to ipyvuetify.
     +------------+---------------------------------------+
     | Vuetify    | ``<v-btn class="mr-3" style="..." >`` |
     +------------+---------------------------------------+
-    | ipyvuetify | ``Btn(class_='mr-3', style_='...')``  |
+    | pyvuetify | ``Btn(class_='mr-3', style_='...')``  |
     +------------+---------------------------------------+
 
 - v-model (value in ipywidgets) contains the value directly
@@ -929,7 +929,7 @@ translation from Vuetify examples to ipyvuetify.
   +------------+-----------------------------------------------+
   | Vuetify    | ``<v-slider v-model="some_property" ...``     |
   +------------+-----------------------------------------------+
-  | ipyvuetify | ``myslider = Slider(v_model=25...``           |
+  | pyvuetify | ``myslider = Slider(v_model=25...``           |
   |            |                                               |
   |            | ``jslink((myslider, 'v_model'), (..., ...))`` |
   +------------+-----------------------------------------------+
@@ -939,7 +939,7 @@ translation from Vuetify examples to ipyvuetify.
   +------------+--------------------------------------------+
   | Vuetify    | ``<v-btn>text <v-icon>...</icon></v-btn>`` |
   +------------+--------------------------------------------+
-  | ipyvuetify | ``Btn(children=['text', Icon(...)])``      |
+  | pyvuetify | ``Btn(children=['text', Icon(...)])``      |
   +------------+--------------------------------------------+
 
 - Event listeners are defined with on_event
@@ -947,7 +947,7 @@ translation from Vuetify examples to ipyvuetify.
   +------------+--------------------------------------------+
   | Vuetify    | ``<v-btn @click='someMethod()' ...``       |
   +------------+--------------------------------------------+
-  | ipyvuetify | ``def some_method(widget, event, data):``  |
+  | pyvuetify | ``def some_method(widget, event, data):``  |
   |            |                                            |
   |            | ``button.on_event('click', some_method)``  |
   +------------+--------------------------------------------+
@@ -957,5 +957,5 @@ translation from Vuetify examples to ipyvuetify.
   +------------+-------------------------------------+
   | Vuetify    | ``<div>...</div>``                  |
   +------------+-------------------------------------+
-  | ipyvuetify | ``Html(tag='div', children=[...])`` |
+  | pyvuetify | ``Html(tag='div', children=[...])`` |
   +------------+-------------------------------------+

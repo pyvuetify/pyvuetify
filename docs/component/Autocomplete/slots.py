@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 people = [
     {"name": "Sandra Adams", "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg"},

@@ -1,6 +1,7 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 alert = v.Alert(
+    klass="ma-1",
     v_model=True,
     border="left",
     close_text="Close Alert",

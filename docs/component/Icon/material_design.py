@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 icons = ["mdi-home", "mdi-calendar", "mdi-information"]
 green_icons = ["mdi-folder-open", "mdi-widgets", "mdi-gavel"]

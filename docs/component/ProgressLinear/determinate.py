@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 items = [
     ("deep-purple accent-4", 70),

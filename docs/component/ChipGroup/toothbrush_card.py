@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 bristle_types = ["Extra Soft", "Soft", "Medium", "Hard"]
 

@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 admins = [
     {"text": "Management", "icon": "mdi-account-multiple-outline"},

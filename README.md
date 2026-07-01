@@ -11,7 +11,7 @@ git clone git@github.com:pyvuetify/pyvuetify.git
 2. generate the components
 
 ```
-python generate/generate_component.py
+python generate/generate_components.py
 ```
 
 3. build the lib

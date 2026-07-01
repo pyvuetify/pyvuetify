@@ -1,6 +1,7 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 alert = v.Alert(
+    klass="ma-1",
     value=True,
     color="pink",
     dark=True,

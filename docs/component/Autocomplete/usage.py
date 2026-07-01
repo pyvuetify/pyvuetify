@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 autocomplete = v.Autocomplete(
     items=["Alabama", "Alaska", "Arizona", "Arkansas", "California"],

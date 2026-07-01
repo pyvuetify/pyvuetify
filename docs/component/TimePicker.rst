@@ -4,17 +4,17 @@ TimePicker
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Time Pickers
     documentation <https://v2.vuetifyjs.com/en/components/time-pickers/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`TimePicker <ipyvuetify.TimePicker>` is a stand-alone component that
+The :py:class:`TimePicker <pyvuetify.TimePicker>` is a stand-alone component that
 can be utilized in many existing Vuetify components. It offers the user a visual
 representation for selecting the time.
 
 .. api::
 
-    - :py:class:`ipyvuetify.TimePicker`
-    - :py:class:`ipyvuetify.TimePickerTitle`
-    - :py:class:`ipyvuetify.TimePickerClock`
+    - :py:class:`pyvuetify.TimePicker`
+    - :py:class:`pyvuetify.TimePickerTitle`
+    - :py:class:`pyvuetify.TimePickerClock`
 
 Usage
 -----

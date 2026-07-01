@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 items = [
     {"title": "Home", "icon": "mdi-view-dashboard"},

@@ -4,20 +4,20 @@ Switch
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Switch
     documentation <https://v2.vuetifyjs.com/en/components/switches/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Switch <ipyvuetify.Switch>` component provides users the
+The :py:class:`Switch <pyvuetify.Switch>` component provides users the
 ability to choose between two distinct values. These are very similar to a
 toggle, or on/off switch, though aesthetically different than a checkbox.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Switch`
+    - :py:class:`pyvuetify.Switch`
 
 Usage
 -----
 
-A :py:class:`Switch <ipyvuetify.Switch>` in its simplest form provides a
+A :py:class:`Switch <pyvuetify.Switch>` in its simplest form provides a
 toggle between 2 values.
 
 .. jupyter-execute:: Switch/usage.py
@@ -93,7 +93,7 @@ You can make switch render in inset mode.
 Model as array
 ^^^^^^^^^^^^^^
 
-Multiple :py:class:`Switch <ipyvuetify.Switch>` can share the same
+Multiple :py:class:`Switch <pyvuetify.Switch>` can share the same
 ``v_model`` by using an array.
 
 .. tab-set::
@@ -115,7 +115,7 @@ Multiple :py:class:`Switch <ipyvuetify.Switch>` can share the same
 Model as boolean
 ^^^^^^^^^^^^^^^^
 
-A single :py:class:`Switch <ipyvuetify.Switch>` will have a boolean value as
+A single :py:class:`Switch <pyvuetify.Switch>` will have a boolean value as
 its value.
 
 .. tab-set::
@@ -137,7 +137,7 @@ its value.
 States
 ^^^^^^
 
-:py:class:`Switch <ipyvuetify.Switch>` can have different states such as
+:py:class:`Switch <pyvuetify.Switch>` can have different states such as
 default, disabled, and loading.
 
 .. tab-set::

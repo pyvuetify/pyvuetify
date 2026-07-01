@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 icon = v.Icon(color="grey lighten-1", large=True, children=["mdi-account"])
 

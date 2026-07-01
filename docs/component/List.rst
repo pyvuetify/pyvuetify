@@ -4,9 +4,9 @@ List
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Lists documentation
     <https://v2.vuetifyjs.com/en/components/lists/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`List <ipyvuetify.List>` component is used to display information.
+The :py:class:`List <pyvuetify.List>` component is used to display information.
 It can contain an avatar, content, actions, subheaders and much more. Lists
 present content in a way that makes it easy to identify a specific item in a
 collection. They provide a consistent styling for organizing groups of text and
@@ -14,24 +14,24 @@ images.
 
 .. api::
 
-    - :py:class:`ipyvuetify.List`
-    - :py:class:`ipyvuetify.ListGroup`
-    - :py:class:`ipyvuetify.ListItem`
-    - :py:class:`ipyvuetify.ListItemAction`
-    - :py:class:`ipyvuetify.ListItemActionText`
-    - :py:class:`ipyvuetify.ListItemAvatar`
-    - :py:class:`ipyvuetify.ListItemContent`
-    - :py:class:`ipyvuetify.ListItemGroup`
-    - :py:class:`ipyvuetify.ListItemIcon`
-    - :py:class:`ipyvuetify.ListItemSubtitle`
-    - :py:class:`ipyvuetify.ListItemTitle`
+    - :py:class:`pyvuetify.List`
+    - :py:class:`pyvuetify.ListGroup`
+    - :py:class:`pyvuetify.ListItem`
+    - :py:class:`pyvuetify.ListItemAction`
+    - :py:class:`pyvuetify.ListItemActionText`
+    - :py:class:`pyvuetify.ListItemAvatar`
+    - :py:class:`pyvuetify.ListItemContent`
+    - :py:class:`pyvuetify.ListItemGroup`
+    - :py:class:`pyvuetify.ListItemIcon`
+    - :py:class:`pyvuetify.ListItemSubtitle`
+    - :py:class:`pyvuetify.ListItemTitle`
 
 Usage
 -----
 
 Lists come in three main variations. single-line (default), two-line and
 three-line. The line declaration specifies the minimum height of the item and
-can also be controlled from :py:class:`List <ipyvuetify.List>` with the same
+can also be controlled from :py:class:`List <pyvuetify.List>` with the same
 prop.
 
 .. jupyter-execute:: List/usage.py
@@ -40,7 +40,7 @@ prop.
 .. note::
 
     If you are looking for stateful list items, please check out
-    :py:class:`ListItemGroup <ipyvuetify.ListItemGroup>`.
+    :py:class:`ListItemGroup <pyvuetify.ListItemGroup>`.
 
 Examples
 --------
@@ -48,7 +48,7 @@ Examples
 Dense
 ^^^^^
 
-:py:class:`List <ipyvuetify.List>` can be lowered with ``dense`` property.
+:py:class:`List <pyvuetify.List>` can be lowered with ``dense`` property.
 
 .. tab-set::
 
@@ -69,7 +69,7 @@ Dense
 Disabled
 ^^^^^^^^
 
-You cannot interact with disabled :py:class:`List <ipyvuetify.List>`.
+You cannot interact with disabled :py:class:`List <pyvuetify.List>`.
 
 .. tab-set::
 
@@ -90,7 +90,7 @@ You cannot interact with disabled :py:class:`List <ipyvuetify.List>`.
 Flat
 ^^^^
 
-Items don't change when selected in :py:class:`List <ipyvuetify.List>` with
+Items don't change when selected in :py:class:`List <pyvuetify.List>` with
 ``flat`` property.
 
 .. tab-set::
@@ -113,7 +113,7 @@ Nav
 ^^^
 
 Lists can receive an alternative ``nav`` styling that reduces the width
-:py:class:`ListItem <ipyvuetify.ListItem>` takes up as well as adding a border
+:py:class:`ListItem <pyvuetify.ListItem>` takes up as well as adding a border
 radius.
 
 .. tab-set::
@@ -135,7 +135,7 @@ radius.
 Rounded
 ^^^^^^^
 
-You can make :py:class:`List <ipyvuetify.List>` items rounded.
+You can make :py:class:`List <pyvuetify.List>` items rounded.
 
 .. tab-set::
 
@@ -157,7 +157,7 @@ Shaped
 ^^^^^^
 
 Shaped lists have rounded borders on one side of the
-:py:class:`ListItem <ipyvuetify.ListItem>`.
+:py:class:`ListItem <pyvuetify.ListItem>`.
 
 .. tab-set::
 
@@ -178,7 +178,7 @@ Shaped lists have rounded borders on one side of the
 Sub group
 ^^^^^^^^^
 
-Using the :py:class:`ListGroup <ipyvuetify.ListGroup>` component you can create
+Using the :py:class:`ListGroup <pyvuetify.ListGroup>` component you can create
 up to 2 levels in depth using the ``sub-group`` prop.
 
 .. tab-set::
@@ -247,9 +247,9 @@ Expansion Lists
 ^^^^^^^^^^^^^^^
 
 A list can contain a group of items which will display on click utilizing
-:py:class:`ListGroup <ipyvuetify.ListGroup>`'s ``activator`` slot. Expansion
+:py:class:`ListGroup <pyvuetify.ListGroup>`'s ``activator`` slot. Expansion
 lists are also used within the :py:class:`NavigationDrawer
-<ipyvuetify.NavigationDrawer>` component.
+<pyvuetify.NavigationDrawer>` component.
 
 .. tab-set::
 
@@ -271,7 +271,7 @@ Action and item groups
 ^^^^^^^^^^^^^^^^^^^^^^
 
 A three-line list with actions. Utilizing :py:class:`ListItemGroup
-<ipyvuetify.ListItemGroup>`, easily connect actions to your tiles.
+<pyvuetify.ListItemGroup>`, easily connect actions to your tiles.
 
 .. tab-set::
 
@@ -335,9 +335,9 @@ A list can be combined with a card.
 Simple avatar list
 ^^^^^^^^^^^^^^^^^^
 
-A simple list utilizing :py:class:`ListItemIcon <ipyvuetify.ListItemIcon>`,
-:py:class:`ListItemTitle <ipyvuetify.ListItemTitle>` and
-:py:class:`ListItemAvatar <ipyvuetify.ListItemAvatar>`.
+A simple list utilizing :py:class:`ListItemIcon <pyvuetify.ListItemIcon>`,
+:py:class:`ListItemTitle <pyvuetify.ListItemTitle>` and
+:py:class:`ListItemAvatar <pyvuetify.ListItemAvatar>`.
 
 .. tab-set::
 
@@ -358,8 +358,8 @@ A simple list utilizing :py:class:`ListItemIcon <ipyvuetify.ListItemIcon>`,
 Single line list
 ^^^^^^^^^^^^^^^^
 
-Here we combine :py:class:`ListItemAvatar <ipyvuetify.ListItemAvatar>` and
-:py:class:`ListItemIcon <ipyvuetify.ListItemIcon>` in a single-line list.
+Here we combine :py:class:`ListItemAvatar <pyvuetify.ListItemAvatar>` and
+:py:class:`ListItemIcon <pyvuetify.ListItemIcon>` in a single-line list.
 
 .. tab-set::
 

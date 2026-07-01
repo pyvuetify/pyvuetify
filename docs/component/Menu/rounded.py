@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 btns = [
     {"title": "Removed", "radius": "0", "color": "deep-purple accent-4"},

@@ -4,21 +4,21 @@ FileInput
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify File Input documentation
     <https://v2.vuetifyjs.com/en/components/file-inputs/>`__. All examples have been converted
-    to ipyvuetify syntax.
+    to pyvuetify syntax.
 
-The :py:class:`FileInput <ipyvuetify.FileInput>` component is a specialized input that provides
+The :py:class:`FileInput <pyvuetify.FileInput>` component is a specialized input that provides
 a clean interface for selecting files, showing detailed selection information and upload progress.
 It is meant to be a direct replacement for a standard file input.
 
 .. api::
 
-    :py:class:`ipyvuetify.FileInput`
+    :py:class:`pyvuetify.FileInput`
 
 Usage
 -----
 
-At its core, the :py:class:`FileInput <ipyvuetify.FileInput>` component is a basic
-container that extends :py:class:`TextField <ipyvuetify.TextField>`.
+At its core, the :py:class:`FileInput <pyvuetify.FileInput>` component is a basic
+container that extends :py:class:`TextField <pyvuetify.TextField>`.
 
 .. jupyter-execute:: FileInput/usage.py
     :raises:
@@ -29,7 +29,7 @@ Examples
 Accept
 ^^^^^^
 
-:py:class:`FileInput <ipyvuetify.FileInput>` component can accept only specific
+:py:class:`FileInput <pyvuetify.FileInput>` component can accept only specific
 media formats/file types if you want. For more information, checkout the documentation
 on the `accept attribute <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept>`__.
 
@@ -52,7 +52,7 @@ on the `accept attribute <https://developer.mozilla.org/en-US/docs/Web/HTML/Elem
 Chips
 ^^^^^
 
-A selected file can be displayed as a :py:class:`Chip <ipyvuetify.Chip>`. When using
+A selected file can be displayed as a :py:class:`Chip <pyvuetify.Chip>`. When using
 the ``chips`` and ``multiple`` props, each chip will be displayed (as opposed to
 the file count).
 
@@ -118,7 +118,7 @@ You can reduces the file input height with ``dense`` prop.
 Multiple
 ^^^^^^^^
 
-The :py:class:`FileInput <ipyvuetify.FileInput>` can contain multiple files at the
+The :py:class:`FileInput <pyvuetify.FileInput>` can contain multiple files at the
 same time when using the ``multiple`` prop.
 
 .. tab-set::
@@ -140,7 +140,7 @@ same time when using the ``multiple`` prop.
 Prepend icon
 ^^^^^^^^^^^^
 
-The :py:class:`FileInput <ipyvuetify.FileInput>` has a default ``prepend_icon``
+The :py:class:`FileInput <pyvuetify.FileInput>` has a default ``prepend_icon``
 that can be set on the component or adjusted globally. More information on
 changing global components can be found on the
 `customizing icons page <https://v2.vuetifyjs.com/en/features/icon-fonts/>`__.
@@ -192,14 +192,14 @@ custom validation parameters.
 
 .. todo::
 
-    I'm not sure it's possible to make this work in ipyvuetify since it rely on javascript
+    I'm not sure it's possible to make this work in pyvuetify since it rely on javascript
     functions. Maybe a genius from the community can figure it out :fas:`face-smile-wink`
 
 Selection slot
 ^^^^^^^^^^^^^^
 
 Using the ``selection`` slot, you can customize the appearance of your input selections.
-This is typically done with :py:class:`Chip <ipyvuetify.Chip>` components, however
+This is typically done with :py:class:`Chip <pyvuetify.Chip>` components, however
 any component or markup can be used.
 
 .. tab-set::
@@ -225,5 +225,5 @@ The flexibility of the selection slot allows you accommodate complex use-cases. 
 
 .. todo::
 
-    I'm not sure it's possible to make this work in ipyvuetify since it rely on javascript
+    I'm not sure it's possible to make this work in pyvuetify since it rely on javascript
     functions. Maybe a genius from the community can figure it out :fas:`face-smile-wink`

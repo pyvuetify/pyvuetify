@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 amenities = v.ChipGroup(
     v_model=[],

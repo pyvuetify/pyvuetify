@@ -4,9 +4,9 @@ Icon
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Icon documentation
     <https://v2.vuetifyjs.com/en/components/icons/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Icon <ipyvuetify.Icon>` component provides a large set of
+The :py:class:`Icon <pyvuetify.Icon>` component provides a large set of
 glyphs to provide context to various aspects of your application. For a list of
 all available icons, visit the official `Material Design Icons
 <https://pictogrammers.com/library/mdi/>`__ page. To use any of these icons simply
@@ -14,7 +14,7 @@ use the ``mdi-`` prefix followed by the icon name.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Icon`
+    - :py:class:`pyvuetify.Icon`
 
 Usage
 -----
@@ -53,7 +53,7 @@ and light themes.
 Click
 ^^^^^
 
-Binding any click event to :py:class:`Icon <ipyvuetify.Icon>` will
+Binding any click event to :py:class:`Icon <pyvuetify.Icon>` will
 automatically change the cursor to a pointer.
 
 .. tab-set::
@@ -104,7 +104,7 @@ please navigate to the `installation page
 
 .. danger::
 
-    change of icon font is not yet supported by ipyvuetify.
+    change of icon font is not yet supported by pyvuetify.
 
 Material Design
 ^^^^^^^^^^^^^^^

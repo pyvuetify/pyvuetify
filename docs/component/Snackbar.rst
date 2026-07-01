@@ -4,20 +4,20 @@ Snackbar
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Snackbar
     documentation <https://v2.vuetifyjs.com/en/components/snackbars/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Snackbar <ipyvuetify.Snackbar>` component is used to display a
+The :py:class:`Snackbar <pyvuetify.Snackbar>` component is used to display a
 quick message to a user. Snackbars support positioning, removal delay, and
 callbacks.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Snackbar`
+    - :py:class:`pyvuetify.Snackbar`
 
 Usage
 -----
 
-A :py:class:`Snackbar <ipyvuetify.Snackbar>` in its simplest form displays a
+A :py:class:`Snackbar <pyvuetify.Snackbar>` in its simplest form displays a
 temporary and closable notification to the user.
 
 .. jupyter-execute:: Snackbar/usage.py
@@ -31,7 +31,7 @@ Multi line
 ^^^^^^^^^^
 
 The ``multi_line`` property extends the height of the
-:py:class:`Snackbar <ipyvuetify.Snackbar>` to give you a little more room for
+:py:class:`Snackbar <pyvuetify.Snackbar>` to give you a little more room for
 content.
 
 .. tab-set::
@@ -54,7 +54,7 @@ Timeout
 ^^^^^^^
 
 The ``timeout`` property lets you customize the delay before the
-:py:class:`Snackbar <ipyvuetify.Snackbar>` is hidden.
+:py:class:`Snackbar <pyvuetify.Snackbar>` is hidden.
 
 .. tab-set::
 
@@ -98,7 +98,7 @@ Vertical
 ^^^^^^^^
 
 The ``vertical`` property allows you to stack the content of your
-:py:class:`Snackbar <ipyvuetify.Snackbar>`.
+:py:class:`Snackbar <pyvuetify.Snackbar>`.
 
 .. tab-set::
 

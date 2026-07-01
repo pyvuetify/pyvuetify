@@ -4,14 +4,14 @@ TextField
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Text Fields
     documentation <https://v2.vuetifyjs.com/en/components/text-fields/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`TextField <ipyvuetify.TextField>` component is used for collecting
+The :py:class:`TextField <pyvuetify.TextField>` component is used for collecting
 user provided information.
 
 .. api::
 
-    - :py:class:`ipyvuetify.TextField`
+    - :py:class:`pyvuetify.TextField`
 
 Usage
 -----
@@ -424,7 +424,7 @@ one using the ``progress`` slot.
 Custom validation
 ^^^^^^^^^^^^^^^^^
 
-While the built in :py:class:`Form <ipyvuetify.Form>` or 3rd party plugin such as
+While the built in :py:class:`Form <pyvuetify.Form>` or 3rd party plugin such as
 vuelidate__ or vee-validation__ can help streamline your validation process, you
 can choose to simply control it yourself.
 

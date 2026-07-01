@@ -4,20 +4,20 @@ ProgressCircular
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Progress circular
     documentation <https://v2.vuetifyjs.com/en/components/progress-circular/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`ProgressCircular <ipyvuetify.ProgressCircular>` component is
+The :py:class:`ProgressCircular <pyvuetify.ProgressCircular>` component is
 used to convey data circularly to users. It also can be put into an
 indeterminate state to portray loading.
 
 .. api::
 
-    :py:class:`ipyvuetify.ProgressCircular`
+    :py:class:`pyvuetify.ProgressCircular`
 
 Usage
 -----
 
-In its simplest form, :py:class:`ProgressCircular <ipyvuetify.ProgressCircular>`
+In its simplest form, :py:class:`ProgressCircular <pyvuetify.ProgressCircular>`
 displays a circular progress bar. Use the value prop to control the progress.
 
 .. jupyter-execute:: ProgressCircular/usage.py
@@ -30,7 +30,7 @@ Color
 ^^^^^
 
 Alternate colors can be applied to
-:py:class:`ProgressCircular <ipyvuetify.ProgressCircular>` using the ``color``
+:py:class:`ProgressCircular <pyvuetify.ProgressCircular>` using the ``color``
 prop.
 
 .. tab-set::
@@ -53,7 +53,7 @@ Indeterminate
 ^^^^^^^^^^^^^
 
 Using the ``indeterminate`` prop, a
-:py:class:`ProgressCircular <ipyvuetify.ProgressCircular>` continues to animate
+:py:class:`ProgressCircular <pyvuetify.ProgressCircular>` continues to animate
 indefinitely.
 
 .. tab-set::
@@ -76,7 +76,7 @@ Rotate
 ^^^^^^
 
 The ``rotate`` prop gives you the ability to customize the
-:py:class:`ProgressCircular <ipyvuetify.ProgressCircular>`'s origin.
+:py:class:`ProgressCircular <pyvuetify.ProgressCircular>`'s origin.
 
 .. tab-set::
 
@@ -98,7 +98,7 @@ Size and width
 ^^^^^^^^^^^^^^
 
 The ``size`` and ``width`` props allow you to easily alter the size and width
-of the :py:class:`ProgressCircular <ipyvuetify.ProgressCircular>` component.
+of the :py:class:`ProgressCircular <pyvuetify.ProgressCircular>` component.
 
 .. tab-set::
 

@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 seasons = ["Winter", "Spring", "Summer", "Fall"]
 icons = ["mdi-snowflake", "mdi-flower", "mdi-weather-sunny", "mdi-leaf"]

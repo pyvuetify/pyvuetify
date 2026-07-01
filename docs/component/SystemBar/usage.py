@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Card(
     img="https://cdn.vuetifyjs.com/images/home/vuetify_layout1.svg",

@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 sizes = ["04", "06", "08", "10", "12", "14"]
 

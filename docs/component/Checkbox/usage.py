@@ -1,3 +1,3 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Container(children=[v.Checkbox(v_model=True, label="Checkbox 1")])

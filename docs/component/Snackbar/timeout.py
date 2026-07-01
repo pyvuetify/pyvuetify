@@ -1,5 +1,6 @@
-import ipyvuetify as v
 from ipywidgets import jslink
+
+import pyvuetify as v
 
 switch = v.Switch(label="Open Snackbar", v_model=False)
 switch_close = v.Switch(v_model=False)

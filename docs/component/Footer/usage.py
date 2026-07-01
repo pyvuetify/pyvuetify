@@ -1,6 +1,6 @@
 from datetime import datetime as dt
 
-import ipyvuetify as v
+import pyvuetify as v
 
 icons = ["mdi-home", "mdi-email", "mdi-calendar", "mdi-delete"]
 
@@ -26,7 +26,7 @@ v.Footer(
                 v.Divider(),
                 v.CardText(
                     class_="white--text",
-                    children=[f"{dt.now().year} — ", v.Html(tag="strong", children=["IpyVuetify"])],
+                    children=[f"{dt.now().year} — ", v.Html(tag="strong", children=["pyvuetify"])],
                 ),
             ],
         ),

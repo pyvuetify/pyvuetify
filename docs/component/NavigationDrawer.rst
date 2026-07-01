@@ -5,19 +5,19 @@ NavigationDrawer
     This page is a Python adaptation of the `official Vuetify Navigation
     drawers documentation
     <https://v2.vuetifyjs.com/en/components/navigation-drawers/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`NavigationDrawer <ipyvuetify.NavigationDrawer>` component is
+The :py:class:`NavigationDrawer <pyvuetify.NavigationDrawer>` component is
 what your users will utilize to navigate through the application. The
 navigation-drawer is pre-configured to work with or without vue-router right
 out the box. For the purpose of display, some examples are wrapped in a
-:py:class:`Card <ipyvuetify.Card>` element. Within your application you will
-generally place the :py:class:`NavigationDrawer <ipyvuetify.NavigationDrawer>`
-as a direct child of :py:class:`App <ipyvuetify.App>`.
+:py:class:`Card <pyvuetify.Card>` element. Within your application you will
+generally place the :py:class:`NavigationDrawer <pyvuetify.NavigationDrawer>`
+as a direct child of :py:class:`App <pyvuetify.App>`.
 
 .. api::
 
-    :py:class:`ipyvuetify.NavigationDrawer`
+    :py:class:`pyvuetify.NavigationDrawer`
 
 Usage
 -----
@@ -25,7 +25,7 @@ Usage
 The navigation drawer is primarily used to house links to the pages in your
 application. Using ``null`` as the starting value for its v-model will
 initialize the drawer as closed on mobile and as open on desktop. It is common
-to pair drawers with the :py:class:`List <ipyvuetify.List>` component using the
+to pair drawers with the :py:class:`List <pyvuetify.List>` component using the
 nav property.
 
 .. jupyter-execute:: NavigationDrawer/usage.py
@@ -33,13 +33,13 @@ nav property.
 
 .. warning::
 
-    If you are using :py:class:`NavigationDrawer <ipyvuetify.NavigationDrawer>`
+    If you are using :py:class:`NavigationDrawer <pyvuetify.NavigationDrawer>`
     with app property enabled, you don't need to use absolute prop as in examples.
 
 .. note::
 
     The expand-on-hover prop does not alter the content area of
-    :py:class:`Main <ipyvuetify.Main>`. To have content area respond to
+    :py:class:`Main <pyvuetify.Main>`. To have content area respond to
     expand-on-hover, bind mini-variant.sync to a data prop.
 
 Examples
@@ -72,7 +72,7 @@ Expand on hover
 ^^^^^^^^^^^^^^^
 
 Places the component in mini-variant mode and expands once hovered. This does
-not alter the content area of :py:class:`Main <ipyvuetify.Main>`. The width can
+not alter the content area of :py:class:`Main <pyvuetify.Main>`. The width can
 be controlled with the mini-variant-width property.
 
 .. tab-set::
@@ -95,7 +95,7 @@ Images
 ^^^^^^
 
 Apply a custom background to your drawer via the src prop. If you need to
-customize :py:class:`Img <ipyvuetify.Img>`'s properties you can use the ``img``
+customize :py:class:`Img <pyvuetify.Img>`'s properties you can use the ``img``
 slot.
 
 .. tab-set::
@@ -118,13 +118,13 @@ Mini variant
 ^^^^^^^^^^^^
 
 When using the mini-variant prop, the drawer will shrink (default 56px) and
-hide everything inside of :py:class:`List <ipyvuetify.List>` except the first
+hide everything inside of :py:class:`List <pyvuetify.List>` except the first
 element. In this example we use the .sync modifier that allows us to tie the
 expanding/contracting of the drawer programmatically.
 
 .. todo::
 
-    The .sync modifier is not yet implemented in ipyvuetify. This example cannot be
+    The .sync modifier is not yet implemented in pyvuetify. This example cannot be
     represented in a static documenation.
 
 Permanent and floating
@@ -225,7 +225,7 @@ Combined drawer
 ^^^^^^^^^^^^^^^
 
 In this example we define a custom width to accommodate our nested drawer.
-Using :py:class:`Row <ipyvuetify.Row>` we ensure that the drawer and list stack
+Using :py:class:`Row <pyvuetify.Row>` we ensure that the drawer and list stack
 horizontally next to each other.
 
 .. tab-set::

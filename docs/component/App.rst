@@ -3,21 +3,21 @@ App
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/application/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-In Vuetify, the :py:class:`App <ipyvuetify.App>` component and the ``app`` prop on components like
-:py:class:`NavigationDrawer <ipyvuetify.NavigationDrawer>`, :py:class:`AppBar <ipyvuetify.AppBar>`,
-:py:class:`Footer <ipyvuetify.Footer>` and more, help bootstrap your application with the proper sizing
-around :py:class:`Main <ipyvuetify.Main>` component. This allows you to create truly unique interfaces
-without the hassle of managing your layout sizing. The :py:class:`App <ipyvuetify.App>` component is
+In Vuetify, the :py:class:`App <pyvuetify.App>` component and the ``app`` prop on components like
+:py:class:`NavigationDrawer <pyvuetify.NavigationDrawer>`, :py:class:`AppBar <pyvuetify.AppBar>`,
+:py:class:`Footer <pyvuetify.Footer>` and more, help bootstrap your application with the proper sizing
+around :py:class:`Main <pyvuetify.Main>` component. This allows you to create truly unique interfaces
+without the hassle of managing your layout sizing. The :py:class:`App <pyvuetify.App>` component is
 **REQUIRED** for all applications. This is the mount point for many of Vuetify's components and
 functionality and ensures that it propagates the default application variant (dark/light) to children
 components and also ensures proper cross-browser support for certain click events in browsers like
-Safari. :py:class:`App <ipyvuetify.App>` should only be rendered within your application **ONCE**.
+Safari. :py:class:`App <pyvuetify.App>` should only be rendered within your application **ONCE**.
 
 .. api::
 
-    :py:class:`ipyvuetify.App`
+    :py:class:`pyvuetify.App`
 
 Default application markup
 ---------------------------
@@ -31,7 +31,7 @@ your layout elements anywhere, as long as you apply the ``app`` property.
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.App(
                 children=[
@@ -99,16 +99,16 @@ component should exist at any time. You can, however, swap them out and the layo
 
 Each of these application components have a designated location and priority that it affects within the layout system:
 
--   :py:class:`AppBar <ipyvuetify.AppBar>`: Is always placed at the top of an application with a lower
-    priority than :py:class:`SystemBar <ipyvuetify.SystemBar>`.
--   :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>`: Is always placed at the bottom of an
-    application with a higher priority than :py:class:`Footer <ipyvuetify.Footer>`.
--   :py:class:`Footer <ipyvuetify.Footer>`: Is always placed at the bottom of an application with a
-    lower priority than :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>`.
--   :py:class:`NavigationDrawer <ipyvuetify.NavigationDrawer>`: Can be placed on the left or right
-    side of an application and can be configured to sit next to or below :py:class:`AppBar <ipyvuetify.AppBar>`.
--   :py:class:`SystemBar <ipyvuetify.SystemBar>`: Is always placed at the top of an application with
-    higher priority than :py:class:`AppBar <ipyvuetify.AppBar>`.
+-   :py:class:`AppBar <pyvuetify.AppBar>`: Is always placed at the top of an application with a lower
+    priority than :py:class:`SystemBar <pyvuetify.SystemBar>`.
+-   :py:class:`BottomNavigation <pyvuetify.BottomNavigation>`: Is always placed at the bottom of an
+    application with a higher priority than :py:class:`Footer <pyvuetify.Footer>`.
+-   :py:class:`Footer <pyvuetify.Footer>`: Is always placed at the bottom of an application with a
+    lower priority than :py:class:`BottomNavigation <pyvuetify.BottomNavigation>`.
+-   :py:class:`NavigationDrawer <pyvuetify.NavigationDrawer>`: Can be placed on the left or right
+    side of an application and can be configured to sit next to or below :py:class:`AppBar <pyvuetify.AppBar>`.
+-   :py:class:`SystemBar <pyvuetify.SystemBar>`: Is always placed at the top of an application with
+    higher priority than :py:class:`AppBar <pyvuetify.AppBar>`.
 
 .. todo::
 

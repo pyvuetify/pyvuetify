@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 list_icons = [
     {"icon": "mdi-chevron-up", "color": "primary"},

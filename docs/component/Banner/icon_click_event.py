@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 
 def on_icon_click(widget, event, data):

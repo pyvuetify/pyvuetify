@@ -4,14 +4,14 @@ Flex
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Flex documentation
     <https://v2.vuetifyjs.com/en/styles/flex/>`__. All examples have been converted
-    to ipyvuetify syntax.
+    to pyvuetify syntax.
 
 Control the layout of flex containers with alignment, justification and more with
 responsive flexbox utilities.
 
 .. note::
     Flex is implemented using CSS utility classes that you apply via the ``class_``
-    parameter on ipyvuetify components.
+    parameter on pyvuetify components.
 
 .. Warning::
 
@@ -51,7 +51,7 @@ property utilities, you can customize their interaction even further.
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Card(
                 class_="d-inline-flex pa-2",
@@ -66,7 +66,7 @@ property utilities, you can customize their interaction even further.
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Card(
                 class_="d-inline-flex pa-2",
@@ -143,7 +143,7 @@ may have issues with the column direction.
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",
@@ -183,7 +183,7 @@ may have issues with the column direction.
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",
@@ -508,7 +508,7 @@ or ``wrap-reverse``.
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",
@@ -534,7 +534,7 @@ or ``wrap-reverse``.
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",
@@ -589,7 +589,7 @@ or ``wrap-reverse``.
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",
@@ -615,7 +615,7 @@ or ``wrap-reverse``.
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",
@@ -749,7 +749,7 @@ The ``align-content`` flex setting can be changed using the flex align-content c
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",
@@ -776,7 +776,7 @@ The ``align-content`` flex setting can be changed using the flex align-content c
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",
@@ -833,7 +833,7 @@ The ``align-content`` flex setting can be changed using the flex align-content c
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",
@@ -860,7 +860,7 @@ The ``align-content`` flex setting can be changed using the flex align-content c
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",
@@ -933,7 +933,7 @@ The ``align-content`` flex setting can be changed using the flex align-content c
             :raises:
             :hide-code:
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",
@@ -960,7 +960,7 @@ The ``align-content`` flex setting can be changed using the flex align-content c
 
         .. code-block:: python
 
-            import ipyvuetify as v
+            import pyvuetify as v
 
             v.Html(
                 tag="div",

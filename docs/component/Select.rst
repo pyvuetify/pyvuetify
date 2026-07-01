@@ -4,14 +4,14 @@ Select
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Selects
     documentation <https://v2.vuetifyjs.com/en/components/selects/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
 Select fields components are used for collecting user provided information from
 a list of options.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Select`
+    - :py:class:`pyvuetify.Select`
 
 Usage
 -----
@@ -91,7 +91,7 @@ items.
 Disabled
 ^^^^^^^^
 
-Applying the disabled prop to a :py:class:`Select <ipyvuetify.Select>` will
+Applying the disabled prop to a :py:class:`Select <pyvuetify.Select>` will
 prevent a user from interacting with the component.
 
 .. tab-set::
@@ -155,7 +155,7 @@ A standard single select has a multitude of configuration options.
 Multiple
 ^^^^^^^^
 
-A multi-select can utilize :py:class:`Chip <ipyvuetify.Chip>` as the display
+A multi-select can utilize :py:class:`Chip <pyvuetify.Chip>` as the display
 for selected items.
 
 .. tab-set::
@@ -177,7 +177,7 @@ for selected items.
 Readonly
 ^^^^^^^^
 
-You can use the read-only prop on :py:class:`Select <ipyvuetify.Select>` which
+You can use the read-only prop on :py:class:`Select <pyvuetify.Select>` which
 will prevent a user from changing its value.
 
 .. tab-set::
@@ -199,7 +199,7 @@ will prevent a user from changing its value.
 Append and prepend item
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The :py:class:`Select <ipyvuetify.Select>` components can be optionally
+The :py:class:`Select <pyvuetify.Select>` components can be optionally
 expanded with prepended and appended items. This is perfect for customized
 select-all functionality.
 

@@ -4,6 +4,7 @@ This file only contains a selection of the most common options. For a full
 list see the documentation:
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
+import os
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -13,7 +14,7 @@ sys.path.append(str(Path(".").resolve()))
 
 # -- Project information -----------------------------------------------------
 
-project = "ipyvuetify"
+project = "pyvuetify"
 copyright = f"2019-{datetime.now().year}, Mario Buikhuizen"
 author = "Mario Buikhuizen"
 release = "1.11.3"
@@ -34,6 +35,25 @@ extensions = [
 ]
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+
+# Fast debug mode: set DOCS_ONLY env var to limit the build to specific components.
+# Example: DOCS_ONLY=Alert or DOCS_ONLY=Alert,Btn
+# This skips all other component pages and disables autoapi to speed up builds.
+_docs_only = os.environ.get("DOCS_ONLY", "").strip()
+if _docs_only:
+    _allowed = {c.strip() for c in _docs_only.split(",")}
+    _component_dir = Path(__file__).parent / "component"
+    for rst in _component_dir.glob("*.rst"):
+        name = rst.stem
+        if name == "index":
+            continue
+        if name not in _allowed:
+            exclude_patterns.append(f"component/{name}.rst")
+            exclude_patterns.append(f"component/{name}/**")
+    # Disable autoapi in debug mode to save time
+    extensions = [e for e in extensions if e != "autoapi.extension"]
+    # exclude_patterns.append("autoapi/**")
+    # exclude_patterns.append("start/**")
 autosectionlabel_prefix_document = True
 todo_include_todos = True
 todo_emit_warnings = True
@@ -53,36 +73,36 @@ html_css_files = [
 # -- Theme configuration -----------------------------------------------------
 
 html_theme_options = {
-    "logo": {"text": "IPYVUETIFY"},
+    "logo": {"text": "pyvuetify"},
     "use_edit_page_button": True,
     "show_prev_next": True,
     "navbar_start": ["navbar-logo"],
     "article_footer_items": ["last-updated"],
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
-    "announcement": "https://raw.githubusercontent.com/12rambau/ipyvuetify/refs/heads/documetnation3/docs/_static/banner.html",
+    "announcement": "https://raw.githubusercontent.com/12rambau/pyvuetify/refs/heads/documetnation3/docs/_static/banner.html",
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/widgetti/ipyvuetify",
+            "url": "https://github.com/widgetti/pyvuetify",
             "icon": "fa-brands fa-github",
         },
         {
             "name": "Pypi",
-            "url": "https://pypi.org/project/ipyvuetify/",
+            "url": "https://pypi.org/project/pyvuetify/",
             "icon": "fa-brands fa-python",
         },
     ],
 }
 html_context = {
     "github_user": "widgetti",
-    "github_repo": "ipyvuetify",
+    "github_repo": "pyvuetify",
     "github_version": "master",
     "doc_path": "docs",
 }
 
 # -- Options for autosummary/autodoc output ------------------------------------
 autodoc_typehints = "description"
-autoapi_dirs = ["../ipyvuetify"]
+autoapi_dirs = ["../pyvuetify"]
 autoapi_member_order = "groupwise"
 autoapi_own_page_level = "method"
 autoapi_keep_files = True
@@ -102,9 +122,9 @@ def skip_submodules(app, what, name, obj, skip, options):
     Only necessary for those that are not using a leading underscore
     """
     privates = [
-        ("module", "ipyvuetify.Html"),
-        ("module", "ipyvuetify.VuetifyTemplate"),
-        ("package", "ipyvuetify.generated"),
+        ("module", "pyvuetify.Html"),
+        ("module", "pyvuetify.VuetifyTemplate"),
+        ("package", "pyvuetify.generated"),
     ]
 
     # return `skip` when nothing is catch to keep skipping the private members
@@ -112,4 +132,5 @@ def skip_submodules(app, what, name, obj, skip, options):
 
 
 def setup(sphinx):
-    sphinx.connect("autoapi-skip-member", skip_submodules)
+    if "autoapi.extension" in extensions:
+        sphinx.connect("autoapi-skip-member", skip_submodules)

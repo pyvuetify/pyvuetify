@@ -4,36 +4,36 @@ Tabs
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Tabs
     documentation <https://v2.vuetifyjs.com/en/components/tabs/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Tabs <ipyvuetify.Tabs>` component is used for hiding content
+The :py:class:`Tabs <pyvuetify.Tabs>` component is used for hiding content
 behind a selectable item. This can also be used as a pseudo-navigation for a
 page, where the tabs are links and the tab-items are the content.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Tabs`
-    - :py:class:`ipyvuetify.Tab`
-    - :py:class:`ipyvuetify.TabItem`
-    - :py:class:`ipyvuetify.TabsItems`
-    - :py:class:`ipyvuetify.TabsSlider`
+    - :py:class:`pyvuetify.Tabs`
+    - :py:class:`pyvuetify.Tab`
+    - :py:class:`pyvuetify.TabItem`
+    - :py:class:`pyvuetify.TabsItems`
+    - :py:class:`pyvuetify.TabsSlider`
 
 .. warning::
 
     When using the ``dark`` prop and NOT providing a custom color, the
-    :py:class:`Tabs <ipyvuetify.Tabs>` component will default its color to white.
+    :py:class:`Tabs <pyvuetify.Tabs>` component will default its color to white.
 
 .. warning::
 
-    When using :py:class:`TabItem <ipyvuetify.TabItem>` that contain required
+    When using :py:class:`TabItem <pyvuetify.TabItem>` that contain required
     input fields you must use the ``eager`` prop in order to validate the required
     fields that are not yet visible.
 
 Usage
 -----
 
-The :py:class:`Tabs <ipyvuetify.Tabs>` component is a styled extension of
-:py:class:`ItemGroup <ipyvuetify.ItemGroup>`. It provides an easy to use
+The :py:class:`Tabs <pyvuetify.Tabs>` component is a styled extension of
+:py:class:`ItemGroup <pyvuetify.ItemGroup>`. It provides an easy to use
 interface for organizing groups of content.
 
 .. jupyter-execute:: Tabs/usage.py
@@ -45,11 +45,11 @@ Examples
 Align with title
 ^^^^^^^^^^^^^^^^
 
-Make :py:class:`Tabs <ipyvuetify.Tabs>` lined up with the
-:py:class:`ToolbarTitle <ipyvuetify.ToolbarTitle>` component using the
-``align_with_title`` prop (:py:class:`AppBarNavIcon <ipyvuetify.AppBarNavIcon>`
-or :py:class:`Btn <ipyvuetify.Btn>` must be used in
-:py:class:`Toolbar <ipyvuetify.Toolbar>`).
+Make :py:class:`Tabs <pyvuetify.Tabs>` lined up with the
+:py:class:`ToolbarTitle <pyvuetify.ToolbarTitle>` component using the
+``align_with_title`` prop (:py:class:`AppBarNavIcon <pyvuetify.AppBarNavIcon>`
+or :py:class:`Btn <pyvuetify.Btn>` must be used in
+:py:class:`Toolbar <pyvuetify.Toolbar>`).
 
 .. tab-set::
 
@@ -113,7 +113,7 @@ icons.
 Fixed tabs
 ^^^^^^^^^^
 
-The ``fixed_tabs`` prop forces :py:class:`Tab <ipyvuetify.Tab>` to take up
+The ``fixed_tabs`` prop forces :py:class:`Tab <pyvuetify.Tab>` to take up
 all available space up to the maximum width (300px).
 
 .. tab-set::
@@ -157,7 +157,7 @@ maximum width of 300px.
 Icons and text
 ^^^^^^^^^^^^^^
 
-Using ``icons_and_text`` prop increases the :py:class:`Tabs <ipyvuetify.Tabs>`
+Using ``icons_and_text`` prop increases the :py:class:`Tabs <pyvuetify.Tabs>`
 height to 72px to allow for both icons as well as text to be used.
 
 .. tab-set::
@@ -223,7 +223,7 @@ The ``right`` prop aligns the tabs to the right.
 Vertical Tabs
 ^^^^^^^^^^^^^
 
-The ``vertical`` prop allows for :py:class:`Tab <ipyvuetify.Tab>` components
+The ``vertical`` prop allows for :py:class:`Tab <pyvuetify.Tab>` components
 to stack vertically.
 
 .. tab-set::
@@ -248,10 +248,10 @@ Misc
 Content
 ^^^^^^^
 
-It is common to put :py:class:`Tabs <ipyvuetify.Tabs>` inside the extension
-slot of :py:class:`Toolbar <ipyvuetify.Toolbar>`. Using
-:py:class:`Toolbar <ipyvuetify.Toolbar>`'s ``tabs`` prop auto adjusts its
-height to 48px to match :py:class:`Tabs <ipyvuetify.Tabs>`.
+It is common to put :py:class:`Tabs <pyvuetify.Tabs>` inside the extension
+slot of :py:class:`Toolbar <pyvuetify.Toolbar>`. Using
+:py:class:`Toolbar <pyvuetify.Toolbar>`'s ``tabs`` prop auto adjusts its
+height to 48px to match :py:class:`Tabs <pyvuetify.Tabs>`.
 
 .. tab-set::
 
@@ -272,7 +272,7 @@ height to 48px to match :py:class:`Tabs <ipyvuetify.Tabs>`.
 Desktop tabs
 ^^^^^^^^^^^^
 
-You can represent :py:class:`Tab <ipyvuetify.Tab>` actions by using single
+You can represent :py:class:`Tab <pyvuetify.Tab>` actions by using single
 icons. This is useful when it is easy to correlate content to each tab.
 
 .. tab-set::
@@ -294,7 +294,7 @@ icons. This is useful when it is easy to correlate content to each tab.
 Dynamic height
 ^^^^^^^^^^^^^^
 
-When changing your :py:class:`TabItem <ipyvuetify.TabItem>`, the content area
+When changing your :py:class:`TabItem <pyvuetify.TabItem>`, the content area
 will smoothly scale to the new size.
 
 .. tab-set::
@@ -317,10 +317,10 @@ Dynamic Tabs
 ^^^^^^^^^^^^
 
 Tabs can be dynamically added and removed. This allows you to update to any
-number and the :py:class:`Tabs <ipyvuetify.Tabs>` component will react. In
+number and the :py:class:`Tabs <pyvuetify.Tabs>` component will react. In
 this example when we add a new tab, we automatically change our model to
 match. As we add more tabs and overflow the container, the selected item will
-be automatically scrolled into view. Remove all :py:class:`Tab <ipyvuetify.Tab>`
+be automatically scrolled into view. Remove all :py:class:`Tab <pyvuetify.Tab>`
 and the slider will disappear.
 
 .. todo::
@@ -340,10 +340,10 @@ You can use a menu to hold additional tabs, swapping them out on the fly.
 Tab Items
 ^^^^^^^^^
 
-The :py:class:`TabsItems <ipyvuetify.TabsItems>` component allows for you to
+The :py:class:`TabsItems <pyvuetify.TabsItems>` component allows for you to
 customize the content per tab. Using a shared ``v_model``, the
-:py:class:`TabsItems <ipyvuetify.TabsItems>` will sync with the currently
-selected :py:class:`Tab <ipyvuetify.Tab>`.
+:py:class:`TabsItems <pyvuetify.TabsItems>` will sync with the currently
+selected :py:class:`Tab <pyvuetify.Tab>`.
 
 .. tab-set::
 

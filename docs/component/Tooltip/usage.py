@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Container(
     class_="text-center d-flex align-center justify-space-around",

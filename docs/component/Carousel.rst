@@ -3,16 +3,16 @@ Carousel
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/carousels/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Carousel <ipyvuetify.Carousel>` component is used to display large numbers of visual content on a rotating timer. It expands upon v-window by providing additional features targeted at displaying images.
+The :py:class:`Carousel <pyvuetify.Carousel>` component is used to display large numbers of visual content on a rotating timer. It expands upon v-window by providing additional features targeted at displaying images.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Carousel`
-    - :py:class:`ipyvuetify.CarouselItem`
-    - :py:class:`ipyvuetify.CarouselReverseTransition`
-    - :py:class:`ipyvuetify.CarouselTransition`
+    - :py:class:`pyvuetify.Carousel`
+    - :py:class:`pyvuetify.CarouselItem`
+    - :py:class:`pyvuetify.CarouselReverseTransition`
+    - :py:class:`pyvuetify.CarouselTransition`
 
 Usage
 -----
@@ -46,7 +46,7 @@ Use any available icon as your carousel's slide delimiter.
 Custom transition
 -----------------
 
-The :py:class:`CarouselItem <ipyvuetify.CarouselItem>` component can have its
+The :py:class:`CarouselItem <pyvuetify.CarouselItem>` component can have its
 transition/reverse-transition changed.
 
 .. tab-set::

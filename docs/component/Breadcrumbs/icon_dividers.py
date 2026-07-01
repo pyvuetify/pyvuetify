@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 items = [
     {"text": "Dashboard", "disabled": False, "href": "breadcrumbs_dashboard"},

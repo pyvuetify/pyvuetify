@@ -5,14 +5,14 @@ Avatar
     This documentation has been adapted from the official Vuetify 2 documentation available at
     https://v2.vuetifyjs.com/en/components/avatars/.
 
-The :py:class:`Avatar <ipyvuetify.Avatar>` component is typically used to display circular user
+The :py:class:`Avatar <pyvuetify.Avatar>` component is typically used to display circular user
 profile pictures. This component will allow you to dynamically size and add a border radius of
 responsive images, icons, and text. A ``tile`` variation is available for displaying an avatar
 without border radius.
 
 .. api::
 
-    :py:class:`ipyvuetify.Avatar`
+    :py:class:`pyvuetify.Avatar`
 
 Usage
 -----
@@ -26,7 +26,7 @@ Avatars in their simplest form display content within a circular container.
 Size
 ----
 
-The ``size`` prop allows you to define the height and width of :py:class:`Avatar <ipyvuetify.Avatar>`.
+The ``size`` prop allows you to define the height and width of :py:class:`Avatar <pyvuetify.Avatar>`.
 This prop scales both evenly with an aspect ratio of 1. ``height`` and ``width`` props will override
 this prop.
 
@@ -49,7 +49,7 @@ this prop.
 Tile
 ----
 
-The ``tile`` prop removes the border radius from :py:class:`Avatar <ipyvuetify.Avatar>` leaving you
+The ``tile`` prop removes the border radius from :py:class:`Avatar <pyvuetify.Avatar>` leaving you
 with a simple square avatar.
 
 .. tab-set::
@@ -71,7 +71,7 @@ with a simple square avatar.
 Using images
 ------------
 
-The :py:class:`Avatar <ipyvuetify.Avatar>` default chikdren will accept the :py:class:`Icon <ipyvuetify.Icon>`
+The :py:class:`Avatar <pyvuetify.Avatar>` default chikdren will accept the :py:class:`Icon <pyvuetify.Icon>`
 component, an image, or text. Mix and match these with other props to create something unique.
 
 .. tab-set::

@@ -4,22 +4,22 @@ Timeline
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Timelines
     documentation <https://v2.vuetifyjs.com/en/components/timelines/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Timeline <ipyvuetify.Timeline>` is useful for stylistically
+The :py:class:`Timeline <pyvuetify.Timeline>` is useful for stylistically
 displaying chronological information.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Timeline`
-    - :py:class:`ipyvuetify.TimelineItem`
+    - :py:class:`pyvuetify.Timeline`
+    - :py:class:`pyvuetify.TimelineItem`
 
 Usage
 -----
 
-:py:class:`Timeline <ipyvuetify.Timeline>`'s in their simplest form display a
+:py:class:`Timeline <pyvuetify.Timeline>`'s in their simplest form display a
 vertical timeline that should contain at least one
-:py:class:`TimelineItem <ipyvuetify.TimelineItem>`.
+:py:class:`TimelineItem <pyvuetify.TimelineItem>`.
 
 .. jupyter-execute:: Timeline/usage.py
     :raises:
@@ -190,7 +190,7 @@ Dense
 ^^^^^
 
 **Dense** timelines position all content to the right. In this example,
-:py:class:`Alert <ipyvuetify.Alert>` replaces the card to provide a different
+:py:class:`Alert <pyvuetify.Alert>` replaces the card to provide a different
 design.
 
 .. tab-set::
@@ -212,7 +212,7 @@ design.
 Icon dots
 ^^^^^^^^^
 
-Conditionally use icons within the :py:class:`TimelineItem <ipyvuetify.TimelineItem>`'s
+Conditionally use icons within the :py:class:`TimelineItem <pyvuetify.TimelineItem>`'s
 dot to provide additional context.
 
 .. tab-set::
@@ -278,7 +278,7 @@ Icon
 ^^^^
 
 Insert avatars into dots with use of the ``icon`` slot and
-:py:class:`Avatar <ipyvuetify.Avatar>`.
+:py:class:`Avatar <pyvuetify.Avatar>`.
 
 .. tab-set::
 
@@ -321,8 +321,8 @@ timelines.
 Timeline item default
 ^^^^^^^^^^^^^^^^^^^^^
 
-If you place a :py:class:`Card <ipyvuetify.Card>` inside of a
-:py:class:`TimelineItem <ipyvuetify.TimelineItem>`, a caret will appear on the side
+If you place a :py:class:`Card <pyvuetify.Card>` inside of a
+:py:class:`TimelineItem <pyvuetify.TimelineItem>`, a caret will appear on the side
 of the card.
 
 .. tab-set::

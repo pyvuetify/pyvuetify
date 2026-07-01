@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 items = [
     {"src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"},

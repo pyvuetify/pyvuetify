@@ -3,21 +3,21 @@ Autocomplete
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/autocompletes/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Autocomplete <ipyvuetify.Autocomplete>` component offers simple and flexible type-ahead
+The :py:class:`Autocomplete <pyvuetify.Autocomplete>` component offers simple and flexible type-ahead
 functionality. This is useful when searching large sets of data or even dynamically requesting information
-from an API. The autocomplete component extends :py:class:`Select <ipyvuetify.Select>` and adds the
+from an API. The autocomplete component extends :py:class:`Select <pyvuetify.Select>` and adds the
 ability to filter items.
 
 .. api::
 
-    :py:class:`ipyvuetify.Autocomplete`
+    :py:class:`pyvuetify.Autocomplete`
 
 Usage
 -----
 
-The autocomplete component extends :py:class:`Select <ipyvuetify.Select>` and adds the ability to filter items.
+The autocomplete component extends :py:class:`Select <pyvuetify.Select>` and adds the ability to filter items.
 
 .. jupyter-execute:: Autocomplete/usage.py
     :raises:
@@ -113,7 +113,7 @@ prop and is REQUIRED when using asynchronous items and the multiple prop.
 State selector
 --------------
 
-Using a combination of :py:class:`Autocomplete <ipyvuetify.Autocomplete>` slots and transitions, you
+Using a combination of :py:class:`Autocomplete <pyvuetify.Autocomplete>` slots and transitions, you
 can create a stylish toggleable autocomplete field such as this state selector.
 
 .. tab-set::

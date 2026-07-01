@@ -3,11 +3,11 @@ Chip
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/chips/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Chip <ipyvuetify.Chip>` component is used to convey small pieces of information.
+The :py:class:`Chip <pyvuetify.Chip>` component is used to convey small pieces of information.
 Using the ``close`` property, the chip becomes interactive, allowing user interaction.
-This component is used by the :py:class:`ChipGroup <ipyvuetify.ChipGroup>` for advanced selection options.
+This component is used by the :py:class:`ChipGroup <pyvuetify.ChipGroup>` for advanced selection options.
 
 Usage
 -----
@@ -20,8 +20,8 @@ The default slot allows you to customize the content inside the chip.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Chip`
-    - :py:class:`ipyvuetify.ChipGroup`
+    - :py:class:`pyvuetify.Chip`
+    - :py:class:`pyvuetify.ChipGroup`
 
 Closeable
 ---------
@@ -69,7 +69,7 @@ Any color from the Material Design palette can be used to change a chip's color.
 Draggable
 ---------
 
-``draggable`` :py:class:`Chip <ipyvuetify.Chip>` component can be dragged by mouse.
+``draggable`` :py:class:`Chip <pyvuetify.Chip>` component can be dragged by mouse.
 
 .. tab-set::
 
@@ -90,7 +90,7 @@ Draggable
 Filter
 ------
 
-:py:class:`Chip <ipyvuetify.Chip>` component has ``filter`` option which shows an
+:py:class:`Chip <pyvuetify.Chip>` component has ``filter`` option which shows an
 additional icon to you if chip is active. It can be customized using ``filter-icon``.
 
 .. tab-set::
@@ -112,7 +112,7 @@ additional icon to you if chip is active. It can be customized using ``filter-ic
 Label
 -----
 
-Label chips use the :py:class:`Card <ipyvuetify.Card>` border-radius.
+Label chips use the :py:class:`Card <pyvuetify.Card>` border-radius.
 
 .. tab-set::
 
@@ -133,7 +133,7 @@ Label chips use the :py:class:`Card <ipyvuetify.Card>` border-radius.
 No ripple
 ---------
 
-:py:class:`Chip <ipyvuetify.Chip>` can be rendered without ripple if ``ripple`` prop is set to ``false``.
+:py:class:`Chip <pyvuetify.Chip>` can be rendered without ripple if ``ripple`` prop is set to ``false``.
 
 .. tab-set::
 
@@ -175,7 +175,7 @@ Outlined chips inherit their border color from the current text color.
 Sizes
 -----
 
-:py:class:`Chip <ipyvuetify.Chip>` component can have various sizes from ``x-small`` to ``x-large``.
+:py:class:`Chip <pyvuetify.Chip>` component can have various sizes from ``x-small`` to ``x-large``.
 
 .. tab-set::
 

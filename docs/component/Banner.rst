@@ -3,15 +3,15 @@ Banner
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/banners/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Banner <ipyvuetify.Banner>` component is used as middle-interruptive message to user
+The :py:class:`Banner <pyvuetify.Banner>` component is used as middle-interruptive message to user
 with 1-2 actions. It comes in 2 variations single-line and multi-line (implicit). These can have icons
 which you can use with your message and actions.
 
 .. api::
 
-    :py:class:`ipyvuetify.Banner`
+    :py:class:`pyvuetify.Banner`
 
 Usage
 -----
@@ -24,7 +24,7 @@ Banners can have 1-2 lines of text, actions and icon.
 Single line
 -----------
 
-Single-line :py:class:`Banner <ipyvuetify.Banner>` is used for small amount of information and is
+Single-line :py:class:`Banner <pyvuetify.Banner>` is used for small amount of information and is
 recommended for desktop only implementations. You can optionally enable the ``sticky`` prop to ensure
 the content is pinned to the screen (note: does not work in IE11).
 
@@ -47,7 +47,7 @@ the content is pinned to the screen (note: does not work in IE11).
 Icon click event
 ----------------
 
-:py:class:`Banner <ipyvuetify.Banner>` emits ``click:icon`` event on icon click, even with custom icon slot.
+:py:class:`Banner <pyvuetify.Banner>` emits ``click:icon`` event on icon click, even with custom icon slot.
 
 .. tab-set::
 
@@ -110,7 +110,7 @@ The icon slot allows you to explicitly control the content and functionality wit
 Two line
 --------
 
-Two-line :py:class:`Banner <ipyvuetify.Banner>` can store larger amount of data, use it for big messages.
+Two-line :py:class:`Banner <pyvuetify.Banner>` can store larger amount of data, use it for big messages.
 This is recommended for mobile implementations.
 
 .. tab-set::

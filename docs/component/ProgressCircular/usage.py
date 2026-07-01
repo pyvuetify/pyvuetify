@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Layout(
     class_="d-flex flex-row justify-space-evenly my-2",

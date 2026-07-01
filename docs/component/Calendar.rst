@@ -6,16 +6,16 @@ Calendar
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/calendars/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Calendar <ipyvuetify.Calendar>` component is used to display information in a daily, weekly, monthly, or category view. The daily view has slots for all day or timed elements, and the weekly and monthly view has a slot for each day. Optionally you can pass in an array of events and they will be rendered over the appropriate days and times.
+The :py:class:`Calendar <pyvuetify.Calendar>` component is used to display information in a daily, weekly, monthly, or category view. The daily view has slots for all day or timed elements, and the weekly and monthly view has a slot for each day. Optionally you can pass in an array of events and they will be rendered over the appropriate days and times.
 
 .. api::
 
-    :py:class:`ipyvuetify.Calendar`
-    :py:class:`ipyvuetify.CalendarDaily`
-    :py:class:`ipyvuetify.CalendarWeekly`
-    :py:class:`ipyvuetify.CalendarMonthly`
+    :py:class:`pyvuetify.Calendar`
+    :py:class:`pyvuetify.CalendarDaily`
+    :py:class:`pyvuetify.CalendarWeekly`
+    :py:class:`pyvuetify.CalendarMonthly`
 
 Usage
 -----

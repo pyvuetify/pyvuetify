@@ -4,19 +4,19 @@ Textarea
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Textarea
     documentation <https://v2.vuetifyjs.com/en/components/textareas/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Textarea <ipyvuetify.Textarea>` component is used for collecting
+The :py:class:`Textarea <pyvuetify.Textarea>` component is used for collecting
 large amounts of textual data.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Textarea`
+    - :py:class:`pyvuetify.Textarea`
 
 Usage
 -----
 
-:py:class:`Textarea <ipyvuetify.Textarea>` in its simplest form is a multi-line
+:py:class:`Textarea <pyvuetify.Textarea>` in its simplest form is a multi-line
 text-field, useful for larger amounts of text.
 
 .. jupyter-execute:: Textarea/usage.py
@@ -51,7 +51,7 @@ Background color
 ^^^^^^^^^^^^^^^^
 
 The ``background_color`` and ``color`` props give you more control over styling
-:py:class:`Textarea <ipyvuetify.Textarea>`'s.
+:py:class:`Textarea <pyvuetify.Textarea>`'s.
 
 .. tab-set::
 
@@ -72,7 +72,7 @@ The ``background_color`` and ``color`` props give you more control over styling
 Clearable
 ^^^^^^^^^
 
-You can clear the text from a :py:class:`Textarea <ipyvuetify.Textarea>` by using
+You can clear the text from a :py:class:`Textarea <pyvuetify.Textarea>` by using
 the ``clearable`` prop, and customize the icon used with the ``clearable_icon``
 prop.
 
@@ -96,7 +96,7 @@ Counter
 ^^^^^^^
 
 The ``counter`` prop informs the user of a character limit for the
-:py:class:`Textarea <ipyvuetify.Textarea>`.
+:py:class:`Textarea <pyvuetify.Textarea>`.
 
 .. todo::
 
@@ -123,7 +123,7 @@ Icons
 ^^^^^
 
 The ``append_icon`` and ``prepend_icon`` props help add context to
-:py:class:`Textarea <ipyvuetify.Textarea>`.
+:py:class:`Textarea <pyvuetify.Textarea>`.
 
 .. tab-set::
 
@@ -144,7 +144,7 @@ The ``append_icon`` and ``prepend_icon`` props help add context to
 No resize
 ^^^^^^^^^
 
-:py:class:`Textarea <ipyvuetify.Textarea>`'s have the option to remain the same
+:py:class:`Textarea <pyvuetify.Textarea>`'s have the option to remain the same
 size regardless of their content's size, using the ``no_resize`` prop.
 
 .. tab-set::

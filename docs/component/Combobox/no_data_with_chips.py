@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 options = ["Hiking", "Swimming", "Reading", "Cooking", "Traveling", "Gaming"]
 

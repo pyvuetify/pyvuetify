@@ -1,8 +1,9 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Container(
     children=[
         v.Alert(
+            klass="ma-1",
             prominent=True,
             type="error",
             children=[
@@ -22,6 +23,7 @@ v.Container(
             ],
         ),
         v.Alert(
+            klass="ma-1",
             color="blue-grey",
             dark=True,
             dense=True,
@@ -30,9 +32,9 @@ v.Container(
             children=["Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui."],
         ),
         v.Alert(
+            klass="ma-1",
             icon="mdi-shield-lock-outline",
             prominent=True,
-            text=True,
             type="info",
             children=["Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem."],
         ),

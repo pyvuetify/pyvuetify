@@ -5,17 +5,17 @@ SpeedDial
     This page is a Python adaptation of the `official Vuetify Floating Action
     Button documentation
     <https://v2.vuetifyjs.com/en/components/floating-action-buttons/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`SpeedDial <ipyvuetify.SpeedDial>` component has a very robust
+The :py:class:`SpeedDial <pyvuetify.SpeedDial>` component has a very robust
 API for customizing the floating action button experience. Combined with
-:py:class:`Btn <ipyvuetify.Btn>` component, you can create a diverse set of
+:py:class:`Btn <pyvuetify.Btn>` component, you can create a diverse set of
 functions available for your users.
 
 .. api::
 
-    - :py:class:`ipyvuetify.SpeedDial`
-    - :py:class:`ipyvuetify.Btn`
+    - :py:class:`pyvuetify.SpeedDial`
+    - :py:class:`pyvuetify.Btn`
 
 Usage
 -----
@@ -33,7 +33,7 @@ Examples
 Speed dial
 ^^^^^^^^^^
 
-The :py:class:`SpeedDial <ipyvuetify.SpeedDial>` component has a very robust
+The :py:class:`SpeedDial <pyvuetify.SpeedDial>` component has a very robust
 API for customizing your FAB experience exactly how you want.
 
 .. tab-set::

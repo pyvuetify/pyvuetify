@@ -4,20 +4,20 @@ SystemBar
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify System Bar
     documentation <https://v2.vuetifyjs.com/en/components/system-bars/>`__. All
-    examples have been converted to ipyvuetify syntax.
+    examples have been converted to pyvuetify syntax.
 
-The :py:class:`SystemBar <ipyvuetify.SystemBar>` component can be used for
+The :py:class:`SystemBar <pyvuetify.SystemBar>` component can be used for
 displaying statuses to the user. It looks like the Android system bar and can
 contain icons, spacers, and some text.
 
 .. api::
 
-    - :py:class:`ipyvuetify.SystemBar`
+    - :py:class:`pyvuetify.SystemBar`
 
 Usage
 -----
 
-:py:class:`SystemBar <ipyvuetify.SystemBar>` in its simplest form displays a
+:py:class:`SystemBar <pyvuetify.SystemBar>` in its simplest form displays a
 small container with default theme.
 
 .. jupyter-execute:: SystemBar/usage.py
@@ -30,7 +30,7 @@ Color
 ^^^^^
 
 You can optionally change the color of the
-:py:class:`SystemBar <ipyvuetify.SystemBar>` by using the ``color`` prop.
+:py:class:`SystemBar <pyvuetify.SystemBar>` by using the ``color`` prop.
 
 .. tab-set::
 
@@ -51,7 +51,7 @@ You can optionally change the color of the
 Lights out
 ^^^^^^^^^^
 
-You can reduce :py:class:`SystemBar <ipyvuetify.SystemBar>`'s opacity using
+You can reduce :py:class:`SystemBar <pyvuetify.SystemBar>`'s opacity using
 ``lights_out`` property.
 
 .. tab-set::
@@ -74,7 +74,7 @@ Themes
 ^^^^^^
 
 Dark or light theme variants can be applied to
-:py:class:`SystemBar <ipyvuetify.SystemBar>`.
+:py:class:`SystemBar <pyvuetify.SystemBar>`.
 
 .. tab-set::
 

@@ -4,20 +4,20 @@ ProgressLinear
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Progress linear
     documentation <https://v2.vuetifyjs.com/en/components/progress-linear/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`ProgressLinear <ipyvuetify.ProgressLinear>` component is used to
+The :py:class:`ProgressLinear <pyvuetify.ProgressLinear>` component is used to
 convey data visually to users. They can also represent an indeterminate amount,
 such as loading or processing.
 
 .. api::
 
-    :py:class:`ipyvuetify.ProgressLinear`
+    :py:class:`pyvuetify.ProgressLinear`
 
 Usage
 -----
 
-In its simplest form, :py:class:`ProgressLinear <ipyvuetify.ProgressLinear>`
+In its simplest form, :py:class:`ProgressLinear <pyvuetify.ProgressLinear>`
 displays a horizontal progress bar. Use the value prop to control the progress.
 
 .. jupyter-execute:: ProgressLinear/usage.py
@@ -74,7 +74,7 @@ Indeterminate
 ^^^^^^^^^^^^^
 
 Using the ``indeterminate`` prop,
-:py:class:`ProgressLinear <ipyvuetify.ProgressLinear>` continuously animates.
+:py:class:`ProgressLinear <pyvuetify.ProgressLinear>` continuously animates.
 
 .. tab-set::
 
@@ -96,7 +96,7 @@ Rounded
 ^^^^^^^
 
 The rounded prop is an alternative style that adds a border radius to the
-:py:class:`ProgressLinear <ipyvuetify.ProgressLinear>` component.
+:py:class:`ProgressLinear <pyvuetify.ProgressLinear>` component.
 
 .. tab-set::
 
@@ -141,7 +141,7 @@ Striped
 ^^^^^^^
 
 This applies a striped background over the value portion of the
-:py:class:`ProgressLinear <ipyvuetify.ProgressLinear>`.
+:py:class:`ProgressLinear <pyvuetify.ProgressLinear>`.
 
 .. tab-set::
 
@@ -162,11 +162,11 @@ This applies a striped background over the value portion of the
 Default
 ^^^^^^^
 
-The :py:class:`ProgressLinear <ipyvuetify.ProgressLinear>` component will be
+The :py:class:`ProgressLinear <pyvuetify.ProgressLinear>` component will be
 responsive to user input when using v-model. You can use the default slot or
 bind a local model to display inside of the progress. If you are looking for
 advanced features on a linear type component, check out
-:py:class:`Slider <ipyvuetify.Slider>`.
+:py:class:`Slider <pyvuetify.Slider>`.
 
 .. tab-set::
 
@@ -208,7 +208,7 @@ The progress linear component can have a determinate state modified by v-model.
 File loader
 ^^^^^^^^^^^
 
-The :py:class:`ProgressLinear <ipyvuetify.ProgressLinear>` component is good
+The :py:class:`ProgressLinear <pyvuetify.ProgressLinear>` component is good
 for translating to the user that they are waiting for a response.
 
 .. tab-set::
@@ -231,8 +231,8 @@ Toolbar loader
 ^^^^^^^^^^^^^^
 
 Using the absolute prop we are able to position the
-:py:class:`ProgressLinear <ipyvuetify.ProgressLinear>` component at the bottom
-of the :py:class:`Toolbar <ipyvuetify.Toolbar>`. We also use the active prop
+:py:class:`ProgressLinear <pyvuetify.ProgressLinear>` component at the bottom
+of the :py:class:`Toolbar <pyvuetify.Toolbar>`. We also use the active prop
 which allows us to control the visibility of the progress.
 
 .. tab-set::

@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 events = [
     {"name": "Meeting", "start": "2025-11-01 09:00", "end": "2025-11-01 10:00"},

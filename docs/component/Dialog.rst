@@ -3,15 +3,15 @@ Dialog
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/dialogs/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Dialog <ipyvuetify.Dialog>` component inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks. Use dialogs sparingly because they are interruptive.
+The :py:class:`Dialog <pyvuetify.Dialog>` component inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks. Use dialogs sparingly because they are interruptive.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Dialog`
-    - :py:class:`ipyvuetify.DialogBottomTransition`
-    - :py:class:`ipyvuetify.DialogTransition`
+    - :py:class:`pyvuetify.Dialog`
+    - :py:class:`pyvuetify.DialogBottomTransition`
+    - :py:class:`pyvuetify.DialogTransition`
 
 Usage
 -----
@@ -130,7 +130,7 @@ A simple example of a form in a dialog.
 Loader
 ------
 
-The :py:class:`Dialog <ipyvuetify.Dialog>` component makes it easy to create a
+The :py:class:`Dialog <pyvuetify.Dialog>` component makes it easy to create a
 customized loading experience for your application.
 
 .. tab-set::

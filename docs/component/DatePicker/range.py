@@ -1,5 +1,6 @@
-import ipyvuetify as v
 from ipywidgets import jslink
+
+import pyvuetify as v
 
 date_picker = v.DatePicker(
     v_model=["2019-10-13", "2019-10-16"],

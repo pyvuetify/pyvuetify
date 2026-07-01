@@ -24,24 +24,26 @@ def _children_from_json(value, obj):
 class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
     """The {{ v_component.name.removeprefix("V") }} component.
 
-    {{ v_component.description }}
+    {{ v_component.description | md_to_rst }}
 
     Args:
         children: The child nodes of the DOM element.
         style: Custom CSS styles to apply to the component.
         klass: Custom CSS classes to apply to the component.
         {%- for p in v_component.attributes %}
-        {{ p.name | to_snake }}: {{ p.description | default("No description available.") }}
+        {{ p.name | to_snake }}: {{ p.description | default("No description available.") | md_to_rst }}
         {%- endfor %}
 
     Slots:
         {%- for s in v_component.slots %}
-        slot_{{ s.name | to_snake }}: {{ s.description | default("No description available.") }}
+        {%- if (s.name | to_snake).isidentifier() %}
+        slot_{{ s.name | to_snake }}: {{ s.description | default("No description available.") | md_to_rst }}
+        {%- endif %}
         {%- endfor %}
 
     Events:
         {%- for e in v_component.events %}
-        {{ e.name }}: {{ e.description | default("No description available.") }}
+        {{ e.name }}: {{ e.description | default("No description available.") | md_to_rst }}
         {%- endfor %}
 
     Returns:
@@ -66,15 +68,17 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
 {%- for p in v_component.attributes %}
 
     {{ p.name | to_snake }} = traitlets.{{ p.value.type | map_type }}(allow_none=True).tag(sync=True)
-    """{{ p.description | default("No description available.") }}"""
+    """{{ p.description | default("No description available.") | md_to_rst }}"""
 
 {%- endfor %}
 
 {%- for s in v_component.slots %}
+{%- if (s.name | to_snake).isidentifier() %}
 
     slot_{{ s.name | to_snake }} = traitlets.Any(allow_none=True).tag(sync=True)
-    """{{ s.description | default("No description available.") }}"""
+    """{{ s.description | default("No description available.") | md_to_rst }}"""
 
+{%- endif %}
 {%- endfor %}
 
     def __init__(
@@ -86,7 +90,9 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
         {{ p.name | to_snake }}={{ p.get("default", "null").replace("\n", "") | map_default }},
         {%- endfor %}
         {%- for s in v_component.slots %}
+        {%- if (s.name | to_snake).isidentifier() %}
         slot_{{ s.name | to_snake }}=None,
+        {%- endif %}
         {%- endfor %}
         **kwargs
     ):
@@ -98,7 +104,9 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
         self.{{ p.name | to_snake }} = {{ p.name | to_snake }}
         {%- endfor %}
         {%- for s in v_component.slots %}
+        {%- if (s.name | to_snake).isidentifier() %}
         self.slot_{{ s.name | to_snake }} = slot_{{ s.name | to_snake }}
+        {%- endif %}
         {%- endfor %}
 
         super().__init__(**kwargs)

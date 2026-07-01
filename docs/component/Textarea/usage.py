@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 text = "The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
 

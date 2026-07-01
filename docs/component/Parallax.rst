@@ -4,14 +4,14 @@ Parallax
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Parallax
     documentation <https://v2.vuetifyjs.com/en/components/parallax/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Parallax <ipyvuetify.Parallax>` component creates a 3d effect
+The :py:class:`Parallax <pyvuetify.Parallax>` component creates a 3d effect
 that makes an image appear to scroll slower than the window.
 
 .. api::
 
-    :py:class:`ipyvuetify.Parallax`
+    :py:class:`pyvuetify.Parallax`
 
 Usage
 -----

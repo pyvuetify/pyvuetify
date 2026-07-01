@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 checkbox = v.Checkbox(v_model=True, label="Visible")
 

@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 color_picker1 = v.ColorPicker(
     hide_canvas=True,

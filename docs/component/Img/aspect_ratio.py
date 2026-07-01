@@ -1,5 +1,6 @@
-import ipyvuetify as v
 from ipywidgets import jslink
+
+import pyvuetify as v
 
 slider = v.Slider(min=200, max=500, step=1, v_model=300)
 img = v.Img(

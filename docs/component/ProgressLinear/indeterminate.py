@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 colors = ["yellow darken-2", "green", "teal", "cyan"]
 

@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 items = [f"Item {i}" for i in range(1, 6)]
 

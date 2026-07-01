@@ -4,24 +4,24 @@ Radio
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Radio buttons
     documentation <https://v2.vuetifyjs.com/en/components/radio-buttons/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Radio <ipyvuetify.Radio>` component is a simple radio button.
-When combined with the :py:class:`RadioGroup <ipyvuetify.RadioGroup>` component
+The :py:class:`Radio <pyvuetify.Radio>` component is a simple radio button.
+When combined with the :py:class:`RadioGroup <pyvuetify.RadioGroup>` component
 you can provide groupable functionality to allow users to select from a
 predefined set of options.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Radio`
-    - :py:class:`ipyvuetify.RadioGroup`
+    - :py:class:`pyvuetify.Radio`
+    - :py:class:`pyvuetify.RadioGroup`
 
 Usage
 -----
 
-Although :py:class:`Radio <ipyvuetify.Radio>` can be used on its own, it is
-best used in conjunction with :py:class:`RadioGroup <ipyvuetify.RadioGroup>`.
-Using the v-model on the :py:class:`RadioGroup <ipyvuetify.RadioGroup>` you can
+Although :py:class:`Radio <pyvuetify.Radio>` can be used on its own, it is
+best used in conjunction with :py:class:`RadioGroup <pyvuetify.RadioGroup>`.
+Using the v-model on the :py:class:`RadioGroup <pyvuetify.RadioGroup>` you can
 access the value of the selected radio button inside the group.
 
 .. jupyter-execute:: Radio/usage.py

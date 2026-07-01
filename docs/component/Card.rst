@@ -4,9 +4,9 @@ Card
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Card documentation
     <https://v2.vuetifyjs.com/en/components/cards/>`__. All examples have been converted
-    to ipyvuetify syntax.
+    to pyvuetify syntax.
 
-The :py:class:`Card <ipyvuetify.Card>` component is a versatile component that can
+The :py:class:`Card <pyvuetify.Card>` component is a versatile component that can
 be used for anything from a panel to a static image. The card component has numerous
 helper components to make markup as easy as possible. Components that have no listed
 options use Vue's functional component option for faster rendering and serve as markup
@@ -14,19 +14,19 @@ sugar to make building easier.
 
 .. api::
 
-    - :py:class:`ipyvuetify.Card`
-    - :py:class:`ipyvuetify.CardTitle`
-    - :py:class:`ipyvuetify.CardSubtitle`
-    - :py:class:`ipyvuetify.CardText`
-    - :py:class:`ipyvuetify.CardActions`
+    - :py:class:`pyvuetify.Card`
+    - :py:class:`pyvuetify.CardTitle`
+    - :py:class:`pyvuetify.CardSubtitle`
+    - :py:class:`pyvuetify.CardText`
+    - :py:class:`pyvuetify.CardActions`
 
 Usage
 -----
 
-A card has 4 basic components: :py:class:`CardTitle <ipyvuetify.CardTitle>`,
-:py:class:`CardSubtitle <ipyvuetify.CardSubtitle>`,
-:py:class:`CardText <ipyvuetify.CardText>` and
-:py:class:`CardActions <ipyvuetify.CardActions>`.
+A card has 4 basic components: :py:class:`CardTitle <pyvuetify.CardTitle>`,
+:py:class:`CardSubtitle <pyvuetify.CardSubtitle>`,
+:py:class:`CardText <pyvuetify.CardText>` and
+:py:class:`CardActions <pyvuetify.CardActions>`.
 
 .. jupyter-execute:: Card/usage.py
     :raises:
@@ -37,8 +37,8 @@ Functional Components
 ``CardActions``
 ^^^^^^^^^^^^^^^
 
-The container used for placing **actions** for a card, such as :py:class:`Btn <ipyvuetify.Btn>`
-or :py:class:`Menu <ipyvuetify.Menu>`. Also applies special margin to buttons so that
+The container used for placing **actions** for a card, such as :py:class:`Btn <pyvuetify.Btn>`
+or :py:class:`Menu <pyvuetify.Menu>`. Also applies special margin to buttons so that
 they properly line up with other card content areas.
 
 ``CardSubtitle``
@@ -64,7 +64,7 @@ Loading
 
 Cards can be set to a loading state when processing a user action. This disables
 further actions and provides visual feedback with an indeterminate
-:py:class:`ProgressLinear <ipyvuetify.ProgressLinear>`.
+:py:class:`ProgressLinear <pyvuetify.ProgressLinear>`.
 
 .. tab-set::
 
@@ -106,7 +106,7 @@ An ``outlined`` card has 0 elevation and contains a soft border.
 Card Reveal
 -----------
 
-Using :py:class:`ExpandTransition <ipyvuetify.ExpandTransition>` and a ``click``
+Using :py:class:`ExpandTransition <pyvuetify.ExpandTransition>` and a ``click``
 event you can have a card that reveals more information once the button is clicked,
 activating the hidden card to be revealed.
 
@@ -192,8 +192,8 @@ Using grids, you can create beautiful layouts.
 Horizontal Cards
 ----------------
 
-Using :py:class:`Col <ipyvuetify.Col>`, you can create customized horizontal cards.
-Use the ``contain`` property to shrink the :py:class:`Img <ipyvuetify.Img>` to fit inside the container,
+Using :py:class:`Col <pyvuetify.Col>`, you can create customized horizontal cards.
+Use the ``contain`` property to shrink the :py:class:`Img <pyvuetify.Img>` to fit inside the container,
 instead of covering.
 
 .. tab-set::
@@ -257,11 +257,11 @@ Using the layout system, we can add custom text anywhere within the background.
 Twitter Card
 ------------
 
-The :py:class:`Card <ipyvuetify.Card>` component has multiple children components
+The :py:class:`Card <pyvuetify.Card>` component has multiple children components
 that help you build complex examples without having to worry about spacing. This
-example is comprised of the :py:class:`CardTitle <ipyvuetify.CardTitle>`,
-:py:class:`CardText <ipyvuetify.CardText>` and
-:py:class:`CardActions <ipyvuetify.CardActions>` components.
+example is comprised of the :py:class:`CardTitle <pyvuetify.CardTitle>`,
+:py:class:`CardText <pyvuetify.CardText>` and
+:py:class:`CardActions <pyvuetify.CardActions>` components.
 
 .. tab-set::
 
@@ -282,7 +282,7 @@ example is comprised of the :py:class:`CardTitle <ipyvuetify.CardTitle>`,
 Weather Card
 ------------
 
-Using :py:class:`ListItem <ipyvuetify.ListItem>` and a :py:class:`Slider <ipyvuetify.Slider>`,
+Using :py:class:`ListItem <pyvuetify.ListItem>` and a :py:class:`Slider <pyvuetify.Slider>`,
 we are able to create a unique weather card. The list components ensure that we have
 consistent spacing and functionality while the slider component allows us to provide
 a useful interface of selection to the user.

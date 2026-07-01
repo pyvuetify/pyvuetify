@@ -5,20 +5,20 @@ About Vuetify Components
 -------------------------
 
 `Vuetify <https://vuetifyjs.com/>`_ is a comprehensive Material Design component framework for Vue.js applications.
-The ipyvuetify library provides Python wrappers for all Vuetify components, allowing you to build rich,
+The pyvuetify library provides Python wrappers for all Vuetify components, allowing you to build rich,
 interactive user interfaces directly in Jupyter notebooks and other IPython environments.
 
 Key Features
 ------------
 
 -   **Standalone Components**: All components are self-contained and work out of the box without requiring
-    additional JavaScript or CSS imports. The Vuetify framework is automatically loaded when you import ipyvuetify.
+    additional JavaScript or CSS imports. The Vuetify framework is automatically loaded when you import pyvuetify.
 
 -   **Dual Representation**: Each example in this documentation provides two equivalent implementations:
 
     -   **Vue SFC (Single File Component)**: The standard Vue.js template syntax that you would use in a
         traditional Vue.js application
-    -   **Pure Python**: The ipyvuetify Python equivalent using the same component hierarchy and properties
+    -   **Pure Python**: The pyvuetify Python equivalent using the same component hierarchy and properties
 
 -   **Python-First API**: All Vuetify properties, methods, and slots are accessible through Python, following
     Pythonic naming conventions (e.g., ``colored-border`` becomes ``colored_border``).

@@ -4,9 +4,9 @@ SkeletonLoader
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify Skeleton loaders
     documentation <https://v2.vuetifyjs.com/en/components/skeleton-loaders/>`__.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`SkeletonLoader <ipyvuetify.SkeletonLoader>` component is a
+The :py:class:`SkeletonLoader <pyvuetify.SkeletonLoader>` component is a
 versatile tool that can fill many roles within a project. At its heart, the
 component provides an indication to the user that something is coming but not
 yet available. There are over 30 pre-defined options available that can be
@@ -14,12 +14,12 @@ combined to make custom examples.
 
 .. api::
 
-    - :py:class:`ipyvuetify.SkeletonLoader`
+    - :py:class:`pyvuetify.SkeletonLoader`
 
 Usage
 -----
 
-The :py:class:`SkeletonLoader <ipyvuetify.SkeletonLoader>` component provides
+The :py:class:`SkeletonLoader <pyvuetify.SkeletonLoader>` component provides
 a user with a visual indicator that content is coming / loading. This is better
 received than traditional full-screen loaders.
 
@@ -32,11 +32,11 @@ Examples
 Boilerplate component
 ^^^^^^^^^^^^^^^^^^^^^
 
-The :py:class:`SkeletonLoader <ipyvuetify.SkeletonLoader>` can be used as
+The :py:class:`SkeletonLoader <pyvuetify.SkeletonLoader>` can be used as
 boilerplate designs when creating mockups. Mix and match various pre-defined
 options or create your own unique implementations. In this example, we use a
 custom data property to apply the same props to multiple
-:py:class:`SkeletonLoader <ipyvuetify.SkeletonLoader>`'s at once.
+:py:class:`SkeletonLoader <pyvuetify.SkeletonLoader>`'s at once.
 
 .. tab-set::
 
@@ -57,7 +57,7 @@ custom data property to apply the same props to multiple
 Accessibility
 -------------
 
-By default, the :py:class:`SkeletonLoader <ipyvuetify.SkeletonLoader>`
+By default, the :py:class:`SkeletonLoader <pyvuetify.SkeletonLoader>`
 component is assigned a `WAI-ARIA
 <https://www.w3.org/WAI/standards-guidelines/aria/>`__ role of `alert
 <https://www.w3.org/TR/wai-aria/#alert>`__. We augment this role with two aria

@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 checkbox1 = v.Checkbox(v_model=True, label="Checkbox 1")
 checkbox2 = v.Checkbox(v_model=False, label="Checkbox 2")

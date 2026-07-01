@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 dialog = v.Dialog(
     v_model=False,

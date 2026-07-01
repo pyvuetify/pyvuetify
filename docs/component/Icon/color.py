@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 icons = [
     ("mdi-domain", "green darken-2"),

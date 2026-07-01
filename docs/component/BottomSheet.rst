@@ -3,13 +3,13 @@ BottomSheet
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/bottom-sheets/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The bottom sheet is a modified :py:class:`Dialog <ipyvuetify.Dialog>` that slides from the bottom of the screen, similar to a :py:class:`BottomNavigation <ipyvuetify.BottomNavigation>`. Whereas a bottom navigation component is for buttons and specific application level actions, a bottom sheet can contain anything.
+The bottom sheet is a modified :py:class:`Dialog <pyvuetify.Dialog>` that slides from the bottom of the screen, similar to a :py:class:`BottomNavigation <pyvuetify.BottomNavigation>`. Whereas a bottom navigation component is for buttons and specific application level actions, a bottom sheet can contain anything.
 
 .. api::
 
-    :py:class:`ipyvuetify.BottomSheet`
+    :py:class:`pyvuetify.BottomSheet`
 
 Usage
 -----

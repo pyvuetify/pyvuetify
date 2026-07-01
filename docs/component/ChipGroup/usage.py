@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 chip_group = v.ChipGroup(
     active_class="primary--text",

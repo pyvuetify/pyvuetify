@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.Card(
     class_="mx-auto overflow-hidden my-2",

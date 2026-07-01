@@ -4,15 +4,15 @@ ColorPicker
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation
     <https://v2.vuetifyjs.com/en/components/color-pickers/>`_.
-    All examples have been converted to ipyvuetify syntax.
+    All examples have been converted to pyvuetify syntax.
 
-The :py:class:`ColorPicker <ipyvuetify.ColorPicker>` allows you to select a color
+The :py:class:`ColorPicker <pyvuetify.ColorPicker>` allows you to select a color
 using a variety of input methods.
 
 Usage
 -----
 
-The :py:class:`ColorPicker <ipyvuetify.ColorPicker>` allows you to select a color
+The :py:class:`ColorPicker <pyvuetify.ColorPicker>` allows you to select a color
 using a variety of input methods.
 
 .. jupyter-execute:: ColorPicker/usage.py
@@ -20,9 +20,9 @@ using a variety of input methods.
 
 .. api::
 
-    - :py:class:`ipyvuetify.ColorPicker`
-    - :py:class:`ipyvuetify.ColorPickerCanvas`
-    - :py:class:`ipyvuetify.ColorPickerSwatches`
+    - :py:class:`pyvuetify.ColorPicker`
+    - :py:class:`pyvuetify.ColorPickerCanvas`
+    - :py:class:`pyvuetify.ColorPickerSwatches`
 
 Canvas
 ------
@@ -50,7 +50,7 @@ with the ``dot-size`` prop.
 Elevation
 ---------
 
-Adjust the elevation of the :py:class:`ColorPicker <ipyvuetify.ColorPicker>`
+Adjust the elevation of the :py:class:`ColorPicker <pyvuetify.ColorPicker>`
 component using the ``elevation`` or ``flat`` prop. The ``flat`` is equivalent
 to setting ``elevation`` to 0.
 
@@ -97,7 +97,7 @@ through the ``mode`` prop.
 Model
 -----
 
-The :py:class:`ColorPicker <ipyvuetify.ColorPicker>` uses the ``v-model`` prop to
+The :py:class:`ColorPicker <pyvuetify.ColorPicker>` uses the ``v-model`` prop to
 control the color displayed. It supports hex strings such as #FF00FF and
 #FF00FF00, and objects representing RGBA, HSLA and HSVA values.
 

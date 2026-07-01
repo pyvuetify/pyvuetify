@@ -1,4 +1,4 @@
-import ipyvuetify as v
+import pyvuetify as v
 
 v.AppBar(
     color="deep-purple accent-4",
