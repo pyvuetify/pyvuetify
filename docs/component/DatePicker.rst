@@ -1,218 +1,49 @@
 DatePicker
 ==========
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/date-pickers/>`_.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/date-pickers/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`DatePicker <pyvuetify.DatePicker>` component is used for selecting dates. It supports multiple selection modes, formatting, internationalization, and can be embedded in dialogs or menus.
+:py:class:`pyvuetify.DatePicker` is a fully featured date selection component that lets users select a date.
 
 .. api::
 
-    - :py:class:`pyvuetify.DatePicker`
-    - :py:class:`pyvuetify.Menu`
-    - :py:class:`pyvuetify.Dialog`
-    - :py:class:`pyvuetify.TextField`
-    - :py:class:`pyvuetify.DatePickerTable`
-    - :py:class:`pyvuetify.DatePickerHeader`
-    - :py:class:`pyvuetify.DatePickerMonthTable`
-    - :py:class:`pyvuetify.DatePickerYears`
-    - :py:class:`pyvuetify.DatePickerTitle`
+    :py:class:`pyvuetify.DatePicker`
 
-Usage
+Props
 -----
 
-Basic usage of :py:class:`DatePicker <pyvuetify.DatePicker>`.
+The :py:class:`pyvuetify.DatePicker` component supports multiple props for configuring dates that can be selected, date formats, translations and more.
 
-.. jupyter-execute:: DatePicker/usage.py
-    :raises:
-
-.. warning::
-
-    :py:class:`DatePicker <pyvuetify.DatePicker>` accepts ISO 8601 **date** strings
-    (YYYY-MM-DD). For more information regarding ISO 8601 and other standards,
-    visit the official ISO (International Organization for Standardization)
-    `International Standards <https://www.iso.org/standards.html>`__ page.
-
-Colors
-------
-
-Customize the color of :py:class:`DatePicker <pyvuetify.DatePicker>` with the ``color`` prop.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: DatePicker/colors.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: DatePicker/colors.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: DatePicker/colors.vue
 
 Elevation
 ---------
 
-The :py:class:`DatePicker <pyvuetify.DatePicker>` component supports elevation
-up to a maximum value of 24. For more information on elevations, visit the
-`official Material Design elevations <https://material.io/design/environment/elevation.html>`__
-page.
-
-.. todo::
-
-    Add example for elevation prop once supported.
-
-Icons
------
-
-You can override the default icons used in the picker.
+The :py:class:`pyvuetify.DatePicker` component supports elevation up to a maximum value of 5. For more information on elevations, visit the official `Material Design elevations <https://m3.material.io/styles/elevation>`__ page.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: DatePicker/icons.py
+        .. jupyter-execute:: DatePicker/elevation.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: DatePicker/icons.py
+        .. literalinclude:: DatePicker/elevation.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: DatePicker/icons.vue
+        .. literalinclude:: DatePicker/elevation.vue
 
-Multiple
---------
-
-Allow selecting multiple dates with :py:class:`DatePicker <pyvuetify.DatePicker>`.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: DatePicker/multiple.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: DatePicker/multiple.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: DatePicker/multiple.vue
-
-Picker date
-
-You can watch the `picker-date`` which is the displayed month/year (depending on
-the picker type and active view) to perform some action when it changes. This uses
-the `.sync` modifier.
-
-.. todo::
-
-    Help us add an example for picker-date !
-
-
-Range
------
-
-Enable date range selection with :py:class:`DatePicker <pyvuetify.DatePicker>`
-using ``range``. When using ``range`` prop date picker expects its model to be an
-array of length 2 or empty.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: DatePicker/range.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: DatePicker/range.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: DatePicker/range.vue
-
-Readonly
---------
-
-Selecting new date could be disabled by adding ``readonly`` prop.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: DatePicker/readonly.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: DatePicker/readonly.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: DatePicker/readonly.vue
-
-Show current
-------------
-
-By default the current date is displayed using outlined button ``show-current``
-prop allows you to remove the border or select different date to be displayed as
-the current one.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: DatePicker/show_current.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: DatePicker/show_current.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: DatePicker/show_current.vue
-
-Show sibling months
--------------------
-
-By default days from previous and next months are not visible. They can be
-displayed using the ``show-adjacent-months`` prop.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: DatePicker/show_sibling_months.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: DatePicker/show_sibling_months.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: DatePicker/show_sibling_months.vue
 
 Width
 -----
 
-You can specify the picker’s width or make it full width.
+You can specify the picker's width or make it full width.
 
 .. tab-set::
 
@@ -230,109 +61,177 @@ You can specify the picker’s width or make it full width.
 
         .. literalinclude:: DatePicker/width.vue
 
+
+Show sibling months
+-------------------
+
+By default days from previous and next months are not visible. They can be displayed using the **show-adjacent-months** prop.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: DatePicker/show_adjacent_months.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: DatePicker/show_adjacent_months.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: DatePicker/show_adjacent_months.vue
+
+
+Colors
+------
+
+Date picker colors can be set using the **color** props.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: DatePicker/colors.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: DatePicker/colors.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: DatePicker/colors.vue
+
+
+Allowed dates
+-------------
+
+Specify allowed dates using objects or functions. When using objects, accepts a date string in the format of YYYY-MM-DD. When using functions, accepts a date object as a parameter and should return a boolean.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: DatePicker/allowed_dates.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: DatePicker/allowed_dates.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: DatePicker/allowed_dates.vue
+
+
+Landscape
+---------
+
+Using ``landscape`` moves header to the side. You can customize it further using custom width and date format.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: DatePicker/landscape.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: DatePicker/landscape.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: DatePicker/landscape.vue
+
+
 Date events
 -----------
 
-You can specify events using arrays, objects or functions. To change the default
-color of the event use ``event-color`` prop. Your ``events`` function or object can
-return an array of colors (material or css) in case you want to display multiple
-event indicators.
+You can specify events using arrays, objects or functions. To change the default color of the event use **event-color** prop. Your **events** function or object can return an array of colors (material or css) in case you want to display multiple event indicators.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: DatePicker/date_events.py
+        .. jupyter-execute:: DatePicker/events.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: DatePicker/date_events.py
+        .. literalinclude:: DatePicker/events.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: DatePicker/date_events.vue
-
-Active picker
--------------
-
-You can create a birthday picker - starting with year picker by default, restricting
-dates range and closing the picker menu after selecting the day make the perfect
-birthday picker.
-
-.. todo::
-
-    Add example for active-picker once supported.
+        .. literalinclude:: DatePicker/events.vue
 
 
-Dialog and menu
----------------
+Controls
+--------
 
-When integrating a ``picker`` into a :py:class:`TextField <pyvuetify.TextField>`,
-it is recommended to use the ``readonly`` prop. This will prevent mobile keyboards
-from triggering. To save vertical space, you can also hide the picker title.
-
-Pickers expose a slot that allow you to hook into save and cancel functionality.
-This will maintain an old value which can be replaced if the user cancels.
+Replace main controls to adapt behavior and/or visual appearance beyond CSS styling.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: DatePicker/dialog_and_menu.py
+        .. jupyter-execute:: DatePicker/slots_controls.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: DatePicker/dialog_and_menu.py
+        .. literalinclude:: DatePicker/slots_controls.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: DatePicker/dialog_and_menu.vue
+        .. literalinclude:: DatePicker/slots_controls.vue
+
 
 Internationalization
 --------------------
 
-The date picker supports internationalization through the JavaScript Date object.
-Specify a BCP 47 language tag using the ``locale`` prop, and then set the first day
-of the week with the ``first-day-of-week`` prop.
+Vuetify components can localize date formats by utilizing the `i18n <https://vuetifyjs.com/features/internationalization>`__ feature. This determines the appropriate locale for date display. When the default date adapter is in use, localization is managed automatically.
 
-.. tab-set::
+For those not using the default date adapter, you need to create a mapping between the i18n locale string and your chosen date library's locale. This can be done in the Vuetify options as shown below:
 
-    .. tab-item:: :fas:`eye` Rendered
+```js
+import DateFnsAdapter from '@date-io/date-fns'
+import enUS from 'date-fns/locale/en-US'
+import svSE from 'date-fns/locale/sv'
 
-        .. jupyter-execute:: DatePicker/internationalization.py
-            :raises:
-            :hide-code:
+createVuetify({
+  date: {
+    adapter: DateFnsAdapter,
+    locale: {
+      en: enUS,
+      sv: svSE,
+    },
+  },
+})
+```
 
-    .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: DatePicker/internationalization.py
+Parsing dates
+-------------
 
-    .. tab-item:: :fab:`vuejs` Vue template
+It's recommended that you use the `Date composable <https://vuetifyjs.com/features/dates/>`__ for parsing and formatting when working with string dates. The following example uses the parseISO function to convert a string date to a Date object.
 
-        .. literalinclude:: DatePicker/internationalization.vue
+```js
+import { useDate } from 'vuetify'
 
-Orientation
------------
+const adapter = useDate()
+const date = '2023-11-30'
 
-Date pickers come in two orientation variations, portrait (default) and landscape.
+console.log(new Date(date)) // Wed Nov 29 2023 18:00:00 GMT-0600
+console.log(adapter.parseISO(date)) // Thu Nov 30 2023 00:00:00 GMT-0600
+```
 
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: DatePicker/orientation.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: DatePicker/orientation.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: DatePicker/orientation.vue
+Using this function ensures that the date is parsed correctly regardless of the user's timezone.
 

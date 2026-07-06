@@ -1,9 +1,9 @@
 import pyvuetify as v
 
 v.Input(
-    error_count=2,
     error_messages=["Fatal error", "Another error"],
-    error=True,
+    max_errors="2",
     disabled=True,
+    error=True,
     children=["Input"],
 )

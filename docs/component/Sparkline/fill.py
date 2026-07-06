@@ -1,27 +1,138 @@
-from ipywidgets import jslink
-
 import pyvuetify as v
 
-gradient = ["#f72047", "#ffd200", "#1feaea"]
-values = [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0]
+v.Container(
+    fluid=True,
+    children=[
+        v.Sparkline(
+            # JS expression, needs manual conversion
+            fill="fill",
+            # JS expression, needs manual conversion
+            gradient="selectedGradient",
+            # JS expression, needs manual conversion
+            line_width="lineWidth",
+            # JS expression, needs manual conversion
+            model_value="value",
+            # JS expression, needs manual conversion
+            padding="padding",
+            # JS expression, needs manual conversion
+            smooth="smooth",
+            auto_draw=True,
+        ),
+        v.Divider(),
+        v.Row(
+            children=[
+                v.Col(
+                    cols="12",
+                    md="6",
+                    children=[
+                        v.Row(
+                            class_="fill-height align-center",
+                            children=[
+                                v.ItemGroup(
+                                    v_model="selectedGradient",
+                                    mandatory=True,
+                                    children=[
+                                        v.Row(
+                                            class_="pt-6 pl-6",
+                                            children=[
+                                                v.Item(
+                                                    # JS expression, needs manual conversion
+                                                    key="i",
+                                                    # JS expression, needs manual conversion
+                                                    value="gradient",
+                                                    children=[
+                                                        v.Card(
+                                                            style_="""{
+                                                                background: gradient.length > 1
+                                                                ? `linear-gradient(0deg, ${gradient})`
+                                                                : gradient[0],
+                                                                border: '2px solid',
+                                                                borderColor: active ? '#222' : 'white'
+                                                            # JS expression, needs manual conversion
 
-switch = v.Switch(label="Fill", v_model=True)
-
-sparkline = v.Sparkline(
-    class_="mx-auto my-2",
-    line_width=2,
-    smooth=10,
-    padding=8,
-    line_cap="round",
-    gradient=gradient,
-    value=values,
-    gradient_direction="top",
-    fill=True,
-    type="trend",
-    auto_line_width=False,
-    auto_draw=True,
+                                                            }""",
+                                                            class_="me-2",
+                                                            height="30",
+                                                            width="30",
+                                                        ),
+                                                    ],
+                                                ),
+                                            ],
+                                        ),
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+        v.Row(
+            class_="mt-5",
+            children=[
+                v.Col(
+                    cols="2",
+                    children=["Filled"],
+                ),
+                v.Col(
+                    cols="3",
+                    children=[
+                        v.Switch(
+                            v_model="fill",
+                            class_="switch",
+                        ),
+                    ],
+                ),
+                v.Col(
+                    cols="3",
+                    children=["Line width"],
+                ),
+                v.Col(
+                    cols="3",
+                    children=[
+                        v.Slider(
+                            v_model="lineWidth",
+                            max="10",
+                            min="0.1",
+                            step="0.1",
+                            thumb_label=True,
+                        ),
+                    ],
+                ),
+            ],
+        ),
+        v.Row(
+            children=[
+                v.Col(
+                    cols="2",
+                    children=["Smooth"],
+                ),
+                v.Col(
+                    cols="3",
+                    children=[
+                        v.Switch(
+                            v_model="smooth",
+                            class_="switch",
+                        ),
+                    ],
+                ),
+                v.Col(
+                    cols="3",
+                    children=["Padding"],
+                ),
+                v.Col(
+                    cols="3",
+                    children=[
+                        v.Slider(
+                            v_model="padding",
+                            cols="3",
+                            max="25",
+                            min="0",
+                            thumb_label=True,
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
 )
-
-jslink((switch, "v_model"), (sparkline, "fill"))
-
-v.Col(children=[switch, sparkline])

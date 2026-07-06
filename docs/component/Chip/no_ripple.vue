@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-chip :ripple="false"> No Ripple </v-chip>
-  </v-row>
+  <div class="text-center">
+    <v-chip :ripple="false" link> Default </v-chip>
+  </div>
 </template>

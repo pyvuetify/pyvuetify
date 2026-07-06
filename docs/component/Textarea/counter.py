@@ -4,10 +4,12 @@ v.Container(
     fluid=True,
     children=[
         v.Textarea(
-            counter=True,
+            # JS expression, needs manual conversion
+            model_value="value",
+            # JS expression, needs manual conversion
+            rules="rules",
             label="Text",
-            # rules=[lambda v: len(v) <= 50 or "Max 50 characters"],
-            value="This is some text.",
-        )
+            counter=True,
+        ),
     ],
 )

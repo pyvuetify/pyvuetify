@@ -1,13 +1,16 @@
 import pyvuetify as v
 
-v.Toolbar(
-    dark=True,
-    prominent=True,
-    src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg",
+v.Card(
+    height="200",
     children=[
-        v.AppBarNavIcon(),
-        v.ToolbarTitle(children=["Vuetify"]),
-        v.Spacer(),
-        v.Btn(icon=True, children=[v.Icon(children=["mdi-export"])]),
+        v.Toolbar(
+            class_="text-white",
+            image="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg",
+            children=[
+                v.Btn(icon="mdi-menu"),
+                v.ToolbarTitle(text="Toolbar"),
+                v.Btn(icon="mdi-export"),
+            ],
+        ),
     ],
 )

@@ -1,46 +1,80 @@
 <template>
-  <v-form>
+  <v-card class="mx-auto" max-width="344" title="User Registration">
     <v-container>
-      <v-row>
-        <v-col cols="12" sm="6">
-          <v-text-field
-            color="indigo"
-            v-model="message1"
-            label="Regular"
-            clearable
-          ></v-text-field>
-        </v-col>
+      <v-text-field
+        v-model="first"
+        color="primary"
+        label="First name"
+        variant="underlined"
+      ></v-text-field>
 
-        <v-col cols="12" sm="6">
-          <v-text-field
-            color="pink"
-            v-model="message2"
-            solo
-            label="Solo"
-            clearable
-          ></v-text-field>
-        </v-col>
+      <v-text-field
+        v-model="last"
+        color="primary"
+        label="Last name"
+        variant="underlined"
+      ></v-text-field>
 
-        <v-col cols="12" sm="6">
-          <v-text-field
-            color="success"
-            v-model="message3"
-            filled
-            label="Filled"
-            clearable
-          ></v-text-field>
-        </v-col>
+      <v-text-field
+        v-model="email"
+        color="primary"
+        label="Email"
+        variant="underlined"
+      ></v-text-field>
 
-        <v-col cols="12" sm="6">
-          <v-text-field
-            color="error"
-            v-model="message4"
-            label="Outlined"
-            outlined
-            clearable
-          ></v-text-field>
-        </v-col>
-      </v-row>
+      <v-text-field
+        v-model="password"
+        color="primary"
+        label="Password"
+        placeholder="Enter your password"
+        variant="underlined"
+      ></v-text-field>
+
+      <v-checkbox
+        v-model="terms"
+        color="secondary"
+        label="I agree to site terms and conditions"
+      ></v-checkbox>
     </v-container>
-  </v-form>
+
+    <v-divider></v-divider>
+
+    <v-card-actions>
+      <v-spacer></v-spacer>
+
+      <v-btn color="success">
+        Complete Registration
+
+        <v-icon icon="mdi-chevron-right" end></v-icon>
+      </v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const first = ref(null);
+const last = ref(null);
+const email = ref(null);
+const password = ref(null);
+const terms = ref(false);
+</script>
+
+<script>
+export default {
+  data: () => ({
+    first: null,
+    last: null,
+    email: null,
+    password: null,
+    terms: false,
+  }),
+};
+</script>
+
+<example-meta lang="json">
+{
+  "figma": "https://www.figma.com/design/5f4g4pbbBsk9TTWX4Xvlx1/PRO-v3.0---Official-Vuetify-3-UI-Kit?node-id=2103-5977&t=tC3y53U3XKPv8ZyJ-4"
+}
+</example-meta>

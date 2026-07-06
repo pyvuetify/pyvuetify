@@ -1,88 +1,113 @@
 <template>
-  <v-row justify="center">
-    <v-dialog
-      v-model="dialog"
-      fullscreen
-      hide-overlay
-      transition="dialog-bottom-transition"
-    >
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn color="primary" dark v-bind="attrs" v-on="on">
-          Open Dialog
-        </v-btn>
+  <div class="text-center pa-4">
+    <v-dialog v-model="dialog" transition="dialog-bottom-transition" fullscreen>
+      <template v-slot:activator="{ props: activatorProps }">
+        <v-btn
+          prepend-icon="mdi-cog"
+          size="small"
+          text="Settings"
+          v-bind="activatorProps"
+        ></v-btn>
       </template>
+
       <v-card>
-        <v-toolbar dark color="primary">
-          <v-btn icon dark @click="dialog = false">
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
+        <v-toolbar>
+          <v-btn icon="mdi-close" @click="dialog = false"></v-btn>
+
           <v-toolbar-title>Settings</v-toolbar-title>
-          <v-spacer></v-spacer>
+
           <v-toolbar-items>
-            <v-btn dark text @click="dialog = false"> Save </v-btn>
+            <v-btn text="Save" variant="text" @click="dialog = false"></v-btn>
           </v-toolbar-items>
         </v-toolbar>
-        <v-list three-line subheader>
-          <v-subheader>User Controls</v-subheader>
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title>Content filtering</v-list-item-title>
-              <v-list-item-subtitle
-                >Set the content filtering level to restrict apps that can be
-                downloaded</v-list-item-subtitle
-              >
-            </v-list-item-content>
+
+        <v-list lines="two">
+          <v-list-subheader>User Controls</v-list-subheader>
+
+          <v-list-item
+            subtitle="Set the content filtering level to restrict apps that can be downloaded"
+            title="Content filtering"
+            link
+          ></v-list-item>
+
+          <v-list-item
+            subtitle="Require password for purchase or use password to restrict purchase"
+            title="Password"
+            link
+          ></v-list-item>
+
+          <v-divider></v-divider>
+
+          <v-list-subheader>General</v-list-subheader>
+
+          <v-list-item
+            subtitle="Notify me about updates to apps or games that I downloaded"
+            title="Notifications"
+            @click="notifications = !notifications"
+          >
+            <template v-slot:prepend>
+              <v-list-item-action start>
+                <v-checkbox-btn
+                  v-model="notifications"
+                  color="primary"
+                ></v-checkbox-btn>
+              </v-list-item-action>
+            </template>
           </v-list-item>
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title>Password</v-list-item-title>
-              <v-list-item-subtitle
-                >Require password for purchase or use password to restrict
-                purchase</v-list-item-subtitle
-              >
-            </v-list-item-content>
+
+          <v-list-item
+            subtitle="Auto-update apps at any time. Data charges may apply"
+            title="Sound"
+            @click="sound = !sound"
+          >
+            <template v-slot:prepend>
+              <v-list-item-action start>
+                <v-checkbox-btn
+                  v-model="sound"
+                  color="primary"
+                ></v-checkbox-btn>
+              </v-list-item-action>
+            </template>
           </v-list-item>
-        </v-list>
-        <v-divider></v-divider>
-        <v-list three-line subheader>
-          <v-subheader>General</v-subheader>
-          <v-list-item>
-            <v-list-item-action>
-              <v-checkbox v-model="notifications"></v-checkbox>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Notifications</v-list-item-title>
-              <v-list-item-subtitle
-                >Notify me about updates to apps or games that I
-                downloaded</v-list-item-subtitle
-              >
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-action>
-              <v-checkbox v-model="sound"></v-checkbox>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Sound</v-list-item-title>
-              <v-list-item-subtitle
-                >Auto-update apps at any time. Data charges may
-                apply</v-list-item-subtitle
-              >
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-action>
-              <v-checkbox v-model="widgets"></v-checkbox>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Auto-add widgets</v-list-item-title>
-              <v-list-item-subtitle
-                >Automatically add home screen widgets</v-list-item-subtitle
-              >
-            </v-list-item-content>
+
+          <v-list-item
+            subtitle="Automatically add home screen widgets"
+            title="Auto-add widgets"
+            @click="widgets = !widgets"
+          >
+            <template v-slot:prepend>
+              <v-list-item-action start>
+                <v-checkbox-btn
+                  v-model="widgets"
+                  color="primary"
+                ></v-checkbox-btn>
+              </v-list-item-action>
+            </template>
           </v-list-item>
         </v-list>
       </v-card>
     </v-dialog>
-  </v-row>
+  </div>
 </template>
+
+<script setup>
+import { shallowRef } from "vue";
+
+const dialog = shallowRef(false);
+const notifications = shallowRef(false);
+const sound = shallowRef(true);
+const widgets = shallowRef(false);
+</script>
+
+<script>
+export default {
+  data() {
+    return {
+      dialog: false,
+      notifications: false,
+      sound: true,
+      widgets: false,
+    };
+  },
+};
+</script>

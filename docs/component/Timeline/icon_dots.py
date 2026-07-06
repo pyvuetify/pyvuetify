@@ -1,46 +1,50 @@
 import pyvuetify as v
 
-text = "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae."
-
-items = [
-    ("red lighten-2", "mdi-star"),
-    ("purple darken-1", "mdi-book-variant"),
-    ("green lighten-1", "mdi-airballoon"),
-    ("indigo", "mdi-buffer"),
-]
-
 v.Timeline(
-    align_top=True,
+    align="start",
     children=[
         v.TimelineItem(
-            color=color,
-            icon=icon,
+            # JS expression, needs manual conversion
+            key="i",
+            # JS expression, needs manual conversion
+            dot_color="item.color",
+            # JS expression, needs manual conversion
+            icon="item.icon",
             fill_dot=True,
             children=[
                 v.Card(
-                    color=color,
-                    dark=True,
                     children=[
                         v.CardTitle(
-                            class_="text-h6",
+                            # JS expression, needs manual conversion
+                            class_="text-title-large",
                             children=["Lorem Ipsum Dolor"],
                         ),
                         v.CardText(
-                            class_="white text--primary",
+                            class_="bg-white text--primary",
                             children=[
-                                v.Html(tag="p", children=[text]),
+                                v.Html(
+                                    tag="p",
+                                    children=[
+                                        (
+                                            "Lorem ipsum dolor sit amet, no nam oblique veritus. "
+                                            "Commune scaevola imperdiet nec ut, sed euismod "
+                                            "convenire principes at. Est et nobis iisque percipit, "
+                                            "an vim zril disputando voluptatibus, vix an salutandi "
+                                            "sententiae."
+                                        ),
+                                    ],
+                                ),
                                 v.Btn(
-                                    color=color,
-                                    class_="mx-0",
-                                    outlined=True,
+                                    # JS expression, needs manual conversion
+                                    color="item.color",
+                                    variant="outlined",
                                     children=["Button"],
                                 ),
                             ],
                         ),
                     ],
-                )
+                ),
             ],
-        )
-        for color, icon in items
+        ),
     ],
 )

@@ -1,60 +1,59 @@
 import pyvuetify as v
 
-colors = ["indigo", "pink", "success", "error"]
-
-v.Container(
-    class_="mx-auto my-2",
+v.Card(
+    class_="mx-auto",
+    max_width="344",
+    title="User Registration",
     children=[
-        v.Row(
+        v.Container(
             children=[
-                v.Col(
-                    cols="12",
-                    sm="6",
+                v.TextField(
+                    v_model="first",
+                    color="primary",
+                    label="First name",
+                    variant="underlined",
+                ),
+                v.TextField(
+                    v_model="last",
+                    color="primary",
+                    label="Last name",
+                    variant="underlined",
+                ),
+                v.TextField(
+                    v_model="email",
+                    color="primary",
+                    label="Email",
+                    variant="underlined",
+                ),
+                v.TextField(
+                    v_model="password",
+                    color="primary",
+                    label="Password",
+                    placeholder="Enter your password",
+                    variant="underlined",
+                ),
+                v.Checkbox(
+                    v_model="terms",
+                    color="secondary",
+                    label="I agree to site terms and conditions",
+                ),
+            ],
+        ),
+        v.Divider(),
+        v.CardActions(
+            children=[
+                v.Spacer(),
+                v.Btn(
+                    color="success",
                     children=[
-                        v.TextField(
-                            color=colors[0],
-                            v_model=colors[0],
-                            label="Regular",
-                        )
+                        "Complete Registration",
+                        v.Icon(
+                            icon="mdi-chevron-right",
+                            end=True,
+                        ),
                     ],
                 ),
-                v.Col(
-                    cols="12",
-                    sm="6",
-                    children=[
-                        v.TextField(
-                            color=colors[1],
-                            v_model=colors[1],
-                            solo=True,
-                            label="Solo",
-                        )
-                    ],
-                ),
-                v.Col(
-                    cols="12",
-                    sm="6",
-                    children=[
-                        v.TextField(
-                            color=colors[2],
-                            v_model=colors[2],
-                            filled=True,
-                            label="Filled",
-                        )
-                    ],
-                ),
-                v.Col(
-                    cols="12",
-                    sm="6",
-                    children=[
-                        v.TextField(
-                            color=colors[3],
-                            v_model=colors[3],
-                            label="Outlined",
-                            outlined=True,
-                        )
-                    ],
-                ),
-            ]
-        )
+            ],
+        ),
     ],
 )

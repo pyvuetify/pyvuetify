@@ -1,22 +1,29 @@
 import pyvuetify as v
 
-items = [
-    ("small", "purple"),
-    ("default", "pink"),
-    ("large", "green"),
-    ("x-large", "red"),
-    ("64px", "indigo"),
-]
-
-v.Col(
-    class_="text-center",
+v.Html(
+    tag="div",
+    class_="d-flex flex-column align-center",
     children=[
         v.Rating(
-            v_model=3,
-            background_color=f"{color} lighten-3",
-            color=color,
-            **({"size": size} if size.endswith("px") else {size.replace("-", "_"): True}),
-        )
-        for size, color in items
+            model_value="3",
+            size="x-small",
+        ),
+        v.Rating(
+            model_value="3",
+            size="small",
+        ),
+        v.Rating(model_value="3"),
+        v.Rating(
+            model_value="3",
+            size="large",
+        ),
+        v.Rating(
+            model_value="3",
+            size="x-large",
+        ),
+        v.Rating(
+            model_value="3",
+            size="72",
+        ),
     ],
 )

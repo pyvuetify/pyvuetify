@@ -1,3 +1,3 @@
 <template>
-  <v-file-input show-size label="File input"></v-file-input>
+  <v-file-input label="File input" show-size></v-file-input>
 </template>

@@ -1,20 +1,40 @@
 import pyvuetify as v
 
-items = [
-    ("amber", 80),
-    ("blue-grey", 20),
-    ("primary", 33),
-]
-
-v.Col(
+v.Container(
     children=[
         v.ProgressLinear(
-            class_="my-3 mx-1",
-            v_model=value,
-            color=color,
-            height=25,
-            children=[v.Html(tag="strong", children=[f"{int(value)}%"])],
-        )
-        for color, value in items
-    ]
+            # JS expression, needs manual conversion
+            model_value="power",
+            color="amber",
+            height="25",
+        ),
+        v.ProgressLinear(
+            # JS expression, needs manual conversion
+            model_value="knowledge",
+            height="25",
+            children=[
+                v.Html(
+                    tag="strong",
+                    children=["{{ knowledge }}%"],
+                ),
+            ],
+        ),
+        v.ProgressLinear(
+            # JS expression, needs manual conversion
+            model_value="skill",
+            color="blue-grey",
+            height="25",
+            children=[
+                v.Html(
+                    tag="template",
+                    children=[
+                        v.Html(
+                            tag="strong",
+                            children=["{{ roundingEnabled ? value.toFixed(1) : value }}%"],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
 )

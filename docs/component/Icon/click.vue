@@ -1,7 +1,9 @@
 <template>
   <v-card>
     <v-toolbar color="pink" dark dense flat>
-      <v-toolbar-title class="text-body-2"> Upcoming Changes </v-toolbar-title>
+      <v-toolbar-title class="text-body-medium">
+        Upcoming Changes
+      </v-toolbar-title>
     </v-toolbar>
     <v-card-text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -15,7 +17,23 @@
 
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-icon large @click="next"> mdi-chevron-right </v-icon>
+      <v-icon size="large" @click="next"> mdi-chevron-right </v-icon>
     </v-card-actions>
   </v-card>
 </template>
+
+<script setup>
+function next() {
+  alert("You clicked next!");
+}
+</script>
+
+<script>
+export default {
+  methods: {
+    next() {
+      alert("You clicked next!");
+    },
+  },
+};
+</script>

@@ -1,14 +1,17 @@
 import pyvuetify as v
 
-items = [
-    {"text": "Dashboard", "disabled": False, "href": "breadcrumbs_dashboard"},
-    {"text": "Link 1", "disabled": False, "href": "breadcrumbs_link_1"},
-    {"text": "Link 2", "disabled": True, "href": "breadcrumbs_link_2"},
-]
-
-v.Container(
+v.Html(
+    tag="div",
     children=[
-        v.Breadcrumbs(items=items, divider="."),
-        v.Breadcrumbs(items=items, divider="-"),
-    ]
+        v.Breadcrumbs(
+            # JS expression, needs manual conversion
+            items="items",
+            divider="-",
+        ),
+        v.Breadcrumbs(
+            # JS expression, needs manual conversion
+            items="items",
+            divider=".",
+        ),
+    ],
 )

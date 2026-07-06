@@ -1,32 +1,21 @@
 BottomNavigation
 ================
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/bottom-navigation/>`_.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/bottom-navigation/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`BottomNavigation <pyvuetify.BottomNavigation>` component is an alternative to the sidebar.
-It is primarily used for mobile applications and comes in three variants, icons and text, and shift.
+The :py:class:`pyvuetify.BottomNavigation` component is an alternative to the sidebar. It is primarily used for mobile applications and comes in three variants, **icons** and **text**, and **shift**.
 
 .. api::
 
     :py:class:`pyvuetify.BottomNavigation`
 
-Usage
------
-
-While :py:class:`BottomNavigation <pyvuetify.BottomNavigation>` is meant to be used with vue-router,
-you can also programmatically control the active state of the buttons by using the ``v_model`` property.
-A button is given a default value of its index with ``v-bottom-navigation``.
-
-.. jupyter-execute:: BottomNavigation/usage.py
-    :raises:
-
 Color
 -----
 
-The ``color`` prop applies a color to the background of the bottom navigation. We recommend using the
-``light`` and ``dark`` props to properly contrast text color.
+The **color** prop applies a color to the background of the bottom navigation. We recommend using the **light** and **dark** props to properly contrast text color.
 
 .. tab-set::
 
@@ -44,11 +33,15 @@ The ``color`` prop applies a color to the background of the bottom navigation. W
 
         .. literalinclude:: BottomNavigation/color.vue
 
+
 Grow
 ----
 
-Using the ``grow`` property forces :py:class:`Btn <pyvuetify.Btn>` components to fill all available
-space. Buttons have a maximum width of 168px per the Bottom Navigation Material Design specification.
+Using the **grow** property forces :doc:`Button <Button>` components to *fill* all available space. Buttons have a maximum width of **168px** per the :doc:`BottomNavigation <BottomNavigation>`.
+
+
+
+<!-- TODO: Fix this example when scrolling techniques is implemented
 
 .. tab-set::
 
@@ -66,13 +59,14 @@ space. Buttons have a maximum width of 168px per the Bottom Navigation Material 
 
         .. literalinclude:: BottomNavigation/grow.vue
 
+
 Hide on scroll
 --------------
 
-The :py:class:`BottomNavigation <pyvuetify.BottomNavigation>` component hides when scrolling up when
-using the ``hide_on_scroll`` property. This is similar to the scrolling techniques that are supported
-in :py:class:`AppBar <pyvuetify.AppBar>`. In the following example, scroll up and down to see this
-behavior.
+The :py:class:`pyvuetify.BottomNavigation` component hides when *scrolling up* when using the **hide-on-scroll** property. This is similar to the `scrolling techniques <https://material.io/archive/guidelines/patterns/scrolling-techniques.html>`__ that are supported in :doc:`AppBar <AppBar>`. In the following example, scroll *up and down* to see this behavior.
+
+
+-->
 
 .. tab-set::
 
@@ -90,11 +84,15 @@ behavior.
 
         .. literalinclude:: BottomNavigation/hide_on_scroll.vue
 
+
 Horizontal
 ----------
 
-Adjust the style of buttons and icons by using the ``horizontal`` prop. This positions button text
-inline with the provided :py:class:`Icon <pyvuetify.Icon>`.
+Adjust the style of buttons and icons by using the **horizontal** prop. This positions button text *inline* with the provided :doc:`Icon <Icon>`.
+
+
+
+<!-- TODO: Fix this example when scrolling techniques is implemented
 
 .. tab-set::
 
@@ -112,11 +110,14 @@ inline with the provided :py:class:`Icon <pyvuetify.Icon>`.
 
         .. literalinclude:: BottomNavigation/horizontal.vue
 
+
 Scroll threshold
 ----------------
 
-Modify the ``scroll_threshold`` property to increase the distance a user must scroll before the
-:py:class:`BottomNavigation <pyvuetify.BottomNavigation>` is hidden.
+Modify the **scroll-threshold** property to increase the distance a user must scroll before the :py:class:`pyvuetify.BottomNavigation` is hidden.
+
+
+-->
 
 .. tab-set::
 
@@ -134,15 +135,11 @@ Modify the ``scroll_threshold`` property to increase the distance a user must sc
 
         .. literalinclude:: BottomNavigation/scroll_threshold.vue
 
+
 Shift
 -----
 
-The ``shift`` prop hides button text when not active. This provides an alternative visual style to
-the :py:class:`BottomNavigation <pyvuetify.BottomNavigation>` component.
-
-.. note::
-    For this to work, :py:class:`Btn <pyvuetify.Btn>` text is required to be wrapped in a
-    :py:class:`Html <pyvuetify.Html>` `span` tag.
+The **shift** prop hides button text when not active. This provides an alternative visual style to the :py:class:`pyvuetify.BottomNavigation` component.
 
 .. tab-set::
 
@@ -160,11 +157,11 @@ the :py:class:`BottomNavigation <pyvuetify.BottomNavigation>` component.
 
         .. literalinclude:: BottomNavigation/shift.vue
 
+
 Toggle
 ------
 
-The display state of :py:class:`BottomNavigation <pyvuetify.BottomNavigation>` can be toggled using
-the ``input_value`` prop. You can also control the currently active button using ``v_model``.
+Since :py:class:`pyvuetify.BottomNavigation` supports v-model, use the **active** prop to control the display state.
 
 .. tab-set::
 

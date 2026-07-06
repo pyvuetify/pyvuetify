@@ -1,19 +1,19 @@
-from ipywidgets import jslink
-
 import pyvuetify as v
 
-progress = v.ProgressCircular(indeterminate=False, size=24, class_="ml-2")
-
-switch = v.Switch(
-    v_model=False,
-    v_slots=[
-        {
-            "name": "label",
-            "children": v.Html(tag="span", children=["Turn on the progress: ", progress]),
-        }
+v.Switch(
+    v_model="switchMe",
+    children=[
+        v.Html(
+            tag="template",
+            children=[
+                "Turn on the progress:",
+                v.ProgressCircular(
+                    # JS expression, needs manual conversion
+                    indeterminate="switchMe",
+                    class_="ms-2",
+                    size="24",
+                ),
+            ],
+        ),
     ],
 )
-
-jslink((switch, "v_model"), (progress, "indeterminate"))
-
-v.Container(class_="mx-auto my-2", fluid=True, children=[switch])

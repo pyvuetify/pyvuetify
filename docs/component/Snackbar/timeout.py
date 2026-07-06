@@ -1,16 +1,30 @@
-from ipywidgets import jslink
-
 import pyvuetify as v
 
-switch = v.Switch(label="Open Snackbar", v_model=False)
-switch_close = v.Switch(v_model=False)
-snackbar = v.Snackbar(
-    v_model=False,
-    timeout=2000,
-    children=["This snackbar will disappear after 2 seconds", switch_close],
+v.Html(
+    tag="div",
+    class_="text-center",
+    children=[
+        v.Btn(
+            color="orange-darken-2",
+            children=["Open Snackbar"],
+        ),
+        v.Snackbar(
+            v_model="snackbar",
+            # JS expression, needs manual conversion
+            timeout="timeout",
+            children=[
+                "{{ text }}",
+                v.Html(
+                    tag="template",
+                    children=[
+                        v.Btn(
+                            color="blue",
+                            variant="text",
+                            children=["Close"],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
 )
-
-jslink((switch, "v_model"), (snackbar, "v_model"))
-jslink((switch_close, "v_model"), (snackbar, "v_model"))
-
-v.Container(class_="text-center ma-2", children=[switch, snackbar])

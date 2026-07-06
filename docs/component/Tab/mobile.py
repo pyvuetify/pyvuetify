@@ -1,0 +1,47 @@
+import pyvuetify as v
+
+v.Card(
+    class_="mx-auto",
+    width="350px",
+    children=[
+        v.Toolbar(
+            color="surface",
+            children=[
+                v.AppBarNavIcon(),
+                v.ToolbarTitle(children=["Contacts"]),
+                v.Btn(icon="mdi-magnify"),
+                v.Btn(icon="mdi-dots-vertical"),
+                v.Html(
+                    tag="template",
+                    children=[
+                        v.Tabs(
+                            v_model="tabs",
+                            color="primary",
+                            grow=True,
+                            children=[
+                                v.Tab(
+                                    value=1,
+                                    children=[
+                                        v.Icon(icon="mdi-phone"),
+                                    ],
+                                ),
+                                v.Tab(
+                                    value=2,
+                                    children=[
+                                        v.Icon(icon="mdi-heart"),
+                                    ],
+                                ),
+                                v.Tab(
+                                    value=3,
+                                    children=[
+                                        v.Icon(icon="mdi-account-box"),
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

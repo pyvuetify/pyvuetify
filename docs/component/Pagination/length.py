@@ -1,13 +1,32 @@
 import pyvuetify as v
 
-v.Card(
-    class_="mx-auto my-2",
-    width="400px",
+v.Html(
+    tag="div",
+    class_="text-center",
     children=[
-        v.Pagination(
-            v_model=1,
-            length=15,
-            class_="text-center my-4",
-        )
+        v.Container(
+            children=[
+                v.Row(
+                    class_="justify-center",
+                    children=[
+                        v.Col(
+                            cols="8",
+                            children=[
+                                v.Container(
+                                    class_="max-width",
+                                    children=[
+                                        v.Pagination(
+                                            v_model="page",
+                                            length=15,
+                                            class_="my-4",
+                                        ),
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
     ],
 )

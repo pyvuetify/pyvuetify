@@ -1,0 +1,114 @@
+import pyvuetify as v
+
+v.Form(
+    children=[
+        v.Container(
+            children=[
+                v.Row(
+                    children=[
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Prepend",
+                                    prepend_icon="mdi-map-marker",
+                                ),
+                                v.TextField(
+                                    label="Prepend inner",
+                                    prepend_inner_icon="mdi-map-marker",
+                                ),
+                                v.TextField(
+                                    append_icon="mdi-map-marker",
+                                    label="Append",
+                                ),
+                                v.TextField(
+                                    append_inner_icon="mdi-map-marker",
+                                    label="Append inner",
+                                ),
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Prepend",
+                                    prepend_icon="mdi-map-marker",
+                                    variant="solo",
+                                ),
+                                v.TextField(
+                                    label="Prepend inner",
+                                    prepend_inner_icon="mdi-map-marker",
+                                    variant="solo",
+                                ),
+                                v.TextField(
+                                    append_icon="mdi-map-marker",
+                                    label="Append",
+                                    variant="solo",
+                                ),
+                                v.TextField(
+                                    append_inner_icon="mdi-map-marker",
+                                    label="Append inner",
+                                    variant="solo",
+                                ),
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Prepend",
+                                    prepend_icon="mdi-map-marker",
+                                    variant="outlined",
+                                ),
+                                v.TextField(
+                                    label="Prepend inner",
+                                    prepend_inner_icon="mdi-map-marker",
+                                    variant="outlined",
+                                ),
+                                v.TextField(
+                                    append_icon="mdi-map-marker",
+                                    label="Append",
+                                    variant="outlined",
+                                ),
+                                v.TextField(
+                                    append_inner_icon="mdi-map-marker",
+                                    label="Append inner",
+                                    variant="outlined",
+                                ),
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    label="Prepend",
+                                    prepend_icon="mdi-map-marker",
+                                    variant="underlined",
+                                ),
+                                v.TextField(
+                                    label="Prepend inner",
+                                    prepend_inner_icon="mdi-map-marker",
+                                    variant="underlined",
+                                ),
+                                v.TextField(
+                                    append_icon="mdi-map-marker",
+                                    label="Append",
+                                    variant="underlined",
+                                ),
+                                v.TextField(
+                                    append_inner_icon="mdi-map-marker",
+                                    label="Append inner",
+                                    variant="underlined",
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

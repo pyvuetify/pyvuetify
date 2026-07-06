@@ -2,57 +2,31 @@ import pyvuetify as v
 
 v.Card(
     class_="mx-auto",
-    max_width=434,
-    tile=True,
+    max_width="434",
+    rounded="0",
     children=[
         v.Img(
             height="100%",
             src="https://cdn.vuetifyjs.com/images/cards/server-room.jpg",
+            cover=True,
             children=[
-                v.Row(
-                    align="end",
-                    class_="fill-height",
+                v.Avatar(
+                    color="grey",
+                    rounded="0",
+                    size="150",
                     children=[
-                        v.Col(
-                            align_self="start",
-                            class_="pa-0",
-                            cols=12,
-                            children=[
-                                v.Avatar(
-                                    class_="profile",
-                                    color="grey",
-                                    size=164,
-                                    tile=True,
-                                    children=[
-                                        v.Img(
-                                            src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
-                                        )
-                                    ],
-                                )
-                            ],
-                        ),
-                        v.Col(
-                            class_="py-0",
-                            children=[
-                                v.ListItem(
-                                    color="rgba(0, 0, 0, .4)",
-                                    dark=True,
-                                    children=[
-                                        v.ListItemContent(
-                                            children=[
-                                                v.ListItemTitle(
-                                                    class_="text-h6", children=["Marcus Obrien"]
-                                                ),
-                                                v.ListItemSubtitle(children=["Network Engineer"]),
-                                            ]
-                                        )
-                                    ],
-                                )
-                            ],
+                        v.Img(
+                            src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg",
+                            cover=True,
                         ),
                     ],
-                )
+                ),
+                v.ListItem(
+                    class_="text-white",
+                    subtitle="Network Engineer",
+                    title="Marcus Obrien",
+                ),
             ],
-        )
+        ),
     ],
 )

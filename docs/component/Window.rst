@@ -1,96 +1,145 @@
 Window
 ======
 
-.. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Windows
-    documentation <https://v2.vuetifyjs.com/en/components/windows/>`__. All
-    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Window <pyvuetify.Window>` component provides the baseline
-functionality for transitioning content from **1** pane to another. Other components
-such as :py:class:`Tabs <pyvuetify.Tabs>`,
-:py:class:`Carousel <pyvuetify.Carousel>` and
-:py:class:`Stepper <pyvuetify.Stepper>` utilize this component at their core.
+.. aknowledgement::
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/windows/>`__.
+    All examples have been converted to pyvuetify syntax.
+
+The :py:class:`pyvuetify.Window` component provides the baseline functionality for transitioning content from one pane to another. Other components such as :py:class:`pyvuetify.Tabs`, :py:class:`pyvuetify.Carousel` and :py:class:`pyvuetify.Stepper` utilize this component at their core.
 
 .. api::
 
-    - :py:class:`pyvuetify.Window`
-    - :py:class:`pyvuetify.WindowItem`
+    :py:class:`pyvuetify.Window`
 
-Usage
------
+Show arrows
+-----------
 
-Designed to easily cycle through content, :py:class:`Window <pyvuetify.Window>`
-provides a simple interface to create truly custom implementations.
+By default no arrows are displayed. You can change this by adding the **show-arrows** prop. If you set the prop value to ``"hover"``, they will only show when you mouse over the window.
 
-.. todo::
+.. tab-set::
 
-    Like all the window examples below, this one requires an interactive live kernel
-    to function as intended. help us improve this by suggesting better ways to
-    demonstrate such components in the documentation :fas:`thumbs-up`.
+    .. tab-item:: :fas:`eye` Rendered
 
-Examples
---------
+        .. jupyter-execute:: Window/show_arrows.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Window/show_arrows.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Window/show_arrows.vue
+
 
 Reverse
-^^^^^^^
+-------
 
-**Reverse** :py:class:`Window <pyvuetify.Window>` always displays reverse
-transition.
+The **reverse** prop will reverse the transitions
 
-.. todo::
+.. tab-set::
 
-    Like all the window examples below, this one requires an interactive live kernel
-    to function as intended. help us improve this by suggesting better ways to
-    demonstrate such components in the documentation :fas:`thumbs-up`.
+    .. tab-item:: :fas:`eye` Rendered
 
-Vertical
-^^^^^^^^
+        .. jupyter-execute:: Window/reverse.py
+            :raises:
+            :hide-code:
 
-:py:class:`Window <pyvuetify.Window>` can be vertical. Vertical windows have **Y
-axis** transition instead of **X axis** transition.
+    .. tab-item:: :fab:`python` Python
 
-.. todo::
+        .. literalinclude:: Window/reverse.py
 
-    Like all the window examples below, this one requires an interactive live kernel
-    to function as intended. help us improve this by suggesting better ways to
-    demonstrate such components in the documentation :fas:`thumbs-up`.
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Window/reverse.vue
+
+
+Direction
+---------
+
+You can change the transition to vertical using the **direction** prop
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Window/direction.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Window/direction.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Window/direction.vue
+
 
 Customized arrows
-^^^^^^^^^^^^^^^^^
+-----------------
 
-Arrows can be customized by using ``prev`` and ``next`` slots.
+Arrows can be customized by using **prev** and **next** slots.
 
-.. todo::
+.. tab-set::
 
-    Like all the window examples below, this one requires an interactive live kernel
-    to function as intended. help us improve this by suggesting better ways to
-    demonstrate such components in the documentation :fas:`thumbs-up`.
+    .. tab-item:: :fas:`eye` Rendered
 
-Misc
-----
+        .. jupyter-execute:: Window/slots_next_prev.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Window/slots_next_prev.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Window/slots_next_prev.vue
+
 
 Account creation
-^^^^^^^^^^^^^^^^
+----------------
 
-Create rich forms with smooth animations. :py:class:`Window <pyvuetify.Window>`
-automatically tracks the current selection index to automatically change the
-transition direction. This can be manually controlled with the ``reverse`` prop.
+Create rich forms with smooth animations. :py:class:`pyvuetify.Window` automatically tracks the current selection index to change the transition direction.
 
-.. todo::
+.. tab-set::
 
-    Like all the window examples below, this one requires an interactive live kernel
-    to function as intended. help us improve this by suggesting better ways to
-    demonstrate such components in the documentation :fas:`thumbs-up`.
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Window/account_creation.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Window/account_creation.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Window/account_creation.vue
+
 
 Onboarding
-^^^^^^^^^^
+----------
 
-:py:class:`Window <pyvuetify.Window>` makes it easy to create custom components
-such as a different styled stepper.
+:py:class:`pyvuetify.Window` makes it easy to create custom components such as a differently styled stepper.
 
-.. todo::
+.. tab-set::
 
-    Like all the window examples below, this one requires an interactive live kernel
-    to function as intended. help us improve this by suggesting better ways to
-    demonstrate such components in the documentation :fas:`thumbs-up`.
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Window/onboarding.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Window/onboarding.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Window/onboarding.vue
+

@@ -1,16 +1,48 @@
 <template>
   <div class="text-center">
     <v-btn
-      color="deep-purple accent-4"
-      class="white--text"
+      append-icon="mdi-open-in-new"
+      color="deep-purple-accent-4"
       @click="overlay = !overlay"
     >
       Launch Application
-      <v-icon right> mdi-open-in-new </v-icon>
     </v-btn>
 
-    <v-overlay :value="overlay">
-      <v-progress-circular indeterminate size="64"></v-progress-circular>
+    <v-overlay :model-value="overlay" class="align-center justify-center">
+      <v-progress-circular
+        color="primary"
+        size="64"
+        indeterminate
+      ></v-progress-circular>
     </v-overlay>
   </div>
 </template>
+
+<script setup>
+import { ref, watch } from "vue";
+
+const overlay = ref(false);
+watch(overlay, (val) => {
+  val &&
+    setTimeout(() => {
+      overlay.value = false;
+    }, 3000);
+});
+</script>
+
+<script>
+export default {
+  data: () => ({
+    overlay: false,
+  }),
+
+  watch: {
+    overlay(val) {
+      val &&
+        setTimeout(() => {
+          this.overlay = false;
+        }, 3000);
+    },
+  },
+};
+</script>

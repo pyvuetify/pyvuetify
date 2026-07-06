@@ -1,27 +1,54 @@
 import pyvuetify as v
 
-colors = ["primary", "secondary", "error", "success", "warning"]
-
-v.Carousel(
-    v_model=2,
+v.Html(
+    tag="div",
     children=[
-        v.CarouselItem(
+        v.Html(
+            tag="div",
+            class_="d-flex justify-space-around align-center py-4",
             children=[
-                v.Sheet(
-                    color=color,
-                    height="100%",
-                    tile=True,
+                v.Btn(
+                    icon="mdi-minus",
+                    variant="text",
+                ),
+                "{{ model }}",
+                v.Btn(
+                    icon="mdi-plus",
+                    variant="text",
+                ),
+            ],
+        ),
+        v.Carousel(
+            v_model="model",
+            children=[
+                v.CarouselItem(
+                    # JS expression, needs manual conversion
+                    key="color",
+                    # JS expression, needs manual conversion
+                    value="i",
                     children=[
-                        v.Row(
-                            class_="fill-height",
-                            align="center",
-                            justify="center",
-                            children=[v.Html(tag="h1", children=[f"Slide {i + 1}"])],
-                        )
+                        v.Sheet(
+                            # JS expression, needs manual conversion
+                            color="color",
+                            height="100%",
+                            tile=True,
+                            children=[
+                                v.Html(
+                                    tag="div",
+                                    class_="d-flex fill-height justify-center align-center",
+                                    children=[
+                                        v.Html(
+                                            tag="div",
+                                            class_="text-display-large",
+                                            children=["Slide {{ i + 1 }}"],
+                                        ),
+                                    ],
+                                ),
+                            ],
+                        ),
                     ],
-                )
-            ]
-        )
-        for i, color in enumerate(colors)
+                ),
+            ],
+        ),
     ],
 )

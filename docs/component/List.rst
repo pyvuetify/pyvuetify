@@ -1,75 +1,131 @@
 List
 ====
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Lists documentation
-    <https://v2.vuetifyjs.com/en/components/lists/>`__.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/lists/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`List <pyvuetify.List>` component is used to display information.
-It can contain an avatar, content, actions, subheaders and much more. Lists
-present content in a way that makes it easy to identify a specific item in a
-collection. They provide a consistent styling for organizing groups of text and
-images.
+The :py:class:`pyvuetify.List` component is used to display information. It can contain an avatar, content, actions, subheaders and much more. Lists present content in a way that makes it easy to identify a specific item in a collection. They provide a consistent styling for organizing groups of text and images.
 
 .. api::
 
-    - :py:class:`pyvuetify.List`
-    - :py:class:`pyvuetify.ListGroup`
-    - :py:class:`pyvuetify.ListItem`
-    - :py:class:`pyvuetify.ListItemAction`
-    - :py:class:`pyvuetify.ListItemActionText`
-    - :py:class:`pyvuetify.ListItemAvatar`
-    - :py:class:`pyvuetify.ListItemContent`
-    - :py:class:`pyvuetify.ListItemGroup`
-    - :py:class:`pyvuetify.ListItemIcon`
-    - :py:class:`pyvuetify.ListItemSubtitle`
-    - :py:class:`pyvuetify.ListItemTitle`
+    :py:class:`pyvuetify.List`
 
-Usage
+Items
 -----
 
-Lists come in three main variations. single-line (default), two-line and
-three-line. The line declaration specifies the minimum height of the item and
-can also be controlled from :py:class:`List <pyvuetify.List>` with the same
-prop.
+Lists can either be created by markup using the many sub-components that are available, or by using the **items** prop.
 
-.. jupyter-execute:: List/usage.py
-    :raises:
 
-.. note::
 
-    If you are looking for stateful list items, please check out
-    :py:class:`ListItemGroup <pyvuetify.ListItemGroup>`.
+To customize which properties will be used for the title and value of each item, use the **item-title** and **item-value** props.
 
-Examples
---------
 
-Dense
-^^^^^
 
-:py:class:`List <pyvuetify.List>` can be lowered with ``dense`` property.
+If you need to render subheaders or dividers, add an item with a **type** property. Which property to use can be customized using the **item-type** prop.
+
+
+
+To customize individual items, you can use the **item-props** prop. It defaults to looking for a **props** property on the items. The value should be an object, and if found it will be spread on the **``ListItem``** component.
+
+If **item-props** is set to **true** then the whole item will be spread.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: List/dense.py
+        .. jupyter-execute:: List/items.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: List/dense.py
+        .. literalinclude:: List/items.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: List/dense.vue
+        .. literalinclude:: List/items.vue
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: List/items_custom.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: List/items_custom.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: List/items_custom.vue
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: List/items_type.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: List/items_type.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: List/items_type.vue
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: List/items_prop.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: List/items_prop.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: List/items_prop.vue
+
+
+Density
+-------
+
+:py:class:`pyvuetify.List` supports the **density** property.
+
+
+
+
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: List/density.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: List/density.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: List/density.vue
+
 
 Disabled
-^^^^^^^^
+--------
 
-You cannot interact with disabled :py:class:`List <pyvuetify.List>`.
+You cannot interact with disabled :py:class:`pyvuetify.List`.
 
 .. tab-set::
 
@@ -87,34 +143,33 @@ You cannot interact with disabled :py:class:`List <pyvuetify.List>`.
 
         .. literalinclude:: List/disabled.vue
 
-Flat
-^^^^
 
-Items don't change when selected in :py:class:`List <pyvuetify.List>` with
-``flat`` property.
+Variant
+-------
+
+:py:class:`pyvuetify.List` supports the **variant** prop.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: List/flat.py
+        .. jupyter-execute:: List/variant.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: List/flat.py
+        .. literalinclude:: List/variant.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: List/flat.vue
+        .. literalinclude:: List/variant.vue
+
 
 Nav
-^^^
+---
 
-Lists can receive an alternative ``nav`` styling that reduces the width
-:py:class:`ListItem <pyvuetify.ListItem>` takes up as well as adding a border
-radius.
+Lists can receive an alternative **nav** styling that reduces the width :py:class:`pyvuetify.ListItem` takes up as well as adding a border radius.
 
 .. tab-set::
 
@@ -132,10 +187,11 @@ radius.
 
         .. literalinclude:: List/nav.vue
 
-Rounded
-^^^^^^^
 
-You can make :py:class:`List <pyvuetify.List>` items rounded.
+Rounded
+-------
+
+You can make :py:class:`pyvuetify.List` items rounded.
 
 .. tab-set::
 
@@ -153,11 +209,11 @@ You can make :py:class:`List <pyvuetify.List>` items rounded.
 
         .. literalinclude:: List/rounded.vue
 
-Shaped
-^^^^^^
 
-Shaped lists have rounded borders on one side of the
-:py:class:`ListItem <pyvuetify.ListItem>`.
+Shaped
+------
+
+Shaped lists have rounded borders on one side of the :py:class:`pyvuetify.ListItem`.
 
 .. tab-set::
 
@@ -175,11 +231,11 @@ Shaped lists have rounded borders on one side of the
 
         .. literalinclude:: List/shaped.vue
 
-Sub group
-^^^^^^^^^
 
-Using the :py:class:`ListGroup <pyvuetify.ListGroup>` component you can create
-up to 2 levels in depth using the ``sub-group`` prop.
+Sub group
+---------
+
+Using the :py:class:`pyvuetify.ListGroup` component you can create sub-groups of items.
 
 .. tab-set::
 
@@ -197,13 +253,11 @@ up to 2 levels in depth using the ``sub-group`` prop.
 
         .. literalinclude:: List/sub_group.vue
 
-Three line
-^^^^^^^^^^
 
-For three line lists, the subtitle will clamp vertically at 2 lines and then
-ellipsis. This feature uses `line-clamp
-<https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp>`__ and is
-not supported in all browsers.
+Three line
+----------
+
+For three line lists, the subtitle will clamp vertically at 2 lines and then ellipsis. This feature uses `line-clamp <https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp>`__ and is not supported in all browsers.
 
 .. tab-set::
 
@@ -221,79 +275,55 @@ not supported in all browsers.
 
         .. literalinclude:: List/three_line.vue
 
+
 Two lines and subheader
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
-Lists can contain subheaders, dividers, and can contain 1 or more lines. The
-subtitle will overflow with ellipsis if it extends past one line.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: List/two_lines_and_subheader.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: List/two_lines_and_subheader.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: List/two_lines_and_subheader.vue
-
-Expansion Lists
-^^^^^^^^^^^^^^^
-
-A list can contain a group of items which will display on click utilizing
-:py:class:`ListGroup <pyvuetify.ListGroup>`'s ``activator`` slot. Expansion
-lists are also used within the :py:class:`NavigationDrawer
-<pyvuetify.NavigationDrawer>` component.
+Lists can contain subheaders, dividers, and can contain 1 or more lines. The subtitle will overflow with ellipsis if it extends past one line.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: List/expansion_lists.py
+        .. jupyter-execute:: List/two_line_and_subheader.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: List/expansion_lists.py
+        .. literalinclude:: List/two_line_and_subheader.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: List/expansion_lists.vue
+        .. literalinclude:: List/two_line_and_subheader.vue
+
 
 Action and item groups
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
-A three-line list with actions. Utilizing :py:class:`ListItemGroup
-<pyvuetify.ListItemGroup>`, easily connect actions to your tiles.
+A **three-line** list with actions. Utilizing **select-strategy**, easily connect actions to your tiles.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: List/action_and_item_groups.py
+        .. jupyter-execute:: List/actions.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: List/action_and_item_groups.py
+        .. literalinclude:: List/actions.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: List/action_and_item_groups.vue
+        .. literalinclude:: List/actions.vue
 
-Action stack
-^^^^^^^^^^^^
 
-A list can contain a stack within an action. This is useful when you need to
-display meta text next to your action item.
+Action with text
+----------------
+
+A list can contain additional meta information within an action.
 
 .. tab-set::
 
@@ -311,8 +341,9 @@ display meta text next to your action item.
 
         .. literalinclude:: List/action_stack.vue
 
+
 Card list
-^^^^^^^^^
+---------
 
 A list can be combined with a card.
 
@@ -331,70 +362,4 @@ A list can be combined with a card.
     .. tab-item:: :fab:`vuejs` Vue template
 
         .. literalinclude:: List/card_list.vue
-
-Simple avatar list
-^^^^^^^^^^^^^^^^^^
-
-A simple list utilizing :py:class:`ListItemIcon <pyvuetify.ListItemIcon>`,
-:py:class:`ListItemTitle <pyvuetify.ListItemTitle>` and
-:py:class:`ListItemAvatar <pyvuetify.ListItemAvatar>`.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: List/simple_avatar_list.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: List/simple_avatar_list.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: List/simple_avatar_list.vue
-
-Single line list
-^^^^^^^^^^^^^^^^
-
-Here we combine :py:class:`ListItemAvatar <pyvuetify.ListItemAvatar>` and
-:py:class:`ListItemIcon <pyvuetify.ListItemIcon>` in a single-line list.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: List/single_line_list.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: List/single_line_list.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: List/single_line_list.vue
-
-Subheadings and dividers
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Lists can contain multiple subheaders and dividers.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: List/subheadings_and_dividers.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: List/subheadings_and_dividers.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: List/subheadings_and_dividers.vue
 

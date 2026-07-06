@@ -4,39 +4,9 @@ Component
 About Vuetify Components
 -------------------------
 
-`Vuetify <https://vuetifyjs.com/>`_ is a comprehensive Material Design component framework for Vue.js applications.
+`Vuetify <https://vuetifyjs.com/>`__ is a comprehensive Material Design component framework for Vue.js applications.
 The pyvuetify library provides Python wrappers for all Vuetify components, allowing you to build rich,
 interactive user interfaces directly in Jupyter notebooks and other IPython environments.
-
-Key Features
-------------
-
--   **Standalone Components**: All components are self-contained and work out of the box without requiring
-    additional JavaScript or CSS imports. The Vuetify framework is automatically loaded when you import pyvuetify.
-
--   **Dual Representation**: Each example in this documentation provides two equivalent implementations:
-
-    -   **Vue SFC (Single File Component)**: The standard Vue.js template syntax that you would use in a
-        traditional Vue.js application
-    -   **Pure Python**: The pyvuetify Python equivalent using the same component hierarchy and properties
-
--   **Python-First API**: All Vuetify properties, methods, and slots are accessible through Python, following
-    Pythonic naming conventions (e.g., ``colored-border`` becomes ``colored_border``).
-
-.. important::
-
-    **Static Documentation Notice**
-
-    This documentation is generated as a static document and does not have access to a live IPython kernel.
-    As a result:
-
-    -   Event handlers (like ``@click``, ``on_event``) are not captured in the rendered examples
-    -   Interactive behaviors shown are primarily achieved through traitlets' ``jslink`` for simple state
-        synchronization
-    -   Real-world applications can be much more sophisticated using actual Python event handlers and callbacks
-
-    For complete, deployable examples demonstrating full event handling and interactivity, please refer to
-    the **Gallery** section.
 
 Component Categories
 --------------------
@@ -50,23 +20,18 @@ Containment
     :caption: Containment
     :maxdepth: 1
 
-    App
     BottomSheet
-    Btn
     Card
     Chip
     Dialog
     Divider
     ExpansionPanels
     List
-    ListItemGroup
     Menu
     Overlay
     Sheet
     Toolbar
     Tooltip
-    OverflowBtn
-    Subheader
 
 Navigation
 ----------
@@ -97,7 +62,6 @@ Form Inputs & Controls
     Combobox
     FileInput
     Form
-    Radio
     RangeSlider
     Select
     Slider
@@ -114,20 +78,8 @@ Data Display
     :maxdepth: 1
 
     Calendar
-    DataTable
     Sparkline
-    SimpleTable
     Treeview
-
-Layout
-------
-
-.. toctree::
-    :caption: Layout
-    :maxdepth: 1
-
-    Grid
-    Flex
 
 Selection
 ---------
@@ -136,7 +88,6 @@ Selection
     :caption: Selection
     :maxdepth: 1
 
-    BtnToggle
     Carousel
     ChipGroup
     ItemGroup
@@ -162,8 +113,8 @@ Feedback
     Snackbar
     Timeline
 
-Image & Icons
--------------
+Images & Icons
+--------------
 
 .. toctree::
     :caption: Images & Icons
@@ -171,7 +122,6 @@ Image & Icons
 
     Avatar
     Icon
-    Img
     Parallax
 
 Pickers
@@ -194,4 +144,26 @@ Other
 
     Lazy
 
+    AvatarGroup
+    ColorInput
+    CommandPalette
+    ConfirmEdit
+    DataIterator
+    DateInput
+    DefaultsProvider
+    EmptyState
+    ExpansionPanel
+    FileUpload
+    Hotkey
+    LocaleProvider
+    MaskInput
+    NoSsr
+    NumberInput
+    OtpInput
+    PullToRefresh
+    SnackbarQueue
+    Tab
+    Table
+    ThemeProvider
+    Video
 

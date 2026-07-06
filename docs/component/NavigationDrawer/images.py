@@ -1,40 +1,38 @@
 import pyvuetify as v
 
-items = [
-    {"icon": "mdi-email", "title": "Inbox"},
-    {"icon": "mdi-account-supervisor-circle", "title": "Supervisors"},
-    {"icon": "mdi-clock-start", "title": "Clock-in"},
-]
-
 v.Card(
-    class_="mx-auto my-2",
-    height=400,
-    width=400,
     children=[
-        v.NavigationDrawer(
-            absolute=True,
-            dark=True,
-            src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg",
-            width=400,
-            permanent=True,
+        v.Layout(
             children=[
-                v.List(
+                v.NavigationDrawer(
+                    image="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg",
+                    theme="dark",
+                    permanent=True,
                     children=[
-                        v.ListItem(
-                            link=True,
+                        v.List(
+                            nav=True,
                             children=[
-                                v.ListItemIcon(
-                                    children=[v.Icon(children=[item["icon"]])],
+                                v.ListItem(
+                                    prepend_icon="mdi-email",
+                                    title="Inbox",
+                                    value="inbox",
                                 ),
-                                v.ListItemContent(
-                                    children=[v.ListItemTitle(children=[item["title"]])],
+                                v.ListItem(
+                                    prepend_icon="mdi-account-supervisor-circle",
+                                    title="Supervisors",
+                                    value="supervisors",
+                                ),
+                                v.ListItem(
+                                    prepend_icon="mdi-clock-start",
+                                    title="Clock-in",
+                                    value="clockin",
                                 ),
                             ],
-                        )
-                        for item in items
-                    ]
-                )
+                        ),
+                    ],
+                ),
+                v.Main(style_="height: 250px"),
             ],
-        )
+        ),
     ],
 )

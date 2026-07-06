@@ -1,49 +1,31 @@
 BottomSheet
 ===========
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/bottom-sheets/>`_.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/bottom-sheets/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The bottom sheet is a modified :py:class:`Dialog <pyvuetify.Dialog>` that slides from the bottom of the screen, similar to a :py:class:`BottomNavigation <pyvuetify.BottomNavigation>`. Whereas a bottom navigation component is for buttons and specific application level actions, a bottom sheet can contain anything.
+The bottom sheet is a modified :py:class:`pyvuetify.Dialog` that slides from the bottom of the screen, similar to a :py:class:`pyvuetify.BottomNavigation`.
 
 .. api::
 
     :py:class:`pyvuetify.BottomSheet`
 
-Usage
+Props
 -----
 
-Here we display an example list of actions that could be present in an application.
+The :py:class:`pyvuetify.BottomSheet` component has access to all of the props available in :py:class:`pyvuetify.Dialog`.
 
-.. jupyter-execute:: BottomSheet/usage.py
-    :raises:
-
-Inset
------
-
-Bottom sheets can be inset, reducing their maximum width on desktop to 70%. This can be further reduced manually using the ``width`` prop.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: BottomSheet/inset.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: BottomSheet/inset.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: BottomSheet/inset.vue
 
 Model
 -----
 
-Bottom sheets can be controlled using ``v_model``. You can use it to close them or if you can't use ``activator`` slot.
+The **v-model** (or **model-value**) controls the visibility of the bottom sheet:
+
+
+
+This also works in tandem with the :py:class:`pyvuetify.BottomSheet` slot.
 
 .. tab-set::
 
@@ -61,26 +43,47 @@ Bottom sheets can be controlled using ``v_model``. You can use it to close them 
 
         .. literalinclude:: BottomSheet/model.vue
 
-Persistent
-----------
 
-Persistent bottom sheets can't be closed by clicking outside them.
+Inset
+-----
+
+With the **inset** prop, reduce the maximum width of the content area on desktop to 70%. This can be further reduced manually using the **width** prop.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: BottomSheet/persistent.py
+        .. jupyter-execute:: BottomSheet/inset.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: BottomSheet/persistent.py
+        .. literalinclude:: BottomSheet/inset.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: BottomSheet/persistent.vue
+        .. literalinclude:: BottomSheet/inset.vue
+
+
+Slots
+-----
+
+The :py:class:`pyvuetify.BottomSheet` component has access to all of the slots available in :py:class:`pyvuetify.Dialog`.
+
+!:doc:`VBottomSheet <VBottomSheet>`
+
+| Slot         | Description                                         |
+|--------------|-----------------------------------------------------|
+| 1. Default   | The default slot                                    |
+| 2. Activator | The activator slot is used to open the bottom sheet |
+
+
+Examples
+--------
+
+The following are a collection of examples that demonstrate more advanced and real world use of the :py:class:`pyvuetify.BottomSheet` component.
+
 
 Music Player
 ------------
@@ -91,17 +94,18 @@ Using a inset bottom sheet, you can make practical components such as this simpl
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: BottomSheet/music_player.py
+        .. jupyter-execute:: BottomSheet/player.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: BottomSheet/music_player.py
+        .. literalinclude:: BottomSheet/player.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: BottomSheet/music_player.vue
+        .. literalinclude:: BottomSheet/player.vue
+
 
 Open In List
 ------------

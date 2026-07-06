@@ -1,0 +1,30 @@
+import pyvuetify as v
+
+v.Container(
+    children=[
+        v.Row(
+            children=[
+                v.Col(
+                    cols="12",
+                    sm="6",
+                    children=[
+                        v.ColorInput(
+                            hide_details="auto",
+                            pip_variant="tonal",
+                        ),
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    sm="6",
+                    children=[
+                        v.ColorInput(
+                            hide_details="auto",
+                            pip_variant="outlined",
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

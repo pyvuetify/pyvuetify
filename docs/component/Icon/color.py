@@ -1,28 +1,37 @@
 import pyvuetify as v
 
-icons = [
-    ("mdi-domain", "green darken-2"),
-    ("mdi-message-text", "blue darken-2"),
-    ("mdi-dialpad", "purple darken-2"),
-    ("mdi-email", "teal darken-2"),
-    ("mdi-call-split", "blue-grey darken-2"),
-    ("mdi-arrow-up-bold-box-outline", "orange darken-2"),
-]
-
-v.Layout(
-    class_="d-flex flex-row justify-space-evenly",
+v.Row(
+    class_="py-4 justify-space-around",
     children=[
-        v.Html(
-            tag="div",
-            class_="d-flex flex-grow-1 justify-center",
-            children=[
-                v.Icon(
-                    children=[icon_name],
-                    large=True,
-                    color=color,
-                )
-            ],
-        )
-        for icon_name, color in icons
+        v.Icon(
+            color="green-darken-2",
+            icon="mdi-domain",
+            size="large",
+        ),
+        v.Icon(
+            color="blue-darken-2",
+            icon="mdi-message-text",
+            size="large",
+        ),
+        v.Icon(
+            color="purple-darken-2",
+            icon="mdi-dialpad",
+            size="large",
+        ),
+        v.Icon(
+            color="teal-darken-2",
+            icon="mdi-email",
+            size="large",
+        ),
+        v.Icon(
+            color="blue-grey-darken-2",
+            icon="mdi-call-split",
+            size="large",
+        ),
+        v.Icon(
+            color="orange-darken-2",
+            icon="mdi-arrow-up-bold-box-outline",
+            size="large",
+        ),
     ],
 )

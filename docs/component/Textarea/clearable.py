@@ -4,10 +4,10 @@ v.Container(
     fluid=True,
     children=[
         v.Textarea(
-            clearable=True,
             clear_icon="mdi-close-circle",
             label="Text",
-            value="This is clearable text.",
-        )
+            model_value="This is clearable text.",
+            clearable=True,
+        ),
     ],
 )

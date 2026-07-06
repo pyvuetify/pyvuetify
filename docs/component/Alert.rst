@@ -3,239 +3,129 @@ Alert
 
 
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/alerts/>`_.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/alerts/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Alert <pyvuetify.Alert>` component is used to convey important information to the user
-through the use of contextual types, icons, and colors. These default types come in 4 variations:
-``success``, ``info``, ``warning``, and ``error``. Default icons are assigned which help represent
-different actions each type portrays. Many parts of an alert such as ``border``, ``icon``, and ``color``
-can also be customized to fit almost any situation.
+The :py:class:`pyvuetify.Alert` component is used to convey important information to the user through the use of contextual types, icons, and colors.
 
 .. api::
 
-    :py:class:`pyvuetify.Alert`
+    - :py:class:`pyvuetify.Alert`: Primary Component
+    - :py:class:`pyvuetify.AlertTitle`: Sub-component used to display the ``v-alert`` title. Wraps the ``#title`` slot
 
-Usage
+Anatomy
+-------
+
+The recommended placement of elements inside of :py:class:`pyvuetify.Alert` is:
+
+* Place a :py:class:`pyvuetify.Icon` on the far left
+* Place :py:class:`pyvuetify.AlertTitle` to the right of the contextual icon
+* Place textual content below the title
+* Place closing actions to the far right
+
+
+
+.. list-table::
+   :header-rows: 1
+
+   * - Element / Area
+     - Description
+   * - 1. Container
+     - The Alert container holds all :py:class:`pyvuetify.Alert` components
+   * - 2. Icon
+     - An icon that correlates to the contextual state of the alert; **success, info, warning, error**
+   * - 3. Title
+     - A heading with increased font-size
+   * - 4. Text
+     - A content area for displaying text and other inline elements
+   * - 5. Close Icon (optional)
+     - Used to hide the :py:class:`pyvuetify.Alert` component
+
+
+
+Guide
 -----
 
-Alerts in their simplest form are flat sheets of paper that display a message.
+The :py:class:`pyvuetify.Alert` component is a callout element designed to attract the attention of a user. Unlike :doc:`Banner`, the :py:class:`pyvuetify.Alert` component is intended to be used and re-used throughout your application. An alert's color is derived from its **type** property which corresponds to your application's contextual `theme colors <https://vuetifyjs.com/features/theme/#custom-theme-colors>`__ and `iconfont aliases <https://vuetifyjs.com/features/icon-fonts/#creating-a-custom-icon-set>`__.
 
-.. jupyter-execute:: Alert/usage.py
-    :raises:
 
-Border
-------
+Props
+~~~~~
 
-The ``border`` prop adds a simple border to one of the 4 sides of the alert. This can be combined with
-props like ``color``, ``dark``, and ``type`` to provide unique accents to the alert.
+In addition to the standard :doc:`Sheet` properties such as elevation, dimension, and border-radius, the :py:class:`pyvuetify.Alert` component supports **v-model**, **variants**, and **density**.
 
-.. tab-set::
 
-    .. tab-item:: :fas:`eye` Rendered
+Content
+^^^^^^^
 
-        .. jupyter-execute:: Alert/border.py
-            :raises:
-            :hide-code:
+The :py:class:`pyvuetify.Alert` component supports simple content using the **title** and **text** props. This approach is best for strings that do not need custom styling.
 
-    .. tab-item:: :fab:`python` Python
+The following code snippet is an example of a basic :py:class:`pyvuetify.Alert` component only containing text:
 
-        .. literalinclude:: Alert/border.py
 
-    .. tab-item:: :fab:`vuejs` Vue template
+.. code-block:: html
 
-        .. literalinclude:: Alert/border.vue
+   <v-alert text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus..."></v-alert>
 
-Colored Border
---------------
 
-The ``colored-border`` prop removes the alert background in order to accent the ``border`` prop.
-If a ``type`` is set, it will use the type's default color. If no color or type is set, the color
-will default to the inverted color of the applied theme (black for light and white/gray for dark).
+Adding a title is as easy as defining its value. The next example adds a string title to accompany the content text:
+
+
+
+Notice how the alert does not have a color or icon. This is defined using the **type** property.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Alert/colored_border.py
+        .. jupyter-execute:: Alert/content.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Alert/colored_border.py
+        .. literalinclude:: Alert/content.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Alert/colored_border.vue
+        .. literalinclude:: Alert/content.vue
 
-Dense
------
-
-The ``dense`` prop decreases the height of the alert to create a simple and compact style.
-When combined with the ``border`` prop, the border thickness will be decreased to stay consistent
-with the style.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: Alert/dense.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: Alert/dense.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: Alert/dense.vue
-
-Dismissible
------------
-
-The ``dismissible`` prop adds a close button to the end of the alert component. Clicking this
-button will set its value to false and effectively hide the alert. You can restore the alert by
-binding ``v_model`` and setting it to true. The close icon automatically has an ``aria-label``
-applied that can be changed by modifying the ``close_label`` prop or changing close value in your
-locale.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: Alert/dismissible.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: Alert/dismissible.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: Alert/dismissible.vue
-
-Icon
-----
-
-The ``icon`` prop allows you to add an icon to the beginning of the alert component. If a ``type`` is
-provided, this will override the default type icon. Additionally, setting the ``icon`` prop to false
-will remove the icon altogether.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: Alert/icon.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: Alert/icon.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: Alert/icon.vue
-
-Outlined
---------
-
-The ``outlined`` prop inverts the style of an alert, inheriting the currently applied color, applying
-it to the text and border, and making its background transparent.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: Alert/outlined.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: Alert/outlined.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: Alert/outlined.vue
-
-Prominent
----------
-
-The ``prominent`` prop provides a more pronounced alert by increasing the height and applying a halo
-to the icon. When applying both ``prominent`` and ``dense`` together, the alert will take on the
-appearance of a normal alert but with the prominent icon effects.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: Alert/prominent.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: Alert/prominent.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: Alert/prominent.vue
-
-Text
-----
-
-The ``text`` prop is a simple alert variant that applies a reduced opacity background of the provided
-color. Similar to other styled props, ``text`` can be combined with other props like ``dense``,
-``prominent``, ``outlined``, and ``shaped`` to create a unique and customized component.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: Alert/text.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: Alert/text.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: Alert/text.vue
-
-Transition
-----------
-
-The ``transition`` prop allows you to apply a transition to the alert which is viewable when the
-component hides and shows.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: Alert/transition.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: Alert/transition.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: Alert/transition.vue
 
 Type
-----
+^^^^
 
-The ``type`` prop provides 4 default :py:class:`Alert <pyvuetify.Alert>` styles: success, info, warning, and error. Each of
-these styles provides a default icon and color. The default colors can be configured globally by
-customizing Vuetify's theme.
+Alerts have 4 contextual states: **success**, **info**, **warning**, and **error**. Each state has a default *color* and *icon* associated with it. When a **type** is not provided, the :py:class:`pyvuetify.Alert` component defaults to a greyish background.
+
+With a basic alert rendered, add your choice of contextual type. The following example puts the :py:class:`pyvuetify.Alert` component in a success state:
+
+
+
+##### Type reference
+
+.. list-table::
+   :header-rows: 1
+
+   * - Type
+     - Color
+     - Icon alias
+     - Icon
+   * - Success
+     - **success** { .text-success }
+     - $success
+     - 
+   * - Info
+     - **info** { .text-info }
+     - $info
+     - 
+   * - Warning
+     - **warning** { .text-warning }
+     - $warning
+     - 
+   * - Error
+     - **error** { .text-error }
+     - $error
+     - 
+
 
 .. tab-set::
 
@@ -253,33 +143,166 @@ customizing Vuetify's theme.
 
         .. literalinclude:: Alert/type.vue
 
-Twitter Example
----------------
 
-By combining ``color``, ``dismissible``, ``border``, ``elevation``, ``icon``, and ``colored_border``
-props, you can create stylish custom alerts such as this Twitter notification.
+Color and icon
+^^^^^^^^^^^^^^
+
+The **type** property acts as a shorthand for a **color** and **icon** combination, you can use both props individually to achieve the same effect. The following example produces the same result as using **type="success"** by defining a custom color and using the icon lookup table to get the globally defined success icon:
+
+
+.. code-block:: html
+
+   <v-alert
+     color="success"
+     icon="$success"
+     title="Alert title"
+     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus..."
+   ></v-alert>
+
+
+
+Density
+^^^^^^^
+
+The :py:class:`pyvuetify.Alert` component has the ability to reduce its height in intervals using the density prop. This is useful when you need to reduce the vertical space a component needs. The following example reduces the vertical space by using **density="compact"**:
+
+
+
+The **density** prop supports 3 levels of component height; **default**, **comfortable**, and **compact**.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Alert/twitter_example.py
+        .. jupyter-execute:: Alert/density.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Alert/twitter_example.py
+        .. literalinclude:: Alert/density.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Alert/twitter_example.vue
+        .. literalinclude:: Alert/density.vue
 
-Accessibility
--------------
 
-By default, :py:class:`Alert <pyvuetify.Alert>` components are assigned the WAI-ARIA role of alert
-which denotes that the alert "is a live region with important and usually time-sensitive information."
-When using the ``dismissible`` prop, the close icon will receive a corresponding ``aria-label``.
-This value can be modified by changing either the ``close-label`` prop or globally through customizing
-the Internationalization's default value for the close property.
+Variants
+^^^^^^^^
+
+The :py:class:`pyvuetify.Alert` has 6 style variants, **elevated**, **flat**, **tonal**, **outlined**, **text**, and **plain**. By default, the :py:class:`pyvuetify.Alert` component is **flat**; which means that it has a solid background and no box-shadow (elevation). The following example modifies the overall styling of the alert with a custom variant:
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Alert/variant.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Alert/variant.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Alert/variant.vue
+
+
+Closable
+^^^^^^^^
+
+The **closable** prop adds a :doc:`Icon` on the far right, after the main content. This control hides the :py:class:`pyvuetify.Alert` when clicked, setting it's internal model to **false**. Manually control the visibility of the alert by binding **v-model** or using **model-value**. The following example uses a dynamic model that shows and hides the :py:class:`pyvuetify.Alert` component:
+
+
+
+The close icon automatically applies a default ``aria-label`` and is configurable by using the **close-label** prop or changing **close** value in your locale.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Alert/closable.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Alert/closable.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Alert/closable.vue
+
+
+Additional Examples
+-------------------
+
+The following is a collection of :py:class:`pyvuetify.Alert` examples that demonstrate how different the properties work in an application.
+
+
+Border color
+~~~~~~~~~~~~
+
+The **border-color** prop removes the alert background in order to accent the **border** prop. If a **type** is set, it will use the type's default color. If no **color** or **type** is set, the color will default to the inverted color of the applied theme (black for light and white/gray for dark).
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Alert/border_color.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Alert/border_color.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Alert/border_color.vue
+
+
+Icon
+~~~~
+
+The **icon** prop allows you to add an icon to the beginning of the alert component. If a **type** is provided, this will override the default type icon. Additionally, setting the **icon** prop to *false* will remove the icon altogether.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Alert/icon.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Alert/icon.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Alert/icon.vue
+
+
+Outlined
+~~~~~~~~
+
+The **outlined** prop inverts the style of an alert, inheriting the currently applied **color**, applying it to the text and border, and making its background transparent.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Alert/outlined.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Alert/outlined.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Alert/outlined.vue
+

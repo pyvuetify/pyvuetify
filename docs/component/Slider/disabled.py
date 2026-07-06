@@ -1,3 +1,6 @@
 import pyvuetify as v
 
-v.Slider(disabled=True, label="Disabled", value=30)
+v.Slider(
+    model_value="30",
+    disabled=True,
+)

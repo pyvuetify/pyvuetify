@@ -1,29 +1,44 @@
 import pyvuetify as v
 
-items = [
-    (360, "teal"),
-    (-90, "primary"),
-    (90, "red"),
-    (180, "pink"),
-]
-
-v.Layout(
-    class_="d-flex flex-row justify-space-evenly my-2",
+v.Html(
+    tag="div",
+    class_="text-center",
     children=[
-        v.Html(
-            tag="div",
-            class_="d-flex flex-grow-1 justify-center",
-            children=[
-                v.ProgressCircular(
-                    rotate=angle,
-                    size=100,
-                    width=15,
-                    value=60,
-                    color=color,
-                    children=["60"],
-                )
-            ],
-        )
-        for angle, color in items
+        v.ProgressCircular(
+            # JS expression, needs manual conversion
+            model_value="value",
+            rotate=360,
+            size=100,
+            width=15,
+            color="teal",
+            children=["{{ value }}"],
+        ),
+        v.ProgressCircular(
+            # JS expression, needs manual conversion
+            model_value="value",
+            rotate=-90,
+            size=100,
+            width=15,
+            color="primary",
+            children=["{{ value }}"],
+        ),
+        v.ProgressCircular(
+            # JS expression, needs manual conversion
+            model_value="value",
+            rotate=90,
+            size=100,
+            width=15,
+            color="red",
+            children=["{{ value }}"],
+        ),
+        v.ProgressCircular(
+            # JS expression, needs manual conversion
+            model_value="value",
+            rotate=180,
+            size=100,
+            width=15,
+            color="pink",
+            children=["{{ value }}"],
+        ),
     ],
 )

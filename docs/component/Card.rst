@@ -1,114 +1,294 @@
 Card
 ====
 
-.. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Card documentation
-    <https://v2.vuetifyjs.com/en/components/cards/>`__. All examples have been converted
-    to pyvuetify syntax.
 
-The :py:class:`Card <pyvuetify.Card>` component is a versatile component that can
-be used for anything from a panel to a static image. The card component has numerous
-helper components to make markup as easy as possible. Components that have no listed
-options use Vue's functional component option for faster rendering and serve as markup
-sugar to make building easier.
+.. aknowledgement::
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/cards/>`__.
+    All examples have been converted to pyvuetify syntax.
+
+The :py:class:`pyvuetify.Card` component is a versatile and enhanced version of :doc:`Sheet <Sheet>` that provides a simple interface for headings, text, images, icons, and more.
 
 .. api::
 
-    - :py:class:`pyvuetify.Card`
-    - :py:class:`pyvuetify.CardTitle`
-    - :py:class:`pyvuetify.CardSubtitle`
-    - :py:class:`pyvuetify.CardText`
-    - :py:class:`pyvuetify.CardActions`
+    :py:class:`pyvuetify.Card`
 
-Usage
------
+Basics
+------
 
-A card has 4 basic components: :py:class:`CardTitle <pyvuetify.CardTitle>`,
-:py:class:`CardSubtitle <pyvuetify.CardSubtitle>`,
-:py:class:`CardText <pyvuetify.CardText>` and
-:py:class:`CardActions <pyvuetify.CardActions>`.
+There are three ways you can populate a :py:class:`pyvuetify.Card` with content. The first one is by using props, the second one is by slots, and the third one is by manually using the ``v-card-*`` components.
 
-.. jupyter-execute:: Card/usage.py
-    :raises:
 
-Functional Components
----------------------
 
-``CardActions``
-^^^^^^^^^^^^^^^
-
-The container used for placing **actions** for a card, such as :py:class:`Btn <pyvuetify.Btn>`
-or :py:class:`Menu <pyvuetify.Menu>`. Also applies special margin to buttons so that
-they properly line up with other card content areas.
-
-``CardSubtitle``
-^^^^^^^^^^^^^^^^
-
-Provides a default **font-size** and **padding** for card subtitles. Font-size can be
-overwritten with `typography classes <https://v2.vuetifyjs.com/en/styles/text-and-typography/>`__.
-
-``CardText``
-^^^^^^^^^^^^
-
-Primarily used for **text content** in a card. Applies padding for text, reduces its
-font-size to .875rem.
-
-``CardTitle``
-^^^^^^^^^^^^^
-
-Provides a default **font-size** and **padding** for card titles. Font-size can be
-overwritten with `typography classes <https://v2.vuetifyjs.com/en/styles/typography/>`__.
-
-Loading
--------
-
-Cards can be set to a loading state when processing a user action. This disables
-further actions and provides visual feedback with an indeterminate
-:py:class:`ProgressLinear <pyvuetify.ProgressLinear>`.
+Props give you an easy interface to display text-only content. They can also be used to easily render images and icons. Use slots if you need to render more complex content. If you need full control over the content, use markup.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Card/loading.py
+        .. jupyter-execute:: Card/basics_content.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Card/loading.py
+        .. literalinclude:: Card/basics_content.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Card/loading.vue
+        .. literalinclude:: Card/basics_content.vue
 
-Outlined
+
+Combined
 --------
 
-An ``outlined`` card has 0 elevation and contains a soft border.
+In some cases it is possible to combine the different options, like the example below where props, slots and markup have all been used.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Card/outlined.py
+        .. jupyter-execute:: Card/basics_combine.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Card/outlined.py
+        .. literalinclude:: Card/basics_combine.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Card/outlined.vue
+        .. literalinclude:: Card/basics_combine.vue
+
+
+Props
+-----
+
+The :py:class:`pyvuetify.Card` component has a variety of props that allow you to customize its appearance and behavior.
+
+
+Variants
+--------
+
+The **variant** prop gives you easy access to several different card styles. Available variants are: **elevated**(default), **flat**, **tonal**, **outlined**, **text**, and **plain**.
+
+| Value        | Description                                                 |
+|--------------|-------------------------------------------------------------|
+| **elevated** | Elevates the card with a shadow                             |
+| **flat**     | Removes card shadow and border                              |
+| **tonal**    | Background color is a lowered opacity of the color          |
+| **outlined** | Applies a thin border and card has zero elevation           |
+| **text**     | Removes the background and removes shadow                   |
+| **plain**    | Removes the background and lowers the opacity until hovered |
+
+
+
+
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/variant.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/variant.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/variant.vue
+
+
+Color
+-----
+
+Cards can be colored by using any of the builtin colors and contextual names using the **color** prop.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/color.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/color.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/color.vue
+
+
+Elevation
+---------
+
+The **elevation** property provides up to 24 levels of shadow depth. By default, cards rest at 2dp.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/elevation.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/elevation.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/elevation.vue
+
+
+Hover
+-----
+
+When using the **hover** prop, the cards will increase its elevation when the mouse is hovered over them.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/hover.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/hover.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/hover.vue
+
+
+Href
+----
+
+The card becomes an anchor with the **href** prop.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/href.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/href.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/href.vue
+
+
+Link
+----
+
+Add the **link** prop for the same style without adding an anchor.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/link.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/link.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/link.vue
+
+
+Disabled
+--------
+
+The **disabled** prop can be added in order to prevent a user from interacting with the card.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/disabled.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/disabled.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/disabled.vue
+
+
+Image
+-----
+
+Apply a specific background image to the Card.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/image.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/image.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/image.vue
+
+
+Slots
+-----
+
+The :py:class:`pyvuetify.Card` component provides slots that enable you to customize content created by its props or to add additional content.
+
+Slots give you greater control to customize the content of the :py:class:`pyvuetify.Card` component while still taking advantage of the easy-to-use props.
+
+
+Avatar and icon
+---------------
+
+You can use the **prepend-avatar**, **append-avatar**, **prepend-icon** and **append-icon** props or the **prepend** and **append** slots to place a :doc:`Icon <Icon>` that automatically injects the designated icon.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/prepend_append.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/prepend_append.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/prepend_append.vue
+
 
 Card Reveal
 -----------
 
-Using :py:class:`ExpandTransition <pyvuetify.ExpandTransition>` and a ``click``
-event you can have a card that reveals more information once the button is clicked,
-activating the hidden card to be revealed.
+Using :py:class:`pyvuetify.ExpandTransition` and a ``@click`` event you can have a card that reveals more information once the button is clicked, activating the hidden card to be revealed.
 
 .. tab-set::
 
@@ -126,10 +306,11 @@ activating the hidden card to be revealed.
 
         .. literalinclude:: Card/card_reveal.vue
 
-Content Wrapping
+
+Content wrapping
 ----------------
 
-The ``v-card`` component is useful for wrapping content.
+The :py:class:`pyvuetify.Card` component is useful for wrapping content.
 
 .. tab-set::
 
@@ -147,10 +328,15 @@ The ``v-card`` component is useful for wrapping content.
 
         .. literalinclude:: Card/content_wrapping.vue
 
-Custom Actions
+
+Custom actions
 --------------
 
 With a simple conditional, you can easily add supplementary text that is hidden until opened.
+
+
+
+
 
 .. tab-set::
 
@@ -168,10 +354,11 @@ With a simple conditional, you can easily add supplementary text that is hidden 
 
         .. literalinclude:: Card/custom_actions.vue
 
+
 Grids
 -----
 
-Using grids, you can create beautiful layouts.
+Using :doc:`Grid <Grid>`, you can create beautiful layouts.
 
 .. tab-set::
 
@@ -189,12 +376,11 @@ Using grids, you can create beautiful layouts.
 
         .. literalinclude:: Card/grids.vue
 
-Horizontal Cards
+
+Horizontal cards
 ----------------
 
-Using :py:class:`Col <pyvuetify.Col>`, you can create customized horizontal cards.
-Use the ``contain`` property to shrink the :py:class:`Img <pyvuetify.Img>` to fit inside the container,
-instead of covering.
+You can also play with the card layout using `layout flex <https://vuetifyjs.com/styles/flex/>`__.
 
 .. tab-set::
 
@@ -212,7 +398,8 @@ instead of covering.
 
         .. literalinclude:: Card/horizontal_cards.vue
 
-Information Card
+
+Information card
 ----------------
 
 Cards are entry points to more detailed information. To keep things concise, ensure to limit the number of actions the user can take.
@@ -233,7 +420,8 @@ Cards are entry points to more detailed information. To keep things concise, ens
 
         .. literalinclude:: Card/information_card.vue
 
-Media with Text
+
+Media with text
 ---------------
 
 Using the layout system, we can add custom text anywhere within the background.
@@ -254,14 +442,11 @@ Using the layout system, we can add custom text anywhere within the background.
 
         .. literalinclude:: Card/media_with_text.vue
 
-Twitter Card
+
+Twitter card
 ------------
 
-The :py:class:`Card <pyvuetify.Card>` component has multiple children components
-that help you build complex examples without having to worry about spacing. This
-example is comprised of the :py:class:`CardTitle <pyvuetify.CardTitle>`,
-:py:class:`CardText <pyvuetify.CardText>` and
-:py:class:`CardActions <pyvuetify.CardActions>` components.
+The :py:class:`pyvuetify.Card` component has multiple children components that help you build complex examples without having to worry about spacing. This example is comprised of the :py:class:`pyvuetify.CardTitle`, :py:class:`pyvuetify.CardText` and :py:class:`pyvuetify.CardActions` components.
 
 .. tab-set::
 
@@ -279,13 +464,11 @@ example is comprised of the :py:class:`CardTitle <pyvuetify.CardTitle>`,
 
         .. literalinclude:: Card/twitter_card.vue
 
-Weather Card
+
+Weather card
 ------------
 
-Using :py:class:`ListItem <pyvuetify.ListItem>` and a :py:class:`Slider <pyvuetify.Slider>`,
-we are able to create a unique weather card. The list components ensure that we have
-consistent spacing and functionality while the slider component allows us to provide
-a useful interface of selection to the user.
+Using :doc:`List <List>` and a :doc:`Slider <Slider>`, we are able to create a unique weather card. The list components ensure that we have consistent spacing and functionality while the slider component allows us to provide a useful interface of selection to the user.
 
 .. tab-set::
 
@@ -302,4 +485,70 @@ a useful interface of selection to the user.
     .. tab-item:: :fab:`vuejs` Vue template
 
         .. literalinclude:: Card/weather_card.vue
+
+
+Loading
+-------
+
+Use an indeterminate :doc:`ProgressLinear <ProgressLinear>` to indicate a loading state.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/loading.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/loading.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/loading.vue
+
+
+Earnings goal
+-------------
+
+This example utilizes slots to customize the appearance of the different content areas.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/earnings_goal.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/earnings_goal.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/earnings_goal.vue
+
+
+Funding card
+------------
+
+Utilize a combination of Card properties and utility classes to create a unique funding card.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Card/shopify_funding.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Card/shopify_funding.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Card/shopify_funding.vue
 

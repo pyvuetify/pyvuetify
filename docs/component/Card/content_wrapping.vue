@@ -1,46 +1,101 @@
 <template>
-  <v-container>
-    <v-row justify="space-around">
-      <v-card width="400">
-        <v-img
-          height="200px"
-          src="https://cdn.vuetifyjs.com/docs/images/cards/purple-flowers.jpg"
+  <v-card class="mx-auto" max-width="400">
+    <v-img
+      color="surface-variant"
+      height="200"
+      src="https://cdn.vuetifyjs.com/docs/images/cards/purple-flowers.jpg"
+      cover
+    >
+      <v-toolbar color="transparent">
+        <template v-slot:prepend>
+          <v-btn icon="$menu"></v-btn>
+        </template>
+
+        <v-toolbar-title
+          class="text-title-large"
+          text="Messages"
+        ></v-toolbar-title>
+
+        <template v-slot:append>
+          <v-btn icon="mdi-dots-vertical"></v-btn>
+        </template>
+      </v-toolbar>
+    </v-img>
+
+    <v-card-text>
+      <div class="font-weight-bold ms-1 mb-2">Today</div>
+
+      <v-timeline align="start" density="compact">
+        <v-timeline-item
+          v-for="message in messages"
+          :key="message.time"
+          :dot-color="message.color"
+          size="x-small"
         >
-          <v-app-bar flat color="rgba(0, 0, 0, 0)">
-            <v-app-bar-nav-icon color="white"></v-app-bar-nav-icon>
+          <div class="mb-4">
+            <div class="font-weight-normal">
+              <strong>{{ message.from }}</strong> @{{ message.time }}
+            </div>
 
-            <v-toolbar-title class="text-h6 white--text pl-0">
-              Messages
-            </v-toolbar-title>
-
-            <v-spacer></v-spacer>
-
-            <v-btn color="white" icon>
-              <v-icon>mdi-dots-vertical</v-icon>
-            </v-btn>
-          </v-app-bar>
-        </v-img>
-
-        <v-card-text>
-          <div class="font-weight-bold ml-8 mb-2">Today</div>
-
-          <v-timeline align-top dense>
-            <v-timeline-item
-              v-for="message in messages"
-              :key="message.time"
-              :color="message.color"
-              small
-            >
-              <div>
-                <div class="font-weight-normal">
-                  <strong>{{ message.from }}</strong> @{{ message.time }}
-                </div>
-                <div>{{ message.message }}</div>
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
-      </v-card>
-    </v-row>
-  </v-container>
+            <div>{{ message.message }}</div>
+          </div>
+        </v-timeline-item>
+      </v-timeline>
+    </v-card-text>
+  </v-card>
 </template>
+
+<script setup>
+const messages = [
+  {
+    from: "You",
+    message: `Sure, I'll see you later.`,
+    time: "10:42am",
+    color: "deep-purple-lighten-1",
+  },
+  {
+    from: "John Doe",
+    message: "Yeah, sure. Does 1:00pm work?",
+    time: "10:37am",
+    color: "green",
+  },
+  {
+    from: "You",
+    message: "Did you still want to grab lunch today?",
+    time: "9:47am",
+    color: "deep-purple-lighten-1",
+  },
+];
+</script>
+
+<script>
+export default {
+  data: () => ({
+    messages: [
+      {
+        from: "You",
+        message: `Sure, I'll see you later.`,
+        time: "10:42am",
+        color: "deep-purple-lighten-1",
+      },
+      {
+        from: "John Doe",
+        message: "Yeah, sure. Does 1:00pm work?",
+        time: "10:37am",
+        color: "green",
+      },
+      {
+        from: "You",
+        message: "Did you still want to grab lunch today?",
+        time: "9:47am",
+        color: "deep-purple-lighten-1",
+      },
+    ],
+  }),
+};
+</script>
+<example-meta lang="json">
+{
+  "figma": "https://www.figma.com/design/5f4g4pbbBsk9TTWX4Xvlx1/PRO-v3.0---Official-Vuetify-3-UI-Kit?node-id=1514-95995&t=tWnPBMI0RfGlNRgq-4"
+}
+</example-meta>

@@ -1,0 +1,48 @@
+import pyvuetify as v
+
+v.Html(
+    tag="div",
+    class_="d-flex justify-space-around",
+    children=[
+        v.Btn(
+            children=[
+                "Start",
+                v.Tooltip(
+                    activator="parent",
+                    location="start",
+                    children=["Tooltip"],
+                ),
+            ],
+        ),
+        v.Btn(
+            children=[
+                "End",
+                v.Tooltip(
+                    activator="parent",
+                    location="end",
+                    children=["Tooltip"],
+                ),
+            ],
+        ),
+        v.Btn(
+            children=[
+                "Top",
+                v.Tooltip(
+                    activator="parent",
+                    location="top",
+                    children=["Tooltip"],
+                ),
+            ],
+        ),
+        v.Btn(
+            children=[
+                "Bottom",
+                v.Tooltip(
+                    activator="parent",
+                    location="bottom",
+                    children=["Tooltip"],
+                ),
+            ],
+        ),
+    ],
+)

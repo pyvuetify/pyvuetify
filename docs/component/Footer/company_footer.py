@@ -1,30 +1,27 @@
-from datetime import datetime as dt
-
 import pyvuetify as v
 
 v.Footer(
-    color="primary",
-    padless=True,
+    class_="d-flex align-center justify-center ga-2 flex-wrap flex-grow-1 py-3",
+    color="surface-light",
     children=[
-        v.Col(
-            class_="text-center",
-            justify_center=True,
-            no_gutters=True,
-            children=[
-                v.Btn(
-                    color="white",
-                    text=True,
-                    rounded=True,
-                    class_="my-2 d-inline",
-                    children=[link.title()],
-                )
-                for link in ["home", "about us", "services", "contact"]
-            ],
+        v.Btn(
+            # JS expression, needs manual conversion
+            key="link",
+            # JS expression, needs manual conversion
+            text="link",
+            variant="text",
+            rounded=True,
         ),
-        v.Col(
-            class_="primary py-4 text-center white--text",
-            cols="12",
-            children=[f"{dt.now().year} — ", v.Html(tag="strong", children=["Vuetify"])],
+        v.Html(
+            tag="div",
+            class_="flex-1-0-100 text-center mt-2",
+            children=[
+                "{{ new Date().getFullYear() }} —",
+                v.Html(
+                    tag="strong",
+                    children=["Vuetify"],
+                ),
+            ],
         ),
     ],
 )

@@ -1,82 +1,101 @@
 ItemGroup
 =========
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Item groups
-    documentation <https://v2.vuetifyjs.com/en/components/item-groups/>`__.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/item-groups/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`ItemGroup <pyvuetify.ItemGroup>` provides the ability to create
-a group of selectable items out of any component. This is the baseline
-functionality for components such as :py:class:`Tabs <pyvuetify.Tabs>` and
-:py:class:`Carousel <pyvuetify.Carousel>`.
+The :py:class:`pyvuetify.ItemGroup` provides the ability to create a group of selectable items out of any component. This is the baseline functionality for components such as :py:class:`pyvuetify.Tabs` and :py:class:`pyvuetify.Carousel`.
 
 .. api::
 
-    - :py:class:`pyvuetify.ItemGroup`
-    - :py:class:`pyvuetify.Item`
+    :py:class:`pyvuetify.ItemGroup`
 
-Usage
------
+Selected class
+--------------
 
-The core usage of the :py:class:`ItemGroup <pyvuetify.ItemGroup>` is to create
-groups of anything that should be controlled by a model.
+The **selected-class** prop allows you to designate a CSS class applied to *selected* items.
 
-.. todo::
+.. tab-set::
 
-    The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of pyvuetify.
+    .. tab-item:: :fas:`eye` Rendered
 
-Examples
---------
+        .. jupyter-execute:: ItemGroup/selected_class.py
+            :raises:
+            :hide-code:
 
-Active class
-^^^^^^^^^^^^
+    .. tab-item:: :fab:`python` Python
 
-The ``active-class`` property allows you to set custom CSS class on active
-items.
+        .. literalinclude:: ItemGroup/selected_class.py
 
-.. todo::
+    .. tab-item:: :fab:`vuejs` Vue template
 
-    The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of pyvuetify.
+        .. literalinclude:: ItemGroup/selected_class.vue
+
 
 Mandatory
-^^^^^^^^^
+---------
 
-``mandatory`` item groups must have at least 1 item selected.
+**mandatory** item groups must have at least 1 item selected.
 
-.. todo::
+.. tab-set::
 
-    The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of pyvuetify.
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: ItemGroup/mandatory.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: ItemGroup/mandatory.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: ItemGroup/mandatory.vue
+
 
 Multiple
-^^^^^^^^
+--------
 
-Item groups can have multiple items selected.
+Item groups can have **multiple** items selected.
 
-.. todo::
+.. tab-set::
 
-    The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of pyvuetify.
-Chips
-^^^^^
+    .. tab-item:: :fas:`eye` Rendered
 
-Easily hook up a custom chip group.
+        .. jupyter-execute:: ItemGroup/multiple.py
+            :raises:
+            :hide-code:
 
-.. todo::
+    .. tab-item:: :fab:`python` Python
 
-    The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of pyvuetify.
+        .. literalinclude:: ItemGroup/multiple.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: ItemGroup/multiple.vue
+
 
 Selection
-^^^^^^^^^
+---------
 
-Icons can be used as toggle buttons when they allow selection, or deselection,
-of a single choice, such as marking an item as a favorite.
+Icons can be used as toggle buttons when they allow selection, or deselection, of a single choice, such as marking an item as a favorite.
 
-.. todo::
+.. tab-set::
 
-    The itemGroup object rely on the use of the @click event and trigger it with a slo variable
-    called item. It's not possible with the current implementation of pyvuetify.
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: ItemGroup/selection.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: ItemGroup/selection.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: ItemGroup/selection.vue
+

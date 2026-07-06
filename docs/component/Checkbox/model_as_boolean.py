@@ -1,8 +1,17 @@
 import pyvuetify as v
 
-checkbox1 = v.Checkbox(v_model=True, label="Checkbox 1")
-checkbox2 = v.Checkbox(v_model=False, label="Checkbox 2")
-checkbox1.label = "Checked" if checkbox1.v_model else "Unchecked"
-checkbox2.label = "Checked" if checkbox2.v_model else "Unchecked"
-
-v.Container(children=[checkbox1, checkbox2])
+v.Container(
+    fluid=True,
+    children=[
+        v.Checkbox(
+            v_model="checkbox1",
+            # JS expression, needs manual conversion
+            label="`Checkbox 1: ${checkbox1.toString()}`",
+        ),
+        v.Checkbox(
+            v_model="checkbox2",
+            # JS expression, needs manual conversion
+            label="`Checkbox 2: ${checkbox2.toString()}`",
+        ),
+    ],
+)

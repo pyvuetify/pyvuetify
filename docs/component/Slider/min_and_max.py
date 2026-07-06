@@ -1,14 +1,26 @@
 import pyvuetify as v
 
-v.Col(
-    class_="mx-1 mt-2",
+v.Slider(
+    v_model="slider",
+    # JS expression, needs manual conversion
+    max="max",
+    # JS expression, needs manual conversion
+    min="min",
+    class_="align-center",
+    hide_details=True,
     children=[
-        v.Slider(
-            class_="mt-5",
-            v_model=-10,
-            thumb_label="always",
-            max=200,
-            min=-100,
+        v.Html(
+            tag="template",
+            children=[
+                v.TextField(
+                    v_model="slider",
+                    density="compact",
+                    style_="width: 70px",
+                    type="number",
+                    hide_details=True,
+                    single_line=True,
+                ),
+            ],
         ),
     ],
 )

@@ -4,8 +4,10 @@ v.Html(
     tag="div",
     children=[
         v.TextField(
-            label="Main input",
+            # JS expression, needs manual conversion
+            rules="rules",
             hide_details="auto",
+            label="Main input",
         ),
         v.TextField(label="Another input"),
     ],

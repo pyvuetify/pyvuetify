@@ -1,70 +1,101 @@
 Hover
 =====
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Hover documentation
-    <https://v2.vuetifyjs.com/en/components/hover/>`__.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/hover/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Hover <pyvuetify.Hover>` component provides a clean interface for
-handling hover states for any component.
+The :py:class:`pyvuetify.Hover` component provides a simple interface for handling hover states for any component.
 
 .. api::
 
     :py:class:`pyvuetify.Hover`
 
-Usage
------
-
-The :py:class:`Hover <pyvuetify.Hover>` component is a wrapper that should contain
-only one child element, and can trigger an event when hovered over. In order for
-:py:class:`Hover <pyvuetify.Hover>` to work properly, either the value prop should
-be set to ``true`` or the wrapped element should contain ``v-slot="{ wrapper }"``.
-
-.. todo::
-
-    I don't understand how to use the slot syntax here. Please help me improve this section.
-
-Examples
+Disabled
 --------
 
-Disabled
-^^^^^^^^
+Use the **disabled** prop to pause hover tracking. When re-enabled, the value updates to reflect the cursor's current position.
 
-The ``disabled`` prop disables the hover functionality.
+.. tab-set::
 
-.. todo::
+    .. tab-item:: :fas:`eye` Rendered
 
-    I don't understand how to use the slot syntax here. Please help me improve this section.
+        .. jupyter-execute:: Hover/disabled.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Hover/disabled.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Hover/disabled.vue
+
 
 Open and close delay
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
-Delay :py:class:`Hover <pyvuetify.Hover>` events by using ``open-delay`` and
-``close-delay`` props in combination or separately.
+Delay :py:class:`pyvuetify.Hover` events by using **open-delay** and **close-delay** props in combination or separately.
 
-.. todo::
+.. tab-set::
 
-    I don't understand how to use the slot syntax here. Please help me improve
-    this section.
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Hover/open_and_close_delay.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Hover/open_and_close_delay.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Hover/open_and_close_delay.vue
+
 
 Hover list
-^^^^^^^^^^
+----------
 
-:py:class:`Hover <pyvuetify.Hover>` can be used in combination with ``v-for``
-to make a single item stand out when the user interacts with the list.
+:py:class:`pyvuetify.Hover` can be used in combination with :py:class:`pyvuetify.For` to make a single item stand out when the user interacts with the list.
 
-.. todo::
+.. tab-set::
 
-    I don't understand how to use the slot syntax here. Please help me improve
-    this section.
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Hover/hover_list.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Hover/hover_list.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Hover/hover_list.vue
+
 
 Transition
-^^^^^^^^^^
+----------
 
 Create highly customized components that respond to user interaction.
 
-.. todo::
+.. tab-set::
 
-    I don't understand how to use the slot syntax here. Please help me improve
-    this section.
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Hover/transition.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Hover/transition.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Hover/transition.vue
+

@@ -1,3 +1,3 @@
 <template>
-  <v-file-input label="File input" outlined dense></v-file-input>
+  <v-file-input density="compact" label="File input"></v-file-input>
 </template>

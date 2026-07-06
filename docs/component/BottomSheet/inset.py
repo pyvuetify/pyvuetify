@@ -1,33 +1,37 @@
 import pyvuetify as v
 
-close_btn = v.Btn(class_="mt-6", text=True, color="error", children=["close"])
-
-bottom_sheet = v.BottomSheet(
-    v_model=False,
-    inset=True,
-    v_slots=[
-        {
-            "name": "activator",
-            "variable": "x",
-            "children": v.Btn(color="orange", dark=True, children=["Open Inset"]),
-        }
-    ],
+v.Html(
+    tag="div",
+    class_="text-center pa-8",
     children=[
-        v.Sheet(
-            class_="text-center",
-            height="200px",
+        v.Btn(
+            class_="ma-auto",
+            size="x-large",
+            text="Click Me",
+        ),
+        v.BottomSheet(
+            v_model="sheet",
+            inset=True,
             children=[
-                close_btn,
-                v.Html(
-                    tag="div",
-                    class_="my-3",
-                    children=["This is a bottom sheet using the inset prop"],
+                v.Card(
+                    class_="text-center",
+                    height="200",
+                    children=[
+                        v.CardText(
+                            children=[
+                                v.Btn(
+                                    text="Close",
+                                    variant="text",
+                                ),
+                                v.Html(
+                                    tag="div",
+                                    children=["This is a bottom sheet that is using the inset prop"],
+                                ),
+                            ],
+                        ),
+                    ],
                 ),
             ],
-        )
+        ),
     ],
 )
-
-close_btn.on_event("click", lambda *args: setattr(bottom_sheet, "v_model", False))
-
-v.Container(class_="text-center", children=[bottom_sheet])

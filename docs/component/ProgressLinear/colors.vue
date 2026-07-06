@@ -1,21 +1,21 @@
 <template>
   <div>
     <v-progress-linear
-      background-color="pink lighten-3"
-      color="pink lighten-1"
-      value="15"
+      bg-color="pink-lighten-3"
+      color="pink-lighten-1"
+      model-value="15"
     ></v-progress-linear>
     <br />
     <v-progress-linear
-      background-color="blue-grey"
+      bg-color="blue-grey"
       color="lime"
-      value="30"
+      model-value="30"
     ></v-progress-linear>
     <br />
     <v-progress-linear
-      background-color="success"
+      bg-color="success"
       color="error"
-      value="45"
+      model-value="45"
     ></v-progress-linear>
   </div>
 </template>

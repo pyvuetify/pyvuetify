@@ -1,19 +1,22 @@
 import pyvuetify as v
 
-colors = [
-    ("pink lighten-1", "pink lighten-3"),
-    ("lime", "blue-grey"),
-    ("error", "success"),
-]
-
-v.Col(
+v.Html(
+    tag="div",
     children=[
         v.ProgressLinear(
-            class_="my-3 mx-1",
-            background_color=bg,
-            color=c,
-            v_model=(i + 1) * 15,
-        )
-        for i, (c, bg) in enumerate(colors)
-    ]
+            bg_color="pink-lighten-3",
+            color="pink-lighten-1",
+            model_value="15",
+        ),
+        v.ProgressLinear(
+            bg_color="blue-grey",
+            color="lime",
+            model_value="30",
+        ),
+        v.ProgressLinear(
+            bg_color="success",
+            color="error",
+            model_value="45",
+        ),
+    ],
 )

@@ -1,54 +1,100 @@
 <template>
-  <v-card class="mx-auto overflow-hidden" height="400" width="344">
-    <v-system-bar color="deep-purple darken-3"></v-system-bar>
+  <v-card>
+    <v-layout>
+      <v-app-bar color="primary">
+        <v-app-bar-nav-icon
+          variant="text"
+          @click.stop="drawer = !drawer"
+        ></v-app-bar-nav-icon>
 
-    <v-app-bar color="deep-purple accent-4" dark prominent>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-toolbar-title>My files</v-toolbar-title>
 
-      <v-toolbar-title>My files</v-toolbar-title>
+        <template v-if="$vuetify.display.mdAndUp">
+          <v-btn icon="mdi-magnify" variant="text"></v-btn>
 
-      <v-spacer></v-spacer>
+          <v-btn icon="mdi-filter" variant="text"></v-btn>
+        </template>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+        <v-btn icon="mdi-dots-vertical" variant="text"></v-btn>
+      </v-app-bar>
 
-      <v-btn icon>
-        <v-icon>mdi-filter</v-icon>
-      </v-btn>
+      <v-navigation-drawer
+        v-model="drawer"
+        :location="$vuetify.display.mobile ? 'bottom' : undefined"
+        temporary
+      >
+        <v-list :items="items"></v-list>
+      </v-navigation-drawer>
 
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-navigation-drawer v-model="drawer" absolute bottom temporary>
-      <v-list nav dense>
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-list-item>
-            <v-list-item-title>Foo</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Bar</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Fizz</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Buzz</v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-card-text>
-      The navigation drawer will appear from the bottom on smaller size screens.
-    </v-card-text>
+      <v-main style="height: 500px">
+        <v-card-text>
+          The navigation drawer will appear from the bottom on smaller size
+          screens.
+        </v-card-text>
+      </v-main>
+    </v-layout>
   </v-card>
 </template>
+
+<script setup>
+import { ref, watch } from "vue";
+
+const items = [
+  {
+    title: "Foo",
+    value: "foo",
+  },
+  {
+    title: "Bar",
+    value: "bar",
+  },
+  {
+    title: "Fizz",
+    value: "fizz",
+  },
+  {
+    title: "Buzz",
+    value: "buzz",
+  },
+];
+
+const drawer = ref(false);
+const group = ref(null);
+
+watch(group, () => {
+  drawer.value = false;
+});
+</script>
+
+<script>
+export default {
+  data: () => ({
+    drawer: false,
+    group: null,
+    items: [
+      {
+        title: "Foo",
+        value: "foo",
+      },
+      {
+        title: "Bar",
+        value: "bar",
+      },
+      {
+        title: "Fizz",
+        value: "fizz",
+      },
+      {
+        title: "Buzz",
+        value: "buzz",
+      },
+    ],
+  }),
+
+  watch: {
+    group() {
+      this.drawer = false;
+    },
+  },
+};
+</script>

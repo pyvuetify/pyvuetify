@@ -1,93 +1,65 @@
 import pyvuetify as v
 
-items = [
-    {
-        "action": "15 min",
-        "headline": "Brunch this weekend?",
-        "subtitle": "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?",
-        "title": "Ali Connors",
-    },
-    {
-        "action": "2 hr",
-        "headline": "Summer BBQ",
-        "subtitle": "Wish I could come, but I'm out of town this weekend.",
-        "title": "me, Scrott, Jennifer",
-    },
-    {
-        "action": "6 hr",
-        "headline": "Oui oui",
-        "subtitle": "Do you have Paris recommendations? Have you ever been?",
-        "title": "Sandra Adams",
-    },
-    {
-        "action": "12 hr",
-        "headline": "Birthday gift",
-        "subtitle": "Have any ideas about what we should get Heidi for her birthday?",
-        "title": "Trevor Hansen",
-    },
-    {
-        "action": "18hr",
-        "headline": "Recipe to try",
-        "subtitle": "We should eat this: Grate, Squash, Corn, and tomatillo Tacos.",
-        "title": "Britta Holt",
-    },
-]
-
 v.Card(
-    class_="mx-auto my-2",
-    width=500,
+    class_="mx-auto",
+    max_width="500",
     children=[
         v.Toolbar(
             color="pink",
-            dark=True,
             children=[
-                v.AppBarNavIcon(),
+                v.Btn(icon="mdi-menu"),
                 v.ToolbarTitle(children=["Inbox"]),
-                v.Spacer(),
-                v.Btn(
-                    icon=True,
-                    children=[v.Icon(children=["mdi-magnify"])],
-                ),
-                v.Btn(
-                    icon=True,
-                    children=[v.Icon(children=["mdi-checkbox-marked-circle"])],
-                ),
+                v.Btn(icon="mdi-magnify"),
+                v.Btn(icon="mdi-checkbox-marked-circle"),
             ],
         ),
         v.List(
-            two_line=True,
+            v_model_selected="selected",
+            select_strategy="leaf",
             children=[
-                v.ListItemGroup(
-                    multiple=True,
-                    active_class="pink--text",
+                v.ListItem(
+                    # JS expression, needs manual conversion
+                    key="item.id",
+                    # JS expression, needs manual conversion
+                    value="item.id",
+                    active_class="text-pink",
+                    class_="py-3",
                     children=[
-                        v.ListItem(
-                            key=item["title"],
+                        v.ListItemTitle(children=["{{ item.title }}"]),
+                        v.ListItemSubtitle(
+                            class_="mb-1 text-high-emphasis opacity-100",
+                            children=["{{ item.headline }}"],
+                        ),
+                        v.ListItemSubtitle(
+                            class_="text-high-emphasis",
+                            children=["{{ item.subtitle }}"],
+                        ),
+                        v.Html(
+                            tag="template",
                             children=[
-                                v.ListItemContent(
-                                    children=[
-                                        v.ListItemTitle(children=[item["title"]]),
-                                        v.ListItemSubtitle(
-                                            class_="text--primary",
-                                            children=[item["headline"]],
-                                        ),
-                                        v.ListItemSubtitle(children=[item["subtitle"]]),
-                                    ]
-                                ),
                                 v.ListItemAction(
+                                    class_="flex-column align-end",
                                     children=[
-                                        v.ListItemActionText(children=[item["action"]]),
+                                        v.Html(
+                                            tag="small",
+                                            class_="mb-4 text-high-emphasis opacity-60",
+                                            children=["{{ item.action }}"],
+                                        ),
+                                        v.Spacer(),
                                         v.Icon(
-                                            color="grey lighten-1",
+                                            color="yellow-darken-3",
+                                            children=["mdi-star"],
+                                        ),
+                                        v.Icon(
+                                            class_="opacity-30",
                                             children=["mdi-star-outline"],
                                         ),
-                                    ]
+                                    ],
                                 ),
                             ],
-                        )
-                        for item in items
+                        ),
                     ],
-                )
+                ),
             ],
         ),
     ],

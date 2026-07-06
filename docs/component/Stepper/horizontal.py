@@ -1,0 +1,89 @@
+import pyvuetify as v
+
+v.Stepper(
+    v_model="step",
+    # JS expression, needs manual conversion
+    items="items",
+    show_actions=True,
+    children=[
+        v.Html(
+            tag="template",
+            children=[
+                v.Html(
+                    tag="h3",
+                    class_="text-title-large my-0",
+                    children=["Order"],
+                ),
+                v.Sheet(
+                    border=True,
+                    children=[
+                        v.Table(
+                            children=[
+                                v.Html(
+                                    tag="thead",
+                                    children=[
+                                        v.Html(
+                                            tag="tr",
+                                            children=[
+                                                v.Html(
+                                                    tag="th",
+                                                    children=["Description"],
+                                                ),
+                                                v.Html(
+                                                    tag="th",
+                                                    class_="text-end",
+                                                    children=["Quantity"],
+                                                ),
+                                                v.Html(
+                                                    tag="th",
+                                                    class_="text-end",
+                                                    children=["Price"],
+                                                ),
+                                            ],
+                                        ),
+                                    ],
+                                ),
+                                v.Html(
+                                    tag="tbody",
+                                    children=[
+                                        v.Html(
+                                            tag="tr",
+                                            # JS expression, needs manual conversion
+                                            key="index",
+                                            children=[
+                                                v.Html(tag="td"),
+                                                v.Html(
+                                                    tag="td",
+                                                    class_="text-end",
+                                                ),
+                                                v.Html(
+                                                    tag="td",
+                                                    class_="text-end",
+                                                ),
+                                            ],
+                                        ),
+                                        v.Html(
+                                            tag="tr",
+                                            children=[
+                                                v.Html(
+                                                    tag="th",
+                                                    children=["Total"],
+                                                ),
+                                                v.Html(tag="th"),
+                                                v.Html(
+                                                    tag="th",
+                                                    class_="text-end",
+                                                    children=["${{ subtotal }}"],
+                                                ),
+                                            ],
+                                        ),
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

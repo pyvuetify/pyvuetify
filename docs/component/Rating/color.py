@@ -1,15 +1,13 @@
 import pyvuetify as v
 
-colors = ["purple", "pink", "orange", "green", "red", "indigo"]
-
-v.Col(
+v.Html(
+    tag="div",
     class_="text-center",
     children=[
         v.Rating(
-            v_model=3,
-            background_color=f"{color} lighten-3",
-            color=color,
-        )
-        for color in colors
+            v_model="rating",
+            active_color="blue",
+            color="orange-lighten-1",
+        ),
     ],
 )

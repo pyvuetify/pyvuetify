@@ -1,0 +1,43 @@
+import pyvuetify as v
+
+v.Card(
+    class_="mx-auto",
+    max_width="360",
+    variant="flat",
+    border=True,
+    children=[
+        v.Layout(
+            children=[
+                v.SystemBar(
+                    class_="ga-1",
+                    color="surface-light",
+                    children=[
+                        v.Icon(
+                            icon="mdi-square",
+                            size="x-small",
+                        ),
+                        v.Icon(
+                            icon="mdi-circle",
+                            size="x-small",
+                        ),
+                        v.Icon(
+                            icon="mdi-triangle",
+                            size="x-small",
+                        ),
+                    ],
+                ),
+                v.AppBar(
+                    title="My Library",
+                    children=[
+                        v.Html(
+                            tag="template",
+                            children=[
+                                v.AppBarNavIcon(),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

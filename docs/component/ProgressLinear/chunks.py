@@ -1,0 +1,74 @@
+import pyvuetify as v
+
+v.Html(
+    tag="div",
+    children=[
+        v.ProgressLinear(
+            v_model="value",
+            chunk_width="4",
+            color="purple",
+            height="15",
+            rounded="lg",
+            clickable=True,
+        ),
+        v.ProgressLinear(
+            v_model="value",
+            chunk_gap="2",
+            chunk_width="50",
+            color="primary",
+            height="10",
+            clickable=True,
+            rounded=True,
+        ),
+        v.ProgressLinear(
+            v_model="value",
+            bg_color="#888",
+            chunk_count="50",
+            chunk_gap="3",
+            color="green",
+            height="25",
+            rounded="sm",
+            clickable=True,
+        ),
+        v.ProgressLinear(
+            v_model="value",
+            bg_color="#888",
+            chunk_count="15",
+            chunk_gap="6",
+            color="pink",
+            height="25",
+            rounded="sm",
+            clickable=True,
+        ),
+        v.Html(
+            tag="div",
+            class_="d-flex ga-2 align-center",
+            children=[
+                v.ProgressLinear(
+                    v_model="value",
+                    chunk_count="5",
+                    chunk_gap="9",
+                    color="indigo",
+                    height="25",
+                    rounded="sm",
+                    clickable=True,
+                    children=[
+                        v.Html(
+                            tag="small",
+                            class_="text-white",
+                            children=["{{ value.toFixed() }}%"],
+                        ),
+                    ],
+                ),
+                v.Btn(
+                    icon="mdi-skip-previous",
+                    size="x-small",
+                ),
+                v.Btn(
+                    icon="$complete",
+                    size="x-small",
+                ),
+            ],
+        ),
+    ],
+)

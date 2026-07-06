@@ -1,40 +1,42 @@
-from datetime import datetime as dt
-
 import pyvuetify as v
 
-icons = ["mdi-facebook", "mdi-twitter", "mdi-instagram", "mdi-linkedin"]
-
 v.Footer(
-    dark=True,
-    padless=True,
+    class_="d-flex flex-column",
+    color="teal",
+    rounded="lg",
     children=[
-        v.Card(
-            width="100%",
-            flat=True,
-            tile=True,
+        v.Html(
+            tag="div",
+            class_="d-flex w-100 align-center px-4 py-2",
             children=[
-                v.CardTitle(
-                    class_="teal",
+                v.Html(
+                    tag="strong",
+                    children=["Get connected with us on social networks!"],
+                ),
+                v.Html(
+                    tag="div",
+                    class_="d-flex ga-2 ms-auto",
                     children=[
-                        v.Html(
-                            tag="strong",
-                            class_="subheading",
-                            children=["Get connected with us on social networks!"],
+                        v.Btn(
+                            # JS expression, needs manual conversion
+                            key="icon",
+                            # JS expression, needs manual conversion
+                            icon="icon",
+                            size="small",
+                            variant="plain",
                         ),
-                        v.Spacer(),
-                        *[
-                            v.Btn(
-                                icon=True,
-                                class_="mx-4",
-                                children=[v.Icon(size="24px", children=[i])],
-                            )
-                            for i in icons
-                        ],
                     ],
                 ),
-                v.CardText(
-                    class_="py-2 white--text text-center",
-                    children=[f"{dt.now().year} — ", v.Html(tag="strong", children=["Vuetify"])],
+            ],
+        ),
+        v.Html(
+            tag="div",
+            class_="px-4 py-2 bg-surface-variant text-center w-100 rounded-lg",
+            children=[
+                "{{ new Date().getFullYear() }} —",
+                v.Html(
+                    tag="strong",
+                    children=["Vuetify"],
                 ),
             ],
         ),

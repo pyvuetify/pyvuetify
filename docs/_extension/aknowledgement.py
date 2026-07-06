@@ -1,4 +1,5 @@
 """A directive to generate an alert admonition."""
+
 from __future__ import annotations
 
 from typing import ClassVar

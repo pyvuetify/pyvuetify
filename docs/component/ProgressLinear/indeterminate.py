@@ -1,14 +1,23 @@
 import pyvuetify as v
 
-colors = ["yellow darken-2", "green", "teal", "cyan"]
-
-v.Col(
+v.Html(
+    tag="div",
     children=[
         v.ProgressLinear(
-            class_="my-3 mx-1",
+            color="yellow-darken-2",
             indeterminate=True,
-            color=c,
-        )
-        for c in colors
-    ]
+        ),
+        v.ProgressLinear(
+            color="green",
+            indeterminate=True,
+        ),
+        v.ProgressLinear(
+            color="teal",
+            indeterminate=True,
+        ),
+        v.ProgressLinear(
+            color="cyan",
+            indeterminate=True,
+        ),
+    ],
 )

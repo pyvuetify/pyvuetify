@@ -1,33 +1,124 @@
 import pyvuetify as v
 
-colors = ["red lighten-3", "pink lighten-3", "purple lighten-3", "deep-purple lighten-3"]
-
 v.Container(
     children=[
         v.Row(
-            justify="space-around",
+            class_="flex-child text-title-small",
             children=[
                 v.Col(
-                    cols=12,
-                    md=4,
+                    class_="d-flex",
+                    cols="12",
+                    md="4",
                     children=[
                         v.Sheet(
-                            class_="pa-12",
-                            color="grey lighten-3",
+                            class_="d-flex",
+                            color="grey-lighten-3",
+                            height="424",
                             children=[
-                                v.Sheet(
-                                    color=color,
-                                    elevation=12,
-                                    class_="mx-auto",
-                                    height=100,
-                                    width=100,
-                                )
+                                v.Html(
+                                    tag="sheet-footer",
+                                    children=["#1: (3r x 2c)"],
+                                ),
                             ],
-                        )
+                        ),
                     ],
-                )
-                for color in colors
+                ),
+                v.Col(
+                    class_="d-flex",
+                    cols="12",
+                    md="4",
+                    children=[
+                        v.Row(
+                            class_="ma-n3",
+                            children=[
+                                v.Col(
+                                    cols="6",
+                                    children=[
+                                        v.Sheet(
+                                            class_="d-flex",
+                                            color="green-lighten-3",
+                                            height="150",
+                                            children=[
+                                                v.Html(
+                                                    tag="sheet-footer",
+                                                    children=["#2: (1r x 1c)"],
+                                                ),
+                                            ],
+                                        ),
+                                    ],
+                                ),
+                                v.Col(
+                                    cols="6",
+                                    children=[
+                                        v.Sheet(
+                                            class_="d-flex",
+                                            color="yellow-lighten-3",
+                                            height="150",
+                                            children=[
+                                                v.Html(
+                                                    tag="sheet-footer",
+                                                    children=["#3: (1r x 1c)"],
+                                                ),
+                                            ],
+                                        ),
+                                    ],
+                                ),
+                                v.Col(
+                                    cols="12",
+                                    children=[
+                                        v.Sheet(
+                                            class_="d-flex",
+                                            color="red-lighten-3",
+                                            height="250",
+                                            children=[
+                                                v.Html(
+                                                    tag="sheet-footer",
+                                                    children=["#5: (2r x 2c)"],
+                                                ),
+                                            ],
+                                        ),
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+                v.Col(
+                    cols="6",
+                    md="2",
+                    children=[
+                        v.Sheet(
+                            class_="d-flex",
+                            color="teal-lighten-3",
+                            height="300",
+                            children=[
+                                v.Html(
+                                    tag="sheet-footer",
+                                    children=["#4: (2r x 1c)"],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+                v.Col(
+                    class_="d-flex",
+                    cols="6",
+                    md="2",
+                    children=[
+                        v.Sheet(
+                            class_="d-flex mt-auto",
+                            color="purple-lighten-3",
+                            height="300",
+                            children=[
+                                v.Html(
+                                    tag="sheet-footer",
+                                    children=["#6: (2r x 1c)"],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
             ],
-        )
-    ]
+        ),
+    ],
 )

@@ -1,42 +1,51 @@
 import pyvuetify as v
 
-v.Container(
-    class_="text-center",
+v.Html(
+    tag="div",
+    class_="pa-4 text-center",
     children=[
+        v.Btn(
+            # JS expression, needs manual conversion
+            disabled="dialog",
+            color="primary",
+            icon="mdi-refresh",
+            text="Start loading",
+        ),
         v.Dialog(
-            v_model=False,
-            width=300,
+            v_model="dialog",
+            max_width="320",
+            persistent=True,
             children=[
-                v.Card(
+                v.List(
+                    class_="py-2",
                     color="primary",
-                    dark=True,
+                    elevation="4",
+                    rounded="lg",
                     children=[
-                        v.CardText(
+                        v.ListItem(
+                            prepend_icon="$vuetify-outline",
+                            title="Refreshing Application...",
                             children=[
-                                "Please stand by",
-                                v.ProgressLinear(
-                                    indeterminate=True,
-                                    color="white",
-                                    class_="mb-0",
+                                v.Html(
+                                    tag="template",
+                                    children=[
+                                        v.Html(
+                                            tag="div",
+                                            class_="pe-4",
+                                            children=[
+                                                v.Icon(
+                                                    color="primary",
+                                                    size="x-large",
+                                                ),
+                                            ],
+                                        ),
+                                    ],
                                 ),
-                            ]
-                        )
+                            ],
+                        ),
                     ],
-                )
+                ),
             ],
-            v_slots=[
-                {
-                    "name": "activator",
-                    "variable": "dialog",
-                    "children": v.Btn(
-                        children=["Start loading"],
-                        color="purple darken-2",
-                        class_="white--text",
-                        v_bind="dialog.attrs",
-                        v_on="dialog.on",
-                    ),
-                }
-            ],
-        )
+        ),
     ],
 )

@@ -1,27 +1,24 @@
 import pyvuetify as v
 
 v.Card(
-    class_="overflow-hidden",
+    class_="mx-auto",
+    max_width="448",
     children=[
-        v.AppBar(
-            absolute=True,
-            color="indigo darken-2",
-            dark=True,
-            shrink_on_scroll=True,
-            prominent=True,
+        v.Layout(
             children=[
-                v.AppBarNavIcon(),
-                v.ToolbarTitle(children=["Title"]),
-                v.Spacer(),
-                v.Btn(icon=True, children=[v.Icon(children=["mdi-magnify"])]),
-                v.Btn(icon=True, children=[v.Icon(children=["mdi-heart"])]),
-                v.Btn(icon=True, children=[v.Icon(children=["mdi-dots-vertical"])]),
+                v.AppBar(
+                    color="info",
+                    density="prominent",
+                    children=[
+                        v.Html(
+                            tag="template",
+                            children=[
+                                v.AppBarNavIcon(),
+                            ],
+                        ),
+                    ],
+                ),
             ],
-        ),
-        v.Sheet(
-            class_="overflow-y-auto",
-            max_height=400,
-            children=[v.Container(style_="height: 1000px;")],
         ),
     ],
 )

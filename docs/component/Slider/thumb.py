@@ -1,50 +1,99 @@
-from ipywidgets import jslink
-
 import pyvuetify as v
 
-emojis = ["😭", "😢", "☹️", "🙁", "😐", "🙂", "😊", "😁", "😄", "😍"]
-
-slider = v.Slider(
-    class_="mt-4",
-    label="Show thumb when using",
-    v_model=50,
-    thumb_label=True,
-)
-
-slider2 = v.Slider(
-    class_="mt-4",
-    label="Always show thumb label",
-    v_model=50,
-    thumb_label="always",
-)
-
-slider3 = v.Slider(
-    class_="mt-4",
-    label="Custom thumb size",
-    v_model=50,
-    thumb_size=24,
-    thumb_label="always",
-)
-
-slider4 = v.Slider(
-    class_="mt-4",
-    label="Custom thumb label",
-    v_model=50,
-    thumb_label="always",
-    v_slots=[
-        {
-            "name": "thumb_label",
-            "variable": "props",
-            "children": emojis[
-                # min((int('props.value') // 10), 9) no idea how to do that
-                min((int(6) // 10), 9)
+v.Html(
+    tag="div",
+    class_="d-flex flex-column",
+    children=[
+        v.Html(
+            tag="div",
+            children=[
+                v.Html(
+                    tag="div",
+                    class_="text-body-small",
+                    children=["Show thumb when using slider"],
+                ),
+                v.Slider(
+                    v_model="slider1",
+                    thumb_label=True,
+                ),
             ],
-        }
+        ),
+        v.Html(
+            tag="div",
+            children=[
+                v.Html(
+                    tag="div",
+                    class_="text-body-small",
+                    children=["Always show thumb label"],
+                ),
+                v.Slider(
+                    v_model="slider2",
+                    thumb_label="always",
+                ),
+            ],
+        ),
+        v.Html(
+            tag="div",
+            children=[
+                v.Html(
+                    tag="div",
+                    class_="text-body-small",
+                    children=["Show thumb label on hover and focus"],
+                ),
+                v.Slider(
+                    v_model="slider5",
+                    thumb_label="hover",
+                ),
+            ],
+        ),
+        v.Html(
+            tag="div",
+            children=[
+                v.Html(
+                    tag="div",
+                    class_="text-body-small",
+                    children=["Show thumb label on hover and focus"],
+                ),
+                v.Slider(
+                    v_model="slider5",
+                    thumb_label="hover",
+                ),
+            ],
+        ),
+        v.Html(
+            tag="div",
+            children=[
+                v.Html(
+                    tag="div",
+                    class_="text-body-small",
+                    children=["Custom thumb size"],
+                ),
+                v.Slider(
+                    v_model="slider3",
+                    thumb_size=36,
+                    thumb_label="always",
+                ),
+            ],
+        ),
+        v.Html(
+            tag="div",
+            children=[
+                v.Html(
+                    tag="div",
+                    class_="text-body-small",
+                    children=["Custom thumb label"],
+                ),
+                v.Slider(
+                    v_model="slider4",
+                    thumb_label="always",
+                    children=[
+                        v.Html(
+                            tag="template",
+                            children=["{{ satisfactionEmojis[Math.min(Math.floor(modelValue / 10), 9)] }}"],
+                        ),
+                    ],
+                ),
+            ],
+        ),
     ],
 )
-
-jslink((slider, "v_model"), (slider2, "v_model"))
-jslink((slider, "v_model"), (slider3, "v_model"))
-jslink((slider, "v_model"), (slider4, "v_model"))
-
-v.Col(class_="mx-1 my-2", children=[slider, slider2, slider3, slider4])

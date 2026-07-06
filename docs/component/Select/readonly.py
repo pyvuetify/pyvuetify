@@ -1,19 +1,9 @@
 import pyvuetify as v
 
-items = ["Foo", "Bar", "Fizz", "Buzz"]
-
-v.Row(
-    align="center",
-    children=[
-        v.Col(
-            cols=12,
-            children=[
-                v.Select(
-                    items=items,
-                    readonly=True,
-                    label="Read-only",
-                ),
-            ],
-        ),
-    ],
+v.Select(
+    v_model="model",
+    # JS expression, needs manual conversion
+    items="items",
+    label="Read-only",
+    readonly=True,
 )

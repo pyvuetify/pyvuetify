@@ -1,44 +1,59 @@
 import pyvuetify as v
 
 v.Card(
-    class_="mx-auto my-2",
-    width=600,
+    class_="mx-auto",
+    max_width="600",
     children=[
         v.Toolbar(
-            flat=True,
             dense=True,
+            flat=True,
             children=[
                 v.ToolbarTitle(
-                    children=[v.Html(tag="span", class_="subheading", children=["METRONOME"])]
+                    children=[
+                        v.Html(
+                            tag="span",
+                            class_="text-subheading",
+                            children=["METRONOME"],
+                        ),
+                    ],
                 ),
-                v.Spacer(),
-                v.Btn(icon=True, children=[v.Icon(children=["mdi-share-variant"])]),
+                v.Btn(
+                    icon="mdi-share-variant",
+                    variant="text",
+                ),
             ],
         ),
         v.CardText(
             children=[
                 v.Row(
-                    class_="mb-4",
-                    justify="space-between",
+                    class_="mb-4 justify-space-between",
                     children=[
                         v.Col(
                             class_="text-left",
                             children=[
-                                v.Html(tag="h1", class_="font-weight-light", children=["120"]),
                                 v.Html(
                                     tag="span",
-                                    class_="subheading font-weight-light mr-1",
+                                    class_="text-display-large font-weight-light",
+                                ),
+                                v.Html(
+                                    tag="span",
+                                    class_="subheading font-weight-light me-1",
                                     children=["BPM"],
                                 ),
                                 v.FadeTransition(
                                     children=[
                                         v.Avatar(
+                                            # JS expression, needs manual conversion
+                                            color="color",
+                                            style_="""{
+                                                animationDuration: animationDuration
+                                            # JS expression, needs manual conversion
+
+                                            }""",
                                             class_="mb-1 v-avatar--metronome",
-                                            size=12,
-                                            color="purple",
-                                            style={"animationDuration": "500ms"},
-                                        )
-                                    ]
+                                            size="12",
+                                        ),
+                                    ],
                                 ),
                             ],
                         ),
@@ -46,35 +61,47 @@ v.Card(
                             class_="text-right",
                             children=[
                                 v.Btn(
-                                    depressed=True,
-                                    fab=True,
-                                    color="purple",
-                                    dark=True,
-                                    children=[v.Icon(large=True, children=["mdi-play"])],
-                                )
+                                    # JS expression, needs manual conversion
+                                    color="color",
+                                    elevation="0",
+                                    theme="dark",
+                                    icon=True,
+                                    children=[
+                                        v.Icon(
+                                            # JS expression, needs manual conversion
+                                            icon="isPlaying ? 'mdi-pause' : 'mdi-play'",
+                                            size="large",
+                                        ),
+                                    ],
+                                ),
                             ],
                         ),
                     ],
                 ),
                 v.Slider(
-                    v_model=120,
-                    color="purple",
-                    track_color="grey lighten-2",
-                    class_="align-center",
-                    min=40,
-                    max=218,
-                    v_slots=[
-                        {
-                            "name": "append",
-                            "children": v.Icon(class_="mr-2", small=True, children=["mdi-plus"]),
-                        },
-                        {
-                            "name": "prepend",
-                            "children": v.Icon(class_="ml-2", small=True, children=["mdi-minus"]),
-                        },
+                    v_model="bpm",
+                    # JS expression, needs manual conversion
+                    color="color",
+                    step=1,
+                    max="218",
+                    min="40",
+                    track_color="grey",
+                    children=[
+                        v.Html(
+                            tag="template",
+                            children=[
+                                v.Btn(
+                                    # JS expression, needs manual conversion
+                                    color="color",
+                                    icon="mdi-minus",
+                                    size="small",
+                                    variant="text",
+                                ),
+                            ],
+                        ),
                     ],
                 ),
-            ]
+            ],
         ),
     ],
 )

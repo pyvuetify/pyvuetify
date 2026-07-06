@@ -1,0 +1,62 @@
+import pyvuetify as v
+
+v.Container(
+    class_="d-flex",
+    children=[
+        v.Html(
+            tag="div",
+            class_="d-flex flex-column gr-4 py-8 flex-grow-1",
+            children=[
+                v.Divider(
+                    color="red",
+                    opacity=".7",
+                    thickness="3",
+                    gradient=True,
+                ),
+                v.Divider(
+                    opacity=".7",
+                    thickness="3",
+                    gradient=True,
+                    children=["OR"],
+                ),
+                v.Divider(
+                    color="primary",
+                    opacity=".7",
+                    thickness="12",
+                    variant="double",
+                    gradient=True,
+                    children=["AND"],
+                ),
+            ],
+        ),
+        v.Html(
+            tag="div",
+            class_="d-flex gc-8 px-8",
+            children=[
+                v.Divider(
+                    color="red",
+                    opacity=".7",
+                    thickness="3",
+                    gradient=True,
+                    vertical=True,
+                ),
+                v.Divider(
+                    opacity=".7",
+                    thickness="3",
+                    gradient=True,
+                    vertical=True,
+                    children=["OR"],
+                ),
+                v.Divider(
+                    color="primary",
+                    opacity=".7",
+                    thickness="12",
+                    variant="double",
+                    gradient=True,
+                    vertical=True,
+                    children=["AND"],
+                ),
+            ],
+        ),
+    ],
+)

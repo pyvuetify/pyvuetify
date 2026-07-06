@@ -1,42 +1,42 @@
 import pyvuetify as v
 
-v.Card(
-    class_="mx-auto my-2",
-    width=400,
-    height=200,
+v.Row(
     children=[
-        v.CardTitle(
-            class_="blue white--text",
+        v.Col(
+            cols="12",
+            offset_sm="3",
+            sm="6",
             children=[
-                v.Html(tag="span", class_="text-h5", children=["Menu"]),
-                v.Spacer(),
-                v.Menu(
-                    bottom=True,
-                    left=True,
-                    v_slots=[
-                        {
-                            "name": "activator",
-                            "variable": "props",
-                            "children": v.Btn(
-                                icon=True,
-                                dark=True,
-                                children=[v.Icon(children=["mdi-dots-vertical"])],
-                                v_bind="props.attrs",
-                                v_on="props.on",
-                            ),
-                        }
-                    ],
+                v.Card(
+                    height="200px",
                     children=[
-                        v.List(
+                        v.CardTitle(
+                            class_="bg-blue d-flex align-center",
                             children=[
-                                v.ListItem(children=[v.ListItemTitle(children=[f"Item {i}"])])
-                                for i in range(4)
-                            ]
-                        )
+                                v.Html(
+                                    tag="span",
+                                    class_="text-headline-small",
+                                    children=["Menu"],
+                                ),
+                                v.Spacer(),
+                                v.Menu(
+                                    children=[
+                                        v.Html(
+                                            tag="template",
+                                            children=[
+                                                v.Btn(
+                                                    icon="mdi-dots-vertical",
+                                                    variant="text",
+                                                ),
+                                            ],
+                                        ),
+                                    ],
+                                ),
+                            ],
+                        ),
                     ],
                 ),
             ],
         ),
-        v.CardText(children=["Lorem Ipsum"]),
     ],
 )

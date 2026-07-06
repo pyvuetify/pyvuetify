@@ -1,0 +1,49 @@
+import pyvuetify as v
+
+v.Card(
+    children=[
+        v.Layout(
+            children=[
+                v.NavigationDrawer(
+                    class_="bg-deep-purple",
+                    theme="dark",
+                    permanent=True,
+                    children=[
+                        v.List(
+                            color="transparent",
+                            children=[
+                                v.ListItem(
+                                    prepend_icon="mdi-view-dashboard",
+                                    title="Dashboard",
+                                ),
+                                v.ListItem(
+                                    prepend_icon="mdi-account-box",
+                                    title="Account",
+                                ),
+                                v.ListItem(
+                                    prepend_icon="mdi-gavel",
+                                    title="Admin",
+                                ),
+                            ],
+                        ),
+                        v.Html(
+                            tag="template",
+                            children=[
+                                v.Html(
+                                    tag="div",
+                                    class_="pa-2",
+                                    children=[
+                                        v.Btn(
+                                            block=True,
+                                            children=["Logout"],
+                                        ),
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

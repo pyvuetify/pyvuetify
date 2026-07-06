@@ -1,11 +1,12 @@
 import pyvuetify as v
 
 v.Container(
-    class_="d-flex flex-row justify-center",
     children=[
-        v.TimePicker(
-            v_model="13:30",
-            format="24hr",
+        v.Row(
+            class_="justify-center",
+            children=[
+                v.TimePicker(format="24hr"),
+            ],
         ),
     ],
 )

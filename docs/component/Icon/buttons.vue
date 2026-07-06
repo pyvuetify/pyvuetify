@@ -1,43 +1,47 @@
 <template>
   <div class="text-center">
     <div>
-      <v-btn class="ma-2" color="primary" dark>
+      <v-btn class="ma-2" color="primary">
         Accept
-        <v-icon dark right> mdi-checkbox-marked-circle </v-icon>
+        <v-icon icon="mdi-checkbox-marked-circle" end></v-icon>
       </v-btn>
 
-      <v-btn class="ma-2" color="red" dark>
+      <v-btn class="ma-2" color="red">
         Decline
-        <v-icon dark right> mdi-cancel </v-icon>
+        <v-icon icon="mdi-cancel" end></v-icon>
       </v-btn>
 
-      <v-btn class="ma-2" dark>
-        <v-icon dark left> mdi-minus-circle </v-icon>Cancel
+      <v-btn class="ma-2">
+        <v-icon icon="mdi-minus-circle" start></v-icon>
+        Cancel
       </v-btn>
     </div>
 
     <div>
-      <v-btn class="ma-2" color="orange darken-2" dark>
-        <v-icon dark left> mdi-arrow-left </v-icon>Back
+      <v-btn class="ma-2" color="orange-darken-2">
+        <v-icon icon="mdi-arrow-left" start></v-icon>
+        Back
       </v-btn>
 
-      <v-btn class="ma-2" color="purple" dark>
-        <v-icon dark> mdi-wrench </v-icon>
-      </v-btn>
+      <v-btn class="ma-2" color="purple" icon="mdi-wrench"></v-btn>
 
-      <v-btn class="ma-2" color="indigo" dark>
-        <v-icon dark> mdi-cloud-upload </v-icon>
-      </v-btn>
+      <v-btn class="ma-2" color="indigo" icon="mdi-cloud-upload"></v-btn>
     </div>
 
     <div>
-      <v-btn class="ma-2" text icon color="blue lighten-2">
-        <v-icon>mdi-thumb-up</v-icon>
-      </v-btn>
+      <v-btn
+        class="ma-2"
+        color="blue-lighten-2"
+        icon="mdi-thumb-up"
+        variant="text"
+      ></v-btn>
 
-      <v-btn class="ma-2" text icon color="red lighten-2">
-        <v-icon>mdi-thumb-down</v-icon>
-      </v-btn>
+      <v-btn
+        class="ma-2"
+        color="red-lighten-2"
+        icon="mdi-thumb-down"
+        variant="text"
+      ></v-btn>
     </div>
   </div>
 </template>

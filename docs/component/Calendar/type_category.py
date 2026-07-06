@@ -1,0 +1,70 @@
+import pyvuetify as v
+
+v.Row(
+    class_="fill-height",
+    children=[
+        v.Col(
+            children=[
+                v.Sheet(
+                    height="64",
+                    children=[
+                        v.Toolbar(
+                            flat=True,
+                            children=[
+                                v.Btn(
+                                    class_="mr-4",
+                                    color="grey-darken-2",
+                                    variant="outlined",
+                                    children=["Today"],
+                                ),
+                                v.Btn(
+                                    color="grey-darken-2",
+                                    size="small",
+                                    variant="text",
+                                    icon=True,
+                                    children=[
+                                        v.Icon(
+                                            size="small",
+                                            children=["mdi-chevron-left"],
+                                        ),
+                                    ],
+                                ),
+                                v.Btn(
+                                    color="grey-darken-2",
+                                    size="small",
+                                    variant="text",
+                                    icon=True,
+                                    children=[
+                                        v.Icon(
+                                            size="small",
+                                            children=["mdi-chevron-right"],
+                                        ),
+                                    ],
+                                ),
+                                v.ToolbarTitle(children=["{{ calendar.title }}"]),
+                            ],
+                        ),
+                    ],
+                ),
+                v.Sheet(
+                    height="600",
+                    children=[
+                        v.Calendar(
+                            ref="calendar",
+                            v_model="focus",
+                            # JS expression, needs manual conversion
+                            categories="categories",
+                            # JS expression, needs manual conversion
+                            event_color="getEventColor",
+                            # JS expression, needs manual conversion
+                            events="events",
+                            color="primary",
+                            type="category",
+                            category_show_all=True,
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

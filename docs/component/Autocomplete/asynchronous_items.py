@@ -1,35 +1,25 @@
 import pyvuetify as v
 
-states = [
-    "Alabama",
-    "Alaska",
-    "American Samoa",
-    "Arizona",
-    "Arkansas",
-    "California",
-    "Colorado",
-    "Connecticut",
-    "Delaware",
-    "District of Columbia",
-    "Florida",
-    "Georgia",
-]
-
 v.Toolbar(
-    dark=True,
     color="teal",
     children=[
         v.ToolbarTitle(children=["State selection"]),
         v.Autocomplete(
-            items=states,
-            cache_items=True,
+            v_model="select",
+            v_model_search="search",
+            # JS expression, needs manual conversion
+            items="items",
+            # JS expression, needs manual conversion
+            loading="loading",
+            autocomplete="off",
             class_="mx-4",
-            flat=True,
-            hide_no_data=True,
-            hide_details=True,
+            density="comfortable",
             label="What state are you from?",
-            solo_inverted=True,
+            placeholder="Start typing...",
+            style_="max-width: 300px",
+            hide_details=True,
+            hide_no_data=True,
         ),
-        v.Btn(icon=True, children=[v.Icon(children=["mdi-dots-vertical"])]),
+        v.Btn(icon="mdi-dots-vertical"),
     ],
 )

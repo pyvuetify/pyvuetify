@@ -1,7 +1,6 @@
 import pyvuetify as v
 
 v.Container(
-    fluid=True,
     children=[
         v.Row(
             children=[
@@ -12,9 +11,9 @@ v.Container(
                         v.Textarea(
                             class_="mx-2",
                             label="prepend-icon",
-                            rows="1",
                             prepend_icon="mdi-comment",
-                        )
+                            rows="1",
+                        ),
                     ],
                 ),
                 v.Col(
@@ -26,7 +25,7 @@ v.Container(
                             class_="mx-2",
                             label="append-icon",
                             rows="1",
-                        )
+                        ),
                     ],
                 ),
                 v.Col(
@@ -34,11 +33,11 @@ v.Container(
                     sm="6",
                     children=[
                         v.Textarea(
-                            prepend_inner_icon="mdi-comment",
                             class_="mx-2",
                             label="prepend-inner-icon",
+                            prepend_inner_icon="mdi-comment",
                             rows="1",
-                        )
+                        ),
                     ],
                 ),
                 v.Col(
@@ -46,14 +45,14 @@ v.Container(
                     sm="6",
                     children=[
                         v.Textarea(
-                            append_outer_icon="mdi-comment",
+                            append_inner_icon="mdi-comment",
                             class_="mx-2",
-                            label="append-outer-icon",
+                            label="append-inner-icon",
                             rows="1",
-                        )
+                        ),
                     ],
                 ),
             ],
-        )
+        ),
     ],
 )

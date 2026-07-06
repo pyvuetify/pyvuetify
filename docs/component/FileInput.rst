@@ -1,37 +1,21 @@
 FileInput
 =========
 
-.. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify File Input documentation
-    <https://v2.vuetifyjs.com/en/components/file-inputs/>`__. All examples have been converted
-    to pyvuetify syntax.
 
-The :py:class:`FileInput <pyvuetify.FileInput>` component is a specialized input that provides
-a clean interface for selecting files, showing detailed selection information and upload progress.
-It is meant to be a direct replacement for a standard file input.
+.. aknowledgement::
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/file-inputs/>`__.
+    All examples have been converted to pyvuetify syntax.
+
+The :py:class:`pyvuetify.FileInput` component is a specialized input that provides a clean interface for selecting files, showing detailed selection information and upload progress. It is meant to be a direct replacement for a standard file input.
 
 .. api::
 
     :py:class:`pyvuetify.FileInput`
 
-Usage
------
-
-At its core, the :py:class:`FileInput <pyvuetify.FileInput>` component is a basic
-container that extends :py:class:`TextField <pyvuetify.TextField>`.
-
-.. jupyter-execute:: FileInput/usage.py
-    :raises:
-
-Examples
---------
-
 Accept
-^^^^^^
+------
 
-:py:class:`FileInput <pyvuetify.FileInput>` component can accept only specific
-media formats/file types if you want. For more information, checkout the documentation
-on the `accept attribute <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept>`__.
+:py:class:`pyvuetify.FileInput` component can accept only specific media formats/file types if you want. For more information, checkout the documentation on the `accept attribute <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept>`__.
 
 .. tab-set::
 
@@ -49,12 +33,11 @@ on the `accept attribute <https://developer.mozilla.org/en-US/docs/Web/HTML/Elem
 
         .. literalinclude:: FileInput/accept.vue
 
-Chips
-^^^^^
 
-A selected file can be displayed as a :py:class:`Chip <pyvuetify.Chip>`. When using
-the ``chips`` and ``multiple`` props, each chip will be displayed (as opposed to
-the file count).
+Chips
+-----
+
+A selected file can be displayed as a :doc:`Chip <Chip>`. When using the **chips** and **multiple** props, each chip will be displayed (as opposed to the file count).
 
 .. tab-set::
 
@@ -72,11 +55,11 @@ the file count).
 
         .. literalinclude:: FileInput/chips.vue
 
-Counter
-^^^^^^^
 
-When using the ``show_size`` property along with ``counter``, the total number of
-files and size will be displayed under the input.
+Counter
+-------
+
+When using the **show-size** property along with **counter**, the total number of files and size will be displayed under the input.
 
 .. tab-set::
 
@@ -94,10 +77,11 @@ files and size will be displayed under the input.
 
         .. literalinclude:: FileInput/counter.vue
 
-Dense
-^^^^^
 
-You can reduces the file input height with ``dense`` prop.
+Density
+-------
+
+You can reduces the file input height with the **density** prop.
 
 .. tab-set::
 
@@ -115,11 +99,11 @@ You can reduces the file input height with ``dense`` prop.
 
         .. literalinclude:: FileInput/dense.vue
 
-Multiple
-^^^^^^^^
 
-The :py:class:`FileInput <pyvuetify.FileInput>` can contain multiple files at the
-same time when using the ``multiple`` prop.
+Multiple
+--------
+
+The :py:class:`pyvuetify.FileInput` can contain multiple files at the same time when using the **multiple** prop.
 
 .. tab-set::
 
@@ -137,13 +121,11 @@ same time when using the ``multiple`` prop.
 
         .. literalinclude:: FileInput/multiple.vue
 
-Prepend icon
-^^^^^^^^^^^^
 
-The :py:class:`FileInput <pyvuetify.FileInput>` has a default ``prepend_icon``
-that can be set on the component or adjusted globally. More information on
-changing global components can be found on the
-`customizing icons page <https://v2.vuetifyjs.com/en/features/icon-fonts/>`__.
+Prepend icon
+------------
+
+The :py:class:`pyvuetify.FileInput` has a default **prepend-icon** that can be set on the component or adjusted globally. More information on changing global components can be found on the `customizing icons page <https://vuetifyjs.com/features/icon-fonts>`__.
 
 .. tab-set::
 
@@ -161,12 +143,11 @@ changing global components can be found on the
 
         .. literalinclude:: FileInput/prepend_icon.vue
 
-Show size
-^^^^^^^^^
 
-The displayed size of the selected file(s) can be configured with the ``show_size``
-property. Display sizes can be either 1024 (the default used when providing
-``True``) or 1000.
+Show size
+---------
+
+The displayed size of the selected file(s) can be configured with the **show-size** property. Display sizes can be either *1024* (the default used when providing **true**) or *1000*.
 
 .. tab-set::
 
@@ -184,46 +165,69 @@ property. Display sizes can be either 1024 (the default used when providing
 
         .. literalinclude:: FileInput/show_size.vue
 
+
 Validation
-^^^^^^^^^^
+----------
 
-Similar to other inputs, you can use the ``rules`` prop to create your own
-custom validation parameters.
-
-.. todo::
-
-    I'm not sure it's possible to make this work in pyvuetify since it rely on javascript
-    functions. Maybe a genius from the community can figure it out :fas:`face-smile-wink`
-
-Selection slot
-^^^^^^^^^^^^^^
-
-Using the ``selection`` slot, you can customize the appearance of your input selections.
-This is typically done with :py:class:`Chip <pyvuetify.Chip>` components, however
-any component or markup can be used.
+Similar to other inputs, you can use the **rules** prop to create your own custom validation parameters. If **multiple** props is set, the``value`` passed in the validation functions will be an array.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: FileInput/selection_slot.py
+        .. jupyter-execute:: FileInput/validation.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: FileInput/selection_slot.py
+        .. literalinclude:: FileInput/validation.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: FileInput/selection_slot.vue
+        .. literalinclude:: FileInput/validation.vue
+
+
+Selection
+---------
+
+Using the ``selection`` slot, you can customize the appearance of your input selections. This is typically done with :doc:`Chip <Chip>`, however any component or markup can be used.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: FileInput/selection.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: FileInput/selection.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: FileInput/selection.vue
+
 
 Complex selection slot
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 The flexibility of the selection slot allows you accommodate complex use-cases. In this example we show the first 2 selections as chips while adding a number indicator for the remaining amount.
 
-.. todo::
+.. tab-set::
 
-    I'm not sure it's possible to make this work in pyvuetify since it rely on javascript
-    functions. Maybe a genius from the community can figure it out :fas:`face-smile-wink`
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: FileInput/complex_selection.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: FileInput/complex_selection.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: FileInput/complex_selection.vue
+

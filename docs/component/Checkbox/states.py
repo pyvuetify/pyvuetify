@@ -1,74 +1,88 @@
 import pyvuetify as v
 
 v.Container(
+    fluid=True,
     children=[
         v.Row(
-            class_="light--text",
             children=[
-                v.Col(cols=4, children=["on"]),
-                v.Col(cols=4, children=["off"]),
-                v.Col(cols=4, children=["indeterminate"]),
+                v.Col(
+                    cols="4",
+                    children=["on"],
+                ),
+                v.Col(
+                    cols="4",
+                    children=["off"],
+                ),
+                v.Col(
+                    cols="4",
+                    children=["indeterminate"],
+                ),
             ],
         ),
         v.Row(
             children=[
                 v.Col(
-                    cols=4,
+                    cols="4",
+                    children=[
+                        v.Checkbox(model_value=True),
+                    ],
+                ),
+                v.Col(
+                    cols="4",
+                    children=[
+                        v.Checkbox(model_value=False),
+                    ],
+                ),
+                v.Col(
+                    cols="4",
+                    children=[
+                        v.Checkbox(indeterminate=True),
+                    ],
+                ),
+            ],
+        ),
+        v.Row(
+            children=[
+                v.Col(
+                    cols="4",
+                    children=["on disabled"],
+                ),
+                v.Col(
+                    cols="4",
+                    children=["off disabled"],
+                ),
+            ],
+        ),
+        v.Row(
+            children=[
+                v.Col(
+                    cols="4",
                     children=[
                         v.Checkbox(
-                            input_value=True,
-                            value=True,
+                            model_value=True,
+                            disabled=True,
                         ),
                     ],
                 ),
                 v.Col(
-                    cols=4,
+                    cols="4",
                     children=[
                         v.Checkbox(
-                            value=False,
+                            model_value=False,
+                            disabled=True,
                         ),
                     ],
                 ),
                 v.Col(
-                    cols=4,
+                    cols="4",
                     children=[
                         v.Checkbox(
-                            value=True,
+                            disabled=True,
                             indeterminate=True,
                         ),
                     ],
                 ),
-            ]
-        ),
-        v.Row(
-            class_="light--text",
-            children=[
-                v.Col(cols=4, children=["on disabled"]),
-                v.Col(cols=4, children=["off disabled"]),
             ],
         ),
-        v.Row(
-            children=[
-                v.Col(
-                    cols=4,
-                    children=[
-                        v.Checkbox(
-                            input_value=True,
-                            value=True,
-                            disabled=True,
-                        ),
-                    ],
-                ),
-                v.Col(
-                    cols=4,
-                    children=[
-                        v.Checkbox(
-                            value=False,
-                            disabled=True,
-                        ),
-                    ],
-                ),
-            ]
-        ),
-    ]
+    ],
 )

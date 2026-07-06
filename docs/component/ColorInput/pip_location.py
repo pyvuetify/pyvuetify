@@ -1,0 +1,58 @@
+import pyvuetify as v
+
+v.Container(
+    children=[
+        v.Row(
+            children=[
+                v.Col(
+                    cols="12",
+                    sm="6",
+                    children=[
+                        v.ColorInput(hide_details="auto"),
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    sm="6",
+                    children=[
+                        v.ColorInput(
+                            hide_details="auto",
+                            pip_location="prepend-inner",
+                        ),
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    sm="6",
+                    children=[
+                        v.ColorInput(
+                            hide_details="auto",
+                            pip_location="append-inner",
+                        ),
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    sm="6",
+                    children=[
+                        v.ColorInput(
+                            hide_details="auto",
+                            pip_location="append",
+                        ),
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    sm="6",
+                    children=[
+                        v.ColorInput(
+                            hide_details="auto",
+                            label="I need no icon",
+                            hide_pip=True,
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

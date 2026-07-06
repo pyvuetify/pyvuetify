@@ -1,3 +1,7 @@
 import pyvuetify as v
 
-v.Slider(readonly=True, label="Readonly", value=30)
+v.Slider(
+    label="Readonly",
+    model_value="30",
+    readonly=True,
+)

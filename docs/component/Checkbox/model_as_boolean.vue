@@ -1,14 +1,30 @@
 <template>
-  <div>
-    <v-checkbox v-model="selected" label="John" value="John"></v-checkbox>
-    <v-checkbox v-model="selected" label="Jacob" value="Jacob"></v-checkbox>
-  </div>
+  <v-container fluid>
+    <v-checkbox
+      v-model="checkbox1"
+      :label="`Checkbox 1: ${checkbox1.toString()}`"
+    ></v-checkbox>
+    <v-checkbox
+      v-model="checkbox2"
+      :label="`Checkbox 2: ${checkbox2.toString()}`"
+    ></v-checkbox>
+  </v-container>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const checkbox1 = ref(true);
+const checkbox2 = ref(false);
+</script>
 
 <script>
 export default {
-  data: () => ({
-    selected: ["John"],
-  }),
+  data() {
+    return {
+      checkbox1: true,
+      checkbox2: false,
+    };
+  },
 };
 </script>

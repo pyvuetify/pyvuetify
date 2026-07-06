@@ -1,16 +1,14 @@
 <template>
   <v-timeline>
-    <v-timeline-item v-for="n in 4" :key="n" large>
+    <v-timeline-item size="large">
       <template v-slot:icon>
-        <v-avatar>
-          <img src="https://i.pravatar.cc/64" />
-        </v-avatar>
+        <v-avatar image="https://i.pravatar.cc/64"></v-avatar>
       </template>
       <template v-slot:opposite>
         <span>Tus eu perfecto</span>
       </template>
-      <v-card class="elevation-2">
-        <v-card-title class="text-h5"> Lorem ipsum </v-card-title>
+      <v-card class="elevation-1">
+        <v-card-title class="text-headline-small"> Lorem ipsum </v-card-title>
         <v-card-text
           >Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola
           imperdiet nec ut, sed euismod convenire principes at. Est et nobis

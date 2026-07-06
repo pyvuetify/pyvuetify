@@ -1,14 +1,28 @@
 import pyvuetify as v
 
 v.Container(
+    class_="d-flex ga-3 align-start",
     fluid=True,
     children=[
         v.Textarea(
-            name="input-7-1",
-            filled=True,
-            label="Label",
+            v_model="text",
+            hint="Growing without limit",
             auto_grow=True,
-            value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through.",
-        )
+            persistent_hint=True,
+        ),
+        v.Textarea(
+            v_model="text",
+            hint="Growing up to 7 rows",
+            max_rows="7",
+            auto_grow=True,
+            persistent_hint=True,
+        ),
+        v.Textarea(
+            v_model="text",
+            hint="Growing up to 300px",
+            max_height="300",
+            auto_grow=True,
+            persistent_hint=True,
+        ),
     ],
 )

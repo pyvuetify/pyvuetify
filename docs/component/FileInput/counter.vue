@@ -1,3 +1,3 @@
 <template>
-  <v-file-input show-size counter multiple label="File input"></v-file-input>
+  <v-file-input label="File input" counter multiple show-size></v-file-input>
 </template>

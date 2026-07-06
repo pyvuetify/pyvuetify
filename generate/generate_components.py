@@ -54,7 +54,6 @@ def generate_component_files():
 
     # Process each component
     for i, v_component in enumerate(api_data):
-
         # create the vue component file from template
         vue_file = OUTPUT_JS_DIR / f"{v_component['name']}.vue"
         vue_template = jinja_env.get_template("vue_component.vue.jinja")

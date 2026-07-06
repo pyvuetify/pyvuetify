@@ -1,29 +1,21 @@
 import pyvuetify as v
 
 v.Parallax(
-    height=200,
-    dark=True,
     src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg",
     children=[
-        v.Row(
-            align="center",
-            justify="center",
+        v.Html(
+            tag="div",
+            class_="d-flex flex-column fill-height justify-center align-center text-white",
             children=[
-                v.Col(
-                    class_="text-center",
-                    cols=12,
-                    children=[
-                        v.Html(
-                            tag="h1",
-                            class_="font-weight-thin mb-0 white--text",
-                            children=["Vuetify"],
-                        ),
-                        v.Html(
-                            tag="h3",
-                            class_="subheading white--text mt-1",
-                            children=["Build your application today!"],
-                        ),
-                    ],
+                v.Html(
+                    tag="h1",
+                    class_="text-headline-large font-weight-thin mt-0 mb-4",
+                    children=["Vuetify"],
+                ),
+                v.Html(
+                    tag="h4",
+                    class_="subheading my-0",
+                    children=["Build your application today!"],
                 ),
             ],
         ),

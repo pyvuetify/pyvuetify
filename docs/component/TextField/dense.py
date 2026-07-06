@@ -1,88 +1,23 @@
 import pyvuetify as v
 
-v.Container(
+v.Card(
+    class_="mx-auto",
+    color="surface-light",
+    max_width="400",
     children=[
-        v.Form(
+        v.CardText(
             children=[
-                v.Row(
-                    children=[
-                        v.Col(
-                            cols="12",
-                            sm="6",
-                            md="4",
-                            children=[
-                                v.TextField(
-                                    dense=True,
-                                    label="Regular",
-                                )
-                            ],
-                        ),
-                        v.Col(
-                            cols="12",
-                            sm="6",
-                            md="4",
-                            children=[
-                                v.TextField(
-                                    label="Filled",
-                                    filled=True,
-                                    dense=True,
-                                )
-                            ],
-                        ),
-                        v.Col(
-                            cols="12",
-                            sm="6",
-                            md="4",
-                            children=[
-                                v.TextField(
-                                    label="Filled",
-                                    placeholder="Dense & Rounded",
-                                    filled=True,
-                                    rounded=True,
-                                    dense=True,
-                                )
-                            ],
-                        ),
-                        v.Col(
-                            cols="12",
-                            sm="6",
-                            md="4",
-                            children=[
-                                v.TextField(
-                                    label="Solo",
-                                    solo=True,
-                                    dense=True,
-                                )
-                            ],
-                        ),
-                        v.Col(
-                            cols="12",
-                            sm="6",
-                            md="4",
-                            children=[
-                                v.TextField(
-                                    label="Outlined",
-                                    outlined=True,
-                                    dense=True,
-                                )
-                            ],
-                        ),
-                        v.Col(
-                            cols="12",
-                            sm="6",
-                            md="4",
-                            children=[
-                                v.TextField(
-                                    label="Outlined",
-                                    placeholder="Placeholder",
-                                    outlined=True,
-                                    dense=True,
-                                )
-                            ],
-                        ),
-                    ]
-                )
-            ]
-        )
-    ]
+                v.TextField(
+                    # JS expression, needs manual conversion
+                    loading="loading",
+                    append_inner_icon="mdi-magnify",
+                    density="compact",
+                    label="Search templates",
+                    variant="solo",
+                    hide_details=True,
+                    single_line=True,
+                ),
+            ],
+        ),
+    ],
 )

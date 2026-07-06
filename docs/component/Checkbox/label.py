@@ -1,0 +1,39 @@
+import pyvuetify as v
+
+v.Container(
+    fluid=True,
+    children=[
+        v.Checkbox(
+            v_model="checkbox",
+            children=[
+                v.Html(
+                    tag="template",
+                    children=[
+                        v.Html(
+                            tag="div",
+                            children=[
+                                "I agree that",
+                                v.Tooltip(
+                                    location="bottom",
+                                    children=[
+                                        v.Html(
+                                            tag="template",
+                                            children=[
+                                                v.Html(
+                                                    tag="a",
+                                                    href="https://vuetifyjs.com",
+                                                    target="_blank",
+                                                    children=["Vuetify"],
+                                                ),
+                                            ],
+                                        ),
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

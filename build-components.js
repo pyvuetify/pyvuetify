@@ -8,6 +8,7 @@ import vuetify from "vite-plugin-vuetify";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const componentDir = resolve(__dirname, "js/_component");
+const extraComponentDir = resolve(__dirname, "extra_component");
 const outDir = resolve(__dirname, "pyvuetify/_static");
 
 // Clean output directory
@@ -17,12 +18,22 @@ if (existsSync(outDir)) {
 mkdirSync(outDir, { recursive: true });
 
 // Get all JS component files
-const componentFiles = readdirSync(componentDir)
-  .filter((file) => file.endsWith(".js"))
-  .map((file) => ({
-    name: file.replace(".js", ""),
-    path: resolve(componentDir, file),
-  }));
+const componentFiles = [
+  ...readdirSync(componentDir)
+    .filter((file) => file.endsWith(".js"))
+    .map((file) => ({
+      name: file.replace(".js", ""),
+      path: resolve(componentDir, file),
+    })),
+  ...(existsSync(extraComponentDir)
+    ? readdirSync(extraComponentDir)
+        .filter((file) => file.endsWith(".js"))
+        .map((file) => ({
+          name: file.replace(".js", ""),
+          path: resolve(extraComponentDir, file),
+        }))
+    : []),
+];
 
 console.log(`Building ${componentFiles.length} components...\n`);
 

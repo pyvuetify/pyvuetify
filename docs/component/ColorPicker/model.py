@@ -1,26 +1,67 @@
-from ipywidgets import jslink
-
 import pyvuetify as v
-
-color_picker1 = v.ColorPicker(
-    mode="hexa",
-    v_model="#FF5733",
-    class_="ma-2",
-)
-
-color_picker2 = v.ColorPicker(
-    v_model={"r": 255, "g": 87, "b": 51, "a": 1},
-    class_="ma-2",
-)
-
-jslink((color_picker1, "v_model"), (color_picker2, "v_model"))
 
 v.Container(
     children=[
         v.Row(
-            justify="space-around",
-            children=[color_picker1, color_picker2],
+            children=[
+                v.Col(
+                    cols="12",
+                    md="4",
+                    children=[
+                        v.Btn(
+                            class_="my-4",
+                            block=True,
+                            children=["null"],
+                        ),
+                        v.Btn(
+                            class_="my-4",
+                            block=True,
+                            children=["hex"],
+                        ),
+                        v.Btn(
+                            class_="my-4",
+                            block=True,
+                            children=["hexa"],
+                        ),
+                        v.Btn(
+                            class_="my-4",
+                            block=True,
+                            children=["rgba"],
+                        ),
+                        v.Btn(
+                            class_="my-4",
+                            block=True,
+                            children=["hsla"],
+                        ),
+                        v.Btn(
+                            class_="my-4",
+                            block=True,
+                            children=["hsva"],
+                        ),
+                    ],
+                ),
+                v.Col(
+                    class_="d-flex justify-center",
+                    children=[
+                        v.ColorPicker(v_model="color"),
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    md="4",
+                    children=[
+                        v.Sheet(
+                            class_="pa-4",
+                            children=[
+                                v.Html(
+                                    tag="pre",
+                                    children=["{{ color }}"],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
         ),
     ],
-    class_="my-2",
 )

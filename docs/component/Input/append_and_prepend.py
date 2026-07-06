@@ -1,26 +1,15 @@
 import pyvuetify as v
 
 v.TextField(
-    v_slots=[
-        {
-            "name": "append",
-            "children": [
+    children=[
+        v.Html(
+            tag="template",
+            children=[
                 v.Icon(
-                    children=["mdi-plus"],
-                    slot="append",
                     color="red",
+                    children=["mdi-plus"],
                 ),
             ],
-        },
-        {
-            "name": "prepend",
-            "children": [
-                v.Icon(
-                    children=["mdi-minus"],
-                    slot="prepend",
-                    color="green",
-                )
-            ],
-        },
+        ),
     ],
 )

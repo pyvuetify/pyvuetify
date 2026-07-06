@@ -1,54 +1,33 @@
 import pyvuetify as v
 
-v.Container(
+v.Form(
     children=[
-        v.Form(
+        v.Container(
             children=[
                 v.Row(
                     children=[
                         v.Col(
                             cols="12",
-                            sm="6",
                             children=[
                                 v.TextField(
-                                    label="Prepend",
-                                    prepend_icon="mdi-map-marker",
+                                    v_model="message",
+                                    # JS expression, needs manual conversion
+                                    append_icon="message ? 'mdi-send' : 'mdi-microphone'",
+                                    # JS expression, needs manual conversion
+                                    append_inner_icon="marker ? 'mdi-map-marker' : 'mdi-map-marker-off'",
+                                    # JS expression, needs manual conversion
+                                    prepend_icon="icon",
+                                    clear_icon="mdi-close-circle",
+                                    label="Message",
+                                    type="text",
+                                    variant="filled",
+                                    clearable=True,
                                 ),
                             ],
                         ),
-                        v.Col(
-                            cols="12",
-                            sm="6",
-                            children=[
-                                v.TextField(
-                                    label="Prepend inner",
-                                    prepend_inner_icon="mdi-map-marker",
-                                )
-                            ],
-                        ),
-                        v.Col(
-                            cols="12",
-                            sm="6",
-                            children=[
-                                v.TextField(
-                                    label="Append",
-                                    append_icon="mdi-map-marker",
-                                )
-                            ],
-                        ),
-                        v.Col(
-                            cols="12",
-                            sm="6",
-                            children=[
-                                v.TextField(
-                                    label="Append outer",
-                                    append_outer_icon="mdi-map-marker",
-                                )
-                            ],
-                        ),
-                    ]
-                )
-            ]
-        )
-    ]
+                    ],
+                ),
+            ],
+        ),
+    ],
 )

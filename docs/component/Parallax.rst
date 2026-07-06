@@ -1,34 +1,21 @@
 Parallax
 ========
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Parallax
-    documentation <https://v2.vuetifyjs.com/en/components/parallax/>`__.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/parallax/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Parallax <pyvuetify.Parallax>` component creates a 3d effect
-that makes an image appear to scroll slower than the window.
+The :py:class:`pyvuetify.Parallax` component creates a 3d effect that makes an image appear to scroll slower than the window.
 
 .. api::
 
     :py:class:`pyvuetify.Parallax`
 
-Usage
------
-
-A parallax causes a shift in a background image when the user scrolls the page.
-
-.. jupyter-execute:: Parallax/usage.py
-    :raises:
-
-Examples
---------
-
 Content
-^^^^^^^
+-------
 
-You can also place any content inside of the parallax. This allows you to use
-the parallax as a hero image.
+You can also place any content inside of the parallax. This allows you to use the parallax as a hero image.
 
 .. tab-set::
 
@@ -46,11 +33,33 @@ the parallax as a hero image.
 
         .. literalinclude:: Parallax/content.vue
 
-Custom height
-^^^^^^^^^^^^^
 
-You can specify a custom height on a parallax. Keep in mind this can break the
-parallax if your image is not sized properly.
+Welcome
+-------
+
+You can use it as a welcome section or as a portfolio hero section.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Parallax/welcome.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Parallax/welcome.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Parallax/welcome.vue
+
+
+Custom height
+-------------
+
+You can specify a custom height on a parallax. Keep in mind this can break the parallax if your image is not sized properly
 
 .. tab-set::
 

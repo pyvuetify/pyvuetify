@@ -1,26 +1,28 @@
 import pyvuetify as v
 
-items = [
-    (100, "blue-grey"),
-    (80, "deep-orange lighten-2"),
-    (60, "brown"),
-    (40, "lime"),
-    (20, "indigo darken-2"),
-]
-
-v.Layout(
-    class_="d-flex flex-row justify-space-evenly my-2",
+v.Html(
+    tag="div",
+    class_="text-center",
     children=[
-        v.Html(
-            tag="div",
-            class_="d-flex flex-grow-1 justify-center",
-            children=[
-                v.ProgressCircular(
-                    value=value,
-                    color=color,
-                )
-            ],
-        )
-        for value, color in items
+        v.ProgressCircular(
+            color="blue-grey",
+            model_value="100",
+        ),
+        v.ProgressCircular(
+            color="deep-orange-lighten-2",
+            model_value="80",
+        ),
+        v.ProgressCircular(
+            color="brown",
+            model_value="60",
+        ),
+        v.ProgressCircular(
+            color="lime",
+            model_value="40",
+        ),
+        v.ProgressCircular(
+            color="indigo-darken-2",
+            model_value="20",
+        ),
     ],
 )

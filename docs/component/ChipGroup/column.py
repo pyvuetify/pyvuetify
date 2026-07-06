@@ -1,35 +1,38 @@
 import pyvuetify as v
 
-tags = [
-    "Work",
-    "Home Improvement",
-    "Vacation",
-    "Food",
-    "Drawers",
-    "Shopping",
-    "Art",
-    "Tech",
-    "Creative Writing",
-]
-
-chip_group = v.ChipGroup(
-    column=True, active_class="text-primary", children=[v.Chip(children=[tag]) for tag in tags]
-)
-
 v.Sheet(
-    class_="mx-auto my-2",
-    elevation=10,
-    max_width="500",
+    class_="mx-auto",
+    elevation="3",
+    max_width="300",
     rounded="xl",
     children=[
         v.Sheet(
-            class_="pa-3 bg-primary text-right text-white",
+            class_="pa-3 bg-primary text-right",
             rounded="t-xl",
             children=[
-                v.Btn(icon=True, children=[v.Icon(children=["mdi-content-save"])]),
-                v.Btn(class_="ms-2", icon=True, children=[v.Icon(children=["mdi-check-bold"])]),
+                v.Btn(icon="mdi-content-save-cog-outline"),
+                v.Btn(
+                    class_="ms-2",
+                    icon="mdi-check-bold",
+                ),
             ],
         ),
-        v.Html(tag="div", class_="pa-4", children=[chip_group]),
+        v.Html(
+            tag="div",
+            class_="pa-4",
+            children=[
+                v.ChipGroup(
+                    selected_class="text-primary",
+                    column=True,
+                    children=[
+                        v.Chip(
+                            # JS expression, needs manual conversion
+                            key="tag",
+                            children=["{{ tag }}"],
+                        ),
+                    ],
+                ),
+            ],
+        ),
     ],
 )

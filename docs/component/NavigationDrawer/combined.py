@@ -1,0 +1,61 @@
+import pyvuetify as v
+
+v.Card(
+    children=[
+        v.Layout(
+            children=[
+                v.NavigationDrawer(
+                    theme="dark",
+                    permanent=True,
+                    rail=True,
+                    children=[
+                        v.List(
+                            children=[
+                                v.ListItem(
+                                    prepend_avatar="https://randomuser.me/api/portraits/women/75.jpg",
+                                ),
+                            ],
+                        ),
+                        v.Divider(),
+                        v.List(
+                            density="compact",
+                            nav=True,
+                            children=[
+                                v.ListItem(
+                                    prepend_icon="mdi-view-dashboard",
+                                    value="dashboard",
+                                ),
+                                v.ListItem(
+                                    prepend_icon="mdi-forum",
+                                    value="messages",
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+                v.NavigationDrawer(
+                    permanent=True,
+                    children=[
+                        v.List(
+                            children=[
+                                v.ListItem(
+                                    title="Home",
+                                    value="home",
+                                ),
+                                v.ListItem(
+                                    title="Contacts",
+                                    value="contacts",
+                                ),
+                                v.ListItem(
+                                    title="Settings",
+                                    value="settings",
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+                v.Main(style_="height: 300px"),
+            ],
+        ),
+    ],
+)

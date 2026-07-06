@@ -1,28 +1,50 @@
 import pyvuetify as v
 
-v.Container(
+v.Html(
+    tag="div",
+    class_="text-center",
     children=[
-        v.Chip(class_="ma-2", label=True, children=["Label"]),
+        v.Chip(
+            class_="ma-2",
+            label=True,
+            children=["Label"],
+        ),
         v.Chip(
             class_="ma-2",
             color="pink",
             label=True,
-            text_color="white",
-            children=[v.Icon(left=True, children=["mdi-label"]), "Tags"],
+            children=[
+                v.Icon(
+                    icon="mdi-label",
+                    start=True,
+                ),
+                "Tags",
+            ],
         ),
         v.Chip(
             class_="ma-2",
             color="primary",
             label=True,
-            children=[v.Icon(left=True, children=["mdi-account-circle-outline"]), "John Leider"],
+            children=[
+                v.Icon(
+                    icon="mdi-account-circle-outline",
+                    start=True,
+                ),
+                "John Leider",
+            ],
         ),
         v.Chip(
             class_="ma-2",
-            close_=True,
             color="cyan",
+            closable=True,
             label=True,
-            text_color="white",
-            children=[v.Icon(left=True, children=["mdi-twitter"]), "New Tweets"],
+            children=[
+                v.Icon(
+                    icon="mdi-twitter",
+                    start=True,
+                ),
+                "New Tweets",
+            ],
         ),
-    ]
+    ],
 )

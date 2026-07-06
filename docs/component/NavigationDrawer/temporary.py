@@ -1,87 +1,52 @@
-from ipywidgets import jslink
-
 import pyvuetify as v
 
-switch = v.Switch(label="Toggle Drawer", v_model=False)
-
-drawer = v.NavigationDrawer(
-    v_model=False,
-    absolute=True,
+v.Card(
     children=[
-        v.List(
+        v.Layout(
             children=[
-                v.ListItem(
-                    class_="px-2",
+                v.NavigationDrawer(
+                    v_model="drawer",
+                    temporary=True,
                     children=[
-                        v.ListItemAvatar(
+                        v.ListItem(
+                            prepend_avatar="https://randomuser.me/api/portraits/men/78.jpg",
+                            title="John Leider",
+                        ),
+                        v.Divider(),
+                        v.List(
+                            density="compact",
+                            nav=True,
                             children=[
-                                v.Img(
-                                    src="https://randomuser.me/api/portraits/women/85.jpg",
+                                v.ListItem(
+                                    prepend_icon="mdi-view-dashboard",
+                                    title="Home",
+                                    value="home",
+                                ),
+                                v.ListItem(
+                                    prepend_icon="mdi-forum",
+                                    title="About",
+                                    value="about",
                                 ),
                             ],
                         ),
                     ],
                 ),
-                v.ListItem(
-                    link=True,
+                v.Main(
+                    style_="height: 250px",
                     children=[
-                        v.ListItemContent(
+                        v.Html(
+                            tag="div",
+                            class_="d-flex justify-center align-center h-100",
                             children=[
-                                v.ListItemTitle(
-                                    class_="text-h6",
-                                    children=["Sandra Adams"],
-                                ),
-                                v.ListItemSubtitle(
-                                    children=["sandra.adams@example.com"],
+                                v.Btn(
+                                    color="primary",
+                                    children=["Toggle"],
                                 ),
                             ],
                         ),
-                    ],
-                ),
-            ],
-        ),
-        v.Divider(),
-        v.List(
-            nav=True,
-            dense=True,
-            children=[
-                v.ListItem(
-                    link=True,
-                    children=[
-                        v.ListItemIcon(
-                            children=[v.Icon(children=["mdi-folder"])],
-                        ),
-                        v.ListItemTitle(children=["My Files"]),
-                    ],
-                ),
-                v.ListItem(
-                    link=True,
-                    children=[
-                        v.ListItemIcon(
-                            children=[v.Icon(children=["mdi-account-multiple"])],
-                        ),
-                        v.ListItemTitle(children=["Shared with me"]),
-                    ],
-                ),
-                v.ListItem(
-                    link=True,
-                    children=[
-                        v.ListItemIcon(
-                            children=[v.Icon(children=["mdi-star"])],
-                        ),
-                        v.ListItemTitle(children=["Starred"]),
                     ],
                 ),
             ],
         ),
     ],
-)
-
-jslink((switch, "v_model"), (drawer, "v_model"))
-
-v.Card(
-    class_="mx-auto my-2",
-    height=400,
-    width=800,
-    children=[v.Layout(align_content_center=True, justify_center=True, children=[switch]), drawer],
 )

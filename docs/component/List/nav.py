@@ -1,75 +1,39 @@
 import pyvuetify as v
 
-items = [
-    {"text": "My Files", "icon": "mdi-folder"},
-    {"text": "Shared with me", "icon": "mdi-account-multiple"},
-    {"text": "Starred", "icon": "mdi-star"},
-    {"text": "Recent", "icon": "mdi-history"},
-    {"text": "Offline", "icon": "mdi-check-circle"},
-    {"text": "Uploads", "icon": "mdi-upload"},
-    {"text": "Backups", "icon": "mdi-cloud-upload"},
-]
-
 v.Card(
-    class_="mx-auto my-2",
-    max_width=256,
-    tile=True,
+    class_="mx-auto",
+    width="256",
     children=[
-        v.NavigationDrawer(
-            permanent=True,
+        v.Layout(
             children=[
-                v.SystemBar(),
-                v.List(
-                    nav=True,
-                    dense=True,
+                v.NavigationDrawer(
+                    absolute=True,
+                    permanent=True,
                     children=[
-                        v.ListItem(
-                            children=[
-                                v.ListItemAvatar(
-                                    children=[
-                                        v.Img(src="https://cdn.vuetifyjs.com/images/john.png")
-                                    ]
-                                )
-                            ]
-                        ),
-                        v.ListItem(
-                            link=True,
-                            children=[
-                                v.ListItemContent(
-                                    children=[
-                                        v.ListItemTitle(class_="text-h6", children=["John Leider"]),
-                                        v.ListItemSubtitle(children=["john@vuetifyjs.com"]),
-                                    ]
-                                ),
-                                v.ListItemAction(children=[v.Icon(children=["mdi-menu-down"])]),
-                            ],
-                        ),
-                    ],
-                ),
-                v.Divider(),
-                v.List(
-                    nav=True,
-                    dense=True,
-                    children=[
-                        v.ListItemGroup(
-                            v_model=2,
-                            color="success",
+                        v.List(
                             children=[
                                 v.ListItem(
-                                    key=i,
+                                    prepend_avatar="https://cdn.vuetifyjs.com/images/john.png",
+                                    subtitle="john@google.com",
+                                    title="John Leider",
                                     children=[
-                                        v.ListItemIcon(children=[v.Icon(children=[e["icon"]])]),
-                                        v.ListItemContent(
-                                            children=[v.ListItemTitle(children=[e["text"]])]
+                                        v.Html(
+                                            tag="template",
+                                            children=[
+                                                v.Btn(
+                                                    icon="mdi-menu-down",
+                                                    size="small",
+                                                    variant="text",
+                                                ),
+                                            ],
                                         ),
                                     ],
-                                )
-                                for i, e in enumerate(items)
+                                ),
                             ],
-                        )
+                        ),
                     ],
                 ),
             ],
-        )
+        ),
     ],
 )

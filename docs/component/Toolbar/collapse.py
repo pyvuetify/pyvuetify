@@ -1,16 +1,27 @@
 import pyvuetify as v
 
 v.Card(
-    color="grey lighten-4",
-    flat=True,
-    height="200px",
-    tile=True,
     children=[
         v.Toolbar(
-            collapse=True,
+            # JS expression, needs manual conversion
+            collapse="collapse",
+            # JS expression, needs manual conversion
+            collapse_position="collapsePosition",
+            title="Toolbar",
             children=[
-                v.Btn(icon=True, children=[v.Icon(children=["mdi-magnify"])]),
-                v.Btn(icon=True, children=[v.Icon(children=["mdi-dots-vertical"])]),
+                v.Html(
+                    tag="template",
+                    children=[
+                        v.Html(
+                            tag="div",
+                            class_="d-flex ga-1",
+                            children=[
+                                v.Btn(icon="mdi-magnify"),
+                                v.Btn(icon="mdi-dots-vertical"),
+                            ],
+                        ),
+                    ],
+                ),
             ],
         ),
     ],

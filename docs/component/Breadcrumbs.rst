@@ -1,47 +1,16 @@
 Breadcrumbs
 ===========
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/breadcrumbs/>`_.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/breadcrumbs/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Breadcrumbs <pyvuetify.Breadcrumbs>` component is a navigational helper for pages.
-It can accept a Material Icons icon or text characters as a divider. An array of objects can be passed
-to the ``items`` property of the component. Additionally, slots exists for more control of the breadcrumbs,
-either utilizing :py:class:`BreadcrumbsItem <pyvuetify.BreadcrumbsItem>` or other custom markup.
+The :py:class:`pyvuetify.Breadcrumbs` component is used as a navigational helper and hierarchy for pages.
 
 .. api::
 
-    - :py:class:`pyvuetify.Breadcrumbs`
-    - :py:class:`pyvuetify.BreadcrumbsItem`
-    - :py:class:`pyvuetify.BreadcrumbsDivider`
-
-.. note:: Caveat
-
-    By default v-breadcrumbs will disable all crumbs up to the current page in a nested paths.
-    You can prevent this behavior by using exact: true on each applicable breadcrumb in the
-    items array.
-
-Usage
------
-
-By default, breadcrumbs use a text divider. This can be any string.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: Breadcrumbs/usage.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: Breadcrumbs/usage.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: Breadcrumbs/usage.vue
+    :py:class:`pyvuetify.Breadcrumbs`
 
 Divider
 -------
@@ -64,31 +33,33 @@ Breadcrumbs separator can be set using ``divider`` property.
 
         .. literalinclude:: Breadcrumbs/divider.vue
 
-Large
------
 
-Large breadcrumbs have larger font size.
+Prepend
+-------
+
+Prepend content with the ``prepend`` slot.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Breadcrumbs/large.py
+        .. jupyter-execute:: Breadcrumbs/prepend.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Breadcrumbs/large.py
+        .. literalinclude:: Breadcrumbs/prepend.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Breadcrumbs/large.vue
+        .. literalinclude:: Breadcrumbs/prepend.vue
 
-Icon Dividers
--------------
 
-For the icon variant, breadcrumbs can use any icon in Material Design Icons.
+Dividers
+--------
+
+To customize the divider, use the ``divider`` slot.
 
 .. tab-set::
 
@@ -106,24 +77,25 @@ For the icon variant, breadcrumbs can use any icon in Material Design Icons.
 
         .. literalinclude:: Breadcrumbs/icon_dividers.vue
 
-Item
-----
 
-You can use the ``item`` slot to customize each breadcrumb.
+Title
+-----
+
+You can use the ``title`` slot to customize each breadcrumb title.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Breadcrumbs/item.py
+        .. jupyter-execute:: Breadcrumbs/title.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Breadcrumbs/item.py
+        .. literalinclude:: Breadcrumbs/title.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Breadcrumbs/item.vue
+        .. literalinclude:: Breadcrumbs/title.vue
 

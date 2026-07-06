@@ -1,8 +1,9 @@
 <template>
   <v-card class="mx-auto" max-width="344">
     <v-img
-      src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
       height="200px"
+      src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+      cover
     ></v-img>
 
     <v-card-title> Top western road trips </v-card-title>
@@ -10,13 +11,14 @@
     <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
 
     <v-card-actions>
-      <v-btn color="orange lighten-2" text> Explore </v-btn>
+      <v-btn color="orange-lighten-2" text="Explore"></v-btn>
 
       <v-spacer></v-spacer>
 
-      <v-btn icon @click="show = !show">
-        <v-icon>{{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
-      </v-btn>
+      <v-btn
+        :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+        @click="show = !show"
+      ></v-btn>
     </v-card-actions>
 
     <v-expand-transition>
@@ -34,3 +36,22 @@
     </v-expand-transition>
   </v-card>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const show = ref(false);
+</script>
+
+<script>
+export default {
+  data: () => ({
+    show: false,
+  }),
+};
+</script>
+<example-meta lang="json">
+{
+  "figma": "https://www.figma.com/design/5f4g4pbbBsk9TTWX4Xvlx1/PRO-v3.0---Official-Vuetify-3-UI-Kit?node-id=1514-96232&t=tWnPBMI0RfGlNRgq-4"
+}
+</example-meta>

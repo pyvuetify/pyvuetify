@@ -1,18 +1,32 @@
 <template>
-  <div class="text-center">
+  <div class="text-center pa-8">
+    <v-btn
+      class="ma-auto"
+      size="x-large"
+      text="Click Me"
+      @click="sheet = !sheet"
+    ></v-btn>
+
     <v-bottom-sheet v-model="sheet" inset>
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn color="orange" dark v-bind="attrs" v-on="on"> Open Inset </v-btn>
-      </template>
-      <v-sheet class="text-center" height="200px">
-        <v-btn class="mt-6" text color="error" @click="sheet = !sheet">
-          close
-        </v-btn>
-        <div class="my-3">This is a bottom sheet using the inset prop</div>
-      </v-sheet>
+      <v-card class="text-center" height="200">
+        <v-card-text>
+          <v-btn text="Close" variant="text" @click="sheet = !sheet"></v-btn>
+
+          <br />
+          <br />
+
+          <div>This is a bottom sheet that is using the inset prop</div>
+        </v-card-text>
+      </v-card>
     </v-bottom-sheet>
   </div>
 </template>
+
+<script setup>
+import { shallowRef } from "vue";
+
+const sheet = shallowRef(false);
+</script>
 
 <script>
 export default {

@@ -1,40 +1,86 @@
 import pyvuetify as v
 
 v.Card(
-    class_="mx-auto my-2",
-    max_width=344,
+    class_="mx-auto",
+    max_width="344",
     children=[
-        v.CardTitle(children=["Word of the Day"]),
-        v.CardSubtitle(children=["el·ee·mos·y·nar·y"]),
-        v.CardActions(children=[v.Btn(text=True, children=["Learn More"])]),
+        v.CardText(
+            children=[
+                v.Html(
+                    tag="div",
+                    children=["Word of the Day"],
+                ),
+                v.Html(
+                    tag="div",
+                    class_="text-headline-large font-weight-black mb-4",
+                    children=["el·ee·mos·y·nar·y"],
+                ),
+                v.Html(
+                    tag="div",
+                    class_="mb-4",
+                    children=["adjective"],
+                ),
+                v.Html(
+                    tag="div",
+                    class_="text-medium-emphasis",
+                    children=[
+                        "relating to or dependent on charity; charitable; charitable donations. Pertaining to alms.",
+                        '"an eleemosynary educational institution."',
+                    ],
+                ),
+            ],
+        ),
+        v.CardActions(
+            children=[
+                v.Btn(
+                    color="teal-accent-4",
+                    text="Learn More",
+                    variant="text",
+                ),
+            ],
+        ),
         v.ExpandTransition(
             children=[
                 v.Card(
-                    class_="transition-fast-in-fast-out v-card--reveal",
-                    style_="height: 100%;",
+                    class_="position-absolute w-100",
+                    height="100%",
+                    style_="bottom: 0;",
                     children=[
                         v.CardText(
                             class_="pb-0",
                             children=[
                                 v.Html(
-                                    tag="p", class_="text-h4 text--primary", children=["adjective"]
+                                    tag="p",
+                                    class_="text-headline-large",
+                                    children=["Origin"],
                                 ),
                                 v.Html(
                                     tag="p",
-                                    children=["relating to or dependent on charity; charitable."],
-                                ),
-                                v.Html(
-                                    tag="p", children=['"an eleemosynary educational institution."']
+                                    class_="text-medium-emphasis",
+                                    children=[
+                                        (
+                                            "late 16th century (as a noun denoting a place where "
+                                            "alms were distributed): from medieval Latin "
+                                            "eleemosynarius, from late Latin eleemosyna ‘alms’, "
+                                            "from Greek eleēmosunē ‘compassion’"
+                                        ),
+                                    ],
                                 ),
                             ],
                         ),
                         v.CardActions(
                             class_="pt-0",
-                            children=[v.Btn(text=True, color="teal accent-4", children=["Close"])],
+                            children=[
+                                v.Btn(
+                                    color="teal-accent-4",
+                                    text="Close",
+                                    variant="text",
+                                ),
+                            ],
                         ),
                     ],
-                )
-            ]
+                ),
+            ],
         ),
     ],
 )

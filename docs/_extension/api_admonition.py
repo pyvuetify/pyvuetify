@@ -1,4 +1,5 @@
 """A directive to generate an API admonition."""
+
 from __future__ import annotations
 
 from docutils import nodes

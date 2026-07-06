@@ -1,0 +1,69 @@
+import pyvuetify as v
+
+v.Container(
+    fluid=True,
+    children=[
+        v.Row(
+            wrap=True,
+            children=[
+                v.Col(
+                    cols="12",
+                    md="4",
+                    sm="6",
+                    children=[
+                        v.Html(
+                            tag="h5",
+                            class_="mt-0 mb-2",
+                            children=['grouping="min2"'],
+                        ),
+                        v.NumberInput(
+                            v_model="example1",
+                            precision=0,
+                            grouping="min2",
+                        ),
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    md="4",
+                    sm="6",
+                    children=[
+                        v.Html(
+                            tag="h5",
+                            class_="mt-0 mb-2",
+                            children=["custom separator"],
+                        ),
+                        v.NumberInput(
+                            v_model="example2",
+                            precision=2,
+                            group_separator="'",
+                            grouping="auto",
+                        ),
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    md="4",
+                    sm="6",
+                    children=[
+                        v.Html(
+                            tag="h5",
+                            class_="mt-0 mb-2",
+                            children=['locale="de"'],
+                        ),
+                        v.LocaleProvider(
+                            locale="de",
+                            children=[
+                                v.NumberInput(
+                                    v_model="example3",
+                                    precision=2,
+                                    grouping="auto",
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

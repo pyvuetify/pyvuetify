@@ -1,9 +1,11 @@
 <template>
   <v-card class="mx-auto" max-width="400">
-    <v-card-title>
-      <h2 class="text-h4">Shirt Blouse</h2>
+    <v-card-title class="d-flex">
+      <h2 class="text-headline-large my-0">Shirt Blouse</h2>
+
       <v-spacer></v-spacer>
-      <span class="text-h6">$44.50</span>
+
+      <span class="text-title-large">$44.50</span>
     </v-card-title>
 
     <v-card-text>
@@ -18,19 +20,49 @@
 
       <v-chip-group
         v-model="selection"
-        active-class="deep-purple--text text--accent-4"
+        selected-class="v-chip--selected v-chip--variant-tonal text-deep-purple-accent-4"
+        variant="outlined"
         mandatory
       >
-        <v-chip v-for="size in sizes" :key="size" :value="size">
-          {{ size }}
-        </v-chip>
+        <v-chip
+          v-for="size in sizes"
+          :key="size"
+          :text="size"
+          :value="size"
+        ></v-chip>
       </v-chip-group>
     </v-card-text>
 
     <v-card-actions>
-      <v-btn block class="white--text" color="deep-purple accent-4">
-        Add to Cart
-      </v-btn>
+      <v-btn
+        color="deep-purple-accent-4"
+        text="Add to Cart"
+        variant="flat"
+        block
+      ></v-btn>
     </v-card-actions>
   </v-card>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const sizes = ["04", "06", "08", "10", "12", "14"];
+
+const selection = ref("08");
+</script>
+
+<script>
+export default {
+  data: () => ({
+    selection: "08",
+    sizes: ["04", "06", "08", "10", "12", "14"],
+  }),
+};
+</script>
+
+<example-meta lang="json">
+{
+  "figma": "https://www.figma.com/design/5f4g4pbbBsk9TTWX4Xvlx1/PRO-v3.0---Official-Vuetify-3-UI-Kit?node-id=2226-46981&t=tC3y53U3XKPv8ZyJ-4"
+}
+</example-meta>

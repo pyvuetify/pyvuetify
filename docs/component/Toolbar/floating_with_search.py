@@ -1,22 +1,53 @@
 import pyvuetify as v
 
 v.Card(
-    class_="pa-4",
+    height="300",
+    image="https://cdn.vuetifyjs.com/images/toolbar/map.jpg",
+    border=True,
     flat=True,
-    height="300px",
-    img="https://cdn.vuetifyjs.com/images/toolbar/map.jpg",
     children=[
-        v.Toolbar(
-            dense=True,
-            floating=True,
+        v.Html(
+            tag="template",
             children=[
-                v.TextField(
-                    hide_details=True,
-                    prepend_icon="mdi-magnify",
-                    single_line=True,
+                v.Toolbar(
+                    rounded="lg",
+                    border=True,
+                    floating=True,
+                    children=[
+                        v.Html(
+                            tag="div",
+                            class_="px-4",
+                            children=[
+                                v.TextField(
+                                    density="compact",
+                                    placeholder="Search",
+                                    prepend_inner_icon="mdi-magnify",
+                                    variant="solo",
+                                    width="200",
+                                    flat=True,
+                                    hide_details=True,
+                                    single_line=True,
+                                ),
+                            ],
+                        ),
+                        v.Html(
+                            tag="template",
+                            children=[
+                                v.Btn(
+                                    color="medium-emphasis",
+                                    density="comfortable",
+                                    icon="mdi-crosshairs-gps",
+                                ),
+                                v.Btn(
+                                    class_="ms-1",
+                                    color="medium-emphasis",
+                                    density="comfortable",
+                                    icon="mdi-dots-vertical",
+                                ),
+                            ],
+                        ),
+                    ],
                 ),
-                v.Btn(icon=True, children=[v.Icon(children=["mdi-crosshairs-gps"])]),
-                v.Btn(icon=True, children=[v.Icon(children=["mdi-dots-vertical"])]),
             ],
         ),
     ],

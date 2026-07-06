@@ -1,52 +1,27 @@
 Input
 =====
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Input documentation
-    <https://v2.vuetifyjs.com/en/components/inputs/>`__.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/inputs/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Input <pyvuetify.Input>` component gives you a baseline to
-create your own custom inputs. It consists of a prepend/append slot, messages,
-and a default slot. It is recommended that you extend this component, but it can
-be used as a standalone.
+The :py:class:`pyvuetify.Input` component gives you a baseline to create your own custom inputs. It consists of a prepend/append slot, messages, and a default slot.
 
 .. api::
 
     :py:class:`pyvuetify.Input`
 
-Usage
+Error
 -----
 
-:py:class:`Input <pyvuetify.Input>` has 4 main areas. The prepended slot, the
-appended slot, the default slot, and messages. These make up the core logic
-shared between all form components.
+As any validatable Vuetify component, :py:class:`pyvuetify.Input` can be set to error state using **error** prop, messages can be added using **error-messages** prop. You can determine error messages count to show using **error-count** property.
 
-.. jupyter-execute:: Input/usage.py
-    :raises:
-
-.. warning::
-
-    The :py:class:`Input <pyvuetify.Input>` component is used as a wrapper for all
-    of the Vuetify form controls. It does NOT inherit attributes as they are
-    expected to be passed down to inner inputs.
-
-Examples
---------
-
-Error
-^^^^^
-
-As any validatable Vuetify component, :py:class:`Input <pyvuetify.Input>` can
-be set to error state using ``error`` prop, messages can be added using
-``error-messages`` prop. You can determine error messages count to show using
-``error-count`` property.
 
 Error count
-^^^^^^^^^^^
+-----------
 
-You can add multiple errors to :py:class:`Input <pyvuetify.Input>` using
-``error-count`` property.
+You can add multiple errors to :py:class:`pyvuetify.Input` using **error-count** property.
 
 .. tab-set::
 
@@ -68,57 +43,23 @@ You can add multiple errors to :py:class:`Input <pyvuetify.Input>` using
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute::
+        .. jupyter-execute:: Input/error.py
             :raises:
             :hide-code:
 
-            import pyvuetify as v
-
-            v.Input(
-                error_messages=['Fatal error'],
-                error=True,
-                disabled=True,
-                children=['Input']
-            )
-
     .. tab-item:: :fab:`python` Python
 
-        .. code-block:: python
-
-            import pyvuetify as v
-
-            v.Input(
-                error_messages=['Fatal error'],
-                error=True,
-                disabled=True,
-                children=['Input']
-            )
-
+        .. literalinclude:: Input/error.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. code-block:: vue
+        .. literalinclude:: Input/error.vue
 
-            <template>
-            <v-input
-                :error-messages="['Fatal error']"
-                error
-                disabled
-            >
-                Input
-            </v-input>
-            </template>
 
 Hide details
-^^^^^^^^^^^^
+------------
 
-When the ``hide-details`` prop is set to ``auto`` messages will be rendered only
-if there's a message (hint, error message etc) to display.
-
-.. todo::
-
-    The rule syntax is not clearly available through pyvuetify at the moment.
-    Please help me improve this section.
+When the **hide-details** prop is set to ``auto`` messages will be rendered only if there's a message (hint, error message etc) to display.
 
 .. tab-set::
 
@@ -136,12 +77,11 @@ if there's a message (hint, error message etc) to display.
 
         .. literalinclude:: Input/hide_details.vue
 
-Hint
-^^^^
 
-:py:class:`Input <pyvuetify.Input>` can have hint which can tell user how to
-use the input. ``persistent-hint`` prop makes the hint visible always if no
-messages are displayed.
+Hint
+----
+
+:py:class:`pyvuetify.Input` can have **hint** which can tell user how to use the input (when focused). **persistent-hint** prop makes the hint visible always if no ``error-messages`` are displayed.
 
 .. tab-set::
 
@@ -159,12 +99,11 @@ messages are displayed.
 
         .. literalinclude:: Input/hint.vue
 
-Loading
-^^^^^^^
 
-:py:class:`Input <pyvuetify.Input>` has loading state which can be used, e.g.
-for data loading indication. Note: :py:class:`TextField <pyvuetify.TextField>`
-is used just for example.
+Loading
+-------
+
+:py:class:`pyvuetify.Input` has **loading** state which can be used, e.g. for data loading indication. Note: :py:class:`pyvuetify.TextField` is used just for example.
 
 .. tab-set::
 
@@ -182,46 +121,55 @@ is used just for example.
 
         .. literalinclude:: Input/loading.vue
 
+
 Rules
-^^^^^
+-----
 
-You can add custom validation rules to :py:class:`Input <pyvuetify.Input>`,
-add them as functions returning ``true``/error message. Note:
-:py:class:`TextField <pyvuetify.TextField>` is used just for example.
-
-.. todo::
-
-    We need to better understand how to set customized rules in pyvuetify.
-    help welcomed :fas:`coffee`
-
-Success
-^^^^^^^
-
-As any validatable Vuetify component, :py:class:`Input <pyvuetify.Input>` can
-be set to success state using ``success`` prop, you can add message to it using
-``success-messages`` prop.
+You can add custom validation rules to :py:class:`pyvuetify.Input`, add them as functions returning ``true``/error message. Note: :py:class:`pyvuetify.TextField` is used just for example.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Input/success.py
+        .. jupyter-execute:: Input/rules.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Input/success.py
+        .. literalinclude:: Input/rules.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Input/success.vue
+        .. literalinclude:: Input/rules.vue
+
+
+Slot clicks
+-----------
+
+:py:class:`pyvuetify.Input` can have ``click:append`` and ``click:prepend`` events for its slots. Note: :py:class:`pyvuetify.TextField` is used just for example.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Input/slot_clicks.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Input/slot_clicks.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Input/slot_clicks.vue
+
 
 Append and prepend
-^^^^^^^^^^^^^^^^^^
+------------------
 
-:py:class:`Input <pyvuetify.Input>` has ``append`` and ``prepend`` slots. You
-can place custom icons in them.
+:py:class:`pyvuetify.Input` has ``append`` and ``prepend`` slots. You can place custom icons in them.
 
 .. tab-set::
 

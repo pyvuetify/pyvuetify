@@ -1,24 +1,19 @@
 <template>
   <div class="text-center">
-    <v-slider
-      v-model="length"
-      color="red darken-4"
-      min="1"
-      max="15"
-      label="Custom length"
-    ></v-slider>
-    <v-rating
-      v-model="rating"
-      :length="length"
-      color="red lighten-3"
-      background-color="grey lighten-1"
-      large
-    ></v-rating>
-    <div>
-      <span class="text-caption text-uppercase">model:</span>
-      <span class="font-weight-bold">
-        {{ rating }}
-      </span>
-    </div>
+    <v-rating v-model="rating" length="10"></v-rating>
   </div>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const rating = ref(2);
+</script>
+
+<script>
+export default {
+  data: () => ({
+    rating: 2,
+  }),
+};
+</script>

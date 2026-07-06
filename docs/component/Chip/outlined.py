@@ -1,32 +1,32 @@
 import pyvuetify as v
 
-v.Container(
+v.Html(
+    tag="div",
+    class_="text-center",
     children=[
         v.Chip(
             class_="ma-2",
             color="success",
-            outlined=True,
-            children=[v.Icon(left=True, children=["mdi-server-plus"]), "Server Status"],
+            variant="outlined",
+            children=[
+                v.Icon(
+                    icon="mdi-server-plus",
+                    start=True,
+                ),
+                "Server Status",
+            ],
         ),
         v.Chip(
             class_="ma-2",
             color="primary",
-            outlined=True,
-            pill=True,
-            children=["User Account", v.Icon(right=True, children=["mdi-account-outline"])],
+            variant="outlined",
+            children=[
+                "User Account",
+                v.Icon(
+                    icon="mdi-account-outline",
+                    end=True,
+                ),
+            ],
         ),
-        v.Chip(
-            class_="ma-2",
-            color="deep-purple accent-4",
-            outlined=True,
-            children=[v.Icon(left=True, children=["mdi-wrench"]), "Update Settings"],
-        ),
-        v.Chip(
-            class_="ma-2",
-            close_=True,
-            color="indigo darken-3",
-            outlined=True,
-            children=[v.Icon(left=True, children=["mdi-fire"]), "New Posts Available"],
-        ),
-    ]
+    ],
 )

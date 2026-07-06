@@ -1,14 +1,14 @@
 <template>
   <div>
     <v-progress-linear
+      color="yellow-darken-2"
       indeterminate
-      color="yellow darken-2"
     ></v-progress-linear>
     <br />
-    <v-progress-linear indeterminate color="green"></v-progress-linear>
+    <v-progress-linear color="green" indeterminate></v-progress-linear>
     <br />
-    <v-progress-linear indeterminate color="teal"></v-progress-linear>
+    <v-progress-linear color="teal" indeterminate></v-progress-linear>
     <br />
-    <v-progress-linear indeterminate color="cyan"></v-progress-linear>
+    <v-progress-linear color="cyan" indeterminate></v-progress-linear>
   </div>
 </template>

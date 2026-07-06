@@ -1,31 +1,30 @@
-from ipywidgets import jslink
-
 import pyvuetify as v
 
-colors = ["red", "blue", "green", "yellow", "purple", "orange"]
-
-select = v.Select(
-    items=colors,
-    label="Select an option",
-    v_model="red",
-)
-
-toolbar = v.Toolbar(
-    color="red",
-    children=[
-        v.ToolbarTitle(children=["Photos"]),
-        v.Spacer(),
-        v.Btn(icon=True, children=[v.Icon(children=["mdi-dots-vertical"])]),
-    ],
-)
-
-jslink((select, "v_model"), (toolbar, "color"))
-
 v.Card(
-    width="500",
-    class_="mx-auto my-2",
+    class_="mx-auto",
+    max_width="500",
     children=[
-        toolbar,
-        v.CardText(children=[select]),
+        v.Toolbar(
+            # JS expression, needs manual conversion
+            color="selection.length ? 'surface-variant' : 'deep-purple accent-4'",
+            children=[
+                v.Html(
+                    tag="template",
+                    children=[
+                        v.FadeTransition(
+                            hide_on_leave=True,
+                            children=[
+                                v.Btn(
+                                    # JS expression, needs manual conversion
+                                    key="selection.length > 0",
+                                    # JS expression, needs manual conversion
+                                    icon="selection.length ? 'mdi-close' : 'mdi-menu'",
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
     ],
 )

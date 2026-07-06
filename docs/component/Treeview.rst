@@ -1,41 +1,25 @@
 Treeview
 ========
 
-.. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Treeview
-    documentation <https://v2.vuetifyjs.com/en/components/treeview/>`__. All
-    examples have been converted to pyvuetify syntax.
 
-The :py:class:`Treeview <pyvuetify.Treeview>` component is useful for displaying
-large amounts of nested data.
+.. aknowledgement::
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/treeview/>`__.
+    All examples have been converted to pyvuetify syntax.
+
+The :py:class:`pyvuetify.Treeview` component is useful for displaying large amounts of nested data.
 
 .. api::
 
-    - :py:class:`pyvuetify.Treeview`
-    - :py:class:`pyvuetify.TreeviewNode`
+    :py:class:`pyvuetify.Treeview`
 
-Usage
+Props
 -----
 
-A basic example.
+The :py:class:`pyvuetify.Treeview` component has several props that allow you to customize its appearance and behavior.
 
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: Treeview/usage.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: Treeview/usage.py
-
-Examples
---------
 
 Activatable
-^^^^^^^^^^^
+-----------
 
 Treeview nodes can be activated by clicking on them.
 
@@ -55,8 +39,9 @@ Treeview nodes can be activated by clicking on them.
 
         .. literalinclude:: Treeview/activatable.vue
 
+
 Color
-^^^^^
+-----
 
 You can control the text and background color of the active treeview node.
 
@@ -76,31 +61,53 @@ You can control the text and background color of the active treeview node.
 
         .. literalinclude:: Treeview/color.vue
 
-Dense mode
-^^^^^^^^^^
 
-**Dense** mode provides more compact layout with decreased heights of the items.
+Density
+-------
+
+Dense mode provides more compact layout with decreased heights of the items.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Treeview/dense_mode.py
+        .. jupyter-execute:: Treeview/dense.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Treeview/dense_mode.py
+        .. literalinclude:: Treeview/dense.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Treeview/dense_mode.vue
+        .. literalinclude:: Treeview/dense.vue
 
-Hoverable
-^^^^^^^^^
 
-Treeview nodes can have a **hover** effect.
+Items registration
+------------------
+
+When working with large trees it is recommended to include ``items-registration="props"`` to ensure faster loading and interactions.
+
+
+
+
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Treeview/items_registration.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Treeview/items_registration.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Treeview/items_registration.vue
 
 .. tab-set::
 
@@ -118,44 +125,37 @@ Treeview nodes can have a **hover** effect.
 
         .. literalinclude:: Treeview/hoverable.vue
 
-Item disabled
-^^^^^^^^^^^^^
 
-Setting ``item_disabled`` prop allows to control which node's property disables the
-node when set to **true**.
+Item props
+----------
+
+If **item-props** is set to ``true`` then the whole item will be spread. In the following example, the disabled prop defined in each item will disable the item accordingly.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Treeview/item_disabled.py
+        .. jupyter-execute:: Treeview/item_props.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Treeview/item_disabled.py
+        .. literalinclude:: Treeview/item_props.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Treeview/item_disabled.vue
+        .. literalinclude:: Treeview/item_props.vue
 
-Load children
-^^^^^^^^^^^^^
-
-You can dynamically load child data by supplying a Promise callback to the
-``load_children`` prop. This callback will be executed the first time a user tries
-to expand an item that has a children property that is an empty array.
-
-.. todo::
-
-    This example requires an actual asynchronous data source to demonstrate properly.
-    and a talented contributor to set it up :fas:`heart`
 
 Open all
-^^^^^^^^
+--------
 
 Treeview nodes can be pre-opened on page load.
+
+
+
+
 
 .. tab-set::
 
@@ -173,11 +173,6 @@ Treeview nodes can be pre-opened on page load.
 
         .. literalinclude:: Treeview/open_all.vue
 
-Rounded
-^^^^^^^
-
-You can make treeview nodes **rounded**.
-
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
@@ -194,29 +189,31 @@ You can make treeview nodes **rounded**.
 
         .. literalinclude:: Treeview/rounded.vue
 
-Selectable
-^^^^^^^^^^
 
-You can easily select treeview nodes and children.
+Fluid
+-----
+
+The **fluid** prop removes the extra indentation used to line up children. This is useful when you want to reduce the horizontal space used by the treeview.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Treeview/selectable.py
+        .. jupyter-execute:: Treeview/fluid.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Treeview/selectable.py
+        .. literalinclude:: Treeview/fluid.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Treeview/selectable.vue
+        .. literalinclude:: Treeview/fluid.vue
+
 
 Selected color
-^^^^^^^^^^^^^^
+--------------
 
 You can control the color of the selected node checkbox.
 
@@ -236,14 +233,20 @@ You can control the color of the selected node checkbox.
 
         .. literalinclude:: Treeview/selected_color.vue
 
-Selection type
-^^^^^^^^^^^^^^
 
-Treeview now supports two different selection types. The default type is **leaf**,
-which will only include leaf nodes in the v-model array, but will render parent
-nodes as either partially or fully selected. The alternative mode is
-**independent**, which allows one to select parent nodes, but each node is
-independent of its parent and children.
+Selection type
+--------------
+
+Treeview supports several selection modes:
+
+- **leaf** (default): Limits selection to items without children.
+- **independent**: Lets you select any node, with no parent-child linkage at all.
+- **classic**: Selecting a parent selects all descendants, and parent nodes show as selected only when all their descendants are selected. Only leaf nodes are added to the model.
+
+Classic has two variants that are displayed the same way but with slightly different v-model behavior:
+
+- **branch**: Any parent node with at least one selected descendant is also added to the model.
+- **trunk**: If all children are selected only the parent node is added to the model.
 
 .. tab-set::
 
@@ -261,60 +264,205 @@ independent of its parent and children.
 
         .. literalinclude:: Treeview/selection_type.vue
 
-Shaped
-^^^^^^
 
-**Shaped** treeview's have rounded borders on one side of the nodes.
+Load children
+-------------
+
+You can dynamically load child data by supplying a *Promise* callback to the **load-children** prop. This callback will be executed the first time a user tries to expand an item that has a children property that is an empty array.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Treeview/shaped.py
+        .. jupyter-execute:: Treeview/load_children.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Treeview/shaped.py
+        .. literalinclude:: Treeview/load_children.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Treeview/shaped.vue
+        .. literalinclude:: Treeview/load_children.vue
 
-Append and label
-^^^^^^^^^^^^^^^^
 
-Using the ``label``, and an ``append`` slots we are able to create an intuitive
-file explorer.
+Slots
+-----
 
-.. todo::
+The :py:class:`pyvuetify.Treeview` component has several slots that allow you to customize the appearance and behavior of its items.
 
-    This example requires custom slots to demonstrate properly, and a talented
-    contributor to set it up :fas:`heart`
+
+Append and prepend
+------------------
+
+Using the the **prepend** slot we are able to create an intuitive file explorer.
+
+
+
+Both **append**, and **prepend** slots get additional information about the item: ``depth``, ``path`` (from indexes), ``isFirst``, ``isLast`` and the ``index`` within the children list.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Treeview/append_and_label.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Treeview/append_and_label.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Treeview/append_and_label.vue
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Treeview/append_and_prepend_item.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Treeview/append_and_prepend_item.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Treeview/append_and_prepend_item.vue
+
+
+No data
+-------
+
+When searching within the treeview, you might want to show custom **no-data** slot to provide context or immediate action.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Treeview/no_data.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Treeview/no_data.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Treeview/no_data.vue
+
+
+Title
+-----
+
+In this example we use a custom **title** slot to apply a line-through the treeview item's text when selected.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Treeview/title.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Treeview/title.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Treeview/title.vue
+
+
+Toggle
+------
+
+Here, a custom **toggle** slot is utilized to assign a specific color and variant to the button depending on the state of the item.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Treeview/toggle.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Treeview/toggle.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Treeview/toggle.vue
+
 
 Search and filter
-^^^^^^^^^^^^^^^^^
+-----------------
 
-Easily filter your treeview by using the ``search`` prop. You can easily apply your
-custom filtering function if you need case-sensitive or fuzzy filtering by setting
-the ``filter`` prop. This works similar to the
-:py:class:`Autocomplete <pyvuetify.Autocomplete>`__.
+Easily filter your treeview by using the **search** prop. You can easily apply your custom filtering function if you need case-sensitive or fuzzy filtering by setting the **custom-filter** prop. This works similar to the :doc:`Autocomplete <Autocomplete>` component.
 
-.. __: https://v2.vuetifyjs.com/en/components/autocompletes/
+.. tab-set::
 
-.. todo::
+    .. tab-item:: :fas:`eye` Rendered
 
-    This example requires custom slots to demonstrate properly, and a talented
-    contributor to set it up :fas:`heart`
+        .. jupyter-execute:: Treeview/search_and_filter.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Treeview/search_and_filter.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Treeview/search_and_filter.vue
+
 
 Selectable icons
-^^^^^^^^^^^^^^^^
+----------------
 
-Customize the **on**, **off** and **indeterminate** icons for your selectable tree.
-Combine with other advanced functionality like API loaded items.
+Customize the **on**, **off** and **indeterminate** icons for your selectable tree. Combine with other advanced functionality like API loaded items.
 
-.. todo::
+.. tab-set::
 
-    This example requires custom slots to demonstrate properly, and a talented
-    contributor to set it up :fas:`heart`
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Treeview/selectable_icons.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Treeview/selectable_icons.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Treeview/selectable_icons.vue
+
+
+Indent lines
+------------
+
+The :py:class:`pyvuetify.Treeview` component can be configured to show indent lines. The ``indent-lines`` prop controls lines visibility and the variant.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Treeview/indent_lines.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Treeview/indent_lines.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Treeview/indent_lines.vue
+

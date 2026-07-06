@@ -1,30 +1,19 @@
 Divider
 =======
 
-.. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Divider documentation
-    <https://v2.vuetifyjs.com/en/components/dividers/>`__. All examples have been converted
-    to pyvuetify syntax.
 
-The :py:class:`Divider <pyvuetify.Divider>` component is used to separate sections of lists or layouts.
+.. aknowledgement::
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/dividers/>`__.
+    All examples have been converted to pyvuetify syntax.
+
+The :py:class:`pyvuetify.Divider` component is used to separate sections of lists or layouts.
 
 .. api::
 
     :py:class:`pyvuetify.Divider`
 
-Usage
------
-
-Dividers in their simplest form display a horizontal line.
-
-.. jupyter-execute:: Divider/usage.py
-    :raises:
-
-Examples
---------
-
 Inset
-^^^^^
+-----
 
 Inset dividers are moved 72px to the right. This will cause them to line up with list items.
 
@@ -44,8 +33,31 @@ Inset dividers are moved 72px to the right. This will cause them to line up with
 
         .. literalinclude:: Divider/inset.vue
 
+
+Gradient
+--------
+
+Easily enable fading effect with **gradient** prop for a modern look.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Divider/gradient.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Divider/gradient.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Divider/gradient.vue
+
+
 Vertical
-^^^^^^^^
+--------
 
 Vertical dividers give you more tools for unique layouts.
 
@@ -65,8 +77,31 @@ Vertical dividers give you more tools for unique layouts.
 
         .. literalinclude:: Divider/vertical.vue
 
+
+Default
+-------
+
+When you pass any content to be placed in between dividers simply by utilizing the default slot.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Divider/default.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Divider/default.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Divider/default.vue
+
+
 Portrait View
-^^^^^^^^^^^^^
+-------------
 
 Create custom cards to fit any use-case.
 
@@ -86,11 +121,11 @@ Create custom cards to fit any use-case.
 
         .. literalinclude:: Divider/portrait_view.vue
 
-Subheaders
-^^^^^^^^^^
 
-Dividers and :py:class:`Subheader <pyvuetify.Subheader>` components can help break up content
-and can optionally line up with one another by using the same ``inset`` prop.
+Subheaders
+----------
+
+Dividers and subheaders can help break up content and can optionally line up with one another by using the same ``inset`` prop.
 
 .. tab-set::
 
@@ -108,20 +143,3 @@ and can optionally line up with one another by using the same ``inset`` prop.
 
         .. literalinclude:: Divider/subheaders.vue
 
-Accessibility
--------------
-
-By default, :py:class:`Divider <pyvuetify.Divider>` components are assigned the
-`WAI-ARIA <https://www.w3.org/WAI/standards-guidelines/aria/>`__ role of
-`separator <https://www.w3.org/TR/wai-aria/#separator>`__ which denotes that the divider
-"separates and distinguishes sections of content or groups of menu items." However, sometimes
-a divider is just a way to make an interface look nice. In those cases, the role of
-`presentation <https://www.w3.org/TR/wai-aria/#presentation>`__ should be used which denotes
-"an element whose implicit native role semantics will not be mapped to the accessibility API."
-
-
-To override the default separator role in a :py:class:`Divider <pyvuetify.Divider>`, simply
-add a ``role="presentation"`` prop to your component. In addition, :py:class:`Divider <pyvuetify.Divider>`
-components have an ``aria-orientation="horizontal"``. If ``vertical=True``, then
-``aria-orientation="vertical"`` will be set automatically as well. If ``role="presentation"``,
-``aria-orientation="undefined"``, its default value.

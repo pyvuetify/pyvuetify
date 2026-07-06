@@ -1,35 +1,43 @@
 <template>
-  <v-hover>
-    <template v-slot:default="{ hover }">
-      <v-card class="mx-auto" max-width="344">
+  <div>
+    <v-hover v-slot="{ isHovering, props }">
+      <v-card class="mx-auto" max-width="344" v-bind="props">
         <v-img
           src="https://cdn.vuetifyjs.com/images/cards/forest-art.jpg"
         ></v-img>
 
         <v-card-text>
-          <h2 class="text-h6 primary--text">Magento Forests</h2>
+          <h2 class="text-title-large text-primary my-0">Magento Forests</h2>
           Travel to the best outdoor experience on planet Earth. A vacation you
           will never forget!
         </v-card-text>
 
         <v-card-title>
           <v-rating
-            :value="4"
-            dense
+            :model-value="4"
+            class="me-2"
             color="orange"
-            background-color="orange"
+            density="compact"
             hover
-            class="mr-2"
           ></v-rating>
-          <span class="primary--text text-subtitle-2">64 Reviews</span>
+          <span class="text-primary text-title-small">64 Reviews</span>
         </v-card-title>
 
-        <v-fade-transition>
-          <v-overlay v-if="hover" absolute color="#036358">
-            <v-btn>See more info</v-btn>
-          </v-overlay>
-        </v-fade-transition>
+        <v-overlay
+          :model-value="!!isHovering"
+          class="align-center justify-center"
+          scrim="#036358"
+          contained
+        >
+          <v-btn variant="flat">See more info</v-btn>
+        </v-overlay>
       </v-card>
-    </template>
-  </v-hover>
+    </v-hover>
+  </div>
 </template>
+
+<example-meta lang="json">
+{
+  "figma": "https://www.figma.com/design/5f4g4pbbBsk9TTWX4Xvlx1/PRO-v3.0---Official-Vuetify-3-UI-Kit?node-id=1646-137446&t=tC3y53U3XKPv8ZyJ-4"
+}
+</example-meta>

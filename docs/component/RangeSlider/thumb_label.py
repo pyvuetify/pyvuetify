@@ -1,28 +1,34 @@
 import pyvuetify as v
 
-seasons = ["Winter", "Spring", "Summer", "Fall"]
-icons = ["mdi-snowflake", "mdi-flower", "mdi-weather-sunny", "mdi-leaf"]
-
-
-v.RangeSlider(
-    class_="mx-3 mt-10",
-    tick_labels=seasons,
-    v_model=[0, 1],
-    min=0,
-    max=3,
-    ticks="always",
-    tick_size=4,
-    thumb_label="always",
-    v_slots=[
-        {
-            "name": "thumb_label",
-            "variables": "props",
-            "children": [
-                v.Icon(
-                    dark=True,
-                    children=["{{{{ season(props.value) }}}}"],
-                )
+v.Row(
+    children=[
+        v.Col(
+            class_="pa-12",
+            children=[
+                v.RangeSlider(
+                    model_value=[0, 1],
+                    step=1,
+                    # JS expression, needs manual conversion
+                    ticks="seasons",
+                    max="3",
+                    min="0",
+                    show_ticks="always",
+                    thumb_label="always",
+                    tick_size="4",
+                    children=[
+                        v.Html(
+                            tag="template",
+                            children=[
+                                v.Icon(
+                                    # JS expression, needs manual conversion
+                                    icon="season(modelValue)",
+                                    theme="dark",
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
             ],
-        }
+        ),
     ],
 )

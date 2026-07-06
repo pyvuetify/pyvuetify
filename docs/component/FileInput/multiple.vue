@@ -1,3 +1,3 @@
 <template>
-  <v-file-input multiple label="File input"></v-file-input>
+  <v-file-input label="File input" multiple></v-file-input>
 </template>

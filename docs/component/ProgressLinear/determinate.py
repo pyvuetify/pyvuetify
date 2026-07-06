@@ -1,19 +1,23 @@
 import pyvuetify as v
 
-items = [
-    ("deep-purple accent-4", 70),
-    ("pink", 50),
-    ("indigo darken-2", 30),
-    ("amber", 90),
-]
-
-v.Col(
+v.Html(
+    tag="div",
     children=[
         v.ProgressLinear(
-            class_="my-3 mx-1",
-            v_model=value,
-            color=color,
-        )
-        for color, value in items
-    ]
+            v_model="valueDeterminate",
+            color="deep-purple-accent-4",
+        ),
+        v.ProgressLinear(
+            v_model="valueDeterminate",
+            color="pink",
+        ),
+        v.ProgressLinear(
+            v_model="valueDeterminate",
+            color="indigo-darken-2",
+        ),
+        v.ProgressLinear(
+            v_model="valueDeterminate",
+            color="amber",
+        ),
+    ],
 )

@@ -1,0 +1,42 @@
+import pyvuetify as v
+
+v.Card(
+    class_="mx-auto",
+    max_width="360",
+    children=[
+        v.Layout(
+            children=[
+                v.SystemBar(
+                    class_="ga-1",
+                    color="#4c00d5",
+                    children=[
+                        v.Icon(
+                            icon="mdi-square",
+                            size="x-small",
+                        ),
+                        v.Icon(
+                            icon="mdi-circle",
+                            size="x-small",
+                        ),
+                        v.Icon(
+                            icon="mdi-triangle",
+                            size="x-small",
+                        ),
+                    ],
+                ),
+                v.AppBar(
+                    color="#6200ee",
+                    title="Drafts",
+                    children=[
+                        v.Html(
+                            tag="template",
+                            children=[
+                                v.AppBarNavIcon(),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

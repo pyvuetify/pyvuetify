@@ -1,93 +1,85 @@
 Banner
 ======
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/banners/>`_.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/banners/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Banner <pyvuetify.Banner>` component is used as middle-interruptive message to user
-with 1-2 actions. It comes in 2 variations single-line and multi-line (implicit). These can have icons
-which you can use with your message and actions.
+The :py:class:`pyvuetify.Banner` component is used as a middle-interrupting message to the user with one to two actions.
 
 .. api::
 
     :py:class:`pyvuetify.Banner`
 
-Usage
+Lines
 -----
 
-Banners can have 1-2 lines of text, actions and icon.
-
-.. jupyter-execute:: Banner/usage.py
-    :raises:
-
-Single line
------------
-
-Single-line :py:class:`Banner <pyvuetify.Banner>` is used for small amount of information and is
-recommended for desktop only implementations. You can optionally enable the ``sticky`` prop to ensure
-the content is pinned to the screen (note: does not work in IE11).
+The prop **lines** can be used to specify how the displayed text should be handled based on its length.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Banner/single_line.py
+        .. jupyter-execute:: Banner/lines.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Banner/single_line.py
+        .. literalinclude:: Banner/lines.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Banner/single_line.vue
+        .. literalinclude:: Banner/lines.vue
 
-Icon click event
-----------------
 
-:py:class:`Banner <pyvuetify.Banner>` emits ``click:icon`` event on icon click, even with custom icon slot.
+Sticky
+------
+
+You can optionally turn on the **sticky** prop to ensure that the content is pinned to the top of the screen.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Banner/icon_click_event.py
+        .. jupyter-execute:: Banner/sticky.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Banner/icon_click_event.py
+        .. literalinclude:: Banner/sticky.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Banner/icon_click_event.vue
+        .. literalinclude:: Banner/sticky.vue
 
-Actions slot
-------------
 
-The ``actions`` slot has ``dismiss`` function in its scope, you can use it to easily dismiss banner.
+Actions
+-------
+
+Banners may have one or two text buttons that don't stand out that much.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Banner/actions_slot.py
+        .. jupyter-execute:: Banner/actions.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Banner/actions_slot.py
+        .. literalinclude:: Banner/actions.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Banner/actions_slot.vue
+        .. literalinclude:: Banner/actions.vue
 
-Icon slot
----------
+
+Icon
+----
 
 The icon slot allows you to explicitly control the content and functionality within it.
 
@@ -95,37 +87,37 @@ The icon slot allows you to explicitly control the content and functionality wit
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Banner/icon_slot.py
+        .. jupyter-execute:: Banner/icon.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Banner/icon_slot.py
+        .. literalinclude:: Banner/icon.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Banner/icon_slot.vue
+        .. literalinclude:: Banner/icon.vue
 
-Two line
---------
 
-Two-line :py:class:`Banner <pyvuetify.Banner>` can store larger amount of data, use it for big messages.
-This is recommended for mobile implementations.
+Prepend
+-------
+
+The prepend slot allows you to explicitly control the content and functionality within it. Icons also help to emphasize a banner's message.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Banner/two_line.py
+        .. jupyter-execute:: Banner/prepend.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Banner/two_line.py
+        .. literalinclude:: Banner/prepend.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Banner/two_line.vue
+        .. literalinclude:: Banner/prepend.vue
 

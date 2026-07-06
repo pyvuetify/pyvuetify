@@ -4,6 +4,7 @@ This file only contains a selection of the most common options. For a full
 list see the documentation:
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
+
 import os
 import sys
 from datetime import datetime
@@ -51,7 +52,7 @@ if _docs_only:
             exclude_patterns.append(f"component/{name}.rst")
             exclude_patterns.append(f"component/{name}/**")
     # Disable autoapi in debug mode to save time
-    extensions = [e for e in extensions if e != "autoapi.extension"]
+    # extensions = [e for e in extensions if e != "autoapi.extension"]
     # exclude_patterns.append("autoapi/**")
     # exclude_patterns.append("start/**")
 autosectionlabel_prefix_document = True

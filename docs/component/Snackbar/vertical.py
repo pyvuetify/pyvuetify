@@ -1,16 +1,37 @@
-from ipywidgets import jslink
-
 import pyvuetify as v
 
-switch = v.Switch(label="Open Snackbar", v_model=False)
-switch_close = v.Switch(v_model=False)
-snackbar = v.Snackbar(
-    v_model=False,
-    vertical=True,
-    children=["This is a vertical snackbar", switch_close],
+v.Html(
+    tag="div",
+    class_="text-center",
+    children=[
+        v.Btn(
+            color="indigo",
+            children=["Open Snackbar"],
+        ),
+        v.Snackbar(
+            v_model="snackbar",
+            vertical=True,
+            children=[
+                v.Html(
+                    tag="div",
+                    class_="text-body-large pb-2",
+                    children=["This is a snackbar message"],
+                ),
+                v.Html(
+                    tag="p",
+                    children=["This is a longer paragraph explaining something"],
+                ),
+                v.Html(
+                    tag="template",
+                    children=[
+                        v.Btn(
+                            color="indigo",
+                            variant="text",
+                            children=["Close"],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
 )
-
-jslink((switch, "v_model"), (snackbar, "v_model"))
-jslink((switch_close, "v_model"), (snackbar, "v_model"))
-
-v.Container(class_="text-center ma-2", children=[switch, snackbar])

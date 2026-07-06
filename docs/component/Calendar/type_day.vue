@@ -1,28 +1,17 @@
 <template>
-  <v-calendar type="day" :value="value" :events="events"></v-calendar>
-</template>
+  <v-row>
+    <v-col>
+      <v-sheet height="400">
+        <v-calendar color="primary" type="day">
+          <template v-slot:day-header="{ present }">
+            <div v-if="present" class="text-center">Today</div>
+          </template>
 
-<script>
-export default {
-  data: () => ({
-    value: "2025-11-28",
-    events: [
-      {
-        name: "Morning Meeting",
-        start: "2025-11-28 09:00",
-        end: "2025-11-28 10:00",
-      },
-      {
-        name: "Lunch Break",
-        start: "2025-11-28 12:00",
-        end: "2025-11-28 13:00",
-      },
-      {
-        name: "Afternoon Session",
-        start: "2025-11-28 14:00",
-        end: "2025-11-28 16:00",
-      },
-    ],
-  }),
-};
-</script>
+          <template v-slot:interval="{ hour }">
+            <div class="text-center">{{ hour }} o'clock</div>
+          </template>
+        </v-calendar>
+      </v-sheet>
+    </v-col>
+  </v-row>
+</template>

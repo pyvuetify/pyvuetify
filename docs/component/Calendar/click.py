@@ -1,0 +1,76 @@
+import pyvuetify as v
+
+v.Row(
+    class_="fill-height",
+    children=[
+        v.Col(
+            children=[
+                v.Sheet(
+                    height="64",
+                    children=[
+                        v.Toolbar(
+                            flat=True,
+                            children=[
+                                v.Btn(
+                                    class_="me-4",
+                                    color="grey-darken-2",
+                                    variant="outlined",
+                                    children=["Today"],
+                                ),
+                                v.Btn(
+                                    color="grey-darken-2",
+                                    size="small",
+                                    variant="text",
+                                    icon=True,
+                                    children=[
+                                        v.Icon(
+                                            size="small",
+                                            children=["mdi-chevron-left"],
+                                        ),
+                                    ],
+                                ),
+                                v.Btn(
+                                    color="grey-darken-2",
+                                    size="small",
+                                    variant="text",
+                                    icon=True,
+                                    children=[
+                                        v.Icon(
+                                            size="small",
+                                            children=["mdi-chevron-right"],
+                                        ),
+                                    ],
+                                ),
+                                v.ToolbarTitle(children=["{{ calendar.title }}"]),
+                                v.Menu(
+                                    location="bottom end",
+                                    children=[
+                                        v.Html(
+                                            tag="template",
+                                            children=[
+                                                v.Btn(
+                                                    color="grey-darken-2",
+                                                    variant="outlined",
+                                                    children=[
+                                                        v.Html(
+                                                            tag="span",
+                                                            children=["{{ typeToLabel[type] }}"],
+                                                        ),
+                                                        v.Icon(
+                                                            end=True,
+                                                            children=["mdi-menu-down"],
+                                                        ),
+                                                    ],
+                                                ),
+                                            ],
+                                        ),
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

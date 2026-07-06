@@ -1,0 +1,55 @@
+import pyvuetify as v
+
+v.Container(
+    children=[
+        v.Row(
+            children=[
+                v.Col(
+                    cols="12",
+                    md="4",
+                    sm="4",
+                    children=[
+                        v.Html(
+                            tag="h5",
+                            class_="my-0",
+                            children=["Default"],
+                        ),
+                        v.NumberInput(
+                            control_variant="default",
+                            reverse=True,
+                        ),
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    md="4",
+                    sm="4",
+                    children=[
+                        v.Html(
+                            tag="h5",
+                            class_="my-0",
+                            children=["Stacked"],
+                        ),
+                        v.NumberInput(
+                            control_variant="stacked",
+                            reverse=True,
+                        ),
+                    ],
+                ),
+                v.Col(
+                    cols="12",
+                    md="4",
+                    sm="4",
+                    children=[
+                        v.Html(
+                            tag="h5",
+                            class_="my-0",
+                            children=["Split"],
+                        ),
+                        v.NumberInput(control_variant="split"),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

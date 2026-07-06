@@ -1,17 +1,23 @@
 <template>
-  <v-row justify="space-around">
-    <v-icon large color="green darken-2"> mdi-domain </v-icon>
+  <v-row class="py-4 justify-space-around">
+    <v-icon color="green-darken-2" icon="mdi-domain" size="large"></v-icon>
 
-    <v-icon large color="blue darken-2"> mdi-message-text </v-icon>
+    <v-icon color="blue-darken-2" icon="mdi-message-text" size="large"></v-icon>
 
-    <v-icon large color="purple darken-2"> mdi-dialpad </v-icon>
+    <v-icon color="purple-darken-2" icon="mdi-dialpad" size="large"></v-icon>
 
-    <v-icon large color="teal darken-2"> mdi-email </v-icon>
+    <v-icon color="teal-darken-2" icon="mdi-email" size="large"></v-icon>
 
-    <v-icon large color="blue-grey darken-2"> mdi-call-split </v-icon>
+    <v-icon
+      color="blue-grey-darken-2"
+      icon="mdi-call-split"
+      size="large"
+    ></v-icon>
 
-    <v-icon large color="orange darken-2">
-      mdi-arrow-up-bold-box-outline
-    </v-icon>
+    <v-icon
+      color="orange-darken-2"
+      icon="mdi-arrow-up-bold-box-outline"
+      size="large"
+    ></v-icon>
   </v-row>
 </template>

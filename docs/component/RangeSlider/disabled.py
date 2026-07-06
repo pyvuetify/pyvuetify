@@ -1,9 +1,21 @@
 import pyvuetify as v
 
-v.RangeSlider(
-    class_="mx-1 my-3",
-    v_model=[30, 70],
-    disabled=True,
-    label="Disabled",
-    value="30",
+v.Container(
+    fluid=True,
+    children=[
+        v.Row(
+            children=[
+                v.Col(
+                    cols="12",
+                    children=[
+                        v.RangeSlider(
+                            v_model="value",
+                            label="Disabled",
+                            disabled=True,
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
 )

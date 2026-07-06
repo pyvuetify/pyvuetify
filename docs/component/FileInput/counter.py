@@ -1,8 +1,8 @@
 import pyvuetify as v
 
 v.FileInput(
-    show_size=True,
+    label="File input",
     counter=True,
     multiple=True,
-    label="File input",
+    show_size=True,
 )

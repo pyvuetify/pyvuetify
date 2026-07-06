@@ -1,37 +1,21 @@
 ProgressCircular
 ================
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Progress circular
-    documentation <https://v2.vuetifyjs.com/en/components/progress-circular/>`__.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/progress-circular/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`ProgressCircular <pyvuetify.ProgressCircular>` component is
-used to convey data circularly to users. It also can be put into an
-indeterminate state to portray loading.
+The :py:class:`pyvuetify.ProgressCircular` component is used to convey data circularly to users. It also can be put into an indeterminate state to portray loading.
 
 .. api::
 
     :py:class:`pyvuetify.ProgressCircular`
 
-Usage
+Color
 -----
 
-In its simplest form, :py:class:`ProgressCircular <pyvuetify.ProgressCircular>`
-displays a circular progress bar. Use the value prop to control the progress.
-
-.. jupyter-execute:: ProgressCircular/usage.py
-    :raises:
-
-Examples
---------
-
-Color
-^^^^^
-
-Alternate colors can be applied to
-:py:class:`ProgressCircular <pyvuetify.ProgressCircular>` using the ``color``
-prop.
+Alternate colors can be applied to :py:class:`pyvuetify.ProgressCircular` using the ``color`` prop.
 
 .. tab-set::
 
@@ -49,12 +33,11 @@ prop.
 
         .. literalinclude:: ProgressCircular/color.vue
 
-Indeterminate
-^^^^^^^^^^^^^
 
-Using the ``indeterminate`` prop, a
-:py:class:`ProgressCircular <pyvuetify.ProgressCircular>` continues to animate
-indefinitely.
+Indeterminate
+-------------
+
+Using the ``indeterminate`` prop, a :py:class:`pyvuetify.ProgressCircular` continues to animate indefinitely.
 
 .. tab-set::
 
@@ -72,11 +55,33 @@ indefinitely.
 
         .. literalinclude:: ProgressCircular/indeterminate.vue
 
-Rotate
-^^^^^^
 
-The ``rotate`` prop gives you the ability to customize the
-:py:class:`ProgressCircular <pyvuetify.ProgressCircular>`'s origin.
+Reveal
+------
+
+The ``reveal`` prop animates the progress circle from 0 to its model value when the component mounts.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: ProgressCircular/reveal.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: ProgressCircular/reveal.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: ProgressCircular/reveal.vue
+
+
+Rotate
+------
+
+The ``rotate`` prop gives you the ability to customize the :py:class:`pyvuetify.ProgressCircular`'s origin.
 
 .. tab-set::
 
@@ -94,11 +99,11 @@ The ``rotate`` prop gives you the ability to customize the
 
         .. literalinclude:: ProgressCircular/rotate.vue
 
-Size and width
-^^^^^^^^^^^^^^
 
-The ``size`` and ``width`` props allow you to easily alter the size and width
-of the :py:class:`ProgressCircular <pyvuetify.ProgressCircular>` component.
+Size and Width
+--------------
+
+The ``size`` and ``width`` props allow you to easily alter the size and width of the :py:class:`pyvuetify.ProgressCircular` component.
 
 .. tab-set::
 
@@ -115,4 +120,26 @@ of the :py:class:`ProgressCircular <pyvuetify.ProgressCircular>` component.
     .. tab-item:: :fab:`vuejs` Vue template
 
         .. literalinclude:: ProgressCircular/size_and_width.vue
+
+
+Default
+-------
+
+``default`` slot can be used to replace the text inside the loader.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: ProgressCircular/slot_default.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: ProgressCircular/slot_default.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: ProgressCircular/slot_default.vue
 

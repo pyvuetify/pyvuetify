@@ -11,11 +11,11 @@ v.Container(
                     children=[
                         v.Textarea(
                             label="One row",
-                            auto_grow=True,
-                            outlined=True,
-                            rows="1",
                             row_height="15",
-                        )
+                            rows="1",
+                            variant="outlined",
+                            auto_grow=True,
+                        ),
                     ],
                 ),
                 v.Col(
@@ -23,12 +23,12 @@ v.Container(
                     sm="6",
                     children=[
                         v.Textarea(
-                            filled=True,
-                            auto_grow=True,
                             label="Two rows",
-                            rows="2",
                             row_height="20",
-                        )
+                            rows="2",
+                            variant="filled",
+                            auto_grow=True,
+                        ),
                     ],
                 ),
                 v.Col(
@@ -37,12 +37,11 @@ v.Container(
                     children=[
                         v.Textarea(
                             label="Three rows",
-                            auto_grow=True,
-                            outlined=True,
-                            rows="3",
                             row_height="25",
-                            shaped=True,
-                        )
+                            rows="3",
+                            variant="outlined",
+                            auto_grow=True,
+                        ),
                     ],
                 ),
                 v.Col(
@@ -50,16 +49,15 @@ v.Container(
                     sm="6",
                     children=[
                         v.Textarea(
-                            filled=True,
-                            auto_grow=True,
                             label="Four rows",
-                            rows="4",
                             row_height="30",
-                            shaped=True,
-                        )
+                            rows="4",
+                            variant="filled",
+                            auto_grow=True,
+                        ),
                     ],
                 ),
             ],
-        )
+        ),
     ],
 )

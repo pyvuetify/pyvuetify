@@ -1,104 +1,125 @@
 Form
 ====
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Form documentation
-    <https://v2.vuetifyjs.com/en/components/forms/>`__.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/forms/>`__.
     All examples have been converted to pyvuetify syntax.
 
-When it comes to form validation, Vuetify has a multitude of integrations and baked
-in functionality. Want to use a 3rd party validation plugin? Out of the box you
-can use `Vee-validate <https://github.com/baianat/Vee-validate>`__ and
-`vuelidate <https://github.com/vuelidate/vuelidate>`__.
+Vuetify offers a simple built-in form validation system based on functions as rules, making it easy for developers to get set up quickly.
 
 .. api::
 
     :py:class:`pyvuetify.Form`
 
-Usage
------
-
-The internal :py:class:`Form <pyvuetify.Form>` component makes it easy to add
-validation to form inputs. All input components have a ``rules`` prop which accepts
-a mixed array of types ``function``, ``boolean`` and ``string``. These allow you
-to specify conditions in which the input is valid or invalid. Whenever the value
-of an input is changed, each function in the array will receive the new value and
-each array element will be evaluated. If a function or array element returns
-``false`` or a ``string``, validation has failed and the ``string`` value
-will be presented as an error message.
-
-.. jupyter-execute:: Form/usage.py
-    :raises:
-
-Examples
+Disabled
 --------
 
-Rules
-^^^^^
-
-Rules allow you to apply custom validation on all form components. These are validated
-sequentially and will display a **maximum** of 1 error at a time, so make sure you
-order your rules accordingly.
+You can easily disable all input components in a :py:class:`pyvuetify.Form` by setting the **disabled** prop.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Form/rules.py
+        .. jupyter-execute:: Form/disabled.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Form/rules.py
+        .. literalinclude:: Form/disabled.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Form/rules.vue
+        .. literalinclude:: Form/disabled.vue
 
-Validation with submit & clear
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The :py:class:`Form <pyvuetify.Form>` component has **three** functions that can be
-accessed by setting a ref on the component. A ref allows us to access internal
-methods on a component, for example, ``<v-form ref="form">``.
-``this.$refs.form.validate()`` will validate all inputs and return if they are
-all valid or not. ``this.$refs.form.reset()`` will clear all inputs and reset
-their validation errors. ``this.$refs.form.resetValidation()`` will only reset
-input validation and not alter their state.
+Fast fail
+---------
+
+When the **fast-fail** prop is set, validation will short-circuit after the first invalid input is found. This can be useful if some of your rules are computationally heavy and can take a long time. In this example, notice how when the submit button is clicked, the second input does not show validation errors even though it does not satisfy the rules.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Form/validation_with_submit_clear.py
+        .. jupyter-execute:: Form/fast_fail.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Form/validation_with_submit_clear.py
+        .. literalinclude:: Form/fast_fail.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Form/validation_with_submit_clear.vue
+        .. literalinclude:: Form/fast_fail.vue
+
+
+Exposed properties
+------------------
+
+The :py:class:`pyvuetify.Form` component has a number of exposed properties that can be accessed by setting a **ref** on the component. A ref allows us to access internal methods on a component. You can find all of them on the API page, but some of the more commonly used ones are ``validate()``, ``reset()``, and ``resetValidation()``.
+
+The difference between ``reset()`` and ``resetValidation()`` is that the former resets both input values and validation state, while the latter only resets validation state.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Form/exposed.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Form/exposed.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Form/exposed.vue
+
 
 Vee-validate
-^^^^^^^^^^^^
+------------
 
-vee-validate is a template Based Validation Framework for Vue.js.
-`Documentation <https://vee-validate.logaretm.com/v3>`__
+**vee-validate** documentation can be found `here <https://vee-validate.logaretm.com/v4/>`__.
 
-.. todo::
+.. tab-set::
 
-    Add Vee-validate example when pyvuetify supports it.
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Form/vee_validate.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Form/vee_validate.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Form/vee_validate.vue
+
 
 Vuelidate
-^^^^^^^^^
+---------
 
-vuelidate is a simple, lightweight model-based validation for Vue.js.
-`Documentation <https://vuelidate.netlify.com/>`__
+**vuelidate** documentation can be found `here <https://vuelidate-next.netlify.app/>`__.
 
-.. todo::
+.. tab-set::
 
-    Add Vuelidate example when pyvuetify supports it.
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: Form/vuelidate.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: Form/vuelidate.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: Form/vuelidate.vue
+

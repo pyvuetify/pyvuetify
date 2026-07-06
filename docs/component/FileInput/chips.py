@@ -1,18 +1,12 @@
-from ipywidgets import jslink
-
 import pyvuetify as v
 
-chip = v.FileInput(
-    v_model=None,
-    chips=True,
-    label="File input w/ chips",
+v.Html(
+    tag="div",
+    children=[
+        v.FileInput(
+            label="File input w/ chips",
+            chips=True,
+            multiple=True,
+        ),
+    ],
 )
-small_chip = v.FileInput(
-    v_model=None,
-    small_chips=True,
-    label="File input w/ small chips",
-)
-
-jslink((chip, "v_model"), (small_chip, "v_model"))
-
-v.Container(children=[chip, small_chip])

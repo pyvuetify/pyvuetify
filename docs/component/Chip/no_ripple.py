@@ -1,7 +1,13 @@
 import pyvuetify as v
 
-v.Container(
+v.Html(
+    tag="div",
+    class_="text-center",
     children=[
-        v.Chip(class_="ma-2", ripple=False, children=["No Ripple"]),
-    ]
+        v.Chip(
+            ripple=False,
+            link=True,
+            children=["Default"],
+        ),
+    ],
 )

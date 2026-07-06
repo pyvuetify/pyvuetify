@@ -1,14 +1,31 @@
 import pyvuetify as v
 
-items = [
-    {"src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"},
-    {"src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"},
-    {"src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"},
-    {"src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"},
-]
-
 v.Carousel(
+    height="400",
+    progress="primary",
     hide_delimiters=True,
-    progress=True,
-    children=[v.CarouselItem(children=[v.Img(src=item["src"])]) for item in items],
+    children=[
+        v.CarouselItem(
+            # JS expression, needs manual conversion
+            key="i",
+            children=[
+                v.Sheet(
+                    height="100%",
+                    children=[
+                        v.Html(
+                            tag="div",
+                            class_="d-flex fill-height justify-center align-center",
+                            children=[
+                                v.Html(
+                                    tag="div",
+                                    class_="text-display-large",
+                                    children=["{{ slide }} Slide"],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
 )

@@ -1,21 +1,28 @@
 import pyvuetify as v
 
 v.Container(
-    class_="d-flex flex-row justify-space-around",
     children=[
-        v.TimePicker(
-            v_model="11:15",
-            allowed_hours=[h for h in range(24) if h % 2 == 1],
-            allowed_minutes=[m for m in range(60) if 10 <= m <= 50],
-            format="24hr",
-            scrollable=True,
-            min="9:30",
-            max="22:15",
-        ),
-        v.TimePicker(
-            v_model="10:10",
-            allowed_minutes=[m for m in range(60) if m % 10 == 0],
-            format="24hr",
+        v.Row(
+            class_="justify-space-around",
+            children=[
+                v.TimePicker(
+                    v_model="time",
+                    # JS expression, needs manual conversion
+                    allowed_hours="allowedHours",
+                    # JS expression, needs manual conversion
+                    allowed_minutes="allowedMinutes",
+                    format="24hr",
+                    max="22:15",
+                    min="9:30",
+                    scrollable=True,
+                ),
+                v.TimePicker(
+                    v_model="timeStep",
+                    # JS expression, needs manual conversion
+                    allowed_minutes="allowedStep",
+                    format="24hr",
+                ),
+            ],
         ),
     ],
 )

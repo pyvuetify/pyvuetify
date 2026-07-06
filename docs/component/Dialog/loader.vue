@@ -1,25 +1,63 @@
 <template>
-  <div class="text-center">
+  <div class="pa-4 text-center">
     <v-btn
       :disabled="dialog"
-      :loading="dialog"
-      class="white--text"
-      color="purple darken-2"
+      color="primary"
+      icon="mdi-refresh"
+      text="Start loading"
       @click="dialog = true"
-    >
-      Start loading
-    </v-btn>
-    <v-dialog v-model="dialog" hide-overlay persistent width="300">
-      <v-card color="primary" dark>
-        <v-card-text>
-          Please stand by
-          <v-progress-linear
-            indeterminate
-            color="white"
-            class="mb-0"
-          ></v-progress-linear>
-        </v-card-text>
-      </v-card>
+    ></v-btn>
+
+    <v-dialog v-model="dialog" max-width="320" persistent>
+      <v-list class="py-2" color="primary" elevation="4" rounded="lg">
+        <v-list-item
+          prepend-icon="$vuetify-outline"
+          title="Refreshing Application..."
+        >
+          <template v-slot:prepend>
+            <div class="pe-4">
+              <v-icon color="primary" size="x-large"></v-icon>
+            </div>
+          </template>
+
+          <template v-slot:append>
+            <v-progress-circular
+              color="primary"
+              indeterminate="disable-shrink"
+              size="16"
+              width="2"
+            ></v-progress-circular>
+          </template>
+        </v-list-item>
+      </v-list>
     </v-dialog>
   </div>
 </template>
+
+<script setup>
+import { shallowRef, watch } from "vue";
+
+const dialog = shallowRef(false);
+watch(dialog, (val) => {
+  if (!val) return;
+  setTimeout(() => (dialog.value = false), 4000);
+});
+</script>
+
+<script>
+export default {
+  data() {
+    return {
+      dialog: false,
+    };
+  },
+
+  watch: {
+    dialog(val) {
+      if (!val) return;
+
+      setTimeout(() => (this.dialog = false), 4000);
+    },
+  },
+};
+</script>

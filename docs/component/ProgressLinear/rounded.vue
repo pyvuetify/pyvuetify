@@ -1,19 +1,27 @@
 <template>
   <div>
     <v-progress-linear
-      color="red darken-2"
+      color="red-darken-2"
+      model-value="100"
       rounded
-      value="100"
     ></v-progress-linear>
     <br />
-    <v-progress-linear color="indigo" rounded value="100"></v-progress-linear>
-    <br />
-    <v-progress-linear color="teal" rounded value="100"></v-progress-linear>
+    <v-progress-linear
+      color="indigo"
+      model-value="100"
+      rounded
+    ></v-progress-linear>
     <br />
     <v-progress-linear
-      color="cyan darken-2"
+      color="teal"
+      model-value="100"
       rounded
-      value="100"
+    ></v-progress-linear>
+    <br />
+    <v-progress-linear
+      color="cyan-darken-2"
+      model-value="100"
+      rounded
     ></v-progress-linear>
   </div>
 </template>

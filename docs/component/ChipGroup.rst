@@ -1,33 +1,21 @@
 ChipGroup
 =========
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/chip-groups/>`_.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/chip-groups/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`ChipGroup <pyvuetify.ChipGroup>` supercharges the :py:class:`Chip <pyvuetify.Chip>`
-component by providing groupable functionality. It is used for creating groups of
-selections using chips.
-
-Usage
------
-
-Chip groups make it easy for users to select filtering options for more complex
-implementations. By default, :py:class:`ChipGroup <pyvuetify.ChipGroup>` will
-overflow to the right but can be changed to a **column** only mode.
-
-.. jupyter-execute:: ChipGroup/usage.py
-    :raises:
+The :py:class:`pyvuetify.ChipGroup` supercharges the :py:class:`pyvuetify.Chip` component by providing groupable functionality. It is used for creating groups of selections using chips.
 
 .. api::
 
-    - :py:class:`pyvuetify.ChipGroup`
-    - :py:class:`pyvuetify.Chip`
+    :py:class:`pyvuetify.ChipGroup`
 
 Column
 ------
 
-Chip groups with the ``column`` prop can wrap their chips in a vertical layout.
+Chip groups with **column** prop can wrap their chips.
 
 .. tab-set::
 
@@ -41,38 +29,37 @@ Chip groups with the ``column`` prop can wrap their chips in a vertical layout.
 
         .. literalinclude:: ChipGroup/column.py
 
-    .. tab-item:: :fab:`vuejs` Vue
+    .. tab-item:: :fab:`vuejs` Vue template
 
         .. literalinclude:: ChipGroup/column.vue
+
 
 Filter results
 --------------
 
-Easily create chip groups that provide additional feedback with the ``filter`` prop.
-This creates an alternative visual style that communicates to the user that the
-chip is selected.
+Easily create chip groups that provide additional feedback with the **filter** prop. This creates an alternative visual style that communicates to the user that the chip is selected.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: ChipGroup/filter_results.py
+        .. jupyter-execute:: ChipGroup/filter.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: ChipGroup/filter_results.py
+        .. literalinclude:: ChipGroup/filter.py
 
-    .. tab-item:: :fab:`vuejs` Vue
+    .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: ChipGroup/filter_results.vue
+        .. literalinclude:: ChipGroup/filter.vue
+
 
 Mandatory
 ---------
 
-Chip groups with the ``mandatory`` prop must always have a value selected.
-This means a chip cannot be deselected if it's the only selected one.
+Chip groups with **mandatory** prop must always have a value selected.
 
 .. tab-set::
 
@@ -86,15 +73,15 @@ This means a chip cannot be deselected if it's the only selected one.
 
         .. literalinclude:: ChipGroup/mandatory.py
 
-    .. tab-item:: :fab:`vuejs` Vue
+    .. tab-item:: :fab:`vuejs` Vue template
 
         .. literalinclude:: ChipGroup/mandatory.vue
+
 
 Multiple
 --------
 
-Chip groups with the ``multiple`` prop can have many values selected.
-This allows you to select multiple chips at once.
+Chip groups with **multiple** prop can have many values selected.
 
 .. tab-set::
 
@@ -108,15 +95,15 @@ This allows you to select multiple chips at once.
 
         .. literalinclude:: ChipGroup/multiple.py
 
-    .. tab-item:: :fab:`vuejs` Vue
+    .. tab-item:: :fab:`vuejs` Vue template
 
         .. literalinclude:: ChipGroup/multiple.vue
+
 
 Product card
 ------------
 
-Chip groups can be used in combination with cards to create rich selection interfaces.
-This example shows a product size selector.
+The :py:class:`pyvuetify.Chip` component can have an explicit value used for its model. This gets passed to the :py:class:`pyvuetify.ChipGroup` component and is useful for when you don't want to use the chips index as their values.
 
 .. tab-set::
 
@@ -130,15 +117,15 @@ This example shows a product size selector.
 
         .. literalinclude:: ChipGroup/product_card.py
 
-    .. tab-item:: :fab:`vuejs` Vue
+    .. tab-item:: :fab:`vuejs` Vue template
 
         .. literalinclude:: ChipGroup/product_card.vue
+
 
 Toothbrush card
 ---------------
 
-This example demonstrates how chip groups can be used to select product variations,
-such as toothbrush bristle types.
+Chip groups allow the creation of custom interfaces that perform the same actions as an item group or radio controls, but are stylistically different.
 
 .. tab-set::
 
@@ -152,7 +139,29 @@ such as toothbrush bristle types.
 
         .. literalinclude:: ChipGroup/toothbrush_card.py
 
-    .. tab-item:: :fab:`vuejs` Vue
+    .. tab-item:: :fab:`vuejs` Vue template
 
         .. literalinclude:: ChipGroup/toothbrush_card.vue
+
+
+Reddit style categories
+-----------------------
+
+Use a combination of utility classes and emojis to create a Reddit-style category selection.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: ChipGroup/reddit_categories.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: ChipGroup/reddit_categories.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: ChipGroup/reddit_categories.vue
 

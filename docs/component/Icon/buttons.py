@@ -2,120 +2,85 @@ import pyvuetify as v
 
 v.Html(
     tag="div",
+    class_="text-center",
     children=[
         v.Html(
             tag="div",
-            class_="text-center",
             children=[
-                v.Html(
-                    tag="div",
+                v.Btn(
+                    class_="ma-2",
+                    color="primary",
                     children=[
-                        v.Btn(
-                            class_="ma-2",
-                            color="primary",
-                            dark=True,
-                            children=[
-                                "Accept",
-                                v.Icon(
-                                    dark=True,
-                                    right=True,
-                                    children=["mdi-checkbox-marked-circle"],
-                                ),
-                            ],
-                        ),
-                        v.Btn(
-                            class_="ma-2",
-                            color="red",
-                            dark=True,
-                            children=[
-                                "Decline",
-                                v.Icon(
-                                    dark=True,
-                                    right=True,
-                                    children=["mdi-cancel"],
-                                ),
-                            ],
-                        ),
-                        v.Btn(
-                            class_="ma-2",
-                            dark=True,
-                            children=[
-                                v.Icon(
-                                    dark=True,
-                                    left=True,
-                                    children=["mdi-minus-circle"],
-                                ),
-                                "Cancel",
-                            ],
+                        "Accept",
+                        v.Icon(
+                            icon="mdi-checkbox-marked-circle",
+                            end=True,
                         ),
                     ],
                 ),
-                v.Html(
-                    tag="div",
+                v.Btn(
+                    class_="ma-2",
+                    color="red",
                     children=[
-                        v.Btn(
-                            class_="ma-2",
-                            color="orange darken-2",
-                            dark=True,
-                            children=[
-                                v.Icon(
-                                    dark=True,
-                                    left=True,
-                                    children=["mdi-arrow-left"],
-                                ),
-                                "Back",
-                            ],
-                        ),
-                        v.Btn(
-                            class_="ma-2",
-                            color="purple",
-                            dark=True,
-                            children=[
-                                v.Icon(
-                                    dark=True,
-                                    children=["mdi-wrench"],
-                                ),
-                            ],
-                        ),
-                        v.Btn(
-                            class_="ma-2",
-                            color="indigo",
-                            dark=True,
-                            children=[
-                                v.Icon(
-                                    dark=True,
-                                    children=["mdi-cloud-upload"],
-                                ),
-                            ],
+                        "Decline",
+                        v.Icon(
+                            icon="mdi-cancel",
+                            end=True,
                         ),
                     ],
                 ),
-                v.Html(
-                    tag="div",
+                v.Btn(
+                    class_="ma-2",
                     children=[
-                        v.Btn(
-                            class_="ma-2",
-                            text=True,
-                            icon=True,
-                            color="blue lighten-2",
-                            children=[
-                                v.Icon(
-                                    children=["mdi-thumb-up"],
-                                ),
-                            ],
+                        v.Icon(
+                            icon="mdi-minus-circle",
+                            start=True,
                         ),
-                        v.Btn(
-                            class_="ma-2",
-                            text=True,
-                            icon=True,
-                            color="red lighten-2",
-                            children=[
-                                v.Icon(
-                                    children=["mdi-thumb-down"],
-                                ),
-                            ],
-                        ),
+                        "Cancel",
                     ],
+                ),
+            ],
+        ),
+        v.Html(
+            tag="div",
+            children=[
+                v.Btn(
+                    class_="ma-2",
+                    color="orange-darken-2",
+                    children=[
+                        v.Icon(
+                            icon="mdi-arrow-left",
+                            start=True,
+                        ),
+                        "Back",
+                    ],
+                ),
+                v.Btn(
+                    class_="ma-2",
+                    color="purple",
+                    icon="mdi-wrench",
+                ),
+                v.Btn(
+                    class_="ma-2",
+                    color="indigo",
+                    icon="mdi-cloud-upload",
+                ),
+            ],
+        ),
+        v.Html(
+            tag="div",
+            children=[
+                v.Btn(
+                    class_="ma-2",
+                    color="blue-lighten-2",
+                    icon="mdi-thumb-up",
+                    variant="text",
+                ),
+                v.Btn(
+                    class_="ma-2",
+                    color="red-lighten-2",
+                    icon="mdi-thumb-down",
+                    variant="text",
                 ),
             ],
         ),

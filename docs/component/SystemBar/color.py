@@ -1,21 +1,88 @@
 import pyvuetify as v
 
-colors = ["primary", "red lighten-2", "indigo darken-2"]
-
-v.Container(
+v.Html(
+    tag="div",
     children=[
-        v.SystemBar(
-            class_="my-3",
-            color=color,
-            dark=True,
+        v.Layout(
+            style_="height: 50px",
             children=[
-                v.Spacer(),
-                v.Icon(children=["mdi-wifi-strength-2"]),
-                v.Icon(children=["mdi-signal-cellular-2"]),
-                v.Icon(children=["mdi-battery-90"]),
-                v.Html(tag="span", children=["12:30"]),
+                v.SystemBar(
+                    color="primary",
+                    children=[
+                        v.Icon(
+                            class_="ms-2",
+                            icon="mdi-wifi-strength-4",
+                        ),
+                        v.Icon(
+                            class_="ms-2",
+                            icon="mdi-signal-cellular-outline",
+                        ),
+                        v.Icon(
+                            class_="ms-2",
+                            icon="mdi-battery",
+                        ),
+                        v.Html(
+                            tag="span",
+                            class_="ms-2",
+                            children=["08:30"],
+                        ),
+                    ],
+                ),
             ],
-        )
-        for color in colors
-    ]
+        ),
+        v.Layout(
+            style_="height: 50px",
+            children=[
+                v.SystemBar(
+                    color="red-lighten-2",
+                    children=[
+                        v.Icon(
+                            class_="ms-2",
+                            icon="mdi-wifi-strength-2",
+                        ),
+                        v.Icon(
+                            class_="ms-2",
+                            icon="mdi-signal-cellular-outline",
+                        ),
+                        v.Icon(
+                            class_="ms-2",
+                            icon="mdi-battery",
+                        ),
+                        v.Html(
+                            tag="span",
+                            class_="ms-2",
+                            children=["18:30"],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+        v.Layout(
+            style_="height: 50px",
+            children=[
+                v.SystemBar(
+                    color="indigo-darken-2",
+                    children=[
+                        v.Icon(
+                            class_="ms-2",
+                            icon="mdi-wifi-strength-3",
+                        ),
+                        v.Icon(
+                            class_="ms-2",
+                            icon="mdi-signal-cellular-outline",
+                        ),
+                        v.Icon(
+                            class_="ms-2",
+                            icon="mdi-battery",
+                        ),
+                        v.Html(
+                            tag="span",
+                            class_="ms-2",
+                            children=["13:24"],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
 )

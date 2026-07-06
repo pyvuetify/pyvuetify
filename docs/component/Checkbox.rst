@@ -1,36 +1,21 @@
 Checkbox
 ========
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/checkboxes/>`_.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/checkboxes/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Checkbox <pyvuetify.Checkbox>` component provides users the ability
-to choose between two distinct values. These are very similar to a switch and can
-be used in complex forms and checklists. A simpler version,
-:py:class:`SimpleCheckbox <pyvuetify.SimpleCheckbox>` is used primarily as a
-lightweight alternative in data-table components to select rows or display inline
-boolean data.
-
-Usage
------
-
-A :py:class:`Checkbox <pyvuetify.Checkbox>` in its simplest form provides a toggle
-between 2 values.
-
-.. jupyter-execute:: Checkbox/usage.py
-    :raises:
+The :py:class:`pyvuetify.Checkbox` component provides users the ability to choose between two distinct values. These are very similar to a switch and can be used in complex forms and checklists.
 
 .. api::
 
-    - :py:class:`pyvuetify.Checkbox`
-    - :py:class:`pyvuetify.SimpleCheckbox`
+    :py:class:`pyvuetify.Checkbox`
 
 Colors
 ------
 
-Checkboxes can be colored by using any of the builtin colors and contextual names
-using the ``color`` prop.
+Checkboxes can be colored by using any of the builtin colors and contextual names using the **color** prop.
 
 .. tab-set::
 
@@ -48,10 +33,11 @@ using the ``color`` prop.
 
         .. literalinclude:: Checkbox/colors.vue
 
-Model as Array
+
+Model as array
 --------------
 
-Multiple :py:class:`Checkbox <pyvuetify.Checkbox>`'s can share the same ``v_model`` by using an array.
+Multiple :py:class:`pyvuetify.Checkbox`'s can share the same **v-model** by using an array.
 
 .. tab-set::
 
@@ -69,10 +55,11 @@ Multiple :py:class:`Checkbox <pyvuetify.Checkbox>`'s can share the same ``v_mode
 
         .. literalinclude:: Checkbox/model_as_array.vue
 
+
 Model as boolean
 ----------------
 
-A single :py:class:`Checkbox <pyvuetify.Checkbox>` will have a boolean value as its value.
+A single :py:class:`pyvuetify.Checkbox` will have a boolean value as its **value**.
 
 .. tab-set::
 
@@ -90,11 +77,11 @@ A single :py:class:`Checkbox <pyvuetify.Checkbox>` will have a boolean value as 
 
         .. literalinclude:: Checkbox/model_as_boolean.vue
 
+
 States
 ------
 
-:py:class:`Checkbox <pyvuetify.Checkbox>` can have different states such as default,
-disabled, and indeterminate.
+:py:class:`pyvuetify.Checkbox` can have different states such as **default**, **disabled**, and **indeterminate**.
 
 .. tab-set::
 
@@ -112,6 +99,7 @@ disabled, and indeterminate.
 
         .. literalinclude:: Checkbox/states.vue
 
+
 Label slot
 ----------
 
@@ -121,37 +109,39 @@ Checkbox labels can be defined in ``label`` slot - that will allow to use HTML c
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Checkbox/label_slot.py
+        .. jupyter-execute:: Checkbox/label.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Checkbox/label_slot.py
+        .. literalinclude:: Checkbox/label.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Checkbox/label_slot.vue
+        .. literalinclude:: Checkbox/label.vue
 
-Inline text field
+
+Inline text-field
 -----------------
 
-You can place :py:class:`Checkbox <pyvuetify.Checkbox>` in line with other components
-such as :py:class:`TextField <pyvuetify.TextField>`.
+If you need to place checkboxes in line with other components, you can use the :py:class:`pyvuetify.CheckboxBtn` component.
+
+This component renders just checkbox, without the trapping of a form input such as validation, a label, and messages.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Checkbox/inline_text_field.py
+        .. jupyter-execute:: Checkbox/inline_textfield.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Checkbox/inline_text_field.py
+        .. literalinclude:: Checkbox/inline_textfield.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Checkbox/inline_text_field.vue
+        .. literalinclude:: Checkbox/inline_textfield.vue
 

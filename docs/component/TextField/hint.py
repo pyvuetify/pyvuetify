@@ -1,8 +1,8 @@
 import pyvuetify as v
 
-v.Container(
+v.Form(
     children=[
-        v.Form(
+        v.Container(
             children=[
                 v.Row(
                     children=[
@@ -11,33 +11,10 @@ v.Container(
                             sm="6",
                             children=[
                                 v.TextField(
-                                    label="Your product or service",
-                                    value="Grocery delivery",
                                     hint="For example, flowers or used cars",
-                                )
-                            ],
-                        ),
-                        v.Col(
-                            cols="12",
-                            sm="6",
-                            children=[
-                                v.TextField(
-                                    label="Your landing page",
-                                    hint="www.example.com/page",
-                                    persistent_hint=True,
-                                )
-                            ],
-                        ),
-                        v.Col(
-                            cols="12",
-                            sm="6",
-                            children=[
-                                v.TextField(
                                     label="Your product or service",
-                                    value="Grocery delivery",
-                                    hint="For example, flowers or used cars",
-                                    filled=True,
-                                )
+                                    model_value="Grocery delivery",
+                                ),
                             ],
                         ),
                         v.Col(
@@ -45,11 +22,10 @@ v.Container(
                             sm="6",
                             children=[
                                 v.TextField(
-                                    label="Your landing page",
                                     hint="www.example.com/page",
+                                    label="Your landing page",
                                     persistent_hint=True,
-                                    filled=True,
-                                )
+                                ),
                             ],
                         ),
                         v.Col(
@@ -57,11 +33,11 @@ v.Container(
                             sm="6",
                             children=[
                                 v.TextField(
+                                    hint="For example, flowers or used cars",
                                     label="Your product or service",
-                                    value="Grocery delivery",
-                                    hint="For example, flowers or used cars",
-                                    outlined=True,
-                                )
+                                    model_value="Grocery delivery",
+                                    variant="solo",
+                                ),
                             ],
                         ),
                         v.Col(
@@ -69,16 +45,40 @@ v.Container(
                             sm="6",
                             children=[
                                 v.TextField(
-                                    label="Your landing page",
                                     hint="www.example.com/page",
+                                    label="Your landing page",
+                                    variant="solo",
                                     persistent_hint=True,
-                                    outlined=True,
-                                )
+                                ),
                             ],
                         ),
-                    ]
-                )
-            ]
-        )
-    ]
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    hint="For example, flowers or used cars",
+                                    label="Your product or service",
+                                    model_value="Grocery delivery",
+                                    variant="outlined",
+                                ),
+                            ],
+                        ),
+                        v.Col(
+                            cols="12",
+                            sm="6",
+                            children=[
+                                v.TextField(
+                                    hint="www.example.com/page",
+                                    label="Your landing page",
+                                    variant="outlined",
+                                    persistent_hint=True,
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
 )

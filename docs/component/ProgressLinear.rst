@@ -1,37 +1,21 @@
 ProgressLinear
 ==============
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify Progress linear
-    documentation <https://v2.vuetifyjs.com/en/components/progress-linear/>`__.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/progress-linear/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`ProgressLinear <pyvuetify.ProgressLinear>` component is used to
-convey data visually to users. They can also represent an indeterminate amount,
-such as loading or processing.
+The :py:class:`pyvuetify.ProgressLinear` component is used to convey data visually to users. It supports both indeterminate amounts, such as loading or processing, and finite amounts of progress (including separate buffer values).
 
 .. api::
 
     :py:class:`pyvuetify.ProgressLinear`
 
-Usage
------
+Buffering
+---------
 
-In its simplest form, :py:class:`ProgressLinear <pyvuetify.ProgressLinear>`
-displays a horizontal progress bar. Use the value prop to control the progress.
-
-.. jupyter-execute:: ProgressLinear/usage.py
-    :raises:
-
-Examples
---------
-
-Buffer value
-^^^^^^^^^^^^
-
-A buffer state represents two values simultaneously. The primary value is
-controlled by v-model, whereas the buffer is controlled by the buffer-value
-prop.
+The primary value is controlled by **v-model**, whereas the buffer is controlled by the **buffer-value** prop.
 
 .. tab-set::
 
@@ -49,10 +33,33 @@ prop.
 
         .. literalinclude:: ProgressLinear/buffer_value.vue
 
-Colors
-^^^^^^
 
-You can also set the color using the props color and background-color.
+Chunks
+------
+
+The component can be split into chunks using ``chunk-count`` or ``chunk-width``. Visible progress is snapped to the last filled chunk.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: ProgressLinear/chunks.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: ProgressLinear/chunks.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: ProgressLinear/chunks.vue
+
+
+Colors
+------
+
+You can set the colors of the progress bar using the props **color** and **bg-color**.
 
 .. tab-set::
 
@@ -70,11 +77,11 @@ You can also set the color using the props color and background-color.
 
         .. literalinclude:: ProgressLinear/colors.vue
 
-Indeterminate
-^^^^^^^^^^^^^
 
-Using the ``indeterminate`` prop,
-:py:class:`ProgressLinear <pyvuetify.ProgressLinear>` continuously animates.
+Indeterminate
+-------------
+
+Using the **indeterminate** prop, :py:class:`pyvuetify.ProgressLinear` continuously animates.
 
 .. tab-set::
 
@@ -92,11 +99,33 @@ Using the ``indeterminate`` prop,
 
         .. literalinclude:: ProgressLinear/indeterminate.vue
 
-Rounded
-^^^^^^^
 
-The rounded prop is an alternative style that adds a border radius to the
-:py:class:`ProgressLinear <pyvuetify.ProgressLinear>` component.
+Reversed
+--------
+
+Displays reversed progress. The component also has RTL support, such that a progress bar in right-to-left mode with **reverse** prop enabled will display left-to-right.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: ProgressLinear/reverse.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: ProgressLinear/reverse.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: ProgressLinear/reverse.vue
+
+
+Rounded
+-------
+
+The **rounded** prop is used to apply a border radius to the :py:class:`pyvuetify.ProgressLinear` component.
 
 .. tab-set::
 
@@ -114,12 +143,11 @@ The rounded prop is an alternative style that adds a border radius to the
 
         .. literalinclude:: ProgressLinear/rounded.vue
 
-Stream
-^^^^^^
 
-The stream property works with buffer-value to convey to the user that there is
-some action taking place. You can use any combination of buffer-value and value
-to achieve your design.
+Stream
+------
+
+The **stream** property works with **buffer-value** to convey to the user that there is some action taking place.
 
 .. tab-set::
 
@@ -137,11 +165,11 @@ to achieve your design.
 
         .. literalinclude:: ProgressLinear/stream.vue
 
-Striped
-^^^^^^^
 
-This applies a striped background over the value portion of the
-:py:class:`ProgressLinear <pyvuetify.ProgressLinear>`.
+Striped
+-------
+
+This applies a striped background over the value portion of the :py:class:`pyvuetify.ProgressLinear`. This prop has no effect when using **indeterminate**.
 
 .. tab-set::
 
@@ -159,14 +187,11 @@ This applies a striped background over the value portion of the
 
         .. literalinclude:: ProgressLinear/striped.vue
 
-Default
-^^^^^^^
 
-The :py:class:`ProgressLinear <pyvuetify.ProgressLinear>` component will be
-responsive to user input when using v-model. You can use the default slot or
-bind a local model to display inside of the progress. If you are looking for
-advanced features on a linear type component, check out
-:py:class:`Slider <pyvuetify.Slider>`.
+Default
+-------
+
+Default slot exposes current value as **percentage** (0–100) in relation to ``max`` prop (100 by default). It is recommended to round it in order to avoid JavaScript floating point number representation with lots of decimal digits. You can use ``Math.round()`` or ``.toFixed()`` to render the value correctly.
 
 .. tab-set::
 
@@ -184,10 +209,11 @@ advanced features on a linear type component, check out
 
         .. literalinclude:: ProgressLinear/default.vue
 
-Determinate
-^^^^^^^^^^^
 
-The progress linear component can have a determinate state modified by v-model.
+Determinate
+-----------
+
+The progress linear component can have a determinate state modified by **v-model**.
 
 .. tab-set::
 
@@ -205,11 +231,11 @@ The progress linear component can have a determinate state modified by v-model.
 
         .. literalinclude:: ProgressLinear/determinate.vue
 
-File loader
-^^^^^^^^^^^
 
-The :py:class:`ProgressLinear <pyvuetify.ProgressLinear>` component is good
-for translating to the user that they are waiting for a response.
+File loader
+-----------
+
+The :py:class:`pyvuetify.ProgressLinear` component is good for communicating to the user that they are waiting for a response.
 
 .. tab-set::
 
@@ -227,13 +253,11 @@ for translating to the user that they are waiting for a response.
 
         .. literalinclude:: ProgressLinear/file_loader.vue
 
-Toolbar loader
-^^^^^^^^^^^^^^
 
-Using the absolute prop we are able to position the
-:py:class:`ProgressLinear <pyvuetify.ProgressLinear>` component at the bottom
-of the :py:class:`Toolbar <pyvuetify.Toolbar>`. We also use the active prop
-which allows us to control the visibility of the progress.
+Toolbar loader
+--------------
+
+Using the **absolute** prop we are able to position the :py:class:`pyvuetify.ProgressLinear` component at the bottom of the :py:class:`pyvuetify.Toolbar`. We also use the **active** prop which allows us to control the visibility of the progress.
 
 .. tab-set::
 
@@ -250,4 +274,26 @@ which allows us to control the visibility of the progress.
     .. tab-item:: :fab:`vuejs` Vue template
 
         .. literalinclude:: ProgressLinear/toolbar_loader.vue
+
+
+Buffer color and opacity
+------------------------
+
+The buffer color and opacity can be controlled using the **buffer-color** and **buffer-opacity** props. This enables you to make multi colored progress bars.
+
+.. tab-set::
+
+    .. tab-item:: :fas:`eye` Rendered
+
+        .. jupyter-execute:: ProgressLinear/buffer_color.py
+            :raises:
+            :hide-code:
+
+    .. tab-item:: :fab:`python` Python
+
+        .. literalinclude:: ProgressLinear/buffer_color.py
+
+    .. tab-item:: :fab:`vuejs` Vue template
+
+        .. literalinclude:: ProgressLinear/buffer_color.vue
 

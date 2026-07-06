@@ -1,107 +1,79 @@
 Badge
 =====
 
+
 .. aknowledgement::
-    This page is a Python adaptation of the `official Vuetify documentation <https://v2.vuetifyjs.com/en/components/badges/>`_.
+    This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/badges/>`__.
     All examples have been converted to pyvuetify syntax.
 
-The :py:class:`Badge <pyvuetify.Badge>` component superscripts or subscripts an avatar-like icon or
-text onto content to highlight information to a user or to just draw attention to a specific element.
-Content within the badge usually contains numbers or icons.
+The :py:class:`pyvuetify.Badge` component superscripts or subscripts an avatar-like icon or text onto content to highlight information to a user or to just draw attention to a specific element. Content within the badge usually contains numbers or icons.
 
 .. api::
 
     :py:class:`pyvuetify.Badge`
 
-Usage
------
+Dot
+---
 
-Badges in their simplest form display to the upper right of the content that it wraps and requires the badge slot.
-
-.. jupyter-execute:: Badge/usage.py
-    :raises:
-
-Customization options
----------------------
-
-The :py:class:`Badge <pyvuetify.Badge>` component is flexible and can be used in a variety of use-cases over numerous elements. Options to tweak the location are also available through the ``offset_x`` and ``offset_y`` props.
+The **dot** property removes badge's content and reduces its overall size. This is useful when you need to draw a user's attention subtly.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Badge/customization_options.py
+        .. jupyter-execute:: Badge/dot.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Badge/customization_options.py
+        .. literalinclude:: Badge/dot.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Badge/customization_options.vue
+        .. literalinclude:: Badge/dot.vue
 
-Dynamic notifications
----------------------
 
-You can incorporate badges with dynamic content to make things such as a notification system.
+Inline
+------
+
+Inline badges can be placed anywhere with content and can render without a *default* slot.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Badge/dynamic_notifications.py
+        .. jupyter-execute:: Badge/inline.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Badge/dynamic_notifications.py
+        .. literalinclude:: Badge/inline.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Badge/dynamic_notifications.vue
+        .. literalinclude:: Badge/inline.vue
 
-Show on hover
--------------
 
-You can do many things with visibility control, for example, show badge on hover.
+Content
+-------
+
+For simple text, use the **content** property to display a *value* on the badge.
 
 .. tab-set::
 
     .. tab-item:: :fas:`eye` Rendered
 
-        .. jupyter-execute:: Badge/show_on_hover.py
+        .. jupyter-execute:: Badge/content.py
             :raises:
             :hide-code:
 
     .. tab-item:: :fab:`python` Python
 
-        .. literalinclude:: Badge/show_on_hover.py
+        .. literalinclude:: Badge/content.py
 
     .. tab-item:: :fab:`vuejs` Vue template
 
-        .. literalinclude:: Badge/show_on_hover.vue
-
-Tabs
-----
-
-Badges help convey information to the user in a variety of ways.
-
-.. tab-set::
-
-    .. tab-item:: :fas:`eye` Rendered
-
-        .. jupyter-execute:: Badge/tabs.py
-            :raises:
-            :hide-code:
-
-    .. tab-item:: :fab:`python` Python
-
-        .. literalinclude:: Badge/tabs.py
-
-    .. tab-item:: :fab:`vuejs` Vue template
-
-        .. literalinclude:: Badge/tabs.vue
+        .. literalinclude:: Badge/content.vue
 

@@ -1,51 +1,80 @@
 <template>
   <v-card class="mx-auto" width="300">
-    <v-list>
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>mdi-home</v-icon>
-        </v-list-item-icon>
+    <v-list v-model:opened="open">
+      <v-list-item prepend-icon="mdi-home" title="Home"></v-list-item>
 
-        <v-list-item-title>Home</v-list-item-title>
-      </v-list-item>
-
-      <v-list-group :value="true" prepend-icon="mdi-account-circle">
-        <template v-slot:activator>
-          <v-list-item-title>Users</v-list-item-title>
+      <v-list-group value="Users">
+        <template v-slot:activator="{ props }">
+          <v-list-item
+            v-bind="props"
+            prepend-icon="mdi-account-circle"
+            title="Users"
+          ></v-list-item>
         </template>
 
-        <v-list-group :value="true" no-action sub-group>
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title>Admin</v-list-item-title>
-            </v-list-item-content>
+        <v-list-group value="Admin">
+          <template v-slot:activator="{ props }">
+            <v-list-item v-bind="props" title="Admin"></v-list-item>
           </template>
 
-          <v-list-item v-for="([title, icon], i) in admins" :key="i" link>
-            <v-list-item-title v-text="title"></v-list-item-title>
-
-            <v-list-item-icon>
-              <v-icon v-text="icon"></v-icon>
-            </v-list-item-icon>
-          </v-list-item>
+          <v-list-item
+            v-for="([title, icon], i) in admins"
+            :key="i"
+            :prepend-icon="icon"
+            :title="title"
+            :value="title"
+          ></v-list-item>
         </v-list-group>
 
-        <v-list-group no-action sub-group>
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title>Actions</v-list-item-title>
-            </v-list-item-content>
+        <v-list-group value="Actions">
+          <template v-slot:activator="{ props }">
+            <v-list-item v-bind="props" title="Actions"></v-list-item>
           </template>
 
-          <v-list-item v-for="([title, icon], i) in cruds" :key="i" link>
-            <v-list-item-title v-text="title"></v-list-item-title>
-
-            <v-list-item-icon>
-              <v-icon v-text="icon"></v-icon>
-            </v-list-item-icon>
-          </v-list-item>
+          <v-list-item
+            v-for="([title, icon], i) in cruds"
+            :key="i"
+            :prepend-icon="icon"
+            :title="title"
+            :value="title"
+          ></v-list-item>
         </v-list-group>
       </v-list-group>
     </v-list>
   </v-card>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const open = ref(["Users"]);
+
+const admins = [
+  ["Management", "mdi-account-multiple-outline"],
+  ["Settings", "mdi-cog-outline"],
+];
+const cruds = [
+  ["Create", "mdi-plus-outline"],
+  ["Read", "mdi-file-outline"],
+  ["Update", "mdi-update"],
+  ["Delete", "mdi-delete"],
+];
+</script>
+
+<script>
+export default {
+  data: () => ({
+    open: ["Users"],
+    admins: [
+      ["Management", "mdi-account-multiple-outline"],
+      ["Settings", "mdi-cog-outline"],
+    ],
+    cruds: [
+      ["Create", "mdi-plus-outline"],
+      ["Read", "mdi-file-outline"],
+      ["Update", "mdi-update"],
+      ["Delete", "mdi-delete"],
+    ],
+  }),
+};
+</script>

@@ -1,17 +1,35 @@
 import pyvuetify as v
 
-v.BottomNavigation(
-    value=1,
-    color="primary",
+v.Layout(
+    style_="height: 56px;",
     children=[
-        v.Btn(
-            children=[v.Html(tag="span", children=["Recents"]), v.Icon(children=["mdi-history"])]
-        ),
-        v.Btn(
-            children=[v.Html(tag="span", children=["Favorites"]), v.Icon(children=["mdi-heart"])]
-        ),
-        v.Btn(
-            children=[v.Html(tag="span", children=["Nearby"]), v.Icon(children=["mdi-map-marker"])]
+        v.BottomNavigation(
+            v_model="value",
+            color="primary",
+            active=True,
+            children=[
+                v.Btn(
+                    children=[
+                        v.Icon(children=["mdi-history"]),
+                        "Recents",
+                    ],
+                ),
+                v.Btn(
+                    children=[
+                        v.Icon(children=["mdi-heart"]),
+                        "Favorites",
+                    ],
+                ),
+                v.Btn(
+                    children=[
+                        v.Icon(children=["mdi-map-marker"]),
+                        v.Html(
+                            tag="span",
+                            children=["Nearby"],
+                        ),
+                    ],
+                ),
+            ],
         ),
     ],
 )

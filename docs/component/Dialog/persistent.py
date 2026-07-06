@@ -1,54 +1,21 @@
 import pyvuetify as v
 
-v.Container(
-    class_="text-center",
+v.Html(
+    tag="div",
+    class_="text-center pa-4",
     children=[
         v.Dialog(
-            v_model=False,
-            # persistent=True,  # not working in the documentation so we comment it out
-            max_width=290,
+            v_model="dialog",
+            max_width="400",
+            persistent=True,
             children=[
-                v.Card(
+                v.Html(
+                    tag="template",
                     children=[
-                        v.CardTitle(
-                            class_="text-h5",
-                            children=["Use Google's location service?"],
-                        ),
-                        v.CardText(
-                            children=[
-                                "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
-                            ]
-                        ),
-                        v.CardActions(
-                            children=[
-                                v.Spacer(),
-                                v.Btn(
-                                    text=True,
-                                    color="green darken-1",
-                                    children=["Disagree"],
-                                ),
-                                v.Btn(
-                                    text=True,
-                                    color="green darken-1",
-                                    children=["Agree"],
-                                ),
-                            ]
-                        ),
-                    ]
-                )
+                        v.Btn(children=["Open Dialog"]),
+                    ],
+                ),
             ],
-            v_slots=[
-                {
-                    "name": "activator",
-                    "variable": "dialog",
-                    "children": v.Btn(
-                        children=["Open Dialog"],
-                        color="primary",
-                        v_bind="dialog.attrs",
-                        v_on="dialog.on",
-                    ),
-                }
-            ],
-        )
+        ),
     ],
 )

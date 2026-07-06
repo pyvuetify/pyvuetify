@@ -1,0 +1,40 @@
+import pyvuetify as v
+
+v.Html(
+    tag="div",
+    class_="text-center",
+    children=[
+        v.Html(
+            tag="h5",
+            class_="my-2",
+            children=["[3] - [3] merged groups"],
+        ),
+        v.OtpInput(
+            v_model="otp",
+            children=[
+                v.Html(
+                    tag="template",
+                    children=[
+                        v.OtpGroup(
+                            merged=True,
+                            children=[
+                                v.OtpField(index=0),
+                                v.OtpField(index=1),
+                                v.OtpField(index=2),
+                            ],
+                        ),
+                        v.OtpSeparator(children=["-"]),
+                        v.OtpGroup(
+                            merged=True,
+                            children=[
+                                v.OtpField(index=3),
+                                v.OtpField(index=4),
+                                v.OtpField(index=5),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+)

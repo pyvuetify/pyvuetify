@@ -1,9 +1,14 @@
 import pyvuetify as v
 
-v.Pagination(
-    v_model=1,
-    length=4,
-    prev_icon="mdi-menu-left",
-    next_icon="mdi-menu-right",
-    class_="text-center my-2",
+v.Html(
+    tag="div",
+    class_="text-center",
+    children=[
+        v.Pagination(
+            v_model="page",
+            length=4,
+            next_icon="mdi-menu-right",
+            prev_icon="mdi-menu-left",
+        ),
+    ],
 )

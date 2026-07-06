@@ -1,9 +1,3 @@
 <template>
-  <v-container fluid>
-    <v-row>
-      <v-col cols="12">
-        <v-slider disabled label="Disabled" value="30"></v-slider>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-slider model-value="30" disabled></v-slider>
 </template>

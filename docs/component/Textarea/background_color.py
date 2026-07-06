@@ -1,18 +1,21 @@
 import pyvuetify as v
 
-colors = [
-    ("light-blue", "black"),
-    ("grey lighten-2", "cyan"),
-    ("amber lighten-4", "orange orange-darken-4"),
-]
-
 v.Container(
     children=[
         v.Textarea(
-            background_color=bg,
-            color=fg,
+            bg_color="light-blue",
+            color="black",
             label="Label",
-        )
-        for bg, fg in colors
+        ),
+        v.Textarea(
+            bg_color="grey-lighten-2",
+            color="cyan",
+            label="Label",
+        ),
+        v.Textarea(
+            bg_color="amber-lighten-4",
+            color="orange orange-darken-4",
+            label="Label",
+        ),
     ],
 )

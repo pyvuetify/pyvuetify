@@ -1,0 +1,42 @@
+import pyvuetify as v
+
+v.Toolbar(
+    color="grey-lighten-3",
+    title="Application",
+    children=[
+        v.Btn(
+            stacked=True,
+            children=[
+                v.Badge(
+                    color="error",
+                    dot=True,
+                    children=[
+                        v.Icon(icon="mdi-newspaper-variant-outline"),
+                    ],
+                ),
+                "News",
+            ],
+        ),
+        v.Btn(
+            stacked=True,
+            children=[
+                v.Badge(
+                    color="error",
+                    dot=True,
+                    children=[
+                        v.Icon(icon="mdi-post"),
+                    ],
+                ),
+                "Blog",
+            ],
+        ),
+        v.Btn(
+            variant="tonal",
+            stacked=True,
+            children=[
+                v.Icon(icon="mdi-login"),
+                "Login",
+            ],
+        ),
+    ],
+)

@@ -1,35 +1,38 @@
 import pyvuetify as v
 
-open_btn = v.Btn(color="blue", dark=True, children=["Open v-model"])
-
-close_btn = v.Btn(class_="mt-6", text=True, color="red", children=["close"])
-
-bottom_sheet = v.BottomSheet(
-    v_model=False,
+v.Html(
+    tag="div",
+    class_="pa-8 text-center",
     children=[
-        v.Sheet(
-            class_="text-center",
-            height="200px",
+        v.Btn(
+            class_="ma-auto",
+            size="x-large",
+            text="Click Me",
+        ),
+        v.BottomSheet(
+            v_model="sheet",
             children=[
-                close_btn,
-                v.Html(
-                    tag="div",
-                    class_="py-3",
+                v.Card(
+                    class_="text-center",
+                    height="200",
                     children=[
-                        "This is a bottom sheet using the controlled by v-model instead of activator"
+                        v.CardText(
+                            children=[
+                                v.Btn(
+                                    text="Close",
+                                    variant="text",
+                                ),
+                                v.Html(
+                                    tag="div",
+                                    children=[
+                                        "This is a bottom sheet using the controlled by v-model instead of activator"
+                                    ],
+                                ),
+                            ],
+                        ),
                     ],
                 ),
             ],
-        )
+        ),
     ],
 )
-
-
-def toggle_sheet(*args):
-    bottom_sheet.v_model = not bottom_sheet.v_model
-
-
-open_btn.on_event("click", toggle_sheet)
-close_btn.on_event("click", toggle_sheet)
-
-v.Container(class_="text-center", children=[open_btn, bottom_sheet])

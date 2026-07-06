@@ -1,19 +1,19 @@
 <template>
-  <v-timeline>
+  <v-timeline align="start">
     <v-timeline-item
       v-for="(year, i) in years"
       :key="i"
-      :color="year.color"
-      small
+      :dot-color="year.color"
+      size="small"
     >
       <template v-slot:opposite>
-        <span
-          :class="`headline font-weight-bold ${year.color}--text`"
+        <div
+          :class="`pt-1 headline font-weight-bold text-${year.color}`"
           v-text="year.year"
-        ></span>
+        ></div>
       </template>
-      <div class="py-4">
-        <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`">
+      <div>
+        <h2 :class="`mt-n1 headline font-weight-light mb-4 text-${year.color}`">
           Lorem ipsum
         </h2>
         <div>
@@ -26,3 +26,57 @@
     </v-timeline-item>
   </v-timeline>
 </template>
+
+<script setup>
+const years = [
+  {
+    color: "cyan",
+    year: "1960",
+  },
+  {
+    color: "green",
+    year: "1970",
+  },
+  {
+    color: "pink",
+    year: "1980",
+  },
+  {
+    color: "amber",
+    year: "1990",
+  },
+  {
+    color: "orange",
+    year: "2000",
+  },
+];
+</script>
+
+<script>
+export default {
+  data: () => ({
+    years: [
+      {
+        color: "cyan",
+        year: "1960",
+      },
+      {
+        color: "green",
+        year: "1970",
+      },
+      {
+        color: "pink",
+        year: "1980",
+      },
+      {
+        color: "amber",
+        year: "1990",
+      },
+      {
+        color: "orange",
+        year: "2000",
+      },
+    ],
+  }),
+};
+</script>

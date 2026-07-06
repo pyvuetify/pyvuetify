@@ -1,27 +1,57 @@
 <template>
-  <v-toolbar color="purple" dark>
-    <v-toolbar-title>Title</v-toolbar-title>
+  <div class="text-body-medium mb-1">
+    dividers with <v-code>vertical</v-code>
+  </div>
+  <v-toolbar color="purple">
+    <template v-slot:prepend>
+      <div class="text-headline-small px-3">Title</div>
+    </template>
 
-    <v-divider class="mx-4" vertical></v-divider>
+    <v-divider class="mx-3" vertical></v-divider>
+    <v-toolbar-title>My Home</v-toolbar-title>
 
-    <span class="subheading">My Home</span>
-
-    <v-spacer></v-spacer>
-
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn text> News </v-btn>
-
+    <v-toolbar-items>
+      <v-btn variant="text">News</v-btn>
       <v-divider vertical></v-divider>
-
-      <v-btn text> Blog </v-btn>
-
+      <v-btn variant="text">Blog</v-btn>
       <v-divider vertical></v-divider>
-
-      <v-btn text> Music </v-btn>
-
-      <v-divider vertical></v-divider>
+      <v-btn variant="text">Music</v-btn>
     </v-toolbar-items>
+    <v-divider vertical></v-divider>
+    <v-app-bar-nav-icon class="ms-2"></v-app-bar-nav-icon>
+  </v-toolbar>
 
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+  <div class="text-body-medium mt-3 mb-1">
+    dividers with <v-code>vertical</v-code> and <v-code>inset</v-code>
+  </div>
+  <v-toolbar color="teal">
+    <template v-slot:prepend>
+      <div class="text-headline-small px-3">Title</div>
+    </template>
+
+    <v-divider class="mx-3" inset vertical></v-divider>
+    <v-toolbar-title>My Home</v-toolbar-title>
+
+    <v-toolbar-items>
+      <v-btn variant="text">News</v-btn>
+      <v-divider inset vertical></v-divider>
+      <v-btn variant="text">Blog</v-btn>
+      <v-divider inset vertical></v-divider>
+      <v-btn variant="text">Music</v-btn>
+    </v-toolbar-items>
+    <v-divider inset vertical></v-divider>
+    <v-app-bar-nav-icon class="ms-2"></v-app-bar-nav-icon>
   </v-toolbar>
 </template>
+
+<style scoped>
+.v-toolbar .v-divider {
+  --v-border-opacity: 0.7;
+}
+</style>
+
+<example-meta lang="json">
+{
+  "figma": "https://www.figma.com/design/5f4g4pbbBsk9TTWX4Xvlx1/PRO-v3.0---Official-Vuetify-3-UI-Kit?node-id=2418-7463&t=tWnPBMI0RfGlNRgq-4"
+}
+</example-meta>

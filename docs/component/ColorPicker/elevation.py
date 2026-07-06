@@ -1,23 +1,16 @@
 import pyvuetify as v
 
-color_picker1 = v.ColorPicker(
-    class_="mx-auto my-2",
-    flat=True,
-)
-color_picker2 = v.ColorPicker(
-    class_="mx-auto my-2",
-    elevation=15,
-)
-
-v.Container(
+v.Html(
+    tag="div",
+    class_="d-flex justify-space-around",
     children=[
-        v.Row(
-            justify="space-around",
-            children=[
-                color_picker1,
-                color_picker2,
-            ],
+        v.ColorPicker(
+            v_model="picker",
+            elevation="0",
+        ),
+        v.ColorPicker(
+            v_model="picker",
+            elevation="4",
         ),
     ],
-    class_="my-2",
 )

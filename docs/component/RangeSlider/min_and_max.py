@@ -1,20 +1,26 @@
 import pyvuetify as v
 
-v.Col(
+v.RangeSlider(
+    v_model="range",
+    max=10,
+    min=-10,
+    step=1,
+    class_="align-center",
+    hide_details=True,
     children=[
-        v.RangeSlider(
-            class_="mx-1 mt-10",
-            v_model=[25, 75],
-            thumb_label=True,
-            label="default Range",
+        v.Html(
+            tag="template",
+            children=[
+                v.TextField(
+                    v_model="range[0]",
+                    density="compact",
+                    style_="width: 70px",
+                    type="number",
+                    variant="outlined",
+                    hide_details=True,
+                    single_line=True,
+                ),
+            ],
         ),
-        v.RangeSlider(
-            class_="mx-1 mt-10",
-            v_model=[-10, 20],
-            min=-50,
-            max=50,
-            label="negative to positive range",
-            thumb_label=True,
-        ),
-    ]
+    ],
 )

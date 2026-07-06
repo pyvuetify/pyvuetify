@@ -1,12 +1,25 @@
-from ipywidgets import jslink
-
 import pyvuetify as v
 
-select = v.Select(chips=True, items=["John", "Jacob"], v_model=[], multiple=True, readonly=True)
-switch1 = v.Switch(v_model=[], label="John", value="John")
-switch2 = v.Switch(v_model=[], label="Jacob", value="Jacob")
-
-jslink((select, "v_model"), (switch1, "v_model"))
-jslink((select, "v_model"), (switch2, "v_model"))
-
-v.Container(class_="mx-auto my-2", fluid=True, children=[select, switch1, switch2])
+v.Container(
+    fluid=True,
+    children=[
+        v.Html(
+            tag="p",
+            children=["{{ people }}"],
+        ),
+        v.Switch(
+            v_model="people",
+            color="primary",
+            label="John",
+            value="John",
+            hide_details=True,
+        ),
+        v.Switch(
+            v_model="people",
+            color="primary",
+            label="Jacob",
+            value="Jacob",
+            hide_details=True,
+        ),
+    ],
+)

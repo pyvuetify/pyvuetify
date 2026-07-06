@@ -1,81 +1,49 @@
 import pyvuetify as v
 
 v.Card(
-    class_="mx-auto my-2",
-    height=400,
-    width=600,
     children=[
-        v.NavigationDrawer(
-            permanent=True,
-            expand_on_hover=True,
+        v.Layout(
             children=[
-                v.List(
+                v.NavigationDrawer(
+                    expand_on_hover=True,
+                    permanent=True,
+                    rail=True,
                     children=[
-                        v.ListItem(
-                            class_="px-2",
+                        v.List(
                             children=[
-                                v.ListItemAvatar(
-                                    children=[
-                                        v.Img(
-                                            src="https://randomuser.me/api/portraits/women/85.jpg",
-                                        ),
-                                    ],
+                                v.ListItem(
+                                    prepend_avatar="https://randomuser.me/api/portraits/women/85.jpg",
+                                    subtitle="sandra_a88@gmailcom",
+                                    title="Sandra Adams",
                                 ),
                             ],
                         ),
-                        v.ListItem(
-                            link=True,
+                        v.Divider(),
+                        v.List(
+                            density="compact",
+                            nav=True,
                             children=[
-                                v.ListItemContent(
-                                    children=[
-                                        v.ListItemTitle(
-                                            class_="text-h6",
-                                            children=["Sandra Adams"],
-                                        ),
-                                        v.ListItemSubtitle(
-                                            children=["sandra.adams@example.com"],
-                                        ),
-                                    ],
+                                v.ListItem(
+                                    prepend_icon="mdi-folder",
+                                    title="My Files",
+                                    value="myfiles",
+                                ),
+                                v.ListItem(
+                                    prepend_icon="mdi-account-multiple",
+                                    title="Shared with me",
+                                    value="shared",
+                                ),
+                                v.ListItem(
+                                    prepend_icon="mdi-star",
+                                    title="Starred",
+                                    value="starred",
                                 ),
                             ],
                         ),
                     ],
                 ),
-                v.Divider(),
-                v.List(
-                    nav=True,
-                    dense=True,
-                    children=[
-                        v.ListItem(
-                            link=True,
-                            children=[
-                                v.ListItemIcon(
-                                    children=[v.Icon(children=["mdi-folder"])],
-                                ),
-                                v.ListItemTitle(children=["My Files"]),
-                            ],
-                        ),
-                        v.ListItem(
-                            link=True,
-                            children=[
-                                v.ListItemIcon(
-                                    children=[v.Icon(children=["mdi-account-multiple"])],
-                                ),
-                                v.ListItemTitle(children=["Shared with me"]),
-                            ],
-                        ),
-                        v.ListItem(
-                            link=True,
-                            children=[
-                                v.ListItemIcon(
-                                    children=[v.Icon(children=["mdi-star"])],
-                                ),
-                                v.ListItemTitle(children=["Starred"]),
-                            ],
-                        ),
-                    ],
-                ),
+                v.Main(style_="height: 250px"),
             ],
-        )
+        ),
     ],
 )
