@@ -13,12 +13,12 @@ v.Html(
             closable=True,
             children=[
                 (
-                    "Aenean imperdiet. Quisque id odio. Cras dapibus. Pellentesque ut neque. Cras "
-                    "dapibus. Vivamus consectetuer hendrerit lacus. Sed mollis, eros et ultrices "
-                    "tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Sed "
-                    "mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing "
-                    "dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, "
-                    "tincidunt non, euismod vitae, posuere imperdiet, leo."
+                    "Aenean imperdiet. Quisque id odio. Cras dapibus. Pellentesque ut neque. Cras dapibus. "
+                    "Vivamus consectetuer hendrerit lacus. Sed mollis, eros et ultrices tempus, mauris ipsum "
+                    "aliquam libero, non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, "
+                    "mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis "
+                    "lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imper"
+                    "diet, leo."
                 ),
             ],
         ),

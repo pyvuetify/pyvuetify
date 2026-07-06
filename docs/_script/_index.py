@@ -1,19 +1,13 @@
-"""Step 5: Regenerate docs/component/index.rst from the available RST files.
-
-Scans docs/component/ for .rst files (excluding index.rst itself), then
-generates a categorized toctree matching the existing category structure.
-
-Components not found in any category are placed under "Other".
-"""
+"""Generate and manage docs/component/index.rst from available RST files."""
 
 from pathlib import Path
 
-ROOT = Path(__file__).parent.parent
+ROOT = Path(__file__).parent.parent.parent
 DOCS_COMPONENT_DIR = ROOT / "docs" / "component"
 INDEX_PATH = DOCS_COMPONENT_DIR / "index.rst"
 
-# Category definitions: ordered list of (category_name, [component_names])
-# Based on the existing index.rst structure
+# --- Component categories (ordered) ---
+
 CATEGORIES = [
     (
         "Containment",
@@ -79,13 +73,7 @@ CATEGORIES = [
             "Treeview",
         ],
     ),
-    (
-        "Layout",
-        [
-            "Grid",
-            "Flex",
-        ],
-    ),
+    ("Layout", ["Grid", "Flex"]),
     (
         "Selection",
         [
@@ -113,40 +101,21 @@ CATEGORIES = [
             "Timeline",
         ],
     ),
-    (
-        "Images & Icons",
-        [
-            "Avatar",
-            "Icon",
-            "Img",
-            "Parallax",
-        ],
-    ),
-    (
-        "Pickers",
-        [
-            "ColorPicker",
-            "DatePicker",
-            "TimePicker",
-        ],
-    ),
-    (
-        "Other",
-        [
-            "Lazy",
-        ],
-    ),
+    ("Images & Icons", ["Avatar", "Icon", "Img", "Parallax"]),
+    ("Pickers", ["ColorPicker", "DatePicker", "TimePicker"]),
+    ("Other", ["Lazy"]),
 ]
 
 
+# --- Public API ---
+
+
 def get_available_components() -> set[str]:
-    """Find all .rst files in docs/component/ (excluding index.rst)."""
-    rst_files = DOCS_COMPONENT_DIR.glob("*.rst")
-    return {f.stem for f in rst_files if f.name != "index.rst"}
+    return {f.stem for f in DOCS_COMPONENT_DIR.glob("*.rst") if f.name != "index.rst"}
 
 
 def generate_index(available: set[str]) -> str:
-    """Generate the index.rst content."""
+    """Generate index.rst content with categorized toctrees."""
     lines = [
         "Component",
         "=========",
@@ -168,22 +137,18 @@ def generate_index(available: set[str]) -> str:
         "",
     ]
 
-    categorized = set()
+    categorized: set[str] = set()
 
     for category_name, members in CATEGORIES:
-        # Only include members that have an RST file
         present = [m for m in members if m in available]
         if not present:
             continue
-
         categorized.update(present)
 
-        # Section heading
-        underline = "-" * len(category_name)
         lines.extend(
             [
                 category_name,
-                underline,
+                "-" * len(category_name),
                 "",
                 ".. toctree::",
                 f"    :caption: {category_name}",
@@ -195,25 +160,20 @@ def generate_index(available: set[str]) -> str:
             lines.append(f"    {comp}")
         lines.append("")
 
-    # Add uncategorized components to "Other"
+    # Uncategorized components go to "Other"
     uncategorized = sorted(available - categorized)
     if uncategorized:
-        # Check if Other section was already added
-        other_present = [m for m in CATEGORIES[-1][1] if m in available]
-        if not other_present:
-            # Need to create the Other section
-            lines.extend(
-                [
-                    "Other",
-                    "-----",
-                    "",
-                    ".. toctree::",
-                    "    :caption: Other",
-                    "    :maxdepth: 1",
-                    "",
-                ]
-            )
-        # Append uncategorized to the end (before the trailing newline)
+        lines.extend(
+            [
+                "Other",
+                "-----",
+                "",
+                ".. toctree::",
+                "    :caption: Other",
+                "    :maxdepth: 1",
+                "",
+            ]
+        )
         for comp in uncategorized:
             lines.append(f"    {comp}")
         lines.append("")
@@ -221,33 +181,8 @@ def generate_index(available: set[str]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def main():
-    if not DOCS_COMPONENT_DIR.exists():
-        raise FileNotFoundError(f"Component docs directory not found at {DOCS_COMPONENT_DIR}. Run step 3 first.")
-
+def write_index() -> None:
     available = get_available_components()
-    print(f"Found {len(available)} component RST files")
-
-    if not available:
-        print("No component RST files found. Run step 3 first.")
-        return
-
-    # Generate and write index
     content = generate_index(available)
     INDEX_PATH.write_text(content, encoding="utf-8")
-    print(f"Written {INDEX_PATH}")
-
-    # Report categorization
-    all_categorized = set()
-    for _, members in CATEGORIES:
-        all_categorized.update(members)
-
-    uncategorized = sorted(available - all_categorized)
-    if uncategorized:
-        print("\nUncategorized components (added to Other):")
-        for comp in uncategorized:
-            print(f"  {comp}")
-
-
-if __name__ == "__main__":
-    main()
+    print(f"index.rst: {len(available)} components")

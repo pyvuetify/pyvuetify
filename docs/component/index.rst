@@ -144,6 +144,13 @@ Other
 
     Lazy
 
+Other
+-----
+
+.. toctree::
+    :caption: Other
+    :maxdepth: 1
+
     AvatarGroup
     ColorInput
     CommandPalette

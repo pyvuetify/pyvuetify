@@ -22,9 +22,8 @@ v.Html(
             border=True,
             children=[
                 (
-                    "Phasellus blandit leo ut odio. Morbi mattis ullamcorper velit. Donec orci "
-                    "lectus, aliquam ut, faucibus non, euismod id, nulla. In ut quam vitae odio "
-                    "lacinia tincidunt."
+                    "Phasellus blandit leo ut odio. Morbi mattis ullamcorper velit. Donec orci lectus, "
+                    "aliquam ut, faucibus non, euismod id, nulla. In ut quam vitae odio lacinia tincidunt."
                 ),
             ],
         ),

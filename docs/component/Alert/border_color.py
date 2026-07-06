@@ -9,10 +9,10 @@ v.Html(
             elevation="1",
             children=[
                 (
-                    "Aliquam eu nunc. Fusce commodo aliquam arcu. In consectetuer turpis ut velit. "
-                    "Nulla facilisi.. Morbi mollis tellus ac sapien. Fusce vel dui. Praesent ut "
-                    "ligula non mi varius sagittis. Vivamus consectetuer hendrerit lacus. "
-                    "Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi."
+                    "Aliquam eu nunc. Fusce commodo aliquam arcu. In consectetuer turpis ut velit. Nulla "
+                    "facilisi.. Morbi mollis tellus ac sapien. Fusce vel dui. Praesent ut ligula non mi "
+                    "varius sagittis. Vivamus consectetuer hendrer it lacus. Suspendisse enim turpis, dictum "
+                    "sed, iaculis a, condimentum nec, nisi."
                 ),
             ],
         ),
@@ -34,11 +34,10 @@ v.Html(
             elevation="1",
             children=[
                 (
-                    "Sed in libero ut nibh placerat accumsan. Phasellus leo dolor, tempus non, "
-                    "auctor et, hendrerit quis, nisi. Phasellus leo dolor, tempus non, auctor et, "
-                    "hendrerit quis, nisi. Sed consequat, leo eget bibendum sodales, augue velit "
-                    "cursus nunc, quis gravida magna mi a libero. Donec elit libero, sodales nec, "
-                    "volutpat a, suscipit non, turpis."
+                    "Sed in libero ut nibh placerat accumsan. Phasellus leo dolor, tempus non, auctor et, "
+                    "hendrerit quis, nisi. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. "
+                    "Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi "
+                    "a libero. Donec elit libero, sodales nec, volutpat a, su scipit non, turpis."
                 ),
             ],
         ),
@@ -47,7 +46,7 @@ v.Html(
             border_color="error",
             elevation="1",
             children=[
-                ("Fusce commodo aliquam arcu. Pellentesque posuere. Phasellus tempus. Donec posuere vulputate arcu."),
+                "Fusce commodo aliquam arcu. Pellentesque posuere. Phasellus tempus. Donec posuere vulputate arcu.",
             ],
         ),
     ],
