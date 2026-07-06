@@ -1,8 +1,0 @@
-<template>
-  <div class="text-center">
-    <v-rating
-      v-model="rating"
-      icon-label="custom icon label text {0} of {1}"
-    ></v-rating>
-  </div>
-</template>
