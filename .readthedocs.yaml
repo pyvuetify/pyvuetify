@@ -10,6 +10,13 @@ build:
   tools:
     python: "3.12"
     nodejs: "latest"
+  jobs:
+    pre_install:
+      # js/_component and pyvuetify/_component are gitignored (generated files).
+      # Generate them before hatch runs "npm run build" during pip install.
+      - npm install
+      - pip install jinja2 jinja2-strcase
+      - cd generate && python generate_components.py
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
