@@ -197,12 +197,20 @@ def md_to_rst(text: str) -> str:
 # --- RST generation ---
 
 
+SHARED_KERNEL_ID = "pyvuetify-docs"
+
+
 def generate_rst(component_name: str, doc_url: str, parsed: ParsedComponent, available_examples: set[str]) -> str:
     """Generate full RST page content for a component."""
     title_underline = "=" * len(component_name)
     lines = [
         component_name,
         title_underline,
+        "",
+        # Shared kernel: all component pages run in the same kernel session,
+        # avoiding one kernel startup per page during the documentation build.
+        ".. jupyter-kernel:: python3",
+        f"    :id: {SHARED_KERNEL_ID}",
         "",
         "",
         ".. aknowledgement::",

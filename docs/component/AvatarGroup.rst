@@ -1,6 +1,9 @@
 AvatarGroup
 ===========
 
+.. jupyter-kernel:: python3
+    :id: pyvuetify-docs
+
 
 .. aknowledgement::
     This page is a Python adaptation of the `official Vuetify documentation <https://vuetifyjs.com/en/components/avatar-groups/>`__.
