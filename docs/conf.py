@@ -26,6 +26,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.todo",
+    "sphinx.ext.autodoc",
     "jupyter_sphinx",
     "sphinx_design",
     "autoapi.extension",
@@ -105,12 +106,12 @@ html_context = {
 autodoc_typehints = "description"
 autoapi_dirs = ["../pyvuetify"]
 autoapi_member_order = "groupwise"
-autoapi_own_page_level = "method"
+autoapi_own_page_level = "class"
+autoapi_template_dir = "_templates"
 autoapi_keep_files = True
 autoapi_options = [
     "members",
     "undoc-members",
-    # "show-inheritance",
     "show-module-summary",
     "imported-members",
 ]
