@@ -33,7 +33,7 @@ docs = ["sphinx", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme", "sphinx-
 
 [tool.hatch.build]
 only-packages = true
-artifacts = ["pyvuetify/_static/*"]
+artifacts = ["pyvuetify/_static/*", "pyvuetify/_component/*.py"]
 packages = ["pyvuetify", "extra_component"]
 
 [tool.hatch.build.hooks.jupyter-builder]
