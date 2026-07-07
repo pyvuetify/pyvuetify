@@ -25,11 +25,11 @@ email = "pierrick.rambaud40@gmail.com"
 repository = "https://github.com/pyvuetify/pyvuetify"
 
 [project.optional-dependencies]
-doc = ["sphinx", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme", "sphinx-autoapi", "sphinx-design", "astroid>3", "sphinx-copybutton", "sphinx-last-updated-by-git"]
+doc = ["sphinx", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme", "sphinx-autoapi", "sphinx-design", "astroid>3", "sphinx-copybutton", "sphinx-last-updated-by-git", "lorem"]
 
 [dependency-groups]
 dev = ["watchfiles", "jupyter", "jinja2", "jinja2-strcase", "marimo"]
-docs = ["sphinx", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme", "sphinx-autoapi", "sphinx-design", "astroid>3", "sphinx-copybutton", "sphinx-last-updated-by-git"]
+docs = ["sphinx", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme", "sphinx-autoapi", "sphinx-design", "astroid>3", "sphinx-copybutton", "sphinx-last-updated-by-git", "python-lorem"]
 
 [tool.hatch.build]
 only-packages = true

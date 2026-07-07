@@ -15,6 +15,7 @@ v.Html(
                 ),
             ],
         ),
+        v.Html(tag="br"),
         v.Alert(
             color="#C51162",
             icon="mdi-material-design",
@@ -27,11 +28,12 @@ v.Html(
                 ),
             ],
         ),
+        v.Html(tag="br"),
         v.Alert(
             color="primary",
-            icon="$vuetify",
+            icon="mdi-vuetify",
             theme="dark",
-            prominent=True,
+            # prominent=True,
             children=[
                 (
                     "Praesent congue erat at massa. Nullam vel sem. Aliquam lorem ante, dapibus in, viverra "

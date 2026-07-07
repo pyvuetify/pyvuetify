@@ -34,6 +34,7 @@ extensions = [
     "sphinx_last_updated_by_git",
     "_extension.api_admonition",
     "_extension.aknowledgement",
+    "_extension.html_role",
 ]
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]

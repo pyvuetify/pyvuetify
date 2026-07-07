@@ -16,6 +16,7 @@ v.Html(
                 ),
             ],
         ),
+        v.Html(tag="br"),
         v.Alert(
             border="top",
             border_color="success",
@@ -28,6 +29,7 @@ v.Html(
                 ),
             ],
         ),
+        v.Html(tag="br"),
         v.Alert(
             border="bottom",
             border_color="warning",
@@ -41,6 +43,7 @@ v.Html(
                 ),
             ],
         ),
+        v.Html(tag="br"),
         v.Alert(
             border="end",
             border_color="error",
