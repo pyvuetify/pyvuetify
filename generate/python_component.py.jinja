@@ -53,8 +53,8 @@ class {{ v_component.name.removeprefix("V") }}(anywidget.AnyWidget):
         `{{ v_component["doc-url"] }}`__
     """
 
-    _esm = bundled_path / "{{ v_component.name }}.js"
-    _css = bundled_path / "pyvuetify.css"
+    _esm = (bundled_path / "{{ v_component.name }}.js").read_text()
+    _css = (bundled_path / "pyvuetify.css").read_text()
 
     children = traitlets.Any(allow_none=True).tag(sync=True, to_json=_children_to_json, from_json=_children_from_json)
     """The child nodes of the DOM element."""
