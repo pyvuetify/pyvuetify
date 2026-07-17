@@ -61,6 +61,14 @@ autosectionlabel_prefix_document = True
 todo_include_todos = True
 todo_emit_warnings = True
 
+# jupyter_sphinx execution settings.
+# store_widget_state=False: nbclient would otherwise record every comm_open AND
+# comm_msg message into notebook.metadata.widgets.  For pyvuetify (anywidget)
+# each instance carries ~8 MB of CSS+JS, bloating the cached notebook to
+# hundreds of MB.  Widgets produce widget-view+json outputs that require a live
+# kernel anyway — they cannot render in static HTML regardless.
+jupyter_execute_kwargs = {"store_widget_state": False}
+
 # -- Options for HTML output -------------------------------------------------
 
 html_theme = "pydata_sphinx_theme"
