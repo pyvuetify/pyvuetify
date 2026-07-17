@@ -67,7 +67,9 @@ todo_emit_warnings = True
 # each instance carries ~8 MB of CSS+JS, bloating the cached notebook to
 # hundreds of MB.  Widgets produce widget-view+json outputs that require a live
 # kernel anyway — they cannot render in static HTML regardless.
-jupyter_execute_kwargs = {"store_widget_state": False}
+# keep allow_errors=True (jupyter_sphinx default) so :raises: cells work.
+# keep timeout=-1 (jupyter_sphinx default) so long-running cells don't abort.
+jupyter_execute_kwargs = {"timeout": -1, "allow_errors": True, "store_widget_state": False}
 
 # -- Options for HTML output -------------------------------------------------
 
