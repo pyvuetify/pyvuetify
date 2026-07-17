@@ -90,11 +90,11 @@ html_theme_options = {
     "navbar_start": ["navbar-logo"],
     "article_footer_items": ["last-updated"],
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
-    "announcement": "https://raw.githubusercontent.com/12rambau/pyvuetify/refs/heads/documetnation3/docs/_static/banner.html",
+    "announcement": "https://raw.githubusercontent.com/pyvuetify/pyvuetify/refs/heads/main/docs/_static/banner.html",
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/widgetti/pyvuetify",
+            "url": "https://github.com/pyvuetify/pyvuetify",
             "icon": "fa-brands fa-github",
         },
         {
@@ -105,9 +105,9 @@ html_theme_options = {
     ],
 }
 html_context = {
-    "github_user": "widgetti",
+    "github_user": "pyvuetify",
     "github_repo": "pyvuetify",
-    "github_version": "master",
+    "github_version": "main",
     "doc_path": "docs",
 }
 
